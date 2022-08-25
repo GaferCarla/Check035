@@ -1,0 +1,132 @@
+﻿@model ErgoSalud.Models.ERGOS_Usuarios_N01
+<script>
+  function getting_centros_trabajo() {
+        var id_empresa = $('#ddw_Empresas option:selected').val();
+     //   alert(id_categoria);
+        $.ajax({
+            type: 'POST',
+            url: '@Url.Action("Get_Centros_Trabajo", "Encuestas")',
+            dataType: 'json',
+            data: { id_empresa: id_empresa },
+            success: function (data) {
+                $("#ddw_Centros_T").prop("disabled", false);
+                if (data != null) {
+                    $('#ddw_Centros_T').empty();
+                    $('#ddw_Departamentos').empty();
+                    var mySelect = $('#ddw_Centros_T');
+                        mySelect.append($('<option>', {
+                        value: "",
+                            text: "Seleccione Centro de Trabajo"
+                    }));
+                    $.each(data, function (i, data) {
+                        mySelect.append($('<option>', {
+                            value: data.id_centro_trabajo,
+                            text: data.Nombre_centro_trabajo
+                        }));
+                    });
+                } else {
+                    $('#ddw_Centros_T').empty();
+                    $('#ddw_Departamentos').empty();
+                }
+            },
+            error: function () {
+                alert("Seleccione la Empresa");
+                $('#ddw_Centros_T').empty();
+                $('#ddw_Departamentos').empty();
+            },
+            catch(e) {
+                alert(e.name + "\n" + e.message)
+            }
+        });
+    }
+</script>
+@{
+    ViewBag.Title = "Edit";
+}
+<br>
+<h2>Modificación de Usuario</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+<div class="form-horizontal">
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.HiddenFor(model => model.id_user)
+    @Html.HiddenFor(model => model.id_cuestionario_trabajador)
+
+    <div class="form-group">
+        @Html.Label("Nombre de Usuario:", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.User_Nombre, new { htmlAttributes = new { @class = "form-control form-line" } })
+            @Html.ValidationMessageFor(model => model.User_Nombre, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.Label("Nueva contraseña:", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.PasswordFor(model => model.User_Password, new { @class = "form-control form-line" })
+            @Html.ValidationMessageFor(model => model.User_Password, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    @*<div class="form-group">
+            @Html.Label("Email", null, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.email, new { htmlAttributes = new { @class = "form-control form-line" } })
+                @Html.ValidationMessageFor(model => model.email, "", new { @class = "text-danger" })
+            </div>
+        </div>*@
+    @if (User.IsInRole("Admin_SyS") || User.IsInRole("Admin"))
+    {
+      
+            <div class="form-group">
+                @Html.Label("Rol Asignado:", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.DropDownList("id_rol", null, htmlAttributes: new { @class = "form-control form-line" })
+                    @Html.ValidationMessageFor(model => model.id_rol, "", new { @class = "text-danger" })
+                </div>
+            </div>
+    
+
+        <div class="form-group">
+            @Html.Label("Empresa: ", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("id_empresa", null, htmlAttributes: new { id = "ddw_Empresas", onchange = "getting_centros_trabajo()", @class = "form-control form-line", required = "Campo Obligatorio" })
+                @Html.ValidationMessageFor(model => model.id_empresa, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.Label("Centro de Trabajo: ", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("id_centro_trabajo", null, htmlAttributes: new { id = "ddw_Centros_T", @class = "form-control form-line", required = "Campo Obligatorio" })
+                @Html.ValidationMessageFor(model => model.id_centro_trabajo, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    }
+    else
+    {
+        <b>Empresa: </b> <span>@Model.ERGOS_Empresas_N01.Razon_Social</span><br>
+        <b>Centro: </b> <span>@Model.ERGOS_Centros_Trabajo_N01.Nombre_centro_trabajo</span> <br>
+        @Html.HiddenFor(model => model.id_rol)
+        @Html.HiddenFor(model => model.id_empresa)
+        @Html.HiddenFor(model => model.id_centro_trabajo)
+    }
+
+
+
+
+
+
+
+    <br>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Guardar" class="btn btn-success" />
+            @Html.ActionLink("Regresar", "Index", null, new { @class = "btn btn-primary" })
+        </div>
+    </div>
+</div>
+}

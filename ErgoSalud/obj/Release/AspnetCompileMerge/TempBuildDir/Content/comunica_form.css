@@ -1,0 +1,71 @@
+
+
+    /* Handle on hover */
+
+
+
+.comunica-box {
+    width: 100%;
+    margin: auto;
+    position: relative;
+    box-shadow: 0 12px 15px 0 rgba(0,0,0,.24),0 17px 50px 0 rgba(0,0,0,.19);
+}
+
+.comunica-snip {
+    padding: 50px 40px;
+    height: 1000px;
+}
+
+
+
+.comunica-space {
+    min-height: 345px;
+    position: relative;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+}
+
+
+.comunica-space .label {
+    text-transform: uppercase;
+    white-space: normal;
+    line-height: 1.5;
+}
+
+
+
+.comunica-space .input {
+   border: none;
+   padding: 15px 20px;
+   border-radius: 25px;
+   margin-bottom:2.5em !important
+}
+
+
+        .comunica-space  .label {
+            color: #aaa;
+            font-size: 12px;
+        }
+
+    .comunica-space .label,
+    .comunica-space .input {
+        width: 100%;
+        color: #fff;
+        display: block;
+    }
+
+
+
+.comunicaSection a {
+    color: white;
+    text-decoration: none
+}
+
+
+
+.hr {
+    height: 2px;
+    margin: 60px 0 50px 0;
+    background: rgba(255,255,255,.2);
+}
+

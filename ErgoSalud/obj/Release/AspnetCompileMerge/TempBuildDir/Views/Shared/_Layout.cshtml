@@ -1,0 +1,363 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    @*  SWEETALERT2 *@
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+    <script src="sweetalert2.all.min.js"></script>
+    <!-- Optional: include a polyfill for ES6 Promises for IE11 and Android browser -->
+    <script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
+    <script src="sweetalert2.min.js"></script>
+    <link rel="stylesheet" href="sweetalert2.min.css">
+
+
+    @*CHARTS   1   canvasjs*@
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+
+    <link href="~/images/favicon.png" rel="shortcut icon" type="image/x-icon" />
+    <link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+
+    @*CHARTS   2   morris*@
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
+
+    @*CHARTS   3 CHART.JS *@
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.js"></script>
+
+    @*CHARTS    AMChart *@
+
+    <!-- Resources -->
+    <script src="https://www.amcharts.com/lib/4/core.js"></script>
+    <script src="https://www.amcharts.com/lib/4/charts.js"></script>
+    <script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
+
+    @*CHARTS    HighChart *@
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+
+
+    @*CHARTS    C3js *@
+    <!-- Load c3.css -->
+    <link href="/path/to/c3.css" rel="stylesheet">
+    <script src="/path/to/d3.v5.min.js" charset="utf-8"></script>
+    <script src="/path/to/c3.min.js"></script>
+
+    @*CHARTS    Google Charts *@
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    @************************************************************************************************************************@
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Check035 | Identifica</title>
+
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+    @Styles.Render("~/Content-Checklist/css")
+    @Scripts.Render("~/bundles-Checklist/js")
+
+    @RenderSection("dataTableStyle", required: false)
+
+    <style>
+        #footer {
+            position: fixed;
+            height: 50px;
+            background-color: red;
+            bottom: 0px;
+            left: 0px;
+            right: 0px;
+            margin-bottom: 0px;
+        }
+        /* navbar bg */
+        .bg-light {
+            background: linear-gradient(90deg, rgba(92, 23, 230, 0.55) 0%, rgba(9, 9, 121, 1) 50%, rgba(255, 87, 87, 055) 100%) !important;
+        }
+
+        a, a:active, a:visited, a:focus, a:hover {
+            display: inline-block;
+            text-decoration: none;
+            color: white;
+        }
+
+        .disabled {
+            pointer-events: none;
+            cursor: not-allowed;
+        }
+
+        body {
+            /*background-image: url(/images/resta.jpg);*/
+        }
+
+        #order {
+            display: none;
+        }
+
+        #Current_orders {
+            display: none;
+        }
+
+        .contenedores_div {
+            background-color: white;
+            border: 2px solid darkorange;
+            outline-style: double;
+            outline-color: black;
+        }
+
+        .titulos {
+            color: darkorange;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+        }
+    </style>
+    <script type="text/javascript">
+        $(function () { // will trigger when the document is ready
+            $('.datepicker').datepicker(); //Initialise any date pickers
+        });
+    </script>
+</head>
+<body oncopy="return false" oncut="return false" style=" margin-bottom: 50px;">
+    <div class="navbar hidden-xs navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            @if (User.IsInRole("Admin") || User.IsInRole("Admin_SyS"))
+            {
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    @Html.ActionLink("Inicio", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                </div>
+                <div class="navbar-collapse collapse">
+
+                    <ul style="list-style-type: none;" class="navbar-nav">
+                        <li>
+                            <a href="https://check035.com/dashboard/">Dashboard</a>
+                        </li>
+                        <li><a href="/Empresas">Empresas</a></li>
+                        <li><a href="/Centros_Trabajo/Index_CT_admin_sys">Centros de Trabajo</a></li>
+                        <li>
+                            <a href="@Url.Action("Index","Medidas_Estatus")">Evidencias</a>
+                        </li>
+                        <li>
+                            <a href="@Url.Action("Resultados","Checklist")">Estatus</a>
+                        </li>
+                    </ul>
+                    @Html.Partial("_LoginPartial")
+                </div>
+            }
+            @if (User.IsInRole("Guest") || User.IsInRole("Final_Guest"))
+            {
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    @Html.ActionLink("Inicio", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                </div>
+                <div class="navbar-collapse collapse">
+
+                    <ul style="list-style-type: none;" class="navbar-nav">
+                        @if (@ViewBag.My_Survey == 5)
+                        {
+                            <li><a href="/Home/Mi_Cuestionario">Mis Evaluaciones</a></li>
+                        }
+                        else
+                        {
+                            <li><a href="/Home/Mi_Cuestionario">Mi Evaluación</a></li>
+                        }
+                    </ul>
+                    @Html.Partial("_LoginPartial")
+                </div>
+            }
+            @if (User.IsInRole("Admin-Guest"))
+            {
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    @Html.ActionLink("Inicio", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                </div>
+                <div class="navbar-collapse collapse">
+
+                    <ul style="list-style-type: none;" class="navbar-nav">
+                        <li>
+                            <a href="https://check035.com/dashboard/">Dashboard</a>
+                        </li>
+                        <li>
+                            <a href="@Url.Action("Encuestas_Admin","Encuestas")">Encuestas</a>
+                        </li>
+                        <li>
+                            <a href="@Url.Action("Index","Medidas_Estatus")">Evidencias</a>
+                        </li>
+
+                        <li>
+                            <a href="@Url.Action("Resultados","Checklist")">Estatus</a>
+                        </li>
+                    </ul>
+                    @Html.Partial("_LoginPartial")
+                </div>
+            }
+            @if (User.IsInRole("Admin_Centro"))
+            {
+                <div class="navbar-header">
+
+                    @Html.ActionLink("Inicio", "Index", "Home", new { area = "" }, new { @class = "navbar-brand", @style = "color:white;font-size:22px" })
+
+
+                </div>
+                <div class="navbar-collapse collapse">
+
+                    <ul style="list-style-type: none;" class="navbar-nav">
+                        <li>
+                            <a href="https://check035.com/dashboard/">Dashboard</a>
+                        </li>
+                        <li>
+                            <a href="@Url.Action("Encuestas_Centro","Encuestas", new { User_Name=@HttpContext.Current.User.Identity.Name })">Encuestas</a>
+                        </li>
+
+                        <li>
+                            <a href="@Url.Action("Index","Medidas_Estatus")">Evidencias</a>
+                        </li>
+
+                        <li>
+                            <a href="@Url.Action("Resultados","Checklist")">Estatus</a>
+                        </li>
+                    </ul>
+                    @Html.Partial("_LoginPartial")
+                </div>
+            }
+        </div>
+    </div>
+
+    <div class="navbar visible-xs navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            @if (User.IsInRole("Admin") || User.IsInRole("Admin_SyS"))
+            {
+                <div class="navbar-header">
+
+                    @Html.ActionLink("Inicio", "Index", "Home", new { area = "" }, new { @class = "navbar-brand", @style = "color:white;font-size:22px" })
+                    <button style=" color:white;border:none;background-color: transparent" class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fas fa-caret-down fa-2x"></i>
+                    </button>
+
+                </div>
+                <div class="navbar-collapse collapse">
+
+                    <ul style="list-style-type: none;" class="navbar-nav">
+                        <li>
+                            <a href="https://check035.com/dashboard/">Dashboard</a>
+                        </li>
+                        <li><a href="/Empresas">Empresas</a></li>
+                        <br>
+                        <li><a href="/Encuestas">Encuestas</a></li>
+                        <br>
+                    </ul>
+                    @Html.Partial("_LoginPartial")
+                </div>
+            }
+
+            @if (User.IsInRole("Guest") || User.IsInRole("Final_Guest"))
+            {
+                <div class="navbar-header">
+
+                    @Html.ActionLink("Inicio", "Index", "Home", new { area = "" }, new { @class = "navbar-brand", @style = "color:white;font-size:22px" })
+                    <button style=" color:white;border:none;background-color: transparent" class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fas fa-caret-down fa-2x"></i>
+                    </button>
+
+                </div>
+                <div class="navbar-collapse collapse">
+
+                    <ul style="list-style-type: none;" class="navbar-nav">
+                        <li><a href="/Home/Mi_Cuestionario">Mis Evaluaciones</a></li>
+                    </ul>
+                    @Html.Partial("_LoginPartial")
+                </div>
+            }
+
+            @if (User.IsInRole("Admin-Guest"))
+            {
+                <div class="navbar-header">
+
+                    @Html.ActionLink("Inicio", "Index", "Home", new { area = "" }, new { @class = "navbar-brand", @style = "color:white;font-size:22px" })
+                    <button style=" color:white;border:none;background-color: transparent" class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fas fa-caret-down fa-2x"></i>
+                    </button>
+
+                </div>
+                <div class="navbar-collapse collapse">
+
+                    <ul style="list-style-type: none;" class="navbar-nav">
+                        <li>
+                            <a href="https://check035.com/dashboard/">Dashboard</a>
+                        </li>
+                        <li><a href="/Encuestas_Admin">Encuestas</a></li>
+
+                    </ul>
+                    @Html.Partial("_LoginPartial")
+                </div>
+            }
+            @if (User.IsInRole("Admin_Centro"))
+            {
+                <div class="navbar-header">
+
+                    @Html.ActionLink("Inicio", "Index", "Home", new { area = "" }, new { @class = "navbar-brand", @style = "color:white;font-size:22px" })
+                    <button style=" color:white;border:none;background-color: transparent" class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fas fa-caret-down fa-2x"></i>
+                    </button>
+
+                </div>
+                <div class="navbar-collapse collapse">
+
+                    <ul style="list-style-type: none;" class="navbar-nav">
+                        <li>
+                            <a href="https://check035.com/dashboard/">Dashboard</a>
+                        </li>
+                        <li>
+                            <a href="@Url.Action("Encuestas_Centro","Encuestas", new { User_Name=@HttpContext.Current.User.Identity.Name })">Encuestas</a>
+                        </li>
+
+                    </ul>
+                    @Html.Partial("_LoginPartial")
+                </div>
+            }
+
+        </div>
+    </div>
+
+    <div class="container body-content w-100">
+        @RenderBody()
+    </div>
+
+
+    <div>
+        <footer align="center">
+            <h5>
+                &copy; @DateTime.Now.Year - Check035 - Identifica
+            </h5>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/Scripts_Hondumex")
+    @RenderSection("scripts", required: false)
+    @RenderSection("stripe", required: false)
+
+    @RenderSection("dataTableScripts", required: false)
+</body>
+</html>

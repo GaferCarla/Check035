@@ -1,0 +1,20 @@
+﻿
+.search-section .input, .modal-body .input {
+    padding: 15px 20px;
+    border-radius: 25px;
+    margin-bottom: 2.5em !important;
+}
+
+.search-section .btn-module2, .search-section .input {
+    display:block !important
+}
+
+
+
+.search-section .btn-module {
+    padding: 6px 12px !important;
+}
+
+
+
+

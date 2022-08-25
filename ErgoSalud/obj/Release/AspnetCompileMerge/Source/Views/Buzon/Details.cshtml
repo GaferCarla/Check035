@@ -1,0 +1,138 @@
+﻿@model ErgoSalud.Models.ERGOS_Buzon_N01
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ERGOS_Buzon_N01</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.tipo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tipo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cat_sugerencia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cat_sugerencia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cat_sugerencia_desc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cat_sugerencia_desc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.denuncia_relacionada)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.denuncia_relacionada)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.denuncia_involucrados)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.denuncia_involucrados)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.denuncia_hechos_desc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.denuncia_hechos_desc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.denuncia_frecuencia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.denuncia_frecuencia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.denuncia_soy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.denuncia_soy)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.denuncia_mas_involucrados)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.denuncia_mas_involucrados)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.alta_admin)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.alta_admin)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.notas)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.notas)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.created_at)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.created_at)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.updated_at)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.updated_at)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.deleted_at)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.deleted_at)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ERGOS_Usuarios_N01.User_Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ERGOS_Usuarios_N01.User_Nombre)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

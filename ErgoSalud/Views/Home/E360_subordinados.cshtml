@@ -1,0 +1,37 @@
+﻿
+<script>
+        function Adding_Subordinado() {
+        var id_CT = $('#ddw_Evaluador option:selected').val(); 
+        var id_CT_Evaluado = $('#ddw_Evaluado option:selected').val(); 
+        $.ajax({
+            type: 'POST',
+            url: '@Url.Action("Insert_subordinado", "Home")',
+            dataType: 'json',
+            data: { id_CT: id_CT,id_CT_Evaluado:id_CT_Evaluado },
+            success: function (data) { 
+                if (data != null) {
+                    $('#ddw_Evaluador').empty();
+                    $('#ddw_Evaluado').empty(); 
+                  window.location.reload();
+                } else {
+                alert("else");
+                }
+            },
+            error: function () {
+                alert("Seleccione la Empresa"); 
+            },
+            catch(e) {
+                alert(e.name + "\n" + e.message)
+            }
+        });
+    }
+
+</script>
+
+<hr>
+<b>Evaluador</b>
+@Html.DropDownList("Evaluador", (SelectList)ViewBag.Evaluador, "Seleccionar Sexo", new { @class = "form-control" ,@id= "ddw_Evaluador" })
+<b>Evaluado</b>
+@Html.DropDownList("Evaluado", (SelectList)ViewBag.Evaluador, "Seleccionar Sexo", new { @class = "form-control", @id = "ddw_Evaluado" })
+
+<input type="button" value="Agregar subordinado" onclick="Adding_Subordinado()"/>

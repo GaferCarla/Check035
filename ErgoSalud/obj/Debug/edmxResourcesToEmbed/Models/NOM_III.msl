@@ -1,0 +1,1798 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CastSoft_EdifikaModelStoreContainer" CdmEntityContainer="CastSoft_EdifikaEntities">
+    <EntitySetMapping Name="AspNetRoles">
+      <EntityTypeMapping TypeName="CastSoft_EdifikaModel.AspNetRoles">
+        <MappingFragment StoreEntitySet="AspNetRoles">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUserClaims">
+      <EntityTypeMapping TypeName="CastSoft_EdifikaModel.AspNetUserClaims">
+        <MappingFragment StoreEntitySet="AspNetUserClaims">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="ClaimType" ColumnName="ClaimType" />
+          <ScalarProperty Name="ClaimValue" ColumnName="ClaimValue" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUserLogins">
+      <EntityTypeMapping TypeName="CastSoft_EdifikaModel.AspNetUserLogins">
+        <MappingFragment StoreEntitySet="AspNetUserLogins">
+          <ScalarProperty Name="LoginProvider" ColumnName="LoginProvider" />
+          <ScalarProperty Name="ProviderKey" ColumnName="ProviderKey" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUserRoles">
+      <EntityTypeMapping TypeName="CastSoft_EdifikaModel.AspNetUserRoles">
+        <MappingFragment StoreEntitySet="AspNetUserRoles">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUsers">
+      <EntityTypeMapping TypeName="CastSoft_EdifikaModel.AspNetUsers">
+        <MappingFragment StoreEntitySet="AspNetUsers">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="EmailConfirmed" ColumnName="EmailConfirmed" />
+          <ScalarProperty Name="PasswordHash" ColumnName="PasswordHash" />
+          <ScalarProperty Name="SecurityStamp" ColumnName="SecurityStamp" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="PhoneNumberConfirmed" ColumnName="PhoneNumberConfirmed" />
+          <ScalarProperty Name="TwoFactorEnabled" ColumnName="TwoFactorEnabled" />
+          <ScalarProperty Name="LockoutEndDateUtc" ColumnName="LockoutEndDateUtc" />
+          <ScalarProperty Name="LockoutEnabled" ColumnName="LockoutEnabled" />
+          <ScalarProperty Name="AccessFailedCount" ColumnName="AccessFailedCount" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DATA_Departamentos_N01">
+      <EntityTypeMapping TypeName="CastSoft_EdifikaModel.DATA_Departamentos_N01">
+        <MappingFragment StoreEntitySet="DATA_Departamentos_N01">
+          <ScalarProperty Name="id_departamento" ColumnName="id_departamento" />
+          <ScalarProperty Name="Departamento" ColumnName="Departamento" />
+          <ScalarProperty Name="Comments" ColumnName="Comments" />
+          <ScalarProperty Name="Extra" ColumnName="Extra" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DATA_Edades_N01">
+      <EntityTypeMapping TypeName="CastSoft_EdifikaModel.DATA_Edades_N01">
+        <MappingFragment StoreEntitySet="DATA_Edades_N01">
+          <ScalarProperty Name="id_edad" ColumnName="id_edad" />
+          <ScalarProperty Name="edad" ColumnName="edad" />
+          <ScalarProperty Name="Comments" ColumnName="Comments" />
+          <ScalarProperty Name="Extra" ColumnName="Extra" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DATA_Estado_Civil_N01">
+      <EntityTypeMapping TypeName="CastSoft_EdifikaModel.DATA_Estado_Civil_N01">
+        <MappingFragment StoreEntitySet="DATA_Estado_Civil_N01">
+          <ScalarProperty Name="id_Estado_Civil" ColumnName="id_Estado_Civil" />
+          <ScalarProperty Name="Estado_Civil" ColumnName="Estado_Civil" />
+          <ScalarProperty Name="Comments" ColumnName="Comments" />
+          <ScalarProperty Name="Extra" ColumnName="Extra" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DATA_Experiencia_puesto_N01">
+      <EntityTypeMapping TypeName="CastSoft_EdifikaModel.DATA_Experiencia_puesto_N01">
+        <MappingFragment StoreEntitySet="DATA_Experiencia_puesto_N01">
+          <ScalarProperty Name="id_Experiencia_puesto" ColumnName="id_Experiencia_puesto" />
+          <ScalarProperty Name="Experiencia_puesto" ColumnName="Experiencia_puesto" />
+          <ScalarProperty Name="Comments" ColumnName="Comments" />
+          <ScalarProperty Name="Extra" ColumnName="Extra" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DATA_Nivel_Estudios_N01">
+      <EntityTypeMapping TypeName="CastSoft_EdifikaModel.DATA_Nivel_Estudios_N01">
+        <MappingFragment StoreEntitySet="DATA_Nivel_Estudios_N01">
+          <ScalarProperty Name="id_Nivel_Estudios" ColumnName="id_Nivel_Estudios" />
+          <ScalarProperty Name="Nivel_Estudios" ColumnName="Nivel_Estudios" />
+          <ScalarProperty Name="Comments" ColumnName="Comments" />
+          <ScalarProperty Name="Extra" ColumnName="Extra" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DATA_Rotacion_Turno_N01">
+      <EntityTypeMapping TypeName="CastSoft_EdifikaModel.DATA_Rotacion_Turno_N01">
+        <MappingFragment StoreEntitySet="DATA_Rotacion_Turno_N01">
+          <ScalarProperty Name="id_Rotacion_Turno" ColumnName="id_Rotacion_Turno" />
+          <ScalarProperty Name="Rotacion_Turno" ColumnName="Rotacion_Turno" />
+          <ScalarProperty Name="Comments" ColumnName="Comments" />
+          <ScalarProperty Name="Extra" ColumnName="Extra" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DATA_Sexo_N01">
+      <EntityTypeMapping TypeName="CastSoft_EdifikaModel.DATA_Sexo_N01">
+        <MappingFragment StoreEntitySet="DATA_Sexo_N01">
+          <ScalarProperty Name="id_sexo" ColumnName="id_sexo" />
+          <ScalarProperty Name="Sexo" ColumnName="Sexo" />
+          <ScalarProperty Name="Comments" ColumnName="Comments" />
+          <ScalarProperty Name="Extra" ColumnName="Extra" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DATA_Tipo_Contratacion_N01">
+      <EntityTypeMapping TypeName="CastSoft_EdifikaModel.DATA_Tipo_Contratacion_N01">
+        <MappingFragment StoreEntitySet="DATA_Tipo_Contratacion_N01">
+          <ScalarProperty Name="id_Tipo_Contratacion" ColumnName="id_Tipo_Contratacion" />
+          <ScalarProperty Name="Tipo_Contratacion" ColumnName="Tipo_Contratacion" />
+          <ScalarProperty Name="Comments" ColumnName="Comments" />
+          <ScalarProperty Name="Extra" ColumnName="Extra" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DATA_Tipo_Jornada_N01">
+      <EntityTypeMapping TypeName="CastSoft_EdifikaModel.DATA_Tipo_Jornada_N01">
+        <MappingFragment StoreEntitySet="DATA_Tipo_Jornada_N01">
+          <ScalarProperty Name="id_Tipo_Jornada" ColumnName="id_Tipo_Jornada" />
+          <ScalarProperty Name="Tipo_Jornada" ColumnName="Tipo_Jornada" />
+          <ScalarProperty Name="Comments" ColumnName="Comments" />
+          <ScalarProperty Name="Extra" ColumnName="Extra" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DATA_Tipo_Personal_N01">
+      <EntityTypeMapping TypeName="CastSoft_EdifikaModel.DATA_Tipo_Personal_N01">
+        <MappingFragment StoreEntitySet="DATA_Tipo_Personal_N01">
+          <ScalarProperty Name="id_Tipo_Personal" ColumnName="id_Tipo_Personal" />
+          <ScalarProperty Name="Tipo_Personal" ColumnName="Tipo_Personal" />
+          <ScalarProperty Name="Comments" ColumnName="Comments" />
+          <ScalarProperty Name="Extra" ColumnName="Extra" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DATA_Tipo_puesto_N01">
+      <EntityTypeMapping TypeName="CastSoft_EdifikaModel.DATA_Tipo_puesto_N01">
+        <MappingFragment StoreEntitySet="DATA_Tipo_puesto_N01">
+          <ScalarProperty Name="id_Tipo_puesto" ColumnName="id_Tipo_puesto" />
+          <ScalarProperty Name="Tipo_puesto" ColumnName="Tipo_puesto" />
+          <ScalarProperty Name="Comments" ColumnName="Comments" />
+          <ScalarProperty Name="Extra" ColumnName="Extra" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ERGOS_Centros_Trabajo_N01">
+      <EntityTypeMapping TypeName="CastSoft_EdifikaModel.ERGOS_Centros_Trabajo_N01">
+        <MappingFragment StoreEntitySet="ERGOS_Centros_Trabajo_N01">
+          <ScalarProperty Name="id_centro_trabajo" ColumnName="id_centro_trabajo" />
+          <ScalarProperty Name="id_empresa" ColumnName="id_empresa" />
+          <ScalarProperty Name="Nombre_centro_trabajo" ColumnName="Nombre_centro_trabajo" />
+          <ScalarProperty Name="No_emplados" ColumnName="No_emplados" />
+          <ScalarProperty Name="Fecha_Auditoria" ColumnName="Fecha_Auditoria" />
+          <ScalarProperty Name="created_at" ColumnName="created_at" />
+          <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+          <ScalarProperty Name="deleted_at" ColumnName="deleted_at" />
+          <ScalarProperty Name="Comentarios" ColumnName="Comentarios" />
+          <ScalarProperty Name="direccion" ColumnName="direccion" />
+          <ScalarProperty Name="Actividad_principal" ColumnName="Actividad_principal" />
+          <ScalarProperty Name="Razon_Social" ColumnName="Razon_Social" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ERGOS_Cuestionarios_N01">
+      <EntityTypeMapping TypeName="CastSoft_EdifikaModel.ERGOS_Cuestionarios_N01">
+        <MappingFragment StoreEntitySet="ERGOS_Cuestionarios_N01">
+          <ScalarProperty Name="id_cuestionario" ColumnName="id_cuestionario" />
+          <ScalarProperty Name="Cuestionario" ColumnName="Cuestionario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ERGOS_Cuestionarios_Resultados_N01">
+      <EntityTypeMapping TypeName="CastSoft_EdifikaModel.ERGOS_Cuestionarios_Resultados_N01">
+        <MappingFragment StoreEntitySet="ERGOS_Cuestionarios_Resultados_N01">
+          <ScalarProperty Name="id_Cuestionario_Resultado" ColumnName="id_Cuestionario_Resultado" />
+          <ScalarProperty Name="id_cuestionario_trabajador" ColumnName="id_cuestionario_trabajador" />
+          <ScalarProperty Name="id_respuesta" ColumnName="id_respuesta" />
+          <ScalarProperty Name="id_pregunta" ColumnName="id_pregunta" />
+          <ScalarProperty Name="id_encuesta" ColumnName="id_encuesta" />
+          <ScalarProperty Name="Calificacion" ColumnName="Calificacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ERGOS_Cuestionarios_Trabajador_N01">
+      <EntityTypeMapping TypeName="CastSoft_EdifikaModel.ERGOS_Cuestionarios_Trabajador_N01">
+        <MappingFragment StoreEntitySet="ERGOS_Cuestionarios_Trabajador_N01">
+          <ScalarProperty Name="id_cuestionario_trabajador" ColumnName="id_cuestionario_trabajador" />
+          <ScalarProperty Name="id_trabajador" ColumnName="id_trabajador" />
+          <ScalarProperty Name="id_encuesta" ColumnName="id_encuesta" />
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+          <ScalarProperty Name="id_empresa" ColumnName="id_empresa" />
+          <ScalarProperty Name="Sexo" ColumnName="Sexo" />
+          <ScalarProperty Name="Edad" ColumnName="Edad" />
+          <ScalarProperty Name="Estado_Civil" ColumnName="Estado_Civil" />
+          <ScalarProperty Name="Nivel_Estudios" ColumnName="Nivel_Estudios" />
+          <ScalarProperty Name="Ocupacion" ColumnName="Ocupacion" />
+          <ScalarProperty Name="Departamento" ColumnName="Departamento" />
+          <ScalarProperty Name="Tipo_puesto" ColumnName="Tipo_puesto" />
+          <ScalarProperty Name="Tipo_Contratacion" ColumnName="Tipo_Contratacion" />
+          <ScalarProperty Name="Tipo_Jornada" ColumnName="Tipo_Jornada" />
+          <ScalarProperty Name="Rotacion_Turno" ColumnName="Rotacion_Turno" />
+          <ScalarProperty Name="Experiencia_puesto_actual" ColumnName="Experiencia_puesto_actual" />
+          <ScalarProperty Name="Experiencia_puesto_laboral" ColumnName="Experiencia_puesto_laboral" />
+          <ScalarProperty Name="created_at" ColumnName="created_at" />
+          <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+          <ScalarProperty Name="deleted_at" ColumnName="deleted_at" />
+          <ScalarProperty Name="Tipo_Personal" ColumnName="Tipo_Personal" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+          <ScalarProperty Name="No_Empleado" ColumnName="No_Empleado" />
+          <ScalarProperty Name="Fecha_Nacimiento" ColumnName="Fecha_Nacimiento" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Mail_Status" ColumnName="Mail_Status" />
+          <ScalarProperty Name="Survey_Status" ColumnName="Survey_Status" />
+          <ScalarProperty Name="Canalizacion" ColumnName="Canalizacion" />
+          <ScalarProperty Name="id_departamento" ColumnName="id_departamento" />
+          <ScalarProperty Name="id_Tipo_Personal" ColumnName="id_Tipo_Personal" />
+          <ScalarProperty Name="id_centro_trabajo" ColumnName="id_centro_trabajo" />
+          <ScalarProperty Name="deleted_by" ColumnName="deleted_by" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ERGOS_Empresas_N01">
+      <EntityTypeMapping TypeName="CastSoft_EdifikaModel.ERGOS_Empresas_N01">
+        <MappingFragment StoreEntitySet="ERGOS_Empresas_N01">
+          <ScalarProperty Name="id_empresa" ColumnName="id_empresa" />
+          <ScalarProperty Name="Razon_Social" ColumnName="Razon_Social" />
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+          <ScalarProperty Name="Contacto_Nombre" ColumnName="Contacto_Nombre" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="id_encuesta" ColumnName="id_encuesta" />
+          <ScalarProperty Name="created_at" ColumnName="created_at" />
+          <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+          <ScalarProperty Name="deleted_at" ColumnName="deleted_at" />
+          <ScalarProperty Name="RFC" ColumnName="RFC" />
+          <ScalarProperty Name="Domicilio" ColumnName="Domicilio" />
+          <ScalarProperty Name="Actividad_Principal" ColumnName="Actividad_Principal" />
+          <ScalarProperty Name="Fecha_Aplicacion" ColumnName="Fecha_Aplicacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ERGOS_Preguntas_N01">
+      <EntityTypeMapping TypeName="CastSoft_EdifikaModel.ERGOS_Preguntas_N01">
+        <MappingFragment StoreEntitySet="ERGOS_Preguntas_N01">
+          <ScalarProperty Name="id_pregunta" ColumnName="id_pregunta" />
+          <ScalarProperty Name="Preguntas" ColumnName="Preguntas" />
+          <ScalarProperty Name="id_cuestionario" ColumnName="id_cuestionario" />
+          <ScalarProperty Name="No_Pregunta" ColumnName="No_Pregunta" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ERGOS_Preguntas_S2_N02">
+      <EntityTypeMapping TypeName="CastSoft_EdifikaModel.ERGOS_Preguntas_S2_N02">
+        <MappingFragment StoreEntitySet="ERGOS_Preguntas_S2_N02">
+          <ScalarProperty Name="id_pregunta" ColumnName="id_pregunta" />
+          <ScalarProperty Name="Preguntas" ColumnName="Preguntas" />
+          <ScalarProperty Name="id_cuestionario" ColumnName="id_cuestionario" />
+          <ScalarProperty Name="No_Pregunta" ColumnName="No_Pregunta" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ERGOS_Respuestas_N01">
+      <EntityTypeMapping TypeName="CastSoft_EdifikaModel.ERGOS_Respuestas_N01">
+        <MappingFragment StoreEntitySet="ERGOS_Respuestas_N01">
+          <ScalarProperty Name="id_respuesta" ColumnName="id_respuesta" />
+          <ScalarProperty Name="Respuesta" ColumnName="Respuesta" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ERGOS_Roles_N01">
+      <EntityTypeMapping TypeName="CastSoft_EdifikaModel.ERGOS_Roles_N01">
+        <MappingFragment StoreEntitySet="ERGOS_Roles_N01">
+          <ScalarProperty Name="id_rol" ColumnName="id_rol" />
+          <ScalarProperty Name="Nombre_Rol" ColumnName="Nombre_Rol" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ERGOS_Usuarios_N01">
+      <EntityTypeMapping TypeName="CastSoft_EdifikaModel.ERGOS_Usuarios_N01">
+        <MappingFragment StoreEntitySet="ERGOS_Usuarios_N01">
+          <ScalarProperty Name="id_user" ColumnName="id_user" />
+          <ScalarProperty Name="User_Nombre" ColumnName="User_Nombre" />
+          <ScalarProperty Name="User_Password" ColumnName="User_Password" />
+          <ScalarProperty Name="id_rol" ColumnName="id_rol" />
+          <ScalarProperty Name="id_empresa" ColumnName="id_empresa" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="created_at" ColumnName="created_at" />
+          <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+          <ScalarProperty Name="downAccess_at" ColumnName="downAccess_at" />
+          <ScalarProperty Name="id_centro_trabajo" ColumnName="id_centro_trabajo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LOG_Cuestionarios_Resultados_N01">
+      <EntityTypeMapping TypeName="CastSoft_EdifikaModel.LOG_Cuestionarios_Resultados_N01">
+        <MappingFragment StoreEntitySet="LOG_Cuestionarios_Resultados_N01">
+          <ScalarProperty Name="id_log" ColumnName="id_log" />
+          <ScalarProperty Name="id_Cuestionario_Resultado" ColumnName="id_Cuestionario_Resultado" />
+          <ScalarProperty Name="id_cuestionario_trabajador" ColumnName="id_cuestionario_trabajador" />
+          <ScalarProperty Name="id_respuesta" ColumnName="id_respuesta" />
+          <ScalarProperty Name="id_pregunta" ColumnName="id_pregunta" />
+          <ScalarProperty Name="id_encuesta" ColumnName="id_encuesta" />
+          <ScalarProperty Name="Calificacion" ColumnName="Calificacion" />
+          <ScalarProperty Name="deleted_at" ColumnName="deleted_at" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LOG_Cuestionarios_Trabajador_N01">
+      <EntityTypeMapping TypeName="CastSoft_EdifikaModel.LOG_Cuestionarios_Trabajador_N01">
+        <MappingFragment StoreEntitySet="LOG_Cuestionarios_Trabajador_N01">
+          <ScalarProperty Name="id_log" ColumnName="id_log" />
+          <ScalarProperty Name="id_cuestionario_trabajador" ColumnName="id_cuestionario_trabajador" />
+          <ScalarProperty Name="id_trabajador" ColumnName="id_trabajador" />
+          <ScalarProperty Name="id_encuesta" ColumnName="id_encuesta" />
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+          <ScalarProperty Name="id_empresa" ColumnName="id_empresa" />
+          <ScalarProperty Name="Sexo" ColumnName="Sexo" />
+          <ScalarProperty Name="Edad" ColumnName="Edad" />
+          <ScalarProperty Name="Estado_Civil" ColumnName="Estado_Civil" />
+          <ScalarProperty Name="Nivel_Esudios" ColumnName="Nivel_Esudios" />
+          <ScalarProperty Name="Ocupacion" ColumnName="Ocupacion" />
+          <ScalarProperty Name="Departamento" ColumnName="Departamento" />
+          <ScalarProperty Name="Tipo_puesto" ColumnName="Tipo_puesto" />
+          <ScalarProperty Name="Tipo_Contratacion" ColumnName="Tipo_Contratacion" />
+          <ScalarProperty Name="Tipo_Jornada" ColumnName="Tipo_Jornada" />
+          <ScalarProperty Name="Rotacion_Turno" ColumnName="Rotacion_Turno" />
+          <ScalarProperty Name="Experiencia_puesto_actual" ColumnName="Experiencia_puesto_actual" />
+          <ScalarProperty Name="Experiencia_puesto_laboral" ColumnName="Experiencia_puesto_laboral" />
+          <ScalarProperty Name="created_at" ColumnName="created_at" />
+          <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+          <ScalarProperty Name="deleted_at" ColumnName="deleted_at" />
+          <ScalarProperty Name="Tipo_Personal" ColumnName="Tipo_Personal" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+          <ScalarProperty Name="No_Empleado" ColumnName="No_Empleado" />
+          <ScalarProperty Name="Fecha_Nacimiento" ColumnName="Fecha_Nacimiento" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Mail_Status" ColumnName="Mail_Status" />
+          <ScalarProperty Name="Survey_Status" ColumnName="Survey_Status" />
+          <ScalarProperty Name="Canalizacion" ColumnName="Canalizacion" />
+          <ScalarProperty Name="deleted_by" ColumnName="deleted_by" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LOG_login_N01">
+      <EntityTypeMapping TypeName="CastSoft_EdifikaModel.LOG_login_N01">
+        <MappingFragment StoreEntitySet="LOG_login_N01">
+          <ScalarProperty Name="id_log" ColumnName="id_log" />
+          <ScalarProperty Name="Name_user" ColumnName="Name_user" />
+          <ScalarProperty Name="Pass_user" ColumnName="Pass_user" />
+          <ScalarProperty Name="Event_datetime" ColumnName="Event_datetime" />
+          <ScalarProperty Name="Login_status" ColumnName="Login_status" />
+          <ScalarProperty Name="Comment" ColumnName="Comment" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LOG_Mails_N01">
+      <EntityTypeMapping TypeName="CastSoft_EdifikaModel.LOG_Mails_N01">
+        <MappingFragment StoreEntitySet="LOG_Mails_N01">
+          <ScalarProperty Name="id_log_mail" ColumnName="id_log_mail" />
+          <ScalarProperty Name="Name_user" ColumnName="Name_user" />
+          <ScalarProperty Name="Send_mail_to" ColumnName="Send_mail_to" />
+          <ScalarProperty Name="Event_datetime" ColumnName="Event_datetime" />
+          <ScalarProperty Name="Mail_status" ColumnName="Mail_status" />
+          <ScalarProperty Name="Comment" ColumnName="Comment" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VW_ERGOS_Results_V01">
+      <EntityTypeMapping TypeName="CastSoft_EdifikaModel.VW_ERGOS_Results_V01">
+        <MappingFragment StoreEntitySet="VW_ERGOS_Results_V01">
+          <ScalarProperty Name="id_pregunta" ColumnName="id_pregunta" />
+          <ScalarProperty Name="Preguntas" ColumnName="Preguntas" />
+          <ScalarProperty Name="id_Cuestionario_Resultado" ColumnName="id_Cuestionario_Resultado" />
+          <ScalarProperty Name="id_encuesta" ColumnName="id_encuesta" />
+          <ScalarProperty Name="id_cuestionario_trabajador" ColumnName="id_cuestionario_trabajador" />
+          <ScalarProperty Name="id_respuesta" ColumnName="id_respuesta" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fn_Final_view_surveys" FunctionImportName="fn_Final_view_surveys">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fn_Final_view_surveys_Result">
+          <ScalarProperty Name="id_pregunta" ColumnName="id_pregunta" />
+          <ScalarProperty Name="No_Pregunta" ColumnName="No_Pregunta" />
+          <ScalarProperty Name="Preguntas" ColumnName="Preguntas" />
+          <ScalarProperty Name="id_Cuestionario_Resultado" ColumnName="id_Cuestionario_Resultado" />
+          <ScalarProperty Name="id_respuesta" ColumnName="id_respuesta" />
+          <ScalarProperty Name="id_cuestionario" ColumnName="id_cuestionario" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fn_Final_view_surveys_S2" FunctionImportName="fn_Final_view_surveys_S2">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fn_Final_view_surveys_S2_Result">
+          <ScalarProperty Name="id_pregunta" ColumnName="id_pregunta" />
+          <ScalarProperty Name="No_Pregunta" ColumnName="No_Pregunta" />
+          <ScalarProperty Name="Preguntas" ColumnName="Preguntas" />
+          <ScalarProperty Name="id_Cuestionario_Resultado" ColumnName="id_Cuestionario_Resultado" />
+          <ScalarProperty Name="id_respuesta" ColumnName="id_respuesta" />
+          <ScalarProperty Name="id_cuestionario" ColumnName="id_cuestionario" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fn_Total_Encuestas_Area" FunctionImportName="fn_Total_Encuestas_Area">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fn_Total_Encuestas_Area_Result">
+          <ScalarProperty Name="Encuestas_Contestadas" ColumnName="Encuestas Contestadas" />
+          <ScalarProperty Name="Departamento" ColumnName="Departamento" />
+          <ScalarProperty Name="id_company" ColumnName="id_company" />
+          <ScalarProperty Name="Total_de_Encuestas" ColumnName="Total de Encuestas" />
+          <ScalarProperty Name="Departamento_Total_E" ColumnName="Departamento_Total_E" />
+          <ScalarProperty Name="id_empresa" ColumnName="id_empresa" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fnDemo_N035_Categorias_1_E2_Resultados_Pilot" FunctionImportName="fnDemo_N035_Categorias_1_E2_Resultados_Pilot">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fnDemo_N035_Categorias_1_E2_Resultados_Pilot_Result">
+          <ScalarProperty Name="Total_Categoria_1" ColumnName="Total_Categoria_1" />
+          <ScalarProperty Name="Sumatoria_Cat_I" ColumnName="Sumatoria_Cat_I" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fnDemo_N035_Categorias_1_E2_Resultados_Pilot_CT" FunctionImportName="fnDemo_N035_Categorias_1_E2_Resultados_Pilot_CT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fnDemo_N035_Categorias_1_E2_Resultados_Pilot_CT_Result">
+          <ScalarProperty Name="Total_Categoria_1" ColumnName="Total_Categoria_1" />
+          <ScalarProperty Name="Sumatoria_Cat_I" ColumnName="Sumatoria_Cat_I" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fnDemo_N035_Categorias_1_Resultados_Pilot" FunctionImportName="fnDemo_N035_Categorias_1_Resultados_Pilot">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fnDemo_N035_Categorias_1_Resultados_Pilot_Result">
+          <ScalarProperty Name="Total_Categoria_1" ColumnName="Total_Categoria_1" />
+          <ScalarProperty Name="Sumatoria_Total" ColumnName="Sumatoria_Total" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fnDemo_N035_Categorias_1_Resultados_Pilot_CT" FunctionImportName="fnDemo_N035_Categorias_1_Resultados_Pilot_CT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fnDemo_N035_Categorias_1_Resultados_Pilot_CT_Result">
+          <ScalarProperty Name="Total_Categoria_1" ColumnName="Total_Categoria_1" />
+          <ScalarProperty Name="Sumatoria_Total" ColumnName="Sumatoria_Total" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fnDemo_N035_Categorias_2_E2_Resultados_Pilot" FunctionImportName="fnDemo_N035_Categorias_2_E2_Resultados_Pilot">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fnDemo_N035_Categorias_2_E2_Resultados_Pilot_Result">
+          <ScalarProperty Name="Total_Categoria_2" ColumnName="Total_Categoria_2" />
+          <ScalarProperty Name="Sumatoria_Cat_II" ColumnName="Sumatoria_Cat_II" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fnDemo_N035_Categorias_2_E2_Resultados_Pilot_CT" FunctionImportName="fnDemo_N035_Categorias_2_E2_Resultados_Pilot_CT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fnDemo_N035_Categorias_2_E2_Resultados_Pilot_CT_Result">
+          <ScalarProperty Name="Total_Categoria_2" ColumnName="Total_Categoria_2" />
+          <ScalarProperty Name="Sumatoria_Cat_II" ColumnName="Sumatoria_Cat_II" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fnDemo_N035_Categorias_2_Resultados_Pilot" FunctionImportName="fnDemo_N035_Categorias_2_Resultados_Pilot">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fnDemo_N035_Categorias_2_Resultados_Pilot_Result">
+          <ScalarProperty Name="Total_Categoria_2" ColumnName="Total_Categoria_2" />
+          <ScalarProperty Name="Sumatoria_Cat_II" ColumnName="Sumatoria_Cat_II" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fnDemo_N035_Categorias_2_Resultados_Pilot_CT" FunctionImportName="fnDemo_N035_Categorias_2_Resultados_Pilot_CT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fnDemo_N035_Categorias_2_Resultados_Pilot_CT_Result">
+          <ScalarProperty Name="Total_Categoria_2" ColumnName="Total_Categoria_2" />
+          <ScalarProperty Name="Sumatoria_Cat_II" ColumnName="Sumatoria_Cat_II" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fnDemo_N035_Categorias_3_E2_Resultados_Pilot" FunctionImportName="fnDemo_N035_Categorias_3_E2_Resultados_Pilot">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fnDemo_N035_Categorias_3_E2_Resultados_Pilot_Result">
+          <ScalarProperty Name="Total_Categoria_3" ColumnName="Total_Categoria_3" />
+          <ScalarProperty Name="Sumatoria_Cat_III" ColumnName="Sumatoria_Cat_III" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fnDemo_N035_Categorias_3_E2_Resultados_Pilot_CT" FunctionImportName="fnDemo_N035_Categorias_3_E2_Resultados_Pilot_CT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fnDemo_N035_Categorias_3_E2_Resultados_Pilot_CT_Result">
+          <ScalarProperty Name="Total_Categoria_3" ColumnName="Total_Categoria_3" />
+          <ScalarProperty Name="Sumatoria_Cat_III" ColumnName="Sumatoria_Cat_III" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fnDemo_N035_Categorias_3_Resultados_Pilot" FunctionImportName="fnDemo_N035_Categorias_3_Resultados_Pilot">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fnDemo_N035_Categorias_3_Resultados_Pilot_Result">
+          <ScalarProperty Name="Total_Categoria_3" ColumnName="Total_Categoria_3" />
+          <ScalarProperty Name="Sumatoria_Cat_III" ColumnName="Sumatoria_Cat_III" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fnDemo_N035_Categorias_3_Resultados_Pilot_CT" FunctionImportName="fnDemo_N035_Categorias_3_Resultados_Pilot_CT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fnDemo_N035_Categorias_3_Resultados_Pilot_CT_Result">
+          <ScalarProperty Name="Total_Categoria_3" ColumnName="Total_Categoria_3" />
+          <ScalarProperty Name="Sumatoria_Cat_III" ColumnName="Sumatoria_Cat_III" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fnDemo_N035_Categorias_4_E2_Resultados_Pilot" FunctionImportName="fnDemo_N035_Categorias_4_E2_Resultados_Pilot">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fnDemo_N035_Categorias_4_E2_Resultados_Pilot_Result">
+          <ScalarProperty Name="Total_Categoria_4" ColumnName="Total_Categoria_4" />
+          <ScalarProperty Name="Sumatoria_Cat_IV" ColumnName="Sumatoria_Cat_IV" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fnDemo_N035_Categorias_4_E2_Resultados_Pilot_CT" FunctionImportName="fnDemo_N035_Categorias_4_E2_Resultados_Pilot_CT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fnDemo_N035_Categorias_4_E2_Resultados_Pilot_CT_Result">
+          <ScalarProperty Name="Total_Categoria_4" ColumnName="Total_Categoria_4" />
+          <ScalarProperty Name="Sumatoria_Cat_IV" ColumnName="Sumatoria_Cat_IV" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fnDemo_N035_Categorias_4_Resultados_Pilot" FunctionImportName="fnDemo_N035_Categorias_4_Resultados_Pilot">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fnDemo_N035_Categorias_4_Resultados_Pilot_Result">
+          <ScalarProperty Name="Total_Categoria_4" ColumnName="Total_Categoria_4" />
+          <ScalarProperty Name="Sumatoria_Cat_IV" ColumnName="Sumatoria_Cat_IV" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fnDemo_N035_Categorias_4_Resultados_Pilot_CT" FunctionImportName="fnDemo_N035_Categorias_4_Resultados_Pilot_CT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fnDemo_N035_Categorias_4_Resultados_Pilot_CT_Result">
+          <ScalarProperty Name="Total_Categoria_4" ColumnName="Total_Categoria_4" />
+          <ScalarProperty Name="Sumatoria_Cat_IV" ColumnName="Sumatoria_Cat_IV" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fnDemo_N035_Categorias_5_Resultados_Pilot" FunctionImportName="fnDemo_N035_Categorias_5_Resultados_Pilot">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fnDemo_N035_Categorias_5_Resultados_Pilot_Result">
+          <ScalarProperty Name="Total_Categoria_5" ColumnName="Total_Categoria_5" />
+          <ScalarProperty Name="Sumatoria_Cat_V" ColumnName="Sumatoria_Cat_V" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fnDemo_N035_Categorias_5_Resultados_Pilot_CT" FunctionImportName="fnDemo_N035_Categorias_5_Resultados_Pilot_CT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fnDemo_N035_Categorias_5_Resultados_Pilot_CT_Result">
+          <ScalarProperty Name="Total_Categoria_5" ColumnName="Total_Categoria_5" />
+          <ScalarProperty Name="Sumatoria_Cat_V" ColumnName="Sumatoria_Cat_V" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fnDemo_N035_Categorias_Pilot" FunctionImportName="fnDemo_N035_Categorias_Pilot">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fnDemo_N035_Categorias_Pilot_Result">
+          <ScalarProperty Name="id_encuesta" ColumnName="id_encuesta" />
+          <ScalarProperty Name="Canalizado" ColumnName="Canalizado" />
+          <ScalarProperty Name="Cat_1" ColumnName="Cat_1" />
+          <ScalarProperty Name="Cat_2" ColumnName="Cat_2" />
+          <ScalarProperty Name="Cat_3" ColumnName="Cat_3" />
+          <ScalarProperty Name="Cat_4" ColumnName="Cat_4" />
+          <ScalarProperty Name="CAT_5" ColumnName="CAT_5" />
+          <ScalarProperty Name="FINAL" ColumnName="FINAL" />
+          <ScalarProperty Name="Dom_1" ColumnName="Dom_1" />
+          <ScalarProperty Name="Dom_2" ColumnName="Dom_2" />
+          <ScalarProperty Name="Dom_3" ColumnName="Dom_3" />
+          <ScalarProperty Name="Dom_4" ColumnName="Dom_4" />
+          <ScalarProperty Name="Dom_5" ColumnName="Dom_5" />
+          <ScalarProperty Name="Dom_6" ColumnName="Dom_6" />
+          <ScalarProperty Name="Dom_7" ColumnName="Dom_7" />
+          <ScalarProperty Name="Dom_8" ColumnName="Dom_8" />
+          <ScalarProperty Name="Dom_9" ColumnName="Dom_9" />
+          <ScalarProperty Name="Dom_10" ColumnName="Dom_10" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fnDemo_N035_Categorias_Resultados_Pilot" FunctionImportName="fnDemo_N035_Categorias_Resultados_Pilot">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fnDemo_N035_Categorias_Resultados_Pilot_Result">
+          <ScalarProperty Name="Sumatoria_Categoria" ColumnName="Sumatoria_Categoria" />
+          <ScalarProperty Name="Promedio_Categoria" ColumnName="Promedio_Categoria" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fnDemo_N035_Dimension_1_E2_Resultados" FunctionImportName="fnDemo_N035_Dimension_1_E2_Resultados">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fnDemo_N035_Dimension_1_E2_Resultados_Result">
+          <ScalarProperty Name="Total_Dimension_1" ColumnName="Total_Dimension_1" />
+          <ScalarProperty Name="Promedio_Dim_I" ColumnName="Promedio_Dim_I" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fnDemo_N035_Dimension_1_E2_Resultados_CT" FunctionImportName="fnDemo_N035_Dimension_1_E2_Resultados_CT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fnDemo_N035_Dimension_1_E2_Resultados_CT_Result">
+          <ScalarProperty Name="Total_Dimension_1" ColumnName="Total_Dimension_1" />
+          <ScalarProperty Name="Promedio_Dim_I" ColumnName="Promedio_Dim_I" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fnDemo_N035_Dimension_1_Resultados" FunctionImportName="fnDemo_N035_Dimension_1_Resultados">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fnDemo_N035_Dimension_1_Resultados_Result">
+          <ScalarProperty Name="Total_Dimension_1" ColumnName="Total_Dimension_1" />
+          <ScalarProperty Name="Promedio_Dim_I" ColumnName="Promedio_Dim_I" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fnDemo_N035_Dimension_1_Resultados_CT" FunctionImportName="fnDemo_N035_Dimension_1_Resultados_CT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fnDemo_N035_Dimension_1_Resultados_CT_Result">
+          <ScalarProperty Name="Total_Dimension_1" ColumnName="Total_Dimension_1" />
+          <ScalarProperty Name="Promedio_Dim_I" ColumnName="Promedio_Dim_I" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fnDemo_N035_Dimension_10_E2_Resultados" FunctionImportName="fnDemo_N035_Dimension_10_E2_Resultados">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fnDemo_N035_Dimension_10_E2_Resultados_Result">
+          <ScalarProperty Name="Total_Dimension_10" ColumnName="Total_Dimension_10" />
+          <ScalarProperty Name="Promedio_Dim_X" ColumnName="Promedio_Dim_X" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fnDemo_N035_Dimension_10_E2_Resultados_CT" FunctionImportName="fnDemo_N035_Dimension_10_E2_Resultados_CT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fnDemo_N035_Dimension_10_E2_Resultados_CT_Result">
+          <ScalarProperty Name="Total_Dimension_10" ColumnName="Total_Dimension_10" />
+          <ScalarProperty Name="Promedio_Dim_X" ColumnName="Promedio_Dim_X" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fnDemo_N035_Dimension_10_Resultados" FunctionImportName="fnDemo_N035_Dimension_10_Resultados">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fnDemo_N035_Dimension_10_Resultados_Result">
+          <ScalarProperty Name="Total_Dimension_10" ColumnName="Total_Dimension_10" />
+          <ScalarProperty Name="Promedio_Dim_X" ColumnName="Promedio_Dim_X" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fnDemo_N035_Dimension_10_Resultados_CT" FunctionImportName="fnDemo_N035_Dimension_10_Resultados_CT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fnDemo_N035_Dimension_10_Resultados_CT_Result">
+          <ScalarProperty Name="Total_Dimension_10" ColumnName="Total_Dimension_10" />
+          <ScalarProperty Name="Promedio_Dim_X" ColumnName="Promedio_Dim_X" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fnDemo_N035_Dimension_11_E2_Resultados" FunctionImportName="fnDemo_N035_Dimension_11_E2_Resultados">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fnDemo_N035_Dimension_11_E2_Resultados_Result">
+          <ScalarProperty Name="Total_Dimension_11" ColumnName="Total_Dimension_11" />
+          <ScalarProperty Name="Promedio_Dim_XI" ColumnName="Promedio_Dim_XI" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fnDemo_N035_Dimension_11_E2_Resultados_CT" FunctionImportName="fnDemo_N035_Dimension_11_E2_Resultados_CT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fnDemo_N035_Dimension_11_E2_Resultados_CT_Result">
+          <ScalarProperty Name="Total_Dimension_11" ColumnName="Total_Dimension_11" />
+          <ScalarProperty Name="Promedio_Dim_XI" ColumnName="Promedio_Dim_XI" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fnDemo_N035_Dimension_11_Resultados" FunctionImportName="fnDemo_N035_Dimension_11_Resultados">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fnDemo_N035_Dimension_11_Resultados_Result">
+          <ScalarProperty Name="Total_Dimension_11" ColumnName="Total_Dimension_11" />
+          <ScalarProperty Name="Promedio_Dim_XI" ColumnName="Promedio_Dim_XI" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fnDemo_N035_Dimension_11_Resultados_CT" FunctionImportName="fnDemo_N035_Dimension_11_Resultados_CT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fnDemo_N035_Dimension_11_Resultados_CT_Result">
+          <ScalarProperty Name="Total_Dimension_11" ColumnName="Total_Dimension_11" />
+          <ScalarProperty Name="Promedio_Dim_XI" ColumnName="Promedio_Dim_XI" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fnDemo_N035_Dimension_12_E2_Resultados" FunctionImportName="fnDemo_N035_Dimension_12_E2_Resultados">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fnDemo_N035_Dimension_12_E2_Resultados_Result">
+          <ScalarProperty Name="Total_Dimension_12" ColumnName="Total_Dimension_12" />
+          <ScalarProperty Name="Promedio_Dim_XII" ColumnName="Promedio_Dim_XII" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fnDemo_N035_Dimension_12_E2_Resultados_CT" FunctionImportName="fnDemo_N035_Dimension_12_E2_Resultados_CT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fnDemo_N035_Dimension_12_E2_Resultados_CT_Result">
+          <ScalarProperty Name="Total_Dimension_12" ColumnName="Total_Dimension_12" />
+          <ScalarProperty Name="Promedio_Dim_XII" ColumnName="Promedio_Dim_XII" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fnDemo_N035_Dimension_12_Resultados" FunctionImportName="fnDemo_N035_Dimension_12_Resultados">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fnDemo_N035_Dimension_12_Resultados_Result">
+          <ScalarProperty Name="Total_Dimension_12" ColumnName="Total_Dimension_12" />
+          <ScalarProperty Name="Promedio_Dim_XII" ColumnName="Promedio_Dim_XII" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fnDemo_N035_Dimension_12_Resultados_CT" FunctionImportName="fnDemo_N035_Dimension_12_Resultados_CT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fnDemo_N035_Dimension_12_Resultados_CT_Result">
+          <ScalarProperty Name="Total_Dimension_12" ColumnName="Total_Dimension_12" />
+          <ScalarProperty Name="Promedio_Dim_XII" ColumnName="Promedio_Dim_XII" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fnDemo_N035_Dimension_13_E2_Resultados" FunctionImportName="fnDemo_N035_Dimension_13_E2_Resultados">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fnDemo_N035_Dimension_13_E2_Resultados_Result">
+          <ScalarProperty Name="Total_Dimension_13" ColumnName="Total_Dimension_13" />
+          <ScalarProperty Name="Promedio_Dim_XIII" ColumnName="Promedio_Dim_XIII" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fnDemo_N035_Dimension_13_E2_Resultados_CT" FunctionImportName="fnDemo_N035_Dimension_13_E2_Resultados_CT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fnDemo_N035_Dimension_13_E2_Resultados_CT_Result">
+          <ScalarProperty Name="Total_Dimension_13" ColumnName="Total_Dimension_13" />
+          <ScalarProperty Name="Promedio_Dim_XIII" ColumnName="Promedio_Dim_XIII" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fnDemo_N035_Dimension_13_Resultados" FunctionImportName="fnDemo_N035_Dimension_13_Resultados">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fnDemo_N035_Dimension_13_Resultados_Result">
+          <ScalarProperty Name="Total_Dimension_13" ColumnName="Total_Dimension_13" />
+          <ScalarProperty Name="Promedio_Dim_XIII" ColumnName="Promedio_Dim_XIII" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fnDemo_N035_Dimension_13_Resultados_CT" FunctionImportName="fnDemo_N035_Dimension_13_Resultados_CT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fnDemo_N035_Dimension_13_Resultados_CT_Result">
+          <ScalarProperty Name="Total_Dimension_13" ColumnName="Total_Dimension_13" />
+          <ScalarProperty Name="Promedio_Dim_XIII" ColumnName="Promedio_Dim_XIII" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fnDemo_N035_Dimension_14_E2_Resultados" FunctionImportName="fnDemo_N035_Dimension_14_E2_Resultados">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fnDemo_N035_Dimension_14_E2_Resultados_Result">
+          <ScalarProperty Name="Total_Dimension_14" ColumnName="Total_Dimension_14" />
+          <ScalarProperty Name="Promedio_Dim_XIV" ColumnName="Promedio_Dim_XIV" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fnDemo_N035_Dimension_14_E2_Resultados_CT" FunctionImportName="fnDemo_N035_Dimension_14_E2_Resultados_CT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fnDemo_N035_Dimension_14_E2_Resultados_CT_Result">
+          <ScalarProperty Name="Total_Dimension_14" ColumnName="Total_Dimension_14" />
+          <ScalarProperty Name="Promedio_Dim_XIV" ColumnName="Promedio_Dim_XIV" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fnDemo_N035_Dimension_14_Resultados" FunctionImportName="fnDemo_N035_Dimension_14_Resultados">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fnDemo_N035_Dimension_14_Resultados_Result">
+          <ScalarProperty Name="Total_Dimension_14" ColumnName="Total_Dimension_14" />
+          <ScalarProperty Name="Promedio_Dim_XIV" ColumnName="Promedio_Dim_XIV" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fnDemo_N035_Dimension_14_Resultados_CT" FunctionImportName="fnDemo_N035_Dimension_14_Resultados_CT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fnDemo_N035_Dimension_14_Resultados_CT_Result">
+          <ScalarProperty Name="Total_Dimension_14" ColumnName="Total_Dimension_14" />
+          <ScalarProperty Name="Promedio_Dim_XIV" ColumnName="Promedio_Dim_XIV" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fnDemo_N035_Dimension_15_E2_Resultados" FunctionImportName="fnDemo_N035_Dimension_15_E2_Resultados">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fnDemo_N035_Dimension_15_E2_Resultados_Result">
+          <ScalarProperty Name="Total_Dimension_15" ColumnName="Total_Dimension_15" />
+          <ScalarProperty Name="Promedio_Dim_XV" ColumnName="Promedio_Dim_XV" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fnDemo_N035_Dimension_15_E2_Resultados_CT" FunctionImportName="fnDemo_N035_Dimension_15_E2_Resultados_CT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fnDemo_N035_Dimension_15_E2_Resultados_CT_Result">
+          <ScalarProperty Name="Total_Dimension_15" ColumnName="Total_Dimension_15" />
+          <ScalarProperty Name="Promedio_Dim_XV" ColumnName="Promedio_Dim_XV" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fnDemo_N035_Dimension_15_Resultados" FunctionImportName="fnDemo_N035_Dimension_15_Resultados">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fnDemo_N035_Dimension_15_Resultados_Result">
+          <ScalarProperty Name="Total_Dimension_15" ColumnName="Total_Dimension_15" />
+          <ScalarProperty Name="Promedio_Dim_XV" ColumnName="Promedio_Dim_XV" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fnDemo_N035_Dimension_15_Resultados_CT" FunctionImportName="fnDemo_N035_Dimension_15_Resultados_CT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fnDemo_N035_Dimension_15_Resultados_CT_Result">
+          <ScalarProperty Name="Total_Dimension_15" ColumnName="Total_Dimension_15" />
+          <ScalarProperty Name="Promedio_Dim_XV" ColumnName="Promedio_Dim_XV" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fnDemo_N035_Dimension_16_E2_Resultados" FunctionImportName="fnDemo_N035_Dimension_16_E2_Resultados">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fnDemo_N035_Dimension_16_E2_Resultados_Result">
+          <ScalarProperty Name="Total_Dimension_16" ColumnName="Total_Dimension_16" />
+          <ScalarProperty Name="Promedio_Dim_XVI" ColumnName="Promedio_Dim_XVI" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fnDemo_N035_Dimension_16_E2_Resultados_CT" FunctionImportName="fnDemo_N035_Dimension_16_E2_Resultados_CT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fnDemo_N035_Dimension_16_E2_Resultados_CT_Result">
+          <ScalarProperty Name="Total_Dimension_16" ColumnName="Total_Dimension_16" />
+          <ScalarProperty Name="Promedio_Dim_XVI" ColumnName="Promedio_Dim_XVI" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fnDemo_N035_Dimension_16_Resultados" FunctionImportName="fnDemo_N035_Dimension_16_Resultados">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fnDemo_N035_Dimension_16_Resultados_Result">
+          <ScalarProperty Name="Total_Dimension_16" ColumnName="Total_Dimension_16" />
+          <ScalarProperty Name="Promedio_Dim_XVI" ColumnName="Promedio_Dim_XVI" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fnDemo_N035_Dimension_16_Resultados_CT" FunctionImportName="fnDemo_N035_Dimension_16_Resultados_CT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fnDemo_N035_Dimension_16_Resultados_CT_Result">
+          <ScalarProperty Name="Total_Dimension_16" ColumnName="Total_Dimension_16" />
+          <ScalarProperty Name="Promedio_Dim_XVI" ColumnName="Promedio_Dim_XVI" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fnDemo_N035_Dimension_17_E2_Resultados" FunctionImportName="fnDemo_N035_Dimension_17_E2_Resultados">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fnDemo_N035_Dimension_17_E2_Resultados_Result">
+          <ScalarProperty Name="Total_Dimension_17" ColumnName="Total_Dimension_17" />
+          <ScalarProperty Name="Promedio_Dim_XVII" ColumnName="Promedio_Dim_XVII" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fnDemo_N035_Dimension_17_E2_Resultados_CT" FunctionImportName="fnDemo_N035_Dimension_17_E2_Resultados_CT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fnDemo_N035_Dimension_17_E2_Resultados_CT_Result">
+          <ScalarProperty Name="Total_Dimension_17" ColumnName="Total_Dimension_17" />
+          <ScalarProperty Name="Promedio_Dim_XVII" ColumnName="Promedio_Dim_XVII" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fnDemo_N035_Dimension_17_Resultados" FunctionImportName="fnDemo_N035_Dimension_17_Resultados">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fnDemo_N035_Dimension_17_Resultados_Result">
+          <ScalarProperty Name="Total_Dimension_17" ColumnName="Total_Dimension_17" />
+          <ScalarProperty Name="Promedio_Dim_XVII" ColumnName="Promedio_Dim_XVII" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fnDemo_N035_Dimension_17_Resultados_CT" FunctionImportName="fnDemo_N035_Dimension_17_Resultados_CT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fnDemo_N035_Dimension_17_Resultados_CT_Result">
+          <ScalarProperty Name="Total_Dimension_17" ColumnName="Total_Dimension_17" />
+          <ScalarProperty Name="Promedio_Dim_XVII" ColumnName="Promedio_Dim_XVII" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fnDemo_N035_Dimension_18_E2_Resultados" FunctionImportName="fnDemo_N035_Dimension_18_E2_Resultados">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fnDemo_N035_Dimension_18_E2_Resultados_Result">
+          <ScalarProperty Name="Total_Dimension_18" ColumnName="Total_Dimension_18" />
+          <ScalarProperty Name="Promedio_Dim_XVIII" ColumnName="Promedio_Dim_XVIII" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fnDemo_N035_Dimension_18_E2_Resultados_CT" FunctionImportName="fnDemo_N035_Dimension_18_E2_Resultados_CT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fnDemo_N035_Dimension_18_E2_Resultados_CT_Result">
+          <ScalarProperty Name="Total_Dimension_18" ColumnName="Total_Dimension_18" />
+          <ScalarProperty Name="Promedio_Dim_XVIII" ColumnName="Promedio_Dim_XVIII" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fnDemo_N035_Dimension_18_Resultados" FunctionImportName="fnDemo_N035_Dimension_18_Resultados">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fnDemo_N035_Dimension_18_Resultados_Result">
+          <ScalarProperty Name="Total_Dimension_18" ColumnName="Total_Dimension_18" />
+          <ScalarProperty Name="Promedio_Dim_XVIII" ColumnName="Promedio_Dim_XVIII" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fnDemo_N035_Dimension_18_Resultados_CT" FunctionImportName="fnDemo_N035_Dimension_18_Resultados_CT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fnDemo_N035_Dimension_18_Resultados_CT_Result">
+          <ScalarProperty Name="Total_Dimension_18" ColumnName="Total_Dimension_18" />
+          <ScalarProperty Name="Promedio_Dim_XVIII" ColumnName="Promedio_Dim_XVIII" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fnDemo_N035_Dimension_19_E2_Resultados" FunctionImportName="fnDemo_N035_Dimension_19_E2_Resultados">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fnDemo_N035_Dimension_19_E2_Resultados_Result">
+          <ScalarProperty Name="Total_Dimension_19" ColumnName="Total_Dimension_19" />
+          <ScalarProperty Name="Promedio_Dim_XIX" ColumnName="Promedio_Dim_XIX" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fnDemo_N035_Dimension_19_E2_Resultados_CT" FunctionImportName="fnDemo_N035_Dimension_19_E2_Resultados_CT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fnDemo_N035_Dimension_19_E2_Resultados_CT_Result">
+          <ScalarProperty Name="Total_Dimension_19" ColumnName="Total_Dimension_19" />
+          <ScalarProperty Name="Promedio_Dim_XIX" ColumnName="Promedio_Dim_XIX" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fnDemo_N035_Dimension_19_Resultados" FunctionImportName="fnDemo_N035_Dimension_19_Resultados">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fnDemo_N035_Dimension_19_Resultados_Result">
+          <ScalarProperty Name="Total_Dimension_19" ColumnName="Total_Dimension_19" />
+          <ScalarProperty Name="Promedio_Dim_XIX" ColumnName="Promedio_Dim_XIX" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fnDemo_N035_Dimension_19_Resultados_CT" FunctionImportName="fnDemo_N035_Dimension_19_Resultados_CT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fnDemo_N035_Dimension_19_Resultados_CT_Result">
+          <ScalarProperty Name="Total_Dimension_19" ColumnName="Total_Dimension_19" />
+          <ScalarProperty Name="Promedio_Dim_XIX" ColumnName="Promedio_Dim_XIX" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fnDemo_N035_Dimension_2_E2_Resultados" FunctionImportName="fnDemo_N035_Dimension_2_E2_Resultados">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fnDemo_N035_Dimension_2_E2_Resultados_Result">
+          <ScalarProperty Name="Total_Dimension_2" ColumnName="Total_Dimension_2" />
+          <ScalarProperty Name="Promedio_Dim_II" ColumnName="Promedio_Dim_II" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fnDemo_N035_Dimension_2_E2_Resultados_CT" FunctionImportName="fnDemo_N035_Dimension_2_E2_Resultados_CT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fnDemo_N035_Dimension_2_E2_Resultados_CT_Result">
+          <ScalarProperty Name="Total_Dimension_2" ColumnName="Total_Dimension_2" />
+          <ScalarProperty Name="Promedio_Dim_II" ColumnName="Promedio_Dim_II" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fnDemo_N035_Dimension_2_Resultados" FunctionImportName="fnDemo_N035_Dimension_2_Resultados">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fnDemo_N035_Dimension_2_Resultados_Result">
+          <ScalarProperty Name="Total_Dimension_2" ColumnName="Total_Dimension_2" />
+          <ScalarProperty Name="Promedio_Dim_II" ColumnName="Promedio_Dim_II" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fnDemo_N035_Dimension_2_Resultados_CT" FunctionImportName="fnDemo_N035_Dimension_2_Resultados_CT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fnDemo_N035_Dimension_2_Resultados_CT_Result">
+          <ScalarProperty Name="Total_Dimension_2" ColumnName="Total_Dimension_2" />
+          <ScalarProperty Name="Promedio_Dim_II" ColumnName="Promedio_Dim_II" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fnDemo_N035_Dimension_20_E2_Resultados" FunctionImportName="fnDemo_N035_Dimension_20_E2_Resultados">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fnDemo_N035_Dimension_20_E2_Resultados_Result">
+          <ScalarProperty Name="Total_Dimension_20" ColumnName="Total_Dimension_20" />
+          <ScalarProperty Name="Promedio_Dim_XX" ColumnName="Promedio_Dim_XX" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fnDemo_N035_Dimension_20_E2_Resultados_CT" FunctionImportName="fnDemo_N035_Dimension_20_E2_Resultados_CT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fnDemo_N035_Dimension_20_E2_Resultados_CT_Result">
+          <ScalarProperty Name="Total_Dimension_20" ColumnName="Total_Dimension_20" />
+          <ScalarProperty Name="Promedio_Dim_XX" ColumnName="Promedio_Dim_XX" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fnDemo_N035_Dimension_20_Resultados" FunctionImportName="fnDemo_N035_Dimension_20_Resultados">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fnDemo_N035_Dimension_20_Resultados_Result">
+          <ScalarProperty Name="Total_Dimension_20" ColumnName="Total_Dimension_20" />
+          <ScalarProperty Name="Promedio_Dim_XX" ColumnName="Promedio_Dim_XX" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fnDemo_N035_Dimension_20_Resultados_CT" FunctionImportName="fnDemo_N035_Dimension_20_Resultados_CT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fnDemo_N035_Dimension_20_Resultados_CT_Result">
+          <ScalarProperty Name="Total_Dimension_20" ColumnName="Total_Dimension_20" />
+          <ScalarProperty Name="Promedio_Dim_XX" ColumnName="Promedio_Dim_XX" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fnDemo_N035_Dimension_21_Resultados" FunctionImportName="fnDemo_N035_Dimension_21_Resultados">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fnDemo_N035_Dimension_21_Resultados_Result">
+          <ScalarProperty Name="Total_Dimension_21" ColumnName="Total_Dimension_21" />
+          <ScalarProperty Name="Promedio_Dim_XXI" ColumnName="Promedio_Dim_XXI" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fnDemo_N035_Dimension_21_Resultados_CT" FunctionImportName="fnDemo_N035_Dimension_21_Resultados_CT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fnDemo_N035_Dimension_21_Resultados_CT_Result">
+          <ScalarProperty Name="Total_Dimension_21" ColumnName="Total_Dimension_21" />
+          <ScalarProperty Name="Promedio_Dim_XXI" ColumnName="Promedio_Dim_XXI" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fnDemo_N035_Dimension_22_Resultados" FunctionImportName="fnDemo_N035_Dimension_22_Resultados">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fnDemo_N035_Dimension_22_Resultados_Result">
+          <ScalarProperty Name="Total_Dimension_22" ColumnName="Total_Dimension_22" />
+          <ScalarProperty Name="Promedio_Dim_XXII" ColumnName="Promedio_Dim_XXII" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fnDemo_N035_Dimension_22_Resultados_CT" FunctionImportName="fnDemo_N035_Dimension_22_Resultados_CT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fnDemo_N035_Dimension_22_Resultados_CT_Result">
+          <ScalarProperty Name="Total_Dimension_22" ColumnName="Total_Dimension_22" />
+          <ScalarProperty Name="Promedio_Dim_XXII" ColumnName="Promedio_Dim_XXII" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fnDemo_N035_Dimension_23_Resultados" FunctionImportName="fnDemo_N035_Dimension_23_Resultados">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fnDemo_N035_Dimension_23_Resultados_Result">
+          <ScalarProperty Name="Total_Dimension_23" ColumnName="Total_Dimension_23" />
+          <ScalarProperty Name="Promedio_Dim_XXIII" ColumnName="Promedio_Dim_XXIII" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fnDemo_N035_Dimension_23_Resultados_CT" FunctionImportName="fnDemo_N035_Dimension_23_Resultados_CT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fnDemo_N035_Dimension_23_Resultados_CT_Result">
+          <ScalarProperty Name="Total_Dimension_23" ColumnName="Total_Dimension_23" />
+          <ScalarProperty Name="Promedio_Dim_XXIII" ColumnName="Promedio_Dim_XXIII" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fnDemo_N035_Dimension_24_Resultados" FunctionImportName="fnDemo_N035_Dimension_24_Resultados">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fnDemo_N035_Dimension_24_Resultados_Result">
+          <ScalarProperty Name="Total_Dimension_24" ColumnName="Total_Dimension_24" />
+          <ScalarProperty Name="Promedio_Dim_XXIV" ColumnName="Promedio_Dim_XXIV" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fnDemo_N035_Dimension_24_Resultados_CT" FunctionImportName="fnDemo_N035_Dimension_24_Resultados_CT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fnDemo_N035_Dimension_24_Resultados_CT_Result">
+          <ScalarProperty Name="Total_Dimension_24" ColumnName="Total_Dimension_24" />
+          <ScalarProperty Name="Promedio_Dim_XXIV" ColumnName="Promedio_Dim_XXIV" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fnDemo_N035_Dimension_25_Resultados" FunctionImportName="fnDemo_N035_Dimension_25_Resultados">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fnDemo_N035_Dimension_25_Resultados_Result">
+          <ScalarProperty Name="Total_Dimension_25" ColumnName="Total_Dimension_25" />
+          <ScalarProperty Name="Promedio_Dim_XXV" ColumnName="Promedio_Dim_XXV" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fnDemo_N035_Dimension_25_Resultados_CT" FunctionImportName="fnDemo_N035_Dimension_25_Resultados_CT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fnDemo_N035_Dimension_25_Resultados_CT_Result">
+          <ScalarProperty Name="Total_Dimension_25" ColumnName="Total_Dimension_25" />
+          <ScalarProperty Name="Promedio_Dim_XXV" ColumnName="Promedio_Dim_XXV" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fnDemo_N035_Dimension_3_E2_Resultados" FunctionImportName="fnDemo_N035_Dimension_3_E2_Resultados">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fnDemo_N035_Dimension_3_E2_Resultados_Result">
+          <ScalarProperty Name="Total_Dimension_3" ColumnName="Total_Dimension_3" />
+          <ScalarProperty Name="Promedio_Dim_III" ColumnName="Promedio_Dim_III" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fnDemo_N035_Dimension_3_E2_Resultados_CT" FunctionImportName="fnDemo_N035_Dimension_3_E2_Resultados_CT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fnDemo_N035_Dimension_3_E2_Resultados_CT_Result">
+          <ScalarProperty Name="Total_Dimension_3" ColumnName="Total_Dimension_3" />
+          <ScalarProperty Name="Promedio_Dim_III" ColumnName="Promedio_Dim_III" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fnDemo_N035_Dimension_3_Resultados" FunctionImportName="fnDemo_N035_Dimension_3_Resultados">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fnDemo_N035_Dimension_3_Resultados_Result">
+          <ScalarProperty Name="Total_Dimension_3" ColumnName="Total_Dimension_3" />
+          <ScalarProperty Name="Promedio_Dim_III" ColumnName="Promedio_Dim_III" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fnDemo_N035_Dimension_3_Resultados_CT" FunctionImportName="fnDemo_N035_Dimension_3_Resultados_CT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fnDemo_N035_Dimension_3_Resultados_CT_Result">
+          <ScalarProperty Name="Total_Dimension_3" ColumnName="Total_Dimension_3" />
+          <ScalarProperty Name="Promedio_Dim_III" ColumnName="Promedio_Dim_III" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fnDemo_N035_Dimension_4_E2_Resultados" FunctionImportName="fnDemo_N035_Dimension_4_E2_Resultados">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fnDemo_N035_Dimension_4_E2_Resultados_Result">
+          <ScalarProperty Name="Total_Dimension_4" ColumnName="Total_Dimension_4" />
+          <ScalarProperty Name="Promedio_Dim_IV" ColumnName="Promedio_Dim_IV" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fnDemo_N035_Dimension_4_E2_Resultados_CT" FunctionImportName="fnDemo_N035_Dimension_4_E2_Resultados_CT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fnDemo_N035_Dimension_4_E2_Resultados_CT_Result">
+          <ScalarProperty Name="Total_Dimension_4" ColumnName="Total_Dimension_4" />
+          <ScalarProperty Name="Promedio_Dim_IV" ColumnName="Promedio_Dim_IV" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fnDemo_N035_Dimension_4_Resultados" FunctionImportName="fnDemo_N035_Dimension_4_Resultados">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fnDemo_N035_Dimension_4_Resultados_Result">
+          <ScalarProperty Name="Total_Dimension_4" ColumnName="Total_Dimension_4" />
+          <ScalarProperty Name="Promedio_Dim_IV" ColumnName="Promedio_Dim_IV" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fnDemo_N035_Dimension_4_Resultados_CT" FunctionImportName="fnDemo_N035_Dimension_4_Resultados_CT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fnDemo_N035_Dimension_4_Resultados_CT_Result">
+          <ScalarProperty Name="Total_Dimension_4" ColumnName="Total_Dimension_4" />
+          <ScalarProperty Name="Promedio_Dim_IV" ColumnName="Promedio_Dim_IV" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fnDemo_N035_Dimension_5_E2_Resultados" FunctionImportName="fnDemo_N035_Dimension_5_E2_Resultados">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fnDemo_N035_Dimension_5_E2_Resultados_Result">
+          <ScalarProperty Name="Total_Dimension_5" ColumnName="Total_Dimension_5" />
+          <ScalarProperty Name="Promedio_Dim_V" ColumnName="Promedio_Dim_V" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fnDemo_N035_Dimension_5_E2_Resultados_CT" FunctionImportName="fnDemo_N035_Dimension_5_E2_Resultados_CT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fnDemo_N035_Dimension_5_E2_Resultados_CT_Result">
+          <ScalarProperty Name="Total_Dimension_5" ColumnName="Total_Dimension_5" />
+          <ScalarProperty Name="Promedio_Dim_V" ColumnName="Promedio_Dim_V" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fnDemo_N035_Dimension_5_Resultados" FunctionImportName="fnDemo_N035_Dimension_5_Resultados">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fnDemo_N035_Dimension_5_Resultados_Result">
+          <ScalarProperty Name="Total_Dimension_5" ColumnName="Total_Dimension_5" />
+          <ScalarProperty Name="Promedio_Dim_V" ColumnName="Promedio_Dim_V" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fnDemo_N035_Dimension_5_Resultados_CT" FunctionImportName="fnDemo_N035_Dimension_5_Resultados_CT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fnDemo_N035_Dimension_5_Resultados_CT_Result">
+          <ScalarProperty Name="Total_Dimension_5" ColumnName="Total_Dimension_5" />
+          <ScalarProperty Name="Promedio_Dim_V" ColumnName="Promedio_Dim_V" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fnDemo_N035_Dimension_6_E2_Resultados" FunctionImportName="fnDemo_N035_Dimension_6_E2_Resultados">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fnDemo_N035_Dimension_6_E2_Resultados_Result">
+          <ScalarProperty Name="Total_Dimension_6" ColumnName="Total_Dimension_6" />
+          <ScalarProperty Name="Promedio_Dim_VI" ColumnName="Promedio_Dim_VI" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fnDemo_N035_Dimension_6_E2_Resultados_CT" FunctionImportName="fnDemo_N035_Dimension_6_E2_Resultados_CT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fnDemo_N035_Dimension_6_E2_Resultados_CT_Result">
+          <ScalarProperty Name="Total_Dimension_6" ColumnName="Total_Dimension_6" />
+          <ScalarProperty Name="Promedio_Dim_VI" ColumnName="Promedio_Dim_VI" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fnDemo_N035_Dimension_6_Resultados" FunctionImportName="fnDemo_N035_Dimension_6_Resultados">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fnDemo_N035_Dimension_6_Resultados_Result">
+          <ScalarProperty Name="Total_Dimension_6" ColumnName="Total_Dimension_6" />
+          <ScalarProperty Name="Promedio_Dim_VI" ColumnName="Promedio_Dim_VI" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fnDemo_N035_Dimension_6_Resultados_CT" FunctionImportName="fnDemo_N035_Dimension_6_Resultados_CT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fnDemo_N035_Dimension_6_Resultados_CT_Result">
+          <ScalarProperty Name="Total_Dimension_6" ColumnName="Total_Dimension_6" />
+          <ScalarProperty Name="Promedio_Dim_VI" ColumnName="Promedio_Dim_VI" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fnDemo_N035_Dimension_7_E2_Resultados" FunctionImportName="fnDemo_N035_Dimension_7_E2_Resultados">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fnDemo_N035_Dimension_7_E2_Resultados_Result">
+          <ScalarProperty Name="Total_Dimension_7" ColumnName="Total_Dimension_7" />
+          <ScalarProperty Name="Promedio_Dim_VII" ColumnName="Promedio_Dim_VII" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fnDemo_N035_Dimension_7_E2_Resultados_CT" FunctionImportName="fnDemo_N035_Dimension_7_E2_Resultados_CT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fnDemo_N035_Dimension_7_E2_Resultados_CT_Result">
+          <ScalarProperty Name="Total_Dimension_7" ColumnName="Total_Dimension_7" />
+          <ScalarProperty Name="Promedio_Dim_VII" ColumnName="Promedio_Dim_VII" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fnDemo_N035_Dimension_7_Resultados" FunctionImportName="fnDemo_N035_Dimension_7_Resultados">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fnDemo_N035_Dimension_7_Resultados_Result">
+          <ScalarProperty Name="Total_Dimension_7" ColumnName="Total_Dimension_7" />
+          <ScalarProperty Name="Promedio_Dim_VII" ColumnName="Promedio_Dim_VII" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fnDemo_N035_Dimension_7_Resultados_CT" FunctionImportName="fnDemo_N035_Dimension_7_Resultados_CT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fnDemo_N035_Dimension_7_Resultados_CT_Result">
+          <ScalarProperty Name="Total_Dimension_7" ColumnName="Total_Dimension_7" />
+          <ScalarProperty Name="Promedio_Dim_VII" ColumnName="Promedio_Dim_VII" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fnDemo_N035_Dimension_8_E2_Resultados" FunctionImportName="fnDemo_N035_Dimension_8_E2_Resultados">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fnDemo_N035_Dimension_8_E2_Resultados_Result">
+          <ScalarProperty Name="Total_Dimension_8" ColumnName="Total_Dimension_8" />
+          <ScalarProperty Name="Promedio_Dim_VIII" ColumnName="Promedio_Dim_VIII" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fnDemo_N035_Dimension_8_E2_Resultados_CT" FunctionImportName="fnDemo_N035_Dimension_8_E2_Resultados_CT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fnDemo_N035_Dimension_8_E2_Resultados_CT_Result">
+          <ScalarProperty Name="Total_Dimension_8" ColumnName="Total_Dimension_8" />
+          <ScalarProperty Name="Promedio_Dim_VIII" ColumnName="Promedio_Dim_VIII" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fnDemo_N035_Dimension_8_Resultados" FunctionImportName="fnDemo_N035_Dimension_8_Resultados">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fnDemo_N035_Dimension_8_Resultados_Result">
+          <ScalarProperty Name="Total_Dimension_8" ColumnName="Total_Dimension_8" />
+          <ScalarProperty Name="Promedio_Dim_VIII" ColumnName="Promedio_Dim_VIII" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fnDemo_N035_Dimension_8_Resultados_CT" FunctionImportName="fnDemo_N035_Dimension_8_Resultados_CT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fnDemo_N035_Dimension_8_Resultados_CT_Result">
+          <ScalarProperty Name="Total_Dimension_8" ColumnName="Total_Dimension_8" />
+          <ScalarProperty Name="Promedio_Dim_VIII" ColumnName="Promedio_Dim_VIII" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fnDemo_N035_Dimension_9_E2_Resultados" FunctionImportName="fnDemo_N035_Dimension_9_E2_Resultados">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fnDemo_N035_Dimension_9_E2_Resultados_Result">
+          <ScalarProperty Name="Total_Dimension_9" ColumnName="Total_Dimension_9" />
+          <ScalarProperty Name="Promedio_Dim_IX" ColumnName="Promedio_Dim_IX" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fnDemo_N035_Dimension_9_E2_Resultados_CT" FunctionImportName="fnDemo_N035_Dimension_9_E2_Resultados_CT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fnDemo_N035_Dimension_9_E2_Resultados_CT_Result">
+          <ScalarProperty Name="Total_Dimension_9" ColumnName="Total_Dimension_9" />
+          <ScalarProperty Name="Promedio_Dim_IX" ColumnName="Promedio_Dim_IX" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fnDemo_N035_Dimension_9_Resultados" FunctionImportName="fnDemo_N035_Dimension_9_Resultados">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fnDemo_N035_Dimension_9_Resultados_Result">
+          <ScalarProperty Name="Total_Dimension_9" ColumnName="Total_Dimension_9" />
+          <ScalarProperty Name="Promedio_Dim_IX" ColumnName="Promedio_Dim_IX" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fnDemo_N035_Dimension_9_Resultados_CT" FunctionImportName="fnDemo_N035_Dimension_9_Resultados_CT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fnDemo_N035_Dimension_9_Resultados_CT_Result">
+          <ScalarProperty Name="Total_Dimension_9" ColumnName="Total_Dimension_9" />
+          <ScalarProperty Name="Promedio_Dim_IX" ColumnName="Promedio_Dim_IX" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fnDemo_N035_Dominios_1_E2_Resultados" FunctionImportName="fnDemo_N035_Dominios_1_E2_Resultados">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fnDemo_N035_Dominios_1_E2_Resultados_Result">
+          <ScalarProperty Name="Total_Dominio_1" ColumnName="Total_Dominio_1" />
+          <ScalarProperty Name="Promedio_Dom_I" ColumnName="Promedio_Dom_I" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fnDemo_N035_Dominios_1_E2_Resultados_CT" FunctionImportName="fnDemo_N035_Dominios_1_E2_Resultados_CT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fnDemo_N035_Dominios_1_E2_Resultados_CT_Result">
+          <ScalarProperty Name="Total_Dominio_1" ColumnName="Total_Dominio_1" />
+          <ScalarProperty Name="Promedio_Dom_I" ColumnName="Promedio_Dom_I" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fnDemo_N035_Dominios_1_Resultados" FunctionImportName="fnDemo_N035_Dominios_1_Resultados">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fnDemo_N035_Dominios_1_Resultados_Result">
+          <ScalarProperty Name="Total_Dominio_1" ColumnName="Total_Dominio_1" />
+          <ScalarProperty Name="Promedio_Dom_I" ColumnName="Promedio_Dom_I" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fnDemo_N035_Dominios_1_Resultados_CT" FunctionImportName="fnDemo_N035_Dominios_1_Resultados_CT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fnDemo_N035_Dominios_1_Resultados_CT_Result">
+          <ScalarProperty Name="Total_Dominio_1" ColumnName="Total_Dominio_1" />
+          <ScalarProperty Name="Promedio_Dom_I" ColumnName="Promedio_Dom_I" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fnDemo_N035_Dominios_10_Resultados" FunctionImportName="fnDemo_N035_Dominios_10_Resultados">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fnDemo_N035_Dominios_10_Resultados_Result">
+          <ScalarProperty Name="Total_Dominio_10" ColumnName="Total_Dominio_10" />
+          <ScalarProperty Name="Promedio_Dom_X" ColumnName="Promedio_Dom_X" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fnDemo_N035_Dominios_10_Resultados_CT" FunctionImportName="fnDemo_N035_Dominios_10_Resultados_CT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fnDemo_N035_Dominios_10_Resultados_CT_Result">
+          <ScalarProperty Name="Total_Dominio_10" ColumnName="Total_Dominio_10" />
+          <ScalarProperty Name="Promedio_Dom_X" ColumnName="Promedio_Dom_X" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fnDemo_N035_Dominios_2_E2_Resultados" FunctionImportName="fnDemo_N035_Dominios_2_E2_Resultados">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fnDemo_N035_Dominios_2_E2_Resultados_Result">
+          <ScalarProperty Name="Total_Dominio_2" ColumnName="Total_Dominio_2" />
+          <ScalarProperty Name="Promedio_Dom_II" ColumnName="Promedio_Dom_II" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fnDemo_N035_Dominios_2_E2_Resultados_CT" FunctionImportName="fnDemo_N035_Dominios_2_E2_Resultados_CT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fnDemo_N035_Dominios_2_E2_Resultados_CT_Result">
+          <ScalarProperty Name="Total_Dominio_2" ColumnName="Total_Dominio_2" />
+          <ScalarProperty Name="Promedio_Dom_II" ColumnName="Promedio_Dom_II" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fnDemo_N035_Dominios_2_Resultados" FunctionImportName="fnDemo_N035_Dominios_2_Resultados">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fnDemo_N035_Dominios_2_Resultados_Result">
+          <ScalarProperty Name="Total_Dominio_2" ColumnName="Total_Dominio_2" />
+          <ScalarProperty Name="Promedio_Dom_II" ColumnName="Promedio_Dom_II" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fnDemo_N035_Dominios_2_Resultados_CT" FunctionImportName="fnDemo_N035_Dominios_2_Resultados_CT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fnDemo_N035_Dominios_2_Resultados_CT_Result">
+          <ScalarProperty Name="Total_Dominio_2" ColumnName="Total_Dominio_2" />
+          <ScalarProperty Name="Promedio_Dom_II" ColumnName="Promedio_Dom_II" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fnDemo_N035_Dominios_3_E2_Resultados" FunctionImportName="fnDemo_N035_Dominios_3_E2_Resultados">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fnDemo_N035_Dominios_3_E2_Resultados_Result">
+          <ScalarProperty Name="Total_Dominio_3" ColumnName="Total_Dominio_3" />
+          <ScalarProperty Name="Promedio_Dom_III" ColumnName="Promedio_Dom_III" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fnDemo_N035_Dominios_3_E2_Resultados_CT" FunctionImportName="fnDemo_N035_Dominios_3_E2_Resultados_CT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fnDemo_N035_Dominios_3_E2_Resultados_CT_Result">
+          <ScalarProperty Name="Total_Dominio_3" ColumnName="Total_Dominio_3" />
+          <ScalarProperty Name="Promedio_Dom_III" ColumnName="Promedio_Dom_III" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fnDemo_N035_Dominios_3_Resultados" FunctionImportName="fnDemo_N035_Dominios_3_Resultados">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fnDemo_N035_Dominios_3_Resultados_Result">
+          <ScalarProperty Name="Total_Dominio_3" ColumnName="Total_Dominio_3" />
+          <ScalarProperty Name="Promedio_Dom_III" ColumnName="Promedio_Dom_III" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fnDemo_N035_Dominios_3_Resultados_CT" FunctionImportName="fnDemo_N035_Dominios_3_Resultados_CT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fnDemo_N035_Dominios_3_Resultados_CT_Result">
+          <ScalarProperty Name="Total_Dominio_3" ColumnName="Total_Dominio_3" />
+          <ScalarProperty Name="Promedio_Dom_III" ColumnName="Promedio_Dom_III" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fnDemo_N035_Dominios_4_E2_Resultados" FunctionImportName="fnDemo_N035_Dominios_4_E2_Resultados">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fnDemo_N035_Dominios_4_E2_Resultados_Result">
+          <ScalarProperty Name="Total_Dominio_4" ColumnName="Total_Dominio_4" />
+          <ScalarProperty Name="Promedio_Dom_IV" ColumnName="Promedio_Dom_IV" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fnDemo_N035_Dominios_4_E2_Resultados_CT" FunctionImportName="fnDemo_N035_Dominios_4_E2_Resultados_CT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fnDemo_N035_Dominios_4_E2_Resultados_CT_Result">
+          <ScalarProperty Name="Total_Dominio_4" ColumnName="Total_Dominio_4" />
+          <ScalarProperty Name="Promedio_Dom_IV" ColumnName="Promedio_Dom_IV" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fnDemo_N035_Dominios_4_Resultados" FunctionImportName="fnDemo_N035_Dominios_4_Resultados">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fnDemo_N035_Dominios_4_Resultados_Result">
+          <ScalarProperty Name="Total_Dominio_4" ColumnName="Total_Dominio_4" />
+          <ScalarProperty Name="Promedio_Dom_IV" ColumnName="Promedio_Dom_IV" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fnDemo_N035_Dominios_4_Resultados_CT" FunctionImportName="fnDemo_N035_Dominios_4_Resultados_CT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fnDemo_N035_Dominios_4_Resultados_CT_Result">
+          <ScalarProperty Name="Total_Dominio_4" ColumnName="Total_Dominio_4" />
+          <ScalarProperty Name="Promedio_Dom_IV" ColumnName="Promedio_Dom_IV" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fnDemo_N035_Dominios_5_E2_Resultados" FunctionImportName="fnDemo_N035_Dominios_5_E2_Resultados">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fnDemo_N035_Dominios_5_E2_Resultados_Result">
+          <ScalarProperty Name="Total_Dominio_5" ColumnName="Total_Dominio_5" />
+          <ScalarProperty Name="Promedio_Dom_V" ColumnName="Promedio_Dom_V" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fnDemo_N035_Dominios_5_E2_Resultados_CT" FunctionImportName="fnDemo_N035_Dominios_5_E2_Resultados_CT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fnDemo_N035_Dominios_5_E2_Resultados_CT_Result">
+          <ScalarProperty Name="Total_Dominio_5" ColumnName="Total_Dominio_5" />
+          <ScalarProperty Name="Promedio_Dom_V" ColumnName="Promedio_Dom_V" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fnDemo_N035_Dominios_5_Resultados" FunctionImportName="fnDemo_N035_Dominios_5_Resultados">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fnDemo_N035_Dominios_5_Resultados_Result">
+          <ScalarProperty Name="Total_Dominio_5" ColumnName="Total_Dominio_5" />
+          <ScalarProperty Name="Promedio_Dom_V" ColumnName="Promedio_Dom_V" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fnDemo_N035_Dominios_5_Resultados_CT" FunctionImportName="fnDemo_N035_Dominios_5_Resultados_CT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fnDemo_N035_Dominios_5_Resultados_CT_Result">
+          <ScalarProperty Name="Total_Dominio_5" ColumnName="Total_Dominio_5" />
+          <ScalarProperty Name="Promedio_Dom_V" ColumnName="Promedio_Dom_V" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fnDemo_N035_Dominios_6_E2_Resultados" FunctionImportName="fnDemo_N035_Dominios_6_E2_Resultados">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fnDemo_N035_Dominios_6_E2_Resultados_Result">
+          <ScalarProperty Name="Total_Dominio_6" ColumnName="Total_Dominio_6" />
+          <ScalarProperty Name="Promedio_Dom_VI" ColumnName="Promedio_Dom_VI" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fnDemo_N035_Dominios_6_E2_Resultados_CT" FunctionImportName="fnDemo_N035_Dominios_6_E2_Resultados_CT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fnDemo_N035_Dominios_6_E2_Resultados_CT_Result">
+          <ScalarProperty Name="Total_Dominio_6" ColumnName="Total_Dominio_6" />
+          <ScalarProperty Name="Promedio_Dom_VI" ColumnName="Promedio_Dom_VI" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fnDemo_N035_Dominios_6_Resultados" FunctionImportName="fnDemo_N035_Dominios_6_Resultados">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fnDemo_N035_Dominios_6_Resultados_Result">
+          <ScalarProperty Name="Total_Dominio_6" ColumnName="Total_Dominio_6" />
+          <ScalarProperty Name="Promedio_Dom_VI" ColumnName="Promedio_Dom_VI" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fnDemo_N035_Dominios_6_Resultados_CT" FunctionImportName="fnDemo_N035_Dominios_6_Resultados_CT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fnDemo_N035_Dominios_6_Resultados_CT_Result">
+          <ScalarProperty Name="Total_Dominio_6" ColumnName="Total_Dominio_6" />
+          <ScalarProperty Name="Promedio_Dom_VI" ColumnName="Promedio_Dom_VI" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fnDemo_N035_Dominios_7_E2_Resultados" FunctionImportName="fnDemo_N035_Dominios_7_E2_Resultados">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fnDemo_N035_Dominios_7_E2_Resultados_Result">
+          <ScalarProperty Name="Total_Dominio_7" ColumnName="Total_Dominio_7" />
+          <ScalarProperty Name="Promedio_Dom_VII" ColumnName="Promedio_Dom_VII" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fnDemo_N035_Dominios_7_E2_Resultados_CT" FunctionImportName="fnDemo_N035_Dominios_7_E2_Resultados_CT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fnDemo_N035_Dominios_7_E2_Resultados_CT_Result">
+          <ScalarProperty Name="Total_Dominio_7" ColumnName="Total_Dominio_7" />
+          <ScalarProperty Name="Promedio_Dom_VII" ColumnName="Promedio_Dom_VII" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fnDemo_N035_Dominios_7_Resultados" FunctionImportName="fnDemo_N035_Dominios_7_Resultados">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fnDemo_N035_Dominios_7_Resultados_Result">
+          <ScalarProperty Name="Total_Dominio_7" ColumnName="Total_Dominio_7" />
+          <ScalarProperty Name="Promedio_Dom_VII" ColumnName="Promedio_Dom_VII" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fnDemo_N035_Dominios_7_Resultados_CT" FunctionImportName="fnDemo_N035_Dominios_7_Resultados_CT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fnDemo_N035_Dominios_7_Resultados_CT_Result">
+          <ScalarProperty Name="Total_Dominio_7" ColumnName="Total_Dominio_7" />
+          <ScalarProperty Name="Promedio_Dom_VII" ColumnName="Promedio_Dom_VII" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fnDemo_N035_Dominios_8_E2_Resultados" FunctionImportName="fnDemo_N035_Dominios_8_E2_Resultados">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fnDemo_N035_Dominios_8_E2_Resultados_Result">
+          <ScalarProperty Name="Total_Dominio_8" ColumnName="Total_Dominio_8" />
+          <ScalarProperty Name="Promedio_Dom_VIII" ColumnName="Promedio_Dom_VIII" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fnDemo_N035_Dominios_8_E2_Resultados_CT" FunctionImportName="fnDemo_N035_Dominios_8_E2_Resultados_CT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fnDemo_N035_Dominios_8_E2_Resultados_CT_Result">
+          <ScalarProperty Name="Total_Dominio_8" ColumnName="Total_Dominio_8" />
+          <ScalarProperty Name="Promedio_Dom_VIII" ColumnName="Promedio_Dom_VIII" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fnDemo_N035_Dominios_8_Resultados" FunctionImportName="fnDemo_N035_Dominios_8_Resultados">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fnDemo_N035_Dominios_8_Resultados_Result">
+          <ScalarProperty Name="Total_Dominio_8" ColumnName="Total_Dominio_8" />
+          <ScalarProperty Name="Promedio_Dom_VIII" ColumnName="Promedio_Dom_VIII" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fnDemo_N035_Dominios_8_Resultados_CT" FunctionImportName="fnDemo_N035_Dominios_8_Resultados_CT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fnDemo_N035_Dominios_8_Resultados_CT_Result">
+          <ScalarProperty Name="Total_Dominio_8" ColumnName="Total_Dominio_8" />
+          <ScalarProperty Name="Promedio_Dom_VIII" ColumnName="Promedio_Dom_VIII" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fnDemo_N035_Dominios_9_Resultados" FunctionImportName="fnDemo_N035_Dominios_9_Resultados">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fnDemo_N035_Dominios_9_Resultados_Result">
+          <ScalarProperty Name="Total_Dominio_9" ColumnName="Total_Dominio_9" />
+          <ScalarProperty Name="Promedio_Dom_IX" ColumnName="Promedio_Dom_IX" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fnDemo_N035_Dominios_9_Resultados_CT" FunctionImportName="fnDemo_N035_Dominios_9_Resultados_CT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fnDemo_N035_Dominios_9_Resultados_CT_Result">
+          <ScalarProperty Name="Total_Dominio_9" ColumnName="Total_Dominio_9" />
+          <ScalarProperty Name="Promedio_Dom_IX" ColumnName="Promedio_Dom_IX" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fnDemo_N035_Grafica_Resultado_Preguntas" FunctionImportName="fnDemo_N035_Grafica_Resultado_Preguntas">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fnDemo_N035_Grafica_Resultado_Preguntas_Result">
+          <ScalarProperty Name="Calificacion_General_Pregunta" ColumnName="Calificacion_General_Pregunta" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fnDemo_N035_Grafica_Resultado_Preguntas_CT" FunctionImportName="fnDemo_N035_Grafica_Resultado_Preguntas_CT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fnDemo_N035_Grafica_Resultado_Preguntas_CT_Result">
+          <ScalarProperty Name="Calificacion_General_Pregunta" ColumnName="Calificacion_General_Pregunta" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="CastSoft_EdifikaModel.Store.fnReporte_General_Sexo" FunctionImportName="fnReporte_General_Sexo">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CastSoft_EdifikaModel.fnReporte_General_Sexo_Result">
+          <ScalarProperty Name="Total_Categoria_1" ColumnName="Total_Categoria_1" />
+          <ScalarProperty Name="Sumatoria_Total" ColumnName="Sumatoria_Total" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Answering_Survey" FunctionName="CastSoft_EdifikaModel.Store.Answering_Survey" />
+    <FunctionImportMapping FunctionImportName="Change_Status" FunctionName="CastSoft_EdifikaModel.Store.Change_Status" />
+    <FunctionImportMapping FunctionImportName="Changing_Password" FunctionName="CastSoft_EdifikaModel.Store.Changing_Password" />
+    <FunctionImportMapping FunctionImportName="Completing_survey" FunctionName="CastSoft_EdifikaModel.Store.Completing_survey" />
+    <FunctionImportMapping FunctionImportName="log_data_login" FunctionName="CastSoft_EdifikaModel.Store.log_data_login" />
+    <FunctionImportMapping FunctionImportName="log_data_mail_status" FunctionName="CastSoft_EdifikaModel.Store.log_data_mail_status" />
+    <FunctionImportMapping FunctionImportName="log_data_send_mails" FunctionName="CastSoft_EdifikaModel.Store.log_data_send_mails" />
+  </EntityContainerMapping>
+</Mapping>

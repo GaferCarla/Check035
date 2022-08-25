@@ -1,0 +1,624 @@
+﻿
+@{
+    ViewBag.Title = "Comunica";
+    @Styles.Render("~/Content/sizing.css");
+    @Styles.Render("~/Content/comunica.css");
+    @Styles.Render("~/Content/banner.css");
+    @Styles.Render("~/Content/breadcrumb.css");
+    @Styles.Render("~/Content/tableElements.css");
+    @Styles.Render("~/Content/button.css");
+    @Styles.Render("~/Content/branding.css");
+
+
+
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet'>
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/boxicons@2.0.0/css/boxicons.min.css'>
+
+    <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+}
+
+@section dataTableStyle {
+
+    <link href="~/lib/datatables.net-bs/dataTables.bootstrap.min.css" rel="stylesheet" />
+    <link href="~/lib/datatables.net-select-bs/select.bootstrap.min.css" rel="stylesheet" />
+    <link rel='stylesheet' href='https://cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css'>
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/boxicons@2.0.0/css/boxicons.min.css'>
+}
+
+<style>
+    table.dataTable.dtr-inline.collapsed > tbody > tr[role="row"] > td:first-child:before, table.dataTable.dtr-inline.collapsed > tbody > tr[role="row"] > th:first-child:before {
+        top: 20px !important
+    }
+
+
+</style>
+
+
+<div class="container-fluid row mt-5 pt-5 px-sm-5 px-1">
+    <div class="template-demo">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb breadcrumb-custom ">
+                <li class="breadcrumb-item"><a href='@Url.Action("Index","Home")' data-abc="true" class="font-weight-bold text-uppercase">Dashboard</a></li>
+
+                <li class="breadcrumb-item active font-weight-bold " aria-current="page"><span>&nbsp&nbspComunica - Panel Control</span></li>
+            </ol>
+        </nav>
+
+    </div>
+</div>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6 col-12 pt-5 d-flex justify-content-center">
+            <a href='@Url.Action("comunica_feed","Home")' class="btn-module btn px-5 py-4 btn-lg rounded font-bold text-uppercase">Ver notificaciones</a>
+
+        </div>
+        <div class="col-sm-6 col-12 pt-5 d-flex justify-content-center">
+            <a href='@Url.Action("comunica_form","Home")' class="btn-module2 btn px-5 py-4 btn-lg rounded font-bold text-uppercase">Crear notificación</a>
+
+        </div>
+    </div>
+    <div class="row py-5">
+        <div class="col-12">
+            <table id="example" class="table table-hover responsive nowrap" style="width:100%">
+                <thead>
+                    <tr>
+                        <th>Asunto</th>
+                        <th>Mensaje</th>
+                        <th>Destinatarios</th>
+                        <th>Fecha</th>
+                        <th>Estatus</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <a href="#">
+                                <div class="d-flex align-items-center">
+                                    <div class="avatar avatar-yellow me-3"><i class="fa fa-bullhorn btn-icon-prepend"></i></div>
+
+                                    <div class="">
+                                        <p class="font-weight-bold mb-0">Entrega de calificaciones</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </td>
+                        <td><a href="#messageModal" data-toggle="modal">Leer más</a></td>
+                        <td>Todos</td>
+                        <td>
+                            <div class="">
+                                <p class="font-weight-bold mb-0">Inicio: 10/06/2020</p>
+                                <p class="text-muted text-warning mb-0">Término: 10/07/2020</p>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="badge badge-secondary badge-default-alt">Inactivo</div>
+                        </td>
+                        <td>
+                            <div class="dropdown">
+                                <button class="btn btn-sm btn-icon" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="bx bx-dots-horizontal-rounded" data-toggle="tooltip" data-placement="top"
+                                       title="Actions"></i>
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+                                    <a class="dropdown-item" href="#"><i class="bx bxs-pencil mr-2"></i> Edit</a>
+                                    <a class="dropdown-item text-danger" href="#deleteModal" data-toggle="modal"><i class="bx bxs-trash mr-2"></i> Eliminar</a>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="#">
+                                <div class="d-flex align-items-center">
+                                    <div class="avatar avatar-gray me-3"><i class='bx bxs-envelope'></i></div>
+
+                                    <div class="">
+                                        <p class="font-weight-bold mb-0">Junta de padres de familia</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </td>
+                        <td><a href="#messageModal" data-toggle="modal">Leer más</a></td>
+
+                        <td>Profesores</td>
+                        <td>
+                            <div class="">
+                                <p class="font-weight-bold mb-0">Inicio:28/06/2020</p>
+                                <p class="text-muted text-warning mb-0">Término: 30/07/2020</p>
+                            </div>
+                        </td>
+
+                        <td>
+                            <div class="badge badge-success badge-success-alt">Activo</div>
+                        </td>
+
+                        <td>
+                            <div class="dropdown">
+                                <button class="btn btn-sm btn-icon" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="bx bx-dots-horizontal-rounded" data-toggle="tooltip" data-placement="top"
+                                       title="Actions"></i>
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+                                    <a class="dropdown-item" href="#"><i class="bx bxs-pencil mr-2"></i> Edit</a>
+                                    <a class="dropdown-item text-danger" href="#deleteModal" data-toggle="modal"><i class="bx bxs-trash mr-2"></i> Eliminar</a>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="#">
+                                <div class="d-flex align-items-center">
+                                    <div class="avatar avatar-red me-3"><i class="fa fa-warning btn-icon-prepend"></i></div>
+
+                                    <div class="">
+                                        <p class="font-weight-bold mb-0">Últimos días de pago</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </td>
+                        <td><a href="#messageModal" data-toggle="modal">Leer más</a></td>
+
+                        <td>Alumnos</td>
+                        <td>
+                            <div class="">
+                                <p class="font-weight-bold mb-0">Inicio: 10/05/2020</p>
+                                <p class="text-muted text-warning mb-0">Término: 01/07/2020</p>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="badge badge-secondary badge-default-alt">Inactivo</div>
+                        </td>
+                        <td>
+                            <div class="dropdown">
+                                <button class="btn btn-sm btn-icon" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="bx bx-dots-horizontal-rounded" data-toggle="tooltip" data-placement="top"
+                                       title="Actions"></i>
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+                                    <a class="dropdown-item" href="#"><i class="bx bxs-pencil mr-2"></i> Edit</a>
+                                    <a class="dropdown-item text-danger" href="#deleteModal" data-toggle="modal"><i class="bx bxs-trash mr-2"></i> Eliminar</a>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="#">
+                                <div class="d-flex align-items-center">
+                                    <div class="avatar avatar-yellow me-3"><i class="fa fa-bullhorn btn-icon-prepend"></i></div>
+
+                                    <div class="">
+                                        <p class="font-weight-bold mb-0">Entrega de calificaciones</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </td>
+                        <td><a href="#messageModal" data-toggle="modal">Leer más</a></td>
+                        <td>Todos</td>
+                        <td>
+                            <div class="">
+                                <p class="font-weight-bold mb-0">Inicio: 10/06/2020</p>
+                                <p class="text-muted text-warning mb-0">Término: 10/07/2020</p>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="badge badge-secondary badge-default-alt">Inactivo</div>
+                        </td>
+                        <td>
+                            <div class="dropdown">
+                                <button class="btn btn-sm btn-icon" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="bx bx-dots-horizontal-rounded" data-toggle="tooltip" data-placement="top"
+                                       title="Actions"></i>
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+                                    <a class="dropdown-item" href="#"><i class="bx bxs-pencil mr-2"></i> Edit</a>
+                                    <a class="dropdown-item text-danger" href="#deleteModal" data-toggle="modal"><i class="bx bxs-trash mr-2"></i> Eliminar</a>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="#">
+                                <div class="d-flex align-items-center">
+                                    <div class="avatar avatar-gray me-3"><i class='bx bxs-envelope'></i></div>
+
+                                    <div class="">
+                                        <p class="font-weight-bold mb-0">Junta de padres de familia</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </td>
+                        <td><a href="#messageModal" data-toggle="modal">Leer más</a></td>
+
+                        <td>Profesores</td>
+                        <td>
+                            <div class="">
+                                <p class="font-weight-bold mb-0">Inicio:28/06/2020</p>
+                                <p class="text-muted text-warning mb-0">Término: 30/07/2020</p>
+                            </div>
+                        </td>
+
+                        <td>
+                            <div class="badge badge-success badge-success-alt">Activo</div>
+                        </td>
+
+                        <td>
+                            <div class="dropdown">
+                                <button class="btn btn-sm btn-icon" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="bx bx-dots-horizontal-rounded" data-toggle="tooltip" data-placement="top"
+                                       title="Actions"></i>
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+                                    <a class="dropdown-item" href="#"><i class="bx bxs-pencil mr-2"></i> Edit</a>
+                                    <a class="dropdown-item text-danger" href="#deleteModal" data-toggle="modal"><i class="bx bxs-trash mr-2"></i> Eliminar</a>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="#">
+                                <div class="d-flex align-items-center">
+                                    <div class="avatar avatar-red me-3"><i class="fa fa-warning btn-icon-prepend"></i></div>
+
+                                    <div class="">
+                                        <p class="font-weight-bold mb-0">Últimos días de pago</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </td>
+                        <td><a href="#messageModal" data-toggle="modal">Leer más</a></td>
+
+                        <td>Alumnos</td>
+                        <td>
+                            <div class="">
+                                <p class="font-weight-bold mb-0">Inicio: 10/05/2020</p>
+                                <p class="text-muted text-warning mb-0">Término: 01/07/2020</p>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="badge badge-secondary badge-default-alt">Inactivo</div>
+                        </td>
+                        <td>
+                            <div class="dropdown">
+                                <button class="btn btn-sm btn-icon" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="bx bx-dots-horizontal-rounded" data-toggle="tooltip" data-placement="top"
+                                       title="Actions"></i>
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+                                    <a class="dropdown-item" href="#"><i class="bx bxs-pencil mr-2"></i> Edit</a>
+                                    <a class="dropdown-item text-danger" href="#deleteModal" data-toggle="modal"><i class="bx bxs-trash mr-2"></i> Eliminar</a>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="#">
+                                <div class="d-flex align-items-center">
+                                    <div class="avatar avatar-yellow me-3"><i class="fa fa-bullhorn btn-icon-prepend"></i></div>
+
+                                    <div class="">
+                                        <p class="font-weight-bold mb-0">Entrega de calificaciones</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </td>
+                        <td><a href="#messageModal" data-toggle="modal">Leer más</a></td>
+                        <td>Todos</td>
+                        <td>
+                            <div class="">
+                                <p class="font-weight-bold mb-0">Inicio: 10/06/2020</p>
+                                <p class="text-muted text-warning mb-0">Término: 10/07/2020</p>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="badge badge-secondary badge-default-alt">Inactivo</div>
+                        </td>
+                        <td>
+                            <div class="dropdown">
+                                <button class="btn btn-sm btn-icon" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="bx bx-dots-horizontal-rounded" data-toggle="tooltip" data-placement="top"
+                                       title="Actions"></i>
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+                                    <a class="dropdown-item" href="#"><i class="bx bxs-pencil mr-2"></i> Edit</a>
+                                    <a class="dropdown-item text-danger" href="#deleteModal" data-toggle="modal"><i class="bx bxs-trash mr-2"></i> Eliminar</a>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="#">
+                                <div class="d-flex align-items-center">
+                                    <div class="avatar avatar-gray me-3"><i class='bx bxs-envelope'></i></div>
+
+                                    <div class="">
+                                        <p class="font-weight-bold mb-0">Junta de padres de familia</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </td>
+                        <td><a href="#messageModal" data-toggle="modal">Leer más</a></td>
+
+                        <td>Profesores</td>
+                        <td>
+                            <div class="">
+                                <p class="font-weight-bold mb-0">Inicio:28/06/2020</p>
+                                <p class="text-muted text-warning mb-0">Término: 30/07/2020</p>
+                            </div>
+                        </td>
+
+                        <td>
+                            <div class="badge badge-success badge-success-alt">Activo</div>
+                        </td>
+
+                        <td>
+                            <div class="dropdown">
+                                <button class="btn btn-sm btn-icon" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="bx bx-dots-horizontal-rounded" data-toggle="tooltip" data-placement="top"
+                                       title="Actions"></i>
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+                                    <a class="dropdown-item" href="#"><i class="bx bxs-pencil mr-2"></i> Edit</a>
+                                    <a class="dropdown-item text-danger" href="#deleteModal" data-toggle="modal"><i class="bx bxs-trash mr-2"></i> Eliminar</a>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="#">
+                                <div class="d-flex align-items-center">
+                                    <div class="avatar avatar-red me-3"><i class="fa fa-warning btn-icon-prepend"></i></div>
+
+                                    <div class="">
+                                        <p class="font-weight-bold mb-0">Últimos días de pago</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </td>
+                        <td><a href="#messageModal" data-toggle="modal">Leer más</a></td>
+
+                        <td>Alumnos</td>
+                        <td>
+                            <div class="">
+                                <p class="font-weight-bold mb-0">Inicio: 10/05/2020</p>
+                                <p class="text-muted text-warning mb-0">Término: 01/07/2020</p>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="badge badge-secondary badge-default-alt">Inactivo</div>
+                        </td>
+                        <td>
+                            <div class="dropdown">
+                                <button class="btn btn-sm btn-icon" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="bx bx-dots-horizontal-rounded" data-toggle="tooltip" data-placement="top"
+                                       title="Actions"></i>
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+                                    <a class="dropdown-item" href="#"><i class="bx bxs-pencil mr-2"></i> Edit</a>
+                                    <a class="dropdown-item text-danger" href="#deleteModal" data-toggle="modal"><i class="bx bxs-trash mr-2"></i> Eliminar</a>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="#">
+                                <div class="d-flex align-items-center">
+                                    <div class="avatar avatar-yellow me-3"><i class="fa fa-bullhorn btn-icon-prepend"></i></div>
+
+                                    <div class="">
+                                        <p class="font-weight-bold mb-0">Entrega de calificaciones</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </td>
+                        <td><a href="#messageModal" data-toggle="modal">Leer más</a></td>
+                        <td>Todos</td>
+                        <td>
+                            <div class="">
+                                <p class="font-weight-bold mb-0">Inicio: 10/06/2020</p>
+                                <p class="text-muted text-warning mb-0">Término: 10/07/2020</p>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="badge badge-secondary badge-default-alt">Inactivo</div>
+                        </td>
+                        <td>
+                            <div class="dropdown">
+                                <button class="btn btn-sm btn-icon" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="bx bx-dots-horizontal-rounded" data-toggle="tooltip" data-placement="top"
+                                       title="Actions"></i>
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+                                    <a class="dropdown-item" href="#"><i class="bx bxs-pencil mr-2"></i> Edit</a>
+                                    <a class="dropdown-item text-danger" href="#deleteModal" data-toggle="modal"><i class="bx bxs-trash mr-2"></i> Eliminar</a>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="#">
+                                <div class="d-flex align-items-center">
+                                    <div class="avatar avatar-gray me-3"><i class='bx bxs-envelope'></i></div>
+
+                                    <div class="">
+                                        <p class="font-weight-bold mb-0">Junta de padres de familia</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </td>
+                        <td><a href="#messageModal" data-toggle="modal">Leer más</a></td>
+
+                        <td>Profesores</td>
+                        <td>
+                            <div class="">
+                                <p class="font-weight-bold mb-0">Inicio:28/06/2020</p>
+                                <p class="text-muted text-warning mb-0">Término: 30/07/2020</p>
+                            </div>
+                        </td>
+
+                        <td>
+                            <div class="badge badge-success badge-success-alt">Activo</div>
+                        </td>
+
+                        <td>
+                            <div class="dropdown">
+                                <button class="btn btn-sm btn-icon" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="bx bx-dots-horizontal-rounded" data-toggle="tooltip" data-placement="top"
+                                       title="Actions"></i>
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+                                    <a class="dropdown-item" href="#"><i class="bx bxs-pencil mr-2"></i> Edit</a>
+                                    <a class="dropdown-item text-danger" href="#deleteModal" data-toggle="modal"><i class="bx bxs-trash mr-2"></i> Eliminar</a>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="#">
+                                <div class="d-flex align-items-center">
+                                    <div class="avatar avatar-red me-3"><i class="fa fa-warning btn-icon-prepend"></i></div>
+
+                                    <div class="">
+                                        <p class="font-weight-bold mb-0">Últimos días de pago</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </td>
+                        <td><a href="#messageModal" data-toggle="modal">Leer más</a></td>
+
+                        <td>Alumnos</td>
+                        <td>
+                            <div class="">
+                                <p class="font-weight-bold mb-0">Inicio: 10/05/2020</p>
+                                <p class="text-muted text-warning mb-0">Término: 01/07/2020</p>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="badge badge-secondary badge-default-alt">Inactivo</div>
+                        </td>
+                        <td>
+                            <div class="dropdown">
+                                <button class="btn btn-sm btn-icon" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="bx bx-dots-horizontal-rounded" data-toggle="tooltip" data-placement="top"
+                                       title="Actions"></i>
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+                                    <a class="dropdown-item" href="#"><i class="bx bxs-pencil mr-2"></i> Edit</a>
+                                    <a class="dropdown-item text-danger" href="#deleteModal" data-toggle="modal"><i class="bx bxs-trash mr-2"></i> Eliminar</a>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+
+<div id="deleteModal" class="modal fade fadeInLeft" data-animation-in="fadeInLeft">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form>
+                <div class="modal-header">
+                    <h4 class="modal-title">Eliminar datos</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <p>¿Estás seguro que quieres eliminar este mensaje?</p>
+                    <p class="text-warning"><small>Esta acción no podrá ser deshecha.</small></p>
+                </div>
+                <div class="modal-footer">
+                    <input type="button" class="btn btn-module" data-dismiss="modal" value="Cancelar">
+                    <input type="submit" class="btn btn-module2" value="Eliminar">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<div id="messageModal" class="modal fade fadeInLeft" data-animation-in="fadeInLeft">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form>
+                <div class="modal-header">
+                    <h4 class="modal-title block-header">
+                        <span class="avatar avatar-red me-3"><i class="fa fa-warning btn-icon-prepend"></i></span>
+                        Mensaje
+                    </h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                </div>
+                <div class="modal-footer">
+                    <input type="button" class="btn btn-module px-3 btn-lg font-bold" data-dismiss="modal" value="Regresar">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+@section dataTableScripts {
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js'></script>
+    <script src="~/lib/datatables.net/jquery.dataTables.min.js"></script>
+    <script src='https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js'></script>
+    <script src="~/lib/datatables.net-bs/dataTables.bootstrap.min.js"></script>
+    <script src="~/lib/datatables.net-select-bs/select.bootstrap.min.js"></script>
+    <script src="https://cdn.datatables.net/plug-ins/1.11.5/i18n/es-ES.json"></script>
+
+}
+
+
+
+<script>
+    $(document).ready(function () {
+        $("#example").DataTable({
+            "language": {
+                "url": "//cdn.datatables.net/plug-ins/1.10.16/i18n/Spanish.json"
+            },
+
+            aaSorting: [],
+            responsive: true,
+
+            columnDefs: [
+                {
+                    responsivePriority: 1,
+                    targets: 0
+                },
+                {
+                    responsivePriority: 2,
+                    targets: -1
+                }
+            ]
+        });
+
+        $(".dataTables_filter input")
+            .attr("placeholder", "Search here...")
+            .css({
+                width: "300px",
+                display: "inline-block"
+            });
+
+        $('[data-toggle="tooltip"]').tooltip();
+    });
+</script>
+

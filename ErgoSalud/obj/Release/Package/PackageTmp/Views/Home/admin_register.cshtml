@@ -1,0 +1,115 @@
+﻿
+@model ErgoSalud.Models.admin_register
+
+@{
+    ViewBag.Title = "Alta Admin";
+
+    List<SelectListItem> Encuesta = new List<SelectListItem>();
+    Encuesta.Add(new SelectListItem
+    {
+        Text = "Encuesta II",
+        Value = "2"
+    }); Encuesta.Add(new SelectListItem
+    {
+        Text = "Encuesta III",
+        Value = "3"
+    });
+}
+ 
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+<div class="container">
+    <br>
+    <h4 style="text-align:center">ALTA DE USUARIO ADMINISTRADOR</h4>
+
+    @Html.ValidationMessageFor(model => model.User_Nombre, "", new { @class = "text-danger" })
+    @Html.ValidationMessageFor(model => model.User_Password, "", new { @class = "text-danger" })
+    @Html.ValidationMessageFor(model => model.Razon_Social, "", new { @class = "text-danger" })
+    @Html.ValidationMessageFor(model => model.id_evaluacion, "", new { @class = "text-danger" })
+    @Html.ValidationMessageFor(model => model.RFC, "", new { @class = "text-danger" })
+    @Html.ValidationMessageFor(model => model.Actividad_Principal, "", new { @class = "text-danger" })
+    @Html.ValidationMessageFor(model => model.Fecha_Aplicacion, "", new { @class = "text-danger" })
+    @Html.ValidationMessageFor(model => model.Telefono, "", new { @class = "text-danger" })
+    @Html.ValidationMessageFor(model => model.Contacto_Nombre, "", new { @class = "text-danger" })
+    @Html.ValidationMessageFor(model => model.Domicilio, "", new { @class = "text-danger" })
+    @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <a class="btn btn-success col-xs-12" href="@Url.Action("Login", "Home")">¡Ya tengo mi cuenta!</a>    <hr />
+    <div class="form-group">
+        <br><br>
+        <div class="row">
+            <div class="col-xs-12 col-sm-4 col-sm-offset-2">
+                <b>  <span style="color:red">*</span> Nombre de usuario ADMIN</b>
+                @Html.EditorFor(model => model.User_Nombre, new { htmlAttributes = new { @class = "form-control form-line", @required = "required" } })
+            </div>
+            <div class="col-xs-12 col-sm-6">
+                <b> <span style="color:red">*</span> Contraseña de usuario ADMIN</b>
+                @Html.EditorFor(model => model.User_Password, new { htmlAttributes = new { @class = "form-control form-line", @type = "Password", @required = "required" } })
+            </div>
+        </div>
+    </div>
+    <HR>
+    <div class="form-group">
+        <div class="row">
+            <div class="col-xs-12 col-sm-3">
+                <b><span style="color:red">*</span> Razón Social</b>
+                @Html.EditorFor(model => model.Razon_Social, new { htmlAttributes = new { @class = "form-control form-line", @required = "required" } })
+            </div>
+            <div class="col-xs-12 col-sm-3">
+                <b>  <span style="color:red">*</span> RFC</b>
+                @Html.EditorFor(model => model.RFC, new { htmlAttributes = new { @class = "form-control form-line", @required = "required" } })
+            </div>
+
+            <div class="col-xs-12 col-sm-3">
+                <b> <span style="color:red">*</span> Fecha de Aplicación</b>
+                @Html.EditorFor(model => model.Fecha_Aplicacion, new { htmlAttributes = new { @class = "form-control form-line", @required = "required" } })
+            </div>
+
+            <div class="col-xs-12 col-sm-3">
+                <b> <span style="color:red">*</span> Evaluación</b>
+                @Html.DropDownList("id_evaluacion", null, "Seleccionar evaluación", htmlAttributes: new { @class = "form-control form-line", @required = "required" })
+            </div>
+
+
+            <div class="col-xs-12 col-sm-3">
+                <b>Teléfono</b>
+                @Html.EditorFor(model => model.Telefono, new { htmlAttributes = new { @class = "form-control form-line" } })
+            </div>
+
+            <div class="col-xs-12 col-sm-3">
+                <b><span style="color:red">*</span> Nombre de Contacto</b>
+                @Html.EditorFor(model => model.Contacto_Nombre, new { htmlAttributes = new { @class = "form-control form-line", @required = "required" } })
+            </div>
+
+            <div class="col-xs-12 col-sm-3">
+                <b>Dirección de la empresa</b>
+                @Html.EditorFor(model => model.Domicilio, new { htmlAttributes = new { @class = "form-control form-line" } })
+            </div>
+
+            <div class="col-xs-12 col-sm-3">
+                <b>Email de Contacto</b>
+                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control form-line" } })
+            </div>
+            <div class="col-xs-12 col-sm-3">
+                <b>Actividad principal</b>
+                @Html.EditorFor(model => model.Actividad_Principal, new { htmlAttributes = new { @class = "form-control form-line" } })
+            </div>
+        </div>
+    </div><br>
+    <b>Nota: Campos obligatorios marcados con <span style="color:red">* </span> </b><br><br>
+    <b><span style="color:red">*</span> Evaluación</b><hr>
+    <p>Los centros de trabajo que tengan <b>más de 50 trabajadores</b>, deberán realizar la identificación y análisis de los factores de riesgo psicosocial y la evaluación del entorno organizacional, éstas se podrán realizar con una muestra representativa conforme a lo señalado en la Guía I - III.</p>
+    <p>Los centros de trabajo que tengan <b>entre 16 y 50 trabajadores</b>, únicamente deberán realizar la identificación y análisis de los factores de riesgo psicosocial, incluyendo a todos los trabajadores (Guía I - II).</p>
+
+    <div class="row">
+        <br>
+        <input type="submit" value="Generar" class="btn btn-success" />
+    </div>
+</div>
+}
+

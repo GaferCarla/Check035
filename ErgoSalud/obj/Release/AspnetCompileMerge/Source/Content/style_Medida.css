@@ -1,0 +1,603 @@
+* {
+    margin: 0;
+    padding: 0
+}
+
+html {
+    height: 100%
+}
+
+p {
+    color: grey
+}
+
+#heading {
+    text-transform: uppercase;
+    color:  #631ae0;
+    font-weight: normal
+}
+
+#msform {
+    text-align: center;
+    position: relative;
+    margin-top: 20px
+}
+
+#msform fieldset {
+    background: white;
+    border: 0 none;
+    border-radius: 0.5rem;
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0;
+    padding-bottom: 20px;
+    position: relative
+}
+
+.form-card {
+    text-align: left
+}
+
+#msform fieldset:not(:first-of-type) {
+    display: none
+}
+
+#msform input,
+#msform select {
+    padding: 8px 15px 8px 15px;
+    border: 1px solid #ccc;
+    border-radius: 0px;
+    margin-bottom: 25px;
+    margin-top: 2px;
+    width: 100%;
+    box-sizing: border-box;
+    font-family: montserrat;
+    color: #2C3E50;
+    background-color: #ECEFF1;
+    font-size: 16px;
+    letter-spacing: 1px
+}
+
+#msform input:focus,
+#msform select:focus {
+    -moz-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    border: 1px solid #aa2691 !important;
+    outline-width: 0
+}
+
+#msform .action-button {
+    width: 100px;
+    background:  #911eb7;
+    font-weight: bold;
+    color: white;
+    border: 0 none;
+    border-radius: 0px;
+    cursor: pointer;
+    padding: 10px 5px;
+    margin: 10px 0px 10px 5px;
+    float: right
+}
+
+#msform .action-button:hover,
+#msform .action-button:focus {
+    background-color: #311B92
+}
+
+#msform .action-button-previous {
+    width: 100px;
+    background: #616161;
+    font-weight: bold;
+    color: white;
+    border: 0 none;
+    border-radius: 0px;
+    cursor: pointer;
+    padding: 10px 5px;
+    margin: 10px 5px 10px 0px;
+    float: right
+}
+
+#msform .action-button-previous:hover,
+#msform .action-button-previous:focus {
+    background-color: #000000
+}
+
+.hide {
+    display: block;
+}
+
+.card {
+    z-index: 0;
+    border: none;
+    position: relative
+}
+
+.fs-title {
+    font-size: 25px;
+    color:  #6d1bdc;
+    margin-bottom: 15px;
+    font-weight: normal;
+    text-align: left
+}
+
+.purple-text {
+    color:  #c5247b;
+    font-weight: normal
+}
+
+.steps {
+    font-size: 25px;
+    color: gray;
+    margin-bottom: 10px;
+    font-weight: normal;
+    text-align: right
+}
+
+.fieldlabels {
+    color: gray;
+    text-align: left
+}
+
+#progressbar {
+    margin-bottom: 30px;
+    overflow: hidden;
+    color: lightgrey;
+    
+}
+
+#progressbar .active {
+    color:  #c5247b; 
+}
+
+#progressbar li {
+    list-style-type: none;
+    font-size: 15px;
+    width: 16%;
+    float: left;
+    position: relative;
+    font-weight: 400;
+    
+}
+
+#progressbar #tab1:before {
+    font-family: FontAwesome;
+    content: "\f0c0"
+}
+
+#progressbar #tab2:before {
+    font-family: FontAwesome;
+    content: "\f140"
+}
+
+#progressbar #tab3:before {
+    font-family: FontAwesome;
+    content: "\f0a1 "
+}
+
+#progressbar #tab4:before {
+    font-family: FontAwesome;
+    content: "\f0b1 "
+}
+#progressbar #tab5:before {
+    font-family: FontAwesome;
+    content: "\f086"
+}
+
+#progressbar #tab6:before {
+    font-family: FontAwesome;
+    content: "\f00c"
+}
+
+#progressbar li:before {
+    width: 50px;
+    height: 50px;
+    line-height: 45px;
+    display: block;
+    font-size: 20px;
+    color: #ffffff;
+    background: lightgray;
+    border-radius: 50%;
+    margin: 0 auto 10px auto;
+    padding: 2px
+
+}
+
+#progressbar li:after {
+    content: '';
+    width: 100%;
+    height: 2px;
+    background: lightgray;
+    position: absolute;
+    left: 0;
+    top: 25px;
+    z-index: -1
+}
+
+#progressbar li.active:before,
+#progressbar li.active:after {
+    background:  #c5247b; 
+}
+
+
+.fit-image {
+    width: 100%;
+    object-fit: cover
+}
+
+.form-card .pt-2 label {
+    font-weight: 500;
+}
+
+
+    .boxchecklist label {
+    display: flex;
+    width: 100% !important;
+    align-items: center;
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+    margin: 10px 0 !important;
+    padding-left: 11px !important;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#value-Q1-1:checked~.value-Q1-1,
+#value-Q1-2:checked~.value-Q1-2,
+#value-Q2-1:checked~.value-Q2-1,
+#value-Q2-2:checked~.value-Q2-2,
+#value-Q3-1:checked~.value-Q3-1,
+#value-Q3-2:checked~.value-Q3-2,
+#value-Q4-1:checked~.value-Q4-1,
+#value-Q4-2:checked~.value-Q4-2,
+#value-Q5-1:checked~.value-Q5-1,
+#value-Q5-2:checked~.value-Q5-2,
+#value-Q6-1:checked~.value-Q6-1,
+#value-Q6-2:checked~.value-Q6-2,
+#value-Q7-1:checked~.value-Q7-1,
+#value-Q7-2:checked~.value-Q7-2,
+#value-Q8-1:checked~.value-Q8-1,
+#value-Q8-2:checked~.value-Q8-2,
+#value-Q9-1:checked~.value-Q9-1,
+#value-Q9-2:checked~.value-Q9-2,
+#value-Q10-1:checked~.value-Q10-1,
+#value-Q10-2:checked~.value-Q10-2,
+#value-Q11-1:checked~.value-Q11-1,
+#value-Q11-2:checked~.value-Q11-2,
+#value-Q12-1:checked~.value-Q12-1,
+#value-Q12-2:checked~.value-Q12-2,
+#value-Q13-1:checked~.value-Q13-1,
+#value-Q13-2:checked~.value-Q13-2,
+#value-Q14-1:checked~.value-Q14-1,
+#value-Q14-2:checked~.value-Q14-2,
+#value-Q15-1:checked~.value-Q15-1,
+#value-Q15-2:checked~.value-Q15-2,
+#value-Q16-1:checked~.value-Q16-1,
+#value-Q16-2:checked~.value-Q16-2,
+#value-Q17-1:checked~.value-Q17-1,
+#value-Q17-2:checked~.value-Q17-2,
+#value-Q18-1:checked~.value-Q18-1,
+#value-Q18-2:checked~.value-Q18-2,
+#value-Q19-1:checked~.value-Q19-1,
+#value-Q19-2:checked~.value-Q19-2,
+#value-Q20-1:checked~.value-Q20-1,
+#value-Q20-2:checked~.value-Q20-2,
+#value-Q21-1:checked~.value-Q21-1,
+#value-Q21-2:checked~.value-Q21-2,
+#value-Q22-1:checked~.value-Q22-1,
+#value-Q22-2:checked~.value-Q22-2,
+#value-Q23-1:checked~.value-Q23-1,
+#value-Q23-2:checked~.value-Q23-2,
+#value-Q24-1:checked~.value-Q24-1,
+#value-Q24-2:checked~.value-Q24-2,
+#value-Q25-1:checked~.value-Q25-1,
+#value-Q25-2:checked~.value-Q25-2,
+#value-Q26-1:checked~.value-Q26-1,
+#value-Q26-2:checked~.value-Q26-2,
+#value-Q27-1:checked~.value-Q27-1,
+#value-Q27-2:checked~.value-Q27-2,
+#value-Q28-1:checked~.value-Q28-1,
+#value-Q28-2:checked~.value-Q28-2,
+#value-Q29-1:checked~.value-Q29-1,
+#value-Q29-2:checked~.value-Q29-2,
+#value-Q30-1:checked~.value-Q30-1,
+#value-Q30-2:checked~.value-Q30-2,
+#value-Q31-1:checked~.value-Q31-1,
+#value-Q31-2:checked~.value-Q31-2,
+#value-Q32-1:checked~.value-Q32-1,
+#value-Q32-2:checked~.value-Q32-2,
+#value-Q33-1:checked~.value-Q33-1,
+#value-Q33-2:checked~.value-Q33-2,
+#value-Q34-1:checked~.value-Q34-1,
+#value-Q34-2:checked~.value-Q34-2,
+#value-Q35-1:checked~.value-Q35-1,
+#value-Q35-2:checked~.value-Q35-2,
+#value-Q36-1:checked~.value-Q36-1,
+#value-Q36-2:checked~.value-Q36-2,
+#value-Q37-1:checked~.value-Q37-1,
+#value-Q37-2:checked~.value-Q37-2 {
+    background:  #c3248a ;
+    border-color:  #c3248a 
+}
+
+.boxchecklist .select-dots {
+    height: 20px !important;
+    width: 20px !important;
+    background: #d9d9d9;
+    border-radius: 50%;
+    position: relative;
+    transition: all 0.3s ease
+}
+
+#value-Q1-1:checked~.value-Q1-1 .select-dots,
+#value-Q1-2:checked~.value-Q1-2 .select-dots,
+#value-Q2-1:checked~.value-Q2-1 .select-dots,
+#value-Q2-2:checked~.value-Q2-2 .select-dots,
+#value-Q3-1:checked~.value-Q3-1 .select-dots,
+#value-Q3-2:checked~.value-Q3-2 .select-dots,
+#value-Q4-1:checked~.value-Q4-1 .select-dots,
+#value-Q4-2:checked~.value-Q4-2 .select-dots,
+#value-Q5-1:checked~.value-Q5-1 .select-dots,
+#value-Q5-2:checked~.value-Q5-2 .select-dots,
+#value-Q6-1:checked~.value-Q6-1 .select-dots,
+#value-Q6-2:checked~.value-Q6-2 .select-dots,
+#value-Q7-1:checked~.value-Q7-1 .select-dots,
+#value-Q7-2:checked~.value-Q7-2 .select-dots,
+#value-Q8-1:checked~.value-Q8-1 .select-dots,
+#value-Q8-2:checked~.value-Q8-2 .select-dots,
+#value-Q9-1:checked~.value-Q9-1 .select-dots,
+#value-Q9-2:checked~.value-Q9-2 .select-dots,
+#value-Q10-1:checked~.value-Q10-1 .select-dots,
+#value-Q10-2:checked~.value-Q10-2 .select-dots,
+#value-Q11-1:checked~.value-Q11-1 .select-dots,
+#value-Q11-2:checked~.value-Q11-2 .select-dots,
+#value-Q12-1:checked~.value-Q12-1 .select-dots,
+#value-Q12-2:checked~.value-Q12-2 .select-dots,
+#value-Q13-1:checked~.value-Q13-1 .select-dots,
+#value-Q13-2:checked~.value-Q13-2 .select-dots,
+#value-Q14-1:checked~.value-Q14-1 .select-dots,
+#value-Q14-2:checked~.value-Q14-2 .select-dots,
+#value-Q15-1:checked~.value-Q15-1 .select-dots,
+#value-Q15-2:checked~.value-Q15-2 .select-dots,
+#value-Q16-1:checked~.value-Q16-1 .select-dots,
+#value-Q16-2:checked~.value-Q16-2 .select-dots,
+#value-Q17-1:checked~.value-Q17-1 .select-dots,
+#value-Q17-2:checked~.value-Q17-2 .select-dots,
+#value-Q18-1:checked~.value-Q18-1 .select-dots,
+#value-Q18-2:checked~.value-Q18-2 .select-dots,
+#value-Q19-1:checked~.value-Q19-1 .select-dots,
+#value-Q19-2:checked~.value-Q19-2 .select-dots,
+#value-Q20-1:checked~.value-Q20-1 .select-dots,
+#value-Q20-2:checked~.value-Q20-2 .select-dots,
+#value-Q21-1:checked~.value-Q21-1 .select-dots,
+#value-Q21-2:checked~.value-Q21-2 .select-dots,
+#value-Q22-1:checked~.value-Q22-1 .select-dots,
+#value-Q22-2:checked~.value-Q22-2 .select-dots,
+#value-Q23-1:checked~.value-Q23-1 .select-dots,
+#value-Q23-2:checked~.value-Q23-2 .select-dots,
+#value-Q24-1:checked~.value-Q24-1 .select-dots,
+#value-Q24-2:checked~.value-Q24-2 .select-dots,
+#value-Q25-1:checked~.value-Q25-1 .select-dots,
+#value-Q25-2:checked~.value-Q25-2 .select-dots,
+#value-Q26-1:checked~.value-Q26-1 .select-dots,
+#value-Q26-2:checked~.value-Q26-2 .select-dots,
+#value-Q27-1:checked~.value-Q27-1 .select-dots,
+#value-Q27-2:checked~.value-Q27-2 .select-dots,
+#value-Q28-1:checked~.value-Q28-1 .select-dots,
+#value-Q28-2:checked~.value-Q28-2 .select-dots,
+#value-Q29-1:checked~.value-Q29-1 .select-dots,
+#value-Q29-2:checked~.value-Q29-2 .select-dots,
+#value-Q30-1:checked~.value-Q30-1 .select-dots,
+#value-Q30-2:checked~.value-Q30-2 .select-dots,
+#value-Q31-1:checked~.value-Q31-1 .select-dots,
+#value-Q31-2:checked~.value-Q31-2 .select-dots,
+#value-Q32-1:checked~.value-Q32-1 .select-dots,
+#value-Q32-2:checked~.value-Q32-2 .select-dots,
+#value-Q33-1:checked~.value-Q33-1 .select-dots,
+#value-Q33-2:checked~.value-Q33-2 .select-dots,
+#value-Q34-1:checked~.value-Q34-1 .select-dots,
+#value-Q34-2:checked~.value-Q34-2 .select-dots,
+#value-Q35-1:checked~.value-Q35-1 .select-dots,
+#value-Q35-2:checked~.value-Q35-2 .select-dots,
+#value-Q36-1:checked~.value-Q36-1 .select-dots,
+#value-Q36-2:checked~.value-Q36-2 .select-dots,
+#value-Q37-1:checked~.value-Q37-1 .select-dots,
+#value-Q37-2:checked~.value-Q37-2 .select-dots {
+    background: #fff
+}
+
+.boxchecklist .select-dots::before {
+    position: absolute;
+    content: "";
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(2);
+    width: 9px !important;
+    height: 9px !important;
+    border-radius: 50%;
+    transition: all 0.3s ease
+}
+
+#value-Q1-1:checked~.value-Q1-1 .select-dots::before,
+#value-Q1-2:checked~.value-Q1-2 .select-dots::before,
+#value-Q2-1:checked~.value-Q2-1 .select-dots::before,
+#value-Q2-2:checked~.value-Q2-2 .select-dots::before,
+#value-Q3-1:checked~.value-Q3-1 .select-dots::before,
+#value-Q3-2:checked~.value-Q3-2 .select-dots::before 
+#value-Q1-1:checked~.value-Q1-1 .select-dots::before,
+#value-Q1-2:checked~.value-Q1-2 .select-dots::before,
+#value-Q2-1:checked~.value-Q2-1 .select-dots::before,
+#value-Q2-2:checked~.value-Q2-2 .select-dots::before,
+#value-Q3-1:checked~.value-Q3-1 .select-dots::before,
+#value-Q3-2:checked~.value-Q3-2 .select-dots::before,
+#value-Q4-1:checked~.value-Q4-1 .select-dots::before,
+#value-Q4-2:checked~.value-Q4-2 .select-dots::before,
+#value-Q5-1:checked~.value-Q5-1 .select-dots::before,
+#value-Q5-2:checked~.value-Q5-2 .select-dots::before,
+#value-Q6-1:checked~.value-Q6-1 .select-dots::before,
+#value-Q6-2:checked~.value-Q6-2 .select-dots::before,
+#value-Q7-1:checked~.value-Q7-1 .select-dots::before,
+#value-Q7-2:checked~.value-Q7-2 .select-dots::before,
+#value-Q8-1:checked~.value-Q8-1 .select-dots::before,
+#value-Q8-2:checked~.value-Q8-2 .select-dots::before,
+#value-Q9-1:checked~.value-Q9-1 .select-dots::before,
+#value-Q9-2:checked~.value-Q9-2 .select-dots::before,
+#value-Q10-1:checked~.value-Q10-1 .select-dots::before,
+#value-Q10-2:checked~.value-Q10-2 .select-dots::before,
+#value-Q11-1:checked~.value-Q11-1 .select-dots::before,
+#value-Q11-2:checked~.value-Q11-2 .select-dots::before,
+#value-Q12-1:checked~.value-Q12-1 .select-dots::before,
+#value-Q12-2:checked~.value-Q12-2 .select-dots::before,
+#value-Q13-1:checked~.value-Q13-1 .select-dots::before,
+#value-Q13-2:checked~.value-Q13-2 .select-dots::before,
+#value-Q14-1:checked~.value-Q14-1 .select-dots::before,
+#value-Q14-2:checked~.value-Q14-2 .select-dots::before,
+#value-Q15-1:checked~.value-Q15-1 .select-dots::before,
+#value-Q15-2:checked~.value-Q15-2 .select-dots::before,
+#value-Q16-1:checked~.value-Q16-1 .select-dots::before,
+#value-Q16-2:checked~.value-Q16-2 .select-dots::before,
+#value-Q17-1:checked~.value-Q17-1 .select-dots::before,
+#value-Q17-2:checked~.value-Q17-2 .select-dots::before,
+#value-Q18-1:checked~.value-Q18-1 .select-dots::before,
+#value-Q18-2:checked~.value-Q18-2 .select-dots::before,
+#value-Q19-1:checked~.value-Q19-1 .select-dots::before,
+#value-Q19-2:checked~.value-Q19-2 .select-dots::before,
+#value-Q20-1:checked~.value-Q20-1 .select-dots::before,
+#value-Q20-2:checked~.value-Q20-2 .select-dots::before,
+#value-Q21-1:checked~.value-Q21-1 .select-dots::before,
+#value-Q21-2:checked~.value-Q21-2 .select-dots::before,
+#value-Q22-1:checked~.value-Q22-1 .select-dots::before,
+#value-Q22-2:checked~.value-Q22-2 .select-dots::before,
+#value-Q23-1:checked~.value-Q23-1 .select-dots::before,
+#value-Q23-2:checked~.value-Q23-2 .select-dots::before,
+#value-Q24-1:checked~.value-Q24-1 .select-dots::before,
+#value-Q24-2:checked~.value-Q24-2 .select-dots::before,
+#value-Q25-1:checked~.value-Q25-1 .select-dots::before,
+#value-Q25-2:checked~.value-Q25-2 .select-dots::before,
+#value-Q26-1:checked~.value-Q26-1 .select-dots::before,
+#value-Q26-2:checked~.value-Q26-2 .select-dots::before,
+#value-Q27-1:checked~.value-Q27-1 .select-dots::before,
+#value-Q27-2:checked~.value-Q27-2 .select-dots::before,
+#value-Q28-1:checked~.value-Q28-1 .select-dots::before,
+#value-Q28-2:checked~.value-Q28-2 .select-dots::before,
+#value-Q29-1:checked~.value-Q29-1 .select-dots::before,
+#value-Q29-2:checked~.value-Q29-2 .select-dots::before,
+#value-Q30-1:checked~.value-Q30-1 .select-dots::before,
+#value-Q30-2:checked~.value-Q30-2 .select-dots::before,
+#value-Q31-1:checked~.value-Q31-1 .select-dots::before,
+#value-Q31-2:checked~.value-Q31-2 .select-dots::before,
+#value-Q32-1:checked~.value-Q32-1 .select-dots::before,
+#value-Q32-2:checked~.value-Q32-2 .select-dots::before,
+#value-Q33-1:checked~.value-Q33-1 .select-dots::before,
+#value-Q33-2:checked~.value-Q33-2 .select-dots::before,
+#value-Q34-1:checked~.value-Q34-1 .select-dots::before,
+#value-Q34-2:checked~.value-Q34-2 .select-dots::before,
+#value-Q35-1:checked~.value-Q35-1 .select-dots::before,
+#value-Q35-2:checked~.value-Q35-2 .select-dots::before,
+#value-Q36-1:checked~.value-Q36-1 .select-dots::before,
+#value-Q36-2:checked~.value-Q36-2 .select-dots::before,
+#value-Q37-1:checked~.value-Q37-1 .select-dots::before,
+#value-Q37-2:checked~.value-Q37-2 .select-dots::before {
+    background:  #c3248a ;
+    transform: translate(-50%, -50%) scale(1)
+}
+
+.boxchecklist .text {
+    color: #333;
+    font-size: 18px;
+    font-weight: 400;
+    padding-left: 10px;
+    transition: color 0.3s ease
+}
+
+#value-Q1-1:checked~.value-Q1-1 .text,
+#value-Q1-2:checked~.value-Q1-2 .text, 
+#value-Q2-1:checked~.value-Q2-1 .text,
+#value-Q2-2:checked~.value-Q2-2 .text,
+#value-Q3-1:checked~.value-Q3-1 .text,
+#value-Q3-2:checked~.value-Q3-2 .text,
+#value-Q1-1:checked~.value-Q1-1 .text,
+#value-Q1-2:checked~.value-Q1-2 .text,
+#value-Q2-1:checked~.value-Q2-1 .text,
+#value-Q2-2:checked~.value-Q2-2 .text,
+#value-Q3-1:checked~.value-Q3-1 .text,
+#value-Q3-2:checked~.value-Q3-2 .text,
+#value-Q4-1:checked~.value-Q4-1 .text,
+#value-Q4-2:checked~.value-Q4-2 .text,
+#value-Q5-1:checked~.value-Q5-1 .text,
+#value-Q5-2:checked~.value-Q5-2 .text,
+#value-Q6-1:checked~.value-Q6-1 .text,
+#value-Q6-2:checked~.value-Q6-2 .text,
+#value-Q7-1:checked~.value-Q7-1 .text,
+#value-Q7-2:checked~.value-Q7-2 .text,
+#value-Q8-1:checked~.value-Q8-1 .text,
+#value-Q8-2:checked~.value-Q8-2 .text,
+#value-Q9-1:checked~.value-Q9-1 .text,
+#value-Q9-2:checked~.value-Q9-2 .text,
+#value-Q10-1:checked~.value-Q10-1 .text,
+#value-Q10-2:checked~.value-Q10-2 .text,
+#value-Q11-1:checked~.value-Q11-1 .text,
+#value-Q11-2:checked~.value-Q11-2 .text,
+#value-Q12-1:checked~.value-Q12-1 .text,
+#value-Q12-2:checked~.value-Q12-2 .text,
+#value-Q13-1:checked~.value-Q13-1 .text,
+#value-Q13-2:checked~.value-Q13-2 .text,
+#value-Q14-1:checked~.value-Q14-1 .text,
+#value-Q14-2:checked~.value-Q14-2 .text,
+#value-Q15-1:checked~.value-Q15-1 .text,
+#value-Q15-2:checked~.value-Q15-2 .text,
+#value-Q16-1:checked~.value-Q16-1 .text,
+#value-Q16-2:checked~.value-Q16-2 .text,
+#value-Q17-1:checked~.value-Q17-1 .text,
+#value-Q17-2:checked~.value-Q17-2 .text,
+#value-Q18-1:checked~.value-Q18-1 .text,
+#value-Q18-2:checked~.value-Q18-2 .text,
+#value-Q19-1:checked~.value-Q19-1 .text,
+#value-Q19-2:checked~.value-Q19-2 .text,
+#value-Q20-1:checked~.value-Q20-1 .text,
+#value-Q20-2:checked~.value-Q20-2 .text,
+#value-Q21-1:checked~.value-Q21-1 .text,
+#value-Q21-2:checked~.value-Q21-2 .text,
+#value-Q22-1:checked~.value-Q22-1 .text,
+#value-Q22-2:checked~.value-Q22-2 .text,
+#value-Q23-1:checked~.value-Q23-1 .text,
+#value-Q23-2:checked~.value-Q23-2 .text,
+#value-Q24-1:checked~.value-Q24-1 .text,
+#value-Q24-2:checked~.value-Q24-2 .text,
+#value-Q25-1:checked~.value-Q25-1 .text,
+#value-Q25-2:checked~.value-Q25-2 .text,
+#value-Q26-1:checked~.value-Q26-1 .text,
+#value-Q26-2:checked~.value-Q26-2 .text,
+#value-Q27-1:checked~.value-Q27-1 .text,
+#value-Q27-2:checked~.value-Q27-2 .text,
+#value-Q28-1:checked~.value-Q28-1 .text,
+#value-Q28-2:checked~.value-Q28-2 .text,
+#value-Q29-1:checked~.value-Q29-1 .text,
+#value-Q29-2:checked~.value-Q29-2 .text,
+#value-Q30-1:checked~.value-Q30-1 .text,
+#value-Q30-2:checked~.value-Q30-2 .text,
+#value-Q31-1:checked~.value-Q31-1 .text,
+#value-Q31-2:checked~.value-Q31-2 .text,
+#value-Q32-1:checked~.value-Q32-1 .text,
+#value-Q32-2:checked~.value-Q32-2 .text,
+#value-Q33-1:checked~.value-Q33-1 .text,
+#value-Q33-2:checked~.value-Q33-2 .text,
+#value-Q34-1:checked~.value-Q34-1 .text,
+#value-Q34-2:checked~.value-Q34-2 .text,
+#value-Q35-1:checked~.value-Q35-1 .text,
+#value-Q35-2:checked~.value-Q35-2 .text,
+#value-Q36-1:checked~.value-Q36-1 .text,
+#value-Q36-2:checked~.value-Q36-2 .text,
+#value-Q37-1:checked~.value-Q37-1 .text,
+#value-Q37-2:checked~.value-Q37-2 .text{
+    color: #fff
+}
+
+.boxchecklist input[type="radio"] {
+    display: none
+}
+
+.hide {
+  display: none;
+}
+

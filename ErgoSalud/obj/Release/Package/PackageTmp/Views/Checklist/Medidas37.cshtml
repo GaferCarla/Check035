@@ -1,0 +1,1624 @@
+﻿@model ErgoSalud.Models.Medidas
+@{
+    ViewBag.Title = "Survery2";
+}
+
+<style>
+
+
+
+    .evidenceSection ._box {
+        position: relative;
+    }
+
+    ._box label  {
+        display: block;
+        letter-spacing: 3px !important;
+        font-size: 1.5rem !important;
+        font-weight: 700 !important;
+        text-transform: uppercase;
+        color: #607D8B;
+        border: none !important;
+        margin:0 0 0 0 !important;
+        vertical-align: middle;
+        padding: 0 !important;
+        height:25px !important;
+
+    }
+
+    input {
+        max-width: none;
+    }
+
+    .boxchecklist label {
+        height: 53px !important;
+    }
+
+
+        ._box input [type=text] {
+            font-size: 1rem;
+            color: #455A64;
+            display: inline !important;
+            width: 100% !important;
+            height: 3rem !important;
+            padding: 0 1rem !important;
+            border: 0.125rem solid #CFD8DC !important;
+            border-radius: 0.25rem !important;
+            margin-bottom: 1rem;
+            transition: 0.5s all;
+        }
+
+    .rounded {
+        border-radius: 0.25rem !important;
+    }
+
+
+
+        ._box input.newTag:focus, ._box input:active {
+            outline: none;
+            border: 0.125rem solid #654ea3;
+            box-shadow: 0 0 0.5rem rgba(101,78,163,0.15);
+            
+        }
+
+    .evidenceSection ul {
+        display: block;
+        padding: 0;
+        margin: 0;
+    }
+
+    ._box ul::after {
+        content: "";
+        clear: both;
+        display: table;
+    }
+
+    ._box ul li {
+        position: relative;
+        list-style: none;
+        float: left;
+        font-size: 1.5rem;
+        text-transform: capitalize;
+        background-color: rgba(101,78,163,0.7);
+        color:white;
+        line-height: 2rem;
+        padding: 0.8rem 3.5rem 0.8rem 1.2rem;
+        border-radius: 1rem;
+        margin-right: 0.5rem;
+        margin-bottom: 0.5rem;
+        word-break: break-all;
+    }
+
+        ._box ul li > span.rmTag {
+            position: absolute;
+            margin: 0.25rem 0.25rem 1rem 0.25rem;
+            top: 3px;
+            right: 0;
+            height: 2.5rem;
+            width: 2.5rem;
+            border-radius: 1rem;
+            color: #fff;
+            font-size: 2.5rem;
+            line-height: 3rem;
+            text-align: center;
+            background-color: #654ea3;
+            cursor: pointer;
+            -webkit-transition: 0.3s all;
+            transition: 0.3s all;
+        }
+
+            ._box ul li > span.rmTag:hover {
+                background-color: #ef9a9a;
+            }
+        .w-100 {
+            width:100% !important;
+        }
+
+    .border-0 {
+        border: 0 !important;
+    }
+</style>
+
+@*<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css">*@
+<link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css' rel='stylesheet'>
+<script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+<link href=" @Url.Content("~/Content/style_Medida.css") " rel="stylesheet" type="text/css" />
+<link href=" @Url.Content("~/Content/sizing.css") " rel="stylesheet" type="text/css" />
+
+<script>
+    function showQ1A() {
+        document.getElementById('div1').style.display = "none";
+    }
+    function showQ1B() {
+        document.getElementById('div1').style.display = "block";
+    }
+    function showQ2A() {
+        document.getElementById('div2').style.display = 'none';
+    }
+    function showQ2B() {
+        document.getElementById('div2').style.display = 'block';
+    }
+
+    function showQ3A() {
+        document.getElementById('div3').style.display = 'none';
+    }
+    function showQ3B() {
+        document.getElementById('div3').style.display = 'block';
+    }
+
+    function showQ4A() {
+        document.getElementById('div4').style.display = 'none';
+    }
+    function showQ4B() {
+        document.getElementById('div4').style.display = 'block';
+    }
+
+    function showQ5A() {
+        document.getElementById('div5').style.display = 'none';
+    }
+    function showQ5B() {
+        document.getElementById('div5').style.display = 'block';
+    }
+
+    function showQ6A() {
+        document.getElementById('div6').style.display = 'none';
+    }
+    function showQ6B() {
+        document.getElementById('div6').style.display = 'block';
+    }
+
+
+    function showQ7A() {
+        document.getElementById('div7').style.display = 'none';
+    }
+    function showQ7B() {
+        document.getElementById('div7').style.display = 'block';
+    }
+
+    function showQ8A() {
+        document.getElementById('div8').style.display = 'none';
+    }
+    function showQ8B() {
+        document.getElementById('div8').style.display = 'block';
+    }
+    12
+    function showQ9A() {
+        document.getElementById('div9').style.display = 'none';
+    }
+    function showQ9B() {
+        document.getElementById('div9').style.display = 'block';
+    }
+
+    function showQ10A() {
+        document.getElementById('div10').style.display = 'none';
+    }
+    function showQ10B() {
+        document.getElementById('div10').style.display = 'block';
+    }
+
+    function showQ11A() {
+        document.getElementById('div11').style.display = 'none';
+    }
+    function showQ11B() {
+        document.getElementById('div11').style.display = 'block';
+    }
+
+    function showQ12A() {
+        document.getElementById('div12').style.display = 'none';
+    }
+    function showQ12B() {
+        document.getElementById('div12').style.display = 'block';
+    }
+
+    function showQ13A() {
+        document.getElementById('div13').style.display = 'none';
+    }
+    function showQ13B() {
+        document.getElementById('div13').style.display = 'block';
+    }
+
+
+    function showQ14A() {
+        document.getElementById('div14').style.display = 'none';
+    }
+    function showQ14B() {
+        document.getElementById('div14').style.display = 'block';
+    }
+
+
+    function showQ15A() {
+        document.getElementById('div15').style.display = 'none';
+    }
+    function showQ15B() {
+        document.getElementById('div15').style.display = 'block';
+    }
+
+    function showQ16A() {
+        document.getElementById('div16').style.display = 'none';
+    }
+    function showQ16B() {
+        document.getElementById('div16').style.display = 'block';
+    }
+
+    function showQ17A() {
+        document.getElementById('div17').style.display = 'none';
+    }
+    function showQ17B() {
+        document.getElementById('div17').style.display = 'block';
+    }
+
+
+    function showQ18A() {
+        document.getElementById('div18').style.display = 'none';
+    }
+    function showQ18B() {
+        document.getElementById('div18').style.display = 'block';
+    }
+
+    function showQ19A() {
+        document.getElementById('div19').style.display = 'none';
+    }
+    function showQ19B() {
+        document.getElementById('div19').style.display = 'block';
+    }
+
+
+    function showQ20A() {
+        document.getElementById('div20').style.display = 'none';
+    }
+    function showQ20B() {
+        document.getElementById('div20').style.display = 'block';
+    }
+
+
+    function showQ21A() {
+        document.getElementById('div21').style.display = 'none';
+    }
+    function showQ21B() {
+        document.getElementById('div21').style.display = 'block';
+    }
+
+    function showQ22A() {
+        document.getElementById('div22').style.display = 'none';
+    }
+    function showQ22B() {
+        document.getElementById('div22').style.display = 'block';
+    }
+
+    function showQ23A() {
+        document.getElementById('div23').style.display = 'none';
+    }
+    function showQ23B() {
+        document.getElementById('div23').style.display = 'block';
+    }
+
+    function showQ24A() {
+        document.getElementById('div24').style.display = 'none';
+    }
+    function showQ24B() {
+        document.getElementById('div24').style.display = 'block';
+    }
+
+    function showQ25A() {
+        document.getElementById('div25').style.display = 'none';
+    }
+    function showQ25B() {
+        document.getElementById('div25').style.display = 'block';
+    }
+
+    function showQ26A() {
+        document.getElementById('div26').style.display = 'none';
+    }
+    function showQ26B() {
+        document.getElementById('div26').style.display = 'block';
+    }
+
+
+    function showQ27A() {
+        document.getElementById('div27').style.display = 'none';
+    }
+    function showQ27B() {
+        document.getElementById('div27').style.display = 'block';
+    }
+
+
+    function showQ28A() {
+        document.getElementById('div28').style.display = 'none';
+    }
+    function showQ28B() {
+        document.getElementById('div28').style.display = 'block';
+    }
+
+    function showQ29A() {
+        document.getElementById('div29').style.display = 'none';
+    }
+    function showQ29B() {
+        document.getElementById('div29').style.display = 'block';
+    }
+
+    function showQ30A() {
+        document.getElementById('div30').style.display = 'none';
+    }
+    function showQ30B() {
+        document.getElementById('div30').style.display = 'block';
+    }
+
+    function showQ31A() {
+        document.getElementById('div31').style.display = 'none';
+    }
+    function showQ31B() {
+        document.getElementById('div31').style.display = 'block';
+    }
+
+    function showQ32A() {
+        document.getElementById('div32').style.display = 'none';
+    }
+    function showQ32B() {
+        document.getElementById('div32').style.display = 'block';
+    }
+
+
+    function showQ33A() {
+        document.getElementById('div33').style.display = 'none';
+    }
+    function showQ33B() {
+        document.getElementById('div33').style.display = 'block';
+    }
+
+    function showQ34A() {
+        document.getElementById('div34').style.display = 'none';
+    }
+    function showQ34B() {
+        document.getElementById('div34').style.display = 'block';
+    }
+
+    function showQ35A() {
+        document.getElementById('div35').style.display = 'none';
+    }
+    function showQ35B() {
+        document.getElementById('div35').style.display = 'block';
+    }
+
+    function showQ36A() {
+        document.getElementById('div36').style.display = 'none';
+    }
+    function showQ36B() {
+        document.getElementById('div36').style.display = 'block';
+    }
+
+    function showQ37A() {
+        document.getElementById('div37').style.display = 'none';
+    }
+    function showQ37B() {
+        document.getElementById('div37').style.display = 'block';
+    }
+</script>
+
+
+<div>
+    <div class="container-fluid pb-5">
+        <div class="row justify-content-center pb-5">
+            <div class="col-12 col-md-9 col-lg-9 col-xl-9 text-center px-5 mt-3 mb-2">
+                <div class="card border-0 px-5 pt-4 pb-0 my-4">
+                    <h2 id="heading">Cultura de bienestar</h2><hr>
+                    @*  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, repudiandae facilis nisi cum explicabo reprehenderit deleniti incidunt fugit impedit earum sed illo eveniet esse et sequi vel. Doloribus, accusamus esse!</p>*@
+
+
+                    @using (Html.BeginForm("Medidas37", "Checklist", FormMethod.Post, new { id = "msform" }))
+                    {
+
+                        @*<div class="container-fluid pt-0 pb-4 " id="datos">
+
+
+                            <div class="row px-0 pt-0 pb-4">
+
+
+                                <div class=" col-md-6 col-12">
+                                    @Html.TextBoxFor(i => i.Nombre, new { @class = "rounded w-100", placeholder = "Nombre" })
+
+                                </div>
+                                <div class=" col-md-6 col-12">
+                                    @Html.TextBoxFor(i => i.Razon_social, new { @class = "rounded w-100", placeholder = "Razon Social" })
+
+                                </div>
+
+                                <div class=" col-md-6 col-12">
+                                    @Html.TextBoxFor(i => i.Celular, new { @class = "rounded w-100", placeholder = "Celular"})
+
+                                </div>
+                                <div class=" col-md-6 col-12">
+
+                                    @Html.TextBoxFor(i => i.Email, new { @class = "rounded w-100 ", placeholder = "Correo electrónico" })
+
+                                </div>
+                                <div class=" col-md-6 col-12">
+                                    @Html.TextBoxFor(i => i.No_Empleados, new { @class = "rounded w-100 ", placeholder = "# de empleados " })
+
+                                </div>
+
+                                <div class=" col-md-6 col-12 pb-4">
+                                    @Html.TextBoxFor(i => i.Agente, new { @class = "rounded w-100 ", placeholder = "Agente" })
+
+
+
+                                </div>
+
+                            </div>
+
+
+
+                        </div>*@
+                        <!-- progressbar -->
+                        <ul id="progressbar">
+                            <li class="active" id="tab1"><strong>1</strong></li>
+                            <li id="tab2"><strong>2</strong></li>
+                            <li id="tab3"><strong>3</strong></li>
+                            <li id="tab4"><strong>4</strong></li>
+                            <li id="tab5"><strong>5</strong></li>
+                            <li id="tab6"><strong>Finalizar</strong></li>
+                        </ul>
+                        <br> <!-- fieldsets -->
+                        <fieldset>
+                            <div class="form-card">
+                                <div class="row">
+                                    <div class="col-7">
+                                        <h2 class="fs-title">Ambiente de trabajo:</h2>
+                                    </div>
+                                    <div class="col-5">
+                                        <h2 class="steps">Parte 1 - 5</h2>
+                                    </div>
+                                </div>
+
+
+                                <div class="pt-2 pb-4">
+                                    <label>1. ¿Ya ha capacitado  y sensibilizado a directivos, gerentes y supervisores para la prevención de los factores de riesgo psicosocial?</label>
+
+                                    <div class="boxchecklist">
+                                        @Html.RadioButtonFor(i => i.Q1, "0", new { id = "value-Q1-2", onclick = "showQ1A()" })
+                                        @Html.RadioButtonFor(i => i.Q1, "1", new { id = "value-Q1-1", onclick = "showQ1B()" })
+
+
+                                        <label for="value-Q1-2" class="value-Q1-2">
+                                            <div class="select-dots"></div>
+                                            <div class="text">No</div>
+                                        </label>
+                                        <label for="value-Q1-1" class="value-Q1-1">
+                                            <div class="select-dots"></div>
+                                            <div class="text">Si</div>
+                                        </label>
+                                        <div id="div1" style="display:none" class=" evidenceSection pt-2 pb-2">
+
+                                            <div class="_box">
+                                                
+                                                <input type="text" class="newTag1 rounded" onclick="cambiar(1)" placeholder="Presiona ENTER para añadir tu acción" />
+                                                <ul class="tagList1">
+                                                    <!-- All TagList Here! -->
+                                                </ul>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="pt-2 pb-4">
+                                    <label>2. ¿Ya ha capacitación y sensibilización en la promoción de entornos organizacionales favorables?</label>
+
+                                    <div class="boxchecklist">
+                                        @Html.RadioButtonFor(i => i.Q2, "0", new { id = "value-Q2-2", onclick = "showQ2A()" })
+                                        @Html.RadioButtonFor(i => i.Q2, "1", new { id = "value-Q2-1", onclick = "showQ2B()" })
+                                        <label for="value-Q2-2" class="value-Q2-2">
+                                            <div class="select-dots"></div>
+                                            <div class="text">No</div>
+                                        </label>
+                                        <label for="value-Q2-1" class="value-Q2-1">
+                                            <div class="select-dots"></div>
+                                            <div class="text">Si</div>
+                                        </label>
+                                        <div id="div2" style="display:none" class=" evidenceSection pt-2 pb-2">
+
+                                            <div class="_box">
+                                                
+                                                <input type="text" placeholder="Presiona ENTER para añadir tu acción" class="newTag2 rounded" onclick="cambiar(2)" placeholder="Presiona ENTER para añadir tu acción" />
+                                                <ul class="tagList2">
+                                                    <!-- All TagList Here! -->
+                                                </ul>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                                <div class="pt-2 pb-4">
+                                    <label>3. ¿Crea reuniones para abordar las áreas de oportunidad de mejora, a efecto de atender los problemas en el lugar de su trabajo y determinar sus soluciones?</label>
+
+                                    <div class="boxchecklist">
+                                        <input type="radio" name="Q3" id="value-Q3-2" value="1" onclick="showQ3A();">
+                                        <input type="radio" name="Q3" id="value-Q3-1" value="2" onclick="showQ3B();">
+                                        @Html.RadioButtonFor(i => i.Q3, "0", new { id = "value-Q3-2", onclick = "showQ3A()" })
+                                        @Html.RadioButtonFor(i => i.Q3, "1", new { id = "value-Q3-1", onclick = "showQ3B()" })
+                                        <label for="value-Q3-2" class="value-Q3-2">
+                                            <div class="select-dots"></div>
+                                            <div class="text">No</div>
+                                        </label>
+                                        <label for="value-Q3-1" class="value-Q3-1">
+                                            <div class="select-dots"></div>
+                                            <div class="text">Si</div>
+                                        </label>
+                                        <div id="div3" style="display:none" class="pt-2 pb-2">
+
+                                            <div class="_box">
+                                                
+                                                <input type="text" placeholder="Presiona ENTER para añadir tu acción" class="newTag3 rounded" onclick="cambiar(3)" />
+                                                <ul class="tagList3">
+                                                    <!-- All TagList Here! -->
+                                                </ul>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+
+
+                                <div class="pt-2 pb-4">
+                                    <label>4. ¿Realiza reuniones periódicas (semestrales o anuales) de seguimiento a las actividades establecidas para el apoyo social y, en su caso, extraordinarias si ocurren eventos que pongan en riesgo la salud del trabajador o al centro de trabajo? </label>
+
+                                    <div class="boxchecklist">
+                                        @Html.RadioButtonFor(i => i.Q4, "0", new { id = "value-Q4-2", onclick = "showQ4A()" })
+                                        @Html.RadioButtonFor(i => i.Q4, "1", new { id = "value-Q4-1", onclick = "showQ4B()" })
+                                        <label for="value-Q4-2" class="value-Q4-2">
+                                            <div class="select-dots"></div>
+                                            <div class="text">No</div>
+                                        </label>
+                                        <label for="value-Q4-1" class="value-Q4-1">
+                                            <div class="select-dots"></div>
+                                            <div class="text">Si</div>
+                                        </label>
+                                        <div id="div4" style="display:none" class="pt-2 pb-2">
+                                            <div class="_box">
+                                                
+                                                <input type="text" placeholder="Presiona ENTER para añadir tu acción" class="newTag4 rounded" onclick="cambiar(4)" />
+                                                <ul class="tagList4">
+                                                    <!-- All TagList Here! -->
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="pt-2 pb-4">
+                                    <label>5. ¿Tiene  actividades culturales y del deporte entre sus trabajadores y proporcionarles los equipos y útiles indispensables? </label>
+
+                                    <div class="boxchecklist">
+                                        @Html.RadioButtonFor(i => i.Q5, "0", new { id = "value-Q5-2", onclick = "showQ5A()" })
+                                        @Html.RadioButtonFor(i => i.Q5, "1", new { id = "value-Q5-1", onclick = "showQ5B()" })
+                                        <label for="value-Q5-2" class="value-Q5-2">
+                                            <div class="select-dots"></div>
+                                            <div class="text">No</div>
+                                        </label>
+                                        <label for="value-Q5-1" class="value-Q5-1">
+                                            <div class="select-dots"></div>
+                                            <div class="text">Si</div>
+                                        </label>
+                                        <div id="div5" style="display:none" class="pt-2 pb-2">
+
+                                            <div class="_box">
+                                                
+                                                <input type="text" placeholder="Presiona ENTER para añadir tu acción" class="newTag5 rounded" onclick="cambiar(5)" />
+                                                <ul class="tagList5">
+                                                    <!-- All TagList Here! -->
+                                                </ul>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="pt-2 pb-4">
+                                    <label>6. ¿Promociona de actividades de integración familiar en el trabajo, previo acuerdo con los trabajadores? </label>
+
+                                    <div class="boxchecklist">
+                                        @Html.RadioButtonFor(i => i.Q6, "0", new { id = "value-Q6-2", onclick = "showQ6A()" })
+                                        @Html.RadioButtonFor(i => i.Q6, "1", new { id = "value-Q6-1", onclick = "showQ6B()" })
+                                        <label for="value-Q6-2" class="value-Q6-2">
+                                            <div class="select-dots"></div>
+                                            <div class="text">No</div>
+                                        </label>
+                                        <label for="value-Q6-1" class="value-Q6-1">
+                                            <div class="select-dots"></div>
+                                            <div class="text">Si</div>
+                                        </label>
+                                        <div id="div6" style="display:none" class="pt-2 pb-2">
+                                            <div class="_box">
+                                                
+                                                <input type="text" placeholder="Presiona ENTER para añadir tu acción" class="newTag6 rounded" onclick="cambiar(6)" />
+                                                <ul class="tagList6">
+                                                    <!-- All TagList Here! -->
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="pt-2 pb-4">
+                                    <label>7. ¿Tiene mecanismos para reconocer el desempeño sobresaliente (superior al esperado) de los trabajadores? </label>
+
+                                    <div class="boxchecklist">
+                                        @Html.RadioButtonFor(i => i.Q7, "0", new { id = "value-Q7-2", onclick = "showQ7A()" })
+                                        @Html.RadioButtonFor(i => i.Q7, "1", new { id = "value-Q7-1", onclick = "showQ7B()" })
+                                        <label for="value-Q7-2" class="value-Q7-2">
+                                            <div class="select-dots"></div>
+                                            <div class="text">No</div>
+                                        </label>
+                                        <label for="value-Q7-1" class="value-Q7-1">
+                                            <div class="select-dots"></div>
+                                            <div class="text">Si</div>
+                                        </label>
+                                        <div id="div7" style="display:none" class="pt-2 pb-2">
+                                            <div class="_box">
+                                                
+                                                <input type="text" placeholder="Presiona ENTER para añadir tu acción" class="newTag7 rounded" onclick="cambiar(7)" />
+                                                <ul class="tagList7">
+                                                    <!-- All TagList Here! -->
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="pt-2 pb-4">
+                                    <label>8. ¿Tiene mecanismos para difundir los logros de los trabajadores sobresalientes? </label>
+
+                                    <div class="boxchecklist">
+                                        @Html.RadioButtonFor(i => i.Q8, "0", new { id = "value-Q8-2", onclick = "showQ8A()" })
+                                        @Html.RadioButtonFor(i => i.Q8, "1", new { id = "value-Q8-1", onclick = "showQ8B()" })
+                                        <label for="value-Q8-2" class="value-Q8-2">
+                                            <div class="select-dots"></div>
+                                            <div class="text">No</div>
+                                        </label>
+                                        <label for="value-Q8-1" class="value-Q8-1">
+                                            <div class="select-dots"></div>
+                                            <div class="text">Si</div>
+                                        </label>
+                                        <div id="div8" style="display:none" class="pt-2 pb-2">
+                                            <div class="_box">
+                                                
+                                                <input type="text" placeholder="Presiona ENTER para añadir tu acción" class="newTag8 rounded" onclick="cambiar(8)" />
+                                                <ul class="tagList8">
+                                                    <!-- All TagList Here! -->
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="pt-2 pb-4">
+                                    <label>9. ¿Tiene mecanismos para expresar al trabajador sus posibilidades de desarrollos? </label>
+
+                                    <div class="boxchecklist">
+                                        @Html.RadioButtonFor(i => i.Q9, "0", new { id = "value-Q9-2", onclick = "showQ9A()" })
+                                        @Html.RadioButtonFor(i => i.Q9, "1", new { id = "value-Q9-1", onclick = "showQ9B()" })
+                                        <label for="value-Q9-2" class="value-Q9-2">
+                                            <div class="select-dots"></div>
+                                            <div class="text">No</div>
+                                        </label>
+                                        <label for="value-Q9-1" class="value-Q9-1">
+                                            <div class="select-dots"></div>
+                                            <div class="text">Si</div>
+                                        </label>
+                                        <div id="div9" style="display:none" class="pt-2 pb-2">
+                                            <div class="_box">
+                                                
+                                                <input type="text" placeholder="Presiona ENTER para añadir tu acción" class="newTag9 rounded" onclick="cambiar(9)" />
+                                                <ul class="tagList9">
+                                                    <!-- All TagList Here! -->
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="pt-2 pb-4">
+                                    <label>10. ¿Tiene mecanismos para la participación proactiva y comunicación entre los colaboradores? </label>
+
+                                    <div class="boxchecklist">
+                                        @Html.RadioButtonFor(i => i.Q10, "0", new { id = "value-Q10-2", onclick = "showQ10A()" })
+                                        @Html.RadioButtonFor(i => i.Q10, "1", new { id = "value-Q10-1", onclick = "showQ10B()" })
+                                        <label for="value-Q10-2" class="value-Q10-2">
+                                            <div class="select-dots"></div>
+                                            <div class="text">No</div>
+                                        </label>
+                                        <label for="value-Q10-1" class="value-Q10-1">
+                                            <div class="select-dots"></div>
+                                            <div class="text">Si</div>
+                                        </label>
+                                        <div id="div10" style="display:none" class="pt-2 pb-2">
+                                            <div class="_box">
+                                                
+                                                <input type="text" placeholder="Presiona ENTER para añadir tu acción" class="newTag10 rounded" onclick="cambiar(10)" />
+                                                <ul class="tagList10">
+                                                    <!-- All TagList Here! -->
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+
+
+
+
+                            </div>
+                            <input type="button" name="next" class="next action-button" value="Siguiente" />
+                        </fieldset>
+                        <fieldset>
+                            <div class="form-card">
+                                <div class="row">
+                                    <div class="col-7">
+                                        <h2 class="fs-title">Factores propios de la actividad:</h2>
+                                    </div>
+                                    <div class="col-5">
+                                        <h2 class="steps">Parte 2 - 5</h2>
+                                    </div>
+                                </div>
+
+
+                                <div class="pt-2 pb-4">
+                                    <label>11. ¿Cuenta con mecanismos que permiten identificar la distribución adecuada de los tiempos de trabajo? </label>
+
+                                    <div class="boxchecklist">
+                                        @Html.RadioButtonFor(i => i.Q11, "0", new { id = "value-Q11-2", onclick = "showQ11A()" })
+                                        <label for="value-Q11-2" class="value-Q11-2">
+                                            <div class="select-dots"></div>
+                                            <div class="text">No</div>
+                                        </label>
+                                        @Html.RadioButtonFor(i => i.Q11, "1", new { id = "value-Q11-1", onclick = "showQ11B()" })
+                                        <label for="value-Q11-1" class="value-Q11-1">
+                                            <div class="select-dots"></div>
+                                            <div class="text">Si</div>
+                                        </label>
+                                        <div id="div11" style="display:none" class="pt-2 pb-2">
+                                            <div class="_box">
+                                                
+                                                <input type="text" placeholder="Presiona ENTER para añadir tu acción" class="newTag11 rounded" onclick="cambiar(11)" />
+                                                <ul class="tagList11">
+                                                    <!-- All TagList Here! -->
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="pt-2 pb-4">
+                                    <label>12. ¿Cuenta con mecanismos establecer y difundir instrucciones claras a los trabajadores para la atención de los problemas que impiden o limitan el desarrollo de su trabajo, cuando éstos se presenten? </label>
+
+                                    <div class="boxchecklist">
+                                        @Html.RadioButtonFor(i => i.Q12, "0", new { id = "value-Q12-2", onclick = "showQ12A()" })
+                                        <label for="value-Q12-2" class="value-Q12-2">
+                                            <div class="select-dots"></div>
+                                            <div class="text">No</div>
+                                        </label>
+                                        @Html.RadioButtonFor(i => i.Q12, "1", new { id = "value-Q12-1", onclick = "showQ12B()" })
+                                        <label for="value-Q12-1" class="value-Q12-1">
+                                            <div class="select-dots"></div>
+                                            <div class="text">Si</div>
+                                        </label>
+                                        <div id="div12" style="display:none" class="pt-2 pb-2">
+                                            <div class="_box">
+                                                
+                                                <input type="text" placeholder="Presiona ENTER para añadir tu acción" class="newTag12 rounded" onclick="cambiar(12)" />
+                                                <ul class="tagList12">
+                                                    <!-- All TagList Here! -->
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="pt-2 pb-4">
+                                    <label>13. ¿Cuenta con mecanismos para la  revisión y supervisión que la distribución de la carga de trabajo se realice de forma equitativa y considerando el número de trabajadores, actividades a desarrollar, alcance de la actividad y su capacitación? </label>
+
+                                    <div class="boxchecklist">
+                                        @Html.RadioButtonFor(i => i.Q13, "0", new { id = "value-Q13-2", onclick = "showQ13A()" })
+                                        <label for="value-Q13-2" class="value-Q13-2">
+                                            <div class="select-dots"></div>
+                                            <div class="text">No</div>
+                                        </label>
+                                        @Html.RadioButtonFor(i => i.Q13, "1", new { id = "value-Q13-1", onclick = "showQ13B()" })
+                                        <label for="value-Q13-1" class="value-Q13-1">
+                                            <div class="select-dots"></div>
+                                            <div class="text">Si</div>
+                                        </label>
+                                        <div id="div13" style="display:none" class="pt-2 pb-2">
+                                            <div class="_box">
+                                                
+                                                <input type="text" placeholder="Presiona ENTER para añadir tu acción" class="newTag13 rounded" onclick="cambiar(13)" />
+                                                <ul class="tagList13">
+                                                    <!-- All TagList Here! -->
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="pt-2 pb-4">
+                                    <label>14. ¿Cuenta con mecanismos o programas que faciliten la participación  en la mejora de las condiciones de trabajo y la productividad siempre que el proceso productivo lo permita y cuenten con la experiencia y capacitación para ello? </label>
+
+                                    <div class="boxchecklist">
+                                        @Html.RadioButtonFor(i => i.Q14, "0", new { id = "value-Q14-2", onclick = "showQ14A()" })
+                                        <label for="value-Q14-2" class="value-Q14-2">
+                                            <div class="select-dots"></div>
+                                            <div class="text">No</div>
+                                        </label>
+                                        @Html.RadioButtonFor(i => i.Q14, "1", new { id = "value-Q14-1", onclick = "showQ14B()" })
+                                        <label for="value-Q14-1" class="value-Q14-1">
+                                            <div class="select-dots"></div>
+                                            <div class="text">Si</div>
+                                        </label>
+                                        <div id="div14" style="display:none" class="pt-2 pb-2">
+                                            <div class="_box">
+                                                
+                                                <input type="text" placeholder="Presiona ENTER para añadir tu acción" class="newTag14 rounded" onclick="cambiar(14)" />
+                                                <ul class="tagList14">
+                                                    <!-- All TagList Here! -->
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="pt-2 pb-4">
+                                    <label>15. ¿Cuenta con mecanismos o sistemas de trabajo que permitan  acordar ymejorar el margen de libertad y control sobre su trabajo por parte de los trabajadores y el patrón? </label>
+
+                                    <div class="boxchecklist">
+                                        @Html.RadioButtonFor(i => i.Q15, "0", new { id = "value-Q15-2", onclick = "showQ15A()" })
+                                        <label for="value-Q15-2" class="value-Q15-2">
+                                            <div class="select-dots"></div>
+                                            <div class="text">No</div>
+                                        </label>
+                                        @Html.RadioButtonFor(i => i.Q15, "1", new { id = "value-Q15-1", onclick = "showQ15B()" })
+                                        <label for="value-Q15-1" class="value-Q15-1">
+                                            <div class="select-dots"></div>
+                                            <div class="text">Si</div>
+                                        </label>
+                                        <div id="div15" style="display:none" class="pt-2 pb-2">
+                                            <div class="_box">
+                                                
+                                                <input type="text" placeholder="Presiona ENTER para añadir tu acción" class="newTag15 rounded" onclick="cambiar(15)" />
+                                                <ul class="tagList15">
+                                                    <!-- All TagList Here! -->
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="pt-2 pb-4">
+                                    <label>16. ¿Cuenta con mecanismos o programas de desarrollo para impulsar que éstos desarrollen nuevas competencias o habilidades, considerando las limitaciones del proceso productivo? </label>
+
+                                    <div class="boxchecklist">
+                                        @Html.RadioButtonFor(i => i.Q16, "0", new { id = "value-Q16-2", onclick = "showQ16A()" })
+                                        <label for="value-Q16-2" class="value-Q16-2">
+                                            <div class="select-dots"></div>
+                                            <div class="text">No</div>
+                                        </label>
+                                        @Html.RadioButtonFor(i => i.Q16, "1", new { id = "value-Q16-1", onclick = "showQ16B()" })
+                                        <label for="value-Q16-1" class="value-Q16-1">
+                                            <div class="select-dots"></div>
+                                            <div class="text">Si</div>
+                                        </label>
+                                        <div id="div16" style="display:none" class="pt-2 pb-2">
+                                            <div class="_box">
+                                                
+                                                <input type="text" placeholder="Presiona ENTER para añadir tu acción" class="newTag16 rounded" onclick="cambiar(16)" />
+                                                <ul class="tagList16">
+                                                    <!-- All TagList Here! -->
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="pt-2 pb-4">
+                                    <label>17. ¿Tiene mecanismos para definir los lineamientos para establecer medidas y límites que eviten las jornadas de trabajo superiores a las previstas en la Ley Federal del Trabajo? </label>
+
+                                    <div class="boxchecklist">
+                                        @Html.RadioButtonFor(i => i.Q17, "0", new { id = "value-Q17-2", onclick = "showQ17A()" })
+                                        <label for="value-Q17-2" class="value-Q17-2">
+                                            <div class="select-dots"></div>
+                                            <div class="text">No</div>
+                                        </label>
+                                        @Html.RadioButtonFor(i => i.Q17, "1", new { id = "value-Q17-1", onclick = "showQ17B()" })
+                                        <label for="value-Q17-1" class="value-Q17-1">
+                                            <div class="select-dots"></div>
+                                            <div class="text">Si</div>
+                                        </label>
+                                        <div id="div17" style="display:none" class="pt-2 pb-2">
+                                            <div class="_box">
+                                                
+                                                <input type="text" placeholder="Presiona ENTER para añadir tu acción" class="newTag17 rounded" onclick="cambiar(17)" />
+                                                <ul class="tagList17">
+                                                    <!-- All TagList Here! -->
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="pt-2 pb-4">
+                                    <label>18. ¿Cuenta con una capacitación continua  para la adecuada realización de las tareas encomendadas? </label>
+
+                                    <div class="boxchecklist">
+                                        @Html.RadioButtonFor(i => i.Q18, "0", new { id = "value-Q18-2", onclick = "showQ18A()" })
+                                        <label for="value-Q18-2" class="value-Q18-2">
+                                            <div class="select-dots"></div>
+                                            <div class="text">No</div>
+                                        </label>
+                                        @Html.RadioButtonFor(i => i.Q18, "1", new { id = "value-Q18-1", onclick = "showQ18B()" })
+                                        <label for="value-Q18-1" class="value-Q18-1">
+                                            <div class="select-dots"></div>
+                                            <div class="text">Si</div>
+                                        </label>
+                                        <div id="div18" style="display:none" class="pt-2 pb-2">
+                                            <div class="_box">
+                                                
+                                                <input type="text" placeholder="Presiona ENTER para añadir tu acción" class="newTag18 rounded" onclick="cambiar(18)" />
+                                                <ul class="tagList18">
+                                                    <!-- All TagList Here! -->
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="pt-2 pb-4">
+                                    <label>19. ¿Cuenta con mecanismos para  definición precisa de responsabilidades para los miembros de la organización? </label>
+
+                                    <div class="boxchecklist">
+                                        @Html.RadioButtonFor(i => i.Q19, "0", new { id = "value-Q19-2", onclick = "showQ19A()" })
+                                        <label for="value-Q19-2" class="value-Q19-2">
+                                            <div class="select-dots"></div>
+                                            <div class="text">No</div>
+                                        </label>
+                                        @Html.RadioButtonFor(i => i.Q19, "1", new { id = "value-Q19-1", onclick = "showQ19B()" })
+                                        <label for="value-Q19-1" class="value-Q19-1">
+                                            <div class="select-dots"></div>
+                                            <div class="text">Si</div>
+                                        </label>
+                                        <div id="div19" style="display:none" class="pt-2 pb-2">
+                                            <div class="_box">
+                                                
+                                                <input type="text" placeholder="Presiona ENTER para añadir tu acción" class="newTag19 rounded" onclick="cambiar(19)" />
+                                                <ul class="tagList19">
+                                                    <!-- All TagList Here! -->
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="pt-2 pb-4">
+                                    <label>20. ¿Cuenta con la distribución adecuada de cargas de trabajo, con jornadas laborales regulares conforme a la Ley Federal del Trabajo? </label>
+
+                                    <div class="boxchecklist">
+                                        @Html.RadioButtonFor(i => i.Q20, "0", new { id = "value-Q20-2", onclick = "showQ20A()" })
+                                        <label for="value-Q20-2" class="value-Q20-2">
+                                            <div class="select-dots"></div>
+                                            <div class="text">No</div>
+                                        </label>
+                                        @Html.RadioButtonFor(i => i.Q20, "1", new { id = "value-Q20-1", onclick = "showQ20B()" })
+                                        <label for="value-Q20-1" class="value-Q20-1">
+                                            <div class="select-dots"></div>
+                                            <div class="text">Si</div>
+                                        </label>
+                                        <div id="div20" style="display:none" class="pt-2 pb-2">
+                                            <div class="_box">
+                                                
+                                                <input type="text" placeholder="Presiona ENTER para añadir tu acción" class="newTag20 rounded" onclick="cambiar(20)" />
+                                                <ul class="tagList20">
+                                                    <!-- All TagList Here! -->
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                            <input type="button" name="next" class="next action-button" value="Siguiente" /> <input type="button" name="previous" class="previous action-button-previous" value="Anterior" />
+                        </fieldset>
+                        <fieldset>
+                            <div class="form-card">
+                                <div class="row">
+                                    <div class="col-7">
+                                        <h2 class="fs-title">Organización del tiempo de trabajo:</h2>
+                                    </div>
+                                    <div class="col-5">
+                                        <h2 class="steps">Parte 3 - 5</h2>
+                                    </div>
+                                </div>
+
+                                <div class="pt-2 pb-4">
+                                    <label>21. ¿Cuenta con mecanismos  para la  determinación de prioridades en el trabajo? </label>
+
+                                    <div class="boxchecklist">
+                                        @Html.RadioButtonFor(i => i.Q21, "0", new { id = "value-Q21-2", onclick = "showQ21A()" })
+                                        <label for="value-Q21-2" class="value-Q21-2">
+                                            <div class="select-dots"></div>
+                                            <div class="text">No</div>
+                                        </label>
+                                        @Html.RadioButtonFor(i => i.Q21, "1", new { id = "value-Q21-1", onclick = "showQ21B()" })
+                                        <label for="value-Q21-1" class="value-Q21-1">
+                                            <div class="select-dots"></div>
+                                            <div class="text">Si</div>
+                                        </label>
+                                        <div id="div21" style="display:none" class="pt-2 pb-2">
+                                            <div class="_box">
+                                                
+                                                <input type="text" placeholder="Presiona ENTER para añadir tu acción" class="newTag21 rounded" onclick="cambiar(21)" />
+                                                <ul class="tagList21">
+                                                    <!-- All TagList Here! -->
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="pt-2 pb-4">
+                                    <label>22. ¿Cuenta con mecanismos para planificar el trabajo, considerando el proceso productivo, de manera que se tengan las pausas o periodos necesarios de descanso, rotación de tareas y otras medidas necesarias para evitar ritmos de trabajo acelerados? </label>
+
+                                    <div class="boxchecklist">
+                                        @Html.RadioButtonFor(i => i.Q22, "0", new { id = "value-Q22-2", onclick = "showQ22A()" })
+                                        <label for="value-Q22-2" class="value-Q22-2">
+                                            <div class="select-dots"></div>
+                                            <div class="text">No</div>
+                                        </label>
+                                        @Html.RadioButtonFor(i => i.Q22, "1", new { id = "value-Q22-1", onclick = "showQ22B()" })
+                                        <label for="value-Q22-1" class="value-Q22-1">
+                                            <div class="select-dots"></div>
+                                            <div class="text">Si</div>
+                                        </label>
+                                        <div id="div22" style="display:none" class="pt-2 pb-2">
+                                            <div class="_box">
+                                                
+                                                <input type="text" placeholder="Presiona ENTER para añadir tu acción" class="newTag22 rounded" onclick="cambiar(22)" />
+                                                <ul class="tagList22">
+                                                    <!-- All TagList Here! -->
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+
+                                <div class="pt-2 pb-4">
+                                    <label>23. ¿Cuenta con Instructivos o procedimientos que definan claramente las tareas y responsabilidades? </label>
+
+                                    <div class="boxchecklist">
+                                        @Html.RadioButtonFor(i => i.Q23, "0", new { id = "value-Q23-2", onclick = "showQ23A()" })
+                                        <input type="radio" name="Q23" id="value-Q23-2" value="1" onclick="showQ23A();">
+                                        <label for="value-Q23-2" class="value-Q23-2">
+                                            <div class="select-dots"></div>
+                                            <div class="text">No</div>
+                                        </label>
+                                        @Html.RadioButtonFor(i => i.Q23, "1", new { id = "value-Q23-1", onclick = "showQ23B()" })
+                                        <label for="value-Q23-1" class="value-Q23-1">
+                                            <div class="select-dots"></div>
+                                            <div class="text">Si</div>
+                                        </label>
+                                        <div id="div23" style="display:none" class="pt-2 pb-2">
+                                            <div class="_box">
+                                                
+                                                <input type="text" placeholder="Presiona ENTER para añadir tu acción" class="newTag23 rounded" onclick="cambiar(23)" />
+                                                <ul class="tagList23">
+                                                    <!-- All TagList Here! -->
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="pt-2 pb-4">
+                                    <label>24. ¿Cuenta con mecanismos  para involucrar a los trabajadores en la definición de los horarios de trabajo cuando las condiciones del trabajo lo permitan? </label>
+
+                                    <div class="boxchecklist">
+                                        @Html.RadioButtonFor(i => i.Q24, "0", new { id = "value-Q24-2", onclick = "showQ24A()" })
+                                        <label for="value-Q24-2" class="value-Q24-2">
+                                            <div class="select-dots"></div>
+                                            <div class="text">No</div>
+                                        </label>
+                                        @Html.RadioButtonFor(i => i.Q24, "1", new { id = "value-Q24-1", onclick = "showQ24B()" })
+                                        <label for="value-Q24-1" class="value-Q24-1">
+                                            <div class="select-dots"></div>
+                                            <div class="text">Si</div>
+                                        </label>
+                                        <div id="div24" style="display:none" class="pt-2 pb-2">
+                                            <div class="_box">
+                                                
+                                                <input type="text" placeholder="Presiona ENTER para añadir tu acción" class="newTag24 rounded" onclick="cambiar(24)" />
+                                                <ul class="tagList24">
+                                                    <!-- All TagList Here! -->
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                            <input type="button" name="next" class="next action-button" value="Siguiente" /> <input type="button" name="previous" class="previous action-button-previous" value="Anterior" />
+                        </fieldset>
+                        <fieldset>
+                            <div class="form-card">
+                                <div class="row">
+                                    <div class="col-7">
+                                        <h2 class="fs-title">Liderazgo y relaciones de trabajo:</h2>
+                                    </div>
+                                    <div class="col-5">
+                                        <h2 class="steps">Parte 4 - 5</h2>
+                                    </div>
+                                </div>
+                                <div class="pt-2 pb-4">
+                                    <label>25. ¿Cuenta con mecanismos  para la  determinación de prioridades en el trabajo? </label>
+
+                                    <div class="boxchecklist">
+                                        @Html.RadioButtonFor(i => i.Q25, "0", new { id = "value-Q25-2", onclick = "showQ25A()" })
+                                        <label for="value-Q25-2" class="value-Q25-2">
+                                            <div class="select-dots"></div>
+                                            <div class="text">No</div>
+                                        </label>
+                                        @Html.RadioButtonFor(i => i.Q25, "1", new { id = "value-Q25-1", onclick = "showQ25B()" })
+                                        <label for="value-Q25-1" class="value-Q25-1">
+                                            <div class="select-dots"></div>
+                                            <div class="text">Si</div>
+                                        </label>
+                                        <div id="div25" style="display:none" class="pt-2 pb-2">
+                                            <div class="_box">
+                                                
+                                                <input type="text" placeholder="Presiona ENTER para añadir tu acción" class="newTag25 rounded" onclick="cambiar(25)" />
+                                                <ul class="tagList25">
+                                                    <!-- All TagList Here! -->
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="pt-2 pb-4">
+                                    <label>26. ¿Cuenta con mecanismos para fomentar la comunicación entre supervisores o gerentes y trabajadores, así como entre los trabajadores? </label>
+
+                                    <div class="boxchecklist">
+                                        @Html.RadioButtonFor(i => i.Q26, "0", new { id = "value-Q26-2", onclick = "showQ26A()" })
+                                        <label for="value-Q26-2" class="value-Q26-2">
+                                            <div class="select-dots"></div>
+                                            <div class="text">No</div>
+                                        </label>
+                                        @Html.RadioButtonFor(i => i.Q26, "1", new { id = "value-Q26-1", onclick = "showQ26B()" })
+                                        <label for="value-Q26-1" class="value-Q26-1">
+                                            <div class="select-dots"></div>
+                                            <div class="text">Si</div>
+                                        </label>
+                                        <div id="div26" style="display:none" class="pt-2 pb-2">
+                                            <div class="_box">
+                                                
+                                                <input type="text" placeholder="Presiona ENTER para añadir tu acción" class="newTag26 rounded" onclick="cambiar(26)" />
+                                                <ul class="tagList26">
+                                                    <!-- All TagList Here! -->
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="pt-2 pb-4">
+                                    <label>27. ¿Cuenta con mecanismos o programas  para involucrar a los trabajadores en la toma de decisiones sobre la organización de su trabajo? </label>
+
+                                    <div class="boxchecklist">
+                                        @Html.RadioButtonFor(i => i.Q27, "0", new { id = "value-Q27-2", onclick = "showQ27A()" })
+                                        <label for="value-Q27-2" class="value-Q27-2">
+                                            <div class="select-dots"></div>
+                                            <div class="text">No</div>
+                                        </label>
+                                        @Html.RadioButtonFor(i => i.Q27, "1", new { id = "value-Q27-1", onclick = "showQ27B()" })
+                                        <label for="value-Q27-1" class="value-Q27-1">
+                                            <div class="select-dots"></div>
+                                            <div class="text">Si</div>
+                                        </label>
+                                        <div id="div27" style="display:none" class="pt-2 pb-2">
+                                            <div class="_box">
+                                                
+                                                <input type="text" placeholder="Presiona ENTER para añadir tu acción" class="newTag27 rounded" onclick="cambiar(27)" />
+                                                <ul class="tagList27">
+                                                    <!-- All TagList Here! -->
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="pt-2 pb-4">
+                                    <label>28. ¿Cuenta con programas o mecanismos para  establecer relaciones entre trabajadores, supervisores, gerentes y patrones para que puedan obtener apoyo los unos de los otros? </label>
+
+                                    <div class="boxchecklist">
+                                        @Html.RadioButtonFor(i => i.Q28, "0", new { id = "value-Q28-2", onclick = "showQ28A()" })
+                                        <label for="value-Q28-2" class="value-Q28-2">
+                                            <div class="select-dots"></div>
+                                            <div class="text">No</div>
+                                        </label>
+                                        @Html.RadioButtonFor(i => i.Q28, "1", new { id = "value-Q28-1", onclick = "showQ28B()" })
+                                        <label for="value-Q28-1" class="value-Q28-1">
+                                            <div class="select-dots"></div>
+                                            <div class="text">Si</div>
+                                        </label>
+                                        <div id="div28" style="display:none" class="pt-2 pb-2">
+                                            <div class="_box">
+                                                
+                                                <input type="text" placeholder="Presiona ENTER para añadir tu acción" class="newTag28 rounded" onclick="cambiar(28)" />
+                                                <ul class="tagList28">
+                                                    <!-- All TagList Here! -->
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="pt-2 pb-4">
+                                    <label>29. ¿Cuenta con mecanismos para establecer procedimientos de actuación y seguimiento para tratar problemas relacionados con la violencia laboral, y capacitar al responsable de su implementación? </label>
+
+                                    <div class="boxchecklist">
+                                        @Html.RadioButtonFor(i => i.Q29, "0", new { id = "value-Q29-2", onclick = "showQ29A()" })
+                                        <label for="value-Q29-2" class="value-Q29-2">
+                                            <div class="select-dots"></div>
+                                            <div class="text">No</div>
+                                        </label>
+                                        @Html.RadioButtonFor(i => i.Q29, "1", new { id = "value-Q29-1", onclick = "showQ29B()" })
+                                        <label for="value-Q29-1" class="value-Q29-1">
+                                            <div class="select-dots"></div>
+                                            <div class="text">Si</div>
+                                        </label>
+                                        <div id="div29" style="display:none" class="pt-2 pb-2">
+                                            <div class="_box">
+                                                
+                                                <input type="text" placeholder="Presiona ENTER para añadir tu acción" class="newTag29 rounded" onclick="cambiar(29)" />
+                                                <ul class="tagList29">
+                                                    <!-- All TagList Here! -->
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                            <input type="button" name="next" class="next action-button" value="Siguiente" /> <input type="button" name="previous" class="previous action-button-previous" value="Anterior" />
+                        </fieldset>
+                        <fieldset>
+                            <div class="form-card">
+                                <div class="row">
+                                    <div class="col-7">
+                                        <h2 class="fs-title">Entorno organizacional:</h2>
+                                    </div>
+                                    <div class="col-5">
+                                        <h2 class="steps">Parte 5 - 5</h2>
+                                    </div>
+                                </div>
+                                <div class="pt-2 pb-4">
+                                    <label>30. ¿Cuenta con mecanismos o programas  para definir lineamientos para prohibir la discriminación y fomentar la equidad y el respeto? </label>
+
+                                    <div class="boxchecklist">
+                                        @Html.RadioButtonFor(i => i.Q30, "0", new { id = "value-Q30-2", onclick = "showQ30A()" })
+                                        <label for="value-Q30-2" class="value-Q30-2">
+                                            <div class="select-dots"></div>
+                                            <div class="text">No</div>
+                                        </label>
+                                        @Html.RadioButtonFor(i => i.Q30, "1", new { id = "value-Q30-1", onclick = "showQ30B()" })
+                                        <label for="value-Q30-1" class="value-Q30-1">
+                                            <div class="select-dots"></div>
+                                            <div class="text">Si</div>
+                                        </label>
+                                        <div id="div30" style="display:none" class="pt-2 pb-2">
+                                            <div class="_box">
+                                                
+                                                <input type="text" placeholder="Presiona ENTER para añadir tu acción" class="newTag30 rounded" onclick="cambiar(30)" />
+                                                <ul class="tagList30">
+                                                    <!-- All TagList Here! -->
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="pt-2 pb-4">
+                                    <label>31. ¿Ya ha proporcionado la capacitación y sensibilización en la promoción de entornos organizacionales favorables? </label>
+
+                                    <div class="boxchecklist">
+                                        @Html.RadioButtonFor(i => i.Q31, "0", new { id = "value-Q31-2", onclick = "showQ31A()" })
+                                        <label for="value-Q31-2" class="value-Q31-2">
+                                            <div class="select-dots"></div>
+                                            <div class="text">No</div>
+                                        </label>
+                                        @Html.RadioButtonFor(i => i.Q31, "1", new { id = "value-Q31-1", onclick = "showQ31B()" })
+                                        <label for="value-Q31-1" class="value-Q31-1">
+                                            <div class="select-dots"></div>
+                                            <div class="text">Si</div>
+                                        </label>
+                                        <div id="div31" style="display:none" class="pt-2 pb-2">
+                                            <div class="_box">
+                                                
+                                                <input type="text" placeholder="Presiona ENTER para añadir tu acción" class="newTag31 rounded" onclick="cambiar(31)" />
+                                                <ul class="tagList31">
+                                                    <!-- All TagList Here! -->
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="pt-2 pb-4">
+                                    <label>32. ¿Cuenta con mecanismos o programas para promover la ayuda mutua y el intercambio de conocimientos y experiencias entre los trabajadores? </label>
+
+                                    <div class="boxchecklist">
+                                        @Html.RadioButtonFor(i => i.Q32, "0", new { id = "value-Q32-2", onclick = "showQ32A()" })
+                                        <label for="value-Q32-2" class="value-Q32-2">
+                                            <div class="select-dots"></div>
+                                            <div class="text">No</div>
+                                        </label>
+                                        @Html.RadioButtonFor(i => i.Q32, "1", new { id = "value-Q32-1", onclick = "showQ32B()" })
+                                        <label for="value-Q32-1" class="value-Q32-1">
+                                            <div class="select-dots"></div>
+                                            <div class="text">Si</div>
+                                        </label>
+                                        <div id="div32" style="display:none" class="pt-2 pb-2">
+                                            <div class="_box">
+                                                
+                                                <input type="text" placeholder="Presiona ENTER para añadir tu acción" class="newTag32 rounded" onclick="cambiar(32)" />
+                                                <ul class="tagList32">
+                                                    <!-- All TagList Here! -->
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="pt-2 pb-4">
+                                    <label>33. ¿Cuenta con mecansimos o programas  de apoyos a los trabajadores, de manera que puedan atender emergencias familiares, mismas que el trabajador tendrá que comprobar? </label>
+
+                                    <div class="boxchecklist">
+                                        @Html.RadioButtonFor(i => i.Q33, "0", new { id = "value-Q33-2", onclick = "showQ33A()" })
+                                        <label for="value-Q33-2" class="value-Q33-2">
+                                            <div class="select-dots"></div>
+                                            <div class="text">No</div>
+                                        </label>
+                                        @Html.RadioButtonFor(i => i.Q33, "1", new { id = "value-Q33-1", onclick = "showQ33B()" })
+                                        <label for="value-Q33-1" class="value-Q33-1">
+                                            <div class="select-dots"></div>
+                                            <div class="text">Si</div>
+                                        </label>
+                                        <div id="div33" style="display:none" class="pt-2 pb-2">
+                                            <div class="_box">
+                                                
+                                                <input type="text" placeholder="Presiona ENTER para añadir tu acción" class="newTag33 rounded" onclick="cambiar(33)" />
+                                                <ul class="tagList33">
+                                                    <!-- All TagList Here! -->
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="pt-2 pb-4">
+                                    <label>34. ¿Cuenta con mecanismos, capacitación o programas para  difundir información para sensibilizar sobre la violencia laboral, tanto a trabajadores como a directivos, gerentes y supervisores? </label>
+
+                                    <div class="boxchecklist">
+                                        @Html.RadioButtonFor(i => i.Q34, "0", new { id = "value-Q34-2", onclick = "showQ34A()" })
+                                        <label for="value-Q34-2" class="value-Q34-2">
+                                            <div class="select-dots"></div>
+                                            <div class="text">No</div>
+                                        </label>
+                                        @Html.RadioButtonFor(i => i.Q34, "1", new { id = "value-Q34-1", onclick = "showQ34B()" })
+                                        <label for="value-Q34-1" class="value-Q34-1">
+                                            <div class="select-dots"></div>
+                                            <div class="text">Si</div>
+                                        </label>
+                                        <div id="div34" style="display:none" class="pt-2 pb-2">
+                                            <div class="_box">
+                                                
+                                                <input type="text" placeholder="Presiona ENTER para añadir tu acción" class="newTag34 rounded" onclick="cambiar(34)" />
+                                                <ul class="tagList34">
+                                                    <!-- All TagList Here! -->
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="pt-2 pb-4">
+                                    <label>35. ¿Cuenta con mecanismos para  Informar sobre la forma en que se deben denunciar actos de violencia laboral? </label>
+
+                                    <div class="boxchecklist">
+                                        @Html.RadioButtonFor(i => i.Q35, "0", new { id = "value-Q35-2", onclick = "showQ35A()" })
+                                        <label for="value-Q35-2" class="value-Q35-2">
+                                            <div class="select-dots"></div>
+                                            <div class="text">No</div>
+                                        </label>
+                                        @Html.RadioButtonFor(i => i.Q35, "1", new { id = "value-Q35-1", onclick = "showQ35B()" })
+                                        <label for="value-Q35-1" class="value-Q35-1">
+                                            <div class="select-dots"></div>
+                                            <div class="text">Si</div>
+                                        </label>
+                                        <div id="div35" style="display:none" class="pt-2 pb-2">
+                                            <div class="_box">
+                                                
+                                                <input type="text" placeholder="Presiona ENTER para añadir tu acción" class="newTag35 rounded" onclick="cambiar(35)" />
+                                                <ul class="tagList35">
+                                                    <!-- All TagList Here! -->
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="pt-2 pb-4">
+                                    <label>36. ¿Cuenta con mecanismos  seguros y confidenciales para la recepción de quejas por prácticas opuestas al entorno organizacional favorable y para denunciar actos de violencia laboral? </label>
+
+                                    <div class="boxchecklist">
+                                        @Html.RadioButtonFor(i => i.Q36, "0", new { id = "value-Q36-2", onclick = "showQ36A()" })
+                                        <label for="value-Q36-2" class="value-Q36-2">
+                                            <div class="select-dots"></div>
+                                            <div class="text">No</div>
+                                        </label>
+                                        @Html.RadioButtonFor(i => i.Q36, "1", new { id = "value-Q36-1", onclick = "showQ36B()" })
+                                        <label for="value-Q36-1" class="value-Q36-1">
+                                            <div class="select-dots"></div>
+                                            <div class="text">Si</div>
+                                        </label>
+                                        <div id="div36" style="display:none" class="pt-2 pb-2">
+                                            <div class="_box">
+                                                
+                                                <input type="text" placeholder="Presiona ENTER para añadir tu acción" class="newTag36 rounded" onclick="cambiar(36)" />
+                                                <ul class="tagList36">
+                                                    <!-- All TagList Here! -->
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="pt-2 pb-4">
+                                    <label>37. ¿Cuenta con programas que promuevan el sentido de pertenencia de los trabajadores a la organización? </label>
+
+                                    <div class="boxchecklist">
+                                        @Html.RadioButtonFor(i => i.Q37, "0", new { id = "value-Q37-2", onclick = "showQ37A()" })
+                                        <label for="value-Q37-2" class="value-Q37-2">
+                                            <div class="select-dots"></div>
+                                            <div class="text">No</div>
+                                        </label>
+                                        @Html.RadioButtonFor(i => i.Q37, "1", new { id = "value-Q37-1", onclick = "showQ37B()" })
+                                        <label for="value-Q37-1" class="value-Q37-1">
+                                            <div class="select-dots"></div>
+                                            <div class="text">Si</div>
+                                        </label>
+                                        <div id="div37" style="display:none" class="pt-2 pb-2">
+                                            <div class="_box">
+                                                
+                                                <input type="text" placeholder="Presiona ENTER para añadir tu acción" class="newTag37 rounded" onclick="cambiar(37)" />
+                                                <ul class="tagList37">
+                                                    <!-- All TagList Here! -->
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+
+                            </div>
+                            <input type="button" name="next" class="next action-button" value="Guardar" onclick="enviar_data()" /> <input type="button" name="previous" class="previous action-button-previous" value="Anterior" />
+                        </fieldset>
+                        <fieldset>
+                            <div class="form-card">
+                                <div class="row">
+                                    <div class="col-7">
+                                        <h2 class="fs-title"></h2>
+                                    </div>
+                                    <div class="col-5">
+                                        <h2 class="steps"></h2>
+                                    </div>
+                                </div> <br><br>
+                                <h2 class="purple-text text-center"><strong>Finalizado</strong></h2> <br>
+                                <div class="row justify-content-center">
+                                    <div class="col-3"> <img src="https://i.imgur.com/GwStPmg.png" class="fit-image"> </div>
+                                </div> <br><br>
+                                <div class="row justify-content-center">
+                                    <div class="col-7 text-center">
+                                        <h5 class="purple-text text-center">Haz terminado tu encuesta</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type='text/javascript' src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js'></script>
+    <script src=" @Url.Content("~/Scripts/script_Medidas.js") "></script>
+    @Scripts.Render("~/Scripts/scriptMedidas37.js")
+
+    @Scripts.Render("~/Scripts/addTags.js")
+
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('input[type=text]').forEach(node => node.addEventListener('keypress', e => {
+                if (e.keyCode == 13) {
+                    e.preventDefault();
+                }
+            }))
+        });
+        function generar_imput(id) {
+            var hola = $("[name='Q1_complento']").val();
+            console.log(hola);
+            $("#div" + id).append("<input type=\"text\" placeholder = \"Por favor justifica tu respuesta\"" + "name = \"medida" + id + "\"" + "onblur = \"generar_imput(" + id + ")\"" + " />");
+        }
+
+    function enviar_data() {
+        //alert($('input[name=Q1]:checked').val());
+        var lista = [];
+        for (var i = 1; i < 38; i++) {
+            var lista_temporal = [];
+            $(".tagList"+i+" li").each(function () {
+                var temporarl = $(this).text();
+                lista_temporal.push(temporarl.substring(0, temporarl.length - 1));
+            });
+            lista.push(lista_temporal);
+        }
+             $.ajax({
+                url: '@Url.Action("Medidas37", "Checklist")',
+                 type: 'POST',
+                 data: {
+                     Nombre: $('input[name=Nombre]').val(), Celular: $('input[name=Celular]').val(), Email: $('input[name=Email]').val(), No_Empleados: $('input[name=No_Empleados]').val(), Agente: $('input[name=Agente]').val(), Razon_social: $('input[name=Razon_social]').val(), Q1: $('input[name=Q1]:checked').val(), Q2: $('input[name=Q2]:checked').val(), Q3: $('input[name=Q3]:checked').val(), Q4: $('input[name=Q4]:checked').val(), Q5: $('input[name=Q5]:checked').val(), Q6: $('input[name=Q6]:checked').val(), Q7: $('input[name=Q7]:checked').val(), Q8: $('input[name=Q8]:checked').val(), Q9: $('input[name=Q9]:checked').val(), Q10: $('input[name=Q10]:checked').val(), Q11: $('input[name=Q11]:checked').val(), Q12: $('input[name=Q12]:checked').val(),
+                     Q13: $('input[name=Q13]:checked').val(), Q14: $('input[name=Q14]:checked').val(), Q15: $('input[name=Q15]:checked').val(), Q16: $('input[name=Q16]:checked').val(), Q17: $('input[name=Q17]:checked').val(), Q18: $('input[name=Q18]:checked').val(), Q19: $('input[name=Q19]:checked').val(), Q20: $('input[name=Q20]:checked').val(), Q21: $('input[name=Q21]:checked').val(), Q22: $('input[name=Q22]:checked').val(), Q23: $('input[name=Q23]:checked').val(),
+                     Q24: $('input[name=Q24]:checked').val(), Q25: $('input[name=Q25]:checked').val(), Q26: $('input[name=Q26]:checked').val(), Q27: $('input[name=Q27]:checked').val(), Q28: $('input[name=Q28]:checked').val(), Q29: $('input[name=Q29]:checked').val(), Q30: $('input[name=Q30]:checked').val(), Q31: $('input[name=Q31]:checked').val(), Q32: $('input[name=Q32]:checked').val(), Q33: $('input[name=Q33]:checked').val(),
+                     Q34: $('input[name=Q34]:checked').val(), Q35: $('input[name=Q35]:checked').val(), Q36: $('input[name=Q36]:checked').val(), Q37: $('input[name=Q37]:checked').val(), medida1: lista[0], medida2: lista[1], medida3: lista[2], medida4: lista[3], medida5: lista[4], medida6: lista[5], medida7: lista[6], medida8: lista[7], medida9: lista[8], medida10: lista[9], medida11: lista[10], medida12: lista[11], medida13: lista[12], medida14: lista[13], medida15: lista[14], medida16: lista[15], medida17: lista[16], medida18: lista[17], medida19: lista[18],
+                     medida20: lista[19], medida21: lista[20], medida22: lista[21], medida23: lista[22], medida24: lista[23], medida25: lista[24], medida26: lista[25], medida27: lista[26], medida28: lista[27], medida29: lista[28], medida30: lista[29], medida31: lista[30], medida32: lista[31], medida33: lista[32], medida34: lista[33], medida35: lista[34], medida36: lista[35], medida37: lista[36]},
+                 success: function (result) {    
+                     window.location.href = result.redirectToUrl;
+                },
+                error: function (jqXHR, textStatus, error) {
+                }
+            });
+        }
+</script>
+</div>

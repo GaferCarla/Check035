@@ -1,0 +1,280 @@
+﻿@using PagedList;
+@using PagedList.Mvc;
+@model IPagedList<ErgoSalud.Models.ERGOS_Cuestionarios_Trabajador_N01>
+
+@*@model IEnumerable<ErgoSalud.Models.ERGOS_Cuestionarios_Trabajador_N01>*@
+
+@{
+    ViewBag.Title = "Index";
+    @Styles.Render("~/Content/sizing.css");
+    @Styles.Render("~/Content/branding.css");
+    @Styles.Render("~/Content/button.css");
+    @Styles.Render("~/Content/form.css");
+    @Styles.Render("~/Content/tableElements.css");
+
+
+
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet'>
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/boxicons@2.0.0/css/boxicons.min.css'>
+
+    <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+}
+
+@section dataTableStyle {
+
+    <link href="~/lib/datatables.net-bs/dataTables.bootstrap.min.css" rel="stylesheet" />
+    <link href="~/lib/datatables.net-select-bs/select.bootstrap.min.css" rel="stylesheet" />
+    <link rel='stylesheet' href='https://cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css'>
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/boxicons@2.0.0/css/boxicons.min.css'>
+}
+
+
+
+<script>
+    window.setTimeout(function () {
+        $(".alert-success").fadeTo(500, 0).slideUp(500, function () {
+            $(this).remove();
+        });
+    }, 3000);
+    window.setTimeout(function () {
+        $(".alert-danger").fadeTo(500, 0).slideUp(500, function () {
+            $(this).remove();
+        });
+    }, 3000);
+</script>
+
+<div class="container py-5">
+    <h2 class="mt-5 title_blue text-sm-start text-center">Números de Folio</h2>
+    @if (@ViewData["Mail"] != null)
+    {<br><br>
+        <div class="alert alert-success" role="alert">
+            @ViewData["Mail"]
+        </div>
+    }
+    @if (@ViewData["Mail_Error"] != null)
+    {<br><br>
+        <div class="alert alert-danger" role="alert">
+            @ViewData["Mail_Error"]
+        </div>
+    }
+
+
+    <div class="row py-4">
+        <div class="col-12 d-flex justify-content-sm-end  justify-content-center">
+            @Html.ActionLink("Nuevo Folio", "Create", null, new { @class = "btn px-5 py-3 btn-module text-uppercase" })
+
+        </div>
+
+
+
+    </div>
+
+    <br>
+    <div class="row pt-2">
+        <div class="col-12">
+            <table id="example" class="table table-hover responsive nowrap" style="width:100%">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayName("No. Folio")
+                        </th>
+                        @*<th>
+                        @Html.DisplayName("Nombre")
+                    </th>
+                    <th>
+                        @Html.DisplayName("Email")
+                    </th>
+                    <th>
+                        @Html.DisplayName("Fecha")
+                    </th>*@
+
+                        @*<th>
+                        @Html.DisplayNameFor(model => model.Sexo)
+                    </th>*@
+                        @*<th>
+                        @Html.DisplayNameFor(model => model.Edad)
+                    </th>
+                    <th>
+                        @Html.DisplayName("Estado Civil")
+                    </th>
+                    <th>
+                        @Html.DisplayName("Nivel Estudios")
+                    </th>*@
+                        @*<th>
+                        @Html.DisplayName("Ocupación")
+                    </th>
+                    <th>
+                        @Html.DisplayName("Departamento")
+                    </th>*@
+                        @*<th>
+                        @Html.DisplayNameFor(model => model.Tipo_puesto)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Tipo_Contratacion)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Tipo_Jornada)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Rotacion_Turno)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Experiencia_puesto_actual)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Experiencia_puesto_laboral)
+                    </th>*@
+                        <th>
+                            @Html.DisplayName("Cuestionario")
+                        </th>
+                        <th>
+                            @Html.DisplayName("Empresa")
+                        </th>
+                        <th>Acción</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        if (item.id_encuesta == 1 || item.id_encuesta == 1 || item.id_encuesta == 3)
+                        {
+
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.id_trabajador)
+                                </td>
+                                @*<td>
+                                @Html.DisplayFor(modelItem => item.Nombre)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Email)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.fecha)
+                            </td>*@
+                                @*<td>
+                                @Html.DisplayFor(modelItem => item.Sexo)
+                            </td>*@
+                                @*<td>
+                                @Html.DisplayFor(modelItem => item.Edad)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Estado_Civil)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Nivel_Estudios)
+                            </td>*@
+                                @*<td>
+                                @Html.DisplayFor(modelItem => item.Ocupacion)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Departamento)
+                            </td>*@
+                                @*<td>
+                                @Html.DisplayFor(modelItem => item.Tipo_puesto)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Tipo_Contratacion)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Tipo_Jornada)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Rotacion_Turno)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Experiencia_puesto_actual)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Experiencia_puesto_laboral)
+                            </td>*@
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.ERGOS_Cuestionarios_N01.Cuestionario)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.ERGOS_Empresas_N01.Razon_Social)
+                                </td>
+                                <td>
+                                    <a title="Editar" href="@Url.Action("Edit", new { id = item.id_cuestionario_trabajador })">
+                                        <i class="fa fa-edit" title="Editar" style="font-size:23px;color:rebeccapurple"></i>
+                                    </a>
+                                    <a href="@Url.Action("Encuesta", "Trabajador_Resultados", new { id_CT = item.id_cuestionario_trabajador ,id_C = item.ERGOS_Cuestionarios_N01.id_cuestionario})"><i class="fa fa-file-text" title="Encuesta" style="font-size:20px;color:rebeccapurple" aria-hidden="true"></i></a>
+
+                                    <a href="@Url.Action("Delete", new { id=item.id_cuestionario_trabajador })">
+                                        <i class="fa fa-trash-o" title="Eliminar" style="font-size:23px;color:rebeccapurple"></i>
+                                    </a>
+
+                                    <a href="@Url.Action("Resultados", new { id=item.id_cuestionario_trabajador })">
+
+                                        <i class="fa fa-check-circle" aria-hidden="true" style="color:green;font-size:23px" title="Resultados"></i>
+                                    </a>
+                                    <a href="@Url.Action("Reporte_PDF", "Encuestas", new {id_CT = item.id_cuestionario_trabajador ,id_C=item.id_encuesta })"><i class="fa fa-file-pdf-o" title="Encuesta Digital" style="font-size:20px;color:red" aria-hidden="true"></i> </a>
+
+                                    <a href="@Url.Action("Reporte_Resultado_Individual", "Encuestas", new {id_CT = item.id_cuestionario_trabajador})"><i class="fa fa-file-pdf-o" title="Resultados Individuales" style="font-size:20px;color:green" aria-hidden="true"></i> </a>
+                                    <a href="@Url.Action("Enviar_encuestas_Ind_Admin", new { @id_empresa = item.id_empresa, @id_CT = item.id_cuestionario_trabajador })">
+                                        <i class="fa fa-envelope" aria-hidden="true" title="Reenviar Encuesta Individual" style="font-size:20px;color:deepskyblue"></i>
+
+                                    </a>
+
+                                </td>
+                            </tr>
+                        }
+                    }
+                </tbody>
+
+            </table>
+
+        </div>
+        
+    </div>
+</div>
+
+
+@section dataTableScripts {
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js'></script>
+    <script src="~/lib/datatables.net/jquery.dataTables.min.js"></script>
+    <script src='https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js'></script>
+    <script src="~/lib/datatables.net-bs/dataTables.bootstrap.min.js"></script>
+    <script src="~/lib/datatables.net-select-bs/select.bootstrap.min.js"></script>
+    <script src="https://cdn.datatables.net/plug-ins/1.11.5/i18n/es-ES.json"></script>
+
+}
+
+
+
+<script>
+    $(document).ready(function () {
+        $("#example").DataTable({
+            "language": {
+                "url": "//cdn.datatables.net/plug-ins/1.10.16/i18n/Spanish.json"
+            },
+
+            aaSorting: [],
+            responsive: true,
+
+            columnDefs: [
+                {
+                    responsivePriority: 1,
+                    targets: 0
+                },
+                {
+                    responsivePriority: 2,
+                    targets: -1
+                }
+            ]
+        });
+
+        $(".dataTables_filter input")
+            .attr("placeholder", "Search here...")
+            .css({
+                width: "300px",
+                display: "inline-block"
+            });
+
+        $('[data-toggle="tooltip"]').tooltip();
+    });
+</script>
+
+

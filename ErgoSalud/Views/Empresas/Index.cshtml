@@ -1,0 +1,235 @@
+﻿@model IEnumerable<ErgoSalud.Models.ERGOS_Empresas_N01>
+
+@{
+    ViewBag.Title = "Index";
+    @Styles.Render("~/Content/sizing.css");
+    @Styles.Render("~/Content/form.css");
+    @Styles.Render("~/Content/tableElements.css");
+    @Styles.Render("~/Content/button.css");
+    @Styles.Render("~/Content/branding.css");
+
+
+
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet'>
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/boxicons@2.0.0/css/boxicons.min.css'>
+
+    <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+}
+
+@section dataTableStyle {
+
+    <link href="~/lib/datatables.net-bs/dataTables.bootstrap.min.css" rel="stylesheet" />
+    <link href="~/lib/datatables.net-select-bs/select.bootstrap.min.css" rel="stylesheet" />
+    <link rel='stylesheet' href='https://cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css'>
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/boxicons@2.0.0/css/boxicons.min.css'>
+}
+
+<style>
+    table.dataTable.dtr-inline.collapsed > tbody > tr[role="row"] > td:first-child:before, table.dataTable.dtr-inline.collapsed > tbody > tr[role="row"] > th:first-child:before {
+        top: 12px !important
+    }
+</style>
+
+<div class="container py-5">
+    <h2 class="mt-5 title_blue text-sm-start text-center">Empresas</h2>
+
+
+    <div class="row pb-2 pt-0">
+        <div class="col-12 d-flex justify-content-sm-end  justify-content-center">
+            @Html.ActionLink("Agregar Empresa", "Create", null, new { @class = "btn btn-module px-5 py-3 text-uppercase" })
+
+        </div>
+
+        @*Esto es un template para la sección de buscador o filtrado. Si se pretende cambiar los botones, se debe mantener la clase .input para el input o el selecto y el .btn-module2 para el botón de buscar *@
+
+        @*<div class="col-12 col-sm-6 search-section pt-5 pt-sm-0">
+                @using (Html.BeginForm("Search_Empresas", "Encuestas", FormMethod.Get))
+                {
+                    <div class="row">
+                        <div class="col-8 ">
+                            @Html.DropDownList("ERGOS_Empresas_N01List", null, new { @class = "form-control input mx-0", })
+
+                        </div>
+                        <div class="col-4 ">
+                            <input type="submit" class="btn btn-module2 text-uppercase" value="Buscar">
+
+                        </div>
+                    </div>
+
+
+                }
+            </div>*@
+
+
+
+
+    </div>
+    <hr />
+
+    <table id="example" class="table table-hover responsive nowrap" style="width:100%">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayName("Razón Social")
+                </th>
+                <th>
+                    @Html.DisplayName("Evaluación")
+                </th>
+                <th>
+                    @Html.DisplayName("RFC")
+                </th>
+                <th>
+                    @Html.DisplayName("Actividad Principal")
+                </th>
+
+                <th>
+                    @Html.DisplayName("Teléfono")
+                </th>
+                <th>
+                    @Html.DisplayName("Nombre Contacto")
+                </th>
+                <th>
+                    @Html.DisplayName("Correo")
+                </th>
+                <th>Acción</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                if (item.deleted_at == null)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Razon_Social)
+                        </td>
+                        <td>
+                            @if (item.id_encuesta == 2)
+                            {<span>NOM-035 Guía I-II</span> }
+                            else if (item.id_encuesta == 3)
+                            {<span>NOM-035 Guía I-III</span>}
+                            else if (item.id_encuesta == 4)
+                            {<span>Clima Laboral</span>}
+                            else if (item.id_encuesta == 5)
+                            {<span>Evaluación 360</span>}
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.RFC)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Actividad_Principal)
+                        </td>
+
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Telefono)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Contacto_Nombre)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Email)
+                        </td>
+                        <td nowrap>
+
+                            <a href="@Url.Action("Encuestas_Admin", "Encuestas", new { id_empresa=item.id_empresa })">
+                                <i class="fas fa-search" title="Ver seguimiento" style="font-size:20px;color:rebeccapurple"></i>
+                            </a>
+                            <a title="Editar" href="@Url.Action("Edit", new { id = item.id_empresa })">
+                                <i class="fa fa-edit" title="Editar" style="font-size:23px;color:rebeccapurple"></i>
+                            </a>
+
+
+
+                            <a href="@Url.Action("Delete", new { id=item.id_empresa })">
+                                <i class="fa fa-trash-o" title="Eliminar" style="font-size:23px;color:rebeccapurple"></i>
+                            </a>
+
+
+                            @if (item.id_encuesta == 2)
+                            {<a href="@Url.Action("General_Statistics", new { id = item.id_empresa, id_encuesta = item.ERGOS_Cuestionarios_N01.id_cuestionario})">
+                                    <i title="Resultados Generales" class="far fa-chart-bar" style="font-size:23px;color:rebeccapurple"></i>
+                                </a> }
+                            else if (item.id_encuesta == 3)
+                            { <a href="@Url.Action("General_Statistics", new { id = item.id_empresa, id_encuesta = item.ERGOS_Cuestionarios_N01.id_cuestionario})">
+                                    <i title="Resultados Generales" class="far fa-chart-bar" style="font-size:23px;color:rebeccapurple"></i>
+                                </a>}
+                            else if (item.id_encuesta == 4)
+                            { <a href="@Url.Action("General_Statistics","MultiEvaluaClimaLaboral", new { id_e = item.id_empresa})">
+                                    <i title="Resultados Generales" class="far fa-chart-bar" style="font-size:23px;color:rebeccapurple"></i>
+                                </a>
+                                <a href="@Url.Action("Corte_CLIMA","Reportes", new { id_empresa = item.id_empresa })">
+                                    <i title="CORTE CLIMA" class="fa fa-file-excel-o" style="font-size:23px;color:darkorange" aria-hidden="true"> </i>
+                                </a>
+                            }
+                            else if (item.id_encuesta == 5)
+                            { <a href="@Url.Action("General_Statistics","MultiEvaluaE360", new { id_e = item.id_empresa})">
+                                    <i title="Resultados Generales" class="far fa-chart-bar" style="font-size:23px;color:rebeccapurple"></i>
+                                </a>
+                                <a href="@Url.Action("Corte_E360","Reportes", new { id_empresa = item.id_empresa })">
+                                    <i title="CORTE E360" class="fa fa-file-excel-o" style="font-size:23px;color:red" aria-hidden="true"> </i>
+                                </a>
+                            }
+                            <a href="@Url.Action("ExportToExcel_Users_Empresa","Reportes", new { id_empresa=item.id_empresa })">
+                                <i title="Usuarios" class="fa fa-file-excel-o" style="font-size:23px;color:green" aria-hidden="true"> </i>
+                            </a>
+
+                        </td>
+                    </tr>
+                }
+
+            }
+        </tbody>
+
+
+
+    </table>
+
+</div>
+
+
+
+@section dataTableScripts {
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js'></script>
+    <script src="~/lib/datatables.net/jquery.dataTables.min.js"></script>
+    <script src='https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js'></script>
+    <script src="~/lib/datatables.net-bs/dataTables.bootstrap.min.js"></script>
+    <script src="~/lib/datatables.net-select-bs/select.bootstrap.min.js"></script>
+    <script src="https://cdn.datatables.net/plug-ins/1.11.5/i18n/es-ES.json"></script>
+
+}
+
+
+
+<script>
+    $(document).ready(function () {
+        $("#example").DataTable({
+            "language": {
+                "url": "//cdn.datatables.net/plug-ins/1.10.16/i18n/Spanish.json"
+            },
+
+            aaSorting: [],
+            responsive: true,
+
+            columnDefs: [
+                {
+                    responsivePriority: 1,
+                    targets: 0
+                },
+                {
+                    responsivePriority: 2,
+                    targets: -1
+                }
+            ]
+        });
+
+        $(".dataTables_filter input")
+            .attr("placeholder", "Search here...")
+            .css({
+                width: "300px",
+                display: "inline-block"
+            });
+
+        $('[data-toggle="tooltip"]').tooltip();
+    });
+</script>

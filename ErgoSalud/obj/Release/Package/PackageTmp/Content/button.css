@@ -1,0 +1,66 @@
+﻿/*general*/
+.rounded {
+    border-radius: 1em !important;
+}
+
+
+a:hover, button:hover {
+    opacity: 0.9 !important;
+    zoom: 1.1 !important;
+}
+
+button {
+    background: none;
+    border: none;
+}
+
+
+/*Banner*/
+
+
+.banner-section a:hover {
+    opacity: 1;
+    border: solid 1px #da4b5c;
+}
+
+
+.cta-btn {
+    display: inline-block;
+    padding: 0.9em 2.5em;
+    color: var(--White);
+    font-weight: var(--Fw-bold);
+    border-radius: 3em;
+    border: none;
+    transition: var(--Transition);
+}
+
+.cta-btn:hover {
+        opacity: 0.6;
+}
+
+.cta-1 {
+    display: none;
+}
+
+
+/*Module class*/
+
+
+.btn-module, .btn-module2 {
+    border-radius: 1em !important;
+    font-weight: bold !important;
+}
+
+.boxesContainer .card .back a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.9em;
+    transition: all 0.2s ease 0s;
+
+}
+
+.boxesContainer.card .back a:hover {
+    text-shadow: 0 0 1px #333;
+}
+
+

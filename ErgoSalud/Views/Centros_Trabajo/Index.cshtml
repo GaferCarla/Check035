@@ -1,0 +1,206 @@
+﻿@model IEnumerable<ErgoSalud.Models.ERGOS_Centros_Trabajo_N01>
+
+@{
+    ViewBag.Title = "Index";
+    @Styles.Render("~/Content/tableElements.css");
+    @Styles.Render("~/Content/button.css");
+    @Styles.Render("~/Content/branding.css");
+    @Styles.Render("~/Content/sizing.css");
+
+
+
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet'>
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/boxicons@2.0.0/css/boxicons.min.css'>
+
+    <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+}
+
+@section dataTableStyle {
+
+    <link href="~/lib/datatables.net-bs/dataTables.bootstrap.min.css" rel="stylesheet" />
+    <link href="~/lib/datatables.net-select-bs/select.bootstrap.min.css" rel="stylesheet" />
+    <link rel='stylesheet' href='https://cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css'>
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/boxicons@2.0.0/css/boxicons.min.css'>
+}
+
+<style>
+    table.dataTable.dtr-inline.collapsed > tbody > tr[role="row"] > td:first-child:before, table.dataTable.dtr-inline.collapsed > tbody > tr[role="row"] > th:first-child:before {
+        top: 12px !important
+    }
+</style>
+
+<div class="container py-4">
+    <h2 class="title_blue pt-4 text-center text-sm-start">Centros de Trabajo</h2>
+    <br />
+
+    <div class="row pb-2">
+        <div class="col-12 d-sm-inline text-center text-sm-start pb-5">
+            @Html.ActionLink("Nuevo Centro de Trabajo", "Create", null, new { @class = "btn btn-module2 mx-2 text-uppercase my-md-0 my-3 px-5 py-3" })
+
+            <a href="/Home/Index">
+                <input type="button" class="btn btn-module mx-2 text-uppercase my-md-0 my-3 px-5 py-3" value="Regresar">
+            </a>
+        </div>
+    </div>
+
+    @if (TempData["delete_failed"] != null)
+    {
+        <div class="alert-danger">
+            <br>
+            <b style="color:white;text-align:center">@TempData["delete_failed"]</b>
+            <br> <br>
+        </div>
+    }
+
+    <table id="example" class="table table-hover responsive nowrap" style="width:100%">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayName("Empresa")
+                </th>
+                <th>
+                    @Html.DisplayName("Centro de Trabajo")
+                </th>
+                @*<th>
+                        @Html.DisplayNameFor(model => model.No_emplados)
+                    </th>*@
+                <th>
+                    @Html.DisplayName("Fecha Aplicación")
+                </th>
+                @*<th>
+                        @Html.DisplayNameFor(model => model.created_at)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.updated_at)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.deleted_at)
+                    </th>*@
+                <th>
+                    @Html.DisplayNameFor(model => model.Comentarios)
+                </th>
+                <th>
+                    @Html.DisplayName("Dirección")
+                </th>
+                <th>
+                    @Html.DisplayName("Actividad Principal")
+                </th>
+
+                <th>Acción</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ERGOS_Empresas_N01.Razon_Social)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Nombre_centro_trabajo)
+                    </td>
+                    @*<td>
+                            @Html.DisplayFor(modelItem => item.No_emplados)
+                        </td>*@
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Fecha_Auditoria)
+                    </td>
+                    @*<td>
+                            @Html.DisplayFor(modelItem => item.created_at)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.updated_at)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.deleted_at)
+                        </td>*@
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Comentarios)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.direccion)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Actividad_principal)
+                    </td>
+                    @*<td>
+                            @Html.DisplayFor(modelItem => item.Razon_Social)
+                        </td>*@
+
+                    <td>
+                        <a href="@Url.Action("Edit", new { id = item.id_centro_trabajo })">
+                            <i title="Reportes y Editar" class="fas fa-file-contract" style="font-size:23px;color:rebeccapurple"></i>
+                        </a>
+
+
+                        @*@if (item.ERGOS_Empresas_N01.id_encuesta == 2)
+                            {*@
+                        <a href="@Url.Action("General_Statistics", new { id = item.id_centro_trabajo, id_encuesta = item.ERGOS_Empresas_N01.id_encuesta})">
+                            <i title="Resultados Generales" class="far fa-chart-bar" style="font-size:23px;color:rebeccapurple"></i>
+                        </a>
+                        @*}
+                            else if (item.ERGOS_Empresas_N01.id_encuesta == 3)
+                            {
+                                <a href="@Url.Action("General_Statistics_Admin_S3", new { id = item.id_centro_trabajo, id_encuesta = item.ERGOS_Empresas_N01.id_encuesta})">
+                                    <i title="Resultados Generales" class="far fa-chart-bar" style="font-size:23px"></i>
+                                </a>
+
+                            }*@
+
+                        <a href="@Url.Action("ExportToExcel_Users_Centro","Reportes", new { id_centro_trabajo=item.id_centro_trabajo })">
+                            <i title="Usuarios" class="fa fa-file-excel-o" style="font-size:23px;color:green" aria-hidden="true"> </i>
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+
+    </table>
+</div>
+
+@section dataTableScripts {
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js'></script>
+    <script src="~/lib/datatables.net/jquery.dataTables.min.js"></script>
+    <script src='https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js'></script>
+    <script src="~/lib/datatables.net-bs/dataTables.bootstrap.min.js"></script>
+    <script src="~/lib/datatables.net-select-bs/select.bootstrap.min.js"></script>
+    <script src="https://cdn.datatables.net/plug-ins/1.11.5/i18n/es-ES.json"></script>
+
+}
+
+
+
+<script>
+    $(document).ready(function () {
+        $("#example").DataTable({
+            "language": {
+                "url": "//cdn.datatables.net/plug-ins/1.10.16/i18n/Spanish.json"
+            },
+
+            aaSorting: [],
+            responsive: true,
+
+            columnDefs: [
+                {
+                    responsivePriority: 1,
+                    targets: 0
+                },
+                {
+                    responsivePriority: 2,
+                    targets: -1
+                }
+            ]
+        });
+
+        $(".dataTables_filter input")
+            .attr("placeholder", "Search here...")
+            .css({
+                width: "300px",
+                display: "inline-block"
+            });
+
+        $('[data-toggle="tooltip"]').tooltip();
+    });
+</script>

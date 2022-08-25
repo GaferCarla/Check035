@@ -1,0 +1,93 @@
+﻿@model IEnumerable<ErgoSalud.Models.Check_checklist_medidas_acciones_N01>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.id_medida)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.accion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.id_empresa)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.id_centro_trabajo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.departamento)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fecha_inicio)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fecha_fin)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.file_evidencia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.estatus)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.nivel)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Check_checklist_medidas_N01.QR1)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.id_medida)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.accion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.id_empresa)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.id_centro_trabajo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.departamento)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fecha_inicio)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fecha_fin)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.file_evidencia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.estatus)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.nivel)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Check_checklist_medidas_N01.QR1)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.id })
+        </td>
+    </tr>
+}
+
+</table>

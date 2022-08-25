@@ -1,0 +1,697 @@
+﻿body{
+
+    background-color: #ffffff;
+}
+
+    body #reporte {
+        font-size: 16px !important;
+        line-height: 1.72222 !important;
+        color: #4c4c4e !important;
+
+    }
+
+
+#reporte h1,
+#reporte h2,
+#reporte h3,
+#reporte h4,
+#reporte h5,
+#reporte h6,
+#reporte h7,
+#reporte .h1,
+#reporte .h2,
+#reporte .h3,
+#reporte .h4,
+#reporte .h5,
+#reporte .h6,
+#reporte .h7 {
+    font-family: 'open sans', helvetica, Arial, serif;
+    font-weight: 800;
+    line-height: 1.4;
+    color: inherit;
+}
+
+    #reporte h1 small,
+    #reporte h2 small,
+    #reporte h3 small,
+    #reporte h4 small,
+    #reporte h5 small,
+    #reporte h6 small,
+    #reporte .h1 small,
+    #reporte .h2 small,
+    #reporte .h3 small,
+    #reporte .h4 small,
+    #reporte .h5 small,
+    #reporte .h6 small {
+        color: #e7e9ec;
+    }
+
+#reporte h1,
+#reporte h2,
+#reporte h3 {
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+#reporte h4 {
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+#reporte h5,
+#reporte h6,
+#reporte h7 {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+
+#reporte h5 {
+    font-weight: 300;
+}
+
+#reporte h6 {
+    font-weight: 800;
+}
+
+
+#reporte h1,
+#reporte .h1 {
+    font-size: 2.25em;
+}
+
+
+#myChart {
+    width:500px !important;
+    height:500px !important;
+    margin:0 auto !important
+}
+
+#reporte h2,
+#reporte .h2 {
+    font-size: 1.625em;
+    line-height: 1em;
+    text-transform: uppercase;
+    margin-bottom: 1em;
+}
+
+    #reporte h2.subhead {
+        font-weight: 200;
+        line-height: 1em;
+        margin-top: -1.7em;
+        margin-bottom: 2em;
+    }
+
+    #reporte h2.cover {
+        text-transform: none;
+    }
+
+
+#reporte h3,
+#reporte .h3 {
+    font-size: 1.5em;
+}
+
+    #reporte h3.cover {
+        font-weight: 700;
+    }
+
+    #reporte h3.subhead {
+        font-family: 'Merriweather', georgia, serif;
+        font-weight: 300;
+        line-height: 1em;
+        margin-top: -.5em;
+        margin-bottom: 2em;
+    }
+
+#reporte h4,
+#reporte .h4 {
+    font-size: 1.25em;
+    text-transform: uppercase;
+}
+
+#reporte h5,
+#reporte .h5 {
+    font-size: 1.25em;
+    line-height: .5em;
+    text-transform: uppercase;
+}
+
+    #reporte h5 .callout {
+        font-weight: 800;
+    }
+
+#reporte h6,
+#reporte .h6 {
+    font-size: 1.0625em;
+    line-height: 1.5em;
+    text-transform: uppercase;
+}
+
+#reporte h7,
+#reporte .h7 {
+    font-size: 1em;
+    line-height: .5em;
+    text-transform: uppercase;
+    color: #BDBDBD;
+}
+
+#reporte .logo {
+    display: block;
+    width: 100%;
+    max-width: 350px;
+    margin: 4em 0em 1em 0em;
+}
+
+/*--------------
+Colors
+-----------------*/
+
+
+
+#reporte .white {
+    color: #FFF;
+}
+
+#reporte .magenta {
+    color: #911eb7;
+}
+
+#reporte .magentaBG {
+    background-color: #911eb7;
+}
+
+
+#reporte .purple {
+    color: #631ae0;
+}
+
+.magentaDrk {
+    color: #aa2691;
+}
+
+.pink {
+    color: #df256d;
+}
+
+#reporte .shapeContainer {
+    position: relative;
+    width: 100%;
+    background: #911eb7; /* Old browsers */
+    background: -moz-linear-gradient(top, #911eb7 10%, #631ae0 80%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #911eb7 10%,#631ae0 80%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #911eb7 10%,#631ae0 80%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#911eb7', endColorstr='#631ae0 ',GradientType=0 ); /* IE6-9 */
+}
+
+#reporte .shapeUserImage {
+    position: relative;
+    display: block;
+    top: 0;
+    left: 0;
+    margin: 0em 0em -.6em 0em;
+    width: 100%;
+    height: 700px;
+    background-image: url('https://images.pexels.com/photos/5256524/pexels-photo-5256524.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    -webkit-clip-path: polygon(50% 25%, 100% 15%, 100% 100%, 0 100%, 0 15%);
+    clip-path: polygon(50% 25%, 100% 15%, 100% 100%, 0 100%, 0 15%);
+}
+
+
+#reporte p {
+    margin: 0 0 1em !important;
+
+}
+
+    #reporte p.background {
+        color: #fff;
+        font-size: 20px;
+        font-weight: 300;
+    }
+
+#reporte .background span {
+    font-weight: bold;
+}
+
+/*--------------
+Charts
+-----------------*/
+
+#reporte .graphTitleWrapper {
+    clear: both;
+    margin: 1em 0em 0em 0em;
+    padding: 0em;
+}
+
+
+
+/*--------------
+Charts Titles
+-----------------*/
+
+#reporte .circle {
+    border-radius: 50%;
+    width: 5em;
+    height: 5em;
+    background: #df256d;
+    text-align: center;
+    float: left;
+}
+
+    #reporte .circle h3 {
+        color: #FFF;
+        line-height: 1em;
+        padding: .6em 0 0 0;
+        margin: 0em;
+    }
+
+    #reporte .circle p {
+        color: #FFF;
+        font-family: 'open sans', helvetica, Arial, serif;
+        font-weight: 300;
+        line-height: 1em;
+        margin: .3em 0 0 0;
+        padding: 0em;
+    }
+
+#reporte .graphTitle {
+    margin-left: 5em;
+    padding: 1em 0em 0em 0em;
+}
+
+    #reporte .graphTitle h6 {
+        color: #911eb7;
+        font-weight: 700;
+        margin: 0em 1em;
+        padding: 0em 0em .5em 0em;
+        line-height: 1em;
+        text-transform: none;
+    }
+
+    #reporte .graphTitle hr {
+        padding: 0em;
+        margin: 0em;
+    }
+
+    #reporte .graphTitle p {
+        font-family: 'open sans', helvetica, Arial, serif;
+        color: #b1b3b5;
+        margin: 0em 1em;
+        padding: 0em 0em 0em 0em;
+        line-height: 1.4em;
+    }
+
+
+
+
+#reporte .lead {
+    margin-bottom: 30px;
+    font-size: 28px;
+    line-height: 1.46428571;
+    font-weight: 300;
+}
+
+@media (min-width: 768px) {
+    #reporte .lead {
+        font-size: 30.006px;
+    }
+}
+
+#reporte small,
+#reporte .small {
+    font-size: 83%;
+    line-height: 2.067;
+}
+
+#reporte .text-muted {
+    color: #bdc3c7;
+}
+
+#reporte .text-inverse {
+    color: #ffffff;
+}
+
+#reporte .text-primary {
+    color: #1abc9c;
+}
+
+#reporte a.text-primary:hover {
+    color: #148f77;
+}
+
+#reporte .text-warning {
+    color: #f1c40f;
+}
+
+#reporte a.text-warning:hover {
+    color: #c29d0b;
+}
+
+#reporte .text-danger {
+    color: #e74c3c;
+}
+
+#reporte a.text-danger:hover {
+    color: #d62c1a;
+}
+
+#reporte .text-success {
+    color: #2ecc71;
+}
+
+#reporte a.text-success:hover {
+    color: #25a25a;
+}
+
+#reporte .text-info {
+    color: #3498db;
+}
+
+#reporte a.text-info:hover {
+    color: #217dbb;
+}
+
+#reporte .bg-primary {
+    color: #ffffff;
+    background-color: #34495e;
+}
+
+#reporte a.bg-primary:hover {
+    background-color: #222f3d;
+}
+
+#reporte .bg-success {
+    background-color: #dff0d8;
+}
+
+#reporte a.bg-success:hover {
+    background-color: #c1e2b3;
+}
+
+#reporte .bg-info {
+    background-color: #d9edf7;
+}
+
+#reporte a.bg-info:hover {
+    background-color: #afd9ee;
+}
+
+#reporte .bg-warning {
+    background-color: #fcf8e3;
+}
+
+#reporte a.bg-warning:hover {
+    background-color: #f7ecb5;
+}
+
+#reporte .bg-danger {
+    background-color: #f2dede;
+}
+
+#reporte a.bg-danger:hover {
+    background-color: #e4b9b9;
+}
+
+#reporte .page-header {
+    padding-bottom: 14px;
+    margin: 60px 0 30px;
+    border-bottom: 2px solid #e7e9ec;
+}
+
+#reporte ul,
+#reporte ol {
+    margin-top: 1.25em;
+    margin-bottom: 1.25em;
+}
+
+#reporte dl {
+    margin-bottom: 30px;
+}
+
+#reporte dt,
+#reporte dd {
+    line-height: 1.72222;
+}
+
+@media (min-width: 768px) {
+    #reporte .dl-horizontal dt {
+        width: 160px;
+    }
+
+    #reporte .dl-horizontal dd {
+        margin-left: 180px;
+    }
+}
+
+#reporte abbr[title],
+#reporte abbr[data-original-title] {
+    border-bottom: 1px dotted #bdc3c7;
+}
+
+#reporte li {
+    margin-bottom: 1em;
+}
+
+#reporte .packageItem h4 {
+    margin-bottom: 1em;
+}
+
+#reporte .packageItem ul {
+    margin-left: 1.5em;
+}
+
+    #reporte .packageItem ul li {
+        margin-bottom: 1.5em;
+    }
+
+#reporte .packageItem h6 {
+    width: 98%;
+    border-bottom: 1px solid #4c4c4e;
+}
+
+
+/*--------------
+BLOCKQUOTE
+-----------------*/
+
+#reporte blockquote {
+    padding: 0 0 0 7px;
+    margin: 0 0 15px;
+    color: #631ae0;
+    display: block;
+    font-weight: 400;
+    padding: 0 0 0 10px;
+    font-size: 1.25em;
+    line-height: 1.55em;
+    border-left: 3px solid #ccc;
+    quotes: "“" "”" "‘" "’";
+}
+
+    #reporte blockquote p {
+        font-size: 20px !important;
+        margin-bottom: .4em !important;
+    }
+
+        #reporte blockquote p:before {
+            content: open-quote;
+        }
+
+        #reporte blockquote p:after {
+            content: close-quote;
+        }
+
+    #reporte blockquote small,
+    #reporte blockquote .small {
+        font-size: 18px;
+        line-height: 1.72222;
+        font-style: normal;
+        font-weight: 800;
+        color: inherit;
+    }
+
+        #reporte blockquote small:before,
+        #reporte blockquote .small:before {
+            content: "";
+        }
+
+    #reporte blockquote.pull-right {
+        padding-right: 16px;
+        padding-left: 0;
+        border: none;
+        float: right;
+        text-align: left;
+    }
+
+        #reporte blockquote.pull-right small:after {
+            content: "";
+        }
+
+
+#reporte hr {
+    border: none;
+    border-top: 1px solid #b1b3b5;
+    padding: 0;
+}
+
+    #reporte hr.cover {
+        border: none;
+        border-top: 1px solid #FFF;
+        margin: 0 2em 0 0;
+    }
+
+    #reporte hr.double {
+        height: 4px;
+        border-bottom: 1px solid #b1b3b5;
+        -moz-box-shadow: 0 0 0 0 transparent;
+        -webkit-box-shadow: 0 0 0 0 transparent;
+        box-shadow: 0 0 0 0 transparent;
+    }
+
+#reporte .foot {
+    bottom: 1em !important;
+    align-self: flex-end;
+}
+/*----------------------
+TABLES 
+-----------------------*/
+
+#reporte .tableResume td:nth-child(1), #reporte .tableResume td:nth-child(4) {
+    width: 30% !important
+}
+
+#reporte .tableResume td:nth-child(2), #reporte .tableResume td:nth-child(3) {
+    width: 20% !important
+}
+
+#reporte .tableQuestion td:nth-child(1) {
+    width: 50% !important
+}
+
+#reporte .tableQuestion td:nth-child(4) {
+    width: 30% !important
+}
+
+#reporte .tableQuestion td:nth-child(2), #reporte .tableQuestion td:nth-child(3) {
+    width: 10% !important
+}
+
+#reporte .numbers ul li {
+    list-style: none !important;
+}
+
+#reporte .numbers ul {
+    padding-inline-start: 10px;
+}
+
+#reporte .numbers a {
+    line-height: 1.72222;
+    color: #4c4c4e !important;
+    text-decoration: none
+}
+
+    #reporte .numbers a:hover {
+        color: #911eb7 !important;
+    }
+
+#reporte table.businesCase {
+    font-size: .9375em;
+    width: 80%;
+    border-collapse: collapse;
+}
+
+#reporte .assumptions {
+    font-size: .75em;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#reporte table.businesCase th, #reporte table.businesCase th {
+    font-family: 'open sans', helvetica, Arial, serif;
+    color: #911eb7;
+    font-size: 1.0625em;
+    font-weight: 700;
+}
+
+    #reporte table.businesCase th.tableTitle {
+        text-align: left;
+        padding: 0.3125em 0.3125em 0.3125em 1em;
+    }
+
+    #reporte table.businesCase th.colTitle {
+        padding: 0.3125em 0.3125em 0.3125em 1em;
+    }
+
+#reporte table.businesCase tr {
+    border-bottom: 1px solid #d1d3d4;
+}
+
+#reporte table.businesCase tbody tr:last-child {
+    border-bottom: 1px dotted #ABABAB;
+}
+
+#reporte table.businesCase td.rowTitle {
+    text-align: left;
+    padding: 0.3125em 0.3125em 0.3125em 1em;
+}
+
+#reporte table.businesCase th.colTitle, #reporte table.businesCase td {
+    padding: 0.3125em 0.3125em 0.3125em 1em;
+}
+
+    #reporte table.businesCase td.assumptions {
+        font-style: italic;
+        padding: 0.3125em 0.3125em 0.3125em 1.33em;
+    }
+
+
+    #reporte table.businesCase td.numbers {
+        text-align: center;
+        font-weight: bold;
+        vertical-align: middle;
+        padding: 1em 0;
+    }
+
+#reporte table.businesCase .total {
+    color: #631ae0;
+    font-weight: bold;
+}
+
+
+
+#reporte .tableGraph {
+    padding: 1em;
+    background-color: #f1f1f2;
+    width: 90%;
+    margin: 0 auto;
+}
+
+    .tableGraph table.businesCase th.tableTitle {
+        text-align: left;
+        padding-left: 0em;
+    }
+
+    .tableGraph table.businesCase td.rowTitle {
+        text-align: left;
+        padding-left: 0em;
+        vertical-align: middle;
+    }
+
+#reporte.tags_clear {
+    clear: both;
+    width: 100%;
+    height: 0;
+}
+
+
+.containerDonut canvas {
+    width: 55% !important;
+    height: 55% !important;
+    margin:0 auto !important
+}
+
+.iconInactive {
+    opacity: 0.1;
+}

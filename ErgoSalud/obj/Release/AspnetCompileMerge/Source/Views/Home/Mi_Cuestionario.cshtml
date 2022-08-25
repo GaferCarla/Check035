@@ -1,0 +1,220 @@
+﻿@if (@ViewBag.id_encuesta == 5)
+{
+    @model IEnumerable<ErgoSalud.Models.E360_Cuestionario_Resultado_N01>
+
+}
+
+    <script>
+
+          function Getting_Survey_Final_Guest() {
+
+
+       // alert(Empresa_Name);
+        $.ajax({
+            type: 'POST',
+            url: '@Url.Action("Encuesta_Final_Guest", "Trabajador_Resultados")',
+            dataType: 'json',
+            success: function (data) {
+            if (data.Flag == 1) {
+            var _id_ct = data.usuario.id_cuestionario_trabajador;
+            var _id_c = data.usuario.id_encuesta;
+            if (data.flag_editar == 0) {
+            location.href = '@Url.Action("Encuesta", "Trabajador_Resultados")?id_CT=' + _id_ct + '&id_C=' + _id_c;
+            } else if (data.flag_editar == 1) {
+            location.href = '@Url.Action("Edit", "Encuestas")/' + _id_ct;
+            }
+            } else {
+            Swal.fire(
+            'Datos No Encontrados',
+            'Favor de Reingresar los datos',
+            'error'
+            )
+            }
+            },
+            error: function () {
+            Swal.fire(
+            'Falta de Información',
+            'Favor de llenar todos los campos',
+            'error'
+            )
+            },
+            catch(e) {
+            alert(e.name + "\n" + e.message)
+            }
+            });
+            }
+
+
+            function Getting_Survey() {
+            var id_employee = $('#id_employee').val();
+            var birthday = $('#birthday').val();
+            var nombre = $('#nombre').val();
+            var Empresa_Name = $('#User_Name').text();
+            var Apellido = $('#Email').val();
+
+            // alert(Empresa_Name);
+            $.ajax({
+            type: 'POST',
+            url: '@Url.Action("Encuesta_Guest", "Trabajador_Resultados")',
+            dataType: 'json',
+            data: { id_employee: id_employee, birthday: birthday, nombre: nombre, Empresa_Name: Empresa_Name, Apellido: Apellido },
+            success: function (data) {
+            if (data.Flag == 1) {
+            var _id_ct = data.result.id_cuestionario_trabajador;
+            var _id_c = data.result.id_cuestionario;
+            if (data.flag_editar == 0) {
+            location.href = '@Url.Action("Encuesta", "Trabajador_Resultados")?id_CT=' + _id_ct + '&id_C=' + _id_c;
+            } else if (data.flag_editar == 1) {
+            location.href = '@Url.Action("Edit", "Encuestas")/' + _id_ct;
+            }
+            } else {
+            Swal.fire(
+            'Datos No Encontrados',
+            'Favor de Reingresar los datos',
+            'error'
+            )
+            }
+            },
+            error: function () {
+            Swal.fire(
+            'Falta de Información',
+            'Favor de llenar todos los campos',
+            'error'
+            )
+            },
+            catch(e) {
+            alert(e.name + "\n" + e.message)
+            }
+            });
+            }
+
+
+            </script>
+
+            <div class="container-fluid">
+                <div class="container">
+                    <div class="row">
+
+                        @if (@ViewBag.id_encuesta == 5)
+                        {<br>
+                            <h2>Mis evaluaciones</h2>
+                            <table class="table">
+                                <tr>
+                                    <th>
+                                        @Html.DisplayName("Folio")
+                                    </th>
+                                    <th>
+                                        @Html.DisplayName("Evaluador")
+                                    </th>
+                                    <th>
+                                        @Html.DisplayName("Evaluado")
+                                    </th>
+                                    <th>
+                                        @Html.DisplayName("Empresa")
+                                    </th>
+                                    <th>
+                                        @Html.DisplayName("Centro")
+                                    </th>
+                                    <th>
+                                        @Html.DisplayName("Estatus")
+                                    </th>
+                                    <th>Evaluación</th>
+                                </tr>
+
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.ERGOS_Cuestionarios_Trabajador_N01.id_trabajador)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.ERGOS_Cuestionarios_Trabajador_N01.Nombre)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Evaluado)
+                                        </td>
+
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.ERGOS_Cuestionarios_Trabajador_N01.ERGOS_Empresas_N01.Razon_Social)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.ERGOS_Cuestionarios_Trabajador_N01.ERGOS_Centros_Trabajo_N01.Nombre_centro_trabajo)
+                                        </td>
+                                        <td>
+                                            @if (item.Calificacion != null)
+                                            {
+                                               <b><span style="color:green">COMPLETADO</span></b> 
+                                            }
+                                            else
+                                            {
+                                                <b><span style="color:red">PENDIENTE</span> </b>
+                                            }
+                                        </td>
+                                        <td>
+
+                                            <a title="Editar" href="@Url.Action("Edit","MultiEvaluaE360", new { id = item.id_cuestionario_resultado })">
+                                                <i class="fa fa-file-text" title="E360" style="font-size:20px;" aria-hidden="true"></i>
+                                            </a>
+
+                                           
+                                        </td>
+                                    </tr>
+                                }
+
+                            </table>
+                        }
+                        else
+                        {
+
+                            <h2>Mi evaluación</h2>
+                            if (User.IsInRole("Guest"))
+                            {
+                                <a href="#" data-toggle="modal" data-target="#Continuar_Encuesta" class="btn btn-primary">Contestar Cuestionario</a>}
+                            else if (User.IsInRole("Final_Guest"))
+                            {
+                                <a href="#" onclick="Getting_Survey_Final_Guest()" class="btn btn-primary">Contestar Cuestionario</a>
+                            }
+                        }
+
+                    </div>
+                </div>
+
+                <div id="Continuar_Encuesta" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;  </button>
+
+                                @*  <input id="User_Name" type="text" value="@HttpContext.Current.User.Identity.Name" class="form-control">*@
+                                <span style="display:none" id="User_Name">@HttpContext.Current.User.Identity.Name</span>
+                                <h3 class="modal-title" id="myModalLabel"><i class="fa fa-lock" aria-hidden="true"></i> Ingresa tu número de empleado para continuar</h3>
+                            </div>
+                            <div class="modal-body" align="justify">
+                                <div class="row">
+
+                                    <div class="col-xs-12 col-sm-6 ">
+                                        <b>No. Empleado</b> <input id="id_employee" type="text" class="form-control">
+                                    </div>
+                                    <div class="col-xs-12 col-sm-6 ">
+                                        <b>Fecha Nacimiento</b><input id="birthday" type="date" class="form-control">
+                                    </div>
+                                    <div class="col-xs-12 col-sm-6 ">
+                                        <br>
+                                        <b>Primer Nombre</b><input id="nombre" type="text" class="form-control">
+                                    </div>
+                                    <div class="col-xs-12 col-sm-6 ">
+                                        <br>
+                                        <b>Apellido Paterno</b><input id="Email" type="text" class="form-control">
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="Getting_Survey();"><i class="fa fa-edit" aria-hidden="true"></i> Iniciar</button>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>

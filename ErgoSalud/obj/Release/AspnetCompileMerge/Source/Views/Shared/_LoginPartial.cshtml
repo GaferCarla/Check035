@@ -1,0 +1,18 @@
+﻿
+
+
+@using Microsoft.AspNet.Identity
+
+@if (User.Identity.IsAuthenticated)
+{ 
+        <ul style="list-style-type: none;" class="navbar-nav navbar-right">
+            <li>
+                <a href="#"> <span style="color:white" id="user_name"> @(User.Identity.IsAuthenticated ? HttpContext.Current.User.Identity.Name : "Guest")</span>   </a>
+            </li>
+
+            <li>
+                <a style="color:white" href="@Url.Action("SignOut","Home")">Cerrar Sesión</a>
+
+            </li>
+        </ul>
+        }

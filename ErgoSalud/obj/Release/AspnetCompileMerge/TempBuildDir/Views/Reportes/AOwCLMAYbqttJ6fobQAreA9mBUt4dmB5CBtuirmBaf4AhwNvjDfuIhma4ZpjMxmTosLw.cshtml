@@ -1,0 +1,826 @@
+﻿@model ErgoSalud.Models.ClimaLaboral_Cuestionario_Resultados_N01
+@{
+    ViewBag.Title = "Editar";
+}
+
+<style>
+    .br_col-xs {
+        display: none;
+    }
+
+
+    @@media only screen and (max-width : 1199px) {
+        .wrap_pregunta {
+            word-wrap: break-word;
+        }
+
+        .br_col-xs {
+            display: block;
+        }
+
+        .wrap_respuesta {
+            word-wrap: normal;
+        }
+    }
+
+    @@media (min-width : 1200px) and (max-width: 9000px) {
+        .wrap_pregunta {
+            white-space: nowrap;
+        }
+    }
+
+    input[type='radio']:after {
+        width: 16px;
+        height: 16px;
+        position: relative;
+        float: left;
+        background-color: #d1d3d1;
+        content: '';
+        display: inline-block;
+        visibility: visible;
+        border: 1.5px solid whitesmoke;
+    }
+
+
+
+    input[type='radio']:checked:after {
+        width: 17.5px;
+        height: 17.5px;
+        top: -2px;
+        left: -1px;
+        position: relative;
+        background-color: RGB(0,101,206);
+        content: '';
+        display: inline-block;
+        visibility: visible;
+        border: 1px solid whitesmoke;
+    }
+</style>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.id_cuestionario_resultado)
+        @Html.HiddenFor(model => model.id_cuestionario_trabajador)
+        <div class=" custom-control ">
+            <h3 align="center">
+                <b>CUESTIONARIO DE PERCEPCIÓN DE CLIMA LABORAL Y NO DISCRIMINACIÓN</b>
+            </h3>
+            <hr>
+            <table class="table table-hover table-condensed table-striped ">
+                <tbody>
+                    <tr>
+                        <th>
+                            Folio: @Html.DisplayFor(model => model.ERGOS_Cuestionarios_Trabajador_N01.id_trabajador)
+                        </th>
+                        <th>
+                            Nombre: @Html.DisplayFor(model => model.ERGOS_Cuestionarios_Trabajador_N01.Nombre)
+                        </th>
+                        <th>
+                            Empresa: @Html.DisplayFor(model => model.ERGOS_Cuestionarios_Trabajador_N01.ERGOS_Empresas_N01.Razon_Social)
+                        </th>
+                        <th>
+                            Centro: @Html.DisplayFor(model => model.ERGOS_Cuestionarios_Trabajador_N01.ERGOS_Centros_Trabajo_N01.Nombre_centro_trabajo)
+                        </th>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-hover table-condensed ">
+                <tr style="padding-bottom: 1em;background-color:RGB(0,101,206);color:white">  <td colspan="2"><span style="font-weight:bold"> Reclutamiento y selección de personal</span></td></tr>
+                <tr>
+                    <td wrap>1. Para su contratación fue más importante ser mujer u hombre que sus habilidades profesionales.</td>
+                    <td nowrap class="buttons" align="right">
+                        @Html.RadioButtonFor(model => model.Q1, "0", new { @class = "custom-control-input" })<span> Sí</span>
+                        @Html.RadioButtonFor(model => model.Q1, "3", new { @class = "custom-control-input" })<span> No</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td wrap>2. En su centro de trabajo el proceso de contratación favorece más a personas jóvenes.</td>
+                    <td nowrap class="buttons" align="right">
+                        @Html.RadioButtonFor(model => model.Q2, "0", new { @class = "custom-control-input" })<span> Sí</span>
+                        @Html.RadioButtonFor(model => model.Q2, "3", new { @class = "custom-control-input" })<span> No</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td wrap>3. En el momento de su contratación, su edad fue determinante.</td>
+                    <td nowrap class="buttons" align="right">
+                        @Html.RadioButtonFor(model => model.Q3, "0", new { @class = "custom-control-input" })<span> Sí</span>
+                        @Html.RadioButtonFor(model => model.Q3, "3", new { @class = "custom-control-input" })<span> No</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td wrap>4. Para su contratación fue determinante su apariencia física.</td>
+                    <td nowrap class="buttons" align="right">
+                        @Html.RadioButtonFor(model => model.Q4, "0", new { @class = "custom-control-input" })<span> Sí</span>
+                        @Html.RadioButtonFor(model => model.Q4, "3", new { @class = "custom-control-input" })<span> No</span>
+                    </td>
+                </tr>
+                <tr style="padding-bottom: 1em;background-color:RGB(0,101,206);color:white">  <td colspan="2"><span style="font-weight:bold">Formación y capacitación </span></td></tr>
+                <tr>
+                    <td class="wrap_pregunta">
+                        5. En su centro de trabajo las oportunidades de desarrollo laboral solo las reciben unas cuantas personas privilegiadas.
+                    </td>
+                    <td nowrap class="wrap_respuesta buttons">
+                        @Html.RadioButtonFor(model => model.Q5, "3", new { @class = "custom-control-input" })<span> Nunca</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q5, "2", new { @class = "custom-control-input" })<span> Algunas veces</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q5, "1", new { @class = "custom-control-input" })<span> Con frecuencia</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q5, "0", new { @class = "custom-control-input" })<span> Siempre</span><br class="br_col-xs">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="wrap_pregunta">6. En su centro de trabajo mujeres y hombres tienen por igual oportunidades de ascenso y capacitación.</td>
+                    <td nowrap class="wrap_respuesta buttons">
+                        @Html.RadioButtonFor(model => model.Q6, "0", new { @class = "custom-control-input" })<span> Nunca</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q6, "1", new { @class = "custom-control-input" })<span> Algunas veces</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q6, "2", new { @class = "custom-control-input" })<span> Con frecuencia</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q6, "3", new { @class = "custom-control-input" })<span> Siempre</span><br class="br_col-xs">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="wrap_pregunta">7. En su centro de trabajo se cuenta con programas de capacitación en materia de igualdad laboral y no discriminación.</td>
+                    <td nowrap class="wrap_respuesta buttons">
+                        @Html.RadioButtonFor(model => model.Q7, "0", new { @class = "custom-control-input" })<span> Nunca</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q7, "1", new { @class = "custom-control-input" })<span> Algunas veces</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q7, "2", new { @class = "custom-control-input" })<span> Con frecuencia</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q7, "3", new { @class = "custom-control-input" })<span> Siempre</span><br class="br_col-xs">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="wrap_pregunta">8. En los últimos 12 meses usted ha participado en programas de capacitación.</td>
+                    <td nowrap class="wrap_respuesta buttons">
+                        @Html.RadioButtonFor(model => model.Q8, "0", new { @class = "custom-control-input" })<span> Nunca</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q8, "1", new { @class = "custom-control-input" })<span> Algunas veces</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q8, "2", new { @class = "custom-control-input" })<span> Con frecuencia</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q8, "3", new { @class = "custom-control-input" })<span> Siempre</span><br class="br_col-xs">
+                    </td>
+                </tr>
+                <tr style="padding-bottom: 1em;background-color:RGB(0,101,206);color:white">  <td colspan="2"><span style="font-weight:bold">Permanencia y ascenso</span></td></tr>
+                <tr>
+                    <td wrap>
+                        9. En su centro de trabajo para lograr la
+                        contratación, una promoción o un
+                        ascenso cuentan más las
+                        recomendaciones que los conocimientos
+                        y capacidades de la persona.
+                    </td>
+                    <td nowrap class="wrap_respuesta buttons">
+                        @Html.RadioButtonFor(model => model.Q9, "3", new { @class = "custom-control-input" })<span> Nunca</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q9, "2", new { @class = "custom-control-input" })<span> Algunas veces</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q9, "1", new { @class = "custom-control-input" })<span> Con frecuencia</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q9, "0", new { @class = "custom-control-input" })<span> Siempre</span><br class="br_col-xs">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="wrap_pregunta">
+                        10. En su centro de trabajo se ha despedido
+                        a alguna mujer por embarazo u orillado a
+                        renunciar al regresar de su licencia de
+                        maternidad.
+                    </td>
+                    <td nowrap class="wrap_respuesta buttons">
+                        @Html.RadioButtonFor(model => model.Q10, "3", new { @class = "custom-control-input" })<span> Nunca</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q10, "2", new { @class = "custom-control-input" })<span> Algunas veces</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q10, "1", new { @class = "custom-control-input" })<span> Con frecuencia</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q10, "0", new { @class = "custom-control-input" })<span> Siempre</span><br class="br_col-xs">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="wrap_pregunta">
+                        11. En su centro de trabajo la competencia
+                        por mejores puestos, condiciones
+                        laborales o salariales es justa y
+                        equitativa.
+                    </td>
+                    <td nowrap class="wrap_respuesta buttons">
+                        @Html.RadioButtonFor(model => model.Q11, "0", new { @class = "custom-control-input" })<span> Nunca</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q11, "1", new { @class = "custom-control-input" })<span> Algunas veces</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q11, "2", new { @class = "custom-control-input" })<span> Con frecuencia</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q11, "3", new { @class = "custom-control-input" })<span> Siempre</span><br class="br_col-xs">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="wrap_pregunta">
+                        12. En su centro de trabajo mujeres y
+                        hombres tienen las mismas
+                        oportunidades para ocupar puestos de
+                        decisión.
+                    </td>
+                    <td nowrap class="wrap_respuesta buttons">
+                        @Html.RadioButtonFor(model => model.Q12, "0", new { @class = "custom-control-input" })<span> Nunca</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q12, "1", new { @class = "custom-control-input" })<span> Algunas veces</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q12, "2", new { @class = "custom-control-input" })<span> Con frecuencia</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q12, "3", new { @class = "custom-control-input" })<span> Siempre</span><br class="br_col-xs">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="wrap_pregunta">
+                        13. En su centro de trabajo se cuenta con un
+                        sistema de evaluación de desempeño
+                        del personal.
+                    </td>
+                    <td nowrap class="wrap_respuesta buttons">
+                        @Html.RadioButtonFor(model => model.Q13, "0", new { @class = "custom-control-input" })<span> Nunca</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q13, "1", new { @class = "custom-control-input" })<span> Algunas veces</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q13, "2", new { @class = "custom-control-input" })<span> Con frecuencia</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q13, "3", new { @class = "custom-control-input" })<span> Siempre</span><br class="br_col-xs">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="wrap_pregunta">
+                        14. En los últimos 12 meses le han realizado
+                        una evaluación de desempeño.
+                    </td>
+                    <td nowrap class="wrap_respuesta buttons">
+                        @Html.RadioButtonFor(model => model.Q14, "0", new { @class = "custom-control-input" })<span> Nunca</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q14, "1", new { @class = "custom-control-input" })<span> Algunas veces</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q14, "2", new { @class = "custom-control-input" })<span> Con frecuencia</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q14, "3", new { @class = "custom-control-input" })<span> Siempre</span><br class="br_col-xs">
+                    </td>
+                </tr>
+                <tr style="padding-bottom: 1em;background-color:RGB(0,101,206);color:white">  <td colspan="2"><span style="font-weight:bold">Corresponsabilidad en la vida laboral, familiar y personal</span></td></tr>
+                <tr>
+                    <td class="wrap_pregunta">
+                        15. En su centro de trabajo tanto mujeres
+                        como hombres tienen las mismas
+                        facilidades para atender problemas
+                        familiares no previstos.
+                    </td>
+                    <td nowrap class="wrap_respuesta buttons">
+                        @Html.RadioButtonFor(model => model.Q15, "0", new { @class = "custom-control-input" })<span> Nunca</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q15, "1", new { @class = "custom-control-input" })<span> Algunas veces</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q15, "2", new { @class = "custom-control-input" })<span> Con frecuencia</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q15, "3", new { @class = "custom-control-input" })<span> Siempre</span><br class="br_col-xs">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="wrap_pregunta">
+                        16. En su centro de trabajo las mujeres
+                        embarazadas enfrentan un clima laboral
+                        hostil.
+                    </td>
+                    <td nowrap class="wrap_respuesta buttons">
+                        @Html.RadioButtonFor(model => model.Q16, "3", new { @class = "custom-control-input" })<span> Nunca</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q16, "2", new { @class = "custom-control-input" })<span> Algunas veces</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q16, "1", new { @class = "custom-control-input" })<span> Con frecuencia</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q16, "0", new { @class = "custom-control-input" })<span> Siempre</span><br class="br_col-xs">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="wrap_pregunta">
+                        17. En su centro de trabajo las personas que
+                        se hacen cargo de personas o familiares
+                        que requieren cuidados enfrentan un
+                        clima laboral hostil.
+                    </td>
+                    <td nowrap class="wrap_respuesta buttons">
+                        @Html.RadioButtonFor(model => model.Q17, "3", new { @class = "custom-control-input" })<span> Nunca</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q17, "2", new { @class = "custom-control-input" })<span> Algunas veces</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q17, "1", new { @class = "custom-control-input" })<span> Con frecuencia</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q17, "0", new { @class = "custom-control-input" })<span> Siempre</span><br class="br_col-xs">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="wrap_pregunta">
+                        18. En su centro de trabajo los hombres
+                        cuentan con licencia de paternidad por
+                        nacimiento o adopción de una hija/o.
+
+                    </td>
+                    <td nowrap class="wrap_respuesta buttons">
+                        @Html.RadioButtonFor(model => model.Q18, "0", new { @class = "custom-control-input" })<span> Nunca</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q18, "1", new { @class = "custom-control-input" })<span> Algunas veces</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q18, "2", new { @class = "custom-control-input" })<span> Con frecuencia</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q18, "3", new { @class = "custom-control-input" })<span> Siempre</span><br class="br_col-xs">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="wrap_pregunta">
+                        19. En su centro de trabajo la licencia de
+                        paternidad se otorga por más de cinco
+                        días.
+                    </td>
+                    <td nowrap class="wrap_respuesta buttons">
+                        @Html.RadioButtonFor(model => model.Q19, "0", new { @class = "custom-control-input" })<span> Nunca</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q19, "1", new { @class = "custom-control-input" })<span> Algunas veces</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q19, "2", new { @class = "custom-control-input" })<span> Con frecuencia</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q19, "3", new { @class = "custom-control-input" })<span> Siempre</span><br class="br_col-xs">
+                    </td>
+                </tr>
+                <tr>
+                    <td wrap>
+                        20. En su centro de trabajo se otorgan
+                        permisos para atender situaciones
+                        familiares como cuidado de hijas e hijos,
+                        personas enfermas o personas adultas
+                        mayores.
+                    </td>
+                    <td nowrap class="wrap_respuesta buttons">
+                        @Html.RadioButtonFor(model => model.Q20, "0", new { @class = "custom-control-input" })<span> Nunca</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q20, "1", new { @class = "custom-control-input" })<span> Algunas veces</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q20, "2", new { @class = "custom-control-input" })<span> Con frecuencia</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q20, "3", new { @class = "custom-control-input" })<span> Siempre</span><br class="br_col-xs">
+                    </td>
+                </tr>
+                <tr>
+                    <td wrap>
+                        21. En su centro de trabajo existen
+                        convenios con prestadores de servicios
+                        que contemplen beneficios para el
+                        personal tales como: lavanderías,
+                        comedores, planchadurías, transporte, entre otros.
+                    </td>
+                    <td nowrap class="wrap_respuesta buttons">
+                        @Html.RadioButtonFor(model => model.Q21, "0", new { @class = "custom-control-input" })<span> Nunca</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q21, "1", new { @class = "custom-control-input" })<span> Algunas veces</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q21, "2", new { @class = "custom-control-input" })<span> Con frecuencia</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q21, "3", new { @class = "custom-control-input" })<span> Siempre</span><br class="br_col-xs">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="wrap_pregunta">
+                        22. En su centro de trabajo, si usted
+                        decidiera usar las opciones de trabajo
+                        flexibles ¿se cuestionaría su compromiso
+                        ante su trabajo?
+                    </td>
+                    <td nowrap class="wrap_respuesta buttons">
+                        @Html.RadioButtonFor(model => model.Q22, "3", new { @class = "custom-control-input" })<span> Nunca</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q22, "2", new { @class = "custom-control-input" })<span> Algunas veces</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q22, "1", new { @class = "custom-control-input" })<span> Con frecuencia</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q22, "0", new { @class = "custom-control-input" })<span> Siempre</span><br class="br_col-xs">
+                    </td>
+                </tr>
+                <tr>
+                    <td wrap>
+                        23. En su centro de trabajo usted puede
+                        acercarse a su jefa(e) inmediata(o) para
+                        hablar sobre cuestiones relacionadas
+                        con horarios que le estén afectando.
+                    </td>
+                    <td nowrap class="wrap_respuesta buttons">
+                        @Html.RadioButtonFor(model => model.Q23, "0", new { @class = "custom-control-input" })<span> Nunca</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q23, "1", new { @class = "custom-control-input" })<span> Algunas veces</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q23, "2", new { @class = "custom-control-input" })<span> Con frecuencia</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q23, "3", new { @class = "custom-control-input" })<span> Siempre</span><br class="br_col-xs">
+                    </td>
+                </tr>
+                <tr style="padding-bottom: 1em;background-color:RGB(0,101,206);color:white">  <td colspan="2"><span style="font-weight:bold">Clima laboral libre de violencia</span></td></tr>
+                <tr>
+                    <td class="wrap_pregunta">
+                        24. Usted siente que se le trata con respeto en su trabajo actual.
+                    </td>
+                    <td nowrap class="wrap_respuesta buttons">
+                        @Html.RadioButtonFor(model => model.Q24, "0", new { @class = "custom-control-input" })<span> Nunca</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q24, "1", new { @class = "custom-control-input" })<span> Algunas veces</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q24, "2", new { @class = "custom-control-input" })<span> Con frecuencia</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q24, "3", new { @class = "custom-control-input" })<span> Siempre</span><br class="br_col-xs">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="wrap_pregunta">
+                        25. En su centro de trabajo quienes realizan
+                        tareas personales para las y los jefes
+                        logran privilegios.
+                    </td>
+                    <td nowrap class="wrap_respuesta buttons">
+                        @Html.RadioButtonFor(model => model.Q25, "3", new { @class = "custom-control-input" })<span> Nunca</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q25, "2", new { @class = "custom-control-input" })<span> Algunas veces</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q25, "1", new { @class = "custom-control-input" })<span> Con frecuencia</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q25, "0", new { @class = "custom-control-input" })<span> Siempre</span><br class="br_col-xs">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="wrap_pregunta">
+                        26. En su centro de trabajo todas las
+                        personas que laboran obtienen un trato
+                        digno y decente.
+                    </td>
+                    <td nowrap class="wrap_respuesta buttons">
+                        @Html.RadioButtonFor(model => model.Q26, "0", new { @class = "custom-control-input" })<span> Nunca</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q26, "1", new { @class = "custom-control-input" })<span> Algunas veces</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q26, "2", new { @class = "custom-control-input" })<span> Con frecuencia</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q26, "3", new { @class = "custom-control-input" })<span> Siempre</span><br class="br_col-xs">
+                    </td>
+                </tr>
+                <tr>
+                    <td wrap>
+                        27. En su centro de trabajo las valoraciones
+                        que se realizan a sus actividades
+                        dependen más de la calidad y
+                        responsabilidad que de cualquier otra
+                        cuestión personal.
+                    </td>
+                    <td nowrap class="wrap_respuesta buttons">
+                        @Html.RadioButtonFor(model => model.Q27, "0", new { @class = "custom-control-input" })<span> Nunca</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q27, "1", new { @class = "custom-control-input" })<span> Algunas veces</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q27, "2", new { @class = "custom-control-input" })<span> Con frecuencia</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q27, "3", new { @class = "custom-control-input" })<span> Siempre</span><br class="br_col-xs">
+                    </td>
+                </tr>
+                <tr>
+                    <td wrap>
+                        28. En su centro de trabajo, en general hay
+                        personas que discriminan, tratan mal o le
+                        faltan el respeto a sus compañeras/os,
+                        colegas o subordinadas/os.
+
+                    </td>
+                    <td nowrap class="wrap_respuesta buttons">
+                        @Html.RadioButtonFor(model => model.Q28, "3", new { @class = "custom-control-input" })<span> Nunca</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q28, "2", new { @class = "custom-control-input" })<span> Algunas veces</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q28, "1", new { @class = "custom-control-input" })<span> Con frecuencia</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q28, "0", new { @class = "custom-control-input" })<span> Siempre</span><br class="br_col-xs">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="wrap_pregunta">
+                        29. En su centro de trabajo debido a sus
+                        características personales hay personas
+                        que sufren un trato inferior o de burla.
+                    </td>
+                    <td nowrap class="wrap_respuesta buttons">
+                        @Html.RadioButtonFor(model => model.Q29, "3", new { @class = "custom-control-input" })<span> Nunca</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q29, "2", new { @class = "custom-control-input" })<span> Algunas veces</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q29, "1", new { @class = "custom-control-input" })<span> Con frecuencia</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q29, "0", new { @class = "custom-control-input" })<span> Siempre</span><br class="br_col-xs">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="wrap_pregunta">
+                        30. En su centro de trabajo las y los
+                        superiores reciben un trato mucho más
+                        respetuoso que subordinados(as) y
+                        personal administrativo.
+
+                    </td>
+                    <td nowrap class="wrap_respuesta buttons">
+                        @Html.RadioButtonFor(model => model.Q30, "3", new { @class = "custom-control-input" })<span> Nunca</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q30, "2", new { @class = "custom-control-input" })<span> Algunas veces</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q30, "1", new { @class = "custom-control-input" })<span> Con frecuencia</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q30, "0", new { @class = "custom-control-input" })<span> Siempre</span><br class="br_col-xs">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="wrap_pregunta">
+                        31. En su centro de trabajo las y los
+                        superiores están abiertos a la
+                        comunicación con el personal.
+
+                    </td>
+                    <td nowrap class="wrap_respuesta buttons">
+                        @Html.RadioButtonFor(model => model.Q31, "0", new { @class = "custom-control-input" })<span> Nunca</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q31, "1", new { @class = "custom-control-input" })<span> Algunas veces</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q31, "2", new { @class = "custom-control-input" })<span> Con frecuencia</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q31, "3", new { @class = "custom-control-input" })<span> Siempre</span><br class="br_col-xs">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="wrap_pregunta">
+                        32. En su centro de trabajo se da un trato
+                        inferior o discriminatorio a las personas
+                        con los más bajos niveles de sueldo.
+                    </td>
+                    <td nowrap class="wrap_respuesta buttons">
+                        @Html.RadioButtonFor(model => model.Q32, "3", new { @class = "custom-control-input" })<span> Nunca</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q32, "2", new { @class = "custom-control-input" })<span> Algunas veces</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q32, "1", new { @class = "custom-control-input" })<span> Con frecuencia</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q32, "0", new { @class = "custom-control-input" })<span> Siempre</span><br class="br_col-xs">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="wrap_pregunta">
+                        33. En su centro de trabajo existen
+                        campañas de difusión internas de
+                        promoción de la igualdad laboral y no
+                        discriminación.
+                    </td>
+                    <td nowrap class="wrap_respuesta buttons">
+                        @Html.RadioButtonFor(model => model.Q33, "0", new { @class = "custom-control-input" })<span> Nunca</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q33, "1", new { @class = "custom-control-input" })<span> Algunas veces</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q33, "2", new { @class = "custom-control-input" })<span> Con frecuencia</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q33, "3", new { @class = "custom-control-input" })<span> Siempre</span><br class="br_col-xs">
+                    </td>
+                </tr>
+                <tr>
+                    <td wrap>
+                        34. En su centro de trabajo se toman
+                        acciones como: Aislamiento de sus
+                        compañeras/os, cambio de lugar
+                        repentinamente, falta de instrucciones,
+                        menosprecio del esfuerzo o propuestas,
+                        imposición de tareas sin los medios para
+                        realizarlas.
+
+                    </td>
+                    <td nowrap class="wrap_respuesta buttons">
+                        @Html.RadioButtonFor(model => model.Q34, "3", new { @class = "custom-control-input" })<span> Nunca</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q34, "2", new { @class = "custom-control-input" })<span> Algunas veces</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q34, "1", new { @class = "custom-control-input" })<span> Con frecuencia</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q34, "0", new { @class = "custom-control-input" })<span> Siempre</span><br class="br_col-xs">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="wrap_pregunta">
+                        35. En su centro de trabajo las funciones y
+                        tareas se transmiten de manera clara y
+                        precisa.
+                    </td>
+                    <td nowrap class="wrap_respuesta buttons">
+                        @Html.RadioButtonFor(model => model.Q35, "0", new { @class = "custom-control-input" })<span> Nunca</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q35, "1", new { @class = "custom-control-input" })<span> Algunas veces</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q35, "2", new { @class = "custom-control-input" })<span> Con frecuencia</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q35, "3", new { @class = "custom-control-input" })<span> Siempre</span><br class="br_col-xs">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="wrap_pregunta">
+                        36. En su centro de trabajo las cargas de
+                        trabajo se distribuyen de acuerdo a la
+                        responsabilidad del cargo.
+                    </td>
+                    <td nowrap class="wrap_respuesta buttons">
+                        @Html.RadioButtonFor(model => model.Q36, "0", new { @class = "custom-control-input" })<span> Nunca</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q36, "1", new { @class = "custom-control-input" })<span> Algunas veces</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q36, "2", new { @class = "custom-control-input" })<span> Con frecuencia</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q36, "3", new { @class = "custom-control-input" })<span> Siempre</span><br class="br_col-xs">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="wrap_pregunta">
+                        37. Si manifiesto mi preocupación sobre
+                        algún asunto relacionado con la igualdad
+                        de género o prácticas discriminatorias,
+                        se le da seguimiento
+                    </td>
+                    <td nowrap class="wrap_respuesta buttons">
+                        @Html.RadioButtonFor(model => model.Q37, "0", new { @class = "custom-control-input" })<span> Nunca</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q37, "1", new { @class = "custom-control-input" })<span> Algunas veces</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q37, "2", new { @class = "custom-control-input" })<span> Con frecuencia</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q37, "3", new { @class = "custom-control-input" })<span> Siempre</span><br class="br_col-xs">
+                    </td>
+                </tr>
+                <tr style="padding-bottom: 1em;background-color:RGB(0,101,206);color:white">  <td colspan="2"><span style="font-weight:bold">Acoso y Hostigamiento</span></td></tr>
+                <tr>
+                    <td wrap>
+                        38. En su centro de trabajo ha recibido,
+                        comentarios sugestivos o sexistas,
+                        bromas ofensivas, miradas obscenas, o
+                        petición de pláticas indeseables
+                        relacionadas con asuntos sexuales.
+                    </td>
+                    <td nowrap class="wrap_respuesta buttons" align="center">
+                        @Html.RadioButtonFor(model => model.Q38, "0", new { @class = "custom-control-input" })<span> Sí</span>
+                        @Html.RadioButtonFor(model => model.Q38, "3", new { @class = "custom-control-input" })<span> No</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="wrap_pregunta">
+                        39. En su centro de trabajo ha recibido
+                        proposiciones o peticiones directas o
+                        indirectas para establecer una relación
+                        sexual.
+                    </td>
+                    <td nowrap class="wrap_respuesta buttons" align="center">
+                        @Html.RadioButtonFor(model => model.Q39, "0", new { @class = "custom-control-input" })<span> Sí</span>
+                        @Html.RadioButtonFor(model => model.Q39, "3", new { @class = "custom-control-input" })<span> No</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="wrap_pregunta">
+                        40. En su centro de trabajo ha vivido
+                        contacto físico sexual no deseado.
+                    </td>
+                    <td nowrap class="wrap_respuesta buttons" align="center">
+                        @Html.RadioButtonFor(model => model.Q40, "0", new { @class = "custom-control-input" })<span> Sí</span>
+                        @Html.RadioButtonFor(model => model.Q40, "3", new { @class = "custom-control-input" })<span> No</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="wrap_pregunta">
+                        41. En su centro de trabajo se logran
+                        recompensas o incentivos laborales a
+                        cambio de favores sexuales.
+                    </td>
+                    <td nowrap class="wrap_respuesta buttons" align="center">
+                        @Html.RadioButtonFor(model => model.Q41, "0", new { @class = "custom-control-input" })<span> Sí</span>
+                        @Html.RadioButtonFor(model => model.Q41, "3", new { @class = "custom-control-input" })<span> No</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="wrap_pregunta">
+                        42. En su centro de trabajo se reciben
+                        amenazas con daños o castigos en caso
+                        de no acceder a proporcionar favores
+                        sexuales.
+                    </td>
+                    <td nowrap class="wrap_respuesta buttons" align="center">
+                        @Html.RadioButtonFor(model => model.Q42, "0", new { @class = "custom-control-input" })<span> Sí</span>
+                        @Html.RadioButtonFor(model => model.Q42, "3", new { @class = "custom-control-input" })<span> No</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="wrap_pregunta">
+                        43. En su centro de trabajo ha recibido
+                        represalias sin razón o amenazas con
+                        relación a su permanencia en el trabajo.
+                    </td>
+                    <td nowrap class="wrap_respuesta buttons" align="center">
+                        @Html.RadioButtonFor(model => model.Q43, "0", new { @class = "custom-control-input" })<span> Sí</span>
+                        @Html.RadioButtonFor(model => model.Q43, "3", new { @class = "custom-control-input" })<span> No</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td wrap>
+                        44. En caso de que haya sido víctima de
+                        acoso u hostigamiento sexual, en su
+                        centro de trabajo resolvieron
+                        satisfactoriamente su caso al interior o le
+                        canalizaron con las autoridades
+                        competentes.
+                    </td>
+                    <td nowrap class="wrap_respuesta buttons" align="center">
+                        @Html.RadioButtonFor(model => model.Q44, "3", new { @class = "custom-control-input" })<span> Sí</span>
+                        @Html.RadioButtonFor(model => model.Q44, "0", new { @class = "custom-control-input" })<span> No</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="wrap_pregunta">
+                        45. En caso de ser acosada/o u hostigada/o
+                        sexual o laboralmente en su centro de
+                        trabajo sabe a qué autoridad puede
+                        dirigirse para denunciarlo.
+                    </td>
+                    <td nowrap class="wrap_respuesta buttons" align="center">
+                        @Html.RadioButtonFor(model => model.Q45, "3", new { @class = "custom-control-input" })<span> Sí</span>
+                        @Html.RadioButtonFor(model => model.Q45, "0", new { @class = "custom-control-input" })<span> No</span>
+                    </td>
+                </tr>
+                <tr style="padding-bottom: 1em;background-color:RGB(0,101,206);color:white">  <td colspan="2"><span style="font-weight:bold">Accesibilidad</span></td></tr>
+                <tr>
+                    <td class="wrap_pregunta">
+                        46. En su centro de trabajo se cuenta con el
+                        espacio, mobiliario y equipo adecuado
+                        para personas con discapacidad.
+
+                    </td>
+                    <td nowrap class="wrap_respuesta buttons">
+                        @Html.RadioButtonFor(model => model.Q46, "0", new { @class = "custom-control-input" })<span> Nunca</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q46, "1", new { @class = "custom-control-input" })<span> Algunas veces</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q46, "2", new { @class = "custom-control-input" })<span> Con frecuencia</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q46, "3", new { @class = "custom-control-input" })<span> Siempre</span><br class="br_col-xs">
+                    </td>
+                </tr>
+                <tr>
+                    <td wrap>
+                        47. Considera que las instalaciones de su
+                        centro de trabajo son adecuadas y
+                        accesibles para personas con
+                        discapacidad (rampas, estacionamiento,
+                        sanitarios, oficinas, pasillos, escaleras,
+                        elevadores, entre otros).
+
+                    </td>
+                    <td nowrap class="wrap_respuesta buttons">
+                        @Html.RadioButtonFor(model => model.Q47, "0", new { @class = "custom-control-input" })<span> Nunca</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q47, "1", new { @class = "custom-control-input" })<span> Algunas veces</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q47, "2", new { @class = "custom-control-input" })<span> Con frecuencia</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q47, "3", new { @class = "custom-control-input" })<span> Siempre</span><br class="br_col-xs">
+                    </td>
+                </tr>
+                <tr>
+                    <td wrap>
+                        48. En su centro de trabajo se cuenta con
+                        los medios tecnológicos y de
+                        comunicación accesible para que
+                        cualquier persona con discapacidad
+                        desempeñe sus actividades de manera
+                        óptima.
+                    </td>
+                    <td nowrap class="wrap_respuesta buttons">
+                        @Html.RadioButtonFor(model => model.Q48, "0", new { @class = "custom-control-input" })<span> Nunca</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q48, "1", new { @class = "custom-control-input" })<span> Algunas veces</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q48, "2", new { @class = "custom-control-input" })<span> Con frecuencia</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q48, "3", new { @class = "custom-control-input" })<span> Siempre</span><br class="br_col-xs">
+                    </td>
+                </tr>
+                <tr>
+                    <td wrap>
+                        49. En su centro de trabajo se contemplan
+                        mecanismos o políticas de inclusión
+                        laboral para personas con discapacidad,
+                        personas adultas mayores o con VIH,
+                        entre otras.
+
+                    </td>
+                    <td nowrap class="wrap_respuesta buttons">
+                        @Html.RadioButtonFor(model => model.Q49, "0", new { @class = "custom-control-input" })<span> Nunca</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q49, "1", new { @class = "custom-control-input" })<span> Algunas veces</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q49, "2", new { @class = "custom-control-input" })<span> Con frecuencia</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q49, "3", new { @class = "custom-control-input" })<span> Siempre</span><br class="br_col-xs">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="wrap_pregunta">
+                        50. En su centro de trabajo se utiliza
+                        lenguaje incluyente y no sexista.
+                    </td>
+                    <td nowrap class="wrap_respuesta buttons">
+                        @Html.RadioButtonFor(model => model.Q50, "0", new { @class = "custom-control-input" })<span> Nunca</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q50, "1", new { @class = "custom-control-input" })<span> Algunas veces</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q50, "2", new { @class = "custom-control-input" })<span> Con frecuencia</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q50, "3", new { @class = "custom-control-input" })<span> Siempre</span><br class="br_col-xs">
+                    </td>
+                </tr>
+                <tr style="padding-bottom: 1em;background-color:RGB(0,101,206);color:white">  <td colspan="2"><span style="font-weight:bold">Respeto a la diversidad</span></td></tr>
+                <tr>
+                    <td class="wrap_pregunta">
+                        51. En su centro de trabajo hay un ambiente
+                        de respeto y no discriminación hacia las
+                        diferencias y preferencias sexuales
+                    </td>
+                    <td nowrap class="wrap_respuesta buttons">
+                        @Html.RadioButtonFor(model => model.Q51, "0", new { @class = "custom-control-input" })<span> Nunca</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q51, "1", new { @class = "custom-control-input" })<span> Algunas veces</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q51, "2", new { @class = "custom-control-input" })<span> Con frecuencia</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q51, "3", new { @class = "custom-control-input" })<span> Siempre</span><br class="br_col-xs">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="wrap_pregunta">
+                        52. En su centro de trabajo ha sido testigo
+                        de actos discriminatorios por ser mujer u
+                        hombre, por edad, apariencia,
+                        discapacidad, entre otros.
+
+                    </td>
+                    <td nowrap class="wrap_respuesta buttons">
+                        @Html.RadioButtonFor(model => model.Q52, "3", new { @class = "custom-control-input" })<span> Nunca</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q52, "2", new { @class = "custom-control-input" })<span> Algunas veces</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q52, "1", new { @class = "custom-control-input" })<span> Con frecuencia</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q52, "0", new { @class = "custom-control-input" })<span> Siempre</span><br class="br_col-xs">
+                    </td>
+                </tr>
+                <tr style="padding-bottom: 1em;background-color:RGB(0,101,206);color:white">  <td colspan="2"><span style="font-weight:bold">Condiciones generales de trabajo</span></td></tr>
+                <tr>
+                    <td class="wrap_pregunta">
+                        53. En su centro de trabajo se proporcionan las prestaciones de ley.
+                    </td>
+                    <td nowrap class="wrap_respuesta buttons">
+                        @Html.RadioButtonFor(model => model.Q53, "0", new { @class = "custom-control-input" })<span> Nunca</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q53, "1", new { @class = "custom-control-input" })<span> Algunas veces</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q53, "2", new { @class = "custom-control-input" })<span> Con frecuencia</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q53, "3", new { @class = "custom-control-input" })<span> Siempre</span><br class="br_col-xs">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="wrap_pregunta">
+                        54. En su centro de trabajo las y los
+                        directivos apoyan la igualdad y no
+                        discriminación
+                    </td>
+                    <td nowrap class="wrap_respuesta buttons">
+                        @Html.RadioButtonFor(model => model.Q54, "0", new { @class = "custom-control-input" })<span> Nunca</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q54, "1", new { @class = "custom-control-input" })<span> Algunas veces</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q54, "2", new { @class = "custom-control-input" })<span> Con frecuencia</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q54, "3", new { @class = "custom-control-input" })<span> Siempre</span><br class="br_col-xs">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="wrap_pregunta">
+                        55. En su centro de trabajo los mecanismos
+                        utilizados para asegurar la igualdad y no
+                        discriminación son eficaces.
+                    </td>
+                    <td nowrap class="wrap_respuesta buttons">
+                        @Html.RadioButtonFor(model => model.Q55, "0", new { @class = "custom-control-input" })<span> Nunca</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q55, "1", new { @class = "custom-control-input" })<span> Algunas veces</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q55, "2", new { @class = "custom-control-input" })<span> Con frecuencia</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q55, "3", new { @class = "custom-control-input" })<span> Siempre</span><br class="br_col-xs">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="wrap_pregunta">
+                        56. En su centro de trabajo se recibe un
+                        salario igual por igual trabajo sin importar
+                        sexo, apariencia, edad u otras
+                        características personales.
+                    </td>
+                    <td nowrap class="wrap_respuesta buttons">
+                        @Html.RadioButtonFor(model => model.Q56, "0", new { @class = "custom-control-input" })<span> Nunca</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q56, "1", new { @class = "custom-control-input" })<span> Algunas veces</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q56, "2", new { @class = "custom-control-input" })<span> Con frecuencia</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q56, "3", new { @class = "custom-control-input" })<span> Siempre</span><br class="br_col-xs">
+                    </td>
+                </tr>
+            </table>
+
+
+
+
+        </div>
+
+    </div>
+}

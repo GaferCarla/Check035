@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="933b4cd93c9545e2846b417d0bab57be" Name="Diagram1" ZoomLevel="64">
+        <EntityTypeShape EntityType="Check035Model.ClimaLaboral_Cuestionario_Resultados_N01" Width="1.5" PointX="9.75" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Check035Model.DATA_Departamentos_N01" Width="1.5" PointX="5.25" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Check035Model.DATA_Edades_N01" Width="1.5" PointX="5.25" PointY="12" IsExpanded="true" />
+        <EntityTypeShape EntityType="Check035Model.DATA_Estado_Civil_N01" Width="1.5" PointX="5.25" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Check035Model.DATA_Experiencia_puesto_N01" Width="1.5" PointX="5.25" PointY="17.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Check035Model.DATA_Nivel_Estudios_N01" Width="1.5" PointX="5.25" PointY="30.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Check035Model.DATA_Rotacion_Turno_N01" Width="1.5" PointX="5.25" PointY="33.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Check035Model.DATA_Sexo_N01" Width="1.5" PointX="5.25" PointY="35.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Check035Model.DATA_Tipo_Contratacion_N01" Width="1.5" PointX="5.25" PointY="38.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Check035Model.DATA_Tipo_Jornada_N01" Width="1.5" PointX="5.25" PointY="41.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Check035Model.DATA_Tipo_Personal_N01" Width="1.5" PointX="5.25" PointY="44" IsExpanded="true" />
+        <EntityTypeShape EntityType="Check035Model.DATA_Tipo_puesto_N01" Width="1.5" PointX="5.25" PointY="46.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Check035Model.E360_Cuestionario_Resultado_N01" Width="1.5" PointX="9.75" PointY="24.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Check035Model.ERGOS_Centros_Trabajo_N01" Width="1.5" PointX="5.25" PointY="21.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Check035Model.ERGOS_Cuestionarios_N01" Width="1.5" PointX="0.75" PointY="24.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Check035Model.ERGOS_Cuestionarios_Resultados_N01" Width="1.5" PointX="5.25" PointY="26.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Check035Model.ERGOS_Cuestionarios_Trabajador_N01" Width="1.5" PointX="7.5" PointY="18" IsExpanded="true" />
+        <EntityTypeShape EntityType="Check035Model.ERGOS_Empresas_N01" Width="1.5" PointX="3" PointY="21" IsExpanded="true" />
+        <EntityTypeShape EntityType="Check035Model.ERGOS_Preguntas_N01" Width="1.5" PointX="3" PointY="26" IsExpanded="true" />
+        <EntityTypeShape EntityType="Check035Model.ERGOS_Preguntas_S2_N02" Width="1.5" PointX="3" PointY="28.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Check035Model.ERGOS_Respuestas_N01" Width="1.5" PointX="3" PointY="32.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Check035Model.ERGOS_Roles_N01" Width="1.5" PointX="10.5" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Check035Model.ERGOS_Usuarios_N01" Width="1.5" PointX="12.75" PointY="22" IsExpanded="true" />
+        <EntityTypeShape EntityType="Check035Model.LOG_Cuestionarios_Resultados_N01" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Check035Model.LOG_Cuestionarios_Trabajador_N01" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Check035Model.LOG_login_N01" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Check035Model.LOG_Mails_N01" Width="1.5" PointX="4.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Check035Model.VW_Encuestas_E360_Deptos" Width="1.5" PointX="12.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Check035Model.VW_ERGOS_Results_V01" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="Check035Model.FK_ClimaLaboral_Cuestionario_Resultados_N01" ManuallyRouted="false" />
+        <AssociationConnector Association="Check035Model.FK_CT_departamento" ManuallyRouted="false" />
+        <AssociationConnector Association="Check035Model.FK_CT_Edad" ManuallyRouted="false" />
+        <AssociationConnector Association="Check035Model.FK_CT_Estado_Civil" ManuallyRouted="false" />
+        <AssociationConnector Association="Check035Model.FK_CT_Experiencia_Puesto_Actual" ManuallyRouted="false" />
+        <AssociationConnector Association="Check035Model.FK_CT_Experiencia_Puesto_laboral" ManuallyRouted="false" />
+        <AssociationConnector Association="Check035Model.FK_CT_Nivel_Estudios" ManuallyRouted="false" />
+        <AssociationConnector Association="Check035Model.FK_CT_Rotacion_Turno" ManuallyRouted="false" />
+        <AssociationConnector Association="Check035Model.FK_CT_Sexo" ManuallyRouted="false" />
+        <AssociationConnector Association="Check035Model.FK_CT_Tipo_Contratacion" ManuallyRouted="false" />
+        <AssociationConnector Association="Check035Model.FK_CT_Tipo_Jornada" ManuallyRouted="false" />
+        <AssociationConnector Association="Check035Model.FK_CT_Tipo_Personal" ManuallyRouted="false" />
+        <AssociationConnector Association="Check035Model.FK_CT_Tipo_Puesto" ManuallyRouted="false" />
+        <AssociationConnector Association="Check035Model.FK_E360_Cuestionario_Resultado_N01_CT" ManuallyRouted="false" />
+        <AssociationConnector Association="Check035Model.FK_Centros_Trabajo_Empresa" ManuallyRouted="false" />
+        <AssociationConnector Association="Check035Model.FK_Cuestionario_Trabajador_Centro_Trabajo" ManuallyRouted="false" />
+        <AssociationConnector Association="Check035Model.FK_ERGOS_Roles_N01_id_centro_trabajo" ManuallyRouted="false" />
+        <AssociationConnector Association="Check035Model.FK_Cuestionario" ManuallyRouted="false" />
+        <AssociationConnector Association="Check035Model.FK_Cuestionario_2" ManuallyRouted="false" />
+        <AssociationConnector Association="Check035Model.FK_Cuestionarios_TE" ManuallyRouted="false" />
+        <AssociationConnector Association="Check035Model.FK_id_encuesta_Empresas" ManuallyRouted="false" />
+        <AssociationConnector Association="Check035Model.FK_Cuestionarios_RCT" ManuallyRouted="false" />
+        <AssociationConnector Association="Check035Model.FK_Cuestionarios_RP" ManuallyRouted="false" />
+        <AssociationConnector Association="Check035Model.FK_Cuestionarios_RR" ManuallyRouted="false" />
+        <AssociationConnector Association="Check035Model.ERGOS_Usuarios_N01_CT" ManuallyRouted="false" />
+        <AssociationConnector Association="Check035Model.FK_Cuestionario_TE" ManuallyRouted="false" />
+        <AssociationConnector Association="Check035Model.FK_Usuarios_Empresa" ManuallyRouted="false" />
+        <AssociationConnector Association="Check035Model.FK_Usuarios_Roles" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="Check035Model.Check_checklist_N01" Width="1.5" PointX="7.375" PointY="3.75" />
+        <EntityTypeShape EntityType="Check035Model.Check_checklist_medidas_N01" Width="1.5" PointX="15.375" PointY="0.75" />
+        <EntityTypeShape EntityType="Check035Model.Check_checklist_medidas_acciones_N01" Width="1.5" PointX="17.625" PointY="8.625" />
+        <AssociationConnector Association="Check035Model.FK_Checklist_medida_accion" />
+        <EntityTypeShape EntityType="Check035Model.Comunica_Avisos_N01" Width="1.5" PointX="0.75" PointY="8.75" />
+        <EntityTypeShape EntityType="Check035Model.Comunica_Politicas_N01" Width="1.5" PointX="2.75" PointY="8.75" />
+        <EntityTypeShape EntityType="Check035Model.ERGOS_Buzon_N01" Width="1.5" PointX="15.375" PointY="21.875" />
+        <AssociationConnector Association="Check035Model.FK_ERGOS_Buzon_Usuarios" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

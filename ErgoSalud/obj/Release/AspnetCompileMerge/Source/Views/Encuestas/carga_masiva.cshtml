@@ -1,0 +1,176 @@
+﻿@using System.Data;
+@using System.Text;
+@model ErgoSalud.Models.Upload_excel_records
+
+<style type="text/css">
+    #loading {
+        display: none;
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(255,255,255,0.8);
+        z-index: 1000;
+    }
+
+    #loadingcontent {
+        display: table;
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    #loadingspinner {
+        display: table-cell;
+        vertical-align: middle;
+        width: 100%;
+        text-align: center;
+        font-size: larger;
+        padding-top: 80px;
+    }
+</style>
+
+<div id="loading">
+    <div id="loadingcontent">
+        <p id="loadingspinner">
+            Generando evaluaciones por favor espere...
+        </p>
+    </div>
+</div>
+<div class="row">
+    <br><br>
+    <a href="https://identifica.check035.com/Content/Formato_carga_masiva.xlsx" class="btn btn-success"><i class="far fa-file-excel"></i>  Descargar formato de carga masiva </a>
+    <br>    <br>
+    <b style="color:red"> Notas</b>
+    <ul>
+        <li>Columnas agregadas serán omitidas.</li>
+        <li>No modificar el orden de columnas del formato.</li>
+        <li>Agregar los registros de manera vertical únicamente.</li>
+        <li>Cargar solamente un archivo por centro de trabajo.</li>
+        <li>Editar el formato a partir del titulo de las columnas.</li>
+        <li>Cambio del orden de columnas generará inconsistencias en la carga de información.</li>
+
+    </ul>
+
+    <hr>
+    @using (Html.BeginForm("carga_masiva", "Encuestas", FormMethod.Post, new { enctype = "multipart/form-data", @id = "frmImport" }))
+    {
+        <div class="row">
+            <div class="col-md-4">
+                @Html.LabelFor(m => m.File, new { @class = "control-label" })
+                @Html.TextBoxFor(m => m.File, new { type = "file", @accept = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel" })
+                @Html.ValidationMessageFor(m => m.File, "", new { @class = "text-danger" })
+                @Html.ValidationMessageFor(m => m.id_centro_trabajo, "", new { @class = "text-danger" })
+            </div> 
+            <div class="col-md-8"> <b>Seleccionar centro de trabajo a la carga masiva</b>
+                @Html.DropDownList("id_centro_trabajo", null, "Seleccionar", htmlAttributes: new { @class = "form-control" })
+            </div> 
+        </div>
+
+        <div class="row"> 
+            <button id="submitbtn" type="submit" class="btn btn-info">Cargar excel</button>
+        </div>
+    }
+    <hr />
+    <div class="row">
+        <div class="col-md-12">
+            <div id="result">
+                @if (Model != null)
+                {
+                    if (Model.DataSet != null)
+                    {
+                        <!-- Nav tabs -->
+                        <ul class="nav nav-tabs" id="myTabs" role="tablist">
+                            @foreach (DataTable item in Model.DataSet.Tables)
+                            {
+                                <li role="presentation"><a href="#@item.TableName" aria-controls="@item.TableName" role="tab" data-toggle="tab">@Html.Raw(item.TableName)</a></li>
+                            }
+                        </ul>
+
+                        <!-- Tab panes -->
+                        <div class="tab-content">
+                            @foreach (DataTable item in Model.DataSet.Tables)
+                            {
+                                <div role="tabpanel" class="tab-pane" id="@item.TableName">
+                                    @MakeHtmlTable(item)
+                                </div>
+                            }
+                        </div>
+                    }
+                }
+            </div>
+        </div>
+    </div>
+    @section scripts{
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $('#myTabs li:eq(0) a:first').tab('show');
+            })
+
+            $(function () {
+                $("#submitbtn").click(function () {
+                    $("#loading").fadeIn();
+                });
+            });
+        </script>
+        <script type="text/javascript"
+                src="@Url.Content("~/Scripts/spin.min.js")"></script>
+        <script type="text/javascript">
+            $(function () {
+                $("#submitbtn").click(function () {
+                    $("#loading").fadeIn();
+                    var opts = {
+                        lines: 12, // The number of lines to draw
+                        length: 7, // The length of each line
+                        width: 4, // The line thickness
+                        radius: 10, // The radius of the inner circle
+                        color: '#000', // #rgb or #rrggbb
+                        speed: 1, // Rounds per second
+                        trail: 60, // Afterglow percentage
+                        shadow: false, // Whether to render a shadow
+                        hwaccel: false // Whether to use hardware acceleration
+                    };
+                    var target = document.getElementById('loading');
+                    var spinner = new Spinner(opts).spin(target);
+                });
+            });
+        </script>
+    }
+    @helper  MakeHtmlTable(DataTable dt)
+    {
+        StringBuilder html = new StringBuilder();
+
+        //Table start.
+        html.Append("<table class='table table-bordered table-striped'>");
+
+        //Building the Header row.
+        html.Append("<tr>");
+        foreach (DataColumn column in dt.Columns)
+        {
+            html.Append("<th>");
+            html.Append(column.ColumnName);
+            html.Append("</th>");
+        }
+        html.Append("</tr>");
+
+        //Building the Data rows.
+        foreach (DataRow row in dt.Rows)
+        {
+            html.Append("<tr>");
+            foreach (DataColumn column in dt.Columns)
+            {
+                html.Append("<td>");
+                html.Append(row[column.ColumnName]);
+                html.Append("</td>");
+            }
+            html.Append("</tr>");
+        }
+
+        //Table end.
+        html.Append("</table>");
+        @Html.Raw(html.ToString())
+    }
+</div>

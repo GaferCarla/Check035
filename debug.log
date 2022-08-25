@@ -1,0 +1,8 @@
+[1115/151509.274:ERROR:file_io.cc(134)] WriteFile: There is not enough space on the disk. (0x70)
+[1115/151509.277:ERROR:crash_report_exception_handler.cc(111)] WriteEverything failed
+[1115/151509.280:ERROR:filesystem_win.cc(148)] DeleteFile C:\Users\Irving\AppData\Local\Microsoft\VisualStudio\15.0_39061d8c\WebTools\ChromeUserData_B1BEBFE6_223B72A4-E097-4022-9CD7-2E9EDA2DE257\Crashpad\reports\d47ac1dc-c1cb-4d1a-bac2-dd74b6182d0e.dmp: The process cannot access the file because it is being used by another process. (0x20)
+[1115/151509.463:ERROR:process_info.cc(329)] VirtualQueryEx: Access is denied. (0x5)
+[1115/151509.463:ERROR:process_info.cc(556)] ReadMemoryInfo failed
+[1017/101703.379:ERROR:directory_reader_win.cc(43)] FindFirstFile: El sistema no puede encontrar la ruta especificada. (0x3)
+[1017/112526.692:ERROR:directory_reader_win.cc(43)] FindFirstFile: El sistema no puede encontrar la ruta especificada. (0x3)
+[1017/192140.316:ERROR:directory_reader_win.cc(43)] FindFirstFile: El sistema no puede encontrar la ruta especificada. (0x3)

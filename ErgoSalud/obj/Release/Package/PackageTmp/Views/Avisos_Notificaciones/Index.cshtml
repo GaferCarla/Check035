@@ -1,0 +1,166 @@
+﻿@model IEnumerable<ErgoSalud.Models.Comunica_Avisos_N01>
+
+@{
+    ViewBag.Title = "Index";
+    @Styles.Render("~/Content/sizing.css");
+    @Styles.Render("~/Content/banner.css");
+    @Styles.Render("~/Content/breadcrumb.css");
+    @Styles.Render("~/Content/comunica_feed.css");
+    @Styles.Render("~/Content/comunica.css");
+    @Styles.Render("~/Content/button.css");
+    @Styles.Render("~/Content/branding.css");
+
+
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet'>
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/boxicons@2.0.0/css/boxicons.min.css'>
+
+    <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+}
+
+<script>
+    function Delete_info(id) {
+        $.ajax({
+            type: 'POST',
+            url: '@Url.Action("DeleteConfirmed2", "Avisos_Notificaciones")',
+            data: {id: id},
+            success: function (Resul) {
+                Swal.fire(
+                    'Registro Realizado con exito',
+                    'Registro eliminado',
+                    'success'
+                );
+            },
+            error: function (msg) {
+                Swal.fire(
+                    'No fue posible eliminar el registro',
+                    'Error de borrado',
+                    'error'
+                );
+            }
+        });
+    }
+</script>
+
+
+<div class="container-fluid row mt-5 pt-5 px-sm-5 px-1">
+    <div class="template-demo">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb breadcrumb-custom ">
+                <li class="breadcrumb-item"><a href='@Url.Action("Index","Home")' data-abc="true" class="font-weight-bold text-uppercase">Dashboard</a></li>
+                <li class="breadcrumb-item active font-weight-bold " aria-current="page"><span>&nbsp&nbspComunica</span></li>
+            </ol>
+        </nav>
+    </div>
+</div>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6 col-12 pt-5 d-flex justify-content-center">
+            <a href='@Url.Action("Index2","Avisos_Notificaciones")' class="btn-module btn px-5 py-4 btn-lg rounded font-bold text-uppercase">Ir a panel de control</a>
+
+        </div>
+        <div class="col-sm-6 col-12 pt-5 d-flex justify-content-center">
+            <a href='@Url.Action("comunica_form","Home")' class="btn-module2 btn px-5 py-4 btn-lg rounded font-bold text-uppercase">Crear notificación</a>
+
+        </div>
+    </div>
+
+</div>
+
+
+
+<div class="container d-flex justify-content-center mt-50 mb-50">
+
+    <div class="row w-100">
+        <div class="col-12 col-sm-10 mx-auto">
+
+            @foreach (var item in Model)
+            {
+                <div class="card blog-horizontal px-5 pt-3 rounded">
+                    <div class="card-body p-4">
+
+                        <div class="mb-3">
+
+                            <ul class="list-inline list-inline-dotted text-muted mb-0">
+                                @if (item.prioridad == "Alta")
+                                {
+                                    <li class="list-inline-item px-0">
+                                        <div class="avatar avatar-red me-3"><i class="fa fa-warning btn-icon-prepend"></i></div>
+                                    </li>
+                                }
+                                else if (item.prioridad == "Media")
+                                {
+                                    <li class="list-inline-item px-0">
+                                        <div class="avatar avatar-yellow me-3"><i class="fa fa-bullhorn btn-icon-prepend"></i></div>
+
+                                    </li>
+                                }
+                                else if (item.prioridad == "Bajo")
+                                {
+                                    <li class="list-inline-item px-0">
+                                        <div class="avatar avatar-gray me-3"><i class='bx bxs-envelope'></i></div>
+                                    </li>
+                                }
+                                <li class="list-inline-item px-0">
+                                    <h5 class="text-uppercase font-weight-semibold ">@item.aviso</h5>
+                                </li>
+                            </ul>
+
+
+
+                            <ul class="list-inline list-inline-dotted text-muted mb-0">
+                                <li class="list-inline-item">Por <span class="text-muted">@item.created_by</span></li>
+                                <li class="list-inline-item"> @item.fecha_inicio</li>
+                                <li class="list-inline-item"> / </li>
+                                <li class="list-inline-item"> @item.fecha_fin</li>
+                            </ul>
+                        </div>
+
+                        <p>@item.notas</p>
+
+                        <a href="#" data-abc="true">[...]</a>
+                    </div>
+
+                    <div class="card-footer d-sm-flex justify-content-sm-between align-items-sm-center py-3 border-top">
+                        <ul class="list-inline list-inline-dotted mb-0 w-100">
+                            @if (item.rango_vision == "Nivel III")
+                            {
+                                <li class="list-inline-item"><i class="fa fa-user me-2"></i> <span>Alumnos</span></li>
+                            }
+                            else if (item.rango_vision == "Nivel II")
+                            {
+                                <li class="list-inline-item"><i class="fa fa-user me-2"></i> <span>Maestro</span></li>
+                            }
+                            else if (item.rango_vision == "Nivel II")
+                            {
+                                <li class="list-inline-item"><i class="fa fa-user me-2"></i> <span>Director</span></li>
+                            }
+                            <li class="list-inline-item ">
+                                <i class="fa fa-calendar-check-o mr-1"></i>
+                                @if (item.fecha_fin >= DateTime.Now)
+                                {
+                                    <div class="badge badge-success badge-success-alt">Activo</div>
+                                }
+                                else
+                                {
+                                    <div class="badge badge-secondary badge-default-alt">Inactivo</div>
+                                }
+                            </li>
+
+                            <li class="list-inline-item float-end">
+                                 <button type="button" class="px-4 py-2 btn btn-danger rounded text-center mb-3 mt-4 mt-sm-0 " onclick="Delete_info(@item.id);"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                            </li>
+
+                            <li class="list-inline-item float-end">
+                                 <button type="button" class="px-4 py-2 btn btn-primary rounded text-center mb-3 mt-4 mt-sm-0" onclick="location.href='@Url.Action("Edit", "Avisos_Notificaciones", new {id = item.id})'"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            }
+
+        </div>
+    </div>
+</div>

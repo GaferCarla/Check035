@@ -1,0 +1,56 @@
+﻿@model ErgoSalud.Models.ERGOS_Empresas_N01
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Eliminación de Empresa</h2>
+
+<h3 style="color:red">¿Realmente quiere eliminar este registro?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Razon_Social)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Razon_Social)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Telefono)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Telefono)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Contacto_Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Contacto_Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Eliminar" class="btn btn-primary" /> |
+            @Html.ActionLink("Regresar", "Index")
+        </div>
+    }
+</div>

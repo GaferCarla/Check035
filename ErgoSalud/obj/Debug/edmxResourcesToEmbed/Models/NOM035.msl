@@ -1,0 +1,2695 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Check035ModelStoreContainer" CdmEntityContainer="Check035Entities">
+    <EntitySetMapping Name="ClimaLaboral_Cuestionario_Resultados_N01">
+      <EntityTypeMapping TypeName="Check035Model.ClimaLaboral_Cuestionario_Resultados_N01">
+        <MappingFragment StoreEntitySet="ClimaLaboral_Cuestionario_Resultados_N01">
+          <ScalarProperty Name="id_cuestionario_resultado" ColumnName="id_cuestionario_resultado" />
+          <ScalarProperty Name="id_cuestionario_trabajador" ColumnName="id_cuestionario_trabajador" />
+          <ScalarProperty Name="Q1" ColumnName="Q1" />
+          <ScalarProperty Name="Q2" ColumnName="Q2" />
+          <ScalarProperty Name="Q3" ColumnName="Q3" />
+          <ScalarProperty Name="Q4" ColumnName="Q4" />
+          <ScalarProperty Name="Q5" ColumnName="Q5" />
+          <ScalarProperty Name="Q6" ColumnName="Q6" />
+          <ScalarProperty Name="Q7" ColumnName="Q7" />
+          <ScalarProperty Name="Q8" ColumnName="Q8" />
+          <ScalarProperty Name="Q9" ColumnName="Q9" />
+          <ScalarProperty Name="Q10" ColumnName="Q10" />
+          <ScalarProperty Name="Q11" ColumnName="Q11" />
+          <ScalarProperty Name="Q12" ColumnName="Q12" />
+          <ScalarProperty Name="Q13" ColumnName="Q13" />
+          <ScalarProperty Name="Q14" ColumnName="Q14" />
+          <ScalarProperty Name="Q15" ColumnName="Q15" />
+          <ScalarProperty Name="Q16" ColumnName="Q16" />
+          <ScalarProperty Name="Q17" ColumnName="Q17" />
+          <ScalarProperty Name="Q18" ColumnName="Q18" />
+          <ScalarProperty Name="Q19" ColumnName="Q19" />
+          <ScalarProperty Name="Q20" ColumnName="Q20" />
+          <ScalarProperty Name="Q21" ColumnName="Q21" />
+          <ScalarProperty Name="Q22" ColumnName="Q22" />
+          <ScalarProperty Name="Q23" ColumnName="Q23" />
+          <ScalarProperty Name="Q24" ColumnName="Q24" />
+          <ScalarProperty Name="Q25" ColumnName="Q25" />
+          <ScalarProperty Name="Q26" ColumnName="Q26" />
+          <ScalarProperty Name="Q27" ColumnName="Q27" />
+          <ScalarProperty Name="Q28" ColumnName="Q28" />
+          <ScalarProperty Name="Q29" ColumnName="Q29" />
+          <ScalarProperty Name="Q30" ColumnName="Q30" />
+          <ScalarProperty Name="Q31" ColumnName="Q31" />
+          <ScalarProperty Name="Q32" ColumnName="Q32" />
+          <ScalarProperty Name="Q33" ColumnName="Q33" />
+          <ScalarProperty Name="Q34" ColumnName="Q34" />
+          <ScalarProperty Name="Q35" ColumnName="Q35" />
+          <ScalarProperty Name="Q36" ColumnName="Q36" />
+          <ScalarProperty Name="Q37" ColumnName="Q37" />
+          <ScalarProperty Name="Q38" ColumnName="Q38" />
+          <ScalarProperty Name="Q39" ColumnName="Q39" />
+          <ScalarProperty Name="Q40" ColumnName="Q40" />
+          <ScalarProperty Name="Q41" ColumnName="Q41" />
+          <ScalarProperty Name="Q42" ColumnName="Q42" />
+          <ScalarProperty Name="Q43" ColumnName="Q43" />
+          <ScalarProperty Name="Q44" ColumnName="Q44" />
+          <ScalarProperty Name="Q45" ColumnName="Q45" />
+          <ScalarProperty Name="Q46" ColumnName="Q46" />
+          <ScalarProperty Name="Q47" ColumnName="Q47" />
+          <ScalarProperty Name="Q48" ColumnName="Q48" />
+          <ScalarProperty Name="Q49" ColumnName="Q49" />
+          <ScalarProperty Name="Q50" ColumnName="Q50" />
+          <ScalarProperty Name="Q51" ColumnName="Q51" />
+          <ScalarProperty Name="Q52" ColumnName="Q52" />
+          <ScalarProperty Name="Q53" ColumnName="Q53" />
+          <ScalarProperty Name="Q54" ColumnName="Q54" />
+          <ScalarProperty Name="Q55" ColumnName="Q55" />
+          <ScalarProperty Name="Q56" ColumnName="Q56" />
+          <ScalarProperty Name="C_I" ColumnName="C_I" />
+          <ScalarProperty Name="C_II" ColumnName="C_II" />
+          <ScalarProperty Name="C_III" ColumnName="C_III" />
+          <ScalarProperty Name="C_IV" ColumnName="C_IV" />
+          <ScalarProperty Name="C_V" ColumnName="C_V" />
+          <ScalarProperty Name="C_VI" ColumnName="C_VI" />
+          <ScalarProperty Name="C_VII" ColumnName="C_VII" />
+          <ScalarProperty Name="C_VIII" ColumnName="C_VIII" />
+          <ScalarProperty Name="C_IX" ColumnName="C_IX" />
+          <ScalarProperty Name="Calificacion" ColumnName="Calificacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DATA_Departamentos_N01">
+      <EntityTypeMapping TypeName="Check035Model.DATA_Departamentos_N01">
+        <MappingFragment StoreEntitySet="DATA_Departamentos_N01">
+          <ScalarProperty Name="id_departamento" ColumnName="id_departamento" />
+          <ScalarProperty Name="Departamento" ColumnName="Departamento" />
+          <ScalarProperty Name="Comments" ColumnName="Comments" />
+          <ScalarProperty Name="Extra" ColumnName="Extra" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DATA_Edades_N01">
+      <EntityTypeMapping TypeName="Check035Model.DATA_Edades_N01">
+        <MappingFragment StoreEntitySet="DATA_Edades_N01">
+          <ScalarProperty Name="id_edad" ColumnName="id_edad" />
+          <ScalarProperty Name="edad" ColumnName="edad" />
+          <ScalarProperty Name="Comments" ColumnName="Comments" />
+          <ScalarProperty Name="Extra" ColumnName="Extra" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DATA_Estado_Civil_N01">
+      <EntityTypeMapping TypeName="Check035Model.DATA_Estado_Civil_N01">
+        <MappingFragment StoreEntitySet="DATA_Estado_Civil_N01">
+          <ScalarProperty Name="id_Estado_Civil" ColumnName="id_Estado_Civil" />
+          <ScalarProperty Name="Estado_Civil" ColumnName="Estado_Civil" />
+          <ScalarProperty Name="Comments" ColumnName="Comments" />
+          <ScalarProperty Name="Extra" ColumnName="Extra" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DATA_Experiencia_puesto_N01">
+      <EntityTypeMapping TypeName="Check035Model.DATA_Experiencia_puesto_N01">
+        <MappingFragment StoreEntitySet="DATA_Experiencia_puesto_N01">
+          <ScalarProperty Name="id_Experiencia_puesto" ColumnName="id_Experiencia_puesto" />
+          <ScalarProperty Name="Experiencia_puesto" ColumnName="Experiencia_puesto" />
+          <ScalarProperty Name="Comments" ColumnName="Comments" />
+          <ScalarProperty Name="Extra" ColumnName="Extra" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DATA_Nivel_Estudios_N01">
+      <EntityTypeMapping TypeName="Check035Model.DATA_Nivel_Estudios_N01">
+        <MappingFragment StoreEntitySet="DATA_Nivel_Estudios_N01">
+          <ScalarProperty Name="id_Nivel_Estudios" ColumnName="id_Nivel_Estudios" />
+          <ScalarProperty Name="Nivel_Estudios" ColumnName="Nivel_Estudios" />
+          <ScalarProperty Name="Comments" ColumnName="Comments" />
+          <ScalarProperty Name="Extra" ColumnName="Extra" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DATA_Rotacion_Turno_N01">
+      <EntityTypeMapping TypeName="Check035Model.DATA_Rotacion_Turno_N01">
+        <MappingFragment StoreEntitySet="DATA_Rotacion_Turno_N01">
+          <ScalarProperty Name="id_Rotacion_Turno" ColumnName="id_Rotacion_Turno" />
+          <ScalarProperty Name="Rotacion_Turno" ColumnName="Rotacion_Turno" />
+          <ScalarProperty Name="Comments" ColumnName="Comments" />
+          <ScalarProperty Name="Extra" ColumnName="Extra" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DATA_Sexo_N01">
+      <EntityTypeMapping TypeName="Check035Model.DATA_Sexo_N01">
+        <MappingFragment StoreEntitySet="DATA_Sexo_N01">
+          <ScalarProperty Name="id_sexo" ColumnName="id_sexo" />
+          <ScalarProperty Name="Sexo" ColumnName="Sexo" />
+          <ScalarProperty Name="Comments" ColumnName="Comments" />
+          <ScalarProperty Name="Extra" ColumnName="Extra" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DATA_Tipo_Contratacion_N01">
+      <EntityTypeMapping TypeName="Check035Model.DATA_Tipo_Contratacion_N01">
+        <MappingFragment StoreEntitySet="DATA_Tipo_Contratacion_N01">
+          <ScalarProperty Name="id_Tipo_Contratacion" ColumnName="id_Tipo_Contratacion" />
+          <ScalarProperty Name="Tipo_Contratacion" ColumnName="Tipo_Contratacion" />
+          <ScalarProperty Name="Comments" ColumnName="Comments" />
+          <ScalarProperty Name="Extra" ColumnName="Extra" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DATA_Tipo_Jornada_N01">
+      <EntityTypeMapping TypeName="Check035Model.DATA_Tipo_Jornada_N01">
+        <MappingFragment StoreEntitySet="DATA_Tipo_Jornada_N01">
+          <ScalarProperty Name="id_Tipo_Jornada" ColumnName="id_Tipo_Jornada" />
+          <ScalarProperty Name="Tipo_Jornada" ColumnName="Tipo_Jornada" />
+          <ScalarProperty Name="Comments" ColumnName="Comments" />
+          <ScalarProperty Name="Extra" ColumnName="Extra" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DATA_Tipo_Personal_N01">
+      <EntityTypeMapping TypeName="Check035Model.DATA_Tipo_Personal_N01">
+        <MappingFragment StoreEntitySet="DATA_Tipo_Personal_N01">
+          <ScalarProperty Name="id_Tipo_Personal" ColumnName="id_Tipo_Personal" />
+          <ScalarProperty Name="Tipo_Personal" ColumnName="Tipo_Personal" />
+          <ScalarProperty Name="Comments" ColumnName="Comments" />
+          <ScalarProperty Name="Extra" ColumnName="Extra" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DATA_Tipo_puesto_N01">
+      <EntityTypeMapping TypeName="Check035Model.DATA_Tipo_puesto_N01">
+        <MappingFragment StoreEntitySet="DATA_Tipo_puesto_N01">
+          <ScalarProperty Name="id_Tipo_puesto" ColumnName="id_Tipo_puesto" />
+          <ScalarProperty Name="Tipo_puesto" ColumnName="Tipo_puesto" />
+          <ScalarProperty Name="Comments" ColumnName="Comments" />
+          <ScalarProperty Name="Extra" ColumnName="Extra" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="E360_Cuestionario_Resultado_N01">
+      <EntityTypeMapping TypeName="Check035Model.E360_Cuestionario_Resultado_N01">
+        <MappingFragment StoreEntitySet="E360_Cuestionario_Resultado_N01">
+          <ScalarProperty Name="id_cuestionario_resultado" ColumnName="id_cuestionario_resultado" />
+          <ScalarProperty Name="id_cuestionario_trabajador" ColumnName="id_cuestionario_trabajador" />
+          <ScalarProperty Name="Evaluado" ColumnName="Evaluado" />
+          <ScalarProperty Name="Q1" ColumnName="Q1" />
+          <ScalarProperty Name="Q2" ColumnName="Q2" />
+          <ScalarProperty Name="Q3" ColumnName="Q3" />
+          <ScalarProperty Name="Q4" ColumnName="Q4" />
+          <ScalarProperty Name="Q5" ColumnName="Q5" />
+          <ScalarProperty Name="Q6" ColumnName="Q6" />
+          <ScalarProperty Name="Q7" ColumnName="Q7" />
+          <ScalarProperty Name="Q8" ColumnName="Q8" />
+          <ScalarProperty Name="Q9" ColumnName="Q9" />
+          <ScalarProperty Name="Q10" ColumnName="Q10" />
+          <ScalarProperty Name="Q11" ColumnName="Q11" />
+          <ScalarProperty Name="Q12" ColumnName="Q12" />
+          <ScalarProperty Name="Q13" ColumnName="Q13" />
+          <ScalarProperty Name="Q14" ColumnName="Q14" />
+          <ScalarProperty Name="Q15" ColumnName="Q15" />
+          <ScalarProperty Name="Q16" ColumnName="Q16" />
+          <ScalarProperty Name="Q17" ColumnName="Q17" />
+          <ScalarProperty Name="Q18" ColumnName="Q18" />
+          <ScalarProperty Name="Q19" ColumnName="Q19" />
+          <ScalarProperty Name="Q20" ColumnName="Q20" />
+          <ScalarProperty Name="Q21" ColumnName="Q21" />
+          <ScalarProperty Name="Q22" ColumnName="Q22" />
+          <ScalarProperty Name="Q23" ColumnName="Q23" />
+          <ScalarProperty Name="Q24" ColumnName="Q24" />
+          <ScalarProperty Name="Q25" ColumnName="Q25" />
+          <ScalarProperty Name="Q26" ColumnName="Q26" />
+          <ScalarProperty Name="Q27" ColumnName="Q27" />
+          <ScalarProperty Name="Q28" ColumnName="Q28" />
+          <ScalarProperty Name="Q29" ColumnName="Q29" />
+          <ScalarProperty Name="Q30" ColumnName="Q30" />
+          <ScalarProperty Name="Q31" ColumnName="Q31" />
+          <ScalarProperty Name="Q32" ColumnName="Q32" />
+          <ScalarProperty Name="Q33" ColumnName="Q33" />
+          <ScalarProperty Name="Q34" ColumnName="Q34" />
+          <ScalarProperty Name="Q35" ColumnName="Q35" />
+          <ScalarProperty Name="Q36" ColumnName="Q36" />
+          <ScalarProperty Name="Q37" ColumnName="Q37" />
+          <ScalarProperty Name="Q38" ColumnName="Q38" />
+          <ScalarProperty Name="Q39" ColumnName="Q39" />
+          <ScalarProperty Name="Q40" ColumnName="Q40" />
+          <ScalarProperty Name="Q41" ColumnName="Q41" />
+          <ScalarProperty Name="Q42" ColumnName="Q42" />
+          <ScalarProperty Name="Q43" ColumnName="Q43" />
+          <ScalarProperty Name="Q44" ColumnName="Q44" />
+          <ScalarProperty Name="Q45" ColumnName="Q45" />
+          <ScalarProperty Name="Q46" ColumnName="Q46" />
+          <ScalarProperty Name="Q47" ColumnName="Q47" />
+          <ScalarProperty Name="Q48" ColumnName="Q48" />
+          <ScalarProperty Name="Q49" ColumnName="Q49" />
+          <ScalarProperty Name="Q50" ColumnName="Q50" />
+          <ScalarProperty Name="C_I" ColumnName="C_I" />
+          <ScalarProperty Name="C_II" ColumnName="C_II" />
+          <ScalarProperty Name="C_III" ColumnName="C_III" />
+          <ScalarProperty Name="C_IV" ColumnName="C_IV" />
+          <ScalarProperty Name="C_V" ColumnName="C_V" />
+          <ScalarProperty Name="C_VI" ColumnName="C_VI" />
+          <ScalarProperty Name="C_VII" ColumnName="C_VII" />
+          <ScalarProperty Name="C_VIII" ColumnName="C_VIII" />
+          <ScalarProperty Name="C_IX" ColumnName="C_IX" />
+          <ScalarProperty Name="C_X" ColumnName="C_X" />
+          <ScalarProperty Name="C_XI" ColumnName="C_XI" />
+          <ScalarProperty Name="C_XII" ColumnName="C_XII" />
+          <ScalarProperty Name="C_XIII" ColumnName="C_XIII" />
+          <ScalarProperty Name="C_XIV" ColumnName="C_XIV" />
+          <ScalarProperty Name="C_XV" ColumnName="C_XV" />
+          <ScalarProperty Name="Calificacion" ColumnName="Calificacion" />
+          <ScalarProperty Name="id_CT_Evaluado" ColumnName="id_CT_Evaluado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ERGOS_Centros_Trabajo_N01">
+      <EntityTypeMapping TypeName="Check035Model.ERGOS_Centros_Trabajo_N01">
+        <MappingFragment StoreEntitySet="ERGOS_Centros_Trabajo_N01">
+          <ScalarProperty Name="id_centro_trabajo" ColumnName="id_centro_trabajo" />
+          <ScalarProperty Name="id_empresa" ColumnName="id_empresa" />
+          <ScalarProperty Name="Nombre_centro_trabajo" ColumnName="Nombre_centro_trabajo" />
+          <ScalarProperty Name="No_emplados" ColumnName="No_emplados" />
+          <ScalarProperty Name="Fecha_Auditoria" ColumnName="Fecha_Auditoria" />
+          <ScalarProperty Name="created_at" ColumnName="created_at" />
+          <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+          <ScalarProperty Name="deleted_at" ColumnName="deleted_at" />
+          <ScalarProperty Name="Comentarios" ColumnName="Comentarios" />
+          <ScalarProperty Name="direccion" ColumnName="direccion" />
+          <ScalarProperty Name="Actividad_principal" ColumnName="Actividad_principal" />
+          <ScalarProperty Name="Razon_Social" ColumnName="Razon_Social" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ERGOS_Cuestionarios_N01">
+      <EntityTypeMapping TypeName="Check035Model.ERGOS_Cuestionarios_N01">
+        <MappingFragment StoreEntitySet="ERGOS_Cuestionarios_N01">
+          <ScalarProperty Name="id_cuestionario" ColumnName="id_cuestionario" />
+          <ScalarProperty Name="Cuestionario" ColumnName="Cuestionario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ERGOS_Cuestionarios_Resultados_N01">
+      <EntityTypeMapping TypeName="Check035Model.ERGOS_Cuestionarios_Resultados_N01">
+        <MappingFragment StoreEntitySet="ERGOS_Cuestionarios_Resultados_N01">
+          <ScalarProperty Name="id_Cuestionario_Resultado" ColumnName="id_Cuestionario_Resultado" />
+          <ScalarProperty Name="id_cuestionario_trabajador" ColumnName="id_cuestionario_trabajador" />
+          <ScalarProperty Name="id_respuesta" ColumnName="id_respuesta" />
+          <ScalarProperty Name="id_pregunta" ColumnName="id_pregunta" />
+          <ScalarProperty Name="id_encuesta" ColumnName="id_encuesta" />
+          <ScalarProperty Name="Calificacion" ColumnName="Calificacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ERGOS_Cuestionarios_Trabajador_N01">
+      <EntityTypeMapping TypeName="Check035Model.ERGOS_Cuestionarios_Trabajador_N01">
+        <MappingFragment StoreEntitySet="ERGOS_Cuestionarios_Trabajador_N01">
+          <ScalarProperty Name="id_cuestionario_trabajador" ColumnName="id_cuestionario_trabajador" />
+          <ScalarProperty Name="id_trabajador" ColumnName="id_trabajador" />
+          <ScalarProperty Name="id_encuesta" ColumnName="id_encuesta" />
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+          <ScalarProperty Name="id_empresa" ColumnName="id_empresa" />
+          <ScalarProperty Name="Sexo" ColumnName="Sexo" />
+          <ScalarProperty Name="Edad" ColumnName="Edad" />
+          <ScalarProperty Name="Estado_Civil" ColumnName="Estado_Civil" />
+          <ScalarProperty Name="Nivel_Estudios" ColumnName="Nivel_Estudios" />
+          <ScalarProperty Name="Ocupacion" ColumnName="Ocupacion" />
+          <ScalarProperty Name="Departamento" ColumnName="Departamento" />
+          <ScalarProperty Name="Tipo_puesto" ColumnName="Tipo_puesto" />
+          <ScalarProperty Name="Tipo_Contratacion" ColumnName="Tipo_Contratacion" />
+          <ScalarProperty Name="Tipo_Jornada" ColumnName="Tipo_Jornada" />
+          <ScalarProperty Name="Rotacion_Turno" ColumnName="Rotacion_Turno" />
+          <ScalarProperty Name="Experiencia_puesto_actual" ColumnName="Experiencia_puesto_actual" />
+          <ScalarProperty Name="Experiencia_puesto_laboral" ColumnName="Experiencia_puesto_laboral" />
+          <ScalarProperty Name="created_at" ColumnName="created_at" />
+          <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+          <ScalarProperty Name="deleted_at" ColumnName="deleted_at" />
+          <ScalarProperty Name="Tipo_Personal" ColumnName="Tipo_Personal" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+          <ScalarProperty Name="No_Empleado" ColumnName="No_Empleado" />
+          <ScalarProperty Name="Fecha_Nacimiento" ColumnName="Fecha_Nacimiento" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Mail_Status" ColumnName="Mail_Status" />
+          <ScalarProperty Name="Survey_Status" ColumnName="Survey_Status" />
+          <ScalarProperty Name="Canalizacion" ColumnName="Canalizacion" />
+          <ScalarProperty Name="id_departamento" ColumnName="id_departamento" />
+          <ScalarProperty Name="id_Tipo_Personal" ColumnName="id_Tipo_Personal" />
+          <ScalarProperty Name="id_centro_trabajo" ColumnName="id_centro_trabajo" />
+          <ScalarProperty Name="deleted_by" ColumnName="deleted_by" />
+          <ScalarProperty Name="Vendedor_Status" ColumnName="Vendedor_Status" />
+          <ScalarProperty Name="Supervisor_Status" ColumnName="Supervisor_Status" />
+          <ScalarProperty Name="E360_EBCW" ColumnName="E360_EBCW" />
+          <ScalarProperty Name="E360_STAE" ColumnName="E360_STAE" />
+          <ScalarProperty Name="E360_EBCW_id_trabajador" ColumnName="E360_EBCW_id_trabajador" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ERGOS_Empresas_N01">
+      <EntityTypeMapping TypeName="Check035Model.ERGOS_Empresas_N01">
+        <MappingFragment StoreEntitySet="ERGOS_Empresas_N01">
+          <ScalarProperty Name="id_empresa" ColumnName="id_empresa" />
+          <ScalarProperty Name="Razon_Social" ColumnName="Razon_Social" />
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+          <ScalarProperty Name="Contacto_Nombre" ColumnName="Contacto_Nombre" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="id_encuesta" ColumnName="id_encuesta" />
+          <ScalarProperty Name="created_at" ColumnName="created_at" />
+          <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+          <ScalarProperty Name="deleted_at" ColumnName="deleted_at" />
+          <ScalarProperty Name="RFC" ColumnName="RFC" />
+          <ScalarProperty Name="Domicilio" ColumnName="Domicilio" />
+          <ScalarProperty Name="Actividad_Principal" ColumnName="Actividad_Principal" />
+          <ScalarProperty Name="Fecha_Aplicacion" ColumnName="Fecha_Aplicacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ERGOS_Preguntas_N01">
+      <EntityTypeMapping TypeName="Check035Model.ERGOS_Preguntas_N01">
+        <MappingFragment StoreEntitySet="ERGOS_Preguntas_N01">
+          <ScalarProperty Name="id_pregunta" ColumnName="id_pregunta" />
+          <ScalarProperty Name="Preguntas" ColumnName="Preguntas" />
+          <ScalarProperty Name="id_cuestionario" ColumnName="id_cuestionario" />
+          <ScalarProperty Name="No_Pregunta" ColumnName="No_Pregunta" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ERGOS_Preguntas_S2_N02">
+      <EntityTypeMapping TypeName="Check035Model.ERGOS_Preguntas_S2_N02">
+        <MappingFragment StoreEntitySet="ERGOS_Preguntas_S2_N02">
+          <ScalarProperty Name="id_pregunta" ColumnName="id_pregunta" />
+          <ScalarProperty Name="Preguntas" ColumnName="Preguntas" />
+          <ScalarProperty Name="id_cuestionario" ColumnName="id_cuestionario" />
+          <ScalarProperty Name="No_Pregunta" ColumnName="No_Pregunta" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ERGOS_Respuestas_N01">
+      <EntityTypeMapping TypeName="Check035Model.ERGOS_Respuestas_N01">
+        <MappingFragment StoreEntitySet="ERGOS_Respuestas_N01">
+          <ScalarProperty Name="id_respuesta" ColumnName="id_respuesta" />
+          <ScalarProperty Name="Respuesta" ColumnName="Respuesta" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ERGOS_Roles_N01">
+      <EntityTypeMapping TypeName="Check035Model.ERGOS_Roles_N01">
+        <MappingFragment StoreEntitySet="ERGOS_Roles_N01">
+          <ScalarProperty Name="id_rol" ColumnName="id_rol" />
+          <ScalarProperty Name="Nombre_Rol" ColumnName="Nombre_Rol" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ERGOS_Usuarios_N01">
+      <EntityTypeMapping TypeName="Check035Model.ERGOS_Usuarios_N01">
+        <MappingFragment StoreEntitySet="ERGOS_Usuarios_N01">
+          <ScalarProperty Name="id_user" ColumnName="id_user" />
+          <ScalarProperty Name="User_Nombre" ColumnName="User_Nombre" />
+          <ScalarProperty Name="User_Password" ColumnName="User_Password" />
+          <ScalarProperty Name="id_rol" ColumnName="id_rol" />
+          <ScalarProperty Name="id_empresa" ColumnName="id_empresa" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="created_at" ColumnName="created_at" />
+          <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+          <ScalarProperty Name="downAccess_at" ColumnName="downAccess_at" />
+          <ScalarProperty Name="id_centro_trabajo" ColumnName="id_centro_trabajo" />
+          <ScalarProperty Name="id_cuestionario_trabajador" ColumnName="id_cuestionario_trabajador" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LOG_Cuestionarios_Resultados_N01">
+      <EntityTypeMapping TypeName="Check035Model.LOG_Cuestionarios_Resultados_N01">
+        <MappingFragment StoreEntitySet="LOG_Cuestionarios_Resultados_N01">
+          <ScalarProperty Name="id_log" ColumnName="id_log" />
+          <ScalarProperty Name="id_Cuestionario_Resultado" ColumnName="id_Cuestionario_Resultado" />
+          <ScalarProperty Name="id_cuestionario_trabajador" ColumnName="id_cuestionario_trabajador" />
+          <ScalarProperty Name="id_respuesta" ColumnName="id_respuesta" />
+          <ScalarProperty Name="id_pregunta" ColumnName="id_pregunta" />
+          <ScalarProperty Name="id_encuesta" ColumnName="id_encuesta" />
+          <ScalarProperty Name="Calificacion" ColumnName="Calificacion" />
+          <ScalarProperty Name="deleted_at" ColumnName="deleted_at" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LOG_Cuestionarios_Trabajador_N01">
+      <EntityTypeMapping TypeName="Check035Model.LOG_Cuestionarios_Trabajador_N01">
+        <MappingFragment StoreEntitySet="LOG_Cuestionarios_Trabajador_N01">
+          <ScalarProperty Name="id_log" ColumnName="id_log" />
+          <ScalarProperty Name="id_cuestionario_trabajador" ColumnName="id_cuestionario_trabajador" />
+          <ScalarProperty Name="id_trabajador" ColumnName="id_trabajador" />
+          <ScalarProperty Name="id_encuesta" ColumnName="id_encuesta" />
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+          <ScalarProperty Name="id_empresa" ColumnName="id_empresa" />
+          <ScalarProperty Name="Sexo" ColumnName="Sexo" />
+          <ScalarProperty Name="Edad" ColumnName="Edad" />
+          <ScalarProperty Name="Estado_Civil" ColumnName="Estado_Civil" />
+          <ScalarProperty Name="Nivel_Esudios" ColumnName="Nivel_Esudios" />
+          <ScalarProperty Name="Ocupacion" ColumnName="Ocupacion" />
+          <ScalarProperty Name="Departamento" ColumnName="Departamento" />
+          <ScalarProperty Name="Tipo_puesto" ColumnName="Tipo_puesto" />
+          <ScalarProperty Name="Tipo_Contratacion" ColumnName="Tipo_Contratacion" />
+          <ScalarProperty Name="Tipo_Jornada" ColumnName="Tipo_Jornada" />
+          <ScalarProperty Name="Rotacion_Turno" ColumnName="Rotacion_Turno" />
+          <ScalarProperty Name="Experiencia_puesto_actual" ColumnName="Experiencia_puesto_actual" />
+          <ScalarProperty Name="Experiencia_puesto_laboral" ColumnName="Experiencia_puesto_laboral" />
+          <ScalarProperty Name="created_at" ColumnName="created_at" />
+          <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+          <ScalarProperty Name="deleted_at" ColumnName="deleted_at" />
+          <ScalarProperty Name="Tipo_Personal" ColumnName="Tipo_Personal" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+          <ScalarProperty Name="No_Empleado" ColumnName="No_Empleado" />
+          <ScalarProperty Name="Fecha_Nacimiento" ColumnName="Fecha_Nacimiento" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Mail_Status" ColumnName="Mail_Status" />
+          <ScalarProperty Name="Survey_Status" ColumnName="Survey_Status" />
+          <ScalarProperty Name="Canalizacion" ColumnName="Canalizacion" />
+          <ScalarProperty Name="deleted_by" ColumnName="deleted_by" />
+          <ScalarProperty Name="id_centro_trabajo" ColumnName="id_centro_trabajo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LOG_login_N01">
+      <EntityTypeMapping TypeName="Check035Model.LOG_login_N01">
+        <MappingFragment StoreEntitySet="LOG_login_N01">
+          <ScalarProperty Name="id_log" ColumnName="id_log" />
+          <ScalarProperty Name="Name_user" ColumnName="Name_user" />
+          <ScalarProperty Name="Pass_user" ColumnName="Pass_user" />
+          <ScalarProperty Name="Event_datetime" ColumnName="Event_datetime" />
+          <ScalarProperty Name="Login_status" ColumnName="Login_status" />
+          <ScalarProperty Name="Comment" ColumnName="Comment" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LOG_Mails_N01">
+      <EntityTypeMapping TypeName="Check035Model.LOG_Mails_N01">
+        <MappingFragment StoreEntitySet="LOG_Mails_N01">
+          <ScalarProperty Name="id_log_mail" ColumnName="id_log_mail" />
+          <ScalarProperty Name="Name_user" ColumnName="Name_user" />
+          <ScalarProperty Name="Send_mail_to" ColumnName="Send_mail_to" />
+          <ScalarProperty Name="Event_datetime" ColumnName="Event_datetime" />
+          <ScalarProperty Name="Mail_status" ColumnName="Mail_status" />
+          <ScalarProperty Name="Comment" ColumnName="Comment" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VW_Encuestas_E360_Deptos">
+      <EntityTypeMapping TypeName="Check035Model.VW_Encuestas_E360_Deptos">
+        <MappingFragment StoreEntitySet="VW_Encuestas_E360_Deptos">
+          <ScalarProperty Name="id_empresa" ColumnName="id_empresa" />
+          <ScalarProperty Name="id_centro_trabajo" ColumnName="id_centro_trabajo" />
+          <ScalarProperty Name="Departamento" ColumnName="Departamento" />
+          <ScalarProperty Name="id_cuestionario_resultado" ColumnName="id_cuestionario_resultado" />
+          <ScalarProperty Name="id_cuestionario_trabajador" ColumnName="id_cuestionario_trabajador" />
+          <ScalarProperty Name="Evaluado" ColumnName="Evaluado" />
+          <ScalarProperty Name="Q1" ColumnName="Q1" />
+          <ScalarProperty Name="Q2" ColumnName="Q2" />
+          <ScalarProperty Name="Q3" ColumnName="Q3" />
+          <ScalarProperty Name="Q4" ColumnName="Q4" />
+          <ScalarProperty Name="Q5" ColumnName="Q5" />
+          <ScalarProperty Name="Q6" ColumnName="Q6" />
+          <ScalarProperty Name="Q7" ColumnName="Q7" />
+          <ScalarProperty Name="Q8" ColumnName="Q8" />
+          <ScalarProperty Name="Q9" ColumnName="Q9" />
+          <ScalarProperty Name="Q10" ColumnName="Q10" />
+          <ScalarProperty Name="Q11" ColumnName="Q11" />
+          <ScalarProperty Name="Q12" ColumnName="Q12" />
+          <ScalarProperty Name="Q13" ColumnName="Q13" />
+          <ScalarProperty Name="Q14" ColumnName="Q14" />
+          <ScalarProperty Name="Q15" ColumnName="Q15" />
+          <ScalarProperty Name="Q16" ColumnName="Q16" />
+          <ScalarProperty Name="Q17" ColumnName="Q17" />
+          <ScalarProperty Name="Q18" ColumnName="Q18" />
+          <ScalarProperty Name="Q19" ColumnName="Q19" />
+          <ScalarProperty Name="Q20" ColumnName="Q20" />
+          <ScalarProperty Name="Q21" ColumnName="Q21" />
+          <ScalarProperty Name="Q22" ColumnName="Q22" />
+          <ScalarProperty Name="Q23" ColumnName="Q23" />
+          <ScalarProperty Name="Q24" ColumnName="Q24" />
+          <ScalarProperty Name="Q25" ColumnName="Q25" />
+          <ScalarProperty Name="Q26" ColumnName="Q26" />
+          <ScalarProperty Name="Q27" ColumnName="Q27" />
+          <ScalarProperty Name="Q28" ColumnName="Q28" />
+          <ScalarProperty Name="Q29" ColumnName="Q29" />
+          <ScalarProperty Name="Q30" ColumnName="Q30" />
+          <ScalarProperty Name="Q31" ColumnName="Q31" />
+          <ScalarProperty Name="Q32" ColumnName="Q32" />
+          <ScalarProperty Name="Q33" ColumnName="Q33" />
+          <ScalarProperty Name="Q34" ColumnName="Q34" />
+          <ScalarProperty Name="Q35" ColumnName="Q35" />
+          <ScalarProperty Name="Q36" ColumnName="Q36" />
+          <ScalarProperty Name="Q37" ColumnName="Q37" />
+          <ScalarProperty Name="Q38" ColumnName="Q38" />
+          <ScalarProperty Name="Q39" ColumnName="Q39" />
+          <ScalarProperty Name="Q40" ColumnName="Q40" />
+          <ScalarProperty Name="Q41" ColumnName="Q41" />
+          <ScalarProperty Name="Q42" ColumnName="Q42" />
+          <ScalarProperty Name="Q43" ColumnName="Q43" />
+          <ScalarProperty Name="Q44" ColumnName="Q44" />
+          <ScalarProperty Name="Q45" ColumnName="Q45" />
+          <ScalarProperty Name="Q46" ColumnName="Q46" />
+          <ScalarProperty Name="Q47" ColumnName="Q47" />
+          <ScalarProperty Name="Q48" ColumnName="Q48" />
+          <ScalarProperty Name="Q49" ColumnName="Q49" />
+          <ScalarProperty Name="Q50" ColumnName="Q50" />
+          <ScalarProperty Name="C_I" ColumnName="C_I" />
+          <ScalarProperty Name="C_II" ColumnName="C_II" />
+          <ScalarProperty Name="C_III" ColumnName="C_III" />
+          <ScalarProperty Name="C_IV" ColumnName="C_IV" />
+          <ScalarProperty Name="C_V" ColumnName="C_V" />
+          <ScalarProperty Name="C_VI" ColumnName="C_VI" />
+          <ScalarProperty Name="C_VII" ColumnName="C_VII" />
+          <ScalarProperty Name="C_VIII" ColumnName="C_VIII" />
+          <ScalarProperty Name="C_IX" ColumnName="C_IX" />
+          <ScalarProperty Name="C_X" ColumnName="C_X" />
+          <ScalarProperty Name="C_XI" ColumnName="C_XI" />
+          <ScalarProperty Name="C_XII" ColumnName="C_XII" />
+          <ScalarProperty Name="C_XIII" ColumnName="C_XIII" />
+          <ScalarProperty Name="C_XIV" ColumnName="C_XIV" />
+          <ScalarProperty Name="C_XV" ColumnName="C_XV" />
+          <ScalarProperty Name="Calificacion" ColumnName="Calificacion" />
+          <ScalarProperty Name="id_CT_Evaluado" ColumnName="id_CT_Evaluado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VW_ERGOS_Results_V01">
+      <EntityTypeMapping TypeName="Check035Model.VW_ERGOS_Results_V01">
+        <MappingFragment StoreEntitySet="VW_ERGOS_Results_V01">
+          <ScalarProperty Name="id_pregunta" ColumnName="id_pregunta" />
+          <ScalarProperty Name="Preguntas" ColumnName="Preguntas" />
+          <ScalarProperty Name="id_Cuestionario_Resultado" ColumnName="id_Cuestionario_Resultado" />
+          <ScalarProperty Name="id_encuesta" ColumnName="id_encuesta" />
+          <ScalarProperty Name="id_cuestionario_trabajador" ColumnName="id_cuestionario_trabajador" />
+          <ScalarProperty Name="id_respuesta" ColumnName="id_respuesta" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fn_Final_view_surveys" FunctionImportName="fn_Final_view_surveys">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fn_Final_view_surveys_Result">
+          <ScalarProperty Name="id_pregunta" ColumnName="id_pregunta" />
+          <ScalarProperty Name="No_Pregunta" ColumnName="No_Pregunta" />
+          <ScalarProperty Name="Preguntas" ColumnName="Preguntas" />
+          <ScalarProperty Name="id_Cuestionario_Resultado" ColumnName="id_Cuestionario_Resultado" />
+          <ScalarProperty Name="id_respuesta" ColumnName="id_respuesta" />
+          <ScalarProperty Name="id_cuestionario" ColumnName="id_cuestionario" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fn_Final_view_surveys_S2" FunctionImportName="fn_Final_view_surveys_S2">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fn_Final_view_surveys_S2_Result">
+          <ScalarProperty Name="id_pregunta" ColumnName="id_pregunta" />
+          <ScalarProperty Name="No_Pregunta" ColumnName="No_Pregunta" />
+          <ScalarProperty Name="Preguntas" ColumnName="Preguntas" />
+          <ScalarProperty Name="id_Cuestionario_Resultado" ColumnName="id_Cuestionario_Resultado" />
+          <ScalarProperty Name="id_respuesta" ColumnName="id_respuesta" />
+          <ScalarProperty Name="id_cuestionario" ColumnName="id_cuestionario" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fn_MultiEvalua_Clima_Corte_Empresa" FunctionImportName="fn_MultiEvalua_Clima_Corte_Empresa">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fn_MultiEvalua_Clima_Corte_Empresa_Result">
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="id_trabajador" ColumnName="id_trabajador" />
+          <ScalarProperty Name="Calificacion" ColumnName="Calificacion" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fn_MultiEvalua_ClimaLaboral_Centro_Trabajo" FunctionImportName="fn_MultiEvalua_ClimaLaboral_Centro_Trabajo">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fn_MultiEvalua_ClimaLaboral_Centro_Trabajo_Result">
+          <ScalarProperty Name="PROMEDIO_C_I" ColumnName="PROMEDIO_C_I" />
+          <ScalarProperty Name="PROMEDIO_C_I_100" ColumnName="PROMEDIO_C_I_100" />
+          <ScalarProperty Name="PROMEDIO_C_II" ColumnName="PROMEDIO_C_II" />
+          <ScalarProperty Name="PROMEDIO_C_II_100" ColumnName="PROMEDIO_C_II_100" />
+          <ScalarProperty Name="PROMEDIO_C_III" ColumnName="PROMEDIO_C_III" />
+          <ScalarProperty Name="PROMEDIO_C_III_100" ColumnName="PROMEDIO_C_III_100" />
+          <ScalarProperty Name="PROMEDIO_C_IV" ColumnName="PROMEDIO_C_IV" />
+          <ScalarProperty Name="PROMEDIO_C_IV_100" ColumnName="PROMEDIO_C_IV_100" />
+          <ScalarProperty Name="PROMEDIO_C_V" ColumnName="PROMEDIO_C_V" />
+          <ScalarProperty Name="PROMEDIO_C_V_100" ColumnName="PROMEDIO_C_V_100" />
+          <ScalarProperty Name="PROMEDIO_C_VI" ColumnName="PROMEDIO_C_VI" />
+          <ScalarProperty Name="PROMEDIO_C_VI_100" ColumnName="PROMEDIO_C_VI_100" />
+          <ScalarProperty Name="PROMEDIO_C_VII" ColumnName="PROMEDIO_C_VII" />
+          <ScalarProperty Name="PROMEDIO_C_VII_100" ColumnName="PROMEDIO_C_VII_100" />
+          <ScalarProperty Name="PROMEDIO_C_VIII" ColumnName="PROMEDIO_C_VIII" />
+          <ScalarProperty Name="PROMEDIO_C_VIII_100" ColumnName="PROMEDIO_C_VIII_100" />
+          <ScalarProperty Name="PROMEDIO_C_IX" ColumnName="PROMEDIO_C_IX" />
+          <ScalarProperty Name="PROMEDIO_C_IX_100" ColumnName="PROMEDIO_C_IX_100" />
+          <ScalarProperty Name="PROMEDIO_Final" ColumnName="PROMEDIO_Final" />
+          <ScalarProperty Name="PROMEDIO_Final_100" ColumnName="PROMEDIO_Final_100" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fn_MultiEvalua_ClimaLaboral_Empresa" FunctionImportName="fn_MultiEvalua_ClimaLaboral_Empresa">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fn_MultiEvalua_ClimaLaboral_Empresa_Result">
+          <ScalarProperty Name="PROMEDIO_C_I" ColumnName="PROMEDIO_C_I" />
+          <ScalarProperty Name="PROMEDIO_C_I_100" ColumnName="PROMEDIO_C_I_100" />
+          <ScalarProperty Name="PROMEDIO_C_II" ColumnName="PROMEDIO_C_II" />
+          <ScalarProperty Name="PROMEDIO_C_II_100" ColumnName="PROMEDIO_C_II_100" />
+          <ScalarProperty Name="PROMEDIO_C_III" ColumnName="PROMEDIO_C_III" />
+          <ScalarProperty Name="PROMEDIO_C_III_100" ColumnName="PROMEDIO_C_III_100" />
+          <ScalarProperty Name="PROMEDIO_C_IV" ColumnName="PROMEDIO_C_IV" />
+          <ScalarProperty Name="PROMEDIO_C_IV_100" ColumnName="PROMEDIO_C_IV_100" />
+          <ScalarProperty Name="PROMEDIO_C_V" ColumnName="PROMEDIO_C_V" />
+          <ScalarProperty Name="PROMEDIO_C_V_100" ColumnName="PROMEDIO_C_V_100" />
+          <ScalarProperty Name="PROMEDIO_C_VI" ColumnName="PROMEDIO_C_VI" />
+          <ScalarProperty Name="PROMEDIO_C_VI_100" ColumnName="PROMEDIO_C_VI_100" />
+          <ScalarProperty Name="PROMEDIO_C_VII" ColumnName="PROMEDIO_C_VII" />
+          <ScalarProperty Name="PROMEDIO_C_VII_100" ColumnName="PROMEDIO_C_VII_100" />
+          <ScalarProperty Name="PROMEDIO_C_VIII" ColumnName="PROMEDIO_C_VIII" />
+          <ScalarProperty Name="PROMEDIO_C_VIII_100" ColumnName="PROMEDIO_C_VIII_100" />
+          <ScalarProperty Name="PROMEDIO_C_IX" ColumnName="PROMEDIO_C_IX" />
+          <ScalarProperty Name="PROMEDIO_C_IX_100" ColumnName="PROMEDIO_C_IX_100" />
+          <ScalarProperty Name="PROMEDIO_Final" ColumnName="PROMEDIO_Final" />
+          <ScalarProperty Name="PROMEDIO_Final_100" ColumnName="PROMEDIO_Final_100" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fn_MultiEvalua_E360_Centro_Trabajo" FunctionImportName="fn_MultiEvalua_E360_Centro_Trabajo">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fn_MultiEvalua_E360_Centro_Trabajo_Result">
+          <ScalarProperty Name="PROMEDIO_C_I" ColumnName="PROMEDIO_C_I" />
+          <ScalarProperty Name="PROMEDIO_C_I_100" ColumnName="PROMEDIO_C_I_100" />
+          <ScalarProperty Name="PROMEDIO_C_II" ColumnName="PROMEDIO_C_II" />
+          <ScalarProperty Name="PROMEDIO_C_II_100" ColumnName="PROMEDIO_C_II_100" />
+          <ScalarProperty Name="PROMEDIO_C_III" ColumnName="PROMEDIO_C_III" />
+          <ScalarProperty Name="PROMEDIO_C_III_100" ColumnName="PROMEDIO_C_III_100" />
+          <ScalarProperty Name="PROMEDIO_C_IV" ColumnName="PROMEDIO_C_IV" />
+          <ScalarProperty Name="PROMEDIO_C_IV_100" ColumnName="PROMEDIO_C_IV_100" />
+          <ScalarProperty Name="PROMEDIO_C_V" ColumnName="PROMEDIO_C_V" />
+          <ScalarProperty Name="PROMEDIO_C_V_100" ColumnName="PROMEDIO_C_V_100" />
+          <ScalarProperty Name="PROMEDIO_C_VI" ColumnName="PROMEDIO_C_VI" />
+          <ScalarProperty Name="PROMEDIO_C_VI_100" ColumnName="PROMEDIO_C_VI_100" />
+          <ScalarProperty Name="PROMEDIO_C_VII" ColumnName="PROMEDIO_C_VII" />
+          <ScalarProperty Name="PROMEDIO_C_VII_100" ColumnName="PROMEDIO_C_VII_100" />
+          <ScalarProperty Name="PROMEDIO_C_VIII" ColumnName="PROMEDIO_C_VIII" />
+          <ScalarProperty Name="PROMEDIO_C_VIII_100" ColumnName="PROMEDIO_C_VIII_100" />
+          <ScalarProperty Name="PROMEDIO_C_IX" ColumnName="PROMEDIO_C_IX" />
+          <ScalarProperty Name="PROMEDIO_C_IX_100" ColumnName="PROMEDIO_C_IX_100" />
+          <ScalarProperty Name="PROMEDIO_C_X" ColumnName="PROMEDIO_C_X" />
+          <ScalarProperty Name="PROMEDIO_C_X_100" ColumnName="PROMEDIO_C_X_100" />
+          <ScalarProperty Name="PROMEDIO_C_XI" ColumnName="PROMEDIO_C_XI" />
+          <ScalarProperty Name="PROMEDIO_C_XI_100" ColumnName="PROMEDIO_C_XI_100" />
+          <ScalarProperty Name="PROMEDIO_C_XII" ColumnName="PROMEDIO_C_XII" />
+          <ScalarProperty Name="PROMEDIO_C_XII_100" ColumnName="PROMEDIO_C_XII_100" />
+          <ScalarProperty Name="PROMEDIO_C_XIII" ColumnName="PROMEDIO_C_XIII" />
+          <ScalarProperty Name="PROMEDIO_C_XIII_100" ColumnName="PROMEDIO_C_XIII_100" />
+          <ScalarProperty Name="PROMEDIO_C_XIV" ColumnName="PROMEDIO_C_XIV" />
+          <ScalarProperty Name="PROMEDIO_C_XIV_100" ColumnName="PROMEDIO_C_XIV_100" />
+          <ScalarProperty Name="PROMEDIO_C_XV" ColumnName="PROMEDIO_C_XV" />
+          <ScalarProperty Name="PROMEDIO_C_XV_100" ColumnName="PROMEDIO_C_XV_100" />
+          <ScalarProperty Name="PROMEDIO_Final" ColumnName="PROMEDIO_Final" />
+          <ScalarProperty Name="PROMEDIO_Final_100" ColumnName="PROMEDIO_Final_100" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fn_MultiEvalua_E360_Centro_Trabajo_Com" FunctionImportName="fn_MultiEvalua_E360_Centro_Trabajo_Com">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fn_MultiEvalua_E360_Centro_Trabajo_Com_Result">
+          <ScalarProperty Name="PROMEDIO_C_I" ColumnName="PROMEDIO_C_I" />
+          <ScalarProperty Name="PROMEDIO_C_I_100" ColumnName="PROMEDIO_C_I_100" />
+          <ScalarProperty Name="PROMEDIO_C_II" ColumnName="PROMEDIO_C_II" />
+          <ScalarProperty Name="PROMEDIO_C_II_100" ColumnName="PROMEDIO_C_II_100" />
+          <ScalarProperty Name="PROMEDIO_C_III" ColumnName="PROMEDIO_C_III" />
+          <ScalarProperty Name="PROMEDIO_C_III_100" ColumnName="PROMEDIO_C_III_100" />
+          <ScalarProperty Name="PROMEDIO_C_IV" ColumnName="PROMEDIO_C_IV" />
+          <ScalarProperty Name="PROMEDIO_C_IV_100" ColumnName="PROMEDIO_C_IV_100" />
+          <ScalarProperty Name="PROMEDIO_C_V" ColumnName="PROMEDIO_C_V" />
+          <ScalarProperty Name="PROMEDIO_C_V_100" ColumnName="PROMEDIO_C_V_100" />
+          <ScalarProperty Name="PROMEDIO_C_VI" ColumnName="PROMEDIO_C_VI" />
+          <ScalarProperty Name="PROMEDIO_C_VI_100" ColumnName="PROMEDIO_C_VI_100" />
+          <ScalarProperty Name="PROMEDIO_C_VII" ColumnName="PROMEDIO_C_VII" />
+          <ScalarProperty Name="PROMEDIO_C_VII_100" ColumnName="PROMEDIO_C_VII_100" />
+          <ScalarProperty Name="PROMEDIO_C_VIII" ColumnName="PROMEDIO_C_VIII" />
+          <ScalarProperty Name="PROMEDIO_C_VIII_100" ColumnName="PROMEDIO_C_VIII_100" />
+          <ScalarProperty Name="PROMEDIO_C_IX" ColumnName="PROMEDIO_C_IX" />
+          <ScalarProperty Name="PROMEDIO_C_IX_100" ColumnName="PROMEDIO_C_IX_100" />
+          <ScalarProperty Name="PROMEDIO_C_X" ColumnName="PROMEDIO_C_X" />
+          <ScalarProperty Name="PROMEDIO_C_X_100" ColumnName="PROMEDIO_C_X_100" />
+          <ScalarProperty Name="PROMEDIO_C_XI" ColumnName="PROMEDIO_C_XI" />
+          <ScalarProperty Name="PROMEDIO_C_XI_100" ColumnName="PROMEDIO_C_XI_100" />
+          <ScalarProperty Name="PROMEDIO_C_XII" ColumnName="PROMEDIO_C_XII" />
+          <ScalarProperty Name="PROMEDIO_C_XII_100" ColumnName="PROMEDIO_C_XII_100" />
+          <ScalarProperty Name="PROMEDIO_C_XIII" ColumnName="PROMEDIO_C_XIII" />
+          <ScalarProperty Name="PROMEDIO_C_XIII_100" ColumnName="PROMEDIO_C_XIII_100" />
+          <ScalarProperty Name="PROMEDIO_C_XIV" ColumnName="PROMEDIO_C_XIV" />
+          <ScalarProperty Name="PROMEDIO_C_XIV_100" ColumnName="PROMEDIO_C_XIV_100" />
+          <ScalarProperty Name="PROMEDIO_C_XV" ColumnName="PROMEDIO_C_XV" />
+          <ScalarProperty Name="PROMEDIO_C_XV_100" ColumnName="PROMEDIO_C_XV_100" />
+          <ScalarProperty Name="PROMEDIO_Final" ColumnName="PROMEDIO_Final" />
+          <ScalarProperty Name="PROMEDIO_Final_100" ColumnName="PROMEDIO_Final_100" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fn_MultiEvalua_E360_Centro_Trabajo_Emp" FunctionImportName="fn_MultiEvalua_E360_Centro_Trabajo_Emp">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fn_MultiEvalua_E360_Centro_Trabajo_Emp_Result">
+          <ScalarProperty Name="PROMEDIO_C_I" ColumnName="PROMEDIO_C_I" />
+          <ScalarProperty Name="PROMEDIO_C_I_100" ColumnName="PROMEDIO_C_I_100" />
+          <ScalarProperty Name="PROMEDIO_C_II" ColumnName="PROMEDIO_C_II" />
+          <ScalarProperty Name="PROMEDIO_C_II_100" ColumnName="PROMEDIO_C_II_100" />
+          <ScalarProperty Name="PROMEDIO_C_III" ColumnName="PROMEDIO_C_III" />
+          <ScalarProperty Name="PROMEDIO_C_III_100" ColumnName="PROMEDIO_C_III_100" />
+          <ScalarProperty Name="PROMEDIO_C_IV" ColumnName="PROMEDIO_C_IV" />
+          <ScalarProperty Name="PROMEDIO_C_IV_100" ColumnName="PROMEDIO_C_IV_100" />
+          <ScalarProperty Name="PROMEDIO_C_V" ColumnName="PROMEDIO_C_V" />
+          <ScalarProperty Name="PROMEDIO_C_V_100" ColumnName="PROMEDIO_C_V_100" />
+          <ScalarProperty Name="PROMEDIO_C_VI" ColumnName="PROMEDIO_C_VI" />
+          <ScalarProperty Name="PROMEDIO_C_VI_100" ColumnName="PROMEDIO_C_VI_100" />
+          <ScalarProperty Name="PROMEDIO_C_VII" ColumnName="PROMEDIO_C_VII" />
+          <ScalarProperty Name="PROMEDIO_C_VII_100" ColumnName="PROMEDIO_C_VII_100" />
+          <ScalarProperty Name="PROMEDIO_C_VIII" ColumnName="PROMEDIO_C_VIII" />
+          <ScalarProperty Name="PROMEDIO_C_VIII_100" ColumnName="PROMEDIO_C_VIII_100" />
+          <ScalarProperty Name="PROMEDIO_C_IX" ColumnName="PROMEDIO_C_IX" />
+          <ScalarProperty Name="PROMEDIO_C_IX_100" ColumnName="PROMEDIO_C_IX_100" />
+          <ScalarProperty Name="PROMEDIO_C_X" ColumnName="PROMEDIO_C_X" />
+          <ScalarProperty Name="PROMEDIO_C_X_100" ColumnName="PROMEDIO_C_X_100" />
+          <ScalarProperty Name="PROMEDIO_C_XI" ColumnName="PROMEDIO_C_XI" />
+          <ScalarProperty Name="PROMEDIO_C_XI_100" ColumnName="PROMEDIO_C_XI_100" />
+          <ScalarProperty Name="PROMEDIO_C_XII" ColumnName="PROMEDIO_C_XII" />
+          <ScalarProperty Name="PROMEDIO_C_XII_100" ColumnName="PROMEDIO_C_XII_100" />
+          <ScalarProperty Name="PROMEDIO_C_XIII" ColumnName="PROMEDIO_C_XIII" />
+          <ScalarProperty Name="PROMEDIO_C_XIII_100" ColumnName="PROMEDIO_C_XIII_100" />
+          <ScalarProperty Name="PROMEDIO_C_XIV" ColumnName="PROMEDIO_C_XIV" />
+          <ScalarProperty Name="PROMEDIO_C_XIV_100" ColumnName="PROMEDIO_C_XIV_100" />
+          <ScalarProperty Name="PROMEDIO_C_XV" ColumnName="PROMEDIO_C_XV" />
+          <ScalarProperty Name="PROMEDIO_C_XV_100" ColumnName="PROMEDIO_C_XV_100" />
+          <ScalarProperty Name="PROMEDIO_Final" ColumnName="PROMEDIO_Final" />
+          <ScalarProperty Name="PROMEDIO_Final_100" ColumnName="PROMEDIO_Final_100" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fn_MultiEvalua_E360_Centro_Trabajo_Sub" FunctionImportName="fn_MultiEvalua_E360_Centro_Trabajo_Sub">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fn_MultiEvalua_E360_Centro_Trabajo_Sub_Result">
+          <ScalarProperty Name="PROMEDIO_C_I" ColumnName="PROMEDIO_C_I" />
+          <ScalarProperty Name="PROMEDIO_C_I_100" ColumnName="PROMEDIO_C_I_100" />
+          <ScalarProperty Name="PROMEDIO_C_II" ColumnName="PROMEDIO_C_II" />
+          <ScalarProperty Name="PROMEDIO_C_II_100" ColumnName="PROMEDIO_C_II_100" />
+          <ScalarProperty Name="PROMEDIO_C_III" ColumnName="PROMEDIO_C_III" />
+          <ScalarProperty Name="PROMEDIO_C_III_100" ColumnName="PROMEDIO_C_III_100" />
+          <ScalarProperty Name="PROMEDIO_C_IV" ColumnName="PROMEDIO_C_IV" />
+          <ScalarProperty Name="PROMEDIO_C_IV_100" ColumnName="PROMEDIO_C_IV_100" />
+          <ScalarProperty Name="PROMEDIO_C_V" ColumnName="PROMEDIO_C_V" />
+          <ScalarProperty Name="PROMEDIO_C_V_100" ColumnName="PROMEDIO_C_V_100" />
+          <ScalarProperty Name="PROMEDIO_C_VI" ColumnName="PROMEDIO_C_VI" />
+          <ScalarProperty Name="PROMEDIO_C_VI_100" ColumnName="PROMEDIO_C_VI_100" />
+          <ScalarProperty Name="PROMEDIO_C_VII" ColumnName="PROMEDIO_C_VII" />
+          <ScalarProperty Name="PROMEDIO_C_VII_100" ColumnName="PROMEDIO_C_VII_100" />
+          <ScalarProperty Name="PROMEDIO_C_VIII" ColumnName="PROMEDIO_C_VIII" />
+          <ScalarProperty Name="PROMEDIO_C_VIII_100" ColumnName="PROMEDIO_C_VIII_100" />
+          <ScalarProperty Name="PROMEDIO_C_IX" ColumnName="PROMEDIO_C_IX" />
+          <ScalarProperty Name="PROMEDIO_C_IX_100" ColumnName="PROMEDIO_C_IX_100" />
+          <ScalarProperty Name="PROMEDIO_C_X" ColumnName="PROMEDIO_C_X" />
+          <ScalarProperty Name="PROMEDIO_C_X_100" ColumnName="PROMEDIO_C_X_100" />
+          <ScalarProperty Name="PROMEDIO_C_XI" ColumnName="PROMEDIO_C_XI" />
+          <ScalarProperty Name="PROMEDIO_C_XI_100" ColumnName="PROMEDIO_C_XI_100" />
+          <ScalarProperty Name="PROMEDIO_C_XII" ColumnName="PROMEDIO_C_XII" />
+          <ScalarProperty Name="PROMEDIO_C_XII_100" ColumnName="PROMEDIO_C_XII_100" />
+          <ScalarProperty Name="PROMEDIO_C_XIII" ColumnName="PROMEDIO_C_XIII" />
+          <ScalarProperty Name="PROMEDIO_C_XIII_100" ColumnName="PROMEDIO_C_XIII_100" />
+          <ScalarProperty Name="PROMEDIO_C_XIV" ColumnName="PROMEDIO_C_XIV" />
+          <ScalarProperty Name="PROMEDIO_C_XIV_100" ColumnName="PROMEDIO_C_XIV_100" />
+          <ScalarProperty Name="PROMEDIO_C_XV" ColumnName="PROMEDIO_C_XV" />
+          <ScalarProperty Name="PROMEDIO_C_XV_100" ColumnName="PROMEDIO_C_XV_100" />
+          <ScalarProperty Name="PROMEDIO_Final" ColumnName="PROMEDIO_Final" />
+          <ScalarProperty Name="PROMEDIO_Final_100" ColumnName="PROMEDIO_Final_100" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fn_MultiEvalua_E360_Centro_Trabajo_Sup" FunctionImportName="fn_MultiEvalua_E360_Centro_Trabajo_Sup">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fn_MultiEvalua_E360_Centro_Trabajo_Sup_Result">
+          <ScalarProperty Name="PROMEDIO_C_I" ColumnName="PROMEDIO_C_I" />
+          <ScalarProperty Name="PROMEDIO_C_I_100" ColumnName="PROMEDIO_C_I_100" />
+          <ScalarProperty Name="PROMEDIO_C_II" ColumnName="PROMEDIO_C_II" />
+          <ScalarProperty Name="PROMEDIO_C_II_100" ColumnName="PROMEDIO_C_II_100" />
+          <ScalarProperty Name="PROMEDIO_C_III" ColumnName="PROMEDIO_C_III" />
+          <ScalarProperty Name="PROMEDIO_C_III_100" ColumnName="PROMEDIO_C_III_100" />
+          <ScalarProperty Name="PROMEDIO_C_IV" ColumnName="PROMEDIO_C_IV" />
+          <ScalarProperty Name="PROMEDIO_C_IV_100" ColumnName="PROMEDIO_C_IV_100" />
+          <ScalarProperty Name="PROMEDIO_C_V" ColumnName="PROMEDIO_C_V" />
+          <ScalarProperty Name="PROMEDIO_C_V_100" ColumnName="PROMEDIO_C_V_100" />
+          <ScalarProperty Name="PROMEDIO_C_VI" ColumnName="PROMEDIO_C_VI" />
+          <ScalarProperty Name="PROMEDIO_C_VI_100" ColumnName="PROMEDIO_C_VI_100" />
+          <ScalarProperty Name="PROMEDIO_C_VII" ColumnName="PROMEDIO_C_VII" />
+          <ScalarProperty Name="PROMEDIO_C_VII_100" ColumnName="PROMEDIO_C_VII_100" />
+          <ScalarProperty Name="PROMEDIO_C_VIII" ColumnName="PROMEDIO_C_VIII" />
+          <ScalarProperty Name="PROMEDIO_C_VIII_100" ColumnName="PROMEDIO_C_VIII_100" />
+          <ScalarProperty Name="PROMEDIO_C_IX" ColumnName="PROMEDIO_C_IX" />
+          <ScalarProperty Name="PROMEDIO_C_IX_100" ColumnName="PROMEDIO_C_IX_100" />
+          <ScalarProperty Name="PROMEDIO_C_X" ColumnName="PROMEDIO_C_X" />
+          <ScalarProperty Name="PROMEDIO_C_X_100" ColumnName="PROMEDIO_C_X_100" />
+          <ScalarProperty Name="PROMEDIO_C_XI" ColumnName="PROMEDIO_C_XI" />
+          <ScalarProperty Name="PROMEDIO_C_XI_100" ColumnName="PROMEDIO_C_XI_100" />
+          <ScalarProperty Name="PROMEDIO_C_XII" ColumnName="PROMEDIO_C_XII" />
+          <ScalarProperty Name="PROMEDIO_C_XII_100" ColumnName="PROMEDIO_C_XII_100" />
+          <ScalarProperty Name="PROMEDIO_C_XIII" ColumnName="PROMEDIO_C_XIII" />
+          <ScalarProperty Name="PROMEDIO_C_XIII_100" ColumnName="PROMEDIO_C_XIII_100" />
+          <ScalarProperty Name="PROMEDIO_C_XIV" ColumnName="PROMEDIO_C_XIV" />
+          <ScalarProperty Name="PROMEDIO_C_XIV_100" ColumnName="PROMEDIO_C_XIV_100" />
+          <ScalarProperty Name="PROMEDIO_C_XV" ColumnName="PROMEDIO_C_XV" />
+          <ScalarProperty Name="PROMEDIO_C_XV_100" ColumnName="PROMEDIO_C_XV_100" />
+          <ScalarProperty Name="PROMEDIO_Final" ColumnName="PROMEDIO_Final" />
+          <ScalarProperty Name="PROMEDIO_Final_100" ColumnName="PROMEDIO_Final_100" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fn_MultiEvalua_E360_Corte_Empresa" FunctionImportName="fn_MultiEvalua_E360_Corte_Empresa">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fn_MultiEvalua_E360_Corte_Empresa_Result">
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="id_trabajador" ColumnName="id_trabajador" />
+          <ScalarProperty Name="Evaluado" ColumnName="Evaluado" />
+          <ScalarProperty Name="Calificacion" ColumnName="Calificacion" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fn_MultiEvalua_E360_Empresa" FunctionImportName="fn_MultiEvalua_E360_Empresa">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fn_MultiEvalua_E360_Empresa_Result">
+          <ScalarProperty Name="PROMEDIO_C_I" ColumnName="PROMEDIO_C_I" />
+          <ScalarProperty Name="PROMEDIO_C_I_100" ColumnName="PROMEDIO_C_I_100" />
+          <ScalarProperty Name="PROMEDIO_C_II" ColumnName="PROMEDIO_C_II" />
+          <ScalarProperty Name="PROMEDIO_C_II_100" ColumnName="PROMEDIO_C_II_100" />
+          <ScalarProperty Name="PROMEDIO_C_III" ColumnName="PROMEDIO_C_III" />
+          <ScalarProperty Name="PROMEDIO_C_III_100" ColumnName="PROMEDIO_C_III_100" />
+          <ScalarProperty Name="PROMEDIO_C_IV" ColumnName="PROMEDIO_C_IV" />
+          <ScalarProperty Name="PROMEDIO_C_IV_100" ColumnName="PROMEDIO_C_IV_100" />
+          <ScalarProperty Name="PROMEDIO_C_V" ColumnName="PROMEDIO_C_V" />
+          <ScalarProperty Name="PROMEDIO_C_V_100" ColumnName="PROMEDIO_C_V_100" />
+          <ScalarProperty Name="PROMEDIO_C_VI" ColumnName="PROMEDIO_C_VI" />
+          <ScalarProperty Name="PROMEDIO_C_VI_100" ColumnName="PROMEDIO_C_VI_100" />
+          <ScalarProperty Name="PROMEDIO_C_VII" ColumnName="PROMEDIO_C_VII" />
+          <ScalarProperty Name="PROMEDIO_C_VII_100" ColumnName="PROMEDIO_C_VII_100" />
+          <ScalarProperty Name="PROMEDIO_C_VIII" ColumnName="PROMEDIO_C_VIII" />
+          <ScalarProperty Name="PROMEDIO_C_VIII_100" ColumnName="PROMEDIO_C_VIII_100" />
+          <ScalarProperty Name="PROMEDIO_C_IX" ColumnName="PROMEDIO_C_IX" />
+          <ScalarProperty Name="PROMEDIO_C_IX_100" ColumnName="PROMEDIO_C_IX_100" />
+          <ScalarProperty Name="PROMEDIO_C_X" ColumnName="PROMEDIO_C_X" />
+          <ScalarProperty Name="PROMEDIO_C_X_100" ColumnName="PROMEDIO_C_X_100" />
+          <ScalarProperty Name="PROMEDIO_C_XI" ColumnName="PROMEDIO_C_XI" />
+          <ScalarProperty Name="PROMEDIO_C_XI_100" ColumnName="PROMEDIO_C_XI_100" />
+          <ScalarProperty Name="PROMEDIO_C_XII" ColumnName="PROMEDIO_C_XII" />
+          <ScalarProperty Name="PROMEDIO_C_XII_100" ColumnName="PROMEDIO_C_XII_100" />
+          <ScalarProperty Name="PROMEDIO_C_XIII" ColumnName="PROMEDIO_C_XIII" />
+          <ScalarProperty Name="PROMEDIO_C_XIII_100" ColumnName="PROMEDIO_C_XIII_100" />
+          <ScalarProperty Name="PROMEDIO_C_XIV" ColumnName="PROMEDIO_C_XIV" />
+          <ScalarProperty Name="PROMEDIO_C_XIV_100" ColumnName="PROMEDIO_C_XIV_100" />
+          <ScalarProperty Name="PROMEDIO_C_XV" ColumnName="PROMEDIO_C_XV" />
+          <ScalarProperty Name="PROMEDIO_C_XV_100" ColumnName="PROMEDIO_C_XV_100" />
+          <ScalarProperty Name="PROMEDIO_Final" ColumnName="PROMEDIO_Final" />
+          <ScalarProperty Name="PROMEDIO_Final_100" ColumnName="PROMEDIO_Final_100" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fn_MultiEvalua_E360_Empresa_Com" FunctionImportName="fn_MultiEvalua_E360_Empresa_Com">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fn_MultiEvalua_E360_Empresa_Com_Result">
+          <ScalarProperty Name="PROMEDIO_C_I" ColumnName="PROMEDIO_C_I" />
+          <ScalarProperty Name="PROMEDIO_C_I_100" ColumnName="PROMEDIO_C_I_100" />
+          <ScalarProperty Name="PROMEDIO_C_II" ColumnName="PROMEDIO_C_II" />
+          <ScalarProperty Name="PROMEDIO_C_II_100" ColumnName="PROMEDIO_C_II_100" />
+          <ScalarProperty Name="PROMEDIO_C_III" ColumnName="PROMEDIO_C_III" />
+          <ScalarProperty Name="PROMEDIO_C_III_100" ColumnName="PROMEDIO_C_III_100" />
+          <ScalarProperty Name="PROMEDIO_C_IV" ColumnName="PROMEDIO_C_IV" />
+          <ScalarProperty Name="PROMEDIO_C_IV_100" ColumnName="PROMEDIO_C_IV_100" />
+          <ScalarProperty Name="PROMEDIO_C_V" ColumnName="PROMEDIO_C_V" />
+          <ScalarProperty Name="PROMEDIO_C_V_100" ColumnName="PROMEDIO_C_V_100" />
+          <ScalarProperty Name="PROMEDIO_C_VI" ColumnName="PROMEDIO_C_VI" />
+          <ScalarProperty Name="PROMEDIO_C_VI_100" ColumnName="PROMEDIO_C_VI_100" />
+          <ScalarProperty Name="PROMEDIO_C_VII" ColumnName="PROMEDIO_C_VII" />
+          <ScalarProperty Name="PROMEDIO_C_VII_100" ColumnName="PROMEDIO_C_VII_100" />
+          <ScalarProperty Name="PROMEDIO_C_VIII" ColumnName="PROMEDIO_C_VIII" />
+          <ScalarProperty Name="PROMEDIO_C_VIII_100" ColumnName="PROMEDIO_C_VIII_100" />
+          <ScalarProperty Name="PROMEDIO_C_IX" ColumnName="PROMEDIO_C_IX" />
+          <ScalarProperty Name="PROMEDIO_C_IX_100" ColumnName="PROMEDIO_C_IX_100" />
+          <ScalarProperty Name="PROMEDIO_C_X" ColumnName="PROMEDIO_C_X" />
+          <ScalarProperty Name="PROMEDIO_C_X_100" ColumnName="PROMEDIO_C_X_100" />
+          <ScalarProperty Name="PROMEDIO_C_XI" ColumnName="PROMEDIO_C_XI" />
+          <ScalarProperty Name="PROMEDIO_C_XI_100" ColumnName="PROMEDIO_C_XI_100" />
+          <ScalarProperty Name="PROMEDIO_C_XII" ColumnName="PROMEDIO_C_XII" />
+          <ScalarProperty Name="PROMEDIO_C_XII_100" ColumnName="PROMEDIO_C_XII_100" />
+          <ScalarProperty Name="PROMEDIO_C_XIII" ColumnName="PROMEDIO_C_XIII" />
+          <ScalarProperty Name="PROMEDIO_C_XIII_100" ColumnName="PROMEDIO_C_XIII_100" />
+          <ScalarProperty Name="PROMEDIO_C_XIV" ColumnName="PROMEDIO_C_XIV" />
+          <ScalarProperty Name="PROMEDIO_C_XIV_100" ColumnName="PROMEDIO_C_XIV_100" />
+          <ScalarProperty Name="PROMEDIO_C_XV" ColumnName="PROMEDIO_C_XV" />
+          <ScalarProperty Name="PROMEDIO_C_XV_100" ColumnName="PROMEDIO_C_XV_100" />
+          <ScalarProperty Name="PROMEDIO_Final" ColumnName="PROMEDIO_Final" />
+          <ScalarProperty Name="PROMEDIO_Final_100" ColumnName="PROMEDIO_Final_100" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fn_MultiEvalua_E360_Empresa_Deptos" FunctionImportName="fn_MultiEvalua_E360_Empresa_Deptos">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fn_MultiEvalua_E360_Empresa_Deptos_Result">
+          <ScalarProperty Name="PROMEDIO_C_I" ColumnName="PROMEDIO_C_I" />
+          <ScalarProperty Name="PROMEDIO_C_II" ColumnName="PROMEDIO_C_II" />
+          <ScalarProperty Name="PROMEDIO_C_III" ColumnName="PROMEDIO_C_III" />
+          <ScalarProperty Name="PROMEDIO_C_IV" ColumnName="PROMEDIO_C_IV" />
+          <ScalarProperty Name="PROMEDIO_C_V" ColumnName="PROMEDIO_C_V" />
+          <ScalarProperty Name="PROMEDIO_C_VI" ColumnName="PROMEDIO_C_VI" />
+          <ScalarProperty Name="PROMEDIO_C_VII" ColumnName="PROMEDIO_C_VII" />
+          <ScalarProperty Name="PROMEDIO_C_VIII" ColumnName="PROMEDIO_C_VIII" />
+          <ScalarProperty Name="PROMEDIO_C_IX" ColumnName="PROMEDIO_C_IX" />
+          <ScalarProperty Name="PROMEDIO_C_X" ColumnName="PROMEDIO_C_X" />
+          <ScalarProperty Name="PROMEDIO_C_XI" ColumnName="PROMEDIO_C_XI" />
+          <ScalarProperty Name="PROMEDIO_C_XII" ColumnName="PROMEDIO_C_XII" />
+          <ScalarProperty Name="PROMEDIO_C_XIII" ColumnName="PROMEDIO_C_XIII" />
+          <ScalarProperty Name="PROMEDIO_C_XIV" ColumnName="PROMEDIO_C_XIV" />
+          <ScalarProperty Name="PROMEDIO_C_XV" ColumnName="PROMEDIO_C_XV" />
+          <ScalarProperty Name="PROMEDIO_FINAL" ColumnName="PROMEDIO_FINAL" />
+          <ScalarProperty Name="Departamento" ColumnName="Departamento" />
+          <ScalarProperty Name="COLOR" ColumnName="COLOR" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fn_MultiEvalua_E360_Empresa_Emp" FunctionImportName="fn_MultiEvalua_E360_Empresa_Emp">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fn_MultiEvalua_E360_Empresa_Emp_Result">
+          <ScalarProperty Name="PROMEDIO_C_I" ColumnName="PROMEDIO_C_I" />
+          <ScalarProperty Name="PROMEDIO_C_I_100" ColumnName="PROMEDIO_C_I_100" />
+          <ScalarProperty Name="PROMEDIO_C_II" ColumnName="PROMEDIO_C_II" />
+          <ScalarProperty Name="PROMEDIO_C_II_100" ColumnName="PROMEDIO_C_II_100" />
+          <ScalarProperty Name="PROMEDIO_C_III" ColumnName="PROMEDIO_C_III" />
+          <ScalarProperty Name="PROMEDIO_C_III_100" ColumnName="PROMEDIO_C_III_100" />
+          <ScalarProperty Name="PROMEDIO_C_IV" ColumnName="PROMEDIO_C_IV" />
+          <ScalarProperty Name="PROMEDIO_C_IV_100" ColumnName="PROMEDIO_C_IV_100" />
+          <ScalarProperty Name="PROMEDIO_C_V" ColumnName="PROMEDIO_C_V" />
+          <ScalarProperty Name="PROMEDIO_C_V_100" ColumnName="PROMEDIO_C_V_100" />
+          <ScalarProperty Name="PROMEDIO_C_VI" ColumnName="PROMEDIO_C_VI" />
+          <ScalarProperty Name="PROMEDIO_C_VI_100" ColumnName="PROMEDIO_C_VI_100" />
+          <ScalarProperty Name="PROMEDIO_C_VII" ColumnName="PROMEDIO_C_VII" />
+          <ScalarProperty Name="PROMEDIO_C_VII_100" ColumnName="PROMEDIO_C_VII_100" />
+          <ScalarProperty Name="PROMEDIO_C_VIII" ColumnName="PROMEDIO_C_VIII" />
+          <ScalarProperty Name="PROMEDIO_C_VIII_100" ColumnName="PROMEDIO_C_VIII_100" />
+          <ScalarProperty Name="PROMEDIO_C_IX" ColumnName="PROMEDIO_C_IX" />
+          <ScalarProperty Name="PROMEDIO_C_IX_100" ColumnName="PROMEDIO_C_IX_100" />
+          <ScalarProperty Name="PROMEDIO_C_X" ColumnName="PROMEDIO_C_X" />
+          <ScalarProperty Name="PROMEDIO_C_X_100" ColumnName="PROMEDIO_C_X_100" />
+          <ScalarProperty Name="PROMEDIO_C_XI" ColumnName="PROMEDIO_C_XI" />
+          <ScalarProperty Name="PROMEDIO_C_XI_100" ColumnName="PROMEDIO_C_XI_100" />
+          <ScalarProperty Name="PROMEDIO_C_XII" ColumnName="PROMEDIO_C_XII" />
+          <ScalarProperty Name="PROMEDIO_C_XII_100" ColumnName="PROMEDIO_C_XII_100" />
+          <ScalarProperty Name="PROMEDIO_C_XIII" ColumnName="PROMEDIO_C_XIII" />
+          <ScalarProperty Name="PROMEDIO_C_XIII_100" ColumnName="PROMEDIO_C_XIII_100" />
+          <ScalarProperty Name="PROMEDIO_C_XIV" ColumnName="PROMEDIO_C_XIV" />
+          <ScalarProperty Name="PROMEDIO_C_XIV_100" ColumnName="PROMEDIO_C_XIV_100" />
+          <ScalarProperty Name="PROMEDIO_C_XV" ColumnName="PROMEDIO_C_XV" />
+          <ScalarProperty Name="PROMEDIO_C_XV_100" ColumnName="PROMEDIO_C_XV_100" />
+          <ScalarProperty Name="PROMEDIO_Final" ColumnName="PROMEDIO_Final" />
+          <ScalarProperty Name="PROMEDIO_Final_100" ColumnName="PROMEDIO_Final_100" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fn_MultiEvalua_E360_Empresa_Sub" FunctionImportName="fn_MultiEvalua_E360_Empresa_Sub">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fn_MultiEvalua_E360_Empresa_Sub_Result">
+          <ScalarProperty Name="PROMEDIO_C_I" ColumnName="PROMEDIO_C_I" />
+          <ScalarProperty Name="PROMEDIO_C_I_100" ColumnName="PROMEDIO_C_I_100" />
+          <ScalarProperty Name="PROMEDIO_C_II" ColumnName="PROMEDIO_C_II" />
+          <ScalarProperty Name="PROMEDIO_C_II_100" ColumnName="PROMEDIO_C_II_100" />
+          <ScalarProperty Name="PROMEDIO_C_III" ColumnName="PROMEDIO_C_III" />
+          <ScalarProperty Name="PROMEDIO_C_III_100" ColumnName="PROMEDIO_C_III_100" />
+          <ScalarProperty Name="PROMEDIO_C_IV" ColumnName="PROMEDIO_C_IV" />
+          <ScalarProperty Name="PROMEDIO_C_IV_100" ColumnName="PROMEDIO_C_IV_100" />
+          <ScalarProperty Name="PROMEDIO_C_V" ColumnName="PROMEDIO_C_V" />
+          <ScalarProperty Name="PROMEDIO_C_V_100" ColumnName="PROMEDIO_C_V_100" />
+          <ScalarProperty Name="PROMEDIO_C_VI" ColumnName="PROMEDIO_C_VI" />
+          <ScalarProperty Name="PROMEDIO_C_VI_100" ColumnName="PROMEDIO_C_VI_100" />
+          <ScalarProperty Name="PROMEDIO_C_VII" ColumnName="PROMEDIO_C_VII" />
+          <ScalarProperty Name="PROMEDIO_C_VII_100" ColumnName="PROMEDIO_C_VII_100" />
+          <ScalarProperty Name="PROMEDIO_C_VIII" ColumnName="PROMEDIO_C_VIII" />
+          <ScalarProperty Name="PROMEDIO_C_VIII_100" ColumnName="PROMEDIO_C_VIII_100" />
+          <ScalarProperty Name="PROMEDIO_C_IX" ColumnName="PROMEDIO_C_IX" />
+          <ScalarProperty Name="PROMEDIO_C_IX_100" ColumnName="PROMEDIO_C_IX_100" />
+          <ScalarProperty Name="PROMEDIO_C_X" ColumnName="PROMEDIO_C_X" />
+          <ScalarProperty Name="PROMEDIO_C_X_100" ColumnName="PROMEDIO_C_X_100" />
+          <ScalarProperty Name="PROMEDIO_C_XI" ColumnName="PROMEDIO_C_XI" />
+          <ScalarProperty Name="PROMEDIO_C_XI_100" ColumnName="PROMEDIO_C_XI_100" />
+          <ScalarProperty Name="PROMEDIO_C_XII" ColumnName="PROMEDIO_C_XII" />
+          <ScalarProperty Name="PROMEDIO_C_XII_100" ColumnName="PROMEDIO_C_XII_100" />
+          <ScalarProperty Name="PROMEDIO_C_XIII" ColumnName="PROMEDIO_C_XIII" />
+          <ScalarProperty Name="PROMEDIO_C_XIII_100" ColumnName="PROMEDIO_C_XIII_100" />
+          <ScalarProperty Name="PROMEDIO_C_XIV" ColumnName="PROMEDIO_C_XIV" />
+          <ScalarProperty Name="PROMEDIO_C_XIV_100" ColumnName="PROMEDIO_C_XIV_100" />
+          <ScalarProperty Name="PROMEDIO_C_XV" ColumnName="PROMEDIO_C_XV" />
+          <ScalarProperty Name="PROMEDIO_C_XV_100" ColumnName="PROMEDIO_C_XV_100" />
+          <ScalarProperty Name="PROMEDIO_Final" ColumnName="PROMEDIO_Final" />
+          <ScalarProperty Name="PROMEDIO_Final_100" ColumnName="PROMEDIO_Final_100" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fn_MultiEvalua_E360_Empresa_Sup" FunctionImportName="fn_MultiEvalua_E360_Empresa_Sup">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fn_MultiEvalua_E360_Empresa_Sup_Result">
+          <ScalarProperty Name="PROMEDIO_C_I" ColumnName="PROMEDIO_C_I" />
+          <ScalarProperty Name="PROMEDIO_C_I_100" ColumnName="PROMEDIO_C_I_100" />
+          <ScalarProperty Name="PROMEDIO_C_II" ColumnName="PROMEDIO_C_II" />
+          <ScalarProperty Name="PROMEDIO_C_II_100" ColumnName="PROMEDIO_C_II_100" />
+          <ScalarProperty Name="PROMEDIO_C_III" ColumnName="PROMEDIO_C_III" />
+          <ScalarProperty Name="PROMEDIO_C_III_100" ColumnName="PROMEDIO_C_III_100" />
+          <ScalarProperty Name="PROMEDIO_C_IV" ColumnName="PROMEDIO_C_IV" />
+          <ScalarProperty Name="PROMEDIO_C_IV_100" ColumnName="PROMEDIO_C_IV_100" />
+          <ScalarProperty Name="PROMEDIO_C_V" ColumnName="PROMEDIO_C_V" />
+          <ScalarProperty Name="PROMEDIO_C_V_100" ColumnName="PROMEDIO_C_V_100" />
+          <ScalarProperty Name="PROMEDIO_C_VI" ColumnName="PROMEDIO_C_VI" />
+          <ScalarProperty Name="PROMEDIO_C_VI_100" ColumnName="PROMEDIO_C_VI_100" />
+          <ScalarProperty Name="PROMEDIO_C_VII" ColumnName="PROMEDIO_C_VII" />
+          <ScalarProperty Name="PROMEDIO_C_VII_100" ColumnName="PROMEDIO_C_VII_100" />
+          <ScalarProperty Name="PROMEDIO_C_VIII" ColumnName="PROMEDIO_C_VIII" />
+          <ScalarProperty Name="PROMEDIO_C_VIII_100" ColumnName="PROMEDIO_C_VIII_100" />
+          <ScalarProperty Name="PROMEDIO_C_IX" ColumnName="PROMEDIO_C_IX" />
+          <ScalarProperty Name="PROMEDIO_C_IX_100" ColumnName="PROMEDIO_C_IX_100" />
+          <ScalarProperty Name="PROMEDIO_C_X" ColumnName="PROMEDIO_C_X" />
+          <ScalarProperty Name="PROMEDIO_C_X_100" ColumnName="PROMEDIO_C_X_100" />
+          <ScalarProperty Name="PROMEDIO_C_XI" ColumnName="PROMEDIO_C_XI" />
+          <ScalarProperty Name="PROMEDIO_C_XI_100" ColumnName="PROMEDIO_C_XI_100" />
+          <ScalarProperty Name="PROMEDIO_C_XII" ColumnName="PROMEDIO_C_XII" />
+          <ScalarProperty Name="PROMEDIO_C_XII_100" ColumnName="PROMEDIO_C_XII_100" />
+          <ScalarProperty Name="PROMEDIO_C_XIII" ColumnName="PROMEDIO_C_XIII" />
+          <ScalarProperty Name="PROMEDIO_C_XIII_100" ColumnName="PROMEDIO_C_XIII_100" />
+          <ScalarProperty Name="PROMEDIO_C_XIV" ColumnName="PROMEDIO_C_XIV" />
+          <ScalarProperty Name="PROMEDIO_C_XIV_100" ColumnName="PROMEDIO_C_XIV_100" />
+          <ScalarProperty Name="PROMEDIO_C_XV" ColumnName="PROMEDIO_C_XV" />
+          <ScalarProperty Name="PROMEDIO_C_XV_100" ColumnName="PROMEDIO_C_XV_100" />
+          <ScalarProperty Name="PROMEDIO_Final" ColumnName="PROMEDIO_Final" />
+          <ScalarProperty Name="PROMEDIO_Final_100" ColumnName="PROMEDIO_Final_100" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fn_Total_Encuestas_Area" FunctionImportName="fn_Total_Encuestas_Area">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fn_Total_Encuestas_Area_Result">
+          <ScalarProperty Name="Encuestas_Contestadas" ColumnName="Encuestas Contestadas" />
+          <ScalarProperty Name="Departamento" ColumnName="Departamento" />
+          <ScalarProperty Name="id_company" ColumnName="id_company" />
+          <ScalarProperty Name="Total_de_Encuestas" ColumnName="Total de Encuestas" />
+          <ScalarProperty Name="Departamento_Total_E" ColumnName="Departamento_Total_E" />
+          <ScalarProperty Name="id_empresa" ColumnName="id_empresa" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fn_Total_Encuestas_Area_CT" FunctionImportName="fn_Total_Encuestas_Area_CT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fn_Total_Encuestas_Area_CT_Result">
+          <ScalarProperty Name="Encuestas_Contestadas" ColumnName="Encuestas Contestadas" />
+          <ScalarProperty Name="Departamento" ColumnName="Departamento" />
+          <ScalarProperty Name="id_company" ColumnName="id_company" />
+          <ScalarProperty Name="Total_de_Encuestas" ColumnName="Total de Encuestas" />
+          <ScalarProperty Name="Departamento_Total_E" ColumnName="Departamento_Total_E" />
+          <ScalarProperty Name="id_centro_trabajo" ColumnName="id_centro_trabajo" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnCorte_Departamentos_Centros_Trabajo" FunctionImportName="fnCorte_Departamentos_Centros_Trabajo">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnCorte_Departamentos_Centros_Trabajo_Result">
+          <ScalarProperty Name="No_Empleados" ColumnName="No_Empleados" />
+          <ScalarProperty Name="Departamento" ColumnName="Departamento" />
+          <ScalarProperty Name="Calif_Final" ColumnName="Calif_Final" />
+          <ScalarProperty Name="Nivel" ColumnName="Nivel" />
+          <ScalarProperty Name="Color" ColumnName="Color" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnCorte_Departamentos_Empresa" FunctionImportName="fnCorte_Departamentos_Empresa">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnCorte_Departamentos_Empresa_Result">
+          <ScalarProperty Name="No_Empleados" ColumnName="No_Empleados" />
+          <ScalarProperty Name="Departamento" ColumnName="Departamento" />
+          <ScalarProperty Name="Calif_Final" ColumnName="Calif_Final" />
+          <ScalarProperty Name="Nivel" ColumnName="Nivel" />
+          <ScalarProperty Name="Color" ColumnName="Color" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnDemo_N035_Categorias_1_E2_Resultados_Pilot" FunctionImportName="fnDemo_N035_Categorias_1_E2_Resultados_Pilot">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnDemo_N035_Categorias_1_E2_Resultados_Pilot_Result">
+          <ScalarProperty Name="Total_Categoria_1" ColumnName="Total_Categoria_1" />
+          <ScalarProperty Name="Sumatoria_Cat_I" ColumnName="Sumatoria_Cat_I" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnDemo_N035_Categorias_1_E2_Resultados_Pilot_CT" FunctionImportName="fnDemo_N035_Categorias_1_E2_Resultados_Pilot_CT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnDemo_N035_Categorias_1_E2_Resultados_Pilot_CT_Result">
+          <ScalarProperty Name="Total_Categoria_1" ColumnName="Total_Categoria_1" />
+          <ScalarProperty Name="Sumatoria_Cat_I" ColumnName="Sumatoria_Cat_I" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnDemo_N035_Categorias_1_Resultados_Pilot" FunctionImportName="fnDemo_N035_Categorias_1_Resultados_Pilot">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnDemo_N035_Categorias_1_Resultados_Pilot_Result">
+          <ScalarProperty Name="Total_Categoria_1" ColumnName="Total_Categoria_1" />
+          <ScalarProperty Name="Sumatoria_Total" ColumnName="Sumatoria_Total" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnDemo_N035_Categorias_1_Resultados_Pilot_CT" FunctionImportName="fnDemo_N035_Categorias_1_Resultados_Pilot_CT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnDemo_N035_Categorias_1_Resultados_Pilot_CT_Result">
+          <ScalarProperty Name="Total_Categoria_1" ColumnName="Total_Categoria_1" />
+          <ScalarProperty Name="Sumatoria_Total" ColumnName="Sumatoria_Total" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnDemo_N035_Categorias_2_E2_Resultados_Pilot" FunctionImportName="fnDemo_N035_Categorias_2_E2_Resultados_Pilot">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnDemo_N035_Categorias_2_E2_Resultados_Pilot_Result">
+          <ScalarProperty Name="Total_Categoria_2" ColumnName="Total_Categoria_2" />
+          <ScalarProperty Name="Sumatoria_Cat_II" ColumnName="Sumatoria_Cat_II" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnDemo_N035_Categorias_2_E2_Resultados_Pilot_CT" FunctionImportName="fnDemo_N035_Categorias_2_E2_Resultados_Pilot_CT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnDemo_N035_Categorias_2_E2_Resultados_Pilot_CT_Result">
+          <ScalarProperty Name="Total_Categoria_2" ColumnName="Total_Categoria_2" />
+          <ScalarProperty Name="Sumatoria_Cat_II" ColumnName="Sumatoria_Cat_II" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnDemo_N035_Categorias_2_Resultados_Pilot" FunctionImportName="fnDemo_N035_Categorias_2_Resultados_Pilot">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnDemo_N035_Categorias_2_Resultados_Pilot_Result">
+          <ScalarProperty Name="Total_Categoria_2" ColumnName="Total_Categoria_2" />
+          <ScalarProperty Name="Sumatoria_Cat_II" ColumnName="Sumatoria_Cat_II" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnDemo_N035_Categorias_2_Resultados_Pilot_CT" FunctionImportName="fnDemo_N035_Categorias_2_Resultados_Pilot_CT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnDemo_N035_Categorias_2_Resultados_Pilot_CT_Result">
+          <ScalarProperty Name="Total_Categoria_2" ColumnName="Total_Categoria_2" />
+          <ScalarProperty Name="Sumatoria_Cat_II" ColumnName="Sumatoria_Cat_II" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnDemo_N035_Categorias_3_E2_Resultados_Pilot" FunctionImportName="fnDemo_N035_Categorias_3_E2_Resultados_Pilot">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnDemo_N035_Categorias_3_E2_Resultados_Pilot_Result">
+          <ScalarProperty Name="Total_Categoria_3" ColumnName="Total_Categoria_3" />
+          <ScalarProperty Name="Sumatoria_Cat_III" ColumnName="Sumatoria_Cat_III" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnDemo_N035_Categorias_3_E2_Resultados_Pilot_CT" FunctionImportName="fnDemo_N035_Categorias_3_E2_Resultados_Pilot_CT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnDemo_N035_Categorias_3_E2_Resultados_Pilot_CT_Result">
+          <ScalarProperty Name="Total_Categoria_3" ColumnName="Total_Categoria_3" />
+          <ScalarProperty Name="Sumatoria_Cat_III" ColumnName="Sumatoria_Cat_III" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnDemo_N035_Categorias_3_Resultados_Pilot" FunctionImportName="fnDemo_N035_Categorias_3_Resultados_Pilot">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnDemo_N035_Categorias_3_Resultados_Pilot_Result">
+          <ScalarProperty Name="Total_Categoria_3" ColumnName="Total_Categoria_3" />
+          <ScalarProperty Name="Sumatoria_Cat_III" ColumnName="Sumatoria_Cat_III" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnDemo_N035_Categorias_3_Resultados_Pilot_CT" FunctionImportName="fnDemo_N035_Categorias_3_Resultados_Pilot_CT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnDemo_N035_Categorias_3_Resultados_Pilot_CT_Result">
+          <ScalarProperty Name="Total_Categoria_3" ColumnName="Total_Categoria_3" />
+          <ScalarProperty Name="Sumatoria_Cat_III" ColumnName="Sumatoria_Cat_III" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnDemo_N035_Categorias_4_E2_Resultados_Pilot" FunctionImportName="fnDemo_N035_Categorias_4_E2_Resultados_Pilot">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnDemo_N035_Categorias_4_E2_Resultados_Pilot_Result">
+          <ScalarProperty Name="Total_Categoria_4" ColumnName="Total_Categoria_4" />
+          <ScalarProperty Name="Sumatoria_Cat_IV" ColumnName="Sumatoria_Cat_IV" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnDemo_N035_Categorias_4_E2_Resultados_Pilot_CT" FunctionImportName="fnDemo_N035_Categorias_4_E2_Resultados_Pilot_CT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnDemo_N035_Categorias_4_E2_Resultados_Pilot_CT_Result">
+          <ScalarProperty Name="Total_Categoria_4" ColumnName="Total_Categoria_4" />
+          <ScalarProperty Name="Sumatoria_Cat_IV" ColumnName="Sumatoria_Cat_IV" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnDemo_N035_Categorias_4_Resultados_Pilot" FunctionImportName="fnDemo_N035_Categorias_4_Resultados_Pilot">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnDemo_N035_Categorias_4_Resultados_Pilot_Result">
+          <ScalarProperty Name="Total_Categoria_4" ColumnName="Total_Categoria_4" />
+          <ScalarProperty Name="Sumatoria_Cat_IV" ColumnName="Sumatoria_Cat_IV" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnDemo_N035_Categorias_4_Resultados_Pilot_CT" FunctionImportName="fnDemo_N035_Categorias_4_Resultados_Pilot_CT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnDemo_N035_Categorias_4_Resultados_Pilot_CT_Result">
+          <ScalarProperty Name="Total_Categoria_4" ColumnName="Total_Categoria_4" />
+          <ScalarProperty Name="Sumatoria_Cat_IV" ColumnName="Sumatoria_Cat_IV" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnDemo_N035_Categorias_5_Resultados_Pilot" FunctionImportName="fnDemo_N035_Categorias_5_Resultados_Pilot">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnDemo_N035_Categorias_5_Resultados_Pilot_Result">
+          <ScalarProperty Name="Total_Categoria_5" ColumnName="Total_Categoria_5" />
+          <ScalarProperty Name="Sumatoria_Cat_V" ColumnName="Sumatoria_Cat_V" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnDemo_N035_Categorias_5_Resultados_Pilot_CT" FunctionImportName="fnDemo_N035_Categorias_5_Resultados_Pilot_CT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnDemo_N035_Categorias_5_Resultados_Pilot_CT_Result">
+          <ScalarProperty Name="Total_Categoria_5" ColumnName="Total_Categoria_5" />
+          <ScalarProperty Name="Sumatoria_Cat_V" ColumnName="Sumatoria_Cat_V" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnDemo_N035_Categorias_Pilot" FunctionImportName="fnDemo_N035_Categorias_Pilot">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnDemo_N035_Categorias_Pilot_Result">
+          <ScalarProperty Name="id_encuesta" ColumnName="id_encuesta" />
+          <ScalarProperty Name="Canalizado" ColumnName="Canalizado" />
+          <ScalarProperty Name="Cat_1" ColumnName="Cat_1" />
+          <ScalarProperty Name="Cat_2" ColumnName="Cat_2" />
+          <ScalarProperty Name="Cat_3" ColumnName="Cat_3" />
+          <ScalarProperty Name="Cat_4" ColumnName="Cat_4" />
+          <ScalarProperty Name="CAT_5" ColumnName="CAT_5" />
+          <ScalarProperty Name="FINAL" ColumnName="FINAL" />
+          <ScalarProperty Name="Dom_1" ColumnName="Dom_1" />
+          <ScalarProperty Name="Dom_2" ColumnName="Dom_2" />
+          <ScalarProperty Name="Dom_3" ColumnName="Dom_3" />
+          <ScalarProperty Name="Dom_4" ColumnName="Dom_4" />
+          <ScalarProperty Name="Dom_5" ColumnName="Dom_5" />
+          <ScalarProperty Name="Dom_6" ColumnName="Dom_6" />
+          <ScalarProperty Name="Dom_7" ColumnName="Dom_7" />
+          <ScalarProperty Name="Dom_8" ColumnName="Dom_8" />
+          <ScalarProperty Name="Dom_9" ColumnName="Dom_9" />
+          <ScalarProperty Name="Dom_10" ColumnName="Dom_10" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnDemo_N035_Categorias_Resultados_Pilot" FunctionImportName="fnDemo_N035_Categorias_Resultados_Pilot">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnDemo_N035_Categorias_Resultados_Pilot_Result">
+          <ScalarProperty Name="Sumatoria_Categoria" ColumnName="Sumatoria_Categoria" />
+          <ScalarProperty Name="Promedio_Categoria" ColumnName="Promedio_Categoria" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnDemo_N035_Dimension_1_E2_Resultados" FunctionImportName="fnDemo_N035_Dimension_1_E2_Resultados">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnDemo_N035_Dimension_1_E2_Resultados_Result">
+          <ScalarProperty Name="Total_Dimension_1" ColumnName="Total_Dimension_1" />
+          <ScalarProperty Name="Promedio_Dim_I" ColumnName="Promedio_Dim_I" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnDemo_N035_Dimension_1_E2_Resultados_CT" FunctionImportName="fnDemo_N035_Dimension_1_E2_Resultados_CT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnDemo_N035_Dimension_1_E2_Resultados_CT_Result">
+          <ScalarProperty Name="Total_Dimension_1" ColumnName="Total_Dimension_1" />
+          <ScalarProperty Name="Promedio_Dim_I" ColumnName="Promedio_Dim_I" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnDemo_N035_Dimension_1_Resultados" FunctionImportName="fnDemo_N035_Dimension_1_Resultados">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnDemo_N035_Dimension_1_Resultados_Result">
+          <ScalarProperty Name="Total_Dimension_1" ColumnName="Total_Dimension_1" />
+          <ScalarProperty Name="Promedio_Dim_I" ColumnName="Promedio_Dim_I" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnDemo_N035_Dimension_1_Resultados_CT" FunctionImportName="fnDemo_N035_Dimension_1_Resultados_CT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnDemo_N035_Dimension_1_Resultados_CT_Result">
+          <ScalarProperty Name="Total_Dimension_1" ColumnName="Total_Dimension_1" />
+          <ScalarProperty Name="Promedio_Dim_I" ColumnName="Promedio_Dim_I" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnDemo_N035_Dimension_10_E2_Resultados" FunctionImportName="fnDemo_N035_Dimension_10_E2_Resultados">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnDemo_N035_Dimension_10_E2_Resultados_Result">
+          <ScalarProperty Name="Total_Dimension_10" ColumnName="Total_Dimension_10" />
+          <ScalarProperty Name="Promedio_Dim_X" ColumnName="Promedio_Dim_X" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnDemo_N035_Dimension_10_E2_Resultados_CT" FunctionImportName="fnDemo_N035_Dimension_10_E2_Resultados_CT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnDemo_N035_Dimension_10_E2_Resultados_CT_Result">
+          <ScalarProperty Name="Total_Dimension_10" ColumnName="Total_Dimension_10" />
+          <ScalarProperty Name="Promedio_Dim_X" ColumnName="Promedio_Dim_X" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnDemo_N035_Dimension_10_Resultados" FunctionImportName="fnDemo_N035_Dimension_10_Resultados">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnDemo_N035_Dimension_10_Resultados_Result">
+          <ScalarProperty Name="Total_Dimension_10" ColumnName="Total_Dimension_10" />
+          <ScalarProperty Name="Promedio_Dim_X" ColumnName="Promedio_Dim_X" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnDemo_N035_Dimension_10_Resultados_CT" FunctionImportName="fnDemo_N035_Dimension_10_Resultados_CT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnDemo_N035_Dimension_10_Resultados_CT_Result">
+          <ScalarProperty Name="Total_Dimension_10" ColumnName="Total_Dimension_10" />
+          <ScalarProperty Name="Promedio_Dim_X" ColumnName="Promedio_Dim_X" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnDemo_N035_Dimension_11_E2_Resultados" FunctionImportName="fnDemo_N035_Dimension_11_E2_Resultados">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnDemo_N035_Dimension_11_E2_Resultados_Result">
+          <ScalarProperty Name="Total_Dimension_11" ColumnName="Total_Dimension_11" />
+          <ScalarProperty Name="Promedio_Dim_XI" ColumnName="Promedio_Dim_XI" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnDemo_N035_Dimension_11_E2_Resultados_CT" FunctionImportName="fnDemo_N035_Dimension_11_E2_Resultados_CT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnDemo_N035_Dimension_11_E2_Resultados_CT_Result">
+          <ScalarProperty Name="Total_Dimension_11" ColumnName="Total_Dimension_11" />
+          <ScalarProperty Name="Promedio_Dim_XI" ColumnName="Promedio_Dim_XI" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnDemo_N035_Dimension_11_Resultados" FunctionImportName="fnDemo_N035_Dimension_11_Resultados">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnDemo_N035_Dimension_11_Resultados_Result">
+          <ScalarProperty Name="Total_Dimension_11" ColumnName="Total_Dimension_11" />
+          <ScalarProperty Name="Promedio_Dim_XI" ColumnName="Promedio_Dim_XI" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnDemo_N035_Dimension_11_Resultados_CT" FunctionImportName="fnDemo_N035_Dimension_11_Resultados_CT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnDemo_N035_Dimension_11_Resultados_CT_Result">
+          <ScalarProperty Name="Total_Dimension_11" ColumnName="Total_Dimension_11" />
+          <ScalarProperty Name="Promedio_Dim_XI" ColumnName="Promedio_Dim_XI" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnDemo_N035_Dimension_12_E2_Resultados" FunctionImportName="fnDemo_N035_Dimension_12_E2_Resultados">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnDemo_N035_Dimension_12_E2_Resultados_Result">
+          <ScalarProperty Name="Total_Dimension_12" ColumnName="Total_Dimension_12" />
+          <ScalarProperty Name="Promedio_Dim_XII" ColumnName="Promedio_Dim_XII" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnDemo_N035_Dimension_12_E2_Resultados_CT" FunctionImportName="fnDemo_N035_Dimension_12_E2_Resultados_CT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnDemo_N035_Dimension_12_E2_Resultados_CT_Result">
+          <ScalarProperty Name="Total_Dimension_12" ColumnName="Total_Dimension_12" />
+          <ScalarProperty Name="Promedio_Dim_XII" ColumnName="Promedio_Dim_XII" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnDemo_N035_Dimension_12_Resultados" FunctionImportName="fnDemo_N035_Dimension_12_Resultados">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnDemo_N035_Dimension_12_Resultados_Result">
+          <ScalarProperty Name="Total_Dimension_12" ColumnName="Total_Dimension_12" />
+          <ScalarProperty Name="Promedio_Dim_XII" ColumnName="Promedio_Dim_XII" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnDemo_N035_Dimension_12_Resultados_CT" FunctionImportName="fnDemo_N035_Dimension_12_Resultados_CT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnDemo_N035_Dimension_12_Resultados_CT_Result">
+          <ScalarProperty Name="Total_Dimension_12" ColumnName="Total_Dimension_12" />
+          <ScalarProperty Name="Promedio_Dim_XII" ColumnName="Promedio_Dim_XII" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnDemo_N035_Dimension_13_E2_Resultados" FunctionImportName="fnDemo_N035_Dimension_13_E2_Resultados">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnDemo_N035_Dimension_13_E2_Resultados_Result">
+          <ScalarProperty Name="Total_Dimension_13" ColumnName="Total_Dimension_13" />
+          <ScalarProperty Name="Promedio_Dim_XIII" ColumnName="Promedio_Dim_XIII" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnDemo_N035_Dimension_13_E2_Resultados_CT" FunctionImportName="fnDemo_N035_Dimension_13_E2_Resultados_CT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnDemo_N035_Dimension_13_E2_Resultados_CT_Result">
+          <ScalarProperty Name="Total_Dimension_13" ColumnName="Total_Dimension_13" />
+          <ScalarProperty Name="Promedio_Dim_XIII" ColumnName="Promedio_Dim_XIII" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnDemo_N035_Dimension_13_Resultados" FunctionImportName="fnDemo_N035_Dimension_13_Resultados">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnDemo_N035_Dimension_13_Resultados_Result">
+          <ScalarProperty Name="Total_Dimension_13" ColumnName="Total_Dimension_13" />
+          <ScalarProperty Name="Promedio_Dim_XIII" ColumnName="Promedio_Dim_XIII" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnDemo_N035_Dimension_13_Resultados_CT" FunctionImportName="fnDemo_N035_Dimension_13_Resultados_CT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnDemo_N035_Dimension_13_Resultados_CT_Result">
+          <ScalarProperty Name="Total_Dimension_13" ColumnName="Total_Dimension_13" />
+          <ScalarProperty Name="Promedio_Dim_XIII" ColumnName="Promedio_Dim_XIII" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnDemo_N035_Dimension_14_E2_Resultados" FunctionImportName="fnDemo_N035_Dimension_14_E2_Resultados">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnDemo_N035_Dimension_14_E2_Resultados_Result">
+          <ScalarProperty Name="Total_Dimension_14" ColumnName="Total_Dimension_14" />
+          <ScalarProperty Name="Promedio_Dim_XIV" ColumnName="Promedio_Dim_XIV" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnDemo_N035_Dimension_14_E2_Resultados_CT" FunctionImportName="fnDemo_N035_Dimension_14_E2_Resultados_CT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnDemo_N035_Dimension_14_E2_Resultados_CT_Result">
+          <ScalarProperty Name="Total_Dimension_14" ColumnName="Total_Dimension_14" />
+          <ScalarProperty Name="Promedio_Dim_XIV" ColumnName="Promedio_Dim_XIV" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnDemo_N035_Dimension_14_Resultados" FunctionImportName="fnDemo_N035_Dimension_14_Resultados">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnDemo_N035_Dimension_14_Resultados_Result">
+          <ScalarProperty Name="Total_Dimension_14" ColumnName="Total_Dimension_14" />
+          <ScalarProperty Name="Promedio_Dim_XIV" ColumnName="Promedio_Dim_XIV" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnDemo_N035_Dimension_14_Resultados_CT" FunctionImportName="fnDemo_N035_Dimension_14_Resultados_CT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnDemo_N035_Dimension_14_Resultados_CT_Result">
+          <ScalarProperty Name="Total_Dimension_14" ColumnName="Total_Dimension_14" />
+          <ScalarProperty Name="Promedio_Dim_XIV" ColumnName="Promedio_Dim_XIV" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnDemo_N035_Dimension_15_E2_Resultados" FunctionImportName="fnDemo_N035_Dimension_15_E2_Resultados">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnDemo_N035_Dimension_15_E2_Resultados_Result">
+          <ScalarProperty Name="Total_Dimension_15" ColumnName="Total_Dimension_15" />
+          <ScalarProperty Name="Promedio_Dim_XV" ColumnName="Promedio_Dim_XV" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnDemo_N035_Dimension_15_E2_Resultados_CT" FunctionImportName="fnDemo_N035_Dimension_15_E2_Resultados_CT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnDemo_N035_Dimension_15_E2_Resultados_CT_Result">
+          <ScalarProperty Name="Total_Dimension_15" ColumnName="Total_Dimension_15" />
+          <ScalarProperty Name="Promedio_Dim_XV" ColumnName="Promedio_Dim_XV" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnDemo_N035_Dimension_15_Resultados" FunctionImportName="fnDemo_N035_Dimension_15_Resultados">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnDemo_N035_Dimension_15_Resultados_Result">
+          <ScalarProperty Name="Total_Dimension_15" ColumnName="Total_Dimension_15" />
+          <ScalarProperty Name="Promedio_Dim_XV" ColumnName="Promedio_Dim_XV" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnDemo_N035_Dimension_15_Resultados_CT" FunctionImportName="fnDemo_N035_Dimension_15_Resultados_CT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnDemo_N035_Dimension_15_Resultados_CT_Result">
+          <ScalarProperty Name="Total_Dimension_15" ColumnName="Total_Dimension_15" />
+          <ScalarProperty Name="Promedio_Dim_XV" ColumnName="Promedio_Dim_XV" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnDemo_N035_Dimension_16_E2_Resultados" FunctionImportName="fnDemo_N035_Dimension_16_E2_Resultados">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnDemo_N035_Dimension_16_E2_Resultados_Result">
+          <ScalarProperty Name="Total_Dimension_16" ColumnName="Total_Dimension_16" />
+          <ScalarProperty Name="Promedio_Dim_XVI" ColumnName="Promedio_Dim_XVI" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnDemo_N035_Dimension_16_E2_Resultados_CT" FunctionImportName="fnDemo_N035_Dimension_16_E2_Resultados_CT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnDemo_N035_Dimension_16_E2_Resultados_CT_Result">
+          <ScalarProperty Name="Total_Dimension_16" ColumnName="Total_Dimension_16" />
+          <ScalarProperty Name="Promedio_Dim_XVI" ColumnName="Promedio_Dim_XVI" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnDemo_N035_Dimension_16_Resultados" FunctionImportName="fnDemo_N035_Dimension_16_Resultados">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnDemo_N035_Dimension_16_Resultados_Result">
+          <ScalarProperty Name="Total_Dimension_16" ColumnName="Total_Dimension_16" />
+          <ScalarProperty Name="Promedio_Dim_XVI" ColumnName="Promedio_Dim_XVI" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnDemo_N035_Dimension_16_Resultados_CT" FunctionImportName="fnDemo_N035_Dimension_16_Resultados_CT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnDemo_N035_Dimension_16_Resultados_CT_Result">
+          <ScalarProperty Name="Total_Dimension_16" ColumnName="Total_Dimension_16" />
+          <ScalarProperty Name="Promedio_Dim_XVI" ColumnName="Promedio_Dim_XVI" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnDemo_N035_Dimension_17_E2_Resultados" FunctionImportName="fnDemo_N035_Dimension_17_E2_Resultados">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnDemo_N035_Dimension_17_E2_Resultados_Result">
+          <ScalarProperty Name="Total_Dimension_17" ColumnName="Total_Dimension_17" />
+          <ScalarProperty Name="Promedio_Dim_XVII" ColumnName="Promedio_Dim_XVII" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnDemo_N035_Dimension_17_E2_Resultados_CT" FunctionImportName="fnDemo_N035_Dimension_17_E2_Resultados_CT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnDemo_N035_Dimension_17_E2_Resultados_CT_Result">
+          <ScalarProperty Name="Total_Dimension_17" ColumnName="Total_Dimension_17" />
+          <ScalarProperty Name="Promedio_Dim_XVII" ColumnName="Promedio_Dim_XVII" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnDemo_N035_Dimension_17_Resultados" FunctionImportName="fnDemo_N035_Dimension_17_Resultados">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnDemo_N035_Dimension_17_Resultados_Result">
+          <ScalarProperty Name="Total_Dimension_17" ColumnName="Total_Dimension_17" />
+          <ScalarProperty Name="Promedio_Dim_XVII" ColumnName="Promedio_Dim_XVII" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnDemo_N035_Dimension_17_Resultados_CT" FunctionImportName="fnDemo_N035_Dimension_17_Resultados_CT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnDemo_N035_Dimension_17_Resultados_CT_Result">
+          <ScalarProperty Name="Total_Dimension_17" ColumnName="Total_Dimension_17" />
+          <ScalarProperty Name="Promedio_Dim_XVII" ColumnName="Promedio_Dim_XVII" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnDemo_N035_Dimension_18_E2_Resultados" FunctionImportName="fnDemo_N035_Dimension_18_E2_Resultados">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnDemo_N035_Dimension_18_E2_Resultados_Result">
+          <ScalarProperty Name="Total_Dimension_18" ColumnName="Total_Dimension_18" />
+          <ScalarProperty Name="Promedio_Dim_XVIII" ColumnName="Promedio_Dim_XVIII" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnDemo_N035_Dimension_18_E2_Resultados_CT" FunctionImportName="fnDemo_N035_Dimension_18_E2_Resultados_CT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnDemo_N035_Dimension_18_E2_Resultados_CT_Result">
+          <ScalarProperty Name="Total_Dimension_18" ColumnName="Total_Dimension_18" />
+          <ScalarProperty Name="Promedio_Dim_XVIII" ColumnName="Promedio_Dim_XVIII" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnDemo_N035_Dimension_18_Resultados" FunctionImportName="fnDemo_N035_Dimension_18_Resultados">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnDemo_N035_Dimension_18_Resultados_Result">
+          <ScalarProperty Name="Total_Dimension_18" ColumnName="Total_Dimension_18" />
+          <ScalarProperty Name="Promedio_Dim_XVIII" ColumnName="Promedio_Dim_XVIII" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnDemo_N035_Dimension_18_Resultados_CT" FunctionImportName="fnDemo_N035_Dimension_18_Resultados_CT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnDemo_N035_Dimension_18_Resultados_CT_Result">
+          <ScalarProperty Name="Total_Dimension_18" ColumnName="Total_Dimension_18" />
+          <ScalarProperty Name="Promedio_Dim_XVIII" ColumnName="Promedio_Dim_XVIII" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnDemo_N035_Dimension_19_E2_Resultados" FunctionImportName="fnDemo_N035_Dimension_19_E2_Resultados">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnDemo_N035_Dimension_19_E2_Resultados_Result">
+          <ScalarProperty Name="Total_Dimension_19" ColumnName="Total_Dimension_19" />
+          <ScalarProperty Name="Promedio_Dim_XIX" ColumnName="Promedio_Dim_XIX" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnDemo_N035_Dimension_19_E2_Resultados_CT" FunctionImportName="fnDemo_N035_Dimension_19_E2_Resultados_CT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnDemo_N035_Dimension_19_E2_Resultados_CT_Result">
+          <ScalarProperty Name="Total_Dimension_19" ColumnName="Total_Dimension_19" />
+          <ScalarProperty Name="Promedio_Dim_XIX" ColumnName="Promedio_Dim_XIX" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnDemo_N035_Dimension_19_Resultados" FunctionImportName="fnDemo_N035_Dimension_19_Resultados">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnDemo_N035_Dimension_19_Resultados_Result">
+          <ScalarProperty Name="Total_Dimension_19" ColumnName="Total_Dimension_19" />
+          <ScalarProperty Name="Promedio_Dim_XIX" ColumnName="Promedio_Dim_XIX" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnDemo_N035_Dimension_19_Resultados_CT" FunctionImportName="fnDemo_N035_Dimension_19_Resultados_CT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnDemo_N035_Dimension_19_Resultados_CT_Result">
+          <ScalarProperty Name="Total_Dimension_19" ColumnName="Total_Dimension_19" />
+          <ScalarProperty Name="Promedio_Dim_XIX" ColumnName="Promedio_Dim_XIX" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnDemo_N035_Dimension_2_E2_Resultados" FunctionImportName="fnDemo_N035_Dimension_2_E2_Resultados">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnDemo_N035_Dimension_2_E2_Resultados_Result">
+          <ScalarProperty Name="Total_Dimension_2" ColumnName="Total_Dimension_2" />
+          <ScalarProperty Name="Promedio_Dim_II" ColumnName="Promedio_Dim_II" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnDemo_N035_Dimension_2_E2_Resultados_CT" FunctionImportName="fnDemo_N035_Dimension_2_E2_Resultados_CT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnDemo_N035_Dimension_2_E2_Resultados_CT_Result">
+          <ScalarProperty Name="Total_Dimension_2" ColumnName="Total_Dimension_2" />
+          <ScalarProperty Name="Promedio_Dim_II" ColumnName="Promedio_Dim_II" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnDemo_N035_Dimension_2_Resultados" FunctionImportName="fnDemo_N035_Dimension_2_Resultados">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnDemo_N035_Dimension_2_Resultados_Result">
+          <ScalarProperty Name="Total_Dimension_2" ColumnName="Total_Dimension_2" />
+          <ScalarProperty Name="Promedio_Dim_II" ColumnName="Promedio_Dim_II" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnDemo_N035_Dimension_2_Resultados_CT" FunctionImportName="fnDemo_N035_Dimension_2_Resultados_CT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnDemo_N035_Dimension_2_Resultados_CT_Result">
+          <ScalarProperty Name="Total_Dimension_2" ColumnName="Total_Dimension_2" />
+          <ScalarProperty Name="Promedio_Dim_II" ColumnName="Promedio_Dim_II" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnDemo_N035_Dimension_20_E2_Resultados" FunctionImportName="fnDemo_N035_Dimension_20_E2_Resultados">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnDemo_N035_Dimension_20_E2_Resultados_Result">
+          <ScalarProperty Name="Total_Dimension_20" ColumnName="Total_Dimension_20" />
+          <ScalarProperty Name="Promedio_Dim_XX" ColumnName="Promedio_Dim_XX" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnDemo_N035_Dimension_20_E2_Resultados_CT" FunctionImportName="fnDemo_N035_Dimension_20_E2_Resultados_CT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnDemo_N035_Dimension_20_E2_Resultados_CT_Result">
+          <ScalarProperty Name="Total_Dimension_20" ColumnName="Total_Dimension_20" />
+          <ScalarProperty Name="Promedio_Dim_XX" ColumnName="Promedio_Dim_XX" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnDemo_N035_Dimension_20_Resultados" FunctionImportName="fnDemo_N035_Dimension_20_Resultados">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnDemo_N035_Dimension_20_Resultados_Result">
+          <ScalarProperty Name="Total_Dimension_20" ColumnName="Total_Dimension_20" />
+          <ScalarProperty Name="Promedio_Dim_XX" ColumnName="Promedio_Dim_XX" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnDemo_N035_Dimension_20_Resultados_CT" FunctionImportName="fnDemo_N035_Dimension_20_Resultados_CT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnDemo_N035_Dimension_20_Resultados_CT_Result">
+          <ScalarProperty Name="Total_Dimension_20" ColumnName="Total_Dimension_20" />
+          <ScalarProperty Name="Promedio_Dim_XX" ColumnName="Promedio_Dim_XX" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnDemo_N035_Dimension_21_Resultados" FunctionImportName="fnDemo_N035_Dimension_21_Resultados">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnDemo_N035_Dimension_21_Resultados_Result">
+          <ScalarProperty Name="Total_Dimension_21" ColumnName="Total_Dimension_21" />
+          <ScalarProperty Name="Promedio_Dim_XXI" ColumnName="Promedio_Dim_XXI" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnDemo_N035_Dimension_21_Resultados_CT" FunctionImportName="fnDemo_N035_Dimension_21_Resultados_CT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnDemo_N035_Dimension_21_Resultados_CT_Result">
+          <ScalarProperty Name="Total_Dimension_21" ColumnName="Total_Dimension_21" />
+          <ScalarProperty Name="Promedio_Dim_XXI" ColumnName="Promedio_Dim_XXI" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnDemo_N035_Dimension_22_Resultados" FunctionImportName="fnDemo_N035_Dimension_22_Resultados">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnDemo_N035_Dimension_22_Resultados_Result">
+          <ScalarProperty Name="Total_Dimension_22" ColumnName="Total_Dimension_22" />
+          <ScalarProperty Name="Promedio_Dim_XXII" ColumnName="Promedio_Dim_XXII" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnDemo_N035_Dimension_22_Resultados_CT" FunctionImportName="fnDemo_N035_Dimension_22_Resultados_CT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnDemo_N035_Dimension_22_Resultados_CT_Result">
+          <ScalarProperty Name="Total_Dimension_22" ColumnName="Total_Dimension_22" />
+          <ScalarProperty Name="Promedio_Dim_XXII" ColumnName="Promedio_Dim_XXII" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnDemo_N035_Dimension_23_Resultados" FunctionImportName="fnDemo_N035_Dimension_23_Resultados">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnDemo_N035_Dimension_23_Resultados_Result">
+          <ScalarProperty Name="Total_Dimension_23" ColumnName="Total_Dimension_23" />
+          <ScalarProperty Name="Promedio_Dim_XXIII" ColumnName="Promedio_Dim_XXIII" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnDemo_N035_Dimension_23_Resultados_CT" FunctionImportName="fnDemo_N035_Dimension_23_Resultados_CT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnDemo_N035_Dimension_23_Resultados_CT_Result">
+          <ScalarProperty Name="Total_Dimension_23" ColumnName="Total_Dimension_23" />
+          <ScalarProperty Name="Promedio_Dim_XXIII" ColumnName="Promedio_Dim_XXIII" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnDemo_N035_Dimension_24_Resultados" FunctionImportName="fnDemo_N035_Dimension_24_Resultados">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnDemo_N035_Dimension_24_Resultados_Result">
+          <ScalarProperty Name="Total_Dimension_24" ColumnName="Total_Dimension_24" />
+          <ScalarProperty Name="Promedio_Dim_XXIV" ColumnName="Promedio_Dim_XXIV" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnDemo_N035_Dimension_24_Resultados_CT" FunctionImportName="fnDemo_N035_Dimension_24_Resultados_CT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnDemo_N035_Dimension_24_Resultados_CT_Result">
+          <ScalarProperty Name="Total_Dimension_24" ColumnName="Total_Dimension_24" />
+          <ScalarProperty Name="Promedio_Dim_XXIV" ColumnName="Promedio_Dim_XXIV" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnDemo_N035_Dimension_25_Resultados" FunctionImportName="fnDemo_N035_Dimension_25_Resultados">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnDemo_N035_Dimension_25_Resultados_Result">
+          <ScalarProperty Name="Total_Dimension_25" ColumnName="Total_Dimension_25" />
+          <ScalarProperty Name="Promedio_Dim_XXV" ColumnName="Promedio_Dim_XXV" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnDemo_N035_Dimension_25_Resultados_CT" FunctionImportName="fnDemo_N035_Dimension_25_Resultados_CT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnDemo_N035_Dimension_25_Resultados_CT_Result">
+          <ScalarProperty Name="Total_Dimension_25" ColumnName="Total_Dimension_25" />
+          <ScalarProperty Name="Promedio_Dim_XXV" ColumnName="Promedio_Dim_XXV" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnDemo_N035_Dimension_3_E2_Resultados" FunctionImportName="fnDemo_N035_Dimension_3_E2_Resultados">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnDemo_N035_Dimension_3_E2_Resultados_Result">
+          <ScalarProperty Name="Total_Dimension_3" ColumnName="Total_Dimension_3" />
+          <ScalarProperty Name="Promedio_Dim_III" ColumnName="Promedio_Dim_III" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnDemo_N035_Dimension_3_E2_Resultados_CT" FunctionImportName="fnDemo_N035_Dimension_3_E2_Resultados_CT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnDemo_N035_Dimension_3_E2_Resultados_CT_Result">
+          <ScalarProperty Name="Total_Dimension_3" ColumnName="Total_Dimension_3" />
+          <ScalarProperty Name="Promedio_Dim_III" ColumnName="Promedio_Dim_III" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnDemo_N035_Dimension_3_Resultados" FunctionImportName="fnDemo_N035_Dimension_3_Resultados">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnDemo_N035_Dimension_3_Resultados_Result">
+          <ScalarProperty Name="Total_Dimension_3" ColumnName="Total_Dimension_3" />
+          <ScalarProperty Name="Promedio_Dim_III" ColumnName="Promedio_Dim_III" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnDemo_N035_Dimension_3_Resultados_CT" FunctionImportName="fnDemo_N035_Dimension_3_Resultados_CT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnDemo_N035_Dimension_3_Resultados_CT_Result">
+          <ScalarProperty Name="Total_Dimension_3" ColumnName="Total_Dimension_3" />
+          <ScalarProperty Name="Promedio_Dim_III" ColumnName="Promedio_Dim_III" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnDemo_N035_Dimension_4_E2_Resultados" FunctionImportName="fnDemo_N035_Dimension_4_E2_Resultados">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnDemo_N035_Dimension_4_E2_Resultados_Result">
+          <ScalarProperty Name="Total_Dimension_4" ColumnName="Total_Dimension_4" />
+          <ScalarProperty Name="Promedio_Dim_IV" ColumnName="Promedio_Dim_IV" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnDemo_N035_Dimension_4_E2_Resultados_CT" FunctionImportName="fnDemo_N035_Dimension_4_E2_Resultados_CT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnDemo_N035_Dimension_4_E2_Resultados_CT_Result">
+          <ScalarProperty Name="Total_Dimension_4" ColumnName="Total_Dimension_4" />
+          <ScalarProperty Name="Promedio_Dim_IV" ColumnName="Promedio_Dim_IV" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnDemo_N035_Dimension_4_Resultados" FunctionImportName="fnDemo_N035_Dimension_4_Resultados">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnDemo_N035_Dimension_4_Resultados_Result">
+          <ScalarProperty Name="Total_Dimension_4" ColumnName="Total_Dimension_4" />
+          <ScalarProperty Name="Promedio_Dim_IV" ColumnName="Promedio_Dim_IV" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnDemo_N035_Dimension_4_Resultados_CT" FunctionImportName="fnDemo_N035_Dimension_4_Resultados_CT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnDemo_N035_Dimension_4_Resultados_CT_Result">
+          <ScalarProperty Name="Total_Dimension_4" ColumnName="Total_Dimension_4" />
+          <ScalarProperty Name="Promedio_Dim_IV" ColumnName="Promedio_Dim_IV" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnDemo_N035_Dimension_5_E2_Resultados" FunctionImportName="fnDemo_N035_Dimension_5_E2_Resultados">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnDemo_N035_Dimension_5_E2_Resultados_Result">
+          <ScalarProperty Name="Total_Dimension_5" ColumnName="Total_Dimension_5" />
+          <ScalarProperty Name="Promedio_Dim_V" ColumnName="Promedio_Dim_V" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnDemo_N035_Dimension_5_E2_Resultados_CT" FunctionImportName="fnDemo_N035_Dimension_5_E2_Resultados_CT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnDemo_N035_Dimension_5_E2_Resultados_CT_Result">
+          <ScalarProperty Name="Total_Dimension_5" ColumnName="Total_Dimension_5" />
+          <ScalarProperty Name="Promedio_Dim_V" ColumnName="Promedio_Dim_V" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnDemo_N035_Dimension_5_Resultados" FunctionImportName="fnDemo_N035_Dimension_5_Resultados">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnDemo_N035_Dimension_5_Resultados_Result">
+          <ScalarProperty Name="Total_Dimension_5" ColumnName="Total_Dimension_5" />
+          <ScalarProperty Name="Promedio_Dim_V" ColumnName="Promedio_Dim_V" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnDemo_N035_Dimension_5_Resultados_CT" FunctionImportName="fnDemo_N035_Dimension_5_Resultados_CT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnDemo_N035_Dimension_5_Resultados_CT_Result">
+          <ScalarProperty Name="Total_Dimension_5" ColumnName="Total_Dimension_5" />
+          <ScalarProperty Name="Promedio_Dim_V" ColumnName="Promedio_Dim_V" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnDemo_N035_Dimension_6_E2_Resultados" FunctionImportName="fnDemo_N035_Dimension_6_E2_Resultados">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnDemo_N035_Dimension_6_E2_Resultados_Result">
+          <ScalarProperty Name="Total_Dimension_6" ColumnName="Total_Dimension_6" />
+          <ScalarProperty Name="Promedio_Dim_VI" ColumnName="Promedio_Dim_VI" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnDemo_N035_Dimension_6_E2_Resultados_CT" FunctionImportName="fnDemo_N035_Dimension_6_E2_Resultados_CT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnDemo_N035_Dimension_6_E2_Resultados_CT_Result">
+          <ScalarProperty Name="Total_Dimension_6" ColumnName="Total_Dimension_6" />
+          <ScalarProperty Name="Promedio_Dim_VI" ColumnName="Promedio_Dim_VI" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnDemo_N035_Dimension_6_Resultados" FunctionImportName="fnDemo_N035_Dimension_6_Resultados">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnDemo_N035_Dimension_6_Resultados_Result">
+          <ScalarProperty Name="Total_Dimension_6" ColumnName="Total_Dimension_6" />
+          <ScalarProperty Name="Promedio_Dim_VI" ColumnName="Promedio_Dim_VI" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnDemo_N035_Dimension_6_Resultados_CT" FunctionImportName="fnDemo_N035_Dimension_6_Resultados_CT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnDemo_N035_Dimension_6_Resultados_CT_Result">
+          <ScalarProperty Name="Total_Dimension_6" ColumnName="Total_Dimension_6" />
+          <ScalarProperty Name="Promedio_Dim_VI" ColumnName="Promedio_Dim_VI" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnDemo_N035_Dimension_7_E2_Resultados" FunctionImportName="fnDemo_N035_Dimension_7_E2_Resultados">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnDemo_N035_Dimension_7_E2_Resultados_Result">
+          <ScalarProperty Name="Total_Dimension_7" ColumnName="Total_Dimension_7" />
+          <ScalarProperty Name="Promedio_Dim_VII" ColumnName="Promedio_Dim_VII" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnDemo_N035_Dimension_7_E2_Resultados_CT" FunctionImportName="fnDemo_N035_Dimension_7_E2_Resultados_CT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnDemo_N035_Dimension_7_E2_Resultados_CT_Result">
+          <ScalarProperty Name="Total_Dimension_7" ColumnName="Total_Dimension_7" />
+          <ScalarProperty Name="Promedio_Dim_VII" ColumnName="Promedio_Dim_VII" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnDemo_N035_Dimension_7_Resultados" FunctionImportName="fnDemo_N035_Dimension_7_Resultados">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnDemo_N035_Dimension_7_Resultados_Result">
+          <ScalarProperty Name="Total_Dimension_7" ColumnName="Total_Dimension_7" />
+          <ScalarProperty Name="Promedio_Dim_VII" ColumnName="Promedio_Dim_VII" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnDemo_N035_Dimension_7_Resultados_CT" FunctionImportName="fnDemo_N035_Dimension_7_Resultados_CT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnDemo_N035_Dimension_7_Resultados_CT_Result">
+          <ScalarProperty Name="Total_Dimension_7" ColumnName="Total_Dimension_7" />
+          <ScalarProperty Name="Promedio_Dim_VII" ColumnName="Promedio_Dim_VII" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnDemo_N035_Dimension_8_E2_Resultados" FunctionImportName="fnDemo_N035_Dimension_8_E2_Resultados">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnDemo_N035_Dimension_8_E2_Resultados_Result">
+          <ScalarProperty Name="Total_Dimension_8" ColumnName="Total_Dimension_8" />
+          <ScalarProperty Name="Promedio_Dim_VIII" ColumnName="Promedio_Dim_VIII" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnDemo_N035_Dimension_8_E2_Resultados_CT" FunctionImportName="fnDemo_N035_Dimension_8_E2_Resultados_CT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnDemo_N035_Dimension_8_E2_Resultados_CT_Result">
+          <ScalarProperty Name="Total_Dimension_8" ColumnName="Total_Dimension_8" />
+          <ScalarProperty Name="Promedio_Dim_VIII" ColumnName="Promedio_Dim_VIII" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnDemo_N035_Dimension_8_Resultados" FunctionImportName="fnDemo_N035_Dimension_8_Resultados">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnDemo_N035_Dimension_8_Resultados_Result">
+          <ScalarProperty Name="Total_Dimension_8" ColumnName="Total_Dimension_8" />
+          <ScalarProperty Name="Promedio_Dim_VIII" ColumnName="Promedio_Dim_VIII" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnDemo_N035_Dimension_8_Resultados_CT" FunctionImportName="fnDemo_N035_Dimension_8_Resultados_CT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnDemo_N035_Dimension_8_Resultados_CT_Result">
+          <ScalarProperty Name="Total_Dimension_8" ColumnName="Total_Dimension_8" />
+          <ScalarProperty Name="Promedio_Dim_VIII" ColumnName="Promedio_Dim_VIII" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnDemo_N035_Dimension_9_E2_Resultados" FunctionImportName="fnDemo_N035_Dimension_9_E2_Resultados">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnDemo_N035_Dimension_9_E2_Resultados_Result">
+          <ScalarProperty Name="Total_Dimension_9" ColumnName="Total_Dimension_9" />
+          <ScalarProperty Name="Promedio_Dim_IX" ColumnName="Promedio_Dim_IX" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnDemo_N035_Dimension_9_E2_Resultados_CT" FunctionImportName="fnDemo_N035_Dimension_9_E2_Resultados_CT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnDemo_N035_Dimension_9_E2_Resultados_CT_Result">
+          <ScalarProperty Name="Total_Dimension_9" ColumnName="Total_Dimension_9" />
+          <ScalarProperty Name="Promedio_Dim_IX" ColumnName="Promedio_Dim_IX" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnDemo_N035_Dimension_9_Resultados" FunctionImportName="fnDemo_N035_Dimension_9_Resultados">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnDemo_N035_Dimension_9_Resultados_Result">
+          <ScalarProperty Name="Total_Dimension_9" ColumnName="Total_Dimension_9" />
+          <ScalarProperty Name="Promedio_Dim_IX" ColumnName="Promedio_Dim_IX" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnDemo_N035_Dimension_9_Resultados_CT" FunctionImportName="fnDemo_N035_Dimension_9_Resultados_CT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnDemo_N035_Dimension_9_Resultados_CT_Result">
+          <ScalarProperty Name="Total_Dimension_9" ColumnName="Total_Dimension_9" />
+          <ScalarProperty Name="Promedio_Dim_IX" ColumnName="Promedio_Dim_IX" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnDemo_N035_Dominios_1_E2_Resultados" FunctionImportName="fnDemo_N035_Dominios_1_E2_Resultados">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnDemo_N035_Dominios_1_E2_Resultados_Result">
+          <ScalarProperty Name="Total_Dominio_1" ColumnName="Total_Dominio_1" />
+          <ScalarProperty Name="Promedio_Dom_I" ColumnName="Promedio_Dom_I" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnDemo_N035_Dominios_1_E2_Resultados_CT" FunctionImportName="fnDemo_N035_Dominios_1_E2_Resultados_CT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnDemo_N035_Dominios_1_E2_Resultados_CT_Result">
+          <ScalarProperty Name="Total_Dominio_1" ColumnName="Total_Dominio_1" />
+          <ScalarProperty Name="Promedio_Dom_I" ColumnName="Promedio_Dom_I" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnDemo_N035_Dominios_1_Resultados" FunctionImportName="fnDemo_N035_Dominios_1_Resultados">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnDemo_N035_Dominios_1_Resultados_Result">
+          <ScalarProperty Name="Total_Dominio_1" ColumnName="Total_Dominio_1" />
+          <ScalarProperty Name="Promedio_Dom_I" ColumnName="Promedio_Dom_I" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnDemo_N035_Dominios_1_Resultados_CT" FunctionImportName="fnDemo_N035_Dominios_1_Resultados_CT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnDemo_N035_Dominios_1_Resultados_CT_Result">
+          <ScalarProperty Name="Total_Dominio_1" ColumnName="Total_Dominio_1" />
+          <ScalarProperty Name="Promedio_Dom_I" ColumnName="Promedio_Dom_I" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnDemo_N035_Dominios_10_Resultados" FunctionImportName="fnDemo_N035_Dominios_10_Resultados">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnDemo_N035_Dominios_10_Resultados_Result">
+          <ScalarProperty Name="Total_Dominio_10" ColumnName="Total_Dominio_10" />
+          <ScalarProperty Name="Promedio_Dom_X" ColumnName="Promedio_Dom_X" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnDemo_N035_Dominios_10_Resultados_CT" FunctionImportName="fnDemo_N035_Dominios_10_Resultados_CT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnDemo_N035_Dominios_10_Resultados_CT_Result">
+          <ScalarProperty Name="Total_Dominio_10" ColumnName="Total_Dominio_10" />
+          <ScalarProperty Name="Promedio_Dom_X" ColumnName="Promedio_Dom_X" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnDemo_N035_Dominios_2_E2_Resultados" FunctionImportName="fnDemo_N035_Dominios_2_E2_Resultados">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnDemo_N035_Dominios_2_E2_Resultados_Result">
+          <ScalarProperty Name="Total_Dominio_2" ColumnName="Total_Dominio_2" />
+          <ScalarProperty Name="Promedio_Dom_II" ColumnName="Promedio_Dom_II" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnDemo_N035_Dominios_2_E2_Resultados_CT" FunctionImportName="fnDemo_N035_Dominios_2_E2_Resultados_CT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnDemo_N035_Dominios_2_E2_Resultados_CT_Result">
+          <ScalarProperty Name="Total_Dominio_2" ColumnName="Total_Dominio_2" />
+          <ScalarProperty Name="Promedio_Dom_II" ColumnName="Promedio_Dom_II" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnDemo_N035_Dominios_2_Resultados" FunctionImportName="fnDemo_N035_Dominios_2_Resultados">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnDemo_N035_Dominios_2_Resultados_Result">
+          <ScalarProperty Name="Total_Dominio_2" ColumnName="Total_Dominio_2" />
+          <ScalarProperty Name="Promedio_Dom_II" ColumnName="Promedio_Dom_II" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnDemo_N035_Dominios_2_Resultados_CT" FunctionImportName="fnDemo_N035_Dominios_2_Resultados_CT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnDemo_N035_Dominios_2_Resultados_CT_Result">
+          <ScalarProperty Name="Total_Dominio_2" ColumnName="Total_Dominio_2" />
+          <ScalarProperty Name="Promedio_Dom_II" ColumnName="Promedio_Dom_II" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnDemo_N035_Dominios_3_E2_Resultados" FunctionImportName="fnDemo_N035_Dominios_3_E2_Resultados">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnDemo_N035_Dominios_3_E2_Resultados_Result">
+          <ScalarProperty Name="Total_Dominio_3" ColumnName="Total_Dominio_3" />
+          <ScalarProperty Name="Promedio_Dom_III" ColumnName="Promedio_Dom_III" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnDemo_N035_Dominios_3_E2_Resultados_CT" FunctionImportName="fnDemo_N035_Dominios_3_E2_Resultados_CT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnDemo_N035_Dominios_3_E2_Resultados_CT_Result">
+          <ScalarProperty Name="Total_Dominio_3" ColumnName="Total_Dominio_3" />
+          <ScalarProperty Name="Promedio_Dom_III" ColumnName="Promedio_Dom_III" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnDemo_N035_Dominios_3_Resultados" FunctionImportName="fnDemo_N035_Dominios_3_Resultados">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnDemo_N035_Dominios_3_Resultados_Result">
+          <ScalarProperty Name="Total_Dominio_3" ColumnName="Total_Dominio_3" />
+          <ScalarProperty Name="Promedio_Dom_III" ColumnName="Promedio_Dom_III" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnDemo_N035_Dominios_3_Resultados_CT" FunctionImportName="fnDemo_N035_Dominios_3_Resultados_CT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnDemo_N035_Dominios_3_Resultados_CT_Result">
+          <ScalarProperty Name="Total_Dominio_3" ColumnName="Total_Dominio_3" />
+          <ScalarProperty Name="Promedio_Dom_III" ColumnName="Promedio_Dom_III" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnDemo_N035_Dominios_4_E2_Resultados" FunctionImportName="fnDemo_N035_Dominios_4_E2_Resultados">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnDemo_N035_Dominios_4_E2_Resultados_Result">
+          <ScalarProperty Name="Total_Dominio_4" ColumnName="Total_Dominio_4" />
+          <ScalarProperty Name="Promedio_Dom_IV" ColumnName="Promedio_Dom_IV" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnDemo_N035_Dominios_4_E2_Resultados_CT" FunctionImportName="fnDemo_N035_Dominios_4_E2_Resultados_CT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnDemo_N035_Dominios_4_E2_Resultados_CT_Result">
+          <ScalarProperty Name="Total_Dominio_4" ColumnName="Total_Dominio_4" />
+          <ScalarProperty Name="Promedio_Dom_IV" ColumnName="Promedio_Dom_IV" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnDemo_N035_Dominios_4_Resultados" FunctionImportName="fnDemo_N035_Dominios_4_Resultados">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnDemo_N035_Dominios_4_Resultados_Result">
+          <ScalarProperty Name="Total_Dominio_4" ColumnName="Total_Dominio_4" />
+          <ScalarProperty Name="Promedio_Dom_IV" ColumnName="Promedio_Dom_IV" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnDemo_N035_Dominios_4_Resultados_CT" FunctionImportName="fnDemo_N035_Dominios_4_Resultados_CT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnDemo_N035_Dominios_4_Resultados_CT_Result">
+          <ScalarProperty Name="Total_Dominio_4" ColumnName="Total_Dominio_4" />
+          <ScalarProperty Name="Promedio_Dom_IV" ColumnName="Promedio_Dom_IV" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnDemo_N035_Dominios_5_E2_Resultados" FunctionImportName="fnDemo_N035_Dominios_5_E2_Resultados">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnDemo_N035_Dominios_5_E2_Resultados_Result">
+          <ScalarProperty Name="Total_Dominio_5" ColumnName="Total_Dominio_5" />
+          <ScalarProperty Name="Promedio_Dom_V" ColumnName="Promedio_Dom_V" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnDemo_N035_Dominios_5_E2_Resultados_CT" FunctionImportName="fnDemo_N035_Dominios_5_E2_Resultados_CT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnDemo_N035_Dominios_5_E2_Resultados_CT_Result">
+          <ScalarProperty Name="Total_Dominio_5" ColumnName="Total_Dominio_5" />
+          <ScalarProperty Name="Promedio_Dom_V" ColumnName="Promedio_Dom_V" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnDemo_N035_Dominios_5_Resultados" FunctionImportName="fnDemo_N035_Dominios_5_Resultados">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnDemo_N035_Dominios_5_Resultados_Result">
+          <ScalarProperty Name="Total_Dominio_5" ColumnName="Total_Dominio_5" />
+          <ScalarProperty Name="Promedio_Dom_V" ColumnName="Promedio_Dom_V" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnDemo_N035_Dominios_5_Resultados_CT" FunctionImportName="fnDemo_N035_Dominios_5_Resultados_CT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnDemo_N035_Dominios_5_Resultados_CT_Result">
+          <ScalarProperty Name="Total_Dominio_5" ColumnName="Total_Dominio_5" />
+          <ScalarProperty Name="Promedio_Dom_V" ColumnName="Promedio_Dom_V" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnDemo_N035_Dominios_6_E2_Resultados" FunctionImportName="fnDemo_N035_Dominios_6_E2_Resultados">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnDemo_N035_Dominios_6_E2_Resultados_Result">
+          <ScalarProperty Name="Total_Dominio_6" ColumnName="Total_Dominio_6" />
+          <ScalarProperty Name="Promedio_Dom_VI" ColumnName="Promedio_Dom_VI" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnDemo_N035_Dominios_6_E2_Resultados_CT" FunctionImportName="fnDemo_N035_Dominios_6_E2_Resultados_CT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnDemo_N035_Dominios_6_E2_Resultados_CT_Result">
+          <ScalarProperty Name="Total_Dominio_6" ColumnName="Total_Dominio_6" />
+          <ScalarProperty Name="Promedio_Dom_VI" ColumnName="Promedio_Dom_VI" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnDemo_N035_Dominios_6_Resultados" FunctionImportName="fnDemo_N035_Dominios_6_Resultados">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnDemo_N035_Dominios_6_Resultados_Result">
+          <ScalarProperty Name="Total_Dominio_6" ColumnName="Total_Dominio_6" />
+          <ScalarProperty Name="Promedio_Dom_VI" ColumnName="Promedio_Dom_VI" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnDemo_N035_Dominios_6_Resultados_CT" FunctionImportName="fnDemo_N035_Dominios_6_Resultados_CT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnDemo_N035_Dominios_6_Resultados_CT_Result">
+          <ScalarProperty Name="Total_Dominio_6" ColumnName="Total_Dominio_6" />
+          <ScalarProperty Name="Promedio_Dom_VI" ColumnName="Promedio_Dom_VI" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnDemo_N035_Dominios_7_E2_Resultados" FunctionImportName="fnDemo_N035_Dominios_7_E2_Resultados">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnDemo_N035_Dominios_7_E2_Resultados_Result">
+          <ScalarProperty Name="Total_Dominio_7" ColumnName="Total_Dominio_7" />
+          <ScalarProperty Name="Promedio_Dom_VII" ColumnName="Promedio_Dom_VII" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnDemo_N035_Dominios_7_E2_Resultados_CT" FunctionImportName="fnDemo_N035_Dominios_7_E2_Resultados_CT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnDemo_N035_Dominios_7_E2_Resultados_CT_Result">
+          <ScalarProperty Name="Total_Dominio_7" ColumnName="Total_Dominio_7" />
+          <ScalarProperty Name="Promedio_Dom_VII" ColumnName="Promedio_Dom_VII" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnDemo_N035_Dominios_7_Resultados" FunctionImportName="fnDemo_N035_Dominios_7_Resultados">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnDemo_N035_Dominios_7_Resultados_Result">
+          <ScalarProperty Name="Total_Dominio_7" ColumnName="Total_Dominio_7" />
+          <ScalarProperty Name="Promedio_Dom_VII" ColumnName="Promedio_Dom_VII" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnDemo_N035_Dominios_7_Resultados_CT" FunctionImportName="fnDemo_N035_Dominios_7_Resultados_CT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnDemo_N035_Dominios_7_Resultados_CT_Result">
+          <ScalarProperty Name="Total_Dominio_7" ColumnName="Total_Dominio_7" />
+          <ScalarProperty Name="Promedio_Dom_VII" ColumnName="Promedio_Dom_VII" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnDemo_N035_Dominios_8_E2_Resultados" FunctionImportName="fnDemo_N035_Dominios_8_E2_Resultados">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnDemo_N035_Dominios_8_E2_Resultados_Result">
+          <ScalarProperty Name="Total_Dominio_8" ColumnName="Total_Dominio_8" />
+          <ScalarProperty Name="Promedio_Dom_VIII" ColumnName="Promedio_Dom_VIII" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnDemo_N035_Dominios_8_E2_Resultados_CT" FunctionImportName="fnDemo_N035_Dominios_8_E2_Resultados_CT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnDemo_N035_Dominios_8_E2_Resultados_CT_Result">
+          <ScalarProperty Name="Total_Dominio_8" ColumnName="Total_Dominio_8" />
+          <ScalarProperty Name="Promedio_Dom_VIII" ColumnName="Promedio_Dom_VIII" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnDemo_N035_Dominios_8_Resultados" FunctionImportName="fnDemo_N035_Dominios_8_Resultados">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnDemo_N035_Dominios_8_Resultados_Result">
+          <ScalarProperty Name="Total_Dominio_8" ColumnName="Total_Dominio_8" />
+          <ScalarProperty Name="Promedio_Dom_VIII" ColumnName="Promedio_Dom_VIII" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnDemo_N035_Dominios_8_Resultados_CT" FunctionImportName="fnDemo_N035_Dominios_8_Resultados_CT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnDemo_N035_Dominios_8_Resultados_CT_Result">
+          <ScalarProperty Name="Total_Dominio_8" ColumnName="Total_Dominio_8" />
+          <ScalarProperty Name="Promedio_Dom_VIII" ColumnName="Promedio_Dom_VIII" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnDemo_N035_Dominios_9_Resultados" FunctionImportName="fnDemo_N035_Dominios_9_Resultados">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnDemo_N035_Dominios_9_Resultados_Result">
+          <ScalarProperty Name="Total_Dominio_9" ColumnName="Total_Dominio_9" />
+          <ScalarProperty Name="Promedio_Dom_IX" ColumnName="Promedio_Dom_IX" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnDemo_N035_Dominios_9_Resultados_CT" FunctionImportName="fnDemo_N035_Dominios_9_Resultados_CT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnDemo_N035_Dominios_9_Resultados_CT_Result">
+          <ScalarProperty Name="Total_Dominio_9" ColumnName="Total_Dominio_9" />
+          <ScalarProperty Name="Promedio_Dom_IX" ColumnName="Promedio_Dom_IX" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnDemo_N035_Grafica_Resultado_Preguntas" FunctionImportName="fnDemo_N035_Grafica_Resultado_Preguntas">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnDemo_N035_Grafica_Resultado_Preguntas_Result">
+          <ScalarProperty Name="Calificacion_General_Pregunta" ColumnName="Calificacion_General_Pregunta" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnDemo_N035_Grafica_Resultado_Preguntas_CT" FunctionImportName="fnDemo_N035_Grafica_Resultado_Preguntas_CT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnDemo_N035_Grafica_Resultado_Preguntas_CT_Result">
+          <ScalarProperty Name="Calificacion_General_Pregunta" ColumnName="Calificacion_General_Pregunta" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Check035Model.Store.fnReporte_General_Sexo" FunctionImportName="fnReporte_General_Sexo">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Check035Model.fnReporte_General_Sexo_Result">
+          <ScalarProperty Name="Total_Categoria_1" ColumnName="Total_Categoria_1" />
+          <ScalarProperty Name="Sumatoria_Total" ColumnName="Sumatoria_Total" />
+          <ScalarProperty Name="Encuestados" ColumnName="Encuestados" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Answering_Survey" FunctionName="Check035Model.Store.Answering_Survey" />
+    <FunctionImportMapping FunctionImportName="Answering_Survey_SEP_2020" FunctionName="Check035Model.Store.Answering_Survey_SEP_2020" />
+    <FunctionImportMapping FunctionImportName="Answering_Survey_SEP_2020_S2" FunctionName="Check035Model.Store.Answering_Survey_SEP_2020_S2" />
+    <FunctionImportMapping FunctionImportName="Change_Status" FunctionName="Check035Model.Store.Change_Status" />
+    <FunctionImportMapping FunctionImportName="Changing_Password" FunctionName="Check035Model.Store.Changing_Password" />
+    <FunctionImportMapping FunctionImportName="Completing_survey" FunctionName="Check035Model.Store.Completing_survey" />
+    <FunctionImportMapping FunctionImportName="log_data_login" FunctionName="Check035Model.Store.log_data_login" />
+    <FunctionImportMapping FunctionImportName="log_data_mail_status" FunctionName="Check035Model.Store.log_data_mail_status" />
+    <FunctionImportMapping FunctionImportName="log_data_send_mails" FunctionName="Check035Model.Store.log_data_send_mails" />
+    <FunctionImportMapping FunctionImportName="sp_adding_E360_compañero" FunctionName="Check035Model.Store.sp_adding_E360_compañero" />
+    <FunctionImportMapping FunctionImportName="sp_adding_E360_subordinado" FunctionName="Check035Model.Store.sp_adding_E360_subordinado" />
+    <FunctionImportMapping FunctionImportName="sp_Assig_E360_Empleados_Compañeros" FunctionName="Check035Model.Store.sp_Assig_E360_Empleados_Compañeros" />
+    <FunctionImportMapping FunctionImportName="sp_Assig_E360_Supervisores_Subordinados" FunctionName="Check035Model.Store.sp_Assig_E360_Supervisores_Subordinados" />
+    <EntitySetMapping Name="Check_checklist_N01">
+      <EntityTypeMapping TypeName="Check035Model.Check_checklist_N01">
+        <MappingFragment StoreEntitySet="Check_checklist_N01">
+          <ScalarProperty Name="Nombre_Contacto" ColumnName="Nombre_Contacto" />
+          <ScalarProperty Name="No_empleados" ColumnName="No_empleados" />
+          <ScalarProperty Name="telefono" ColumnName="telefono" />
+          <ScalarProperty Name="Razon_social" ColumnName="Razon_social" />
+          <ScalarProperty Name="created_at" ColumnName="created_at" />
+          <ScalarProperty Name="Calificacion" ColumnName="Calificacion" />
+          <ScalarProperty Name="Comments" ColumnName="Comments" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Q10" ColumnName="Q10" />
+          <ScalarProperty Name="Q9" ColumnName="Q9" />
+          <ScalarProperty Name="Q8" ColumnName="Q8" />
+          <ScalarProperty Name="Q7" ColumnName="Q7" />
+          <ScalarProperty Name="Q6" ColumnName="Q6" />
+          <ScalarProperty Name="Q5" ColumnName="Q5" />
+          <ScalarProperty Name="Q4" ColumnName="Q4" />
+          <ScalarProperty Name="Q3" ColumnName="Q3" />
+          <ScalarProperty Name="Q2" ColumnName="Q2" />
+          <ScalarProperty Name="Q1" ColumnName="Q1" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_checklist_Medidas_NOM035" FunctionName="Check035Model.Store.sp_checklist_Medidas_NOM035" />
+    <EntitySetMapping Name="Check_checklist_medidas_N01">
+      <EntityTypeMapping TypeName="Check035Model.Check_checklist_medidas_N01">
+        <MappingFragment StoreEntitySet="Check_checklist_medidas_N01">
+          <ScalarProperty Name="id_user" ColumnName="id_user" />
+          <ScalarProperty Name="Cat_IV" ColumnName="Cat_IV" />
+          <ScalarProperty Name="Cat_V" ColumnName="Cat_V" />
+          <ScalarProperty Name="Cat_III" ColumnName="Cat_III" />
+          <ScalarProperty Name="Cat_II" ColumnName="Cat_II" />
+          <ScalarProperty Name="Cat_I" ColumnName="Cat_I" />
+          <ScalarProperty Name="Nombre_Contacto" ColumnName="Nombre_Contacto" />
+          <ScalarProperty Name="No_empleados" ColumnName="No_empleados" />
+          <ScalarProperty Name="telefono" ColumnName="telefono" />
+          <ScalarProperty Name="Razon_social" ColumnName="Razon_social" />
+          <ScalarProperty Name="created_at" ColumnName="created_at" />
+          <ScalarProperty Name="Calificacion" ColumnName="Calificacion" />
+          <ScalarProperty Name="Comments" ColumnName="Comments" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="QR37" ColumnName="QR37" />
+          <ScalarProperty Name="QR36" ColumnName="QR36" />
+          <ScalarProperty Name="QR35" ColumnName="QR35" />
+          <ScalarProperty Name="QR34" ColumnName="QR34" />
+          <ScalarProperty Name="QR33" ColumnName="QR33" />
+          <ScalarProperty Name="QR32" ColumnName="QR32" />
+          <ScalarProperty Name="QR31" ColumnName="QR31" />
+          <ScalarProperty Name="QR30" ColumnName="QR30" />
+          <ScalarProperty Name="QR29" ColumnName="QR29" />
+          <ScalarProperty Name="QR28" ColumnName="QR28" />
+          <ScalarProperty Name="QR27" ColumnName="QR27" />
+          <ScalarProperty Name="QR26" ColumnName="QR26" />
+          <ScalarProperty Name="QR25" ColumnName="QR25" />
+          <ScalarProperty Name="QR24" ColumnName="QR24" />
+          <ScalarProperty Name="QR23" ColumnName="QR23" />
+          <ScalarProperty Name="QR22" ColumnName="QR22" />
+          <ScalarProperty Name="QR21" ColumnName="QR21" />
+          <ScalarProperty Name="QR20" ColumnName="QR20" />
+          <ScalarProperty Name="QR19" ColumnName="QR19" />
+          <ScalarProperty Name="QR18" ColumnName="QR18" />
+          <ScalarProperty Name="QR17" ColumnName="QR17" />
+          <ScalarProperty Name="QR16" ColumnName="QR16" />
+          <ScalarProperty Name="QR15" ColumnName="QR15" />
+          <ScalarProperty Name="QR14" ColumnName="QR14" />
+          <ScalarProperty Name="QR13" ColumnName="QR13" />
+          <ScalarProperty Name="QR12" ColumnName="QR12" />
+          <ScalarProperty Name="QR11" ColumnName="QR11" />
+          <ScalarProperty Name="QR10" ColumnName="QR10" />
+          <ScalarProperty Name="QR9" ColumnName="QR9" />
+          <ScalarProperty Name="QR8" ColumnName="QR8" />
+          <ScalarProperty Name="QR7" ColumnName="QR7" />
+          <ScalarProperty Name="QR6" ColumnName="QR6" />
+          <ScalarProperty Name="QR5" ColumnName="QR5" />
+          <ScalarProperty Name="QR4" ColumnName="QR4" />
+          <ScalarProperty Name="QR3" ColumnName="QR3" />
+          <ScalarProperty Name="QR2" ColumnName="QR2" />
+          <ScalarProperty Name="QR1" ColumnName="QR1" />
+          <ScalarProperty Name="Q37" ColumnName="Q37" />
+          <ScalarProperty Name="Q36" ColumnName="Q36" />
+          <ScalarProperty Name="Q35" ColumnName="Q35" />
+          <ScalarProperty Name="Q34" ColumnName="Q34" />
+          <ScalarProperty Name="Q33" ColumnName="Q33" />
+          <ScalarProperty Name="Q32" ColumnName="Q32" />
+          <ScalarProperty Name="Q31" ColumnName="Q31" />
+          <ScalarProperty Name="Q30" ColumnName="Q30" />
+          <ScalarProperty Name="Q29" ColumnName="Q29" />
+          <ScalarProperty Name="Q28" ColumnName="Q28" />
+          <ScalarProperty Name="Q27" ColumnName="Q27" />
+          <ScalarProperty Name="Q26" ColumnName="Q26" />
+          <ScalarProperty Name="Q25" ColumnName="Q25" />
+          <ScalarProperty Name="Q24" ColumnName="Q24" />
+          <ScalarProperty Name="Q23" ColumnName="Q23" />
+          <ScalarProperty Name="Q22" ColumnName="Q22" />
+          <ScalarProperty Name="Q21" ColumnName="Q21" />
+          <ScalarProperty Name="Q20" ColumnName="Q20" />
+          <ScalarProperty Name="Q19" ColumnName="Q19" />
+          <ScalarProperty Name="Q18" ColumnName="Q18" />
+          <ScalarProperty Name="Q17" ColumnName="Q17" />
+          <ScalarProperty Name="Q16" ColumnName="Q16" />
+          <ScalarProperty Name="Q15" ColumnName="Q15" />
+          <ScalarProperty Name="Q14" ColumnName="Q14" />
+          <ScalarProperty Name="Q13" ColumnName="Q13" />
+          <ScalarProperty Name="Q12" ColumnName="Q12" />
+          <ScalarProperty Name="Q11" ColumnName="Q11" />
+          <ScalarProperty Name="Q10" ColumnName="Q10" />
+          <ScalarProperty Name="Q9" ColumnName="Q9" />
+          <ScalarProperty Name="Q8" ColumnName="Q8" />
+          <ScalarProperty Name="Q7" ColumnName="Q7" />
+          <ScalarProperty Name="Q6" ColumnName="Q6" />
+          <ScalarProperty Name="Q5" ColumnName="Q5" />
+          <ScalarProperty Name="Q4" ColumnName="Q4" />
+          <ScalarProperty Name="Q3" ColumnName="Q3" />
+          <ScalarProperty Name="Q2" ColumnName="Q2" />
+          <ScalarProperty Name="Q1" ColumnName="Q1" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Check_checklist_medidas_acciones_N01">
+      <EntityTypeMapping TypeName="Check035Model.Check_checklist_medidas_acciones_N01">
+        <MappingFragment StoreEntitySet="Check_checklist_medidas_acciones_N01">
+          <ScalarProperty Name="nivel" ColumnName="nivel" />
+          <ScalarProperty Name="estatus" ColumnName="estatus" />
+          <ScalarProperty Name="file_evidencia" ColumnName="file_evidencia" />
+          <ScalarProperty Name="fecha_fin" ColumnName="fecha_fin" />
+          <ScalarProperty Name="fecha_inicio" ColumnName="fecha_inicio" />
+          <ScalarProperty Name="departamento" ColumnName="departamento" />
+          <ScalarProperty Name="id_centro_trabajo" ColumnName="id_centro_trabajo" />
+          <ScalarProperty Name="id_empresa" ColumnName="id_empresa" />
+          <ScalarProperty Name="accion" ColumnName="accion" />
+          <ScalarProperty Name="id_medida" ColumnName="id_medida" />
+          <ScalarProperty Name="id_checklist_37" ColumnName="id_checklist_37" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="log_data_send_mails_fail" FunctionName="Check035Model.Store.log_data_send_mails_fail" />
+    <FunctionImportMapping FunctionImportName="sp_checklist_NOM035" FunctionName="Check035Model.Store.sp_checklist_NOM035" />
+    <FunctionImportMapping FunctionImportName="sp_create_admin_user_company" FunctionName="Check035Model.Store.sp_create_admin_user_company" />
+    <FunctionImportMapping FunctionImportName="sp_create_medidas" FunctionName="Check035Model.Store.sp_create_medidas" />
+    <FunctionImportMapping FunctionImportName="sp_creating_new_record" FunctionName="Check035Model.Store.sp_creating_new_record" />
+    <EntitySetMapping Name="Comunica_Avisos_N01">
+      <EntityTypeMapping TypeName="Check035Model.Comunica_Avisos_N01">
+        <MappingFragment StoreEntitySet="Comunica_Avisos_N01">
+          <ScalarProperty Name="deleted_at" ColumnName="deleted_at" />
+          <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+          <ScalarProperty Name="created_at" ColumnName="created_at" />
+          <ScalarProperty Name="deleted_by" ColumnName="deleted_by" />
+          <ScalarProperty Name="updated_by" ColumnName="updated_by" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="notas" ColumnName="notas" />
+          <ScalarProperty Name="fecha_fin" ColumnName="fecha_fin" />
+          <ScalarProperty Name="fecha_inicio" ColumnName="fecha_inicio" />
+          <ScalarProperty Name="rango_vision" ColumnName="rango_vision" />
+          <ScalarProperty Name="aviso" ColumnName="aviso" />
+          <ScalarProperty Name="prioridad" ColumnName="prioridad" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Comunica_Politicas_N01">
+      <EntityTypeMapping TypeName="Check035Model.Comunica_Politicas_N01">
+        <MappingFragment StoreEntitySet="Comunica_Politicas_N01">
+          <ScalarProperty Name="deleted_at" ColumnName="deleted_at" />
+          <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+          <ScalarProperty Name="created_at" ColumnName="created_at" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="notas" ColumnName="notas" />
+          <ScalarProperty Name="file_path" ColumnName="file_path" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ERGOS_Buzon_N01">
+      <EntityTypeMapping TypeName="Check035Model.ERGOS_Buzon_N01">
+        <MappingFragment StoreEntitySet="ERGOS_Buzon_N01">
+          <ScalarProperty Name="deleted_at" ColumnName="deleted_at" />
+          <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+          <ScalarProperty Name="created_at" ColumnName="created_at" />
+          <ScalarProperty Name="notas" ColumnName="notas" />
+          <ScalarProperty Name="alta_admin" ColumnName="alta_admin" />
+          <ScalarProperty Name="denuncia_mas_involucrados" ColumnName="denuncia_mas_involucrados" />
+          <ScalarProperty Name="denuncia_soy" ColumnName="denuncia_soy" />
+          <ScalarProperty Name="denuncia_frecuencia" ColumnName="denuncia_frecuencia" />
+          <ScalarProperty Name="denuncia_hechos_desc" ColumnName="denuncia_hechos_desc" />
+          <ScalarProperty Name="denuncia_involucrados" ColumnName="denuncia_involucrados" />
+          <ScalarProperty Name="denuncia_relacionada" ColumnName="denuncia_relacionada" />
+          <ScalarProperty Name="cat_sugerencia_desc" ColumnName="cat_sugerencia_desc" />
+          <ScalarProperty Name="cat_sugerencia" ColumnName="cat_sugerencia" />
+          <ScalarProperty Name="tipo" ColumnName="tipo" />
+          <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,49 @@
+﻿.dataTables_filter, .dataTables_length {
+    padding: 20px!important;
+
+}
+
+.dataTables_filter label, .dataTables_length label{
+   font-weight:600 !important
+}
+
+.dataTables_filter input, .dataTables_length select {
+   
+   padding: 15px 20px;
+   border-radius: 25px !important;
+}
+
+.dataTables_length select {
+    padding: 0 0 0 10px !important;
+   
+}
+
+.dataTables_filter {
+    float:left !important;
+    text-align:center !important
+}
+.dataTables_filter, .dataTables_filter input {
+
+   min-width: none;
+}
+
+.dataTables_filter {
+    width: 100% !important;
+}
+
+
+@media screen and (min-width:800px) {
+    .dataTables_filter, .dataTables_filter input {
+        width: 100% !important;
+        
+    }
+}
+
+
+table th:last-child, table td:last-child {
+    text-align: center !important
+}
+
+
+
+

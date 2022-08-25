@@ -1,0 +1,290 @@
+﻿@model IEnumerable<ErgoSalud.Models.ERGOS_Buzon_N01>
+
+@{
+    ViewBag.Title = "Index";
+    @Styles.Render("~/Content/sizing.css");
+    @Styles.Render("~/Content/banner.css");
+    @Styles.Render("~/Content/breadcrumb.css");
+    @Styles.Render("~/Content/tableElements.css");
+    @Styles.Render("~/Content/button.css");
+    @Styles.Render("~/Content/branding.css");
+
+
+
+
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet'>
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/boxicons@2.0.0/css/boxicons.min.css'>
+
+    <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+}
+
+@section dataTableStyle {
+
+    <link href="~/lib/datatables.net-bs/dataTables.bootstrap.min.css" rel="stylesheet" />
+    <link href="~/lib/datatables.net-select-bs/select.bootstrap.min.css" rel="stylesheet" />
+    <link rel='stylesheet' href='https://cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css'>
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/boxicons@2.0.0/css/boxicons.min.css'>
+}
+
+
+
+<style>
+    .container {
+        width: 100% !important;
+    }
+
+    .navbar, #footer {
+        z-index: 1000 !important;
+    }
+
+    .banner-section {
+        min-height: 350px;
+        align-self: baseline !important
+    }
+
+    .body-content, body, html {
+        width: 100% !important
+    }
+
+    table.dataTable.dtr-inline.collapsed > tbody > tr[role="row"] > td:first-child:before, table.dataTable.dtr-inline.collapsed > tbody > tr[role="row"] > th:first-child:before {
+        top: 12px !important
+    }
+</style>
+
+<div class="row banner-section banner-buzon pb-5 mt-sm-4">
+    <div class="col-12 col-sm-6 mx-auto" id="image">
+        <img src="~/images/buzon/mailbox_header.svg" class="mockup text-center" />
+    </div>
+
+
+    <div class="col-6 col-12 col-sm-6 order-sm-first mx-auto text-md-start text-center p-sm-5 p-3 py-5">
+        <div class="row p-0 ps-sm-5 pt-5 pt-sm-0">
+            <h1 class="pt-0 pt-md-5">Encabezado</h1>
+            <h4 class="pb-4 font-18">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis, quae. Nisi praesentium minima aliquid quam odio aliquam impedit qui iste commodi, necessitatibus ducimus reiciendis distinctio. Vel voluptas blanditiis veniam vitae?
+            </h4>
+        </div>
+        <!-- cta btn -->
+        @*<div class="row p-0 ps-sm-5">
+                <div class="col-12 col-md-6 p-3 text-center">
+                    <a href="#" class="cta-btn"><i class="fa fa-play btn-icon-prepend me-2" aria-hidden="true"></i>Tutoriales</a>
+                </div>
+
+                <div class="col-12 col-md-6 p-3 text-center">
+                    <a href="#" class="cta-btn"><i class="fa fa-user-circle btn-icon-prepend me-2" aria-hidden="true"></i>Alta de usuario</a>
+                </div>
+            </div>*@
+
+
+    </div>
+
+
+
+
+</div>
+
+<div class="container-fluid row pt-5 px-sm-5 px-1 mx-auto">
+    <div class="template-demo">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb breadcrumb-custom ">
+                <li class="breadcrumb-item"><a href='@Url.Action("Index","Home")' data-abc="true" class=" font-weight-bold text-uppercase">Dashboard</a></li>
+                <li class="breadcrumb-item active font-weight-bold " aria-current="page"><span>&nbsp&nbspIdentifica: Panel de control buzón</span></li>
+            </ol>
+        </nav>
+
+    </div>
+</div>
+
+<div class="container p-5 row justify-content-center">
+
+    <h2 class="title_blue ps-0 ps-sm-5 ms-0 ms-sm-5 text-sm-start text-center">Registros denuncias y sugerencias</h2>
+
+    <p class="pe-0 pe-sm-5 me-0 me-sm-5">
+        @Html.ActionLink("Alta Sugerencia - Denuncia", "Create", null, new { @class = "px-4 py-3 btn btn-module text-uppercase me-5  mb-5 mt-3 float-sm-end mx-auto float-none" })
+    </p>
+
+    <div class="col-11 col-sm-10 mx-auto">
+        <table id="example" class="table table-hover responsive nowrap">
+            <thead>
+                <tr>
+                    @*<th>
+                @Html.DisplayName("Tipo denuncia")
+            </th>*@
+
+                    <th>
+                        @Html.DisplayName("Sugerencia Categoría")
+                    </th>
+                    <th>
+                        @Html.DisplayName("Sugerencia Descripción")
+                    </th>
+                    <th>
+                        @Html.DisplayName("Denuncia Relacionada")
+                    </th>
+                    <th>
+                        @Html.DisplayName("Denuncia Involucrados")
+                    </th>
+                    <th>
+                        @Html.DisplayName("Denuncia Hechos")
+                    </th>
+                    <th>
+                        @Html.DisplayName("Denuncia Frecuencia")
+                    </th>
+                    <th>
+                        @Html.DisplayName("Denuncia Soy")
+                    </th>
+
+
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        @*<td>
+                    @if (item.tipo != null)
+                    {@Html.DisplayFor(modelItem => item.tipo)}
+                else
+                {<b>N/A</b>}
+                </td>*@
+                        <td>
+                            @if (item.cat_sugerencia != null)
+                            {
+                                @Html.DisplayFor(modelItem => item.cat_sugerencia)
+                            }
+                            else
+                            {
+                                <b>N/A</b>
+                            }
+                        </td>
+                        <td>
+                            @if (item.cat_sugerencia_desc != null)
+                            {
+                                @Html.DisplayFor(modelItem => item.cat_sugerencia_desc)
+                            }
+                            else
+                            {
+                                <b>N/A</b>
+                            }
+                        </td>
+                        <td>
+                            @if (item.denuncia_relacionada != null)
+                            {
+                                @Html.DisplayFor(modelItem => item.denuncia_relacionada)
+                            }
+                            else
+                            {
+                                <b>N/A</b>
+                            }
+                        </td>
+                        <td>
+
+                            @if (item.denuncia_involucrados != null)
+                            {
+                                @Html.DisplayFor(modelItem => item.denuncia_involucrados)
+                            }
+                            else
+                            {
+                                <b>N/A</b>
+                            }
+
+                        </td>
+                        <td>
+
+                            @if (item.denuncia_hechos_desc != null)
+                            {
+                                @Html.DisplayFor(modelItem => item.denuncia_hechos_desc)
+                            }
+                            else
+                            {
+                                <b>N/A</b>
+                            }
+
+                        </td>
+                        <td>
+
+                            @if (item.denuncia_frecuencia != null)
+                            {
+                                @Html.DisplayFor(modelItem => item.denuncia_frecuencia)
+                            }
+                            else
+                            {
+                                <b>N/A</b>
+                            }
+
+                        </td>
+                        <td>
+
+                            @if (item.denuncia_soy != null)
+                            {
+                                @Html.DisplayFor(modelItem => item.denuncia_soy)
+                            }
+                            else
+                            {
+                                <b>N/A</b>
+                            }
+
+                        </td>
+
+                        <td>
+
+                            <a href="@Url.Action("Delete", new { id=item.id })">
+                                <i class="fa fa-trash-o" title="Eliminar" style="font-size:23px;color:rebeccapurple"></i>
+                            </a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>
+
+@section dataTableScripts {
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js'></script>
+    <script src="~/lib/datatables.net/jquery.dataTables.min.js"></script>
+    <script src='https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js'></script>
+    <script src="~/lib/datatables.net-bs/dataTables.bootstrap.min.js"></script>
+    <script src="~/lib/datatables.net-select-bs/select.bootstrap.min.js"></script>
+    <script src="https://cdn.datatables.net/plug-ins/1.11.5/i18n/es-ES.json"></script>
+
+}
+
+
+
+<script>
+    $(document).ready(function () {
+        $("#example").DataTable({
+            "language": {
+                "url": "//cdn.datatables.net/plug-ins/1.10.16/i18n/Spanish.json"
+            },
+
+            aaSorting: [],
+            responsive: true,
+
+            columnDefs: [
+                {
+                    responsivePriority: 1,
+                    targets: 0
+                },
+                {
+                    responsivePriority: 2,
+                    targets: -1
+                }
+            ]
+        });
+
+        $(".dataTables_filter input")
+            .attr("placeholder", "Search here...")
+            .css({
+                width: "300px",
+                display: "inline-block"
+            });
+
+        $('[data-toggle="tooltip"]').tooltip();
+    });
+</script>

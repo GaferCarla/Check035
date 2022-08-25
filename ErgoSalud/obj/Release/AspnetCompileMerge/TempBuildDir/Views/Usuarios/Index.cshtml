@@ -1,0 +1,180 @@
+﻿@model IEnumerable<ErgoSalud.Models.ERGOS_Usuarios_N01>
+
+@{
+    ViewBag.Title = "Index";
+    @Styles.Render("~/Content/sizing.css");
+    @Styles.Render("~/Content/branding.css");
+    @Styles.Render("~/Content/button.css");
+    @Styles.Render("~/Content/form.css");
+    @Styles.Render("~/Content/tableElements.css");
+
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet'>
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/boxicons@2.0.0/css/boxicons.min.css'>
+
+    <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+}
+
+@section dataTableStyle {
+
+    <link href="~/lib/datatables.net-bs/dataTables.bootstrap.min.css" rel="stylesheet" />
+    <link href="~/lib/datatables.net-select-bs/select.bootstrap.min.css" rel="stylesheet" />
+    <link rel='stylesheet' href='https://cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css'>
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/boxicons@2.0.0/css/boxicons.min.css'>
+}
+
+<style>
+    table.dataTable.dtr-inline.collapsed > tbody > tr[role="row"] > td:first-child:before, table.dataTable.dtr-inline.collapsed > tbody > tr[role="row"] > th:first-child:before {
+        top: 12px !important
+    }
+</style>
+
+<div class="container py-5">
+    <h1 class="mt-5 title_blue text-sm-start text-center">Administración de Usuario</h1>
+
+    <div class="row pt-4">
+        <div class="col-12 d-sm-inline text-center text-sm-start pb-5">
+            <a href="@Url.Action("ChangePassword", new { User_Name = @HttpContext.Current.User.Identity.Name })" data-form-method="GET">
+                <input type="button" class="btn btn-module2 px-5 py-3 mx-2 text-uppercase my-md-0 my-3" value="Cambiar Mi Contraseña">
+            </a>
+
+            @if (User.IsInRole("Admin_SyS"))
+            {
+                @Html.ActionLink("Nuevo Usuario", "Create", null, new { @class = "px-5 py-3 btn btn-module mx-2 text-uppercase my-md-0 my-3" })
+            }
+
+        </div>
+    </div>
+
+    <hr>
+
+    <table id="example" class="table table-hover responsive nowrap" style="width:100%">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayName("Nombre Usuario")
+                </th>
+                <th>
+                    @Html.DisplayName("Email")
+                </th>
+                <th>
+                    @Html.DisplayName("Empresa")
+                </th>
+                <th>
+                    @Html.DisplayName("Rol")
+                </th>
+                @if (User.IsInRole("Admin_SyS"))
+                {
+                    <th>Acción</th>
+                }
+            </tr>
+        </thead>
+
+        <tbody>
+            @if (User.IsInRole("Admin_SyS"))
+            {
+                foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.User_Nombre)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.email)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ERGOS_Empresas_N01.Razon_Social)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ERGOS_Roles_N01.Nombre_Rol)
+                        </td>
+                        <td>
+
+                            <a href="@Url.Action("Delete", new { id = item.id_user })">
+                                <i class="fa fa-trash-o" title="Eliminar" style="font-size:23px"></i>
+                            </a>
+
+                            <a href="@Url.Action("Edit", new { id = item.id_user })">
+                                <i class="fa fa-edit" title="Editar" aria-hidden="true" style="font-size:23px"></i>
+                            </a>
+                        </td>
+                    </tr>
+                }
+            }
+            else
+            {
+                foreach (var item in Model)
+                {
+                    if (item.User_Nombre == @HttpContext.Current.User.Identity.Name)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.User_Nombre)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.email)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ERGOS_Empresas_N01.Razon_Social)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ERGOS_Roles_N01.Nombre_Rol)
+                            </td>
+
+                        </tr>
+                    }
+
+                }
+            }
+        </tbody>
+
+
+
+    </table>
+
+</div>
+
+@section dataTableScripts {
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js'></script>
+    <script src="~/lib/datatables.net/jquery.dataTables.min.js"></script>
+    <script src='https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js'></script>
+    <script src="~/lib/datatables.net-bs/dataTables.bootstrap.min.js"></script>
+    <script src="~/lib/datatables.net-select-bs/select.bootstrap.min.js"></script>
+    <script src="https://cdn.datatables.net/plug-ins/1.11.5/i18n/es-ES.json"></script>
+
+}
+
+
+
+<script>
+    $(document).ready(function () {
+        $("#example").DataTable({
+            "language": {
+                "url": "//cdn.datatables.net/plug-ins/1.10.16/i18n/Spanish.json"
+            },
+
+            aaSorting: [],
+            responsive: true,
+
+            columnDefs: [
+                {
+                    responsivePriority: 1,
+                    targets: 0
+                },
+                {
+                    responsivePriority: 2,
+                    targets: -1
+                }
+            ]
+        });
+
+        $(".dataTables_filter input")
+            .attr("placeholder", "Search here...")
+            .css({
+                width: "300px",
+                display: "inline-block"
+            });
+
+        $('[data-toggle="tooltip"]').tooltip();
+    });
+</script>

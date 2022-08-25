@@ -1,0 +1,134 @@
+﻿@model ErgoSalud.Models.ERGOS_Centros_Trabajo_N01
+
+@{
+    ViewBag.Title = "Edit";
+}
+<br>
+<h2>Reportes Generales</h2>
+<hr />
+<div class="col-xs-12 col-sm-3">
+    @{Html.BeginForm("ExportToExcel", "Reportes_Centro", FormMethod.Get);
+        {
+            @Html.HiddenFor(model => model.id_centro_trabajo, new { id = "id_centro_trabajo" })
+
+            <button style="margin-left:25px" class="btn btn-success" type="submit">
+                <i class="fa fa-file-excel-o"> </i>  Exportar a Excel
+            </button>
+
+        }
+        Html.EndForm();
+    }
+</div>
+<div class="col-xs-12 col-sm-3">
+    @if (Model.ERGOS_Empresas_N01.id_encuesta == 2 || Model.ERGOS_Empresas_N01.id_encuesta == 3)
+    {
+        <a class="btn btn-default" href="@Url.Action("Reporte_General_PDF", "Centros_Trabajo", new {id = Model.id_centro_trabajo, id_C = Model.ERGOS_Empresas_N01.id_encuesta })"><i class="fa fa-file-pdf-o" style="font-size:20px;color:red" aria-hidden="true"></i> Reporte Digital </a>
+    }
+    else if (Model.ERGOS_Empresas_N01.id_encuesta == 4)
+    {
+        <a class="btn btn-default" href="@Url.Action("Reporte_General_PDF_CL", "Centros_Trabajo", new {id_centro = Model.id_centro_trabajo })"><i class="fa fa-file-pdf-o" style="font-size:20px;color:red" aria-hidden="true"></i> Reporte Digital </a>
+    }
+    else if (Model.ERGOS_Empresas_N01.id_encuesta == 5)
+    {
+        <a class="btn btn-default" href="@Url.Action("Reporte_General_PDF_E360", "Centros_Trabajo", new {id_centro = Model.id_centro_trabajo })"><i class="fa fa-file-pdf-o" style="font-size:20px;color:red" aria-hidden="true"></i> Reporte Digital </a>
+
+    } 
+</div>
+<br>
+<br>
+<hr />
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h2>Modificación de Información </h2>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.id_centro_trabajo)
+        @Html.HiddenFor(model => model.id_empresa)
+
+        <div class="form-group"> 
+            <div class="control-label col-md-2">
+                <b style="font-size:15px">Empresa</b>
+            </div>
+            <div  style="padding-top:5px" class="col-md-10">
+                <span>@Model.ERGOS_Empresas_N01.Razon_Social</span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.Label("Centro de trabajo", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Nombre_centro_trabajo, new { htmlAttributes = new { @class = "form-control form-line" } })
+                @Html.ValidationMessageFor(model => model.Nombre_centro_trabajo, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        @*<div class="form-group">
+                @Html.LabelFor(model => model.No_emplados, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.No_emplados, new { htmlAttributes = new { @class = "form-control form-line" } })
+                    @Html.ValidationMessageFor(model => model.No_emplados, "", new { @class = "text-danger" })
+                </div>
+            </div>*@
+
+        <div class="form-group">
+            @Html.Label("Fecha implementación", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Fecha_Auditoria, new { htmlAttributes = new { @class = "form-control form-line" } })
+                @Html.ValidationMessageFor(model => model.Fecha_Auditoria, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Comentarios, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Comentarios, new { htmlAttributes = new { @class = "form-control form-line" } })
+                @Html.ValidationMessageFor(model => model.Comentarios, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.Label("Dirección", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.direccion, new { htmlAttributes = new { @class = "form-control form-line" } })
+                @Html.ValidationMessageFor(model => model.direccion, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.Label("Actividad principal", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Actividad_principal, new { htmlAttributes = new { @class = "form-control form-line" } })
+                @Html.ValidationMessageFor(model => model.Actividad_principal, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        @*<div class="form-group">
+                @Html.LabelFor(model => model.Razon_Social, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Razon_Social, new { htmlAttributes = new { @class = "form-control form-line" } })
+                    @Html.ValidationMessageFor(model => model.Razon_Social, "", new { @class = "text-danger" })
+                </div>
+            </div>*@
+
+        <br>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Guardar" class="btn btn-success" />
+                @if (User.IsInRole("Admin") || (User.IsInRole("Admin_SyS")))
+                {
+                    @Html.ActionLink("Regresar", "Index_CT_admin_sys", null, new { @class = "btn btn-primary" }) }
+                else
+                {
+
+                    @Html.ActionLink("Regresar", "Index", null, new { @class = "btn btn-primary" })
+                }
+            </div>
+        </div>
+    </div>
+}
+

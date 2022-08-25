@@ -1,0 +1,192 @@
+﻿
+.boxesContainer .cardBox {
+    font-size: 1.2em;
+    perspective: 800px;
+    transition: all 0.3s ease 0s;
+}
+
+.boxesContainer .cardBox:hover .card {
+    transform: rotateY( 180deg);
+}
+
+
+
+
+.boxesContainer .card {
+    background: #222;
+    cursor: default;
+    height: 200px;
+    transform-style: preserve-3d;
+    transition: transform 0.4s ease 0s;
+    width: 100%;
+    -webkit-animation: giro 1s 1;
+    animation: giro 1s 1;
+    border-radius: 15% !important;
+    max-width: 290px;
+}
+
+    .boxesContainer .card p {
+        margin-bottom: 0;
+    }
+
+    .boxesContainer .card .front,
+    .boxesContainer .card .back {
+        backface-visibility: hidden;
+        box-sizing: border-box;
+        color: white;
+        display: block;
+        font-size: 1.2em;
+        height: 100%;
+        position: absolute;
+        text-align: center;
+        width: 100%;
+        border-radius:15% !important
+        
+
+    }
+
+
+    .nom {
+        background: url('../images/dashboard/nom.png') center center no-repeat !important;
+        background-size: 100% 100% !important;
+    }
+    .educa {
+        background: url('../images/dashboard/educacion.png') center center no-repeat !important;
+        background-size: 100% 100% !important;
+    }
+
+    .plan {
+        background: url('../images/dashboard/plan.png') center center no-repeat !important;
+        background-size: 100% 100% !important;
+    }
+
+    .status {
+        background: url('../images/dashboard/status.png') center center no-repeat !important;
+        background-size: 100% 100% !important;
+    }
+    .buzon {
+        background: url('../images/dashboard/buzon.png') center center no-repeat !important;
+        background-size: 100% 100% !important;
+    }
+
+    .reporte {
+        background: url('../images/dashboard/reporte.png') center center no-repeat !important;
+        background-size: 100% 100% !important;
+    }
+
+    .com {
+        background: url('../images/dashboard/comunica.png') center center no-repeat !important;
+        background-size: 100% 100% !important;
+    }
+
+    .plan {
+        background: url('../images/dashboard/plan.png') center center no-repeat !important;
+        background-size: 100% 100% !important;
+    }
+
+    .plan2 {
+        background: url('../images/dashboard/planeacion.png') center center no-repeat !important;
+        background-size: 100% 100% !important;
+    }
+
+
+    .edu {
+        background: url('../images/dashboard/educacion2.png') center center no-repeat !important;
+        background-size: 100% 100% !important;
+    }
+
+
+@media screen and (max-width:950px) {
+    .nom, .educa, .plan, .status, .buzon, .com, .plan, .edu, .plan2 {
+        background-size: auto 100% !important;
+    }
+
+    .boxesContainer .card {
+        max-width: 290px;
+    }
+
+}
+
+
+
+
+        .boxesContainer .card .front strong {
+            background: #fff;
+            border-radius: 100%;
+            color: #222;
+            font-size: 1.5em;
+            line-height: 30px;
+            padding: 0 7px 4px 6px;
+            position: absolute;
+            bottom: 15px;
+            opacity: 0.5;
+            left: 45%;
+            z-index: 800 !important;
+        }
+
+    .boxesContainer .card .back {
+        transform: rotateY( 180deg);
+    }
+
+
+
+.card .back {
+    background: linear-gradient(to right, #4b3bac, #765ccd );
+}
+
+    .card .back button {
+        background: #251882;
+        position: absolute;
+        bottom:0 !important;
+    }
+
+
+.cardBox:nth-child(2) .card {
+    -webkit-animation: giro 1.5s 1;
+    animation: giro 1.5s 1;
+}
+
+.cardBox:nth-child(3) .card {
+    -webkit-animation: giro 2s 1;
+    animation: giro 2s 1;
+}
+
+.cardBox:nth-child(4) .card {
+    -webkit-animation: giro 2.5s 1;
+    animation: giro 2.5s 1;
+}
+
+.align-bottom {
+    vertical-align: bottom !important;
+}
+
+@-webkit-keyframes giro {
+    from {
+        transform: rotateY( 180deg);
+    }
+
+    to {
+        transform: rotateY( 0deg);
+    }
+}
+
+@keyframes giro {
+    from {
+        transform: rotateY( 180deg);
+    }
+
+    to {
+        transform: rotateY( 0deg);
+    }
+}
+
+
+
+@media screen and (min-width: 767px) {
+    .cardBox {
+        min-width: 195px !important;
+    }
+
+}
+
+

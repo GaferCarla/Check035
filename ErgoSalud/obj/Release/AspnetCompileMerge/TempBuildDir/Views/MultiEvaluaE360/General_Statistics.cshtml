@@ -1,0 +1,1335 @@
+﻿@model ErgoSalud.Models.ERGOS_Empresas_N01
+
+@{ int counter = 0;}
+<script type="text/javascript">
+
+    function Reporte_Departamentos() {
+
+        var id_empresa = @Model.id_empresa;
+            document.getElementById("chartDepartamentos").style.display = "block";
+
+    $.ajax({
+        type: 'POST',
+        url: '@Url.Action("Searching_Departamentos")',
+        dataType: 'json',
+        data: { id_empresa: id_empresa },
+        success: function (dato) {
+
+
+            if (dato != null) {
+
+                var Departamentos = [];
+                var Niveles = [];
+                var Colores = [];
+                var C_I = [];
+                var C_II = [];
+                var C_III = [];
+                var C_IV = [];
+                var C_V = [];
+                var C_VI = [];
+                var C_VII = [];
+                var C_VIII = [];
+                var C_IX = [];
+                var C_X = [];
+                var C_XI = [];
+                var C_XII = [];
+                var C_XIII = [];
+                var C_XIV = [];
+                var C_XV = [];
+
+                var count = dato.length;
+                var count_II = dato.length;
+                var counter = 0;
+                var counter_II = 0;
+
+                while (count > 0) {
+                    Departamentos[counter] = dato[counter].Departamento;
+                    Niveles[counter] = dato[counter].PROMEDIO_FINAL;
+                    Colores[counter] = dato[counter].COLOR;
+                    C_I[counter] = dato[counter].PROMEDIO_C_I;
+                    C_II[counter] = dato[counter].PROMEDIO_C_II;
+                    C_III[counter] = dato[counter].PROMEDIO_C_III;
+                    C_IV[counter] = dato[counter].PROMEDIO_C_IV;
+                    C_V[counter] = dato[counter].PROMEDIO_C_V;
+                    C_VI[counter] = dato[counter].PROMEDIO_C_VI;
+                    C_VII[counter] = dato[counter].PROMEDIO_C_VII;
+                    C_VIII[counter] = dato[counter].PROMEDIO_C_VIII;
+                    C_IX[counter] = dato[counter].PROMEDIO_C_IX;
+                    C_X[counter] = dato[counter].PROMEDIO_C_X;
+                    C_XI[counter] = dato[counter].PROMEDIO_C_XI;
+                    C_XII[counter] = dato[counter].PROMEDIO_C_XII;
+                    C_XIII[counter] = dato[counter].PROMEDIO_C_XIII;
+                    C_XIV[counter] = dato[counter].PROMEDIO_C_XIV;
+                    C_XV[counter] = dato[counter].PROMEDIO_C_XV;
+                    counter++;
+                    count--;
+                }
+                    $('#myTable').empty();
+                     var table = document.getElementById("myTable");
+
+
+              while (count_II > 0) {
+         //     alert(count_II);
+
+                  if(count_II == 1){
+                  var row = table.insertRow(0);
+                  var cell1 = row.insertCell(0);
+                  var cell2 = row.insertCell(1);
+                  var cell3 = row.insertCell(2);
+                  var cell4 = row.insertCell(3);
+                  var cell5 = row.insertCell(4);
+                  var cell6 = row.insertCell(5);
+                  var cell7 = row.insertCell(6);
+                  var cell8 = row.insertCell(7);
+                  var cell9 = row.insertCell(8);
+                  var cell10 = row.insertCell(9);
+                  var cell11 = row.insertCell(10);
+                  var cell12 = row.insertCell(11);
+                  var cell13 = row.insertCell(12);
+                  var cell14 = row.insertCell(13);
+                  var cell15 = row.insertCell(14);
+
+                  cell1.innerHTML = "DEPARTAMENTO";
+                  cell2.innerHTML = "Cat I";
+                  cell3.innerHTML = "Cat II";
+                  cell4.innerHTML = "Cat III";
+                  cell5.innerHTML = "Cat IV";
+                  cell6.innerHTML = "Cat V";
+                  cell7.innerHTML = "Cat VI";
+                  cell8.innerHTML = "Cat VII";
+                  cell9.innerHTML = "Cat VIII";
+                  cell10.innerHTML = "Cat IX";
+                  cell11.innerHTML = "Cat X";
+                  cell12.innerHTML = "Cat XI";
+                  cell13.innerHTML = "Cat XII";
+                  cell14.innerHTML = "Cat XIII";
+                  cell15.innerHTML = "Cat XIV";
+                  cell15.innerHTML = "Cat XV";
+
+                  }
+                    else
+                  {
+
+                  var row = table.insertRow(0);
+                  var cell1 = row.insertCell(0);
+                  var cell2 = row.insertCell(1);
+                  var cell3 = row.insertCell(2);
+                  var cell4 = row.insertCell(3);
+                  var cell5 = row.insertCell(4);
+                  var cell6 = row.insertCell(5);
+                  var cell7 = row.insertCell(6);
+                  var cell8 = row.insertCell(7);
+                  var cell9 = row.insertCell(8);
+                  var cell10 = row.insertCell(9);
+                  var cell11 = row.insertCell(10);
+                  var cell12 = row.insertCell(11);
+                  var cell13 = row.insertCell(12);
+                  var cell14 = row.insertCell(13);
+                  var cell15 = row.insertCell(14);
+
+                  cell1.innerHTML = Departamentos[counter_II];
+                  cell2.innerHTML = C_I[counter_II];
+                  cell3.innerHTML = C_II[counter_II];
+                  cell4.innerHTML = C_III[counter_II];
+                  cell5.innerHTML = C_IV[counter_II];
+                  cell6.innerHTML = C_V[counter_II];
+                  cell7.innerHTML = C_VI[counter_II];
+                  cell8.innerHTML = C_VII[counter_II];
+                  cell9.innerHTML = C_VIII[counter_II];
+                  cell10.innerHTML = C_IX[counter_II];
+                  cell11.innerHTML = C_X[counter_II];
+                  cell12.innerHTML = C_XI[counter_II];
+                  cell13.innerHTML = C_XII[counter_II];
+                  cell14.innerHTML = C_XIII[counter_II];
+                  cell15.innerHTML = C_XIV[counter_II];
+
+                    }
+                    counter_II++;
+                    if(counter_II == dato.length - 1)
+                    {
+
+                    }
+                    else
+                    {
+                        count_II--;
+                    }
+
+             // alert(counter_II);
+                }
+
+
+
+                var ctx = document.getElementById("chartDepartamentos");
+                var myChart = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: Departamentos,
+                        datasets: [{
+                            backgroundColor: Colores,
+                            hoverBorderColor: "#000",
+                            hoverBackgroundColor: Colores,
+                            data: Niveles,
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        legend: {
+                            labels: ["Edad", "Edad"],
+                            display: false,
+                            labels: {
+                                fontColor: 'rgb(255, 99, 132)'
+                            }
+                        },
+                        title: {
+                            display: true,
+                            text: 'Departamentos',
+                            fontSize: 20
+                        },
+                        scales: {
+                            yAxes: [{
+                                ticks: {
+                                    beginAtZero: true,
+                                    userCallback: function (label, index, labels) {
+                                        if (Math.floor(label) === label) {
+                                            return 'Puntaje ' + label;
+                                        }
+
+                                    },
+                                }
+                            }],
+                        xAxes: [{
+                          beginAtZero: true,
+                          ticks: {
+                             autoSkip: false
+                          }
+                      }]
+                        }
+
+                    }
+                });
+
+
+            } else {
+                alert("Información Faltante");
+            }
+
+        },
+        error: function () {
+            throw true;
+        },
+        catch(e) {
+            alert(e.name + "\n" + e.message)
+        }
+
+
+    });
+
+
+}
+
+    $(window).load(function () {
+
+        $('#show_Emp').click(function () {
+            $('.menu_emp').toggle("slide");
+        });
+        $('#show_Com').click(function () {
+            $('.menu_com').toggle("slide");
+        });
+        $('#show_Sub').click(function () {
+            $('.menu_sub').toggle("slide");
+        });
+        $('#show_Sup').click(function () {
+            $('.menu_sup').toggle("slide");
+        });
+
+
+        var ctx = document.getElementById("myChart");
+        var Grafico_Emp = document.getElementById("Chart_Emp");
+        var Grafico_Sup = document.getElementById("Chart_Sup");
+        var Grafico_Sub = document.getElementById("Chart_Sub");
+        var Grafico_Com = document.getElementById("Chart_Com");
+        var Grafico_Depts = document.getElementById("Chart_Depts");
+        var ctx_depts = document.getElementById("chartDepartamentos");
+
+
+          var Departamentos = [];
+                var Niveles = [];
+                var Colores = [];
+                var count = @ViewBag.E360DeptosLeght;
+                var counter = 0;
+
+
+                while (count > 0) {
+                    Departamentos[counter] =   "@ViewBag.E360Deptos[counter].Departamento";
+                    Niveles[counter] = @ViewBag.E360Deptos[counter].PROMEDIO_FINAL;
+                    Colores[counter] = "@ViewBag.E360Deptos[counter].COLOR";
+     @{
+        counter++;
+    } 
+         
+                    counter++;
+                    count--;
+          }
+
+         
+
+
+        var myChart = new Chart(ctx, {
+            type: 'radar',
+            data: {
+                labels: ["I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X", "XI", "XII", "XIII", "XIV", "XV"],
+                datasets: [{
+                    label: 'General',
+                    data: [@ViewBag.Final_Empresa.PROMEDIO_C_I_100, @ViewBag.Final_Empresa.PROMEDIO_C_II_100, @ViewBag.Final_Empresa.PROMEDIO_C_III_100, @ViewBag.Final_Empresa.PROMEDIO_C_IV_100 ,
+                        @ViewBag.Final_Empresa.PROMEDIO_C_V_100 , @ViewBag.Final_Empresa.PROMEDIO_C_VI_100, @ViewBag.Final_Empresa.PROMEDIO_C_VII_100 , @ViewBag.Final_Empresa.PROMEDIO_C_VIII_100 , @ViewBag.Final_Empresa.PROMEDIO_C_IX_100,
+                        @ViewBag.Final_Empresa.PROMEDIO_C_X_100 , @ViewBag.Final_Empresa.PROMEDIO_C_XI_100, @ViewBag.Final_Empresa.PROMEDIO_C_XII_100 , @ViewBag.Final_Empresa.PROMEDIO_C_XIII_100 , @ViewBag.Final_Empresa.PROMEDIO_C_XIV_100, @ViewBag.Final_Empresa.PROMEDIO_C_XV_100],
+                    backgroundColor: 'rgba(255,177,193,.3)',
+                    borderColor: 'rgba(255,177,193)'
+                },
+                {
+                label: 'Empleados',
+                    data: [@ViewBag.Final_Empresa_Emp.PROMEDIO_C_I_100, @ViewBag.Final_Empresa_Emp.PROMEDIO_C_II_100, @ViewBag.Final_Empresa_Emp.PROMEDIO_C_III_100, @ViewBag.Final_Empresa_Emp.PROMEDIO_C_IV_100 ,
+                        @ViewBag.Final_Empresa_Emp.PROMEDIO_C_V_100 , @ViewBag.Final_Empresa_Emp.PROMEDIO_C_VI_100, @ViewBag.Final_Empresa_Emp.PROMEDIO_C_VII_100 , @ViewBag.Final_Empresa_Emp.PROMEDIO_C_VIII_100 , @ViewBag.Final_Empresa_Emp.PROMEDIO_C_IX_100,
+                        @ViewBag.Final_Empresa_Emp.PROMEDIO_C_X_100 , @ViewBag.Final_Empresa_Emp.PROMEDIO_C_XI_100, @ViewBag.Final_Empresa_Emp.PROMEDIO_C_XII_100 , @ViewBag.Final_Empresa_Emp.PROMEDIO_C_XIII_100 , @ViewBag.Final_Empresa_Emp.PROMEDIO_C_XIV_100, @ViewBag.Final_Empresa_Emp.PROMEDIO_C_XV_100],
+                    backgroundColor: 'rgba(54,162,253,.3)',
+                    borderColor: 'rgba(54,162,253)'
+                },
+                {
+                label: 'Supervisores',
+                    data: [@ViewBag.Final_Empresa_Sup.PROMEDIO_C_I_100, @ViewBag.Final_Empresa_Sup.PROMEDIO_C_II_100, @ViewBag.Final_Empresa_Sup.PROMEDIO_C_III_100, @ViewBag.Final_Empresa_Sup.PROMEDIO_C_IV_100 ,
+                        @ViewBag.Final_Empresa_Sup.PROMEDIO_C_V_100 , @ViewBag.Final_Empresa_Sup.PROMEDIO_C_VI_100, @ViewBag.Final_Empresa_Sup.PROMEDIO_C_VII_100 , @ViewBag.Final_Empresa_Sup.PROMEDIO_C_VIII_100 , @ViewBag.Final_Empresa_Sup.PROMEDIO_C_IX_100,
+                        @ViewBag.Final_Empresa_Sup.PROMEDIO_C_X_100 , @ViewBag.Final_Empresa_Sup.PROMEDIO_C_XI_100, @ViewBag.Final_Empresa_Sup.PROMEDIO_C_XII_100 , @ViewBag.Final_Empresa_Sup.PROMEDIO_C_XIII_100 , @ViewBag.Final_Empresa_Sup.PROMEDIO_C_XIV_100, @ViewBag.Final_Empresa_Sup.PROMEDIO_C_XV_100],
+                    backgroundColor: 'rgba(255,230,170,.3)',
+                    borderColor: 'rgba(255,230,170)'
+                },
+                {
+                label: 'Subordinados',
+                    data: [@ViewBag.Final_Empresa_Sub.PROMEDIO_C_I_100, @ViewBag.Final_Empresa_Sub.PROMEDIO_C_II_100, @ViewBag.Final_Empresa_Sub.PROMEDIO_C_III_100, @ViewBag.Final_Empresa_Sub.PROMEDIO_C_IV_100 ,
+                        @ViewBag.Final_Empresa_Sub.PROMEDIO_C_V_100 , @ViewBag.Final_Empresa_Sub.PROMEDIO_C_VI_100, @ViewBag.Final_Empresa_Sub.PROMEDIO_C_VII_100 , @ViewBag.Final_Empresa_Sub.PROMEDIO_C_VIII_100 , @ViewBag.Final_Empresa_Sub.PROMEDIO_C_IX_100,
+                        @ViewBag.Final_Empresa_Sub.PROMEDIO_C_X_100 , @ViewBag.Final_Empresa_Sub.PROMEDIO_C_XI_100, @ViewBag.Final_Empresa_Sub.PROMEDIO_C_XII_100 , @ViewBag.Final_Empresa_Sub.PROMEDIO_C_XIII_100 , @ViewBag.Final_Empresa_Sub.PROMEDIO_C_XIV_100, @ViewBag.Final_Empresa_Sub.PROMEDIO_C_XV_100],
+                    backgroundColor: 'rgba(165,223,223,.3)',
+                    borderColor: 'rgba(165,223,223)'
+                },
+                {
+                label: 'Compañeros',
+                    data: [@ViewBag.Final_Empresa_Com.PROMEDIO_C_I_100, @ViewBag.Final_Empresa_Com.PROMEDIO_C_II_100, @ViewBag.Final_Empresa_Com.PROMEDIO_C_III_100, @ViewBag.Final_Empresa_Com.PROMEDIO_C_IV_100 ,
+                        @ViewBag.Final_Empresa_Com.PROMEDIO_C_V_100 , @ViewBag.Final_Empresa_Com.PROMEDIO_C_VI_100, @ViewBag.Final_Empresa_Com.PROMEDIO_C_VII_100 , @ViewBag.Final_Empresa_Com.PROMEDIO_C_VIII_100 , @ViewBag.Final_Empresa_Com.PROMEDIO_C_IX_100,
+                        @ViewBag.Final_Empresa_Com.PROMEDIO_C_X_100 , @ViewBag.Final_Empresa_Com.PROMEDIO_C_XI_100, @ViewBag.Final_Empresa_Com.PROMEDIO_C_XII_100 , @ViewBag.Final_Empresa_Com.PROMEDIO_C_XIII_100 , @ViewBag.Final_Empresa_Com.PROMEDIO_C_XIV_100, @ViewBag.Final_Empresa_Com.PROMEDIO_C_XV_100],
+                    backgroundColor: 'rgba(154,208,245,.3)',
+                    borderColor: 'rgba(154,208,245)'
+                },
+
+
+                ]
+            },
+            options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        display:false,
+                    },
+                    gridLines: {
+                        display: false
+                    }
+                    }]
+                },
+                legend: {
+                    display: true,
+                    labels: {
+                    fontColor: "rgba(0,0,0)"
+                    }
+                }
+            }
+                    });
+
+        var Chart_Emp = new Chart(Grafico_Emp, {
+            type: 'bar',
+            data: {
+                labels: ["I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X", "XI", "XII", "XIII", "XIV", "XV"],
+                datasets: [{
+                label: 'Categorías',
+                    data: [@ViewBag.Final_Empresa_Emp.PROMEDIO_C_I_100, @ViewBag.Final_Empresa_Emp.PROMEDIO_C_II_100, @ViewBag.Final_Empresa_Emp.PROMEDIO_C_III_100, @ViewBag.Final_Empresa_Emp.PROMEDIO_C_IV_100 ,
+                        @ViewBag.Final_Empresa_Emp.PROMEDIO_C_V_100 , @ViewBag.Final_Empresa_Emp.PROMEDIO_C_VI_100, @ViewBag.Final_Empresa_Emp.PROMEDIO_C_VII_100 , @ViewBag.Final_Empresa_Emp.PROMEDIO_C_VIII_100 , @ViewBag.Final_Empresa_Emp.PROMEDIO_C_IX_100,
+                        @ViewBag.Final_Empresa_Emp.PROMEDIO_C_X_100 , @ViewBag.Final_Empresa_Emp.PROMEDIO_C_XI_100, @ViewBag.Final_Empresa_Emp.PROMEDIO_C_XII_100 , @ViewBag.Final_Empresa_Emp.PROMEDIO_C_XIII_100 , @ViewBag.Final_Empresa_Emp.PROMEDIO_C_XIV_100, @ViewBag.Final_Empresa_Emp.PROMEDIO_C_XV_100],
+                    backgroundColor: ['@ViewBag.Resultados_Colores_Emp[0]', '@ViewBag.Resultados_Colores_Emp[1]', '@ViewBag.Resultados_Colores_Emp[2]', '@ViewBag.Resultados_Colores_Emp[3]', '@ViewBag.Resultados_Colores_Emp[4]', '@ViewBag.Resultados_Colores_Emp[5]', '@ViewBag.Resultados_Colores_Emp[6]',
+                        '@ViewBag.Resultados_Colores_Emp[7]', '@ViewBag.Resultados_Colores_Emp[8]', '@ViewBag.Resultados_Colores_Emp[9]', '@ViewBag.Resultados_Colores_Emp[10]', '@ViewBag.Resultados_Colores_Emp[11]', '@ViewBag.Resultados_Colores_Emp[12]', '@ViewBag.Resultados_Colores_Emp[13]', '@ViewBag.Resultados_Colores_Emp[14]'],
+                    hoverBackgroundColor: ['@ViewBag.Resultados_Colores_Emp[0]', '@ViewBag.Resultados_Colores_Emp[1]', '@ViewBag.Resultados_Colores_Emp[2]', '@ViewBag.Resultados_Colores_Emp[3]', '@ViewBag.Resultados_Colores_Emp[4]', '@ViewBag.Resultados_Colores_Emp[5]', '@ViewBag.Resultados_Colores_Emp[6]',
+                        '@ViewBag.Resultados_Colores_Emp[7]', '@ViewBag.Resultados_Colores_Emp[8]', '@ViewBag.Resultados_Colores_Emp[9]', '@ViewBag.Resultados_Colores_Emp[10]', '@ViewBag.Resultados_Colores_Emp[11]', '@ViewBag.Resultados_Colores_Emp[12]', '@ViewBag.Resultados_Colores_Emp[13]', '@ViewBag.Resultados_Colores_Emp[14]']
+           }]
+            },
+            options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    },
+                    gridLines: {
+                        lineWidth: 0
+                    }
+                    }]
+                },
+                legend: {
+                    display: false,
+                    labels: {
+                        fontColor: 'rgb(255, 0, 255)'
+                    }
+                }
+            }
+        });
+
+
+        var Chart_Sup = new Chart(Grafico_Sup, {
+            type: 'bar',
+            data: {
+                labels: ["I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X", "XI", "XII", "XIII", "XIV", "XV"],
+                datasets: [{
+                label: 'Categorías',
+                    data: [@ViewBag.Final_Empresa_Sup.PROMEDIO_C_I_100, @ViewBag.Final_Empresa_Sup.PROMEDIO_C_II_100, @ViewBag.Final_Empresa_Sup.PROMEDIO_C_III_100, @ViewBag.Final_Empresa_Sup.PROMEDIO_C_IV_100 ,
+                        @ViewBag.Final_Empresa_Sup.PROMEDIO_C_V_100 , @ViewBag.Final_Empresa_Sup.PROMEDIO_C_VI_100, @ViewBag.Final_Empresa_Sup.PROMEDIO_C_VII_100 , @ViewBag.Final_Empresa_Sup.PROMEDIO_C_VIII_100 , @ViewBag.Final_Empresa_Sup.PROMEDIO_C_IX_100,
+                        @ViewBag.Final_Empresa_Sup.PROMEDIO_C_X_100 , @ViewBag.Final_Empresa_Sup.PROMEDIO_C_XI_100, @ViewBag.Final_Empresa_Sup.PROMEDIO_C_XII_100 , @ViewBag.Final_Empresa_Sup.PROMEDIO_C_XIII_100 , @ViewBag.Final_Empresa_Sup.PROMEDIO_C_XIV_100, @ViewBag.Final_Empresa_Sup.PROMEDIO_C_XV_100],
+                    backgroundColor: ['@ViewBag.Resultados_Colores_Sup[0]', '@ViewBag.Resultados_Colores_Sup[1]', '@ViewBag.Resultados_Colores_Sup[2]', '@ViewBag.Resultados_Colores_Sup[3]', '@ViewBag.Resultados_Colores_Sup[4]', '@ViewBag.Resultados_Colores_Sup[5]', '@ViewBag.Resultados_Colores_Sup[6]',
+                        '@ViewBag.Resultados_Colores_Sup[7]', '@ViewBag.Resultados_Colores_Sup[8]', '@ViewBag.Resultados_Colores_Sup[9]', '@ViewBag.Resultados_Colores_Sup[10]', '@ViewBag.Resultados_Colores_Sup[11]', '@ViewBag.Resultados_Colores_Sup[12]', '@ViewBag.Resultados_Colores_Sup[13]', '@ViewBag.Resultados_Colores_Sup[14]'],
+                    hoverBackgroundColor: ['@ViewBag.Resultados_Colores_Sup[0]', '@ViewBag.Resultados_Colores_Sup[1]', '@ViewBag.Resultados_Colores_Sup[2]', '@ViewBag.Resultados_Colores_Sup[3]', '@ViewBag.Resultados_Colores_Sup[4]', '@ViewBag.Resultados_Colores_Sup[5]', '@ViewBag.Resultados_Colores_Sup[6]',
+                        '@ViewBag.Resultados_Colores_Sup[7]', '@ViewBag.Resultados_Colores_Sup[8]', '@ViewBag.Resultados_Colores_Sup[9]', '@ViewBag.Resultados_Colores_Sup[10]', '@ViewBag.Resultados_Colores_Sup[11]', '@ViewBag.Resultados_Colores_Sup[12]', '@ViewBag.Resultados_Colores_Sup[13]', '@ViewBag.Resultados_Colores_Sup[14]']
+           }]
+            },
+            options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                        }
+                    }]
+                }, legend: {
+                    display: false,
+                    labels: {
+                        fontColor: 'rgb(255, 0, 255)'
+                    }
+                }
+            }
+        });
+
+
+        var Chart_Sub = new Chart(Grafico_Sub, {
+            type: 'bar',
+            data: {
+                labels: ["I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X", "XI", "XII", "XIII", "XIV", "XV"],
+                datasets: [{
+                label: 'Categorías',
+                    data: [@ViewBag.Final_Empresa_Sub.PROMEDIO_C_I_100, @ViewBag.Final_Empresa_Sub.PROMEDIO_C_II_100, @ViewBag.Final_Empresa_Sub.PROMEDIO_C_III_100, @ViewBag.Final_Empresa_Sub.PROMEDIO_C_IV_100 ,
+                        @ViewBag.Final_Empresa_Sub.PROMEDIO_C_V_100 , @ViewBag.Final_Empresa_Sub.PROMEDIO_C_VI_100, @ViewBag.Final_Empresa_Sub.PROMEDIO_C_VII_100 , @ViewBag.Final_Empresa_Sub.PROMEDIO_C_VIII_100 , @ViewBag.Final_Empresa_Sub.PROMEDIO_C_IX_100,
+                        @ViewBag.Final_Empresa_Sub.PROMEDIO_C_X_100 , @ViewBag.Final_Empresa_Sub.PROMEDIO_C_XI_100, @ViewBag.Final_Empresa_Sub.PROMEDIO_C_XII_100 , @ViewBag.Final_Empresa_Sub.PROMEDIO_C_XIII_100 , @ViewBag.Final_Empresa_Sub.PROMEDIO_C_XIV_100, @ViewBag.Final_Empresa_Sub.PROMEDIO_C_XV_100],
+                    backgroundColor: ['@ViewBag.Resultados_Colores_Sub[0]', '@ViewBag.Resultados_Colores_Sub[1]', '@ViewBag.Resultados_Colores_Sub[2]', '@ViewBag.Resultados_Colores_Sub[3]', '@ViewBag.Resultados_Colores_Sub[4]', '@ViewBag.Resultados_Colores_Sub[5]', '@ViewBag.Resultados_Colores_Sub[6]',
+                        '@ViewBag.Resultados_Colores_Sub[7]', '@ViewBag.Resultados_Colores_Sub[8]', '@ViewBag.Resultados_Colores_Sub[9]', '@ViewBag.Resultados_Colores_Sub[10]', '@ViewBag.Resultados_Colores_Sub[11]', '@ViewBag.Resultados_Colores_Sub[12]', '@ViewBag.Resultados_Colores_Sub[13]', '@ViewBag.Resultados_Colores_Sub[14]'],
+                    hoverBackgroundColor: ['@ViewBag.Resultados_Colores_Sub[0]', '@ViewBag.Resultados_Colores_Sub[1]', '@ViewBag.Resultados_Colores_Sub[2]', '@ViewBag.Resultados_Colores_Sub[3]', '@ViewBag.Resultados_Colores_Sub[4]', '@ViewBag.Resultados_Colores_Sub[5]', '@ViewBag.Resultados_Colores_Sub[6]',
+                        '@ViewBag.Resultados_Colores_Sub[7]', '@ViewBag.Resultados_Colores_Sub[8]', '@ViewBag.Resultados_Colores_Sub[9]', '@ViewBag.Resultados_Colores_Sub[10]', '@ViewBag.Resultados_Colores_Sub[11]', '@ViewBag.Resultados_Colores_Sub[12]', '@ViewBag.Resultados_Colores_Sub[13]', '@ViewBag.Resultados_Colores_Sub[14]']
+           }]
+            },
+            options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                        }
+                    }]
+                }, legend: {
+                    display: false,
+                    labels: {
+                        fontColor: 'rgb(255, 255, 255)'
+                    }
+                }
+            }
+        });
+
+
+        var Chart_Com = new Chart(Grafico_Com, {
+            type: 'bar',
+            data: {
+                labels: ["I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X", "XI", "XII", "XIII", "XIV", "XV"],
+                datasets: [{
+                label: 'Categorías',
+                    data: [@ViewBag.Final_Empresa_Com.PROMEDIO_C_I_100, @ViewBag.Final_Empresa_Com.PROMEDIO_C_II_100, @ViewBag.Final_Empresa_Com.PROMEDIO_C_III_100, @ViewBag.Final_Empresa_Com.PROMEDIO_C_IV_100 ,
+                        @ViewBag.Final_Empresa_Com.PROMEDIO_C_V_100 , @ViewBag.Final_Empresa_Com.PROMEDIO_C_VI_100, @ViewBag.Final_Empresa_Com.PROMEDIO_C_VII_100 , @ViewBag.Final_Empresa_Com.PROMEDIO_C_VIII_100 , @ViewBag.Final_Empresa_Com.PROMEDIO_C_IX_100,
+                        @ViewBag.Final_Empresa_Com.PROMEDIO_C_X_100 , @ViewBag.Final_Empresa_Com.PROMEDIO_C_XI_100, @ViewBag.Final_Empresa_Com.PROMEDIO_C_XII_100 , @ViewBag.Final_Empresa_Com.PROMEDIO_C_XIII_100 , @ViewBag.Final_Empresa_Com.PROMEDIO_C_XIV_100, @ViewBag.Final_Empresa_Com.PROMEDIO_C_XV_100],
+                    backgroundColor: ['@ViewBag.Resultados_Colores_Com[0]', '@ViewBag.Resultados_Colores_Com[1]', '@ViewBag.Resultados_Colores_Com[2]', '@ViewBag.Resultados_Colores_Com[3]', '@ViewBag.Resultados_Colores_Com[4]', '@ViewBag.Resultados_Colores_Com[5]', '@ViewBag.Resultados_Colores_Com[6]',
+                        '@ViewBag.Resultados_Colores_Com[7]', '@ViewBag.Resultados_Colores_Com[8]', '@ViewBag.Resultados_Colores_Com[9]', '@ViewBag.Resultados_Colores_Com[10]', '@ViewBag.Resultados_Colores_Com[11]', '@ViewBag.Resultados_Colores_Com[12]', '@ViewBag.Resultados_Colores_Com[13]', '@ViewBag.Resultados_Colores_Com[14]'],
+                    hoverBackgroundColor: ['@ViewBag.Resultados_Colores_Com[0]', '@ViewBag.Resultados_Colores_Com[1]', '@ViewBag.Resultados_Colores_Com[2]', '@ViewBag.Resultados_Colores_Com[3]', '@ViewBag.Resultados_Colores_Com[4]', '@ViewBag.Resultados_Colores_Com[5]', '@ViewBag.Resultados_Colores_Com[6]',
+                        '@ViewBag.Resultados_Colores_Com[7]', '@ViewBag.Resultados_Colores_Com[8]', '@ViewBag.Resultados_Colores_Com[9]', '@ViewBag.Resultados_Colores_Com[10]', '@ViewBag.Resultados_Colores_Com[11]', '@ViewBag.Resultados_Colores_Com[12]', '@ViewBag.Resultados_Colores_Com[13]', '@ViewBag.Resultados_Colores_Com[14]']
+           }]
+            },
+            options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                        }
+                    }]
+                }, legend: {
+                    display: false,
+                    labels: {
+                        fontColor: 'rgb(255, 255, 255)'
+                    }
+                }
+            }
+        });
+
+        Reporte_Departamentos();
+
+    });
+</script>
+<div class="col-xs-12 " style="float:left;margin-top:40px" align="center">
+    <h3 align="center">RESULTADOS GENERALES</h3>
+    <table class="table table-hover table-condensed table-striped ">
+        <tbody>
+            <tr>
+                <th colspan="2" align="center">
+                    Empresa: @Html.DisplayFor(model => model.Razon_Social)
+                </th>
+                <th>
+                    @if (@ViewBag.Final_Empresa.PROMEDIO_Final_100 != null)
+                    {<span> Puntaje Final: @ViewBag.Final_Empresa.PROMEDIO_Final_100.ToString("0.00")</span>}
+                else
+                { <span> Puntaje Final: N/A</span>}
+                </th>
+                <th>
+                    Evaluados: @ViewBag.Evaluaciones_counter_II
+                </th>
+            </tr>
+        </tbody>
+    </table>
+    <div class="row">
+        <h4>Reportes en base a las respuestas recompiladas en base a las respuestas dirigidas a los colaboradores</h4>
+       @* <a class="btn btn-primary" href="@Url.Action("ReDeptos360ASsdafhafd9834bfjksdgF7DYTGBsdfghjygfDFGH78", "Reportes", new {id_e = Model.id_empresa })"><i class="fa fa-file-pdf-o" style="font-size:20px;color:red" aria-hidden="true"></i> Departamentos </a>*@
+        <a class="btn btn-primary" href="@Url.Action("Reporte_Departamentos_PDF", "MultiEvaluaE360", new {id = Model.id_empresa })"><i class="fa fa-file-pdf-o" style="font-size:20px;color:red" aria-hidden="true"></i> Departamentos </a>
+        <a class="btn btn-primary" href="@Url.Action("Reporte_General_PDF", "MultiEvaluaE360", new {id = Model.id_empresa })"><i class="fa fa-file-pdf-o" style="font-size:20px;color:red" aria-hidden="true"></i> General </a>
+        <a class="btn btn-primary" href="@Url.Action("Reporte_Autoevaluacion_PDF", "MultiEvaluaE360", new {id = Model.id_empresa, id_C = @ViewBag.id_encuesta })"><i class="fa fa-file-pdf-o" style="font-size:20px;color:red" aria-hidden="true"></i> Autoevaluación </a>
+        <a class="btn btn-primary" href="@Url.Action("Reporte_Supervisores_PDF", "MultiEvaluaE360", new {id = Model.id_empresa, id_C = @ViewBag.id_encuesta })"><i class="fa fa-file-pdf-o" style="font-size:20px;color:red" aria-hidden="true"></i> Supervisores </a>
+        <a class="btn btn-primary" href="@Url.Action("Reporte_Subordinados_PDF", "MultiEvaluaE360", new {id = Model.id_empresa, id_C = @ViewBag.id_encuesta })"><i class="fa fa-file-pdf-o" style="font-size:20px;color:red" aria-hidden="true"></i> Subordinados </a>
+        <a class="btn btn-primary" href="@Url.Action("Reporte_Coworkers_PDF", "MultiEvaluaE360", new {id = Model.id_empresa, id_C = @ViewBag.id_encuesta })"><i class="fa fa-file-pdf-o" style="font-size:20px;color:red" aria-hidden="true"></i> Compañeros </a>
+    </div>
+    <hr>
+    <h4 align="center">Evaluación 360</h4>
+    <canvas id="myChart"></canvas>
+
+    <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+        <br>
+        <table class="table table-hover table-condensed table-striped ">
+            <tbody>
+                <tr>
+                    <th colspan="2" align="center">
+                        Apartado de Referencia
+                    </th>
+                    <th>
+                        Puntaje Máximo
+                    </th>
+                    <th>
+                        Puntaje Obtenido
+                    </th>
+                </tr>
+                <tr>
+                    <td>I</td>
+                    <td>Organización y administración del tiempo</td>
+                    <td align="center">12</td>
+                    <td align="center" style="background-color:@ViewBag.Resultados_Colores[0]"> @ViewBag.Final_Empresa.PROMEDIO_C_I.ToString("0.00") </td>
+                </tr>
+                <tr>
+                    <td>II</td>
+                    <td>Comunicación</td>
+                    <td align="center">18</td>
+                    <td align="center" style="background-color:@ViewBag.Resultados_Colores[1]">@ViewBag.Final_Empresa.PROMEDIO_C_II.ToString("0.00")</td>
+                </tr>
+                <tr>
+                    <td>III</td>
+                    <td>Habilidad y competencias técnicas</td>
+                    <td align="center">6</td>
+                    <td align="center" style="background-color:@ViewBag.Resultados_Colores[2]">@ViewBag.Final_Empresa.PROMEDIO_C_III.ToString("0.00")</td>
+                </tr>
+                <tr>
+                    <td>IV</td>
+                    <td>Cumplimiento de objetivos de área</td>
+                    <td align="center">9</td>
+                    <td align="center" style="background-color:@ViewBag.Resultados_Colores[3]">@ViewBag.Final_Empresa.PROMEDIO_C_IV.ToString("0.00")</td>
+                </tr>
+                <tr>
+                    <td>V</td>
+                    <td>Orientación a la calidad</td>
+                    <td align="center">9</td>
+                    <td align="center" style="background-color:@ViewBag.Resultados_Colores[4]">@ViewBag.Final_Empresa.PROMEDIO_C_V.ToString("0.00")</td>
+                </tr>
+                <tr>
+                    <td>VI</td>
+                    <td>Apego a políticas y normas</td>
+                    <td align="center">6</td>
+                    <td align="center" style="background-color:@ViewBag.Resultados_Colores[5]">@ViewBag.Final_Empresa.PROMEDIO_C_VI.ToString("0.00")</td>
+                </tr>
+                <tr>
+                    <td>VII</td>
+                    <td>Enfoque a resultados</td>
+                    <td align="center">6</td>
+                    <td align="center" style="background-color:@ViewBag.Resultados_Colores[6]">@ViewBag.Final_Empresa.PROMEDIO_C_VII.ToString("0.00")</td>
+                </tr>
+                <tr>
+                    <td>VIII</td>
+                    <td>Relaciones personales</td>
+                    <td align="center">9</td>
+                    <td align="center" style="background-color:@ViewBag.Resultados_Colores[7]">@ViewBag.Final_Empresa.PROMEDIO_C_VIII.ToString("0.00")</td>
+                </tr>
+                <tr>
+                    <td>IX</td>
+                    <td>Análisis de problemas</td>
+                    <td align="center">15</td>
+                    <td align="center" style="background-color:@ViewBag.Resultados_Colores[8]">@ViewBag.Final_Empresa.PROMEDIO_C_IX.ToString("0.00")</td>
+                </tr>
+                <tr>
+                    <td>X</td>
+                    <td>Autodesarrollo</td>
+                    <td align="center">9</td>
+                    <td align="center" style="background-color:@ViewBag.Resultados_Colores[9]">@ViewBag.Final_Empresa.PROMEDIO_C_X.ToString("0.00")</td>
+                </tr>
+                <tr>
+                    <td>XI</td>
+                    <td>Seguridad</td>
+                    <td align="center">12</td>
+                    <td align="center" style="background-color:@ViewBag.Resultados_Colores[10]">@ViewBag.Final_Empresa.PROMEDIO_C_XI.ToString("0.00")</td>
+                </tr>
+                <tr>
+                    <td>XII</td>
+                    <td>Responsabilidad y Compromiso</td>
+                    <td align="center">9</td>
+                    <td align="center" style="background-color:@ViewBag.Resultados_Colores[11]">@ViewBag.Final_Empresa.PROMEDIO_C_XII.ToString("0.00")</td>
+                </tr>
+                <tr>
+                    <td>XIII</td>
+                    <td>Trabajo en equipo</td>
+                    <td align="center">15</td>
+                    <td align="center" style="background-color:@ViewBag.Resultados_Colores[12]">@ViewBag.Final_Empresa.PROMEDIO_C_XIII.ToString("0.00")</td>
+                </tr>
+                <tr>
+                    <td>XIV</td>
+                    <td>Pasión</td>
+                    <td align="center">9</td>
+                    <td align="center" style="background-color:@ViewBag.Resultados_Colores[13]">@ViewBag.Final_Empresa.PROMEDIO_C_XIV.ToString("0.00")</td>
+                </tr>
+                <tr>
+                    <td>XV</td>
+                    <td>Búsqueda de la excelencia</td>
+                    <td align="center">6</td>
+                    <td align="center" style="background-color:@ViewBag.Resultados_Colores[14]">@ViewBag.Final_Empresa.PROMEDIO_C_XV.ToString("0.00")</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <br>
+    <div class="col-xs-12">
+
+        <button id="show_Emp" class="btn" style="margin:5px">Personal</button>
+        <button id="show_Sub" class="btn" style="margin:5px">Subordinados</button>
+        <button id="show_Sup" class="btn" style="margin:5px">Supervisores</button>
+        <button id="show_Com" class="btn" style="margin:5px">Compañeros</button>
+        <button id="show_Emp" class="btn btn-primary" style="margin:5px" onclick="Reporte_Departamentos();">Departamentos</button>
+
+        <div class="col-xs-12 col-sm-9 col-sm-offset-1">
+            <canvas id="chartDepartamentos"></canvas>
+            <hr>
+        </div>
+
+        <div class="menu_emp" style="display: none;">
+            <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+                <h5>Resultados Personales</h5>
+                <table class="table table-hover table-condensed table-striped ">
+                    <tbody>
+                        <tr>
+                            <th colspan="2" align="center">
+                                Empresa: @Html.DisplayFor(model => model.Razon_Social)
+                            </th>
+                            <th>
+                                @if (@ViewBag.Final_Empresa_Emp.PROMEDIO_Final_100 != null)
+                                {<span> Puntaje Final: @ViewBag.Final_Empresa_Emp.PROMEDIO_Final_100.ToString("0.00")</span>}
+                            else
+                            { <span> Puntaje Final: N/A</span>}
+                            </th>
+                        </tr>
+                    </tbody>
+                </table>
+                <canvas id="Chart_Emp"></canvas>
+                <div class="col-xs-12 ">
+                    <table class="table table-hover table-condensed table-striped ">
+                        <tbody>
+                            <tr>
+                                <th colspan="2" align="center">
+                                    Apartado de Referencia
+                                </th>
+                                <th>
+                                    Puntaje Máximo
+                                </th>
+                                <th>
+                                    Puntaje Obtenido
+                                </th>
+                            </tr>
+                            <tr>
+                                <td>I</td>
+                                <td>Organización y administración del tiempo</td>
+                                <td align="center">12</td>
+                                <td align="center" style="background-color:@ViewBag.Resultados_Colores_Emp[0]"> @ViewBag.Final_Empresa_Emp.PROMEDIO_C_I </td>
+                            </tr>
+                            <tr>
+                                <td>II</td>
+                                <td>Comunicación</td>
+                                <td align="center">18</td>
+                                <td align="center" style="background-color:@ViewBag.Resultados_Colores_Emp[1]">@ViewBag.Final_Empresa_Emp.PROMEDIO_C_II</td>
+                            </tr>
+                            <tr>
+                                <td>III</td>
+                                <td>Habilidad y competencias técnicas</td>
+                                <td align="center">6</td>
+                                <td align="center" style="background-color:@ViewBag.Resultados_Colores_Emp[2]">@ViewBag.Final_Empresa_Emp.PROMEDIO_C_III</td>
+                            </tr>
+                            <tr>
+                                <td>IV</td>
+                                <td>Cumplimiento de objetivos de área</td>
+                                <td align="center">9</td>
+                                <td align="center" style="background-color:@ViewBag.Resultados_Colores_Emp[3]">@ViewBag.Final_Empresa_Emp.PROMEDIO_C_IV</td>
+                            </tr>
+                            <tr>
+                                <td>V</td>
+                                <td>Orientación a la calidad</td>
+                                <td align="center">9</td>
+                                <td align="center" style="background-color:@ViewBag.Resultados_Colores_Emp[4]">@ViewBag.Final_Empresa_Emp.PROMEDIO_C_V</td>
+                            </tr>
+                            <tr>
+                                <td>VI</td>
+                                <td>Apego a políticas y normas</td>
+                                <td align="center">6</td>
+                                <td align="center" style="background-color:@ViewBag.Resultados_Colores_Emp[5]">@ViewBag.Final_Empresa_Emp.PROMEDIO_C_VI</td>
+                            </tr>
+                            <tr>
+                                <td>VII</td>
+                                <td>Enfoque a resultados</td>
+                                <td align="center">6</td>
+                                <td align="center" style="background-color:@ViewBag.Resultados_Colores_Emp[6]">@ViewBag.Final_Empresa_Emp.PROMEDIO_C_VII</td>
+                            </tr>
+                            <tr>
+                                <td>VIII</td>
+                                <td>Relaciones personales</td>
+                                <td align="center">9</td>
+                                <td align="center" style="background-color:@ViewBag.Resultados_Colores_Emp[7]">@ViewBag.Final_Empresa_Emp.PROMEDIO_C_VIII</td>
+                            </tr>
+                            <tr>
+                                <td>IX</td>
+                                <td>Análisis de problemas</td>
+                                <td align="center">15</td>
+                                <td align="center" style="background-color:@ViewBag.Resultados_Colores_Emp[8]">@ViewBag.Final_Empresa_Emp.PROMEDIO_C_IX</td>
+                            </tr>
+                            <tr>
+                                <td>X</td>
+                                <td>Autodesarrollo</td>
+                                <td align="center">9</td>
+                                <td align="center" style="background-color:@ViewBag.Resultados_Colores_Emp[9]">@ViewBag.Final_Empresa_Emp.PROMEDIO_C_X</td>
+                            </tr>
+                            <tr>
+                                <td>XI</td>
+                                <td>Seguridad</td>
+                                <td align="center">12</td>
+                                <td align="center" style="background-color:@ViewBag.Resultados_Colores_Emp[10]">@ViewBag.Final_Empresa_Emp.PROMEDIO_C_XI</td>
+                            </tr>
+                            <tr>
+                                <td>XII</td>
+                                <td>Responsabilidad y Compromiso</td>
+                                <td align="center">9</td>
+                                <td align="center" style="background-color:@ViewBag.Resultados_Colores_Emp[11]">@ViewBag.Final_Empresa_Emp.PROMEDIO_C_XII</td>
+                            </tr>
+                            <tr>
+                                <td>XIII</td>
+                                <td>Trabajo en equipo</td>
+                                <td align="center">15</td>
+                                <td align="center" style="background-color:@ViewBag.Resultados_Colores_Emp[12]">@ViewBag.Final_Empresa_Emp.PROMEDIO_C_XIII</td>
+                            </tr>
+                            <tr>
+                                <td>XIV</td>
+                                <td>Pasión</td>
+                                <td align="center">9</td>
+                                <td align="center" style="background-color:@ViewBag.Resultados_Colores_Emp[13]">@ViewBag.Final_Empresa_Emp.PROMEDIO_C_XIV</td>
+                            </tr>
+                            <tr>
+                                <td>XV</td>
+                                <td>Búsqueda de la excelencia</td>
+                                <td align="center">6</td>
+                                <td align="center" style="background-color:@ViewBag.Resultados_Colores_Emp[14]">@ViewBag.Final_Empresa_Emp.PROMEDIO_C_XV</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="menu_sup" style="display: none;">
+            <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+                <h5>Resultados Superiores</h5>
+                <table class="table table-hover table-condensed table-striped ">
+                    <tbody>
+                        <tr>
+                            <th colspan="2" align="center">
+                                Empresa: @Html.DisplayFor(model => model.Razon_Social)
+                            </th>
+                            <th>
+                                @if (@ViewBag.Final_Empresa_Sup.PROMEDIO_Final_100 != null)
+                                {<span> Puntaje Final: @ViewBag.Final_Empresa_Sup.PROMEDIO_Final_100.ToString("0.00")</span>}
+                            else
+                            { <span> Puntaje Final: N/A</span>}
+                            </th>
+                        </tr>
+                    </tbody>
+                </table>
+                <canvas id="Chart_Sup"></canvas>
+                <div class="col-xs-12 ">
+                    <table class="table table-hover table-condensed table-striped ">
+                        <tbody>
+                            <tr>
+                                <th colspan="2" align="center">
+                                    Apartado de Referencia
+                                </th>
+                                <th>
+                                    Puntaje Máximo
+                                </th>
+                                <th>
+                                    Puntaje Obtenido
+                                </th>
+                            </tr>
+                            <tr>
+                                <td>I</td>
+                                <td>Organización y administración del tiempo</td>
+                                <td align="center">12</td>
+                                <td align="center" style="background-color:@ViewBag.Resultados_Colores_Sup[0]"> @ViewBag.Final_Empresa_Sup.PROMEDIO_C_I </td>
+                            </tr>
+                            <tr>
+                                <td>II</td>
+                                <td>Comunicación</td>
+                                <td align="center">18</td>
+                                <td align="center" style="background-color:@ViewBag.Resultados_Colores_Sup[1]">@ViewBag.Final_Empresa_Sup.PROMEDIO_C_II</td>
+                            </tr>
+                            <tr>
+                                <td>III</td>
+                                <td>Habilidad y competencias técnicas</td>
+                                <td align="center">6</td>
+                                <td align="center" style="background-color:@ViewBag.Resultados_Colores_Sup[2]">@ViewBag.Final_Empresa_Sup.PROMEDIO_C_III</td>
+                            </tr>
+                            <tr>
+                                <td>IV</td>
+                                <td>Cumplimiento de objetivos de área</td>
+                                <td align="center">9</td>
+                                <td align="center" style="background-color:@ViewBag.Resultados_Colores_Sup[3]">@ViewBag.Final_Empresa_Sup.PROMEDIO_C_IV</td>
+                            </tr>
+                            <tr>
+                                <td>V</td>
+                                <td>Orientación a la calidad</td>
+                                <td align="center">9</td>
+                                <td align="center" style="background-color:@ViewBag.Resultados_Colores_Sup[4]">@ViewBag.Final_Empresa_Sup.PROMEDIO_C_V</td>
+                            </tr>
+                            <tr>
+                                <td>VI</td>
+                                <td>Apego a políticas y normas</td>
+                                <td align="center">6</td>
+                                <td align="center" style="background-color:@ViewBag.Resultados_Colores_Sup[5]">@ViewBag.Final_Empresa_Sup.PROMEDIO_C_VI</td>
+                            </tr>
+                            <tr>
+                                <td>VII</td>
+                                <td>Enfoque a resultados</td>
+                                <td align="center">6</td>
+                                <td align="center" style="background-color:@ViewBag.Resultados_Colores_Sup[6]">@ViewBag.Final_Empresa_Sup.PROMEDIO_C_VII</td>
+                            </tr>
+                            <tr>
+                                <td>VIII</td>
+                                <td>Relaciones personales</td>
+                                <td align="center">9</td>
+                                <td align="center" style="background-color:@ViewBag.Resultados_Colores_Sup[7]">@ViewBag.Final_Empresa_Sup.PROMEDIO_C_VIII</td>
+                            </tr>
+                            <tr>
+                                <td>IX</td>
+                                <td>Análisis de problemas</td>
+                                <td align="center">15</td>
+                                <td align="center" style="background-color:@ViewBag.Resultados_Colores_Sup[8]">@ViewBag.Final_Empresa_Sup.PROMEDIO_C_IX</td>
+                            </tr>
+                            <tr>
+                                <td>X</td>
+                                <td>Autodesarrollo</td>
+                                <td align="center">9</td>
+                                <td align="center" style="background-color:@ViewBag.Resultados_Colores_Sup[9]">@ViewBag.Final_Empresa_Sup.PROMEDIO_C_X</td>
+                            </tr>
+                            <tr>
+                                <td>XI</td>
+                                <td>Seguridad</td>
+                                <td align="center">12</td>
+                                <td align="center" style="background-color:@ViewBag.Resultados_Colores_Sup[10]">@ViewBag.Final_Empresa_Sup.PROMEDIO_C_XI</td>
+                            </tr>
+                            <tr>
+                                <td>XII</td>
+                                <td>Responsabilidad y Compromiso</td>
+                                <td align="center">9</td>
+                                <td align="center" style="background-color:@ViewBag.Resultados_Colores_Sup[11]">@ViewBag.Final_Empresa_Sup.PROMEDIO_C_XII</td>
+                            </tr>
+                            <tr>
+                                <td>XIII</td>
+                                <td>Trabajo en equipo</td>
+                                <td align="center">15</td>
+                                <td align="center" style="background-color:@ViewBag.Resultados_Colores_Sup[12]">@ViewBag.Final_Empresa_Sup.PROMEDIO_C_XIII</td>
+                            </tr>
+                            <tr>
+                                <td>XIV</td>
+                                <td>Pasión</td>
+                                <td align="center">9</td>
+                                <td align="center" style="background-color:@ViewBag.Resultados_Colores_Sup[13]">@ViewBag.Final_Empresa_Sup.PROMEDIO_C_XIV</td>
+                            </tr>
+                            <tr>
+                                <td>XV</td>
+                                <td>Búsqueda de la excelencia</td>
+                                <td align="center">6</td>
+                                <td align="center" style="background-color:@ViewBag.Resultados_Colores_Sup[14]">@ViewBag.Final_Empresa_Sup.PROMEDIO_C_XV</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="menu_sub" style="display: none;">
+            <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+                <h5>Resultados Subordinados</h5>
+                <table class="table table-hover table-condensed table-striped ">
+                    <tbody>
+                        <tr>
+                            <th colspan="2" align="center">
+                                Empresa: @Html.DisplayFor(model => model.Razon_Social)
+                            </th>
+                            <th>
+                                @if (@ViewBag.Final_Empresa_Sub.PROMEDIO_Final_100 != null)
+                                {<span> Puntaje Final: @ViewBag.Final_Empresa_Sub.PROMEDIO_Final_100.ToString("0.00")</span>}
+                            else
+                            { <span> Puntaje Final: N/A</span>}
+                            </th>
+                        </tr>
+                    </tbody>
+                </table>
+                <canvas id="Chart_Sub"></canvas>
+                <div class="col-xs-12 ">
+                    <table class="table table-hover table-condensed table-striped ">
+                        <tbody>
+                            <tr>
+                                <th colspan="2" align="center">
+                                    Apartado de Referencia
+                                </th>
+                                <th>
+                                    Puntaje Máximo
+                                </th>
+                                <th>
+                                    Puntaje Obtenido
+                                </th>
+                            </tr>
+                            <tr>
+                                <td>I</td>
+                                <td>Organización y administración del tiempo</td>
+                                <td align="center">12</td>
+                                <td align="center" style="background-color:@ViewBag.Resultados_Colores_Sub[0]"> @ViewBag.Final_Empresa_Sub.PROMEDIO_C_I </td>
+                            </tr>
+                            <tr>
+                                <td>II</td>
+                                <td>Comunicación</td>
+                                <td align="center">18</td>
+                                <td align="center" style="background-color:@ViewBag.Resultados_Colores_Sub[1]">@ViewBag.Final_Empresa_Sub.PROMEDIO_C_II</td>
+                            </tr>
+                            <tr>
+                                <td>III</td>
+                                <td>Habilidad y competencias técnicas</td>
+                                <td align="center">6</td>
+                                <td align="center" style="background-color:@ViewBag.Resultados_Colores_Sub[2]">@ViewBag.Final_Empresa_Sub.PROMEDIO_C_III</td>
+                            </tr>
+                            <tr>
+                                <td>IV</td>
+                                <td>Cumplimiento de objetivos de área</td>
+                                <td align="center">9</td>
+                                <td align="center" style="background-color:@ViewBag.Resultados_Colores_Sub[3]">@ViewBag.Final_Empresa_Sub.PROMEDIO_C_IV</td>
+                            </tr>
+                            <tr>
+                                <td>V</td>
+                                <td>Orientación a la calidad</td>
+                                <td align="center">9</td>
+                                <td align="center" style="background-color:@ViewBag.Resultados_Colores_Sub[4]">@ViewBag.Final_Empresa_Sub.PROMEDIO_C_V</td>
+                            </tr>
+                            <tr>
+                                <td>VI</td>
+                                <td>Apego a políticas y normas</td>
+                                <td align="center">6</td>
+                                <td align="center" style="background-color:@ViewBag.Resultados_Colores_Sub[5]">@ViewBag.Final_Empresa_Sub.PROMEDIO_C_VI</td>
+                            </tr>
+                            <tr>
+                                <td>VII</td>
+                                <td>Enfoque a resultados</td>
+                                <td align="center">6</td>
+                                <td align="center" style="background-color:@ViewBag.Resultados_Colores_Sub[6]">@ViewBag.Final_Empresa_Sub.PROMEDIO_C_VII</td>
+                            </tr>
+                            <tr>
+                                <td>VIII</td>
+                                <td>Relaciones personales</td>
+                                <td align="center">9</td>
+                                <td align="center" style="background-color:@ViewBag.Resultados_Colores_Sub[7]">@ViewBag.Final_Empresa_Sub.PROMEDIO_C_VIII</td>
+                            </tr>
+                            <tr>
+                                <td>IX</td>
+                                <td>Análisis de problemas</td>
+                                <td align="center">15</td>
+                                <td align="center" style="background-color:@ViewBag.Resultados_Colores_Sub[8]">@ViewBag.Final_Empresa_Sub.PROMEDIO_C_IX</td>
+                            </tr>
+                            <tr>
+                                <td>X</td>
+                                <td>Autodesarrollo</td>
+                                <td align="center">9</td>
+                                <td align="center" style="background-color:@ViewBag.Resultados_Colores_Sub[9]">@ViewBag.Final_Empresa_Sub.PROMEDIO_C_X</td>
+                            </tr>
+                            <tr>
+                                <td>XI</td>
+                                <td>Seguridad</td>
+                                <td align="center">12</td>
+                                <td align="center" style="background-color:@ViewBag.Resultados_Colores_Sub[10]">@ViewBag.Final_Empresa_Sub.PROMEDIO_C_XI</td>
+                            </tr>
+                            <tr>
+                                <td>XII</td>
+                                <td>Responsabilidad y Compromiso</td>
+                                <td align="center">9</td>
+                                <td align="center" style="background-color:@ViewBag.Resultados_Colores_Sub[11]">@ViewBag.Final_Empresa_Sub.PROMEDIO_C_XII</td>
+                            </tr>
+                            <tr>
+                                <td>XIII</td>
+                                <td>Trabajo en equipo</td>
+                                <td align="center">15</td>
+                                <td align="center" style="background-color:@ViewBag.Resultados_Colores_Sub[12]">@ViewBag.Final_Empresa_Sub.PROMEDIO_C_XIII</td>
+                            </tr>
+                            <tr>
+                                <td>XIV</td>
+                                <td>Pasión</td>
+                                <td align="center">9</td>
+                                <td align="center" style="background-color:@ViewBag.Resultados_Colores_Sub[13]">@ViewBag.Final_Empresa_Sub.PROMEDIO_C_XIV</td>
+                            </tr>
+                            <tr>
+                                <td>XV</td>
+                                <td>Búsqueda de la excelencia</td>
+                                <td align="center">6</td>
+                                <td align="center" style="background-color:@ViewBag.Resultados_Colores_Sub[14]">@ViewBag.Final_Empresa_Sub.PROMEDIO_C_XV</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <hr>
+            </div>
+        </div>
+        <div class="menu_com" style="display: none;">
+            <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+                <h5>Resultados Compañerismo</h5>
+                <table class="table table-hover table-condensed table-striped ">
+                    <tbody>
+                        <tr>
+                            <th colspan="2" align="center">
+                                Empresa: @Html.DisplayFor(model => model.Razon_Social)
+                            </th>
+                            <th>
+                                @if (@ViewBag.Final_Empresa_Com.PROMEDIO_Final_100 != null)
+                                {<span> Puntaje Final: @ViewBag.Final_Empresa_Com.PROMEDIO_Final_100.ToString("0.00")</span>}
+                            else
+                            { <span> Puntaje Final: N/A</span>}
+                            </th>
+                        </tr>
+                    </tbody>
+                </table>
+                <canvas id="Chart_Com"></canvas>
+                <div class="col-xs-12 ">
+                    <table class="table table-hover table-condensed table-striped ">
+                        <tbody>
+                            <tr>
+                                <th colspan="2" align="center">
+                                    Apartado de Referencia
+                                </th>
+                                <th>
+                                    Puntaje Máximo
+                                </th>
+                                <th>
+                                    Puntaje Obtenido
+                                </th>
+                            </tr>
+                            <tr>
+                                <td>I</td>
+                                <td>Organización y administración del tiempo</td>
+                                <td align="center">12</td>
+                                <td align="center" style="background-color:@ViewBag.Resultados_Colores_Com[0]"> @ViewBag.Final_Empresa_Com.PROMEDIO_C_I </td>
+                            </tr>
+                            <tr>
+                                <td>II</td>
+                                <td>Comunicación</td>
+                                <td align="center">18</td>
+                                <td align="center" style="background-color:@ViewBag.Resultados_Colores_Com[1]">@ViewBag.Final_Empresa_Com.PROMEDIO_C_II</td>
+                            </tr>
+                            <tr>
+                                <td>III</td>
+                                <td>Habilidad y competencias técnicas</td>
+                                <td align="center">6</td>
+                                <td align="center" style="background-color:@ViewBag.Resultados_Colores_Com[2]">@ViewBag.Final_Empresa_Com.PROMEDIO_C_III</td>
+                            </tr>
+                            <tr>
+                                <td>IV</td>
+                                <td>Cumplimiento de objetivos de área</td>
+                                <td align="center">9</td>
+                                <td align="center" style="background-color:@ViewBag.Resultados_Colores_Com[3]">@ViewBag.Final_Empresa_Com.PROMEDIO_C_IV</td>
+                            </tr>
+                            <tr>
+                                <td>V</td>
+                                <td>Orientación a la calidad</td>
+                                <td align="center">9</td>
+                                <td align="center" style="background-color:@ViewBag.Resultados_Colores_Com[4]">@ViewBag.Final_Empresa_Com.PROMEDIO_C_V</td>
+                            </tr>
+                            <tr>
+                                <td>VI</td>
+                                <td>Apego a políticas y normas</td>
+                                <td align="center">6</td>
+                                <td align="center" style="background-color:@ViewBag.Resultados_Colores_Com[5]">@ViewBag.Final_Empresa_Com.PROMEDIO_C_VI</td>
+                            </tr>
+                            <tr>
+                                <td>VII</td>
+                                <td>Enfoque a resultados</td>
+                                <td align="center">6</td>
+                                <td align="center" style="background-color:@ViewBag.Resultados_Colores_Com[6]">@ViewBag.Final_Empresa_Com.PROMEDIO_C_VII</td>
+                            </tr>
+                            <tr>
+                                <td>VIII</td>
+                                <td>Relaciones personales</td>
+                                <td align="center">9</td>
+                                <td align="center" style="background-color:@ViewBag.Resultados_Colores_Com[7]">@ViewBag.Final_Empresa_Com.PROMEDIO_C_VIII</td>
+                            </tr>
+                            <tr>
+                                <td>IX</td>
+                                <td>Análisis de problemas</td>
+                                <td align="center">15</td>
+                                <td align="center" style="background-color:@ViewBag.Resultados_Colores_Com[8]">@ViewBag.Final_Empresa_Com.PROMEDIO_C_IX</td>
+                            </tr>
+                            <tr>
+                                <td>X</td>
+                                <td>Autodesarrollo</td>
+                                <td align="center">9</td>
+                                <td align="center" style="background-color:@ViewBag.Resultados_Colores_Com[9]">@ViewBag.Final_Empresa_Com.PROMEDIO_C_X</td>
+                            </tr>
+                            <tr>
+                                <td>XI</td>
+                                <td>Seguridad</td>
+                                <td align="center">12</td>
+                                <td align="center" style="background-color:@ViewBag.Resultados_Colores_Com[10]">@ViewBag.Final_Empresa_Com.PROMEDIO_C_XI</td>
+                            </tr>
+                            <tr>
+                                <td>XII</td>
+                                <td>Responsabilidad y Compromiso</td>
+                                <td align="center">9</td>
+                                <td align="center" style="background-color:@ViewBag.Resultados_Colores_Com[11]">@ViewBag.Final_Empresa_Com.PROMEDIO_C_XII</td>
+                            </tr>
+                            <tr>
+                                <td>XIII</td>
+                                <td>Trabajo en equipo</td>
+                                <td align="center">15</td>
+                                <td align="center" style="background-color:@ViewBag.Resultados_Colores_Com[12]">@ViewBag.Final_Empresa_Com.PROMEDIO_C_XIII</td>
+                            </tr>
+                            <tr>
+                                <td>XIV</td>
+                                <td>Pasión</td>
+                                <td align="center">9</td>
+                                <td align="center" style="background-color:@ViewBag.Resultados_Colores_Com[13]">@ViewBag.Final_Empresa_Com.PROMEDIO_C_XIV</td>
+                            </tr>
+                            <tr>
+                                <td>XV</td>
+                                <td>Búsqueda de la excelencia</td>
+                                <td align="center">6</td>
+                                <td align="center" style="background-color:@ViewBag.Resultados_Colores_Com[14]">@ViewBag.Final_Empresa_Com.PROMEDIO_C_XV</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <hr>
+
+            </div>
+        </div>
+
+    </div>
+    <hr>
+</div>
+<table class="table table-striped" id="myTable">
+    <tr>
+        <th>
+            Departamento
+        </th>
+        <th>
+            Cat I
+        </th>
+        <th>
+            Cat II
+        </th>
+        <th>
+            Cat III
+        </th>
+        <th>
+            Cat IV
+        </th>
+        <th>
+            Cat V
+        </th>
+        <th>
+            Cat VI
+        </th>
+        <th>
+            Cat VII
+        </th>
+        <th>
+            Cat VIII
+        </th>
+        <th>
+            Cat IX
+        </th>
+        <th>
+            Cat X
+        </th>
+        <th>
+            Cat XI
+        </th>
+        <th>
+            Cat XII
+        </th>
+        <th>
+            Cat XIII
+        </th>
+        <th>
+            Cat XIV
+        </th>
+        <th>
+            Cat XV
+        </th>
+    </tr>
+    @foreach (var item in ViewBag.E360Deptos)
+    {
+        <tr>
+            <td>
+                @item.Departamento
+            </td>
+            <td>
+                @item.PROMEDIO_C_I
+            </td>
+            <td>
+                @item.PROMEDIO_C_II
+            </td>
+            <td>
+                @item.PROMEDIO_C_III
+            </td>
+            <td>
+                @item.PROMEDIO_C_IV
+            </td>
+            <td>
+                @item.PROMEDIO_C_V
+            </td>
+            <td>
+                @item.PROMEDIO_C_VI
+            </td>
+            <td>
+                @item.PROMEDIO_C_VII
+            </td>
+            <td>
+                @item.PROMEDIO_C_VIII
+            </td>
+            <td>
+                @item.PROMEDIO_C_IX
+            </td>
+            <td>
+                @item.PROMEDIO_C_X
+            </td>
+            <td>
+                @item.PROMEDIO_C_XI
+            </td>
+            <td>
+                @item.PROMEDIO_C_XII
+            </td>
+            <td>
+                @item.PROMEDIO_C_XIII
+            </td>
+            <td>
+                @item.PROMEDIO_C_XIV
+            </td>
+            <td>
+                @item.PROMEDIO_C_XV
+            </td>
+        </tr>
+
+    }
+</table>
+
+<table class="table table-striped" id="myTable">
+</table>
+
+
+
+<table class="table table-hover table-condensed table-striped ">
+    <tbody>
+        <tr>
+            <th colspan="2" align="center">
+                Apartados de Referencia
+            </th>
+        </tr>
+        <tr>
+            <td>Cat I</td>
+            <td>Organización y administración del tiempo</td>
+        </tr>
+        <tr>
+            <td>Cat II</td>
+            <td>Comunicación</td>
+        </tr>
+        <tr>
+            <td>Cat III</td>
+            <td>Habilidad y competencias técnicas</td>
+        </tr>
+        <tr>
+            <td>Cat IV</td>
+            <td>Cumplimiento de objetivos de área</td>
+        </tr>
+        <tr>
+            <td>Cat V</td>
+            <td>Orientación a la calidad</td>
+        </tr>
+        <tr>
+            <td>Cat VI</td>
+            <td>Apego a políticas y normas</td>
+        </tr>
+        <tr>
+            <td>Cat VII</td>
+            <td>Enfoque a resultados</td>
+        </tr>
+        <tr>
+            <td>Cat VIII</td>
+            <td>Relaciones personales</td>
+        </tr>
+        <tr>
+            <td>Cat IX</td>
+            <td>Análisis de problemas</td>
+        </tr>
+        <tr>
+            <td>Cat X</td>
+            <td>Autodesarrollo</td>
+        </tr>
+        <tr>
+            <td>Cat XI</td>
+            <td>Seguridad</td>
+        </tr>
+        <tr>
+            <td>Cat XII</td>
+            <td>Responsabilidad y Compromiso</td>
+        </tr>
+        <tr>
+            <td>Cat XIII</td>
+            <td>Trabajo en equipo</td>
+        </tr>
+        <tr>
+            <td>Cat XIV</td>
+            <td>Pasión</td>
+        </tr>
+        <tr>
+            <td>Cat XV</td>
+            <td>Búsqueda de la excelencia</td>
+        </tr>
+    </tbody>
+</table>

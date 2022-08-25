@@ -1,0 +1,50 @@
+﻿@model ErgoSalud.Models.ERGOS_Buzon_N01
+
+@{
+    ViewBag.Title = "Delete";
+}
+<hr>
+<h2>Eliminación de registro permanente</h2>
+
+<h3 style="color:red">¿Realmente quiere eliminar este registro?</h3>
+<div>
+ 
+    <hr />
+    <dl class="dl-horizontal">
+
+
+        <dt>
+            @Html.DisplayName("Sugerencia Categoría")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cat_sugerencia)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Sugerencia Descripción")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cat_sugerencia_desc)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Denuncia Hechos")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.denuncia_hechos_desc)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Eliminar" class="btn btn-danger" /> 
+            @Html.ActionLink("Cancelar", "Index",null,new { @class="btn btn-primary"})
+        </div>
+    }
+</div>

@@ -1,0 +1,58 @@
+﻿@model ErgoSalud.Models.ERGOS_Usuarios_N01
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ERGOS_Usuarios_N01</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.User_Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.User_Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.User_Password)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.User_Password)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ERGOS_Empresas_N01.Razon_Social)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ERGOS_Empresas_N01.Razon_Social)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ERGOS_Roles_N01.Nombre_Rol)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ERGOS_Roles_N01.Nombre_Rol)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id_user }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

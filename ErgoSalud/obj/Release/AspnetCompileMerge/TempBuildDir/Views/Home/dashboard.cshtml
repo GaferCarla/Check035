@@ -1,0 +1,136 @@
+﻿
+@{
+    ViewBag.Title = "dashboard";
+    @Styles.Render("~/Content/sizing.css");
+    @Styles.Render("~/Content/banner.css");
+    @Styles.Render("~/Content/popup.css");
+    @Styles.Render("~/Content/dashboardStyle.css");
+    @Styles.Render("~/Content/button.css");
+    @Styles.Render("~/Content/branding.css");
+
+
+
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet'>
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/boxicons@2.0.0/css/boxicons.min.css'>
+
+    <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+}
+
+
+<style>
+    .container {
+        width: 100% !important;
+    }
+
+    .navbar, #footer {
+        z-index: 1000 !important;
+    }
+
+    .banner-section {
+        min-height: 350px;
+        align-self: baseline !important
+    }
+
+    .body-content, body, html {
+        width: 100% !important
+    }
+</style>
+
+<div class="row banner-section banner-dashboard pb-5 mt-sm-4">
+    <div class="col-12 col-sm-6 mx-auto" id="image">
+        <img src="~/images/dashboard/undraw_completed_tasks_vs6q.svg" class="mockup text-center" />
+    </div>
+
+
+    <div class="col-6 col-12 col-sm-6 order-sm-first mx-auto text-md-start text-center p-sm-5 p-3 py-5">
+        <div class="row p-0 ps-sm-5 pt-5 pt-sm-0">
+            <h1 class="pt-0 pt-md-5">Encabezado</h1>
+            <h4 class="pb-4 font-18">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis, quae. Nisi praesentium minima aliquid quam odio aliquam impedit qui iste commodi, necessitatibus ducimus reiciendis distinctio. Vel voluptas blanditiis veniam vitae?
+            </h4>
+        </div>
+        <!-- cta btn -->
+
+        <div class="row p-0 ps-sm-5">
+            <div class="col-12 col-md-6 p-3 text-center">
+                <a href="#" class="cta-btn"><i class="fa fa-play btn-icon-prepend me-2" aria-hidden="true"></i>Tutoriales</a>
+            </div>
+
+            <div class="col-12 col-md-6 p-3 text-center">
+                <a href="#" class="cta-btn"><i class="fa fa-user-circle btn-icon-prepend me-2" aria-hidden="true"></i>Alta de usuario</a>
+            </div>
+        </div>
+
+
+    </div>
+
+
+</div>
+<!-- ANUNCIOS -->
+<div class="row pb-5">
+    <div class="popup-link px-0">
+
+        <div class="ticker">
+            <div class="title">
+                <h5 class="text-uppercase mt-4 pt-3 px-4 text-md-center text-end">Avisos</h5>
+            </div>
+            <div class="news">
+                <marquee class="news-content">
+
+                    <a href="#popup1" class="btn-warning btn-icon-text font-bold"><i class="fa fa-warning btn-icon-prepend"></i>  Ultimas Noticias: El curso está por terminar..&nbsp;&nbsp;&times;</a>
+                    <a href="#popup2" class="btn-success btn-icon-text font-bold"><i class="fa fa-bullhorn btn-icon-prepend"></i>  Nuevo curso: Vea nuestro nuevo catalogo de cursos..&nbsp;&nbsp;&times;</a>
+                </marquee>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<!-- /Anuncios/ -->
+
+
+@Html.Partial("_adminDashboard")
+
+<!--BOXES CONTAINERS-->
+@Html.Partial("_userDashboard")
+
+
+
+<!--popup1-->
+<div id="popup1" class="popup-container">
+    <div class="popup-content">
+        <a href="#" class="close">&times;</a>
+        <div class="modal-header">
+            <h3><i class="fa fa-warning btn-icon-prepend"></i> Popup 1</h3>
+        </div>
+        <div class="modal-body">
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+
+        </div>
+        <div class="modal-footer ">
+            <a href='@Url.Action("buzon","Home")' type="button" class="btn btn-success right px-5">IR</a>
+        </div>
+    </div>
+</div>
+
+<div id="popup2" class="popup-container">
+    <div class="popup-content">
+        <a href="#" class="close">&times;</a>
+        <div class="modal-header">
+            <h3><i class="fa fa-bullhorn btn-icon-prepend"></i> Popup 2</h3>
+        </div>
+        <div class="modal-body">
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+
+        </div>
+        <div class="modal-footer ">
+            <a href='@Url.Action("buzon","Home")' type="button" class="btn btn-success right px-5">IR</a>
+        </div>
+    </div>
+</div>
+
+
+
+
+

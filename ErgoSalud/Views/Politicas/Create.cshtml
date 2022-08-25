@@ -1,0 +1,180 @@
+﻿@model ErgoSalud.Models.Check_checklist_medidas_acciones_N01
+@{
+    ViewBag.Title = "Añadir_evidencia";
+    @Styles.Render("~/Content/ReporteStyle.css");
+    @Styles.Render("~/Content/sizing.css");
+    @Styles.Render("~/Content/breadcrumb.css");
+    @Styles.Render("~/Content/branding.css");
+    @Styles.Render("~/Content/button.css");
+}
+
+
+
+<div class="card shadow-none border-0 bg-white p-4 mt-50">
+
+
+    <style>
+        [data-type="select-multiple"] {
+            width: 100%;
+        }
+
+        .file-drop-area {
+            position: relative;
+            display: flex;
+            align-items: center;
+            width: 100%;
+            height: 200px;
+            padding: 25px;
+            border: 1px dashed rgba(255, 255, 255, 0.4);
+            border-radius: 3px;
+            transition: 0.2s;
+        }
+
+
+
+
+        .choose-file-button {
+            flex-shrink: 0;
+            background-color: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 3px;
+            padding: 8px 15px;
+            margin-right: 10px;
+            font-size: 12px;
+            text-transform: uppercase;
+            width: 50%;
+            font-weight: 700
+        }
+
+        .file-message {
+            font-size: small;
+            font-weight: 300;
+            line-height: 1.4;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            width: 50%;
+        }
+
+        .file-input {
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            cursor: pointer;
+            opacity: 0;
+        }
+
+
+         label, p {
+            color: #4c4c4e !important;
+        }
+
+
+
+    </style>
+
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/bbbootstrap/libraries@main/choices.min.css">
+    <script src="https://cdn.jsdelivr.net/gh/bbbootstrap/libraries@main/choices.min.js"></script>
+
+
+    @using (Html.BeginForm("Add_file", "Checklist", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        @Html.AntiForgeryToken()
+        @Html.HiddenFor(model => model.id)
+        @Html.HiddenFor(model => model.id_centro_trabajo)
+        @Html.HiddenFor(model => model.id_checklist_37)
+        @Html.HiddenFor(model => model.id_empresa)
+        @Html.HiddenFor(model => model.id_medida)
+        @Html.HiddenFor(model => model.departamento)
+        <div class="row justify-content-center px-2 border-bottom">
+            <div class="col-12 col-md-8 ">
+                <div class="form-card p-4 mt-5">
+                    <div class="row">
+                        <div class="col-12">
+                            <h2 class="title_blue">Carga de política</h2>
+                            <label class="w-100">Selecciona el archivo que se empleará como política: </label>
+
+                        </div>
+                    </div>
+
+                    <div class="file-area card shadow rounded border-0 row p-4 my-3 justify-content-center">
+                        <div class="file-drop-area">
+                            <span class="choose-file-button text-center">Selecciona los archivos</span>
+                            <span class="file-message">o arrastre el archivo de evidencia acá</span>
+                            <input class="file-input" type="file" id="PostedFile" name="PostedFile">
+                        </div>
+                    </div>
+
+                    @*<div class="row">
+                            <div class="col-xs-12 col-sm-3">
+                                <h4 style="color:black;">Fecha de inicio</h4>
+                                @Html.EditorFor(model => model.fecha_inicio, new { htmlAttributes = new { @class = "form-control form-line" } })
+                            </div>
+                            <div class="col-xs-12 col-sm-3">
+                                <h4 style="color:black;">Fecha de Fin</h4>
+                                @Html.EditorFor(model => model.fecha_fin, new { htmlAttributes = new { @class = "form-control form-line" } })
+                            </div>
+                            <div class="col-xs-12 col-sm-3">
+                                <h4 style="color:black;">Estado</h4>
+                                @Html.DropDownListFor(model => model.estatus, (IEnumerable<SelectListItem>)ViewBag.Opciones, htmlAttributes: new { @class = "form-control" })
+                            </div>
+
+                            <div class="col-xs-12 col-sm-3">
+                                <h4 style="color:black;">Acción</h4>
+                                @Html.EditorFor(model => model.accion, new { htmlAttributes = new { @class = "form-control form-line" } })
+                            </div>
+                        </div>*@
+                    <div class="row p-4">
+                        <div class="col-12 p-3 text-center">
+                            <a href='@Url.Action("Index", "Home")' class="btn btn-module2 px-5 py-3 mx-3 my-4 text-uppercase">
+                                Cancelar
+                            </a>
+
+                            <input type="button" name="" value="Guardar" class="btn btn-module px-5 py-3 mx-3 my-4 text-uppercase" />
+                        </div>
+
+                    </div>
+
+
+
+
+                </div>
+
+            </div>
+        </div>
+    }
+
+    <script>
+
+        function load_file(formulario) {
+            document.getElementById(formulario).submit();
+        }
+
+        $(document).on('change', '.file-input', function () {
+
+
+            var filesCount = $(this)[0].files.length;
+
+            var textbox = $(this).prev();
+
+            if (filesCount === 1) {
+                var fileName = $(this).val().split('\\').pop();
+                textbox.text(fileName);
+            } else {
+                textbox.text(filesCount + ' files selected');
+            }
+        });
+    </script>
+    <script type='text/javascript' src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js'></script>
+    @Scripts.Render("~/Scripts/multipleSelect.js")
+
+
+
+
+
+
+</div>

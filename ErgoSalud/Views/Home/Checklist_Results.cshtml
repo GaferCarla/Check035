@@ -1,0 +1,2494 @@
+﻿<link href='https://fonts.googleapis.com/css?family=Merriweather:400,400italic,900,300,900italic|Open+Sans:800,300,700,600,400' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<style>
+    .bodys {
+        font-family: 'Merriweather', georgia, serif;
+        font-size: 16px;
+        line-height: 1.72222;
+        color: #4c4c4e;
+        background-color: #ffffff;
+    }
+
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    h7,
+    .h1,
+    .h2,
+    .h3,
+    .h4,
+    .h5,
+    .h6,
+    .h7 {
+        font-family: 'open sans', helvetica, Arial, serif;
+        font-weight: 800;
+        line-height: 1.4;
+        color: inherit;
+    }
+
+        h1 small,
+        h2 small,
+        h3 small,
+        h4 small,
+        h5 small,
+        h6 small,
+        .h1 small,
+        .h2 small,
+        .h3 small,
+        .h4 small,
+        .h5 small,
+        .h6 small {
+            color: #e7e9ec;
+        }
+
+    h1,
+    h2,
+    h3 {
+        margin-top: 30px;
+        margin-bottom: 15px;
+    }
+
+    h4 {
+        margin-top: 2em;
+        margin-bottom: 2em;
+    }
+
+    h5,
+    h6,
+    h7 {
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+
+
+    h5 {
+        font-weight: 300;
+    }
+
+    h6 {
+        font-weight: 800;
+    }
+
+
+    h1,
+    .h1 {
+        font-size: 2.25em;
+    }
+
+    h2,
+    .h2 {
+        font-size: 1.625em;
+        line-height: 1em;
+        text-transform: uppercase;
+        margin-bottom: 2em;
+    }
+
+        h2.subhead {
+            font-weight: 200;
+            line-height: 1em;
+            margin-top: -1.7em;
+            margin-bottom: 2em;
+        }
+
+        h2.cover {
+            text-transform: none;
+        }
+
+
+    h3,
+    .h3 {
+        font-size: 1.5em;
+    }
+
+        h3.cover {
+            font-weight: 700;
+        }
+
+        h3.subhead {
+            font-family: 'Merriweather', georgia, serif;
+            font-weight: 300;
+            line-height: 1em;
+            margin-top: -.5em;
+            margin-bottom: 2em;
+        }
+
+    h4,
+    .h4 {
+        font-size: 1.25em;
+        text-transform: uppercase;
+    }
+
+    h5,
+    .h5 {
+        font-size: 1.25em;
+        line-height: .5em;
+        text-transform: uppercase;
+    }
+
+        h5 .callout {
+            font-weight: 800;
+        }
+
+    h6,
+    .h6 {
+        font-size: 1.0625em;
+        line-height: 1.5em;
+        text-transform: uppercase;
+    }
+
+    h7,
+    .h7 {
+        font-size: 1em;
+        line-height: .5em;
+        text-transform: uppercase;
+        color: #BDBDBD;
+    }
+
+    .logo {
+        display: block;
+        width: 100%;
+        max-width: 350px;
+        margin: 4em 0em 1em 0em;
+    }
+
+    /*--------------
+    Colors
+    -----------------*/
+
+
+
+    .white {
+        color: #FFF;
+    }
+
+    .magenta {
+        color: #911eb7;
+    }
+
+    .magentaBG {
+        background-color: #911eb7;
+    }
+
+
+    .purple {
+        color: #631ae0;
+    }
+
+    .magentaDrk {
+        color: #aa2691;
+    }
+
+    .pink {
+        color: #df256d;
+    }
+
+    .shapeContainer {
+        position: relative;
+        width: 100%;
+        background: #911eb7; /* Old browsers */
+        background: -moz-linear-gradient(top, #911eb7 10%, #631ae0 80%); /* FF3.6-15 */
+        background: -webkit-linear-gradient(top, #911eb7 10%,#631ae0 80%); /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(to bottom, #911eb7 10%,#631ae0 80%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#911eb7', endColorstr='#631ae0 ',GradientType=0 ); /* IE6-9 */
+    }
+
+    .shapeUserImage {
+        position: relative;
+        display: block;
+        top: 0;
+        left: 0;
+        margin: 0em 0em -.6em 0em;
+        width: 100%;
+        height: 700px;
+        background-image: url('https://images.pexels.com/photos/5256524/pexels-photo-5256524.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+        background-position: center top;
+        background-repeat: no-repeat;
+        background-size: cover;
+        -webkit-clip-path: polygon(50% 25%, 100% 15%, 100% 100%, 0 100%, 0 15%);
+        clip-path: polygon(50% 25%, 100% 15%, 100% 100%, 0 100%, 0 15%);
+    }
+
+
+    p {
+        margin: 0 0 1.5em;
+    }
+
+        p.background {
+            color: #fff;
+            font-size: 20px;
+            font-weight: 300;
+        }
+
+    .background span {
+        font-weight: bold;
+    }
+
+    /*--------------
+    Charts
+    -----------------*/
+
+    .graphTitleWrapper {
+        clear: both;
+        margin: 1em 0em 0em 0em;
+        padding: 0em;
+    }
+
+
+
+    /*--------------
+    Charts Titles
+    -----------------*/
+
+    .circle {
+        border-radius: 50%;
+        width: 5em;
+        height: 5em;
+        background: #df256d;
+        text-align: center;
+        float: left;
+    }
+
+        .circle h3 {
+            color: #FFF;
+            line-height: 1em;
+            padding: .6em 0 0 0;
+            margin: 0em;
+        }
+
+        .circle p {
+            color: #FFF;
+            font-family: 'open sans', helvetica, Arial, serif;
+            font-weight: 300;
+            line-height: 1em;
+            margin: .3em 0 0 0;
+            padding: 0em;
+        }
+
+    .graphTitle {
+        margin-left: 5em;
+        padding: 1em 0em 0em 0em;
+    }
+
+        .graphTitle h6 {
+            color: #911eb7;
+            font-weight: 700;
+            margin: 0em 1em;
+            padding: 0em 0em .5em 0em;
+            line-height: 1em;
+            text-transform: none;
+        }
+
+        .graphTitle hr {
+            padding: 0em;
+            margin: 0em;
+        }
+
+        .graphTitle p {
+            font-family: 'open sans', helvetica, Arial, serif;
+            color: #b1b3b5;
+            margin: 0em 1em;
+            padding: 0em 0em 0em 0em;
+            line-height: 1.4em;
+        }
+
+
+
+
+    .lead {
+        margin-bottom: 30px;
+        font-size: 28px;
+        line-height: 1.46428571;
+        font-weight: 300;
+    }
+
+    small,
+    .small {
+        font-size: 83%;
+        line-height: 2.067;
+    }
+
+    .text-muted {
+        color: #bdc3c7;
+    }
+
+    .text-inverse {
+        color: #ffffff;
+    }
+
+    .text-primary {
+        color: #1abc9c;
+    }
+
+    a.text-primary:hover {
+        color: #148f77;
+    }
+
+    .text-warning {
+        color: #f1c40f;
+    }
+
+    a.text-warning:hover {
+        color: #c29d0b;
+    }
+
+    .text-danger {
+        color: #e74c3c;
+    }
+
+    a.text-danger:hover {
+        color: #d62c1a;
+    }
+
+    .text-success {
+        color: #2ecc71;
+    }
+
+    a.text-success:hover {
+        color: #25a25a;
+    }
+
+    .text-info {
+        color: #3498db;
+    }
+
+    a.text-info:hover {
+        color: #217dbb;
+    }
+
+    .bg-primary {
+        color: #ffffff;
+        background-color: #34495e;
+    }
+
+    a.bg-primary:hover {
+        background-color: #222f3d;
+    }
+
+    .bg-success {
+        background-color: #dff0d8;
+    }
+
+    a.bg-success:hover {
+        background-color: #c1e2b3;
+    }
+
+    .bg-info {
+        background-color: #d9edf7;
+    }
+
+    a.bg-info:hover {
+        background-color: #afd9ee;
+    }
+
+    .bg-warning {
+        background-color: #fcf8e3;
+    }
+
+    a.bg-warning:hover {
+        background-color: #f7ecb5;
+    }
+
+    .bg-danger {
+        background-color: #f2dede;
+    }
+
+    a.bg-danger:hover {
+        background-color: #e4b9b9;
+    }
+
+    .page-header {
+        padding-bottom: 14px;
+        margin: 60px 0 30px;
+        border-bottom: 2px solid #e7e9ec;
+    }
+
+    ul,
+    ol {
+        margin-top: 1.25em;
+        margin-bottom: 1.25em;
+    }
+
+    dl {
+        margin-bottom: 30px;
+    }
+
+    dt,
+    dd {
+        line-height: 1.72222;
+    }
+
+    abbr[title],
+    abbr[data-original-title] {
+        border-bottom: 1px dotted #bdc3c7;
+    }
+
+    li {
+        margin-bottom: 1em;
+    }
+
+    .packageItem h4 {
+        margin-bottom: 1em;
+    }
+
+    .packageItem ul {
+        margin-left: 1.5em;
+    }
+
+        .packageItem ul li {
+            margin-bottom: 1.5em;
+        }
+
+    .packageItem h6 {
+        width: 98%;
+        border-bottom: 1px solid #4c4c4e;
+    }
+
+
+    /*--------------
+    BLOCKQUOTE
+    -----------------*/
+
+    blockquote {
+        padding: 0 0 0 16px;
+        margin: 0 0 32px;
+        color: #631ae0;
+        display: block;
+        font-weight: 400;
+        padding: 0 0 0 10px;
+        margin: 0 0 16px 16px;
+        width: 40%;
+        font-size: 1.25em;
+        line-height: 1.55em;
+        border-left: 3px solid #ccc;
+        quotes: "“" "”" "‘" "’";
+    }
+
+        blockquote p {
+            font-size: 20px;
+            margin-bottom: .4em;
+        }
+
+            blockquote p:before {
+                content: open-quote;
+            }
+
+            blockquote p:after {
+                content: close-quote;
+            }
+
+        blockquote small,
+        blockquote .small {
+            font-size: 18px;
+            line-height: 1.72222;
+            font-style: normal;
+            font-weight: 800;
+            color: inherit;
+        }
+
+            blockquote small:before,
+            blockquote .small:before {
+                content: "";
+            }
+
+        blockquote.pull-right {
+            padding-right: 16px;
+            padding-left: 0;
+            border: none;
+            float: right;
+            text-align: left;
+        }
+
+            blockquote.pull-right small:after {
+                content: "";
+            }
+
+
+    hr {
+        border: none;
+        border-top: 1px solid #b1b3b5;
+        padding: 0;
+    }
+
+        hr.cover {
+            border: none;
+            border-top: 1px solid #FFF;
+            margin: 0 2em 0 0;
+        }
+
+        hr.double {
+            height: 4px;
+            border-bottom: 1px solid #b1b3b5;
+            -moz-box-shadow: 0 0 0 0 transparent;
+            -webkit-box-shadow: 0 0 0 0 transparent;
+            box-shadow: 0 0 0 0 transparent;
+        }
+
+    .foot {
+        bottom: 0 !important;
+        align-self: flex-end;
+    }
+    /*----------------------
+    TABLES
+    -----------------------*/
+
+    table.businesCase {
+        font-size: .9375em;
+        width: 80%;
+        border-collapse: collapse;
+    }
+
+    .assumptions {
+        font-size: .75em;
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    table.businesCase th, table.businesCase th {
+        font-family: 'open sans', helvetica, Arial, serif;
+        color: #911eb7;
+        font-size: 1.0625em;
+        font-weight: 700;
+    }
+
+        table.businesCase th.tableTitle {
+            text-align: left;
+            padding: 0.3125em 0.3125em 0.3125em 1em;
+        }
+
+        table.businesCase th.colTitle {
+            padding: 0.3125em 0.3125em 0.3125em 1em;
+        }
+
+    table.businesCase tr {
+        border-bottom: 1px solid #d1d3d4;
+    }
+
+    table.businesCase tbody tr:last-child {
+        border-bottom: 1px dotted #ABABAB;
+    }
+
+    table.businesCase td.rowTitle {
+        text-align: left;
+        padding: 0.3125em 0.3125em 0.3125em 1em;
+    }
+
+    table.businesCase th.colTitle, table.businesCase td {
+        padding: 0.3125em 0.3125em 0.3125em 1em;
+    }
+
+        table.businesCase td.assumptions {
+            font-style: italic;
+            padding: 0.3125em 0.3125em 0.3125em 1.33em;
+        }
+
+
+        table.businesCase td.numbers {
+            text-align: center;
+            font-weight: bold;
+            vertical-align: middle;
+            padding: 1em 0;
+        }
+
+    table.businesCase .total {
+        color: #631ae0;
+        text-align: right;
+        font-weight: bold;
+    }
+
+    table.businesCase .col-1 {
+        width: 20%;
+    }
+
+    table.businesCase .col-2 {
+        width: 40%;
+    }
+
+    table.businesCase .col-3 {
+        width: 60%;
+    }
+
+    table.businesCase .col-4 {
+        width: 80%;
+    }
+
+    table.businesCase .col-5 {
+        width: 100%;
+    }
+
+    .tableGraph {
+        padding: 1em;
+        background-color: #f1f1f2;
+        width: 90%;
+        margin: 0 auto;
+    }
+
+        .tableGraph table.businesCase th.tableTitle {
+            text-align: left;
+            padding-left: 0em;
+        }
+
+        .tableGraph table.businesCase td.rowTitle {
+            text-align: left;
+            padding-left: 0em;
+            vertical-align: middle;
+        }
+
+    .tags_clear {
+        clear: both;
+        width: 100%;
+        height: 0;
+    }
+
+    .containerDonut {
+        width: 30%;
+        margin: 0px auto;
+    }
+
+    .iconInactive {
+        opacity: 0.1;
+    }
+</style>
+
+<div class="bodys" style="width: 297mm; margin: 0 auto;">
+    <div class="container" style="height: 420mm; width: 297mm; padding:0 3em;">
+        <br />
+        <br />
+        <h7 class="note text-right">MEDIDAS| 37</h7>
+        <hr class="double" />
+        <br />
+
+
+        <h2>Reporte de estado de cumplimiento de la NOM 035</h2>
+
+        @*<p>
+            Este informe resume la evaluación preparada por <strong>[insertar el nombre del autor/organización]</strong> para <strong>[insertar el nombre del cliente]</strong> y presenta los resultados del estado de cumplimiento de la NOM 035 en la organización.
+        </p>
+
+        <p>
+            <blockquote class="pull-right">
+        <p>
+            El 85% de las organizaciones mexicanas no tienen las condiciones adecuadas para que sus colaboradores tengan un balance entre vida personal y trabajo, lo cual propicia trastornos físicos y psicológicos
+
+        </p><small>- <span title="Source Title">UNAM</span></small>
+        </blockquote>
+
+        La NOM-035 tiene como objetivo establecer los elementos para identificar, analizar y prevenir los factores de riesgo psicosocial, así como para promover un entorno organizacional favorable en los centros de trabajo.
+        </p>
+
+        <p>
+            Este análisis previo a la aplicación de los cuestionarios tiene como objetivo el planteamiento de un primer enfoque para establecer un plan de acción en el cumplimiento de las prioridades; al mismo tiempo elevar la productividad, reducir la rotación, incrementar el compromiso de los trabajadores y ser una empresa relevante para la fuerza laboral del futuro.
+        </p>
+
+        <p>
+            <strong>Para obtener más información sobre la NOM 035, visite la página <a href="check035.com">check035.com</a></strong>
+        </p>*@
+
+        <div class="graphTitleWrapper col-sm-12">
+            <div class="circle">
+                <h3>1</h3>
+                <p>Parte</p>
+            </div>
+            <div class="graphTitle">
+                <h6>Resultados generales NOM-035</h6>
+                <hr />
+                <p>Medidas de control por categorías</p>
+            </div>
+        </div>
+
+
+        <div class="col-sm-8" style="margin: 2em 0em 0em 0em;" height="500px">
+            <canvas id="myChart" width="400" height="400"></canvas>
+        </div>
+
+        <div class="col-sm-4 magentaBG" style="margin: 2em 0em 0em 0em;">
+            <br /><br />
+            <p class="background">
+                Basado en las respuestas, te presentamos los resultados en tu organización:
+            </p>
+            <p class="background">
+                Área con mayores fortalezas: <span>Liderazgo y relaciones de trabajo</span> con un <span>@ViewBag.completado2</span> de estado de cumplimiento.
+            </p>
+            <p class="background">
+                Áreas de oportunidad: <span>Entorno organizacional</span> con un <span>@ViewBag.completado</span> de estado de cumplimiento.
+            </p>
+            <br /><br />
+
+        </div>
+
+        <div class="col-sm-12 foot">
+
+            <h7 class="note">check035.com</h7>
+            <hr class="double" />
+        </div>
+    </div>
+
+    <div class="container" style="height: 220mm; width: 297mm; padding:0 3em;">
+
+
+        <div class="graphTitleWrapper col-sm-12">
+            <div class="circle">
+                <h3>2</h3>
+                <p>Parte</p>
+            </div>
+            <div class="graphTitle">
+                <h6>Resultados generales NOM-035</h6>
+                <hr />
+                <p>Medidas de control por categorías</p>
+            </div>
+        </div>
+
+        <canvas id="myChart2"></canvas>
+
+
+
+    </div>
+
+
+
+    <div class="container" style="height: 420mm; width: 297mm; padding:0 3em;">
+
+
+
+        <div class="graphTitleWrapper">
+            <div class="circle">
+                <h3>3</h3>
+                <p>Parte</p>
+            </div>
+            <div class="graphTitle">
+                <h6>Resultados por preguntas contestadas</h6>
+                <hr />
+                <p>Desglose de resultados</p>
+                <br />
+                <br />
+            </div>
+        </div>
+
+
+        <div class="tableGraph">
+            <table class="businesCase flex" style="width: 95%; margin: 0em auto;">
+                <thead>
+                    <tr>
+                        <th class="tableTitle col-5" colspan="5">Desglose de componentes indiviuales de evaluación</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class=""></td>
+                        <td class="rowTitle col-2">Ambiente de trabajo</td>
+                        <td class="numbers col-1"><span>@ViewBag.CT1</span> de 10</td>
+                        <td class="numbers col-2" colspan="2">
+                            <div class="containerDonut">
+                                <canvas id="myChart3a"></canvas>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class=""></td>
+                        <td class="rowTitle col-2">Factores propios de la actividad</td>
+                        <td class="numbers col-1"><span>@ViewBag.CT2</span> de 10</td>
+                        <td class="numbers col-2" colspan="2">
+                            <div class="containerDonut">
+                                <canvas id="myChart3b"></canvas>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class=""></td>
+                        <td class="rowTitle col-2">Organización del tiempo de trabajo</td>
+                        <td class="numbers col-1"><span>@ViewBag.CT3</span> de 4</td>
+                        <td class="numbers col-2" colspan="2">
+                            <div class="containerDonut">
+                                <canvas id="myChart3c"></canvas>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class=""></td>
+                        <td class="rowTitle col-2">Liderazgo y relaciones de trabajo</td>
+                        <td class="numbers col-1"><span>@ViewBag.CT4</span> de 5</td>
+                        <td class="numbers col-2" colspan="2">
+                            <div class="containerDonut">
+                                <canvas id="myChart3d"></canvas>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class=""></td>
+                        <td class="rowTitle col-2">Entorno organizacional</td>
+                        <td class="numbers col-1"><span>@ViewBag.CT5</span> de 8</td>
+                        <td class="numbers col-2" colspan="2">
+                            <div class="containerDonut">
+                                <canvas id="myChart3e"></canvas>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class=""></td>
+                        <td class="rowTitle col-2"></td>
+                        <td class="total col-1"><span>@ViewBag.contador</span>/37</td></td>
+                        <td class="numbers col-2" colspan="2"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <table class="businesCase" style="margin: 2em auto;">
+            <thead>
+                <tr>
+                    <th class="tableTitle col-3" colspan="2">Ambiente de trabajo</th>
+                    <th class="colTitle text-right col-1">
+
+                    </th>
+                    <th class="colTitle text-right col-1">
+
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="rowTitle col-2" colspan="2">1. ¿Ya ha capacitado  y sensibilizado de los directivos, gerentes y supervisores para la prevención de los factores de riesgo psicosocial?</td>
+                    @if (ViewBag.lista[0] == 0)
+                    {
+                        <td class="numbers iconInactive">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-check-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z" />
+                            </svg>
+
+                        </td>
+                        <td class="numbers col-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-x-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z" />
+                            </svg>
+
+                        </td>
+                        <td class="numbers col-1 ">0</td>
+                    }
+                    else
+                    {
+                        <td class="numbers col-1 ">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-check-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z" />
+                            </svg>
+
+                        </td>
+                        <td class="numbers col-1 iconInactive">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-x-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z" />
+                            </svg>
+
+                        </td>
+                        <td class="numbers col-1 ">@ViewBag.QTY_Q1</td>
+                    }
+                </tr>
+                <tr>
+                    <td class="rowTitle col-2" colspan="2">2. ¿Ya ha capacitación y sensibilización en la promoción de entornos organizacionales favorables?</td>
+                    @if (ViewBag.lista[1] == 0)
+                    {
+                        <td class="numbers iconInactive">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-check-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z" />
+                            </svg>
+
+                        </td>
+                        <td class="numbers col-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-x-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z" />
+                            </svg>
+
+                        </td>
+                        <td class="numbers col-1 ">0</td>
+                    }
+                    else
+                    {
+                        <td class="numbers col-1 ">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-check-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z" />
+                            </svg>
+
+                        </td>
+                        <td class="numbers col-1 iconInactive">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-x-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z" />
+                            </svg>
+
+                        </td>
+                        <td class="numbers col-1 ">@ViewBag.QTY_Q2</td>
+                    }
+                </tr>
+
+                <tr>
+                    <td class="rowTitle col-2" colspan="2">3. ¿Crea reuniones para abordar las áreas de oportunidad de mejora, a efecto de atender los problemas en el lugar de su trabajo y determinar sus soluciones?</td>
+                    @if (ViewBag.lista[2] == 0)
+                    {
+                        <td class="numbers iconInactive">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-check-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z" />
+                            </svg>
+
+                        </td>
+                        <td class="numbers col-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-x-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z" />
+                            </svg>
+
+                        </td>
+                        <td class="numbers col-1 ">0</td>
+                    }
+                    else
+                    {
+                        <td class="numbers col-1 ">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-check-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z" />
+                            </svg>
+
+                        </td>
+                        <td class="numbers col-1 iconInactive">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-x-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z" />
+                            </svg>
+
+                        </td>
+                        <td class="numbers col-1 ">@ViewBag.QTY_Q3</td>
+                    }
+                </tr>
+
+                <tr>
+                    <td class="rowTitle col-2" colspan="2">4. ¿Realiza reuniones periódicas (semestrales o anuales) de seguimiento a las actividades establecidas para el apoyo social y, en su caso, extraordinarias si ocurren eventos?</td>
+                    @if (ViewBag.lista[3] == 0)
+                    {
+                        <td class="numbers iconInactive">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-check-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z" />
+                            </svg>
+
+                        </td>
+                        <td class="numbers col-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-x-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z" />
+                            </svg>
+
+                        </td>
+                        <td class="numbers col-1 ">0</td>
+                    }
+                    else
+                    {
+                        <td class="numbers col-1 ">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-check-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z" />
+                            </svg>
+
+                        </td>
+                        <td class="numbers col-1 iconInactive">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-x-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z" />
+                            </svg>
+
+                        </td>
+                        <td class="numbers col-1 ">@ViewBag.QTY_Q4</td>
+                    }
+                </tr>
+
+
+
+            </tbody>
+        </table>
+
+
+        <div class="col-sm-12 foot">
+
+            <hr class="double" />
+        </div>
+
+    </div>
+
+    <div class="container" style="height: 420mm; width: 297mm; padding:0 3em;">
+
+
+
+        <table class="businesCase" style="margin:   auto;">
+            <thead>
+                <tr>
+                    <th class="tableTitle col-3" colspan="2">Ambiente de trabajo</th>
+                    <th class="colTitle text-right col-1">
+
+                    </th>
+                    <th class="colTitle text-right col-1">
+
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                    <td class="rowTitle col-2" colspan="2">5. ¿Tiene  actividades culturales y del deporte entre sus trabajadores y proporcionarles los equipos y útiles indispensables?</td>
+                    @if (ViewBag.lista[4] == 0)
+                    {
+                        <td class="numbers iconInactive">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-check-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z" />
+                            </svg>
+
+                        </td>
+                        <td class="numbers col-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-x-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z" />
+                            </svg>
+
+                        </td>
+
+                        <td class="numbers col-1 ">0</td>
+                    }
+                    else
+                    {
+                        <td class="numbers col-1 ">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-check-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z" />
+                            </svg>
+
+                        </td>
+                        <td class="numbers col-1 iconInactive">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-x-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z" />
+                            </svg>
+
+                        </td>
+                        <td class="numbers col-1 ">@ViewBag.QTY_Q5</td>
+                    }
+                </tr>
+
+                <tr>
+                    <td class="rowTitle col-2" colspan="2">6. ¿Promociona de actividades de integración familiar en el trabajo, previo acuerdo con los trabajadores?</td>
+                    @if (ViewBag.lista[5] == 0)
+                    {
+                        <td class="numbers iconInactive">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-check-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z" />
+                            </svg>
+
+                        </td>
+                        <td class="numbers col-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-x-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z" />
+                            </svg>
+
+                        </td>
+                        <td class="numbers col-1 ">0</td>
+                    }
+                    else
+                    {
+                        <td class="numbers col-1 ">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-check-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z" />
+                            </svg>
+
+                        </td>
+                        <td class="numbers col-1 iconInactive">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-x-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z" />
+                            </svg>
+
+                        </td>
+                        <td class="numbers col-1 ">@ViewBag.QTY_Q6</td>
+                    }
+                </tr>
+
+                <tr>
+                    <td class="rowTitle col-2" colspan="2">7. ¿Tiene mecanismos para reconocer el desempeño sobresaliente (superior al esperado) de los trabajadores?</td>
+                    @if (ViewBag.lista[6] == 0)
+                    {
+                        <td class="numbers iconInactive">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-check-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z" />
+                            </svg>
+
+                        </td>
+                        <td class="numbers col-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-x-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z" />
+                            </svg>
+
+                        </td>
+                        <td class="numbers col-1 ">0</td>
+                    }
+                    else
+                    {
+                        <td class="numbers col-1 ">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-check-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z" />
+                            </svg>
+
+                        </td>
+                        <td class="numbers col-1 iconInactive">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-x-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z" />
+                            </svg>
+
+                        </td>
+                        <td class="numbers col-1 ">@ViewBag.QTY_Q7</td>
+                    }
+                </tr>
+
+                <tr>
+                    <td class="rowTitle col-2" colspan="2">8. ¿Tiene mecanismos para difundir los logros de los trabajadores sobresalientes?</td>
+                    @if (ViewBag.lista[7] == 0)
+                    {
+                        <td class="numbers iconInactive">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-check-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z" />
+                            </svg>
+
+                        </td>
+                        <td class="numbers col-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-x-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z" />
+                            </svg>
+
+                        </td>
+                        <td class="numbers col-1 ">0</td>
+                    }
+                    else
+                    {
+                        <td class="numbers col-1 ">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-check-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z" />
+                            </svg>
+
+                        </td>
+                        <td class="numbers col-1 iconInactive">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-x-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z" />
+                            </svg>
+                        </td>
+                        <td class="numbers col-1 ">@ViewBag.QTY_Q8</td>
+                    }
+                </tr>
+
+                <tr>
+                    <td class="rowTitle col-2" colspan="2">9. ¿Tiene mecanismos para expresar al trabajador sus posibilidades de desarrollo?</td>
+                    @if (ViewBag.lista[8] == 0)
+                    {
+                        <td class="numbers iconInactive">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-check-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z" />
+                            </svg>
+
+                        </td>
+                        <td class="numbers col-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-x-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z" />
+                            </svg>
+
+                        </td>
+                        <td class="numbers col-1 ">0</td>
+                    }
+                    else
+                    {
+                        <td class="numbers col-1 ">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-check-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z" />
+                            </svg>
+
+                        </td>
+                        <td class="numbers col-1 iconInactive">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-x-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z" />
+                            </svg>
+
+                        </td>
+                        <td class="numbers col-1 ">@ViewBag.QTY_Q9</td>
+                    }
+                </tr>
+
+                <tr>
+                    <td class="rowTitle col-2" colspan="2">10. ¿Tiene mecanismos para la participación proactiva y comunicación entre los colaboradores ?</td>
+                    @if (ViewBag.lista[9] == 0)
+                    {
+                        <td class="numbers iconInactive">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-check-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z" />
+                            </svg>
+
+                        </td>
+                        <td class="numbers col-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-x-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z" />
+                            </svg>
+
+                        </td>
+                        <td class="numbers col-1 ">0</td>
+                    }
+                    else
+                    {
+                        <td class="numbers col-1 ">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-check-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z" />
+                            </svg>
+
+                        </td>
+                        <td class="numbers col-1 iconInactive">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-x-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z" />
+                            </svg>
+
+                        </td>
+                        <td class="numbers col-1 ">@ViewBag.QTY_Q10</td>
+                    }
+                </tr>
+
+
+            </tbody>
+        </table>
+
+        <table class="businesCase" style="margin: 2em auto;">
+            <thead>
+                <tr>
+                    <th class="tableTitle col-3" colspan="2">Factores propios de la actividad</th>
+                    <th class="colTitle text-right col-1">
+
+                    </th>
+                    <th class="colTitle text-right col-1">
+
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="rowTitle col-2" colspan="2">11. ¿Cuenta con mecanismos que permiten identificar la distribución adecuada de los tiempos de trabajo?</td>
+                    @if (ViewBag.lista[10] == 0)
+                    {
+                        <td class="numbers iconInactive">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-check-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z" />
+                            </svg>
+
+                        </td>
+                        <td class="numbers col-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-x-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z" />
+                            </svg>
+
+                        </td>
+                        <td class="numbers col-1 ">0</td>
+                    }
+                    else
+                    {
+                        <td class="numbers col-1 ">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-check-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z" />
+                            </svg>
+
+                        </td>
+                        <td class="numbers col-1 iconInactive">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-x-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z" />
+                            </svg>
+
+                        </td>
+                        <td class="numbers col-1 ">@ViewBag.QTY_Q11</td>
+                    }
+                </tr>
+                <tr>
+                    <td class="rowTitle col-2" colspan="2">12. ¿Cuenta con mecanismos establecer y difundir instrucciones claras a los trabajadores para la atención de los problemas que impiden o limitan el desarrollo de su trabajo, cuando éstos se presenten?</td>
+                    @if (ViewBag.lista[11] == 0)
+                    {
+                        <td class="numbers iconInactive">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-check-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z" />
+                            </svg>
+
+                        </td>
+                        <td class="numbers col-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-x-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z" />
+                            </svg>
+
+                        </td>
+                        <td class="numbers col-1 ">0</td>
+                    }
+                    else
+                    {
+                        <td class="numbers col-1 ">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-check-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z" />
+                            </svg>
+
+                        </td>
+                        <td class="numbers col-1 iconInactive">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-x-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z" />
+                            </svg>
+
+                        </td>
+                        <td class="numbers col-1 ">@ViewBag.QTY_Q12</td>
+                    }
+                </tr>
+
+                <tr>
+                    <td class="rowTitle col-2" colspan="2">13. ¿Cuenta con mecanismos para la  revisión y supervisión que la distribución de la carga de trabajo se realice de forma equitativa y considerando el número de trabajadores, actividades a desarrollar, alcance de la actividad y su capacitación?</td>
+                    @if (ViewBag.lista[12] == 0)
+                    {
+                        <td class="numbers iconInactive">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-check-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z" />
+                            </svg>
+
+                        </td>
+                        <td class="numbers col-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-x-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z" />
+                            </svg>
+
+                        </td>
+                        <td class="numbers col-1 ">0</td>
+                    }
+                    else
+                    {
+                        <td class="numbers col-1 ">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-check-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z" />
+                            </svg>
+
+                        </td>
+                        <td class="numbers col-1 iconInactive">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-x-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z" />
+                            </svg>
+
+                        </td>
+                        <td class="numbers col-1 ">@ViewBag.QTY_Q13</td>
+                    }
+                </tr>
+
+                <tr>
+                    <td class="rowTitle col-2" colspan="2">14. ¿Cuenta con mecanismos o programas que faciliten la participación  en la mejora de las condiciones de trabajo y la productividad siempre que el proceso productivo lo permita y cuenten con la experiencia y capacitación para ello?</td>
+                    @if (ViewBag.lista[13] == 0)
+                    {
+                        <td class="numbers iconInactive">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-check-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z" />
+                            </svg>
+
+                        </td>
+                        <td class="numbers col-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-x-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z" />
+                            </svg>
+
+                        </td>
+                        <td class="numbers col-1 ">0</td>
+                    }
+                    else
+                    {
+                        <td class="numbers col-1 ">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-check-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z" />
+                            </svg>
+
+                        </td>
+                        <td class="numbers col-1 iconInactive">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-x-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z" />
+                            </svg>
+
+                        </td>
+                        <td class="numbers col-1 ">@ViewBag.QTY_Q14</td>
+                    }
+                </tr>
+
+                <tr>
+                    <td class="rowTitle col-2" colspan="2">15. ¿Cuenta con mecanismos o sistemas de trabajo que permitan  acordar ymejorar el margen de libertad y control sobre su trabajo por parte de los trabajadores y el patrón?</td>
+                    @if (ViewBag.lista[14] == 0)
+                    {
+                        <td class="numbers iconInactive">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-check-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z" />
+                            </svg>
+
+                        </td>
+                        <td class="numbers col-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-x-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z" />
+                            </svg>
+                        </td>
+                        <td class="numbers col-1 ">0</td>
+                    }
+                    else
+                    {
+                        <td class="numbers col-1 ">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-check-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z" />
+                            </svg>
+
+                        </td>
+                        <td class="numbers col-1 iconInactive">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-x-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z" />
+                            </svg>
+
+                        </td>
+                        <td class="numbers col-1 ">@ViewBag.QTY_Q15</td>
+                    }
+                </tr>
+
+                <tr>
+                    <td class="rowTitle col-2" colspan="2">16. ¿Cuenta con mecanismos o programas de desarrollo para impulsar que éstos desarrollen nuevas competencias o habilidades, considerando las limitaciones del proceso productivo?</td>
+                    @if (ViewBag.lista[15] == 0)
+                    {
+                        <td class="numbers iconInactive">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-check-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z" />
+                            </svg>
+
+                        </td>
+                        <td class="numbers col-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-x-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z" />
+                            </svg>
+                        </td>
+                        <td class="numbers col-1 ">0</td>
+                    }
+                    else
+                    {
+                        <td class="numbers col-1 ">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-check-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z" />
+                            </svg>
+
+                        </td>
+                        <td class="numbers col-1 iconInactive">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-x-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z" />
+                            </svg>
+
+                        </td>
+                        <td class="numbers col-1 ">@ViewBag.QTY_Q16</td>
+                    }
+                </tr>
+
+                <tr>
+                    <td class="rowTitle col-2" colspan="2">17. ¿Tiene mecanismos para definir los lineamientos para establecer medidas y límites que eviten las jornadas de trabajo superiores a las previstas en la Ley Federal del Trabajo?</td>
+                    @if (ViewBag.lista[16] == 0)
+                    {
+                        <td class="numbers iconInactive">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-check-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z" />
+                            </svg>
+
+                        </td>
+                        <td class="numbers col-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-x-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z" />
+                            </svg>
+                        </td>
+                        <td class="numbers col-1 ">0</td>
+                    }
+                    else
+                    {
+                        <td class="numbers col-1 ">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-check-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z" />
+                            </svg>
+
+                        </td>
+                        <td class="numbers col-1 iconInactive">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-x-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z" />
+                            </svg>
+
+                        </td>
+                        <td class="numbers col-1 ">@ViewBag.QTY_Q17</td>
+                    }
+                </tr>
+
+
+
+
+            </tbody>
+        </table>
+
+
+        <hr class="double" />
+
+    </div>
+
+    <div class="container" style="height: 420mm; width: 297mm; padding:0 3em;">
+
+
+        <table class="businesCase" style="margin: 2em auto;">
+            <thead>
+                <tr>
+                    <th class="tableTitle col-3" colspan="2">Factores propios de la actividad</th>
+                    <th class="colTitle text-right col-1">
+
+                    </th>
+                    <th class="colTitle text-right col-1">
+
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="rowTitle col-2" colspan="2">18. ¿Cuenta con una capacitación continua  para la adecuada realización de las tareas encomendadas?</td>
+                    @if (ViewBag.lista[17] == 0)
+                    {
+                        <td class="numbers iconInactive">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-check-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z" />
+                            </svg>
+
+                        </td>
+                        <td class="numbers col-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-x-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z" />
+                            </svg>
+
+                        </td>
+                        <td class="numbers col-1 ">0</td>
+                    }
+                    else
+                    {
+                        <td class="numbers col-1 ">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-check-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z" />
+                            </svg>
+
+                        </td>
+                        <td class="numbers col-1 iconInactive">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-x-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z" />
+                            </svg>
+
+                        </td>
+                        <td class="numbers col-1 ">@ViewBag.QTY_Q18</td>
+                    }
+                </tr>
+
+
+                <tr>
+                    <td class="rowTitle col-2" colspan="2">19. ¿Cuenta con mecanismos para  definición precisa de responsabilidades para los miembros de la organización?</td>
+                    @if (ViewBag.lista[18] == 0)
+                    {
+                        <td class="numbers iconInactive">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-check-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z" />
+                            </svg>
+
+                        </td>
+                        <td class="numbers col-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-x-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z" />
+                            </svg>
+
+                        </td>
+                        <td class="numbers col-1 ">0</td>
+                    }
+                    else
+                    {
+                        <td class="numbers col-1 ">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-check-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z" />
+                            </svg>
+
+                        </td>
+                        <td class="numbers col-1 iconInactive">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-x-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z" />
+                            </svg>
+
+                        </td>
+                        <td class="numbers col-1 ">@ViewBag.QTY_Q19</td>
+                    }
+                </tr>
+
+                <tr>
+                    <td class="rowTitle col-2" colspan="2">20. ¿La distribución es adecuada de cargas de trabajo, con jornadas laborales regulares conforme a la Ley Federal del Trabajo?</td>
+                    @if (ViewBag.lista[19] == 0)
+                    {
+                        <td class="numbers iconInactive">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-check-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z" />
+                            </svg>
+
+                        </td>
+                        <td class="numbers col-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-x-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z" />
+                            </svg>
+
+                        </td>
+                        <td class="numbers col-1 ">0</td>
+                    }
+                    else
+                    {
+                        <td class="numbers col-1 ">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-check-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z" />
+                            </svg>
+
+                        </td>
+                        <td class="numbers col-1 iconInactive">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-x-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z" />
+                            </svg>
+
+                        </td>
+                        <td class="numbers col-1 ">@ViewBag.QTY_Q20</td>
+                    }
+                </tr>
+
+
+            </tbody>
+        </table>
+
+        <table class="businesCase" style="margin: 2em auto;">
+            <thead>
+                <tr>
+                    <th class="tableTitle col-3" colspan="2">Organización del tiempo de trabajo</th>
+                    <th class="colTitle text-right col-1">
+
+                    </th>
+                    <th class="colTitle text-right col-1">
+
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="rowTitle col-2" colspan="2">21. ¿Cuenta con mecanismos  para la  determinación de prioridades en el trabajo?</td>
+                    @if (ViewBag.lista[20] == 0)
+                    {
+                        <td class="numbers iconInactive">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-check-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z" />
+                            </svg>
+
+                        </td>
+                        <td class="numbers col-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-x-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z" />
+                            </svg>
+
+                        </td>
+                        <td class="numbers col-1 ">0</td>
+                    }
+                    else
+                    {
+                        <td class="numbers col-1 ">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-check-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z" />
+                            </svg>
+
+                        </td>
+                        <td class="numbers col-1 iconInactive">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-x-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z" />
+                            </svg>
+
+                        </td>
+                        <td class="numbers col-1 ">@ViewBag.QTY_Q21</td>
+                    }
+                </tr>
+                <tr>
+                    <td class="rowTitle col-2" colspan="2">22. ¿Cuenta con mecanismos para planificar el trabajo, considerando el proceso productivo, de manera que se tengan las pausas o periodos necesarios de descanso, rotación de tareas y otras medidas necesarias para evitar ritmos de trabajo acelerados?</td>
+                    @if (ViewBag.lista[21] == 0)
+                    {
+                        <td class="numbers iconInactive">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-check-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z" />
+                            </svg>
+
+                        </td>
+                        <td class="numbers col-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-x-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z" />
+                            </svg>
+
+                        </td>
+                        <td class="numbers col-1 ">0</td>
+                    }
+                    else
+                    {
+                        <td class="numbers col-1 ">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-check-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z" />
+                            </svg>
+
+                        </td>
+                        <td class="numbers col-1 iconInactive">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-x-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z" />
+                            </svg>
+
+                        </td>
+                        <td class="numbers col-1 ">@ViewBag.QTY_Q22</td>
+                    }
+                </tr>
+
+                <tr>
+                    <td class="rowTitle col-2" colspan="2">23. ¿Cuenta con Instructivos o procedimientos que definan claramente las tareas y responsabilidades?</td>
+                    @if (ViewBag.lista[22] == 0)
+                    {
+                        <td class="numbers iconInactive">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-check-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z" />
+                            </svg>
+
+                        </td>
+                        <td class="numbers col-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-x-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z" />
+                            </svg>
+
+                        </td>
+                        <td class="numbers col-1 ">0</td>
+                    }
+                    else
+                    {
+                        <td class="numbers col-1 ">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-check-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z" />
+                            </svg>
+
+                        </td>
+                        <td class="numbers col-1 iconInactive">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-x-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z" />
+                            </svg>
+
+                        </td>
+                        <td class="numbers col-1 ">@ViewBag.QTY_Q23</td>
+                    }
+                </tr>
+
+
+                <tr>
+                    <td class="rowTitle col-2" colspan="2">24. ¿Cuenta con mecanismos  para involucrar a los trabajadores en la definición de los horarios de trabajo cuando las condiciones del trabajo lo permitan?</td>
+                    @if (ViewBag.lista[23] == 0)
+                    {
+                        <td class="numbers iconInactive">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-check-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z" />
+                            </svg>
+
+                        </td>
+                        <td class="numbers col-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-x-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z" />
+                            </svg>
+
+                        </td>
+                        <td class="numbers col-1 ">0</td>
+                    }
+                    else
+                    {
+                        <td class="numbers col-1 ">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-check-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z" />
+                            </svg>
+
+                        </td>
+                        <td class="numbers col-1 iconInactive">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-x-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z" />
+                            </svg>
+
+                        </td>
+                        <td class="numbers col-1 ">@ViewBag.QTY_Q24</td>
+                    }
+                </tr>
+
+            </tbody>
+        </table>
+
+        <table class="businesCase" style="margin: 2em auto;">
+            <thead>
+                <tr>
+                    <th class="tableTitle col-3" colspan="2">Liderazgo y relaciones de trabajo</th>
+                    <th class="colTitle text-right col-1">
+
+                    </th>
+                    <th class="colTitle text-right col-1">
+
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="rowTitle col-2" colspan="2">25. ¿Cuenta con mecanismos o esquemas  para el manejo de conflictos en el trabajo?</td>
+                    @if (ViewBag.lista[24] == 0)
+                    {
+                        <td class="numbers iconInactive">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-check-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z" />
+                            </svg>
+
+                        </td>
+                        <td class="numbers col-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-x-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z" />
+                            </svg>
+
+                        </td>
+                        <td class="numbers col-1 ">0</td>
+                    }
+                    else
+                    {
+                        <td class="numbers col-1 ">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-check-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z" />
+                            </svg>
+
+                        </td>
+                        <td class="numbers col-1 iconInactive">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-x-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z" />
+                            </svg>
+
+                        </td>
+                        <td class="numbers col-1 ">@ViewBag.QTY_Q25</td>
+                    }
+                </tr>
+                <tr>
+                    <td class="rowTitle col-2" colspan="2">26. ¿Cuenta con mecanismos para fomentar la comunicación entre supervisores o gerentes y trabajadores, así como entre los trabajadores?</td>
+                    @if (ViewBag.lista[25] == 0)
+                    {
+                        <td class="numbers iconInactive">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-check-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z" />
+                            </svg>
+
+                        </td>
+                        <td class="numbers col-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-x-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z" />
+                            </svg>
+
+                        </td>
+                        <td class="numbers col-1 ">0</td>
+                    }
+                    else
+                    {
+                        <td class="numbers col-1 ">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-check-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z" />
+                            </svg>
+
+                        </td>
+                        <td class="numbers col-1 iconInactive">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-x-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z" />
+                            </svg>
+
+                        </td>
+                        <td class="numbers col-1 ">@ViewBag.QTY_Q26</td>
+                    }
+                </tr>
+
+                <tr>
+                    <td class="rowTitle col-2" colspan="2">27. ¿Cuenta con mecanismos o programas  para involucrar a los trabajadores en la toma de decisiones sobre la organización de su trabajo?</td>
+                    @if (ViewBag.lista[26] == 0)
+                    {
+                        <td class="numbers iconInactive">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-check-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z" />
+                            </svg>
+
+                        </td>
+                        <td class="numbers col-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-x-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z" />
+                            </svg>
+
+                        </td>
+                        <td class="numbers col-1 ">0</td>
+                    }
+                    else
+                    {
+                        <td class="numbers col-1 ">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-check-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z" />
+                            </svg>
+
+                        </td>
+                        <td class="numbers col-1 iconInactive">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-x-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z" />
+                            </svg>
+
+                        </td>
+
+                        <td class="numbers col-1 ">@ViewBag.QTY_Q27</td>
+                    }
+                </tr>
+
+
+                <tr>
+                    <td class="rowTitle col-2" colspan="2">28. ¿Cuenta con programas o mecanismos para  establecer relaciones entre trabajadores, supervisores, gerentes y patrones para que puedan obtener apoyo los unos de los otros?</td>
+                    @if (ViewBag.lista[27] == 0)
+                    {
+                        <td class="numbers iconInactive">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-check-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z" />
+                            </svg>
+
+                        </td>
+                        <td class="numbers col-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-x-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z" />
+                            </svg>
+
+                        </td>
+                        <td class="numbers col-1 ">0</td>
+                    }
+                    else
+                    {
+                        <td class="numbers col-1 ">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-check-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z" />
+                            </svg>
+
+                        </td>
+                        <td class="numbers col-1 iconInactive">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-x-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z" />
+                            </svg>
+
+                        </td>
+                        <td class="numbers col-1 ">@ViewBag.QTY_Q28</td>
+                    }
+                </tr>
+
+                <tr>
+                    <td class="rowTitle col-2" colspan="2">29. ¿Cuenta con mecanismos para establecer procedimientos de actuación y seguimiento para tratar problemas relacionados con la violencia laboral, y capacitar al responsable de su implementación?</td>
+                    @if (ViewBag.lista[28] == 0)
+                    {
+                        <td class="numbers iconInactive">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-check-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z" />
+                            </svg>
+
+                        </td>
+                        <td class="numbers col-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-x-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z" />
+                            </svg>
+
+                        </td>
+                        <td class="numbers col-1 ">0</td>
+                    }
+                    else
+                    {
+                        <td class="numbers col-1 ">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-check-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z" />
+                            </svg>
+
+                        </td>
+                        <td class="numbers col-1 iconInactive">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-x-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z" />
+                            </svg>
+
+                        </td>
+                        <td class="numbers col-1 ">@ViewBag.QTY_Q29</td>
+                    }
+                </tr>
+
+            </tbody>
+        </table>
+
+        <div class="col-sm-12 foot">
+
+            <hr class="double" />
+        </div>
+    </div>
+
+    <div class="container" style="height: 420mm; width: 297mm; padding:0 3em;">
+
+
+
+        <table class="businesCase" style="margin: 2em auto;">
+            <thead>
+                <tr>
+                    <th class="tableTitle col-3" colspan="2">Entorno organizacional </th>
+                    <th class="colTitle text-right col-1">
+
+                    </th>
+                    <th class="colTitle text-right col-1">
+
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="rowTitle col-2" colspan="2">30. ¿Cuenta con mecanismos o programas  para definir lineamientos para prohibir la discriminación y fomentar la equidad y el respeto?</td>
+                    @if (ViewBag.lista[29] == 0)
+                    {
+                        <td class="numbers iconInactive">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-check-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z" />
+                            </svg>
+                        </td>
+                        <td class="numbers col-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-x-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z" />
+                            </svg>
+                        </td>
+                        <td class="numbers col-1 ">0</td>
+                    }
+                    else
+                    {
+                        <td class="numbers col-1 ">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-check-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z" />
+                            </svg>
+
+                        </td>
+                        <td class="numbers col-1 iconInactive">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-x-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z" />
+                            </svg>
+
+                        </td>
+                        <td class="numbers col-1 ">@ViewBag.QTY_Q30</td>
+                    }
+                </tr>
+                <tr>
+                    <td class="rowTitle col-2" colspan="2">31. ¿Ya ha proporcionado la capacitación y sensibilización en la promoción de entornos organizacionales favorables?</td>
+                    @if (ViewBag.lista[30] == 0)
+                    {
+                        <td class="numbers iconInactive">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-check-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z" />
+                            </svg>
+
+                        </td>
+                        <td class="numbers col-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-x-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z" />
+                            </svg>
+
+                        </td>
+                        <td class="numbers col-1 ">0</td>
+                    }
+                    else
+                    {
+                        <td class="numbers col-1 ">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-check-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z" />
+                            </svg>
+
+                        </td>
+                        <td class="numbers col-1 iconInactive">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-x-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z" />
+                            </svg>
+
+                        </td>
+                        <td class="numbers col-1 ">@ViewBag.QTY_Q31</td>
+                    }
+                </tr>
+
+                <tr>
+                    <td class="rowTitle col-2" colspan="2">32. ¿Cuenta con mecanismos o programas para promover la ayuda mutua y el intercambio de conocimientos y experiencias entre los trabajadores?</td>
+                    @if (ViewBag.lista[31] == 0)
+                    {
+                        <td class="numbers iconInactive">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-check-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z" />
+                            </svg>
+
+                        </td>
+                        <td class="numbers col-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-x-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z" />
+                            </svg>
+
+                        </td>
+                        <td class="numbers col-1 ">0</td>
+                    }
+                    else
+                    {
+                        <td class="numbers col-1 ">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-check-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z" />
+                            </svg>
+
+                        </td>
+                        <td class="numbers col-1 iconInactive">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-x-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z" />
+                            </svg>
+
+                        </td>
+                        <td class="numbers col-1 ">@ViewBag.QTY_Q32</td>
+                    }
+                </tr>
+
+
+                <tr>
+                    <td class="rowTitle col-2" colspan="2">33. ¿Cuenta con mecansimos o programas  de apoyos a los trabajadores, de manera que puedan atender emergencias familiares, mismas que el trabajador tendrá que comprobar?</td>
+                    @if (ViewBag.lista[32] == 0)
+                    {
+                        <td class="numbers iconInactive">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-check-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z" />
+                            </svg>
+
+                        </td>
+                        <td class="numbers col-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-x-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z" />
+                            </svg>
+
+                        </td>
+                        <td class="numbers col-1 ">0</td>
+                    }
+                    else
+                    {
+                        <td class="numbers col-1 ">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-check-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z" />
+                            </svg>
+
+                        </td>
+                        <td class="numbers col-1 iconInactive">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-x-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z" />
+                            </svg>
+                        </td>
+
+                        <td class="numbers col-1 ">@ViewBag.QTY_Q33</td>
+                    }
+                </tr>
+
+
+                <tr>
+                    <td class="rowTitle col-2" colspan="2">34. ¿Cuenta con mecanismos, capacitación o programas para  difundir información para sensibilizar sobre la violencia laboral, tanto a trabajadores como a directivos, gerentes y supervisores?</td>
+                    @if (ViewBag.lista[33] == 0)
+                    {
+                        <td class="numbers iconInactive">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-check-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z" />
+                            </svg>
+
+                        </td>
+                        <td class="numbers col-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-x-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z" />
+                            </svg>
+
+                        </td>
+                        <td class="numbers col-1 ">0</td>
+                    }
+                    else
+                    {
+                        <td class="numbers col-1 ">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-check-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z" />
+                            </svg>
+
+                        </td>
+                        <td class="numbers col-1 iconInactive">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-x-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z" />
+                            </svg>
+
+                        </td>
+                        <td class="numbers col-1 ">@ViewBag.QTY_Q34</td>
+                    }
+                </tr>
+
+                <tr>
+                    <td class="rowTitle col-2" colspan="2">35. ¿Cuenta con mecanismos para  Informar sobre la forma en que se deben denunciar actos de violencia laboral?</td>
+                    @if (ViewBag.lista[34] == 0)
+                    {
+                        <td class="numbers iconInactive">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-check-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z" />
+                            </svg>
+
+                        </td>
+                        <td class="numbers col-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-x-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z" />
+                            </svg>
+
+                        </td>
+                        <td class="numbers col-1 ">0</td>
+                    }
+                    else
+                    {
+                        <td class="numbers col-1 ">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-check-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z" />
+                            </svg>
+
+                        </td>
+                        <td class="numbers col-1 iconInactive">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-x-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z" />
+                            </svg>
+
+                        </td>
+                        <td class="numbers col-1 ">@ViewBag.QTY_Q35</td>
+                    }
+                </tr>
+
+                <tr>
+                    <td class="rowTitle col-2" colspan="2">36. ¿Cuenta con mecanismos  seguros y confidenciales para la recepción de quejas por prácticas opuestas al entorno organizacional favorable y para denunciar actos de violencia laboral?</td>
+                    @if (ViewBag.lista[35] == 0)
+                    {
+                        <td class="numbers iconInactive">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-check-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z" />
+                            </svg>
+
+                        </td>
+                        <td class="numbers col-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-x-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z" />
+                            </svg>
+
+                        </td>
+                        <td class="numbers col-1 ">0</td>
+                    }
+                    else
+                    {
+                        <td class="numbers col-1 ">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-check-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z" />
+                            </svg>
+
+                        </td>
+                        <td class="numbers col-1 iconInactive">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-x-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z" />
+                            </svg>
+
+                        </td>
+                        <td class="numbers col-1 ">@ViewBag.QTY_Q36</td>
+                    }
+                </tr>
+
+                <tr>
+                    <td class="rowTitle col-2" colspan="2">37. ¿Cuenta con programas que promuevan el sentido de pertenencia de los trabajadores a la organización?</td>
+                    @if (ViewBag.lista[36] == 0)
+                    {
+                        <td class="numbers iconInactive">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-check-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z" />
+                            </svg>
+
+                        </td>
+                        <td class="numbers col-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-x-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z" />
+                            </svg>
+
+                        </td>
+                        <td class="numbers col-1 ">0</td>
+                    }
+                    else
+                    {
+                        <td class="numbers col-1 ">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-check-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z" />
+                            </svg>
+
+                        </td>
+                        <td class="numbers col-1 iconInactive">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill=" #6319e3" class="bi bi-x-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z" />
+                            </svg>
+
+                        </td>
+                        <td class="numbers col-1 ">@ViewBag.QTY_Q37</td>
+                    }
+                </tr>
+
+            </tbody>
+        </table>
+
+        <div class="col-sm-12 foot">
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+
+            <h7 class="note">check035.com</h7>
+            <hr class="double" />
+        </div>
+    </div>
+
+</div>
+<script>
+  const ctx = document.getElementById('myChart').getContext('2d');
+  const myChart = new Chart(ctx, {
+      type: 'polarArea',
+      data: {
+          labels: ['% Ambiente de trabajo', '% Factores propios de la actividad', '% Organización del tiempo de trabajo', '% Liderazgo y relaciones de trabajo', '% Entorno organizacional'],
+          datasets: [{
+              label: '% de cumplimiento',
+              data: [('@ViewBag.CT1'/ 10)*100, ('@ViewBag.CT2' / 10)*100, ('@ViewBag.CT3' / 4)*100,( '@ViewBag.CT4' / 5)*100, ('@ViewBag.CT5' / 8)*100],
+              backgroundColor: [
+                  'rgb(204, 84, 156,0.5)',
+                  'rgb(109, 27, 220,0.5)',
+                  'rgb(157, 29, 174,0.5)',
+                  'rgb(141, 45, 187,0.5)',
+                  'rgb(94, 39, 154,0.5)'
+              ],
+              borderColor: [
+                  'rgb(204, 84, 156,0.8)',
+                  'rgb(109, 27, 220,0.8)',
+                  'rgb(157, 29, 174,0.8)',
+                  'rgb(141, 45, 187,0.8)',
+                  'rgb(94, 39, 154,0.8)'
+              ],
+              borderWidth: 1
+          }]
+      },
+      options: {
+
+      }
+  });
+</script>
+<script>
+ const ctx2 = document.getElementById('myChart2').getContext('2d');
+        const myChart2 = new Chart(ctx2, {
+            type: 'bar',
+            data: {
+                labels: ['Ambiente de trabajo', 'Factores propios de la actividad', 'Organización del tiempo de trabajo', 'Liderazgo y relaciones de trabajo', 'Entorno organizacional'],
+                datasets: [{
+                    label: '% de cumplimiento',
+                    data: [('@ViewBag.CT1'/ 10)*100, ('@ViewBag.CT2' / 10)*100, ('@ViewBag.CT3' / 4)*100,( '@ViewBag.CT4' / 5)*100, ('@ViewBag.CT5' / 8)*100],
+                    backgroundColor: [
+                    'rgb(204, 84, 156,0.5)',
+                    'rgb(109, 27, 220,0.5)',
+                    'rgb(157, 29, 174,0.5)',
+                    'rgb(141, 45, 187,0.5)',
+                    'rgb(94, 39, 154,0.5)'
+                    ],
+                    borderColor: [
+                    'rgb(204, 84, 156,0.8)',
+                    'rgb(109, 27, 220,0.8)',
+                    'rgb(157, 29, 174,0.8)',
+                    'rgb(141, 45, 187,0.8)',
+                    'rgb(94, 39, 154,0.8)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+</script>
+
+<script>
+    var ctx3a = document.getElementById("myChart3a").getContext('2d');
+        var myChart3a = new Chart(ctx3a, {
+        type: 'doughnut',
+        data: {
+            datasets: [{
+            backgroundColor: [
+                "#794475",
+                "rgb(76, 76, 78)"
+            ],
+            data: ['@ViewBag.CT1',10-'@ViewBag.CT1']
+            }]
+        }
+        });
+</script>
+
+<script>
+    var ctx3b = document.getElementById("myChart3b").getContext('2d');
+    var myChart3b = new Chart(ctx3b, {
+    type: 'doughnut',
+    data: {
+        datasets: [{
+        backgroundColor: [
+            "#794475",
+            "rgb(76, 76, 78)"
+        ],
+        data: ['@ViewBag.CT2',10-'@ViewBag.CT2']
+        }]
+    }
+    });
+</script>
+
+<script>
+    var ctx3c = document.getElementById("myChart3c").getContext('2d');
+    var myChart3c = new Chart(ctx3c, {
+    type: 'doughnut',
+    data: {
+        datasets: [{
+        backgroundColor: [
+            "#794475",
+            "rgb(76, 76, 78)"
+        ],
+        data: ['@ViewBag.CT3',4-'@ViewBag.CT3']
+        }]
+    }
+    });
+</script>
+
+<script>
+    var ctx3d = document.getElementById("myChart3d").getContext('2d');
+    var myChart3d = new Chart(ctx3d, {
+    type: 'doughnut',
+    data: {
+        datasets: [{
+        backgroundColor: [
+            "#794475",
+            "rgb(76, 76, 78)"
+        ],
+        data: ['@ViewBag.CT4',5-'@ViewBag.CT4']
+
+        }]
+    }
+    });
+</script>
+
+<script>
+var ctx3e = document.getElementById("myChart3e").getContext('2d');
+    var myChart3e = new Chart(ctx3e, {
+    type: 'doughnut',
+    data: {
+        datasets: [{
+        backgroundColor: [
+            "#794475",
+            "rgb(76, 76, 78)"
+        ],
+        data: ['@ViewBag.CT5',8-'@ViewBag.CT5']
+        }]
+    }
+    });
+</script>

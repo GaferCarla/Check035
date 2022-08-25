@@ -1,0 +1,251 @@
+﻿@model ErgoSalud.Models.ERGOS_Cuestionarios_Trabajador_N01
+@{
+    
+    List<SelectListItem> Nivel_Empelado = new List<SelectListItem>();
+    Nivel_Empelado.Add(new SelectListItem
+    {
+        Text = "Nivel I",
+        Value = "3"
+    }); Nivel_Empelado.Add(new SelectListItem
+    {
+        Text = "Nivel II",
+        Value = "2"
+    }); Nivel_Empelado.Add(new SelectListItem
+    {
+        Text = "Nivel III",
+        Value = "1"
+    });
+}
+
+<script>
+  function getting_centros_trabajo() {
+        var id_empresa = $('#ddw_Empresas option:selected').val();
+     //   alert(id_categoria);
+        $.ajax({
+            type: 'POST',
+            url: '@Url.Action("Get_Centros_Trabajo")',
+            dataType: 'json',
+            data: { id_empresa: id_empresa },
+            success: function (data) {
+                $("#ddw_Centros_T").prop("disabled", false);
+                if (data != null) {
+                    $('#ddw_Centros_T').empty();
+                    $('#ddw_Departamentos').empty();
+                    var mySelect = $('#ddw_Centros_T');
+                        mySelect.append($('<option>', {
+                        value: "",
+                            text: "Seleccione Centro de Trabajo"
+                    }));
+                    $.each(data, function (i, data) {
+                        mySelect.append($('<option>', {
+                            value: data.id_centro_trabajo,
+                            text: data.Nombre_centro_trabajo
+                        }));
+                    });
+                } else {
+                    $('#ddw_Centros_T').empty();
+                    $('#ddw_Departamentos').empty();
+                }
+            },
+            error: function () {
+                alert("Seleccione la Empresa");
+                $('#ddw_Centros_T').empty();
+                $('#ddw_Departamentos').empty();
+            },
+            catch(e) {
+                alert(e.name + "\n" + e.message)
+            }
+        });
+    }
+</script>
+<style>
+    .disabled {
+        pointer-events: none;
+        cursor: not-allowed;
+    }
+</style>
+<br>
+<h2>Información Sobre Encuesta</h2>
+@if (User.IsInRole("Guest"))
+{
+    <div class="alert alert-success">
+        <h4>Para continuar tu cuestionario ingresa y guarda el siguiente formulario.</h4>
+    </div>
+}
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.HiddenFor(model => model.id_cuestionario_trabajador)
+    @Html.HiddenFor(model => model.id_encuesta)
+    @Html.HiddenFor(model => model.Canalizacion)
+    @Html.HiddenFor(model => model.Mail_Status)
+    @Html.HiddenFor(model => model.Survey_Status)
+    <div class="container">
+        @*@########################MENSAJES DE VALIDACION########################*@
+        @Html.ValidationMessageFor(model => model.id_empresa, "", new { @class = "text-danger" })
+        @Html.ValidationMessageFor(model => model.id_centro_trabajo, "", new { @class = "text-danger" })
+        @Html.ValidationMessageFor(model => model.Fecha_Nacimiento, null, new { @class = "text-danger" })
+        @Html.ValidationMessageFor(model => model.id_trabajador, "", new { @class = "text-danger" })
+        @Html.ValidationMessageFor(model => model.Departamento, "", new { @class = "text-danger" })
+        @Html.ValidationMessageFor(model => model.Ocupacion, "", new { @class = "text-danger" })
+        @Html.ValidationMessageFor(model => model.fecha, "", new { @class = "text-danger" })
+        @Html.ValidationMessageFor(model => model.Rotacion_Turno, "", new { @class = "text-danger" })
+        <div class="row">
+            <div class="col-xs-12 col-sm-3">
+                <b>Nombre Completo:</b>
+                @Html.EditorFor(model => model.Nombre, new { htmlAttributes = new { @class = "form-control ", @required = "required" } })
+            </div>
+            <div class="col-xs-12 col-sm-3">
+                <b>Fecha Nacimiento: Día/Mes/Año</b>
+                @Html.EditorFor(model => model.Fecha_Nacimiento, new { htmlAttributes = new { @class = "form-control datepicker" } })
+            </div>
+            <div class="col-xs-12 col-sm-3">
+                <b>Correo Electrónico:</b>
+                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control ", @required = "required" } })
+            </div>
+        </div>
+
+        <div class="row">
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+            <div class="col-xs-12 col-sm-3">
+                <b>Número de Empleado:</b>
+                @Html.EditorFor(model => model.id_trabajador, new { htmlAttributes = new { @class = "form-control ", @required = "required" } })
+            </div>
+            <div class="col-xs-12 col-sm-3">
+                <b>Departamento:</b>
+                @Html.EditorFor(model => model.Departamento, new { htmlAttributes = new { @class = "form-control ", @required = "required" } })
+            </div>
+
+            <div class="col-xs-12 col-sm-3">
+                <b>Ocupación:</b>
+                @Html.EditorFor(model => model.Ocupacion, new { htmlAttributes = new { @class = "form-control ", @required = "required" } })
+            </div>
+
+            <div class="col-xs-12 col-sm-3">
+                <b>Fecha Aplicación: Día/Mes/Año</b>
+                @Html.EditorFor(model => model.fecha, new { htmlAttributes = new { @class = "form-control datepicker" } })
+            </div>
+            @if (User.IsInRole("Admin") || User.IsInRole("Admin_SyS"))
+            {
+                <div class="col-sm-3 col-xs-12">
+                    <b><span style="color:red">*</span> Empresa:</b>
+                    @Html.DropDownList("id_empresa", null, "Seleccionar Empresa", htmlAttributes: new { id = "ddw_Empresas", onchange = "getting_centros_trabajo()", @class = "form-control form-line", required = "Select Plan Type", @readonly = "readonly" })
+
+                </div>
+            }
+            else
+            {
+                <div class="col-sm-3 col-xs-12">
+                    <b><span style="color:red">*</span> Empresa:</b>
+                    @Html.DropDownListFor(model => model.id_empresa, (SelectList)ViewBag.id_empresa_Visitante, "Seleccionar Empresa", new { id = "ddw_Empresas", onchange = "getting_centros_trabajo()", @class = "form-control form-line disabled", required = "Select Plan Type", @readonly = "readonly", @style = "background-color:gray" })
+
+                </div>
+            }
+
+
+            @if (User.IsInRole("Admin") || User.IsInRole("Admin_SyS"))
+            {
+                <div class="col-sm-3 col-xs-12">
+                    <b><span style="color:red">*</span> Centro de Trabajo:</b>
+                @*    @Html.DropDownList("id_centro_trabajo", null, "Seleccionar Centro de Trabajo", htmlAttributes: new { id = "ddw_Centros_T", @class = "form-control form-line", required = "Select Plan Type", @readonly = "readonly" })*@
+                     @Html.DropDownListFor(model => model.id_centro_trabajo, (SelectList)ViewBag.id_centro_trabajo, "Seleccionar Centro de Trabajo", htmlAttributes: new { id = "ddw_Centros_T", @class = "form-control form-line disabled", required = "Select Plan Type"  })
+    
+                </div>
+            }
+            else
+            {
+                <div class="col-sm-3 col-xs-12">
+                    <b><span style="color:red">*</span> Centro de Trabajo:</b>
+                    @Html.DropDownListFor(model => model.id_centro_trabajo, (SelectList)ViewBag.id_centro_trabajo, htmlAttributes: new { id = "ddw_Centros_T", @class = "form-control form-line disabled", required = "Seleccione el centro",   @style = "background-color:gray" })
+
+                </div>
+            }
+            <div class="col-xs-12 col-sm-3">
+                <b>Sexo:</b>
+                @Html.DropDownList("Sexo", null, "Seleccionar Sexo", htmlAttributes: new { @class = "form-control ", @required = "required" })
+            </div>
+            <div class="col-xs-12 col-sm-3">
+                <b>Edad:</b>
+                @Html.DropDownList("Edad", null, "Seleccionar Edad", htmlAttributes: new { @class = "form-control ", @required = "required" })
+            </div>
+            <div class="col-xs-12 col-sm-3">
+                <b>Estado Civil:</b>
+                @Html.DropDownList("Estado_Civil", null, "Seleccionar Estado Civil", htmlAttributes: new { @class = "form-control ", @required = "required" })
+            </div>
+            <div class="col-xs-12 col-sm-3">
+                <b>Nivel de Estudios:</b>
+                @Html.DropDownList("Nivel_Estudios", null, "Seleccionar Nivel Estudios", htmlAttributes: new { @class = "form-control ", @required = "required" })
+            </div>
+
+
+            <div class="col-xs-12 col-sm-3">
+                <b>Tipo de Puesto:</b>
+                @*   @Html.DropDownListFor(model => model.Tipo_puesto, (SelectList)ViewBag.Tipo_puesto, "Seleccionar Tipo Puestos", new { @class = "form-control " })*@
+                @Html.DropDownList("Tipo_puesto", null, "Seleccionar Nivel Puesto", htmlAttributes: new { @class = "form-control ", @required = "required" })
+            </div>
+
+            <div class="col-xs-12 col-sm-3">
+                <b>Tipo de Contratación:</b>
+                @Html.DropDownList("Tipo_Contratacion", null, "Seleccionar Tipo Contratación", htmlAttributes: new { @class = "form-control ", @required = "required" })
+            </div>
+            <div class="col-xs-12 col-sm-3">
+                <b>Tipo de Personal:</b>
+                @Html.DropDownList("Tipo_Personal", null, "Seleccionar Tipo Personal", htmlAttributes: new { @class = "form-control ", @required = "required" })
+            </div>
+            <div class="col-xs-12 col-sm-3">
+                <b>Tipo de Jornada:</b>
+                @Html.DropDownList("Tipo_Jornada", null, "Seleccionar Tipo Jornada", htmlAttributes: new { @class = "form-control ", @required = "required" })
+            </div>
+            <div class="col-xs-12 col-sm-3">
+                <b>Rotación de Turno:</b>
+                @Html.DropDownList("Rotacion_Turno", null, "Seleccionar Rotacion Turno", htmlAttributes: new { @class = "form-control ", @required = "required" })
+            </div>
+            <div class="col-xs-12 col-sm-3">
+                <b>Experiencia en Puesto Actual:</b>
+                @Html.DropDownList("Experiencia_puesto_actual", null, "Seleccionar Experiencia", htmlAttributes: new { @class = "form-control ", @required = "required" })
+            </div>
+            <div class="col-xs-12 col-sm-3">
+                <b>Experiencia en puesto Laboral:</b>@Html.DropDownList("Experiencia_puesto_laboral", null, "Seleccionar Experiencia", htmlAttributes: new { @class = "form-control ", @required = "required" })
+            </div>
+
+            @if (User.IsInRole("Admin") || User.IsInRole("Admin_SyS"))
+            {
+                <div class="col-sm-3 col-xs-12">
+                    <b>Nivel de empleado:</b>
+                    @Html.DropDownListFor(model => model.Supervisor_Status, Nivel_Empelado, "Seleccionar", new { @class = "form-control" })
+                </div>
+            }
+            else
+            {
+                @Html.HiddenFor(model => model.Supervisor_Status)
+            }
+        </div>
+
+
+        <div class=" col-xs-12">
+            <br>
+            @if (User.IsInRole("Final_Guest"))
+            {
+
+                <input type="submit" value="Guardar y Continuar" class="btn btn-success" />
+            }
+            else
+            {
+
+                <input type="submit" value="Guardar" class="btn btn-success" />
+                @Html.ActionLink("Regresar", "Index", null, new { @class = "btn btn-primary" })
+            }
+
+
+        </div>
+
+
+    </div>
+
+
+}
+

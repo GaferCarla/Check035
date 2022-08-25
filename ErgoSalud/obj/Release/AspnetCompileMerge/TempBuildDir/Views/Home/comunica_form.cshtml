@@ -1,0 +1,126 @@
+﻿
+@{
+    ViewBag.Title = "comunica_form";
+    @Styles.Render("~/Content/sizing.css");
+    @Styles.Render("~/Content/banner.css");
+    @Styles.Render("~/Content/breadcrumb.css");
+    @Styles.Render("~/Content/comunica_form.css");
+    @Styles.Render("~/Content/button.css");
+    @Styles.Render("~/Content/branding.css");
+
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet'>
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/boxicons@2.0.0/css/boxicons.min.css'>
+
+    <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+}
+
+<style>
+
+    .container {
+
+        width: 100% !important;
+    }
+
+    .navbar, #footer {
+        z-index: 1000 !important;
+    }
+
+    .banner-section {
+        min-height: 350px;
+        align-self: baseline !important
+    }
+
+    .body-content, body, html {
+        width: 100% !important
+    }
+</style>
+
+<div class="container-fluid row mt-5 pt-5 px-sm-5 px-1 pb-3 pb-md-0">
+    <div class="template-demo">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb breadcrumb-custom ">
+                <li class="breadcrumb-item"><a href='@Url.Action("Index","Home")' data-abc="true" class="font-weight-bold text-uppercase">Dashboard</a></li>
+                <li class="breadcrumb-item"><a href='@Url.Action("Index","Avisos_Notificaciones")' data-abc="true" class="font-weight-bold text-uppercase">Comunica</a></li>
+
+                <li class="breadcrumb-item active font-weight-bold " aria-current="page"><span>&nbsp&nbspCrea notificación</span></li>
+            </ol>
+        </nav>
+
+    </div>
+</div>
+
+
+
+<div class="row  comunicaSection p-md-5 p-0">
+    <div class=" col-11 mx-auto p-0">
+        <div class="card mb-0 mb-md-5 rounded">
+            <div class="comunica-box rounded">
+
+                <div class="comunica-snip rounded ">
+
+                    <div class="comunica-space ">
+                        <div class="container-fluid px-4 row">
+                            <label class="label"><p>Asunto:</p></label>
+                            <input type="text" class="input">
+
+                            <label class="label"><p>Relevancia del aviso:</p></label>
+                            <select type="text" class="input">
+                                <option disabled>Escoja una opcion</option>
+                                <option>Normal</option>
+                                <option>Relevante</option>
+                                <option>Urgencia</option>
+                            </select>
+
+                            <textarea style="height:200px" class="input" placeholder="Escribe el mensaje que quieres transmitir"></textarea>
+
+                            <label class="label"><p>Destinatarios:</p></label>
+                            <select type="text" class="input">
+                                <option disabled>Escoja una opcion</option>
+                                <option>Todos</option>
+                                <option>Sólo usuarios</option>
+                                <option>Sólo administradores</option>
+                            </select>
+
+                            <div class="col-12 col-sm-6">
+                                <label class="label"><p>Hora Inicio:</p></label>
+                                <input type="date" class="input">
+                            </div>
+                            <div class="col-12 col-sm-6">
+                                <label class="label"><p>Hora término:</p></label>
+                                <input type="date" class="input">
+                            </div>
+
+                            <div class="w-100 py-4 my-3">
+                                <input type="submit" class="py-4 w-100 text-uppercase text-white btn btn-module2" value="Enviar">
+                            </div>
+
+
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @*<div class="col-md-6 col-11 mx-auto p-0">
+            <div class="card mb-md-5 rounded">
+
+            </div>
+        </div>*@
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<script type='text/javascript' src='https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js'></script>

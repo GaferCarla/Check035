@@ -1,0 +1,84 @@
+﻿@model ErgoSalud.Models.Check_checklist_medidas_acciones_N01
+
+@{
+    ViewBag.Title = "Delete";
+}
+<br>
+<h2>
+    Eliminación permanente de acción sobre la medida @Model.id_medida </h2>
+
+    <h3 style="color:red">¿Realmente quiere eliminar este registro?</h3>
+    <div>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayName("Medida")
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.id_medida)
+            </dd>
+
+            <dt>
+                @Html.DisplayName("Acción")
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.accion)
+            </dd> 
+            <dt>
+                @Html.DisplayName("Departamento")
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.departamento)
+            </dd>
+
+            <dt>
+                @Html.DisplayName("Fecha Inicio")
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.fecha_inicio)
+            </dd>
+
+            <dt>
+                @Html.DisplayName("Fecha Fin")
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.fecha_fin)
+            </dd>
+
+            
+
+            <dt>
+                @Html.DisplayName("Estatus")
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.estatus)
+            </dd>
+
+            <dt>
+                @Html.DisplayName("Nivel")
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.nivel)
+            </dd>
+
+         
+
+        </dl>
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+    <div class="form-actions no-color">
+        <input type="submit" value="Confirmar eliminación" class="btn btn-danger" />
+        <a style="color:black" href="@Url.Action("Index", "Medidas_Estatus")" class="btn btn-default">Regresar</a> 
+    </div>
+        }
+    </div>

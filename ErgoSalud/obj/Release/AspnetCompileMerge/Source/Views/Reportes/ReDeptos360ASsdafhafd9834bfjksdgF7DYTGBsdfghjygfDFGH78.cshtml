@@ -1,0 +1,346 @@
+﻿
+@model ErgoSalud.Models.ERGOS_Empresas_N01
+
+
+ 
+
+<script type='text/javascript'>
+
+
+
+    function Reporte_Departamentos() {
+
+        var id_empresa = @Model.id_empresa;
+            document.getElementById("chartDepartamentos").style.display = "block";
+
+    $.ajax({
+        type: 'POST',
+        url: '@Url.Action("Searching_Departamentos")',
+        dataType: 'json',
+        data: { id_empresa: id_empresa },
+        success: function (dato) {
+
+
+            if (dato != null) {
+
+                var Departamentos = [];
+                var Niveles = [];
+                var Colores = [];
+                var C_I = [];
+                var C_II = [];
+                var C_III = [];
+                var C_IV = [];
+                var C_V = [];
+                var C_VI = [];
+                var C_VII = [];
+                var C_VIII = [];
+                var C_IX = [];
+                var C_X = [];
+                var C_XI = [];
+                var C_XII = [];
+                var C_XIII = [];
+                var C_XIV = [];
+                var C_XV = [];
+
+                var count = dato.length;
+                var count_II = dato.length;
+                var counter = 0;
+                var counter_II = 0;
+
+                while (count > 0) {
+                    Departamentos[counter] = dato[counter].Departamento;
+                    Niveles[counter] = dato[counter].PROMEDIO_FINAL;
+                    Colores[counter] = dato[counter].COLOR;
+                    C_I[counter] = dato[counter].PROMEDIO_C_I;
+                    C_II[counter] = dato[counter].PROMEDIO_C_II;
+                    C_III[counter] = dato[counter].PROMEDIO_C_III;
+                    C_IV[counter] = dato[counter].PROMEDIO_C_IV;
+                    C_V[counter] = dato[counter].PROMEDIO_C_V;
+                    C_VI[counter] = dato[counter].PROMEDIO_C_VI;
+                    C_VII[counter] = dato[counter].PROMEDIO_C_VII;
+                    C_VIII[counter] = dato[counter].PROMEDIO_C_VIII;
+                    C_IX[counter] = dato[counter].PROMEDIO_C_IX;
+                    C_X[counter] = dato[counter].PROMEDIO_C_X;
+                    C_XI[counter] = dato[counter].PROMEDIO_C_XI;
+                    C_XII[counter] = dato[counter].PROMEDIO_C_XII;
+                    C_XIII[counter] = dato[counter].PROMEDIO_C_XIII;
+                    C_XIV[counter] = dato[counter].PROMEDIO_C_XIV;
+                    C_XV[counter] = dato[counter].PROMEDIO_C_XV;
+                    counter++;
+                    count--;
+                }
+                    $('#myTable').empty();
+                     var table = document.getElementById("myTable");
+
+
+              while (count_II > 0) {
+         //     alert(count_II);
+
+                  if(count_II == 1){
+                  var row = table.insertRow(0);
+                  var cell1 = row.insertCell(0);
+                  var cell2 = row.insertCell(1);
+                  var cell3 = row.insertCell(2);
+                  var cell4 = row.insertCell(3);
+                  var cell5 = row.insertCell(4);
+                  var cell6 = row.insertCell(5);
+                  var cell7 = row.insertCell(6);
+                  var cell8 = row.insertCell(7);
+                  var cell9 = row.insertCell(8);
+                  var cell10 = row.insertCell(9);
+                  var cell11 = row.insertCell(10);
+                  var cell12 = row.insertCell(11);
+                  var cell13 = row.insertCell(12);
+                  var cell14 = row.insertCell(13);
+                  var cell15 = row.insertCell(14);
+
+                  cell1.innerHTML = "DEPARTAMENTO";
+                  cell2.innerHTML = "Cat I";
+                  cell3.innerHTML = "Cat II";
+                  cell4.innerHTML = "Cat III";
+                  cell5.innerHTML = "Cat IV";
+                  cell6.innerHTML = "Cat V";
+                  cell7.innerHTML = "Cat VI";
+                  cell8.innerHTML = "Cat VII";
+                  cell9.innerHTML = "Cat VIII";
+                  cell10.innerHTML = "Cat IX";
+                  cell11.innerHTML = "Cat X";
+                  cell12.innerHTML = "Cat XI";
+                  cell13.innerHTML = "Cat XII";
+                  cell14.innerHTML = "Cat XIII";
+                  cell15.innerHTML = "Cat XIV";
+                  cell15.innerHTML = "Cat XV";
+
+                  }
+                    else
+                  {
+
+                  var row = table.insertRow(0);
+                  var cell1 = row.insertCell(0);
+                  var cell2 = row.insertCell(1);
+                  var cell3 = row.insertCell(2);
+                  var cell4 = row.insertCell(3);
+                  var cell5 = row.insertCell(4);
+                  var cell6 = row.insertCell(5);
+                  var cell7 = row.insertCell(6);
+                  var cell8 = row.insertCell(7);
+                  var cell9 = row.insertCell(8);
+                  var cell10 = row.insertCell(9);
+                  var cell11 = row.insertCell(10);
+                  var cell12 = row.insertCell(11);
+                  var cell13 = row.insertCell(12);
+                  var cell14 = row.insertCell(13);
+                  var cell15 = row.insertCell(14);
+
+                  cell1.innerHTML = Departamentos[counter_II];
+                  cell2.innerHTML = C_I[counter_II];
+                  cell3.innerHTML = C_II[counter_II];
+                  cell4.innerHTML = C_III[counter_II];
+                  cell5.innerHTML = C_IV[counter_II];
+                  cell6.innerHTML = C_V[counter_II];
+                  cell7.innerHTML = C_VI[counter_II];
+                  cell8.innerHTML = C_VII[counter_II];
+                  cell9.innerHTML = C_VIII[counter_II];
+                  cell10.innerHTML = C_IX[counter_II];
+                  cell11.innerHTML = C_X[counter_II];
+                  cell12.innerHTML = C_XI[counter_II];
+                  cell13.innerHTML = C_XII[counter_II];
+                  cell14.innerHTML = C_XIII[counter_II];
+                  cell15.innerHTML = C_XIV[counter_II];
+
+                    }
+                    counter_II++;
+                    if(counter_II == dato.length - 1)
+                    {
+
+                    }
+                    else
+                    {
+                        count_II--;
+                    }
+
+             // alert(counter_II);
+                }
+
+
+
+                var ctx = document.getElementById("chartDepartamentos");
+                var myChart = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: Departamentos,
+                        datasets: [{
+                            backgroundColor: Colores,
+                            hoverBorderColor: "#000",
+                            hoverBackgroundColor: Colores,
+                            data: Niveles,
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        legend: {
+                            labels: ["Edad", "Edad"],
+                            display: false,
+                            labels: {
+                                fontColor: 'rgb(255, 99, 132)'
+                            }
+                        }, 
+                        scales: {
+                            yAxes: [{
+                                ticks: {
+                                    beginAtZero: true,
+                                    userCallback: function (label, index, labels) {
+                                        if (Math.floor(label) === label) {
+                                            return 'Puntaje ' + label;
+                                        }
+
+                                    },
+                                }
+                            }],
+                        xAxes: [{
+                          beginAtZero: true,
+                          ticks: {
+                             autoSkip: false
+                          }
+                      }]
+                        }
+
+                    }
+                });
+
+
+            } else {
+                alert("Información Faltante");
+            }
+
+        },
+        error: function () {
+            throw true;
+        },
+        catch(e) {
+            alert(e.name + "\n" + e.message)
+        }
+
+
+    });
+
+
+    }
+ 
+  
+    window.addEventListener('load',
+        function () {
+            Reporte_Departamentos();
+        }, false);
+
+</script>
+<div class="container-fluid">
+    @*#######################       SECCION MENU DATOS DE EMPRESA Y LOGO    ##########################*@
+    <section style="font-size:15px">
+        <div class="row">
+            <h1 align="center"><b>Reporte Resultados Generales Empresa - Departamentos</b></h1><br><br>
+
+            <div class="col-sm-8 col-xs-12">
+                <b>Empresa: </b> @Html.DisplayFor(model => model.Razon_Social) <br>
+                <b>Evaluaciones: </b>@ViewBag.Evaluaciones_counter <br>
+
+                @*@if (@ViewBag.Final_Empresa.PROMEDIO_Final_100 != null)
+                        {<b> Puntaje Final:</b> @ViewBag.Final_Empresa.PROMEDIO_Final_100.ToString("0.00")}
+                    else
+                    { <b> Puntaje Final:</b> <span>N/A</span>}*@
+
+            </div>
+            <div class="col-sm-4 col-xs-12 " align="center">
+                <img src="~/images/Customer_Logo.jpg" style="width:130px" class="img-responsive">
+
+            </div>
+        </div>
+    </section>
+    <hr>
+
+    @*#######################       SECCION MENU DATOS DE EMPRESA Y LOGO    ##########################*@
+
+
+    <h4 align="center">GRÁFICO DEPARTAMENTOS</h4> 
+    <div class="row">
+
+        <div class="col-xs-12 col-sm-9 col-sm-offset-1">
+            <canvas id="chartDepartamentos" style="display: block;"></canvas>
+            <hr>
+        </div>
+        <table class="table table-striped" id="myTable">
+        </table>
+        <table class="table table-hover table-condensed table-striped ">
+            <tbody>
+                <tr>
+                    <th colspan="2" align="center">
+                        Apartados de Referencia
+                    </th>
+                </tr>
+                <tr>
+                    <td>Cat I</td>
+                    <td>Organización y administración del tiempo</td>
+                </tr>
+                <tr>
+                    <td>Cat II</td>
+                    <td>Comunicación</td>
+                </tr>
+                <tr>
+                    <td>Cat III</td>
+                    <td>Habilidad y competencias técnicas</td>
+                </tr>
+                <tr>
+                    <td>Cat IV</td>
+                    <td>Cumplimiento de objetivos de área</td>
+                </tr>
+                <tr>
+                    <td>Cat V</td>
+                    <td>Orientación a la calidad</td>
+                </tr>
+                <tr>
+                    <td>Cat VI</td>
+                    <td>Apego a políticas y normas</td>
+                </tr>
+                <tr>
+                    <td>Cat VII</td>
+                    <td>Enfoque a resultados</td>
+                </tr>
+                <tr>
+                    <td>Cat VIII</td>
+                    <td>Relaciones personales</td>
+                </tr>
+                <tr>
+                    <td>Cat IX</td>
+                    <td>Análisis de problemas</td>
+                </tr>
+                <tr>
+                    <td>Cat X</td>
+                    <td>Autodesarrollo</td>
+                </tr>
+                <tr>
+                    <td>Cat XI</td>
+                    <td>Seguridad</td>
+                </tr>
+                <tr>
+                    <td>Cat XII</td>
+                    <td>Responsabilidad y Compromiso</td>
+                </tr>
+                <tr>
+                    <td>Cat XIII</td>
+                    <td>Trabajo en equipo</td>
+                </tr>
+                <tr>
+                    <td>Cat XIV</td>
+                    <td>Pasión</td>
+                </tr>
+                <tr>
+                    <td>Cat XV</td>
+                    <td>Búsqueda de la excelencia</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <hr>
+</div>
+
+

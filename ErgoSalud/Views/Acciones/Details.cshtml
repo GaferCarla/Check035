@@ -1,0 +1,106 @@
+﻿@model ErgoSalud.Models.Check_checklist_medidas_acciones_N01
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Check_checklist_medidas_acciones_N01</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.id_medida)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.id_medida)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.accion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.accion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.id_empresa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.id_empresa)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.id_centro_trabajo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.id_centro_trabajo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.departamento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.departamento)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fecha_inicio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fecha_inicio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fecha_fin)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fecha_fin)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.file_evidencia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.file_evidencia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.estatus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.estatus)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.nivel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nivel)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Check_checklist_medidas_N01.QR1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Check_checklist_medidas_N01.QR1)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,202 @@
+﻿@model IEnumerable<ErgoSalud.Models.Check_checklist_N01>
+
+
+<script type="text/javascript">
+
+    $(window).load(function () {
+
+        var ctx = document.getElementById("myChart");
+        var myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ["I", "II", "III", "IV"],
+                datasets: [{
+                    label: 'Categorías',
+                    data: [1, 2, 3, 4],
+                    backgroundColor: ['RED', 'RED', 'RED', 'RED'],
+                    hoverBackgroundColor: ['RED', 'RED', 'RED', 'RED'],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                }
+            }
+        });
+
+        var ctx2 = document.getElementById("myChart2");
+        var myChart2 = new Chart(ctx2, {
+            type: 'bar',
+            data: {
+                labels: ["I", "II", "III", "IV", "V", "VI", "VII"],
+                datasets: [{
+                    label: 'Dominios',
+                    data: [1, 2, 3, 4, 5, 6, 7],
+                    backgroundColor: ['GREEN', 'GREEN', 'GREEN', 'GREEN', 'GREEN', 'GREEN', 'GREEN'],
+                    hoverBackgroundColor: ['GREEN', 'GREEN', 'GREEN', 'GREEN', 'GREEN', 'GREEN', 'GREEN'],
+
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                }
+            }
+        });
+    });
+
+</script>
+
+@{
+    ViewBag.Title = "Index";
+    @Styles.Render("~/Content/sizing.css");
+    @Styles.Render("~/Content/tableElements.css");
+    @Styles.Render("~/Content/button.css");
+    @Styles.Render("~/Content/branding.css");
+
+
+
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet'>
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/boxicons@2.0.0/css/boxicons.min.css'>
+
+    <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+}
+
+@section dataTableStyle {
+
+    <link href="~/lib/datatables.net-bs/dataTables.bootstrap.min.css" rel="stylesheet" />
+    <link href="~/lib/datatables.net-select-bs/select.bootstrap.min.css" rel="stylesheet" />
+    <link rel='stylesheet' href='https://cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css'>
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/boxicons@2.0.0/css/boxicons.min.css'>
+}
+
+<style>
+    table.dataTable.dtr-inline.collapsed > tbody > tr[role="row"] > td:first-child:before, table.dataTable.dtr-inline.collapsed > tbody > tr[role="row"] > th:first-child:before {
+        top: 12px !important
+    }
+</style>
+
+
+
+
+<div class="container p-3 p-sm-5" >
+    <h2 class="mt-5 title_blue text-center">Panel de seguimiento checklist</h2>
+
+    <div class="row pb-4">
+        <div class="col-xs-12 col-sm-6">
+            <canvas id="myChart"></canvas>
+        </div>
+        <div class="col-xs-12 col-sm-6">
+            <canvas id="myChart2"></canvas>
+        </div>
+    </div>
+    <table id="seguimiento_checklist" class="table table-hover responsive nowrap" style="width:100%">
+        <thead>
+            <tr>
+
+                <th>
+                    @Html.DisplayName("Razón social")
+                </th>
+                <th>
+                    @Html.DisplayName("Correo electrónico")
+                </th>
+                <th>
+                    @Html.DisplayName("Calificación")
+                </th>
+                <th>
+                    @Html.DisplayName("Fecha registrada")
+                </th>
+                <th>Acción</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Razon_social)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Email)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Calificacion)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.created_at)
+                    </td>
+                    <td>
+                        <a title="Checklist" href="@Url.Action("Edit", new { id = item.id })">
+                            <i class="fas fa-file" title="Checklist" style="font-size:23px;color:forestgreen"></i>
+                        </a>
+
+
+
+                        <a href="@Url.Action("Delete", new { id=item.id })">
+                            <i class="fa fa-trash-o" title="Eliminar" style="font-size:23px;color:red"></i>
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+
+    </table>
+</div>
+
+
+
+@section dataTableScripts {
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js'></script>
+    <script src="~/lib/datatables.net/jquery.dataTables.min.js"></script>
+    <script src='https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js'></script>
+    <script src="~/lib/datatables.net-bs/dataTables.bootstrap.min.js"></script>
+    <script src="~/lib/datatables.net-select-bs/select.bootstrap.min.js"></script>
+    <script src="https://cdn.datatables.net/plug-ins/1.11.5/i18n/es-ES.json"></script>
+
+}
+
+<script>
+    $(document).ready(function () {
+        $("#seguimiento_checklist").DataTable({
+            "language": {
+                "url": "//cdn.datatables.net/plug-ins/1.10.16/i18n/Spanish.json"
+            },
+
+            aaSorting: [],
+            responsive: true,
+
+            columnDefs: [
+                {
+                    responsivePriority: 1,
+                    targets: 0
+                },
+                {
+                    responsivePriority: 2,
+                    targets: -1
+                }
+            ]
+        });
+
+        $(".dataTables_filter input")
+            .attr("placeholder", "Search here...")
+            .css({
+                width: "300px",
+                display: "inline-block"
+            });
+
+        $('[data-toggle="tooltip"]').tooltip();
+    });
+</script>

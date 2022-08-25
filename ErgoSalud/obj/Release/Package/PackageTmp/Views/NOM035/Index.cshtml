@@ -1,0 +1,494 @@
+﻿
+@{
+    ViewBag.Title = "dashboard";
+    @Styles.Render("~/Content/sizing.css");
+    @Styles.Render("~/Content/nom035.css");
+    @Styles.Render("~/Content/branding.css");
+    @Styles.Render("~/Content/banner.css");
+    @Styles.Render("~/Content/button.css");
+    @Styles.Render("~/Content/form.css");
+    @Styles.Render("~/Content/modal.css");
+
+
+
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/boxicons@2.1.2/css/boxicons.min.css'>
+
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet'>
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/boxicons@2.0.0/css/boxicons.min.css'>
+
+    <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+}
+
+<style>
+    .container {
+        width: 100% !important;
+        padding-right: var(--bs-gutter-x,0) !important;
+        padding-left: var(--bs-gutter-x,0) !important;
+        max-width: none !important
+    }
+
+    .navbar, #footer {
+        z-index: 1000 !important;
+    }
+
+    .banner-section {
+        min-height: 350px;
+        align-self: baseline !important
+    }
+
+    .body-content, body, html {
+        width: 100% !important
+    }
+
+    .container + .body-content + .w-100 {
+        margin: 0 !important;
+    }
+</style>
+
+
+<script type="text/javascript">
+    $('.timer').countTo();
+</script>
+<script>
+    function calculo_muestra() {
+        var No_empleados = parseInt($("#No_empleados").val());
+        var Final_muestra = ((0.9604 * No_empleados) / (0.0025 * (No_empleados - 1) + 0.9604)).toFixed(2);
+        // var Final_muestra =  No_empleados + 1 ;
+
+        //alert("Muestra a Evaluar: " + Final_muestra.toFixed(2));
+        if (No_empleados > 0) {
+            swal.fire({
+                title: "Muestra a Evaluar: " + Final_muestra,
+                text: "Muestra Calculada en base a " + No_empleados + " Empleados",
+                type: "success"
+            });
+
+        } else {
+            swal.fire({
+                title: "Ingrese un número valido",
+                type: "error"
+            });
+        }
+    }
+</script>
+<div class="form-group row w-100 mx-0 px-0" align="center">
+    <br><br>
+
+    <div class="row px-0 banner-section banner_nom035 mt-sm-4 justify-content-center mb-5 mb-md-0">
+        <div class="row px-0 mx-0 pt-5" id="toplogo_nom035">
+            <img src="~/images/logo-web-white.png" class=" mx-auto" style="max-width:131px; max-height:60px" />
+            <div class="col-12 mx-auto text-center  p-3 px-5">
+                <div class="row">
+                    <h1 class="pt-0 text-white">Identifica</h1>
+                    @*<h4 class="pb-4 font-18 text-white">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis, quae. Nisi praesentium minima aliquid quam odio aliquam impedit qui iste commodi, necessitatibus ducimus reiciendis distinctio. Vel voluptas blanditiis veniam vitae?
+                        </h4>*@
+                </div>
+
+                <!-- cta btn -->
+                <!--<div class="row p-0 ps-sm-5">
+                    <div class="col-12 col-md-6 p-3 text-center">
+                        <a href="#" class="cta-btn"><i class="fa fa-play btn-icon-prepend me-2" aria-hidden="true"></i>Tutoriales</a>
+                    </div>
+
+                    <div class="col-12 col-md-6 p-3 text-center">
+                        <a href="#" class="cta-btn"><i class="fa fa-user-circle btn-icon-prepend me-2" aria-hidden="true"></i>Alta de usuario</a>
+                    </div>
+                </div>-->
+                <img src="~/images/Nom-035/organization.png" class=" mx-auto image-front" />
+
+
+            </div>
+        </div>
+        <div class=" px-0 mx-0">
+            <img src="~/images/Nom-035/wave.svg" />
+        </div>
+
+    </div>
+
+    <div class="row px-5 justify-content-center mt-5 mt-md-0">
+
+        @if (User.IsInRole("Guest") || User.IsInRole("Final_Guest"))
+        {
+            <br><hr>
+            if (@ViewBag.My_Survey == 5)
+            {
+
+                <div class=" col-xs-12" role="alert">
+                    <h2 class="title_blue"><i class="fa fa-list title_blue" aria-hidden="true"></i> Instrucciones para comenzar la evaluación: </h2><br>
+                    <div align="left">
+                        <h3><b> 1.- </b>Ingresa a <b class="title_blue">Mi evaluación</b> en el menú superior.</h3>
+                        <h3><b> 2.- </b>Da clic en y <b class="title_blue">Contestar las evaluaciones habilitadas.</b></h3>
+                    </div>
+                </div>
+            }
+            else
+            {
+
+                <div class=" col-xs-12" role="alert">
+                    <h2><i class="fa fa-list" aria-hidden="true"></i> Instrucciones para comenzar la evaluación: </h2><br>
+                    <div align="left">
+                        <h3><b> 1.- </b>Ingresa a <b style="color:rebeccapurple">Mi evaluación</b> en el menú superior.</h3>
+                        <h3><b> 2.- </b>Da clic en <b style="color:rebeccapurple">Contestar Cuestionario.</b></h3>
+                    </div>
+                </div>
+            }
+
+        }
+        @if (User.IsInRole("Admin_Centro"))
+        {
+
+            <!-- Hover Zoom Effect -->
+            <h2 class="title_blue">Módulos</h2>
+            <hr>
+            <div class="container-fluid row justify-content-center p-5">
+
+                <div class="card col-md-3 col-sm-6 col-12 py-2 py-sm-3 border-0">
+                    <a class="card-animated" href="@Url.Action("Index", "Encuestas")">
+                        <div class="backgroundColor"></div>
+                        <div class="backgroundEffect"></div>
+                        <div class="content">
+                            <div class="text">
+                                <i class="bx bx-5x bx-pen fa-icon-image"></i>
+                                <p class="item-title">
+                                    <h3> Evaluaciones</h3>
+                                </p><!-- /.item-title -->
+                                <p class="mb-0 mt-4"><span class="h3 font-semibold mb-0 counter-count text-center px-1">@ViewBag.Surveys_NOM035</span></p>
+
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+
+
+                <div class="card col-md-3 col-sm-6 col-12 py-2 py-sm-3 border-0">
+                    <a class="card-animated " href="@Url.Action("Index", "Empresas")">
+                        <div class="backgroundColor"></div>
+                        <div class="backgroundEffect"></div>
+                        <div class="content">
+                            <div class="text">
+                                <i class='bx bxs-business bx-5x fa-icon-image'></i>
+                                <p class="item-title">
+                                    <h3>Empresas</h3>
+                                </p><!-- /.item-title -->
+                                <p class="mb-0 mt-4"><span class="h3 font-semibold mb-0 counter-count text-center px-3">@ViewBag.Empresas_No</span></p>
+
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="card col-md-3 col-sm-6 col-12 py-2 py-sm-3 border-0">
+                    <a class="card-animated " href="@Url.Action("Index_CT_admin_sys", "Centros_Trabajo")">
+                        <div class="backgroundColor"></div>
+                        <div class="backgroundEffect"></div>
+                        <div class="content">
+                            <div class="text">
+                                <i class="bx-5x bx bx-globe-alt fa-icon-image"></i>
+                                <p class="item-title">
+                                    <h3>Centros</h3>
+                                </p><!-- /.item-title -->
+                                <p class="mb-0 mt-4"><span class="h3 font-semibold mb-0 counter-count text-center px-3">@ViewBag.Centros_Trabajo</span></p>
+
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="card col-md-3 col-sm-6 col-12 py-2 py-sm-3 border-0">
+                    <a class="card-animated " href="@Url.Action("Index", "Usuarios")">
+                        <div class="backgroundColor"></div>
+                        <div class="backgroundEffect"></div>
+                        <div class="content">
+                            <div class="text">
+                                <i class='bx bxs-user-pin bx-5x fa-icon-image'></i>
+                                <p class="item-title">
+                                    <h3>Usuarios</h3>
+                                </p><!-- /.item-title -->
+                                <p class="mb-0 mt-4"><span class="h3 font-semibold mb-0 counter-count text-center px-1">@ViewBag.Users_No</span></p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="card col-md-3 col-sm-6 col-12 py-2 py-sm-3 border-0">
+                    <a class="card-animated " href="@Url.Action("Index", "grow_admin")">
+                        <div class="backgroundColor"></div>
+                        <div class="backgroundEffect"></div>
+                        <div class="content">
+                            <div class="text">
+                                <i class="bx bx-list-check bx-5x fa-icon-image"></i>
+                                <p class="item-title">
+                                    <h3>Checklists</h3>
+                                </p><!-- /.item-title -->
+                                <p class="mb-0 mt-4"><span class="h3 font-semibold mb-0 counter-count text-center px-1">@ViewBag.Checklists</span></p>
+
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+
+
+            <div class="row clearfix">
+                <div class="row">
+                    <a href="@Url.Action("Encuestas_Centro", "Encuestas")">
+                        <div class="col-xs-12 ">
+                            <div class="info-box hover-zoom-effect">
+                                <div class="icon ">
+                                    <img class="img-responsive" src="~/images/content.png" width="100%">
+                                </div>
+                                <div class="content">
+                                    <div class="text">ENCUESTAS NOM035</div>
+                                    <div class="number"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+
+
+
+                    <div class="col-xs-12 " data-toggle="modal" data-target="#Muestra">
+                        <div class="info-box hover-zoom-effect">
+                            <div class="icon ">
+                                <img class="img-responsive" src="~/images/seo.png" width="100%">
+                            </div>
+                            <div class="content">
+                                <div class="text">SELECCION MUESTRA</div>
+                                <div class="number">NOM-035</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+        @if (User.IsInRole("Admin") || User.IsInRole("Admin_SyS"))
+        {
+
+            <div class="container-fluid row justify-content-center p-5">
+
+                <div class="card col-md-4 col-sm-6 col-12 py-2 py-sm-3 border-0">
+                    <a class="card-animated" href="@Url.Action("Index", "Encuestas")">
+                        <div class="backgroundColor"></div>
+                        <div class="backgroundEffect"></div>
+                        <div class="content">
+                            <div class="text">
+                                <i class="bx bx-5x bx-pen fa-icon-image"></i>
+                                <p class="item-title">
+                                    <h3> Evaluaciones</h3>
+                                </p><!-- /.item-title -->
+                                <p class="mb-0 mt-4"><span class="h3 font-semibold mb-0 counter-count text-center px-1">@ViewBag.Surveys_NOM035</span></p>
+
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+
+
+                <div class="card col-md-4 col-sm-6 col-12 py-2 py-sm-3 border-0">
+                    <a class="card-animated " href="@Url.Action("Index", "Empresas")">
+                        <div class="backgroundColor"></div>
+                        <div class="backgroundEffect"></div>
+                        <div class="content">
+                            <div class="text">
+                                <i class='bx bxs-business bx-5x fa-icon-image'></i>
+                                <p class="item-title">
+                                    <h3>Empresas</h3>
+                                </p><!-- /.item-title -->
+                                <p class="mb-0 mt-4"><span class="h3 font-semibold mb-0 counter-count text-center px-3">@ViewBag.Empresas_No</span></p>
+
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="card col-md-4 col-sm-6 col-12 py-2 py-sm-3 border-0">
+                    <a class="card-animated " href="@Url.Action("Index_CT_admin_sys", "Centros_Trabajo")">
+                        <div class="backgroundColor"></div>
+                        <div class="backgroundEffect"></div>
+                        <div class="content">
+                            <div class="text">
+                                <i class="bx-5x bx bx-globe-alt fa-icon-image"></i>
+                                <p class="item-title">
+                                    <h3>Centros</h3>
+                                </p><!-- /.item-title -->
+                                <p class="mb-0 mt-4"><span class="h3 font-semibold mb-0 counter-count text-center px-3">@ViewBag.Centros_Trabajo</span></p>
+
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="card col-md-4 col-sm-6 col-12 py-2 py-sm-3 border-0">
+                    <a class="card-animated " href="@Url.Action("Index", "Usuarios")">
+                        <div class="backgroundColor"></div>
+                        <div class="backgroundEffect"></div>
+                        <div class="content">
+                            <div class="text">
+                                <i class='bx bxs-user-pin bx-5x fa-icon-image'></i>
+                                <p class="item-title">
+                                    <h3>Usuarios</h3>
+                                </p><!-- /.item-title -->
+                                <p class="mb-0 mt-4"><span class="h3 font-semibold mb-0 counter-count text-center px-1">@ViewBag.Users_No</span></p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="card col-md-4 col-sm-6 col-12 py-2 py-sm-3 border-0">
+                    <a class="card-animated " href="@Url.Action("Index", "grow_admin")">
+                        <div class="backgroundColor"></div>
+                        <div class="backgroundEffect"></div>
+                        <div class="content">
+                            <div class="text">
+                                <i class="bx bx-list-check bx-5x fa-icon-image"></i>
+                                <p class="item-title">
+                                    <h3>Checklists</h3>
+                                </p><!-- /.item-title -->
+                                <p class="mb-0 mt-4"><span class="h3 font-semibold mb-0 counter-count text-center px-1">@ViewBag.Checklists</span></p>
+
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+
+
+
+
+            <!-- #END# Hover Zoom Effect -->
+        }
+        @if (User.IsInRole("Admin-Guest"))
+        {
+
+            <!-- Hover Zoom Effect -->
+            <h2 class="title_blue text-uppercase">Módulos</h2>
+
+            <hr>
+
+            <div class="container-fluid row justify-content-center p-5">
+
+                <div class="card col-md-3 col-sm-6 col-12 py-2 py-sm-3 border-0">
+                    <a class="card-animated" href="@Url.Action("Encuestas_Admin", "Encuestas")">
+                        <div class="backgroundColor"></div>
+                        <div class="backgroundEffect"></div>
+                        <div class="content">
+                            <div class="text">
+                                <i class="bx bx-5x bx-pen fa-icon-image"></i>
+                                <p class="item-title">
+                                    <h3>
+                                        Evaluaciones <br />
+                                        NOM-035
+                                    </h3>
+                                </p><!-- /.item-title -->
+                                <p class="mb-0 mt-4"></p>
+
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+
+
+                <div class="card col-md-3 col-sm-6 col-12 py-2 py-sm-3 border-0">
+                    <a class="card-animated " href="@Url.Action("General_Statistics_Admin_Guest", "Empresas")">
+                        <div class="backgroundColor"></div>
+                        <div class="backgroundEffect"></div>
+                        <div class="content">
+                            <div class="text">
+                                <i class='bx bxs-color bx-5x fa-icon-image'></i>
+                                <p class="item-title">
+                                    <h3>Resultados</h3>
+                                </p><!-- /.item-title -->
+                                <p class="mb-0 mt-4"></p>
+
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="card col-md-3 col-sm-6 col-12 py-2 py-sm-3 border-0">
+                    <a class="card-animated " href="@Url.Action("Index", "Centros_Trabajo")">
+                        <div class="backgroundColor"></div>
+                        <div class="backgroundEffect"></div>
+                        <div class="content">
+                            <div class="text">
+                                <i class="bx-5x bx bx-globe-alt fa-icon-image"></i>
+                                <p class="item-title">
+                                    <h3>Centros</h3>
+                                </p><!-- /.item-title -->
+                                <p class="mb-0 mt-4"><span class="h3 font-semibold mb-0 counter-count text-center px-3">@ViewBag.Centros_Trabajo_ae</span></p>
+
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="card col-md-3 col-sm-6 col-12 py-2 py-sm-3 border-0">
+                    <a class="card-animated " data-toggle="modal" data-target="#Muestra">
+                        <div class="backgroundColor"></div>
+                        <div class="backgroundEffect"></div>
+                        <div class="content">
+                            <div class="text">
+                                <i class="bx bx-test-tube bx-5x fa-icon-image"></i>
+                                <p class="item-title">
+                                    <h3>Selección de muestra</h3>
+                                </p><!-- /.item-title -->
+                                <p class="mb-0 mt-0">NOM-035</p>
+
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+
+
+        }
+
+    </div>
+    @Scripts.Render("~/Scripts/counter.js")
+
+
+
+    <br>
+
+</div>
+<!-- Modal -->
+<div class="modal fade" id="Muestra" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content rounded">
+            <div class="modal-header modal-header-blue">
+                <h2 class="modal-title text-uppercase text-white" id="exampleModalLabel">Selección de Muestra para las Evaluaciones</h2>
+                <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" style="font-size:20px">
+                La selección de muestra se basa en la siguiente ecuación
+
+                <div class="row" align="center">
+                    <br>
+                    <img class="img-responsive" src="~/images/Ecuacion_muestra.png" width="70%"><br>
+                </div>
+                <p class="">
+                    En donde:<br>
+                    <b>N</b> es el número total de trabajadores del centro de trabajo.<br>
+                    <b>n</b> es el número de trabajadores a los que se les deberán aplicarán los cuestionarios.<br>
+                    0.9604 y 0.0025 permanecen constantes.
+                </p>
+
+                <span>Ingrese el número total de empleados</span><br><br>
+                <div class="col-xs-12 col-sm-4">
+                    <input type="text" id="No_empleados input" class="form-control ">
+                </div>
+                <div class=" col-xs-12 col-sm-8 ">
+                    <input type="button" value="Calcular" class="btn btn-module2 px-5 py-3" onclick="calculo_muestra();">
+                </div>
+                <br>
+            </div>
+            <div class="modal-footer border-top" >
+                <button type="button" class="btn btn-module px-5 py-3 text-uppercase" data-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+

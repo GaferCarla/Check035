@@ -1,0 +1,670 @@
+﻿@model ErgoSalud.Models.E360_Cuestionario_Resultado_N01
+@{
+    ViewBag.Title = "Evaluación 360";
+    List<SelectListItem> listItems = new List<SelectListItem>();
+    listItems.Add(new SelectListItem
+    {
+        Text = "Yo mismo",
+        Value = "Yo mismo"
+    });
+    listItems.Add(new SelectListItem
+    {
+        Text = "Compañero",
+        Value = "Compañero",
+    });
+    listItems.Add(new SelectListItem
+    {
+        Text = "Superior",
+        Value = "Superior"
+    });
+}
+
+<style>
+    .br_col-xs {
+        display: none;
+    }
+
+
+    @@media only screen and (max-width : 1199px) {
+        .wrap_pregunta {
+            word-wrap: break-word;
+        }
+
+        .br_col-xs {
+            display: block;
+        }
+
+        .wrap_respuesta {
+            word-wrap: normal;
+        }
+    }
+
+    @@media (min-width : 1200px) and (max-width: 9000px) {
+        .wrap_pregunta {
+            white-space: nowrap;
+        }
+    }
+
+    input[type='radio']:after {
+        width: 16px;
+        height: 16px;
+        position: relative;
+        float: left;
+        background-color: #d1d3d1;
+        content: '';
+        display: inline-block;
+        visibility: visible;
+        border: 1.5px solid whitesmoke;
+    }
+
+
+
+    input[type='radio']:checked:after {
+        width: 17.5px;
+        height: 17.5px;
+        top: -2px;
+        left: -1px;
+        position: relative;
+        background-color: RGB(0,101,206);
+        content: '';
+        display: inline-block;
+        visibility: visible;
+        border: 1px solid whitesmoke;
+    }
+</style>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.id_cuestionario_resultado)
+        @Html.HiddenFor(model => model.id_cuestionario_trabajador)
+        <div class=" custom-control ">
+            <h3 align="center">
+                EVALUACIÓN 360
+            </h3>
+
+            <hr>
+            <table class="table table-hover table-condensed table-striped ">
+                <tbody>
+                    <tr>
+                        <th>
+                            Folio: @Html.DisplayFor(model => model.ERGOS_Cuestionarios_Trabajador_N01.id_trabajador)
+                        </th>
+                        <th>
+                            Nombre: @Html.DisplayFor(model => model.ERGOS_Cuestionarios_Trabajador_N01.Nombre)
+                        </th>
+                        <th>
+                            Empresa: @Html.DisplayFor(model => model.ERGOS_Cuestionarios_Trabajador_N01.ERGOS_Empresas_N01.Razon_Social)
+                        </th>
+                        <th>
+                            Centro: @Html.DisplayFor(model => model.ERGOS_Cuestionarios_Trabajador_N01.ERGOS_Centros_Trabajo_N01.Nombre_centro_trabajo)
+                        </th>
+                        <th>
+                            @Html.DropDownListFor(model => model.Evaluado, listItems, "Estoy Evaluando a:", new { @class = "form-control" })
+                        </th>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-hover table-condensed ">
+                <tr style="padding-bottom: 1em;background-color:RGB(0,101,206);color:white">  <td colspan="2"><span style="font-weight:bold"> Organización y administración del tiempo</span></td></tr>
+                <tr>
+                    <td class="wrap_pregunta">1. Es capaz de establecer prioridades en sus tareas laborales.</td>
+                    <td nowrap class="wrap_respuesta buttons">
+                        @Html.RadioButtonFor(model => model.Q1, "0", new { @class = "custom-control-input" })<span> Nunca</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q1, "1", new { @class = "custom-control-input" })<span> Algunas veces</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q1, "2", new { @class = "custom-control-input" })<span> Con frecuencia</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q1, "3", new { @class = "custom-control-input" })<span> Siempre</span><br class="br_col-xs">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="wrap_pregunta">2. Mantiene limpia y ordenada su área de trabajo.</td>
+                    <td nowrap class="wrap_respuesta buttons">
+                        @Html.RadioButtonFor(model => model.Q2, "0", new { @class = "custom-control-input" })<span> Nunca</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q2, "1", new { @class = "custom-control-input" })<span> Algunas veces</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q2, "2", new { @class = "custom-control-input" })<span> Con frecuencia</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q2, "3", new { @class = "custom-control-input" })<span> Siempre</span><br class="br_col-xs">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="wrap_pregunta">3. Completa de manera efectiva en tiempo y forma los proyectos asignados.</td>
+                    <td nowrap class="wrap_respuesta buttons">
+                        @Html.RadioButtonFor(model => model.Q3, "0", new { @class = "custom-control-input" })<span> Nunca</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q3, "1", new { @class = "custom-control-input" })<span> Algunas veces</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q3, "2", new { @class = "custom-control-input" })<span> Con frecuencia</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q3, "3", new { @class = "custom-control-input" })<span> Siempre</span><br class="br_col-xs">
+                    </td>
+                </tr>
+                <tr>
+
+                    <td class="wrap_pregunta">4. Cumple las fechas límite con tiempo sobrado.</td>
+                    <td nowrap class="wrap_respuesta buttons">
+                        @Html.RadioButtonFor(model => model.Q4, "0", new { @class = "custom-control-input" })<span> Nunca</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q4, "1", new { @class = "custom-control-input" })<span> Algunas veces</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q4, "2", new { @class = "custom-control-input" })<span> Con frecuencia</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q4, "3", new { @class = "custom-control-input" })<span> Siempre</span><br class="br_col-xs">
+                    </td>
+                </tr>
+                <tr style="padding-bottom: 1em;background-color:RGB(0,101,206);color:white">  <td colspan="2"><span style="font-weight:bold">Comunicación</span></td></tr>
+                <tr>
+                    <td class="wrap_pregunta">
+                        5. Ignora y no es receptivo a las opiniones de los demás.
+                    </td>
+                    <td nowrap class="wrap_respuesta buttons">
+                        @Html.RadioButtonFor(model => model.Q5, "3", new { @class = "custom-control-input" })<span> Nunca</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q5, "2", new { @class = "custom-control-input" })<span> Algunas veces</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q5, "1", new { @class = "custom-control-input" })<span> Con frecuencia</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q5, "0", new { @class = "custom-control-input" })<span> Siempre</span><br class="br_col-xs">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="wrap_pregunta">6. Fomenta el diálogo de manera abierta y directa. </td>
+                    <td nowrap class="wrap_respuesta buttons">
+                        @Html.RadioButtonFor(model => model.Q6, "0", new { @class = "custom-control-input" })<span> Nunca</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q6, "1", new { @class = "custom-control-input" })<span> Algunas veces</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q6, "2", new { @class = "custom-control-input" })<span> Con frecuencia</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q6, "3", new { @class = "custom-control-input" })<span> Siempre</span><br class="br_col-xs">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="wrap_pregunta">7. Se comunica  con dificultad de manera oral y escrita.</td>
+                    <td nowrap class="wrap_respuesta buttons">
+                        @Html.RadioButtonFor(model => model.Q7, "3", new { @class = "custom-control-input" })<span> Nunca</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q7, "2", new { @class = "custom-control-input" })<span> Algunas veces</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q7, "1", new { @class = "custom-control-input" })<span> Con frecuencia</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q7, "0", new { @class = "custom-control-input" })<span> Siempre</span><br class="br_col-xs">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="wrap_pregunta">8. Expresa sus ideas con claridad y respeto a la otra persona. </td>
+                    <td nowrap class="wrap_respuesta buttons">
+                        @Html.RadioButtonFor(model => model.Q8, "0", new { @class = "custom-control-input" })<span> Nunca</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q8, "1", new { @class = "custom-control-input" })<span> Algunas veces</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q8, "2", new { @class = "custom-control-input" })<span> Con frecuencia</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q8, "3", new { @class = "custom-control-input" })<span> Siempre</span><br class="br_col-xs">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="wrap_pregunta">9. Comparte información de manera efectiva y asertiva.  </td>
+                    <td nowrap class="wrap_respuesta buttons">
+                        @Html.RadioButtonFor(model => model.Q9, "0", new { @class = "custom-control-input" })<span> Nunca</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q9, "1", new { @class = "custom-control-input" })<span> Algunas veces</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q9, "2", new { @class = "custom-control-input" })<span> Con frecuencia</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q9, "3", new { @class = "custom-control-input" })<span> Siempre</span><br class="br_col-xs">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="wrap_pregunta">10. Tiene dificultad para prestar atención en las conversaciones. </td>
+                    <td nowrap class="wrap_respuesta buttons">
+                        @Html.RadioButtonFor(model => model.Q10, "3", new { @class = "custom-control-input" })<span> Nunca</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q10, "2", new { @class = "custom-control-input" })<span> Algunas veces</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q10, "1", new { @class = "custom-control-input" })<span> Con frecuencia</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q10, "0", new { @class = "custom-control-input" })<span> Siempre</span><br class="br_col-xs">
+                    </td>
+                </tr>
+                <tr style="padding-bottom: 1em;background-color:RGB(0,101,206);color:white">  <td colspan="2"><span style="font-weight:bold">Habilidad y competencias técnicas</span></td></tr>
+                <tr>
+                    <td wrap>
+                        11. Demuestra falta de conocimientos detallados y experiencia en relación con su trabajo.  
+                    </td>
+                    <td nowrap class="wrap_respuesta buttons">
+                        @Html.RadioButtonFor(model => model.Q11, "3", new { @class = "custom-control-input" })<span> Nunca</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q11, "2", new { @class = "custom-control-input" })<span> Algunas veces</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q11, "1", new { @class = "custom-control-input" })<span> Con frecuencia</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q11, "0", new { @class = "custom-control-input" })<span> Siempre</span><br class="br_col-xs">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="wrap_pregunta">
+                        12. Se mantiene actualizado en su especialidad, asimilando rápidamente la información.
+                    </td>
+                    <td nowrap class="wrap_respuesta buttons">
+                        @Html.RadioButtonFor(model => model.Q12, "0", new { @class = "custom-control-input" })<span> Nunca</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q12, "1", new { @class = "custom-control-input" })<span> Algunas veces</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q12, "2", new { @class = "custom-control-input" })<span> Con frecuencia</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q12, "3", new { @class = "custom-control-input" })<span> Siempre</span><br class="br_col-xs">
+                    </td>
+                </tr>
+                <tr style="padding-bottom: 1em;background-color:RGB(0,101,206);color:white">  <td colspan="2"><span style="font-weight:bold">Cumplimiento de objetivos de área</span></td></tr>
+                <tr>
+                    <td class="wrap_pregunta">
+                        13. Desconoce los procesos y procedimientos del área.
+                    </td>
+                    <td nowrap class="wrap_respuesta buttons">
+                        @Html.RadioButtonFor(model => model.Q13, "3", new { @class = "custom-control-input" })<span> Nunca</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q13, "2", new { @class = "custom-control-input" })<span> Algunas veces</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q13, "1", new { @class = "custom-control-input" })<span> Con frecuencia</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q13, "0", new { @class = "custom-control-input" })<span> Siempre</span><br class="br_col-xs">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="wrap_pregunta">
+                        14. Mantiene las acciones alineadas con los objetivos de la dirección.
+                    </td>
+                    <td nowrap class="wrap_respuesta buttons">
+                        @Html.RadioButtonFor(model => model.Q14, "0", new { @class = "custom-control-input" })<span> Nunca</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q14, "1", new { @class = "custom-control-input" })<span> Algunas veces</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q14, "2", new { @class = "custom-control-input" })<span> Con frecuencia</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q14, "3", new { @class = "custom-control-input" })<span> Siempre</span><br class="br_col-xs">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="wrap_pregunta">
+                        15. Total falta de administración y aprovechamiento de recursos, provocando elevados costos y la más baja productivad.
+                    </td>
+                    <td nowrap class="wrap_respuesta buttons">
+                        @Html.RadioButtonFor(model => model.Q15, "3", new { @class = "custom-control-input" })<span> Nunca</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q15, "2", new { @class = "custom-control-input" })<span> Algunas veces</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q15, "1", new { @class = "custom-control-input" })<span> Con frecuencia</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q15, "0", new { @class = "custom-control-input" })<span> Siempre</span><br class="br_col-xs">
+                    </td>
+                </tr>
+
+                <tr style="padding-bottom: 1em;background-color:RGB(0,101,206);color:white">  <td colspan="2"><span style="font-weight:bold">Orientación a la calidad</span></td></tr>
+                <tr>
+                    <td class="wrap_pregunta">
+                        16. Es disciplinado (a) y ágil y siempre procura realizar el mejor trabajo posible.
+                    </td>
+                    <td nowrap class="wrap_respuesta buttons">
+                        @Html.RadioButtonFor(model => model.Q16, "0", new { @class = "custom-control-input" })<span> Nunca</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q16, "1", new { @class = "custom-control-input" })<span> Algunas veces</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q16, "2", new { @class = "custom-control-input" })<span> Con frecuencia</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q16, "3", new { @class = "custom-control-input" })<span> Siempre</span><br class="br_col-xs">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="wrap_pregunta">
+                        17. Evita maneras de mejorar la calidad de su trabajo.
+                    </td>
+                    <td nowrap class="wrap_respuesta buttons">
+                        @Html.RadioButtonFor(model => model.Q17, "3", new { @class = "custom-control-input" })<span> Nunca</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q17, "2", new { @class = "custom-control-input" })<span> Algunas veces</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q17, "1", new { @class = "custom-control-input" })<span> Con frecuencia</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q17, "0", new { @class = "custom-control-input" })<span> Siempre</span><br class="br_col-xs">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="wrap_pregunta">
+                        18. Muestra su mejor desempeño para el cumplimiento de los objetivos.
+                    </td>
+                    <td nowrap class="wrap_respuesta buttons">
+                        @Html.RadioButtonFor(model => model.Q18, "0", new { @class = "custom-control-input" })<span> Nunca</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q18, "1", new { @class = "custom-control-input" })<span> Algunas veces</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q18, "2", new { @class = "custom-control-input" })<span> Con frecuencia</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q18, "3", new { @class = "custom-control-input" })<span> Siempre</span><br class="br_col-xs">
+                    </td>
+                </tr>
+                <tr style="padding-bottom: 1em;background-color:RGB(0,101,206);color:white">  <td colspan="2"><span style="font-weight:bold">Apego a políticas y normas</span></td></tr>
+                <tr>
+                    <td class="wrap_pregunta">
+                        19. Sigue las directrices, reglas y procedimientos establecidos por la organización.
+                    </td>
+                    <td nowrap class="wrap_respuesta buttons">
+                        @Html.RadioButtonFor(model => model.Q19, "0", new { @class = "custom-control-input" })<span> Nunca</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q19, "1", new { @class = "custom-control-input" })<span> Algunas veces</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q19, "2", new { @class = "custom-control-input" })<span> Con frecuencia</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q19, "3", new { @class = "custom-control-input" })<span> Siempre</span><br class="br_col-xs">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="wrap_pregunta">
+                        20. Estimula a otros efectivamente a seguir las directrices, reglas y procedimientos institucionales.
+                    </td>
+                    <td nowrap class="wrap_respuesta buttons">
+                        @Html.RadioButtonFor(model => model.Q20, "0", new { @class = "custom-control-input" })<span> Nunca</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q20, "1", new { @class = "custom-control-input" })<span> Algunas veces</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q20, "2", new { @class = "custom-control-input" })<span> Con frecuencia</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q20, "3", new { @class = "custom-control-input" })<span> Siempre</span><br class="br_col-xs">
+                    </td>
+                </tr>
+
+                <tr style="padding-bottom: 1em;background-color:RGB(0,101,206);color:white">  <td colspan="2"><span style="font-weight:bold">Enfoque a resultados</span></td></tr>
+                <tr>
+                    <td class="wrap_pregunta">
+                        21. Demuestra interés por el logro de metas individuales y organizacionales  con compromiso.
+                    </td>
+                    <td nowrap class="wrap_respuesta buttons">
+                        @Html.RadioButtonFor(model => model.Q21, "0", new { @class = "custom-control-input" })<span> Nunca</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q21, "1", new { @class = "custom-control-input" })<span> Algunas veces</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q21, "2", new { @class = "custom-control-input" })<span> Con frecuencia</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q21, "3", new { @class = "custom-control-input" })<span> Siempre</span><br class="br_col-xs">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="wrap_pregunta">22. Mantiene bajos niveles en estándares de desempeño..</td>
+                    <td nowrap class="wrap_respuesta buttons">
+                        @Html.RadioButtonFor(model => model.Q22, "3", new { @class = "custom-control-input" })<span> Nunca</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q22, "2", new { @class = "custom-control-input" })<span> Algunas veces</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q22, "1", new { @class = "custom-control-input" })<span> Con frecuencia</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q22, "0", new { @class = "custom-control-input" })<span> Siempre</span><br class="br_col-xs">
+                    </td>
+                </tr>
+                <tr style="padding-bottom: 1em;background-color:RGB(0,101,206);color:white">  <td colspan="2"><span style="font-weight:bold">Relaciones personales</span></td></tr>
+                <tr>
+                    <td class="wrap_pregunta">23. Puede establecer y mantener relaciones con personas de todos los niveles.</td>
+                    <td nowrap class="wrap_respuesta buttons">
+                        @Html.RadioButtonFor(model => model.Q23, "0", new { @class = "custom-control-input" })<span> Nunca</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q23, "1", new { @class = "custom-control-input" })<span> Algunas veces</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q23, "2", new { @class = "custom-control-input" })<span> Con frecuencia</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q23, "3", new { @class = "custom-control-input" })<span> Siempre</span><br class="br_col-xs">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="wrap_pregunta">
+                        24. Procura resolver conflictos y diferencias de opinión rápida, antes de que produzcan un impacto negativo.
+                    </td>
+                    <td nowrap class="wrap_respuesta buttons">
+                        @Html.RadioButtonFor(model => model.Q24, "0", new { @class = "custom-control-input" })<span> Nunca</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q24, "1", new { @class = "custom-control-input" })<span> Algunas veces</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q24, "2", new { @class = "custom-control-input" })<span> Con frecuencia</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q24, "3", new { @class = "custom-control-input" })<span> Siempre</span><br class="br_col-xs">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="wrap_pregunta">
+                        25. Fomenta la confianza, el compromiso y la cooperación entre los compañeros de trabajo.
+                    </td>
+                    <td nowrap class="wrap_respuesta buttons">
+                        @Html.RadioButtonFor(model => model.Q25, "0", new { @class = "custom-control-input" })<span> Nunca</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q25, "1", new { @class = "custom-control-input" })<span> Algunas veces</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q25, "2", new { @class = "custom-control-input" })<span> Con frecuencia</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q25, "3", new { @class = "custom-control-input" })<span> Siempre</span><br class="br_col-xs">
+                    </td>
+                </tr>
+                <tr style="padding-bottom: 1em;background-color:RGB(0,101,206);color:white">  <td colspan="2"><span style="font-weight:bold">Análisis de problemas</span></td></tr>
+                <tr>
+                    <td wrap>
+                        26. No evalúa las posibles acciones y las consecuencias potenciales.
+                    </td>
+                    <td nowrap class="wrap_respuesta buttons">
+                        @Html.RadioButtonFor(model => model.Q26, "3", new { @class = "custom-control-input" })<span> Nunca</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q26, "2", new { @class = "custom-control-input" })<span> Algunas veces</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q26, "1", new { @class = "custom-control-input" })<span> Con frecuencia</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q26, "0", new { @class = "custom-control-input" })<span> Siempre</span><br class="br_col-xs">
+                    </td>
+                </tr>
+                <tr>
+                    <td wrap>27. Evita evaluar la información de manera práctica y objetiva.</td>
+                    <td nowrap class="wrap_respuesta buttons">
+                        @Html.RadioButtonFor(model => model.Q27, "3", new { @class = "custom-control-input" })<span> Nunca</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q27, "2", new { @class = "custom-control-input" })<span> Algunas veces</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q27, "1", new { @class = "custom-control-input" })<span> Con frecuencia</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q27, "0", new { @class = "custom-control-input" })<span> Siempre</span><br class="br_col-xs">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="wrap_pregunta">
+                        28. Dispuesto a tomar decisiones firmes y rápidas.
+                    </td>
+                    <td nowrap class="wrap_respuesta buttons">
+                        @Html.RadioButtonFor(model => model.Q28, "0", new { @class = "custom-control-input" })<span> Nunca</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q28, "1", new { @class = "custom-control-input" })<span> Algunas veces</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q28, "2", new { @class = "custom-control-input" })<span> Con frecuencia</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q28, "3", new { @class = "custom-control-input" })<span> Siempre</span><br class="br_col-xs">
+                    </td>
+                </tr>
+                <tr>
+                    <td wrap>
+                        29. Dificultad al plantear soluciones para problemas difíciles.
+                    </td>
+                    <td nowrap class="wrap_respuesta buttons">
+                        @Html.RadioButtonFor(model => model.Q29, "3", new { @class = "custom-control-input" })<span> Nunca</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q29, "2", new { @class = "custom-control-input" })<span> Algunas veces</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q29, "1", new { @class = "custom-control-input" })<span> Con frecuencia</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q29, "0", new { @class = "custom-control-input" })<span> Siempre</span><br class="br_col-xs">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="wrap_pregunta">
+                        30. Aporta soluciones factibles y adecuadas.
+                    </td>
+                    <td nowrap class="wrap_respuesta buttons">
+                        @Html.RadioButtonFor(model => model.Q30, "0", new { @class = "custom-control-input" })<span> Nunca</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q30, "1", new { @class = "custom-control-input" })<span> Algunas veces</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q30, "2", new { @class = "custom-control-input" })<span> Con frecuencia</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q30, "3", new { @class = "custom-control-input" })<span> Siempre</span><br class="br_col-xs">
+                    </td>
+                </tr>
+                <tr style="padding-bottom: 1em;background-color:RGB(0,101,206);color:white">  <td colspan="2"><span style="font-weight:bold">Autodesarrollo</span></td></tr>
+                <tr>
+                    <td class="wrap_pregunta">
+                        31. Se rehúsa a las oportunidades para mejorar los procesos, métodos y sistemas de gestión. 
+                    </td>
+                    <td nowrap class="wrap_respuesta buttons">
+                        @Html.RadioButtonFor(model => model.Q31, "3", new { @class = "custom-control-input" })<span> Nunca</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q31, "2", new { @class = "custom-control-input" })<span> Algunas veces</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q31, "1", new { @class = "custom-control-input" })<span> Con frecuencia</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q31, "0", new { @class = "custom-control-input" })<span> Siempre</span><br class="br_col-xs">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="wrap_pregunta">
+                        32. Evita la busqueda de formación y desarrollo profesional.  
+                    </td>
+                    <td nowrap class="wrap_respuesta buttons">
+                        @Html.RadioButtonFor(model => model.Q32, "3", new { @class = "custom-control-input" })<span> Nunca</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q32, "2", new { @class = "custom-control-input" })<span> Algunas veces</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q32, "1", new { @class = "custom-control-input" })<span> Con frecuencia</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q32, "0", new { @class = "custom-control-input" })<span> Siempre</span><br class="br_col-xs">
+                    </td>
+                </tr>
+                <tr>
+                    <td wrap>
+                        33. Busca retroalimentación sobre su desempeño y actúa en consecuencia.
+                    </td>
+                    <td nowrap class="wrap_respuesta buttons">
+                        @Html.RadioButtonFor(model => model.Q33, "0", new { @class = "custom-control-input" })<span> Nunca</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q33, "1", new { @class = "custom-control-input" })<span> Algunas veces</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q33, "2", new { @class = "custom-control-input" })<span> Con frecuencia</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q33, "3", new { @class = "custom-control-input" })<span> Siempre</span><br class="br_col-xs">
+                    </td>
+                </tr>
+                <tr style="padding-bottom: 1em;background-color:RGB(0,101,206);color:white">  <td colspan="2"><span style="font-weight:bold">Seguridad</span></td></tr>
+                <tr>
+                    <td wrap>
+                        34. Anula y entorpece las medidas de seguridad ni permite que nadie lo haga.
+                    </td>
+                    <td nowrap class="wrap_respuesta buttons">
+                        @Html.RadioButtonFor(model => model.Q34, "3", new { @class = "custom-control-input" })<span> Nunca</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q34, "2", new { @class = "custom-control-input" })<span> Algunas veces</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q34, "1", new { @class = "custom-control-input" })<span> Con frecuencia</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q34, "0", new { @class = "custom-control-input" })<span> Siempre</span><br class="br_col-xs">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="wrap_pregunta">
+                        35. Cumple las normas de seguridad que regulan su área de trabajo.
+                    </td>
+                    <td nowrap class="wrap_respuesta buttons">
+                        @Html.RadioButtonFor(model => model.Q35, "0", new { @class = "custom-control-input" })<span> Nunca</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q35, "1", new { @class = "custom-control-input" })<span> Algunas veces</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q35, "2", new { @class = "custom-control-input" })<span> Con frecuencia</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q35, "3", new { @class = "custom-control-input" })<span> Siempre</span><br class="br_col-xs">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="wrap_pregunta">
+                        36. Trabaja bajo la influencia del alcohol o drogas.
+                    </td>
+                    <td nowrap class="wrap_respuesta buttons">
+                        @Html.RadioButtonFor(model => model.Q36, "3", new { @class = "custom-control-input" })<span> Nunca</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q36, "2", new { @class = "custom-control-input" })<span> Algunas veces</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q36, "1", new { @class = "custom-control-input" })<span> Con frecuencia</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q36, "0", new { @class = "custom-control-input" })<span> Siempre</span><br class="br_col-xs">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="wrap_pregunta">
+                        37. Informa todas las lesiones o incidentes ocurridos durante su jornada de trabajo.
+                    </td>
+                    <td nowrap class="wrap_respuesta buttons">
+                        @Html.RadioButtonFor(model => model.Q37, "0", new { @class = "custom-control-input" })<span> Nunca</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q37, "1", new { @class = "custom-control-input" })<span> Algunas veces</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q37, "2", new { @class = "custom-control-input" })<span> Con frecuencia</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q37, "3", new { @class = "custom-control-input" })<span> Siempre</span><br class="br_col-xs">
+                    </td>
+                </tr>
+
+                <tr style="padding-bottom: 1em;background-color:RGB(0,101,206);color:white">  <td colspan="2"><span style="font-weight:bold">Responsabilidad y Compromiso</span></td></tr>
+                <tr>
+                    <td class="wrap_pregunta">
+                        38. Está siempre disponible para trabajar tiempo extra, incluso cuando no se lo solicitan.
+                    </td>
+                    <td nowrap class="wrap_respuesta buttons">
+                        @Html.RadioButtonFor(model => model.Q38, "0", new { @class = "custom-control-input" })<span> Nunca</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q38, "1", new { @class = "custom-control-input" })<span> Algunas veces</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q38, "2", new { @class = "custom-control-input" })<span> Con frecuencia</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q38, "3", new { @class = "custom-control-input" })<span> Siempre</span><br class="br_col-xs">
+                    </td>
+                </tr>
+                <tr>
+                    <td wrap>
+                        39. Toma conciencia y posee un alto grado de responsabilidad  en la importancia de cumplir con el desarrollo de su trabajo respetando las normas y procedimientos.
+                    </td>
+                    <td nowrap class="wrap_respuesta buttons">
+                        @Html.RadioButtonFor(model => model.Q39, "0", new { @class = "custom-control-input" })<span> Nunca</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q39, "1", new { @class = "custom-control-input" })<span> Algunas veces</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q39, "2", new { @class = "custom-control-input" })<span> Con frecuencia</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q39, "3", new { @class = "custom-control-input" })<span> Siempre</span><br class="br_col-xs">
+                    </td>
+                </tr>
+                <tr>
+                    <td wrap>
+                        40. Asume su rol con profesionalismo, responsabilidad y lealtad.
+                    </td>
+                    <td nowrap class="wrap_respuesta buttons">
+                        @Html.RadioButtonFor(model => model.Q40, "0", new { @class = "custom-control-input" })<span> Nunca</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q40, "1", new { @class = "custom-control-input" })<span> Algunas veces</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q40, "2", new { @class = "custom-control-input" })<span> Con frecuencia</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q40, "3", new { @class = "custom-control-input" })<span> Siempre</span><br class="br_col-xs">
+                    </td>
+                </tr>
+
+                <tr style="padding-bottom: 1em;background-color:RGB(0,101,206);color:white">  <td colspan="2"><span style="font-weight:bold">Trabajo en equipo</span></td></tr>
+                <tr>
+                    <td class="wrap_pregunta">
+                        41. Actúa para generar un ambiente de trabajo caótico, de mal clima y cooperación.
+                    </td>
+                    <td nowrap class="wrap_respuesta buttons">
+                        @Html.RadioButtonFor(model => model.Q41, "3", new { @class = "custom-control-input" })<span> Nunca</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q41, "2", new { @class = "custom-control-input" })<span> Algunas veces</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q41, "1", new { @class = "custom-control-input" })<span> Con frecuencia</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q41, "0", new { @class = "custom-control-input" })<span> Siempre</span><br class="br_col-xs">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="wrap_pregunta">
+                        42. Se desempeña como un miembro activo del equipo.
+                    </td>
+                    <td nowrap class="wrap_respuesta buttons">
+                        @Html.RadioButtonFor(model => model.Q42, "0", new { @class = "custom-control-input" })<span> Nunca</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q42, "1", new { @class = "custom-control-input" })<span> Algunas veces</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q42, "2", new { @class = "custom-control-input" })<span> Con frecuencia</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q42, "3", new { @class = "custom-control-input" })<span> Siempre</span><br class="br_col-xs">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="wrap_pregunta">
+                        43. Guarda su conocimiento, habilidades y experiencia para si mismo.
+                    </td>
+                    <td nowrap class="wrap_respuesta buttons">
+                        @Html.RadioButtonFor(model => model.Q43, "3", new { @class = "custom-control-input" })<span> Nunca</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q43, "2", new { @class = "custom-control-input" })<span> Algunas veces</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q43, "1", new { @class = "custom-control-input" })<span> Con frecuencia</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q43, "0", new { @class = "custom-control-input" })<span> Siempre</span><br class="br_col-xs">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="wrap_pregunta">
+                        44. Proporciona retroalimentación y recomendaciones de manera constructiva.
+                    </td>
+                    <td nowrap class="wrap_respuesta buttons">
+                        @Html.RadioButtonFor(model => model.Q44, "0", new { @class = "custom-control-input" })<span> Nunca</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q44, "1", new { @class = "custom-control-input" })<span> Algunas veces</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q44, "2", new { @class = "custom-control-input" })<span> Con frecuencia</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q44, "3", new { @class = "custom-control-input" })<span> Siempre</span><br class="br_col-xs">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="wrap_pregunta">
+                        45. Apoya el desempeño de otras áreas de la organización y fomenta el intercambio de información.
+                    </td>
+                    <td nowrap class="wrap_respuesta buttons">
+                        @Html.RadioButtonFor(model => model.Q45, "0", new { @class = "custom-control-input" })<span> Nunca</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q45, "1", new { @class = "custom-control-input" })<span> Algunas veces</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q45, "2", new { @class = "custom-control-input" })<span> Con frecuencia</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q45, "3", new { @class = "custom-control-input" })<span> Siempre</span><br class="br_col-xs">
+                    </td>
+                </tr>
+
+                <tr style="padding-bottom: 1em;background-color:RGB(0,101,206);color:white">  <td colspan="2"><span style="font-weight:bold">Pasión</span></td></tr>
+                <tr>
+                    <td class="wrap_pregunta">
+                        46. Genera entusiasmo y pasión en todas y/o mayoria de las personas con quien trabaja.
+                    </td>
+                    <td nowrap class="wrap_respuesta buttons">
+                        @Html.RadioButtonFor(model => model.Q46, "0", new { @class = "custom-control-input" })<span> Nunca</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q46, "1", new { @class = "custom-control-input" })<span> Algunas veces</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q46, "2", new { @class = "custom-control-input" })<span> Con frecuencia</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q46, "3", new { @class = "custom-control-input" })<span> Siempre</span><br class="br_col-xs">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="wrap_pregunta">
+                        47. Demuestra alto entusiasmo, optimismo y pone prioridad a sus actividades por más difíciles o prolongadas que sean.
+                    </td>
+                    <td nowrap class="wrap_respuesta buttons">
+                        @Html.RadioButtonFor(model => model.Q47, "0", new { @class = "custom-control-input" })<span> Nunca</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q47, "1", new { @class = "custom-control-input" })<span> Algunas veces</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q47, "2", new { @class = "custom-control-input" })<span> Con frecuencia</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q47, "3", new { @class = "custom-control-input" })<span> Siempre</span><br class="br_col-xs">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="wrap_pregunta">
+                        48. Demuestra orgullo por la empresa.
+                    </td>
+                    <td nowrap class="wrap_respuesta buttons">
+                        @Html.RadioButtonFor(model => model.Q48, "0", new { @class = "custom-control-input" })<span> Nunca</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q48, "1", new { @class = "custom-control-input" })<span> Algunas veces</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q48, "2", new { @class = "custom-control-input" })<span> Con frecuencia</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q48, "3", new { @class = "custom-control-input" })<span> Siempre</span><br class="br_col-xs">
+                    </td>
+                </tr>
+
+                <tr style="padding-bottom: 1em;background-color:RGB(0,101,206);color:white">  <td colspan="2"><span style="font-weight:bold">Búsqueda de la excelencia</span></td></tr>
+                <tr>
+                    <td wrap>
+                        49. Consistentemente excede las expectativas de su desempeño.
+                    </td>
+                    <td nowrap class="wrap_respuesta buttons">
+                        @Html.RadioButtonFor(model => model.Q49, "0", new { @class = "custom-control-input" })<span> Nunca</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q49, "1", new { @class = "custom-control-input" })<span> Algunas veces</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q49, "2", new { @class = "custom-control-input" })<span> Con frecuencia</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q49, "3", new { @class = "custom-control-input" })<span> Siempre</span><br class="br_col-xs">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="wrap_pregunta">
+                        50. Muestra pasión y motivación personal por desempeñarse a un alto nivel.
+                    </td>
+                    <td nowrap class="wrap_respuesta buttons">
+                        @Html.RadioButtonFor(model => model.Q50, "0", new { @class = "custom-control-input" })<span> Nunca</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q50, "1", new { @class = "custom-control-input" })<span> Algunas veces</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q50, "2", new { @class = "custom-control-input" })<span> Con frecuencia</span><br class="br_col-xs">
+                        @Html.RadioButtonFor(model => model.Q50, "3", new { @class = "custom-control-input" })<span> Siempre</span><br class="br_col-xs">
+                    </td>
+                </tr>
+
+
+            </table>
+
+
+
+
+        </div>
+
+    </div>
+}

@@ -1,0 +1,291 @@
+﻿<style>
+
+
+
+    .button__container {
+        display: flex;
+        gap: 30px;
+        margin: 100px;
+    }
+
+    .button {
+        background-color: #ff5757;
+        color: white;
+        font-weight: 700;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 3px;
+        border-radius: 6px;
+        border: 0 transparent;
+    }
+
+        .button:hover {
+            background-color: #ff7979;
+            color: white;
+        }
+
+    .button__large {
+        font-size: 1.3333rem;
+        width: 94px;
+        height: 42px;
+    }
+
+    .button__medium {
+        font-size: 1.1667rem;
+        width: 88px;
+        height: 34px;
+    }
+
+    .button__small {
+        font-size: 1rem;
+        width: 55px;
+        height: 25px;
+    }
+
+
+    @@media only screen and (max-width:800px) {
+        /* For tablets: */
+        .option {
+            font-size: 16px !important;
+        }
+
+        .selected {
+            padding-right: 5px !important;
+            font-size: 14px !important;
+        }
+    }
+
+    @@media only screen and (max-width:500px) {
+        /* For mobile phones: */
+        .option {
+            font-size: 13px !important;
+            font-weight: 700 !important;
+            padding-right: 6px !important;
+            padding-top: 3px !important;
+            padding-bottom: 3px !important;
+        }
+
+        .selected {
+            padding-right: 5px !important;
+            font-size: 14px !important;
+        }
+    }
+
+
+    /* Container buttons */
+
+
+
+    .container h1 {
+        color: #5a1ed2;
+        font-weight: 900;
+    }
+
+    .options {
+        margin-top: 50px;
+        display: grid;
+ /*       grid-template-rows: repeat(6, 1fr);*/
+        align-items: center;
+
+    }
+
+        .options .option {
+            display: flex;
+            padding-left: 20px;
+            font-size: 20px;
+            font-weight: 900;
+            gap: 10px;
+            align-items: center;
+            border-radius: 10px;
+            border: 5px solid rgb(255, 118, 118);
+            cursor: pointer;
+            height: 100px;
+        }
+
+    .option img {
+        width: 80px;
+        height: 80px;
+        border-radius: 40px;
+        border: 5px solid rgb(255, 118, 118);
+    }
+
+    .container .options .option:hover {
+        transform: scale(0.99);
+    }
+
+    .selected {
+        background: linear-gradient(90deg, rgba(92, 23, 230, 0.55) 0%, rgba(9, 9, 121, 1) 50%, rgba(255, 87, 87, 055) 100%);
+        transform: scale(0.99);
+        border: none !important;
+        color: white;
+    }
+
+    .swal2-container {
+        zoom: 1.5;
+    }
+
+    .selected img {
+        border: 8px solid #f2f2f2;
+    }
+</style>
+<br> 
+<div class="container">
+    <!-- partial:index.partial.html -->
+    <ul class="counter">
+        <li id="li1" class="active current1"> <span class="span"> 1/2 </span></li>
+        <li id="li2"> <span class="span" > 2/2 </span></li>
+    </ul>
+    <form id="fopciones">
+        <div class="container">
+
+            <img id="banner1" src="~/images/Banners/grow-banners-encuestascheck_header.jpg" alt="">
+
+            <hr>
+            <div class="options" id="main">
+
+                <div id="div1" class="first current">
+                    <div class="row">
+                        <div class="col-xs-12" align="center">
+                            <div style="padding:9px" class="question col-xs-12 col-sm-4">
+                                <input type="text" id="rSocial" class="form__input" autocomplete="off" placeholder=" " />
+                                <label for="rSocial" class="form__label"> Razón social </label>
+                            </div>
+
+                            <div style="padding:9px" class="question col-xs-12 col-sm-4">
+                                <input type="text" id="email" class="form__input" autocomplete="off" placeholder=" " />
+                                <label for="email" class="form__label"> Correo </label>
+                            </div>
+                            <div style="padding:9px" class="question col-xs-12 col-sm-4">
+                                <input type="text" id="Telefono" class="form__input" autocomplete="off" placeholder=" " />
+                                <label for="Telefono" class="form__label"> Teléfono </label>
+                            </div>
+                        </div>
+                       
+                    </div> 
+                    <div class="option question" name="option" id="option">
+                        <img src="~/images/check-solid.svg" alt=""> 1. ¿Ya cuenta usted con el diseño de su política de prevención de riesgos por factor psicosocial?
+                    </div>
+                    <div class="option question" name="option" id="option">
+                        <img src="~/images/check-solid.svg" alt=""> 2. ¿Ya ha hecho la campaña de comunicación y capacitación sobre la NOM y política de prevención de riesgos?
+                    </div>
+                    <div class="option question" name="option" id="option">
+                        <img src="~/images/check-solid.svg" alt=""> 3. ¿Ya le han firmado el registro de capacitación, comunicación y política de prevención de riesgos?
+                    </div>
+                    <div class="option question" name="option" id="option">
+                        <img src="~/images/check-solid.svg" alt=""> 4. ¿Ya aplicó o hizo el análisis de identificación de riesgos por factor psicosocial?
+                    </div>
+                    <div class="option question" name="option" id="option">
+                        <img src="~/images/check-solid.svg" alt=""> 5. ¿Ya dio a conocer los resultados a todo el personal?
+                    </div>
+
+                </div>
+
+                <div id="div2" class="last">
+                    <div class="option question" name="option" id="option">
+                        <img src="~/images/check-solid.svg" alt=""> 6. ¿Ya cuenta con un buzón de denuncia de violencia laboral?
+                    </div>
+                    <div class="option question" name="option" id="option">
+                        <img src="~/images/check-solid.svg" alt=""> 7. ¿Ya cuenta con un plan de medidas para la prevención de riesgos por factor psicosocial?
+                    </div>
+                    <div class="option question" name="option" id="option">
+                        <img src="~/images/check-solid.svg" alt=""> 8. ¿Ya lo comunicó a todo el personal?
+                    </div>
+                    <div class="option question" name="option" id="option">
+                        <img src="~/images/check-solid.svg" alt=""> 9. ¿Ya ha capacitado según sus resultados de encuesta?
+                    </div>
+                    <div class="option question" name="option" id="option">
+                        <img src="~/images/check-solid.svg" alt=""> 10. ¿Ya cuenta con un plan de desarrollo continuo de cultura de bienestar organizacional?
+                    </div>
+
+                </div>
+ 
+                <div class="col-xs-12">
+                    <div id="next">Siguiente</div>
+                </div>
+
+                <section class="finalizar" id="finalSubmit">
+                    <div class="col-xs-12 col-sm-6">
+                        <img   id="banner2" src="~/images/Banners/grow-banners-encuestascheck_button.jpg" alt="">
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div style="margin-left:145px" id="prev">Regresar</div>
+                        <button id="send" onclick="enviar()">ENVIAR</button>
+                    </div>
+                </section>
+            </div>
+        </div>
+        </form>
+
+
+    </div>
+
+
+    <script>
+        $option = document.querySelectorAll('option');
+
+        document.addEventListener('click', function (event) {
+            if (event.target.classList.contains('option')) {
+                if (event.target.classList.contains('selected')) {
+                    event.target.classList.remove('selected');
+                } else {
+                    event.target.classList.add('selected');
+                }
+            }
+
+        })
+
+
+
+    
+
+        function enviar() {
+       
+          
+            
+            if (Email == "" || Empresa == "" || Email == null || Empresa == null) {
+                swal.fire({
+                    title: "Verifique los campos...",
+                    text:  "El correo y razón social son obligatorios.",
+                    type: "warning"
+                })
+             
+            } else {
+                var arrJson = new Array();
+
+                $('.option').each(function (i, obj) {
+                    if ($(this).hasClass('selected')) {
+                        arrJson[i] = '1';
+                    } else {
+                        arrJson[i] = '0';
+                    }
+                });
+
+                var Email = $("#Email_text").val();
+                var Empresa = $("#Empresa_text").val();
+
+                var jsonData = JSON.stringify(arrJson);
+
+            $.ajax({
+                url: '@Url.Action("checklist_js")',
+                data: { Q1: arrJson[0], Q2: arrJson[1], Q3: arrJson[2], Q4: arrJson[3], Q5: arrJson[4], Q6: arrJson[5], Q7: arrJson[6], Q8: arrJson[7], Q9: arrJson[8], Q10: arrJson[9], Email: Email, Empresa:Empresa },
+                method: 'POST',
+                dataType: 'json',
+                success: function (response) {
+                    //$("#correoModal").modal("hide");
+                    swal.fire({
+                        title: "Calificación de la evaluación",
+                        text: response + " Puntos de 10",
+                        type: "success"
+                    })
+                },
+                error: function (error) {
+                    console.log(error);
+                }
+            });
+            }
+
+        }
+
+    </script>

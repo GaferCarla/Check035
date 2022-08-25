@@ -1,0 +1,946 @@
+﻿
+<link href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' rel='stylesheet'>
+<link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css' rel='stylesheet'>
+<link href=" @Url.Content("~/Content/style.css") " rel="stylesheet" type="text/css" />
+<script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+
+<div class='snippet-body'>
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-11 col-sm-9 col-md-9 col-lg-9 col-xl-9 text-center p-0 mt-3 mb-2">
+                <div class="card px-4 pt-4 pb-0 mt-3 mb-3">
+                    <h2 id="heading">Cultura de bienestar</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, repudiandae facilis nisi cum explicabo reprehenderit deleniti incidunt fugit impedit earum sed illo eveniet esse et sequi vel. Doloribus, accusamus esse!</p>
+                    <form id="msform">
+                        <!-- progressbar -->
+                        <ul id="progressbar">
+                            <li class="active" id="tab1"><strong>1</strong></li>
+                            <li id="tab2"><strong>2</strong></li>
+                            <li id="tab3"><strong>3</strong></li>
+                            <li id="tab4"><strong>4</strong></li>
+                            <li id="tab5"><strong>5</strong></li>
+                            <li id="tab6"><strong>Finalizar</strong></li>
+                        </ul>
+                        <br> <!-- fieldsets -->
+                        <fieldset>
+                            <div class="form-card">
+                                <div class="row">
+                                    <div class="col-7">
+                                        <h2 class="fs-title">Ambiente de trabajo:</h2>
+                                    </div>
+                                    <div class="col-5">
+                                        <h2 class="steps">Parte 1 - 5</h2>
+                                    </div>
+                                </div>
+
+
+                                <div class="pt-2 pb-4">
+                                    <label>1. ¿Ya ha capacitado  y sensibilizado de los directivos, gerentes y supervisores para la prevención de los factores de riesgo psicosocial?</label>
+
+                                    <div class="box">
+                                        <input type="radio" name="Q1" id="value-Q1-2" value="1" onclick="showQ1A();">
+                                        <input type="radio" name="Q1" id="value-Q1-1" value="2" onclick="showQ1B();">
+
+
+                                        <label for="value-Q1-2" class="value-Q1-2">
+                                            <div class="select-dots"></div>
+                                            <div class="text">No</div>
+                                        </label>
+                                        <label for="value-Q1-1" class="value-Q1-1">
+                                            <div class="select-dots"></div>
+                                            <div class="text">Si</div>
+                                        </label>
+                                        <div id="div1" class="hide pt-2 pb-2">
+
+                                            <input type="text" placeholder="Por favor justifica tu respuesta">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="pt-2 pb-4">
+                                    <label>2. ¿Ya ha capacitación y sensibilización en la promoción de entornos organizacionales favorables?</label>
+
+                                    <div class="box">
+                                        <input type="radio" name="Q2" id="value-Q2-2" value="1" onclick="showQ2A();">
+                                        <input type="radio" name="Q2" id="value-Q2-1" value="2" onclick="showQ2B();">
+                                        <label for="value-Q2-2" class="value-Q2-2">
+                                            <div class="select-dots"></div>
+                                            <div class="text">No</div>
+                                        </label>
+                                        <label for="value-Q2-1" class="value-Q2-1">
+                                            <div class="select-dots"></div>
+                                            <div class="text">Si</div>
+                                        </label>
+                                        <div id="div2" class="hide pt-2 pb-2">
+
+                                            <input type="text" placeholder="Por favor justifica tu respuesta">
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                                <div class="pt-2 pb-4">
+                                    <label>3. ¿Crea reuniones para abordar las áreas de oportunidad de mejora, a efecto de atender los problemas en el lugar de su trabajo y determinar sus soluciones?</label>
+
+                                    <div class="box">
+                                        <input type="radio" name="Q3" id="value-Q3-2" value="1" onclick="showQ3A();">
+                                        <input type="radio" name="Q3" id="value-Q3-1" value="2" onclick="showQ3B();">
+                                        <label for="value-Q3-2" class="value-Q3-2">
+                                            <div class="select-dots"></div>
+                                            <div class="text">No</div>
+                                        </label>
+                                        <label for="value-Q3-1" class="value-Q3-1">
+                                            <div class="select-dots"></div>
+                                            <div class="text">Si</div>
+                                        </label>
+                                        <div id="div3" class="hide pt-2 pb-2">
+
+                                            <input type="text" placeholder="Por favor justifica tu respuesta">
+                                        </div>
+
+                                    </div>
+                                </div>
+
+
+                                <div class="pt-2 pb-4">
+                                    <label>4. ¿Realiza reuniones periódicas (semestrales o anuales) de seguimiento a las actividades establecidas para el apoyo social y, en su caso, extraordinarias si ocurren eventos que pongan en riesgo la salud del trabajador o al centro de trabajo? </label>
+
+                                    <div class="box">
+                                        <input type="radio" name="Q4" id="value-Q4-2" value="1" onclick="showQ4A();">
+                                        <input type="radio" name="Q4" id="value-Q4-1" value="2" onclick="showQ4B();">
+                                        <label for="value-Q4-2" class="value-Q4-2">
+                                            <div class="select-dots"></div>
+                                            <div class="text">No</div>
+                                        </label>
+                                        <label for="value-Q4-1" class="value-Q4-1">
+                                            <div class="select-dots"></div>
+                                            <div class="text">Si</div>
+                                        </label>
+                                        <div id="div4" class="hide pt-2 pb-2">
+
+                                            <input type="text" placeholder="Por favor justifica tu respuesta">
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="pt-2 pb-4">
+                                    <label>5. ¿Tiene  actividades culturales y del deporte entre sus trabajadores y proporcionarles los equipos y útiles indispensables? </label>
+
+                                    <div class="box">
+                                        <input type="radio" name="Q5" id="value-Q5-2" value="1" onclick="showQ5A();">
+                                        <input type="radio" name="Q5" id="value-Q5-1" value="2" onclick="showQ5B();">
+                                        <label for="value-Q5-2" class="value-Q5-2">
+                                            <div class="select-dots"></div>
+                                            <div class="text">No</div>
+                                        </label>
+                                        <label for="value-Q5-1" class="value-Q5-1">
+                                            <div class="select-dots"></div>
+                                            <div class="text">Si</div>
+                                        </label>
+                                        <div id="div5" class="hide pt-2 pb-2">
+
+                                            <input type="text" placeholder="Por favor justifica tu respuesta">
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="pt-2 pb-4">
+                                    <label>6. ¿Promociona de actividades de integración familiar en el trabajo, previo acuerdo con los trabajadores? </label>
+
+                                    <div class="box">
+                                        <input type="radio" name="Q6" id="value-Q6-2" value="1" onclick="showQ6A();">
+                                        <input type="radio" name="Q6" id="value-Q6-1" value="2" onclick="showQ67();">
+                                        <label for="value-Q6-2" class="value-Q6-2">
+                                            <div class="select-dots"></div>
+                                            <div class="text">No</div>
+                                        </label>
+                                        <label for="value-Q6-1" class="value-Q6-1">
+                                            <div class="select-dots"></div>
+                                            <div class="text">Si</div>
+                                        </label>
+                                        <div id="div6" class="hide pt-2 pb-2">
+
+                                            <input type="text" placeholder="Por favor justifica tu respuesta">
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="pt-2 pb-4">
+                                    <label>7. ¿Tiene mecanismos para reconocer el desempeño sobresaliente (superior al esperado) de los trabajadores? </label>
+
+                                    <div class="box">
+                                        <input type="radio" name="Q7" id="value-Q7-2" value="1" onclick="showQ7A();">
+                                        <input type="radio" name="Q7" id="value-Q7-1" value="2" onclick="showQ7B();">
+                                        <label for="value-Q7-2" class="value-Q7-2">
+                                            <div class="select-dots"></div>
+                                            <div class="text">No</div>
+                                        </label>
+                                        <label for="value-Q7-1" class="value-Q7-1">
+                                            <div class="select-dots"></div>
+                                            <div class="text">Si</div>
+                                        </label>
+                                        <div id="div7" class="hide pt-2 pb-2">
+
+                                            <input type="text" placeholder="Por favor justifica tu respuesta">
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="pt-2 pb-4">
+                                    <label>8. ¿Tiene mecanismos para difundir los logros de los trabajadores sobresalientes? </label>
+
+                                    <div class="box">
+                                        <input type="radio" name="Q8" id="value-Q8-2" value="1" onclick="showQ8A();">
+                                        <input type="radio" name="Q8" id="value-Q8-1" value="2" onclick="showQ8B();">
+                                        <label for="value-Q8-2" class="value-Q8-2">
+                                            <div class="select-dots"></div>
+                                            <div class="text">No</div>
+                                        </label>
+                                        <label for="value-Q8-1" class="value-Q8-1">
+                                            <div class="select-dots"></div>
+                                            <div class="text">Si</div>
+                                        </label>
+                                        <div id="div8" class="hide pt-2 pb-2">
+
+                                            <input type="text" placeholder="Por favor justifica tu respuesta">
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="pt-2 pb-4">
+                                    <label>9. ¿Tiene mecanismos para expresar al trabajador sus posibilidades de desarrollos? </label>
+
+                                    <div class="box">
+                                        <input type="radio" name="Q9" id="value-Q9-2" value="1" onclick="showQ9A();">
+                                        <input type="radio" name="Q9" id="value-Q9-1" value="2" onclick="showQ9B();">
+                                        <label for="value-Q9-2" class="value-Q9-2">
+                                            <div class="select-dots"></div>
+                                            <div class="text">No</div>
+                                        </label>
+                                        <label for="value-Q9-1" class="value-Q9-1">
+                                            <div class="select-dots"></div>
+                                            <div class="text">Si</div>
+                                        </label>
+                                        <div id="div9" class="hide pt-2 pb-2">
+
+                                            <input type="text" placeholder="Por favor justifica tu respuesta">
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="pt-2 pb-4">
+                                    <label>10. ¿Tiene mecanismos para la participación proactiva y comunicación entre los colaboradores? </label>
+
+                                    <div class="box">
+                                        <input type="radio" name="Q10" id="value-Q10-2" value="1" onclick="showQ10A();">
+                                        <input type="radio" name="Q10" id="value-Q10-1" value="2" onclick="showQ10B();">
+                                        <label for="value-Q10-2" class="value-Q10-2">
+                                            <div class="select-dots"></div>
+                                            <div class="text">No</div>
+                                        </label>
+                                        <label for="value-Q10-1" class="value-Q10-1">
+                                            <div class="select-dots"></div>
+                                            <div class="text">Si</div>
+                                        </label>
+                                        <div id="div10" class="hide pt-2 pb-2">
+
+                                            <input type="text" placeholder="Por favor justifica tu respuesta">
+                                        </div>
+
+                                    </div>
+                                </div>
+
+
+
+
+
+                            </div>
+                            <input type="button" name="next" class="next action-button" value=">>" />
+                        </fieldset>
+                        <fieldset>
+                            <div class="form-card">
+                                <div class="row">
+                                    <div class="col-7">
+                                        <h2 class="fs-title">Factores propios de la actividad:</h2>
+                                    </div>
+                                    <div class="col-5">
+                                        <h2 class="steps">Parte 2 - 5</h2>
+                                    </div>
+                                </div>
+
+
+                                <div class="pt-2 pb-4">
+                                    <label>11. ¿Cuenta con mecanismos que permiten identificar la distribución adecuada de los tiempos de trabajo? </label>
+
+                                    <div class="box">
+                                        <input type="radio" name="Q11" id="value-Q11-2" value="1" onclick="showQ11A();">
+                                        <label for="value-Q11-2" class="value-Q11-2">
+                                            <div class="select-dots"></div>
+                                            <div class="text">No</div>
+                                        </label>
+                                        <input type="radio" name="Q11" id="value-Q11-1" value="2" onclick="showQ11B();">
+                                        <label for="value-Q11-1" class="value-Q11-1">
+                                            <div class="select-dots"></div>
+                                            <div class="text">Si</div>
+                                        </label>
+                                        <div id="div11" class="hide pt-2 pb-2">
+
+                                            <input type="text" placeholder="Por favor justifica tu respuesta">
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="pt-2 pb-4">
+                                    <label>12. ¿Cuenta con mecanismos establecer y difundir instrucciones claras a los trabajadores para la atención de los problemas que impiden o limitan el desarrollo de su trabajo, cuando éstos se presenten? </label>
+
+                                    <div class="box">
+                                        <input type="radio" name="Q12" id="value-Q12-2" value="1" onclick="showQ12A();">
+                                        <label for="value-Q12-2" class="value-Q12-2">
+                                            <div class="select-dots"></div>
+                                            <div class="text">No</div>
+                                        </label>
+                                        <input type="radio" name="Q12" id="value-Q12-1" value="2" onclick="showQ12B();">
+                                        <label for="value-Q12-1" class="value-Q12-1">
+                                            <div class="select-dots"></div>
+                                            <div class="text">Si</div>
+                                        </label>
+                                        <div id="div12" class="hide pt-2 pb-2">
+
+                                            <input type="text" placeholder="Por favor justifica tu respuesta">
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="pt-2 pb-4">
+                                    <label>13. ¿Cuenta con mecanismos para la  revisión y supervisión que la distribución de la carga de trabajo se realice de forma equitativa y considerando el número de trabajadores, actividades a desarrollar, alcance de la actividad y su capacitación? </label>
+
+                                    <div class="box">
+                                        <input type="radio" name="Q13" id="value-Q13-2" value="1" onclick="showQ13A();">
+                                        <label for="value-Q13-2" class="value-Q13-2">
+                                            <div class="select-dots"></div>
+                                            <div class="text">No</div>
+                                        </label>
+                                        <input type="radio" name="Q13" id="value-Q13-1" value="2" onclick="showQ13B();">
+                                        <label for="value-Q13-1" class="value-Q13-1">
+                                            <div class="select-dots"></div>
+                                            <div class="text">Si</div>
+                                        </label>
+                                        <div id="div13" class="hide pt-2 pb-2">
+
+                                            <input type="text" placeholder="Por favor justifica tu respuesta">
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="pt-2 pb-4">
+                                    <label>14. ¿Cuenta con mecanismos o programas que faciliten la participación  en la mejora de las condiciones de trabajo y la productividad siempre que el proceso productivo lo permita y cuenten con la experiencia y capacitación para ello? </label>
+
+                                    <div class="box">
+                                        <input type="radio" name="Q14" id="value-Q14-2" value="1" onclick="showQ14A();">
+                                        <label for="value-Q14-2" class="value-Q14-2">
+                                            <div class="select-dots"></div>
+                                            <div class="text">No</div>
+                                        </label>
+                                        <input type="radio" name="Q14" id="value-Q14-1" value="2" onclick="showQ14B();">
+                                        <label for="value-Q14-1" class="value-Q14-1">
+                                            <div class="select-dots"></div>
+                                            <div class="text">Si</div>
+                                        </label>
+                                        <div id="div14" class="hide pt-2 pb-2">
+
+                                            <input type="text" placeholder="Por favor justifica tu respuesta">
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="pt-2 pb-4">
+                                    <label>15. ¿Cuenta con mecanismos o sistemas de trabajo que permitan  acordar ymejorar el margen de libertad y control sobre su trabajo por parte de los trabajadores y el patrón? </label>
+
+                                    <div class="box">
+                                        <input type="radio" name="Q15" id="value-Q15-2" value="1" onclick="showQ15A();">
+                                        <label for="value-Q15-2" class="value-Q15-2">
+                                            <div class="select-dots"></div>
+                                            <div class="text">No</div>
+                                        </label>
+                                        <input type="radio" name="Q14" id="value-Q15-1" value="2" onclick="showQ15B();">
+                                        <label for="value-Q15-1" class="value-Q15-1">
+                                            <div class="select-dots"></div>
+                                            <div class="text">Si</div>
+                                        </label>
+                                        <div id="div15" class="hide pt-2 pb-2">
+
+                                            <input type="text" placeholder="Por favor justifica tu respuesta">
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="pt-2 pb-4">
+                                    <label>16. ¿Cuenta con mecanismos o programas de desarrollo para impulsar que éstos desarrollen nuevas competencias o habilidades, considerando las limitaciones del proceso productivo? </label>
+
+                                    <div class="box">
+                                        <input type="radio" name="Q16" id="value-Q16-2" value="1" onclick="showQ16A();">
+                                        <label for="value-Q16-2" class="value-Q16-2">
+                                            <div class="select-dots"></div>
+                                            <div class="text">No</div>
+                                        </label>
+                                        <input type="radio" name="Q16" id="value-Q16-1" value="2" onclick="showQ16B();">
+                                        <label for="value-Q16-1" class="value-Q16-1">
+                                            <div class="select-dots"></div>
+                                            <div class="text">Si</div>
+                                        </label>
+                                        <div id="div16" class="hide pt-2 pb-2">
+
+                                            <input type="text" placeholder="Por favor justifica tu respuesta">
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="pt-2 pb-4">
+                                    <label>17. ¿Tiene mecanismos para definir los lineamientos para establecer medidas y límites que eviten las jornadas de trabajo superiores a las previstas en la Ley Federal del Trabajo? </label>
+
+                                    <div class="box">
+                                        <input type="radio" name="Q17" id="value-Q17-2" value="1" onclick="showQ17A();">
+                                        <label for="value-Q17-2" class="value-Q17-2">
+                                            <div class="select-dots"></div>
+                                            <div class="text">No</div>
+                                        </label>
+                                        <input type="radio" name="Q17" id="value-Q17-1" value="2" onclick="showQ17B();">
+                                        <label for="value-Q17-1" class="value-Q17-1">
+                                            <div class="select-dots"></div>
+                                            <div class="text">Si</div>
+                                        </label>
+                                        <div id="div17" class="hide pt-2 pb-2">
+
+                                            <input type="text" placeholder="Por favor justifica tu respuesta">
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="pt-2 pb-4">
+                                    <label>18. ¿Cuenta con una capacitación continua  para la adecuada realización de las tareas encomendadas? </label>
+
+                                    <div class="box">
+                                        <input type="radio" name="Q18" id="value-Q18-2" value="1" onclick="showQ18A();">
+                                        <label for="value-Q18-2" class="value-Q18-2">
+                                            <div class="select-dots"></div>
+                                            <div class="text">No</div>
+                                        </label>
+                                        <input type="radio" name="Q18" id="value-Q18-1" value="2" onclick="showQ18B();">
+                                        <label for="value-Q18-1" class="value-Q18-1">
+                                            <div class="select-dots"></div>
+                                            <div class="text">Si</div>
+                                        </label>
+                                        <div id="div18" class="hide pt-2 pb-2">
+
+                                            <input type="text" placeholder="Por favor justifica tu respuesta">
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="pt-2 pb-4">
+                                    <label>19. ¿Cuenta con mecanismos para  definición precisa de responsabilidades para los miembros de la organización? </label>
+
+                                    <div class="box">
+                                        <input type="radio" name="Q19" id="value-Q19-2" value="1" onclick="showQ19A();">
+                                        <label for="value-Q19-2" class="value-Q19-2">
+                                            <div class="select-dots"></div>
+                                            <div class="text">No</div>
+                                        </label>
+                                        <input type="radio" name="Q19" id="value-Q19-1" value="2" onclick="showQ19B();">
+                                        <label for="value-Q19-1" class="value-Q19-1">
+                                            <div class="select-dots"></div>
+                                            <div class="text">Si</div>
+                                        </label>
+                                        <div id="div19" class="hide pt-2 pb-2">
+
+                                            <input type="text" placeholder="Por favor justifica tu respuesta">
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="pt-2 pb-4">
+                                    <label>20. ¿Cuenta con la distribución adecuada de cargas de trabajo, con jornadas laborales regulares conforme a la Ley Federal del Trabajo? </label>
+
+                                    <div class="box">
+                                        <input type="radio" name="Q20" id="value-Q20-2" value="1" onclick="showQ20A();">
+                                        <label for="value-Q20-2" class="value-Q20-2">
+                                            <div class="select-dots"></div>
+                                            <div class="text">No</div>
+                                        </label>
+                                        <input type="radio" name="Q20" id="value-Q20-1" value="2" onclick="showQ20B();">
+                                        <label for="value-Q20-1" class="value-Q20-1">
+                                            <div class="select-dots"></div>
+                                            <div class="text">Si</div>
+                                        </label>
+                                        <div id="div20" class="hide pt-2 pb-2">
+
+                                            <input type="text" placeholder="Por favor justifica tu respuesta">
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                            <input type="button" name="next" class="next action-button" value=">>" /> <input type="button" name="previous" class="previous action-button-previous" value="<<" />
+                        </fieldset>
+                        <fieldset>
+                            <div class="form-card">
+                                <div class="row">
+                                    <div class="col-7">
+                                        <h2 class="fs-title">Organización del tiempo de trabajo:</h2>
+                                    </div>
+                                    <div class="col-5">
+                                        <h2 class="steps">Parte 3 - 5</h2>
+                                    </div>
+                                </div>
+
+                                <div class="pt-2 pb-4">
+                                    <label>21. ¿Cuenta con mecanismos  para la  determinación de prioridades en el trabajo? </label>
+
+                                    <div class="box">
+                                        <input type="radio" name="Q21" id="value-Q21-2" value="1" onclick="showQ21A();">
+                                        <label for="value-Q21-2" class="value-Q21-2">
+                                            <div class="select-dots"></div>
+                                            <div class="text">No</div>
+                                        </label>
+                                        <input type="radio" name="Q21" id="value-Q21-1" value="2" onclick="showQ21B();">
+                                        <label for="value-Q21-1" class="value-Q21-1">
+                                            <div class="select-dots"></div>
+                                            <div class="text">Si</div>
+                                        </label>
+                                        <div id="div21" class="hide pt-2 pb-2">
+
+                                            <input type="text" placeholder="Por favor justifica tu respuesta">
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="pt-2 pb-4">
+                                    <label>22. ¿Cuenta con mecanismos para planificar el trabajo, considerando el proceso productivo, de manera que se tengan las pausas o periodos necesarios de descanso, rotación de tareas y otras medidas necesarias para evitar ritmos de trabajo acelerados? </label>
+
+                                    <div class="box">
+                                        <input type="radio" name="Q22" id="value-Q22-2" value="1" onclick="showQ22A();">
+                                        <label for="value-Q22-2" class="value-Q22-2">
+                                            <div class="select-dots"></div>
+                                            <div class="text">No</div>
+                                        </label>
+                                        <input type="radio" name="Q22" id="value-Q22-1" value="2" onclick="showQ22B();">
+                                        <label for="value-Q22-1" class="value-Q22-1">
+                                            <div class="select-dots"></div>
+                                            <div class="text">Si</div>
+                                        </label>
+                                        <div id="div22" class="hide pt-2 pb-2">
+
+                                            <input type="text" placeholder="Por favor justifica tu respuesta">
+                                        </div>
+
+                                    </div>
+                                </div>
+
+
+                                <div class="pt-2 pb-4">
+                                    <label>23. ¿Cuenta con Instructivos o procedimientos que definan claramente las tareas y responsabilidades? </label>
+
+                                    <div class="box">
+                                        <input type="radio" name="Q23" id="value-Q23-2" value="1" onclick="showQ23A();">
+                                        <label for="value-Q23-2" class="value-Q23-2">
+                                            <div class="select-dots"></div>
+                                            <div class="text">No</div>
+                                        </label>
+                                        <input type="radio" name="Q23" id="value-Q23-1" value="2" onclick="showQ23B();">
+                                        <label for="value-Q23-1" class="value-Q23-1">
+                                            <div class="select-dots"></div>
+                                            <div class="text">Si</div>
+                                        </label>
+                                        <div id="div23" class="hide pt-2 pb-2">
+
+                                            <input type="text" placeholder="Por favor justifica tu respuesta">
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="pt-2 pb-4">
+                                    <label>24. ¿Cuenta con mecanismos  para involucrar a los trabajadores en la definición de los horarios de trabajo cuando las condiciones del trabajo lo permitan? </label>
+
+                                    <div class="box">
+                                        <input type="radio" name="Q24" id="value-Q24-2" value="1" onclick="showQ24A();">
+                                        <label for="value-Q24-2" class="value-Q24-2">
+                                            <div class="select-dots"></div>
+                                            <div class="text">No</div>
+                                        </label>
+                                        <input type="radio" name="Q24" id="value-Q24-1" value="2" onclick="showQ24B();">
+                                        <label for="value-Q24-1" class="value-Q24-1">
+                                            <div class="select-dots"></div>
+                                            <div class="text">Si</div>
+                                        </label>
+                                        <div id="div24" class="hide pt-2 pb-2">
+
+                                            <input type="text" placeholder="Por favor justifica tu respuesta">
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                            <input type="button" name="next" class="next action-button" value=">>" /> <input type="button" name="previous" class="previous action-button-previous" value="<<" />
+                        </fieldset>
+                        <fieldset>
+                            <div class="form-card">
+                                <div class="row">
+                                    <div class="col-7">
+                                        <h2 class="fs-title">Liderazgo y relaciones de trabajo:</h2>
+                                    </div>
+                                    <div class="col-5">
+                                        <h2 class="steps">Parte 4 - 5</h2>
+                                    </div>
+                                </div>
+                                <div class="pt-2 pb-4">
+                                    <label>25. ¿Cuenta con mecanismos  para la  determinación de prioridades en el trabajo? </label>
+
+                                    <div class="box">
+                                        <input type="radio" name="Q25" id="value-Q25-2" value="1" onclick="showQ25A();">
+                                        <label for="value-Q25-2" class="value-Q25-2">
+                                            <div class="select-dots"></div>
+                                            <div class="text">No</div>
+                                        </label>
+                                        <input type="radio" name="Q25" id="value-Q25-1" value="2" onclick="showQ25B();">
+                                        <label for="value-Q25-1" class="value-Q25-1">
+                                            <div class="select-dots"></div>
+                                            <div class="text">Si</div>
+                                        </label>
+                                        <div id="div25" class="hide pt-2 pb-2">
+
+                                            <input type="text" placeholder="Por favor justifica tu respuesta">
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="pt-2 pb-4">
+                                    <label>26. ¿Cuenta con mecanismos para fomentar la comunicación entre supervisores o gerentes y trabajadores, así como entre los trabajadores? </label>
+
+                                    <div class="box">
+                                        <input type="radio" name="Q26" id="value-Q26-2" value="1" onclick="showQ26A();">
+                                        <label for="value-Q26-2" class="value-Q26-2">
+                                            <div class="select-dots"></div>
+                                            <div class="text">No</div>
+                                        </label>
+                                        <input type="radio" name="Q26" id="value-Q26-1" value="2" onclick="showQ26B();">
+                                        <label for="value-Q26-1" class="value-Q26-1">
+                                            <div class="select-dots"></div>
+                                            <div class="text">Si</div>
+                                        </label>
+                                        <div id="div26" class="hide pt-2 pb-2">
+
+                                            <input type="text" placeholder="Por favor justifica tu respuesta">
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="pt-2 pb-4">
+                                    <label>27. ¿Cuenta con mecanismos o programas  para involucrar a los trabajadores en la toma de decisiones sobre la organización de su trabajo? </label>
+
+                                    <div class="box">
+                                        <input type="radio" name="Q27" id="value-Q27-2" value="1" onclick="showQ27A();">
+                                        <label for="value-Q27-2" class="value-Q27-2">
+                                            <div class="select-dots"></div>
+                                            <div class="text">No</div>
+                                        </label>
+                                        <input type="radio" name="Q27" id="value-Q27-1" value="2" onclick="showQ27B();">
+                                        <label for="value-Q27-1" class="value-Q27-1">
+                                            <div class="select-dots"></div>
+                                            <div class="text">Si</div>
+                                        </label>
+                                        <div id="div27" class="hide pt-2 pb-2">
+
+                                            <input type="text" placeholder="Por favor justifica tu respuesta">
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="pt-2 pb-4">
+                                    <label>28. ¿Cuenta con programas o mecanismos para  establecer relaciones entre trabajadores, supervisores, gerentes y patrones para que puedan obtener apoyo los unos de los otros? </label>
+
+                                    <div class="box">
+                                        <input type="radio" name="Q28" id="value-Q28-2" value="1" onclick="showQ28A();">
+                                        <label for="value-Q28-2" class="value-Q28-2">
+                                            <div class="select-dots"></div>
+                                            <div class="text">No</div>
+                                        </label>
+                                        <input type="radio" name="Q28" id="value-Q28-1" value="2" onclick="showQ28B();">
+                                        <label for="value-Q28-1" class="value-Q28-1">
+                                            <div class="select-dots"></div>
+                                            <div class="text">Si</div>
+                                        </label>
+                                        <div id="div28" class="hide pt-2 pb-2">
+
+                                            <input type="text" placeholder="Por favor justifica tu respuesta">
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="pt-2 pb-4">
+                                    <label>29. ¿Cuenta con mecanismos para establecer procedimientos de actuación y seguimiento para tratar problemas relacionados con la violencia laboral, y capacitar al responsable de su implementación? </label>
+
+                                    <div class="box">
+                                        <input type="radio" name="Q29" id="value-Q29-2" value="1" onclick="showQ29A();">
+                                        <label for="value-Q29-2" class="value-Q29-2">
+                                            <div class="select-dots"></div>
+                                            <div class="text">No</div>
+                                        </label>
+                                        <input type="radio" name="Q29" id="value-Q29-1" value="2" onclick="showQ29B();">
+                                        <label for="value-Q29-1" class="value-Q29-1">
+                                            <div class="select-dots"></div>
+                                            <div class="text">Si</div>
+                                        </label>
+                                        <div id="div29" class="hide pt-2 pb-2">
+
+                                            <input type="text" placeholder="Por favor justifica tu respuesta">
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                            <input type="button" name="next" class="next action-button" value=">>" /> <input type="button" name="previous" class="previous action-button-previous" value="<<" />
+                        </fieldset>
+                        <fieldset>
+                            <div class="form-card">
+                                <div class="row">
+                                    <div class="col-7">
+                                        <h2 class="fs-title">Entorno organizacional:</h2>
+                                    </div>
+                                    <div class="col-5">
+                                        <h2 class="steps">Parte 5 - 5</h2>
+                                    </div>
+                                </div>
+                                <div class="pt-2 pb-4">
+                                    <label>30. ¿Cuenta con mecanismos o programas  para definir lineamientos para prohibir la discriminación y fomentar la equidad y el respeto? </label>
+
+                                    <div class="box">
+                                        <input type="radio" name="Q30" id="value-Q30-2" value="1" onclick="showQ30A();">
+                                        <label for="value-Q30-2" class="value-Q30-2">
+                                            <div class="select-dots"></div>
+                                            <div class="text">No</div>
+                                        </label>
+                                        <input type="radio" name="Q30" id="value-Q30-1" value="2" onclick="showQ30B();">
+                                        <label for="value-Q30-1" class="value-Q30-1">
+                                            <div class="select-dots"></div>
+                                            <div class="text">Si</div>
+                                        </label>
+                                        <div id="div30" class="hide pt-2 pb-2">
+
+                                            <input type="text" placeholder="Por favor justifica tu respuesta">
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="pt-2 pb-4">
+                                    <label>31. ¿Ya ha proporcionado la capacitación y sensibilización en la promoción de entornos organizacionales favorables? </label>
+
+                                    <div class="box">
+                                        <input type="radio" name="Q31" id="value-Q31-2" value="1" onclick="showQ31A();">
+                                        <label for="value-Q31-2" class="value-Q31-2">
+                                            <div class="select-dots"></div>
+                                            <div class="text">No</div>
+                                        </label>
+                                        <input type="radio" name="Q31" id="value-Q31-1" value="2" onclick="showQ31B();">
+                                        <label for="value-Q31-1" class="value-Q31-1">
+                                            <div class="select-dots"></div>
+                                            <div class="text">Si</div>
+                                        </label>
+                                        <div id="div31" class="hide pt-2 pb-2">
+
+                                            <input type="text" placeholder="Por favor justifica tu respuesta">
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="pt-2 pb-4">
+                                    <label>32. ¿Cuenta con mecanismos o programas para promover la ayuda mutua y el intercambio de conocimientos y experiencias entre los trabajadores? </label>
+
+                                    <div class="box">
+                                        <input type="radio" name="Q32" id="value-Q32-2" value="1" onclick="showQ32A();">
+                                        <label for="value-Q32-2" class="value-Q32-2">
+                                            <div class="select-dots"></div>
+                                            <div class="text">No</div>
+                                        </label>
+                                        <input type="radio" name="Q32" id="value-Q32-1" value="2" onclick="showQ32B();">
+                                        <label for="value-Q32-1" class="value-Q32-1">
+                                            <div class="select-dots"></div>
+                                            <div class="text">Si</div>
+                                        </label>
+                                        <div id="div32" class="hide pt-2 pb-2">
+
+                                            <input type="text" placeholder="Por favor justifica tu respuesta">
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="pt-2 pb-4">
+                                    <label>33. ¿Cuenta con mecansimos o programas  de apoyos a los trabajadores, de manera que puedan atender emergencias familiares, mismas que el trabajador tendrá que comprobar? </label>
+
+                                    <div class="box">
+                                        <input type="radio" name="Q33" id="value-Q33-2" value="1" onclick="showQ33A();">
+                                        <label for="value-Q33-2" class="value-Q33-2">
+                                            <div class="select-dots"></div>
+                                            <div class="text">No</div>
+                                        </label>
+                                        <input type="radio" name="Q33" id="value-Q33-1" value="2" onclick="showQ33B();">
+                                        <label for="value-Q33-1" class="value-Q33-1">
+                                            <div class="select-dots"></div>
+                                            <div class="text">Si</div>
+                                        </label>
+                                        <div id="div33" class="hide pt-2 pb-2">
+
+                                            <input type="text" placeholder="Por favor justifica tu respuesta">
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="pt-2 pb-4">
+                                    <label>34. ¿Cuenta con mecanismos, capacitación o programas para  difundir información para sensibilizar sobre la violencia laboral, tanto a trabajadores como a directivos, gerentes y supervisores? </label>
+
+                                    <div class="box">
+                                        <input type="radio" name="Q34" id="value-Q34-2" value="1" onclick="showQ34A();">
+                                        <label for="value-Q34-2" class="value-Q34-2">
+                                            <div class="select-dots"></div>
+                                            <div class="text">No</div>
+                                        </label>
+                                        <input type="radio" name="Q34" id="value-Q34-1" value="2" onclick="showQ34B();">
+                                        <label for="value-Q34-1" class="value-Q34-1">
+                                            <div class="select-dots"></div>
+                                            <div class="text">Si</div>
+                                        </label>
+                                        <div id="div34" class="hide pt-2 pb-2">
+
+                                            <input type="text" placeholder="Por favor justifica tu respuesta">
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="pt-2 pb-4">
+                                    <label>35. ¿Cuenta con mecanismos para  Informar sobre la forma en que se deben denunciar actos de violencia laboral? </label>
+
+                                    <div class="box">
+                                        <input type="radio" name="Q35" id="value-Q35-2" value="1" onclick="showQ35A();">
+                                        <label for="value-Q35-2" class="value-Q35-2">
+                                            <div class="select-dots"></div>
+                                            <div class="text">No</div>
+                                        </label>
+                                        <input type="radio" name="Q35" id="value-Q35-1" value="2" onclick="showQ35B();">
+                                        <label for="value-Q35-1" class="value-Q35-1">
+                                            <div class="select-dots"></div>
+                                            <div class="text">Si</div>
+                                        </label>
+                                        <div id="div35" class="hide pt-2 pb-2">
+
+                                            <input type="text" placeholder="Por favor justifica tu respuesta">
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="pt-2 pb-4">
+                                    <label>36. ¿Cuenta con mecanismos  seguros y confidenciales para la recepción de quejas por prácticas opuestas al entorno organizacional favorable y para denunciar actos de violencia laboral? </label>
+
+                                    <div class="box">
+                                        <input type="radio" name="Q36" id="value-Q36-2" value="1" onclick="showQ36A();">
+                                        <label for="value-Q36-2" class="value-Q36-2">
+                                            <div class="select-dots"></div>
+                                            <div class="text">No</div>
+                                        </label>
+                                        <input type="radio" name="Q36" id="value-Q36-1" value="2" onclick="showQ36B();">
+                                        <label for="value-Q36-1" class="value-Q36-1">
+                                            <div class="select-dots"></div>
+                                            <div class="text">Si</div>
+                                        </label>
+                                        <div id="div36" class="hide pt-2 pb-2">
+
+                                            <input type="text" placeholder="Por favor justifica tu respuesta">
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="pt-2 pb-4">
+                                    <label>37. ¿Cuenta con programas que promuevan el sentido de pertenencia de los trabajadores a la organización? </label>
+
+                                    <div class="box">
+                                        <input type="radio" name="Q37" id="value-Q37-2" value="1" onclick="showQ37A();">
+                                        <label for="value-Q37-2" class="value-Q37-2">
+                                            <div class="select-dots"></div>
+                                            <div class="text">No</div>
+                                        </label>
+                                        <input type="radio" name="Q37" id="value-Q37-1" value="2" onclick="showQ37B();">
+                                        <label for="value-Q37-1" class="value-Q37-1">
+                                            <div class="select-dots"></div>
+                                            <div class="text">Si</div>
+                                        </label>
+                                        <div id="div37" class="hide pt-2 pb-2">
+
+                                            <input type="text" placeholder="Por favor justifica tu respuesta">
+                                        </div>
+
+                                    </div>
+                                </div>
+
+
+                            </div>
+                            <input type="button" name="next" class="next action-button" value="Guardar" /> <input type="button" name="previous" class="previous action-button-previous" value="<<" />
+                        </fieldset>
+                        <fieldset>
+                            <div class="form-card">
+                                <div class="row">
+                                    <div class="col-7">
+                                        <h2 class="fs-title"></h2>
+                                    </div>
+                                    <div class="col-5">
+                                        <h2 class="steps"></h2>
+                                    </div>
+                                </div> <br><br>
+                                <h2 class="purple-text text-center"><strong>Finalizado</strong></h2> <br>
+                                <div class="row justify-content-center">
+                                    <div class="col-3"> <img src="https://i.imgur.com/GwStPmg.png" class="fit-image"> </div>
+                                </div> <br><br>
+                                <div class="row justify-content-center">
+                                    <div class="col-7 text-center">
+                                        <h5 class="purple-text text-center">Haz terminado tu encuesta</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type='text/javascript' src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js'></script>
+    <script src=" @Url.Content("~/Scripts/script.js") "></script>
+</div>

@@ -1,0 +1,887 @@
+﻿@model ErgoSalud.Models.Check_checklist_medidas_acciones_N01
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<link href="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.0/main.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.0/main.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.3/moment.min.js" integrity="sha512-x/vqovXY/Q4b+rNjgiheBsA/vbWA3IVvsS8lkQSX1gQ4ggSJx38oI2vREZXpTzhAv6tNUaX81E7QBBzkpDQayA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://momentjs.com/downloads/moment.js"></script>
+<link href=" @Url.Content("~/Content/sizing.css") " rel="stylesheet" type="text/css" />
+
+<style>
+    #calendar a.fc-event {
+        color: #000000;
+    }
+
+    a {
+        color: black;
+    }
+
+    #calendar {
+        margin-top: 20px;
+    }
+
+    .fc-toolbar-title {
+        text-transform: uppercase;
+        font-size: 1.5em;
+    }
+
+    .fc-col-header {
+        background-color: #5c14ec;
+        font-size: 1.5em;
+        text-transform: uppercase;
+    }
+
+    .fc-scrollgrid-sync-inner {
+        padding-top: 7px;
+        padding-bottom: 7px
+    }
+
+    .fc-col-header-cell-cushion {
+        color: white !important;
+    }
+
+    .fc-daygrid-day {
+        background-color: rgb(132, 76, 240,0.1);
+    }
+
+    .fc-h-event {
+        border: 1px solid #fc5454;
+        background-color: #fc5454;
+        padding: 7px 10px;
+        font-size: 1em;
+    }
+
+    .fc-v-event {
+        border: 1px solid #844cf0;
+        background-color: #844cf0;
+    }
+
+    .fc-event-time {
+        padding: 3px 10px;
+        font-size: 1em;
+    }
+
+    .fc .fc-daygrid-event {
+        margin-top: 5px;
+    }
+
+    .fc-daygrid-event-dot {
+        border: 4px solid #844cf0;
+    }
+
+    .fc-list-event-dot {
+        border: 5px solid #844cf0 !important;
+    }
+
+    .fc-button-group .fc-button {
+        background-color: #5c14ec;
+        border: 1px solid #7a3ff2;
+        padding: 8px 17px;
+        font-weight: bold;
+    }
+
+    .fc-theme-standard .fc-popover-header {
+        background: rgba(44, 62, 80,.7);
+        padding: 10px;
+        color: white;
+        font-weight: bold;
+    }
+
+    .fc-daygrid-more-link {
+        font-weight: bold;
+        font-size: 1.2em;
+        color: rgb(44, 62, 80,0.8);
+    }
+
+        .fc-daygrid-more-link:hover {
+            color: #5c14ec;
+        }
+
+
+
+
+    .fc .fc-button-primary:not(:disabled).fc-button-active, .fc .fc-button-primary:not(:disabled):active {
+        color: #fff;
+        background-color: #4b10c2;
+        border-color: #4b10c2;
+    }
+
+        .fc .fc-button-primary:focus, .fc .fc-button-primary:not(:disabled).fc-button-active:focus, .fc .fc-button-primary:not(:disabled):active:focus {
+            box-shadow: 0;
+        }
+
+    .modal-header {
+        color: white;
+        background-color: #844cf0;
+        padding: 20px 20px 12px !important;
+    }
+
+        .modal-header .close {
+            color: white;
+            opacity: .7;
+        }
+</style>
+@section Scripts{
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.23.0/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.0.0/fullcalendar.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
+    <script>
+        var global;
+
+        $(document).ready(function () {
+
+
+            $('#myModalSave').on('hidden.bs.modal', function (e) {
+
+                $(this).removeData();
+
+            });
+
+
+
+
+
+            var events = [];
+
+            var selectedEvent = null;
+
+            FetchEventAndRenderCalendar();
+
+
+
+            function FetchEventAndRenderCalendar() {
+
+                events = [];
+
+                //  alert('Before GetEvents')
+
+                $.ajax({
+
+                    type: "POST",
+
+                    url: "/medidas_estatus/GetEvents",
+
+                    success: function (data) {
+
+                        $.each(data, function (i, v) {
+
+                            console.log(moment(v.Fecha).format());
+                            console.log(v.Fecha_Fin != null ? moment(v.Fecha_Fin) : null);
+
+                            events.push({
+
+                                id: v.id_planeacion,
+
+                                title: "Acción: " + v.accion,
+
+                                extendedProps: {
+                                    Estatus_Accion: v.estatus,
+                                    fecha_inicio: v.fecha_inicio,
+                                    fecha_fin: v.fecha_fin, 
+                                },
+
+                                description: v.estatus,
+                                start: String(moment(v.fecha_inicio).format("YYYY-MM-DD HH:mm:ss")).replace("00:00:00", "23:59:59"),
+                                custom_param1: v.accion,
+                                end: v.fecha_fin != null ? String(moment(v.fecha_fin).format("YYYY-MM-DD HH:mm:ss")).replace("00:00:00", "23:59:59") : null, 
+                                color: v.color, 
+                                allDay: 1 
+                            });
+
+                        })
+
+                        //  alert('FIN')
+
+                        GenerateCalender(events);
+
+                    },
+
+                    error: function (error) {
+
+                        alert('Error al traer acciones');
+
+                    }
+
+                })
+
+            }
+
+
+
+            function GenerateCalender(events) {
+
+                $('#respuesta').addClass('text-secondary').hide;
+
+                /*$('#calender').fullCalendar('destroy');*/
+
+                var calendarEl = document.getElementById('calender');
+
+
+
+                var calendar = new FullCalendar.Calendar(calendarEl, {
+                    timeZone: 'UTC',
+                    nextDayThreshold: '00:00:00',
+                    monthNames: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
+
+                    monthNamesShort: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'],
+
+                    dayNames: ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'],
+
+                    dayNamesShort: ['Dom', 'Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb'],
+
+                    initialView: 'dayGridMonth',
+
+                    locale: 'es',
+
+                    expandRows: false,
+
+                    defaultDate: new Date(),
+
+                    timeFormat: 'h(:mm)a',
+
+                    // CABECERA DE CALENDARIO
+
+                    headerToolbar: {
+
+                        left: 'prev,next today',
+
+                        center: 'title',
+
+                        right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek'
+
+                    },
+
+                    theme: false,
+
+                    buttonText: {
+
+                        dayGridMonth: "Mes",
+
+                        timeGridWeek: "Semana",
+
+                        timeGridDay: "Dia",
+
+                        listWeek: "lista"
+
+                    },
+
+                    dayMaxEvents: true,
+
+                    eventColor: '#378006',
+
+                    events: events,
+
+                    eventClick: function (info) {
+
+                        selectedEvent = info;
+
+                        $('#myModal #eventTitle').text(info.event.title);
+
+                        var $description = $('<div/><br>');
+
+                        $description.append($('<p/>').html('<b>Inicio: </b>' + moment(info.event.extendedProps.fecha_inicio).format('DD-MMM-YYYY')));
+
+                      
+                        $description.append($('<p/>').html('<b>Termino: </b>' + moment(info.event.extendedProps.fecha_fin).format('DD-MMM-YYYY')));
+
+                     
+
+                        $description.append($('<p hidden />').html("<b class='none'>id_planeacion: </b> <span class='none' id='id_planeacion'>" + info.event.id + "</span>"));
+
+                        $description.append($('<p/>').html("<b>Esatus: </b> <span id='cantidad_2'></span>" + info.event.extendedProps.Estatus_Accion));
+                        //console.write(info.event.extendedProps);
+
+
+                        $('#myModal #pDetails').empty().html($description);
+
+
+
+                        $('#myModal').modal();
+
+                    },
+
+                    selectable: true,
+
+                    select: function (start, end) {
+
+                        selectedEvent = {
+
+                            eventID: 0,
+
+                            title: '',
+
+                            description: '',
+
+                            start: start,
+
+                            end: end,
+
+                            allDay: false,
+
+                            color: ''
+
+                        };
+
+                        openAddEditForm();
+
+                        calendar.unselect();
+
+                    },
+
+                    editable: true,
+
+                    eventDrop: function (event) {
+
+                        var data = {
+
+                            EventID: event.eventID,
+
+                            Subject: event.title,
+
+                            Start: event.start.format('MM/DD/YYYY '),
+
+                            End: event.end != null ? event.end.format('MM/DD/YYYY ') : null,
+
+                            Description: event.description,
+
+                            ThemeColor: event.color,
+
+                            IsFullDay: event.allDay
+
+                        };
+
+                        SaveEvent(data);
+
+                    }
+
+                })
+
+                global = calendar;
+
+                calendar.render();
+
+                //$('#calendar').addTouch();
+
+            }
+
+
+
+            $('#btnEdit').click(function () {
+
+                //Open modal dialog for edit event
+
+                openAddEditForm();
+
+            })
+
+            $('#btnDelete').click(function () {
+
+                //Subject: $('#txtSubject').val().trim(),
+
+                //var fin : $('#txtid_tims').val().trim(),
+
+                //var inicio = $('#txtStart').val().trim()
+
+
+
+                Swal.fire({
+
+                    title: "Realmente desea Eliminar este Registro?",
+
+                    text: "Click en Regresar para Cancelar",
+
+                    type: 'question',
+
+                    showCancelButton: true,
+
+                    confirmButtonColor: '#d33',
+
+                    cancelButtonColor: '#3085d6',
+
+                    cancelButtonText: 'Regresar',
+
+                    confirmButtonText: 'Eliminar'
+
+                }).then((result) => {
+
+                    if (result.value) {
+
+
+
+                        var id_planeacion = document.getElementById("id_planeacion").innerText;
+
+                        // alert(id_planeacion);
+
+                        $.ajax({
+
+                            type: "POST",
+
+                            url: '/Planeacion/DeleteEvent',
+
+                            data: { id_planeacion: id_planeacion },
+
+                            success: function (data) {
+
+
+
+                                if (data.status) {
+
+                                    //Refresh the calender
+
+                                    global.destroy();
+
+                                    FetchEventAndRenderCalendar();
+
+                                    $('#myModal').modal('hide');
+
+                                }
+
+
+
+                                Swal.fire({
+
+                                    type: 'success',
+
+                                    title: 'Registro Eliminado Correctamente',
+
+                                });
+
+                            },
+
+                            error: function () {
+
+                                Swal.fire({
+
+                                    title: "Error al Eliminar Registro",
+
+                                    text: "Solicitar Soporte",
+
+                                    type: 'error'
+
+
+
+                                })
+
+                            }
+
+                        })
+
+                    }
+
+                })
+
+
+
+                //if (selectedEvent != null && confirm('Realmente desea Eliminar este Registro?')) {
+
+                //    var id_planeacion = $('#cantidad').val();
+
+                //    $.ajax({
+
+                //        type: "POST",
+
+                //        url: '/Planeacion/DeleteEvent',
+
+                //        data: { id_planeacion: id_planeacion },
+
+                //        success: function (data) {
+
+                //            if (data.status) {
+
+                //                //Refresh the calender
+
+                //                FetchEventAndRenderCalendar();
+
+                //                $('#myModal').modal('hide');
+
+                //            }
+
+                //        },
+
+                //        error: function () {
+
+                //            alert('Failed');
+
+                //        }
+
+                //    })
+
+                //}
+
+            })
+
+
+
+            $('#dtp1,#dtp2').datetimepicker({
+
+            });
+
+
+
+            $('#chkIsFullDay').change(function () {
+
+                if ($(this).is(':checked')) {
+
+                    $('#divEndDate').show();
+
+                }
+
+                else {
+
+                    $('#divEndDate').hide();
+
+                }
+
+            });
+
+
+
+            // EDITAR UNA PLANEACION YA CREADA EN EL CALENDARIO
+
+            function openAddEditForm() {
+                console.log(moment(selectedEvent._i));
+
+                if (selectedEvent != null) {
+
+                    //$('#hdEventID').val(selectedEvent.eventID);
+                    $('#txtSubject').val(selectedEvent.title);
+                    $('#txtStart').val(moment(selectedEvent.start).format('MM/DD/YYYY').toString());
+                    $('#chkIsFullDay').prop("checked", selectedEvent.allDay || false);
+                    $('#chkIsFullDay').change();
+                    //$('#txtEnd').val(selectedEvent.end != null ? selectedEvent.end.format('MM/DD/YYYY '));
+                    $('#txtEnd').val(moment(selectedEvent.end).format('MM/DD/YYYY').toString());
+                    $('#txtDescription').val(selectedEvent.description);
+                    $('#ddThemeColor').val(selectedEvent.color);
+                }
+                $('#myModal').modal('hide');
+                //$('#myModalSave').modal();
+
+            }
+
+
+
+            $('#btnSave').click(function () {
+
+                //Validation/
+
+                if ($('#txtSubject').val().trim() == "") {
+
+                    alert('Ingrese un Titulo');
+
+                    return;
+
+                }
+
+                if ($('#txtStart').val().trim() == "") {
+
+                    alert('Fecha de Inicio de Servicio Requerida');
+
+                    return;
+
+                }
+
+                if ($('#chkIsFullDay').is(':checked') == false && $('#txtEnd').val().trim() == "") {
+
+                    alert('Fecha de Terminación de Servicio Requerida');
+
+                    return;
+
+                }
+
+                else {
+
+                    var startDate = moment($('#txtStart').val(), "MM/DD/YYYY ").toDate();
+
+                    var endDate = moment($('#txtEnd').val(), "MM/DD/YYYY ").toDate();
+
+                    if (startDate > endDate) {
+
+                        alert('Fecha de Terminación de Producción Invalida');
+
+                        return;
+
+                    }
+
+                }
+
+
+
+                var data = {
+
+                    //EventID: $('#hdEventID').val(),
+
+                    Subject: $('#txtSubject').val().trim(),
+
+                    id_tims: $('#txtid_tims').val().trim(),
+
+                    Start: $('#txtStart').val().trim(),
+
+                    End: $('#txtEnd').val().trim(),
+
+                    Description: $('#txtDescription').val(),
+
+                    ThemeColor: $('#ddThemeColor').val(),
+
+                    cantidad: $('#cantidad').val(),
+
+                    IsFullDay: 1
+
+                }
+
+                //alert("llamara a savedata");
+
+                SaveEvent(data);
+
+                // Llamada de funcion para guardar la información en la base de datos
+
+            })
+
+
+
+
+
+            function SaveEvent(data) {
+
+
+
+                var e = document.getElementById("txtid_tims");
+
+                var strUser = e.options[e.selectedIndex].text;
+
+
+
+
+
+                var e2 = document.getElementById("txtid_tims_2");
+
+                var strUser2 = e2.options[e2.selectedIndex].text;
+
+
+
+
+
+                var e3 = document.getElementById("txtid_tims_3");
+
+                var strUser3 = e3.options[e3.selectedIndex].text;
+
+
+
+                var id_prensa = data.Subject;
+
+                var Start = data.Start;
+
+                var End = data.End;
+
+                var id_tims = strUser;
+
+                var id_tims_2 = strUser2;
+
+                var id_tims_3 = strUser3;
+
+                var id_cliente = data.id_cliente;
+
+                var ThemeColor = data.ThemeColor;
+
+                var IsFullDay = 1;
+
+                var cantidad = data.cantidad;
+
+                $.ajax({
+
+                    type: "POST",
+
+                    url: '/Planeacion/SaveEvent',
+
+                    dataType: 'json',
+
+                    data: { id_prensa: id_prensa, Start: moment(Start).format('YYYY-MM-DD'), End: moment(End).format('YYYY-MM-DD'), id_cliente: id_cliente, ThemeColor: ThemeColor, IsFullDay: IsFullDay, cantidad: cantidad, id_tims: id_tims, id_tims_2: id_tims_2, id_tims_3: id_tims_3 },
+
+                    // data: data,
+
+                    beforeSend: function () {
+
+                        $('#respuesta').html("Guardando...").addClass('text-secondary').show;
+
+                    },
+
+                    success: function (data) {
+
+                        if (data.status) {
+
+                            //Refresh the calender
+
+                            global.destroy();
+
+                            FetchEventAndRenderCalendar();
+
+                            //  location.reload();
+
+                            $('#respuesta').removeClass('text-secondary');
+
+                            $('#respuesta').html("").addClass('text-success').show;
+
+                            $("myModalSave").html("");
+
+                            $('#myModalSave').modal('hide');
+
+                        }
+
+                    },
+
+                    error: function () {
+
+                        alert('Error');
+
+                    }
+
+                })
+
+            }
+
+        })
+
+
+
+        function editar() {
+
+            var id = document.getElementById("id_planeacion").innerHTML;
+
+            window.location.href = "/Planeacion/edit/" + id;
+
+        }
+
+    </script>
+}
+
+
+
+<br>
+
+<h2>Planeación de acciones</h2>
+<div id="calender"></div>
+<br>
+<button type="button" class="btn btn-info visible-xs-block" data-toggle="modal" data-target="#myModalSave">Agendar</button>
+
+
+<div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title"> <span id="eventTitle"></span></h4>
+            </div>
+            <div class="modal-body">
+                @*<button id="btnDelete" class="btn btn-default btn-sm pull-right">
+                    <span class="glyphicon glyphicon-remove"></span> Eliminar
+                </button>*@
+
+                <p id="pDetails"></p>
+            </div>
+            <div class="modal-footer">
+                @*<button type="button" class="btn btn-default" onclick="editar()">Modificar</button>*@
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="myModalSave" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content" style="height:700px; width:350px">
+            <div class="modal-header">
+                <h4 class="modal-title">Agregar Planeación</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form class="col-md-12 form-horizontal">
+                    <input type="hidden" id="hdEventID" value="0" />
+                    <div class="form-group">
+                        @*<label>Prensa</label>
+                            <input type="text" id="txtSubject" class="form-control" />*@
+                        <label>Prensa</label>
+                     @*   @Html.DropDownListFor(model => model.id_prensa, ViewBag.PR_Prensas_N02List as SelectList, "SELECT", new { @id = "txtSubject", @class = "form-control" })*@
+
+
+                    </div>
+                    <div class="form-group">
+                        <label>Inicio</label>
+                        @*<div class="col-xs-3  col-md-4 col-lg-4 mb-1">
+                                <div class="input-group input-group-sm mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text bg-secondary text-light" id="inputGroup-sizing-sm">&nbsp; Fecha &nbsp;</span>
+                                    </div>
+                                    <input class="form-control" type="text" id="txtFecha" disabled="disabled" />
+
+
+                                </div>
+                            </div>*@
+
+
+                        <div class="input-group date" id="dtp1">
+                            <input type="text" id="txtStart" class="form-control" />
+                            <span class="input-group-addon">
+                                <span class="glyphicon glyphicon-calendar"></span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="checkbox">
+                            <label><input type="checkbox" id="chkIsFullDay" checked="checked" />  Producir hasta el día</label>
+                        </div>
+                    </div>
+                    <div class="form-group" id="divEndDate" style="display:none">
+                        <label>Termino</label>
+                        <div @*class="input-group date" id="dtp2"*@>
+                            <input type="text" id="txtEnd" class="form-control" />
+                            <span class="input-group-addon">
+                                <span class="glyphicon glyphicon-calendar"></span>
+                            </span>
+                        </div>
+                    </div>
+                    @*<div class="form-group">
+                            <label>Comentario</label>
+                            <textarea id="txtDescription" rows="2" class="form-control"></textarea>
+                        </div>*@
+                    @*<label>Numero de Parte</label>
+                    @Html.DropDownListFor(model => model.id_prensa, ViewBag.PR_Productos_N02List as SelectList, "SELECT", new { @id = "txtid_tims", @class = "form-control" })
+                    <label>Numero de Parte 2</label>
+                    @Html.DropDownListFor(model => model.id_prensa, ViewBag.PR_Productos_N02List as SelectList, "SELECT", new { @id = "txtid_tims_2", @class = "form-control" })
+                    <label>Numero de Parte 3</label>
+                    @Html.DropDownListFor(model => model.id_prensa, ViewBag.PR_Productos_N02List as SelectList, "SELECT", new { @id = "txtid_tims_3", @class = "form-control" })*@
+
+
+
+
+                    @*<label>Cliente</label>
+                        @Html.DropDownListFor(model => model.id_prensa, ViewBag.PR_Clientes_N02List as SelectList, "SELECT", new { @id = "txtSubject", @class = "form-control" })*@
+
+                    <div class="form-group">
+                        <label>Cantidad</label>
+                        <input type="text" id="cantidad" class="form-control" />
+                    </div>
+                    @*@Html.DropDownListFor(model => model.id_resina, ViewBag.PR_Resinas_N02List as SelectList, "", new { @class = "form-control ", @disabled = "disabled" })*@
+
+
+                    @*<div class="form-group">
+                            <label>Color</label>
+                            <select id="ddThemeColor" class="form-control">
+                                <option value="">Default</option>
+                                <option value="red">Red</option>
+                                <option value="blue">Blue</option>
+                                <option value="black">Black</option>
+                                <option value="green">Green</option>
+                            </select>
+                        </div>*@
+
+                    <button type="button" id="btnSave" class="btn btn-success">Guardar</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                    <h4 class="modal-title" name="respuesta" id="respuesta"></h4>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

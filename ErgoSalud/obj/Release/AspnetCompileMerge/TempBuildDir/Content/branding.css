@@ -1,0 +1,392 @@
+﻿/*Encabezados*/
+.title_blue {
+    color: #5d15eb !important;
+}
+
+.title_pink {
+    color: #fc5353 !important;
+}
+
+
+/*Modales */
+.modal-header-pink {
+    background: linear-gradient(to right, #fc5353, #fa7575 ) !important;
+}
+
+.modal-header-blue {
+    background: linear-gradient(to right, #5d15eb, #8c72dd ) !important;
+}
+/*Breadcrumb*/
+.breadcrumb.breadcrumb-custom .breadcrumb-item a:hover {
+    color: #251882 !important;
+}
+
+
+/*button*/
+.btn-module:hover {
+    background-color: #8c72dd !important;
+    border: #8c72dd !important;
+    color: white !important
+}
+
+.btn-module {
+   background-color: #5d15eb !important;
+   border: #5d15eb !important;
+   color: white !important
+}
+
+.btn-module2:hover {
+    background-color: #efa8a5 !important;
+    border: #efa8a5 !important;
+    color: white !important
+}
+
+.btn-module2 {
+    background-color: #fc5353 !important;
+    border: #fc5353 !important;
+    color: white !important
+}
+
+.btn-module3 {
+    background-color: #fa7575 !important;
+    border: #fa7575 !important;
+    color: white !important
+}
+
+.btn-module3:hover {
+    background-color:  #c8adda  !important;
+    border:  #c8adda  !important;
+    color: white !important
+}
+
+
+/*Botón de banner*/
+.cta-btn {
+    background: linear-gradient(to right, #fc5353, #fa7575 ) !important;
+}
+
+/*Banner*/
+
+@media screen and (min-width:574px) {
+    .banner-dashboard {
+        background: linear-gradient(to right, rgba(93, 21, 235,50%), rgba(140, 114, 221,1)), url('https://images.pexels.com/photos/1629236/pexels-photo-1629236.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1') !important;
+    }
+
+    .banner-buzon {
+        background: linear-gradient(to right, rgba(252, 83, 83,80%), rgba(250, 117, 117,70%)), url('https://images.pexels.com/photos/2092075/pexels-photo-2092075.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+        background-size: 100% auto !important;
+    }
+
+
+}
+
+#toplogo_nom035 {
+    background-color: #5d15eb;
+
+}
+
+/*Nom-035*/
+.text {
+    color: #c8adda;
+
+}
+
+.text .counter-count {
+    background-color: #fc5353 ;
+}
+
+.card-animated {
+    border: 2px solid #5d15eb;
+
+}
+
+.card-animated .backgroundColor {
+    background-color:  #5d15eb !important;
+}
+
+.card-animated:hover {
+    border: 2px solid #fc5353 !important;
+    
+}
+
+.fa-icon-image {
+    color: #c8adda;
+}
+
+/*form*/
+.search-section .input {
+    border: solid 1px #c8adda !important;
+}
+
+.comunicaSection ::placeholder {
+    color: #b3b3b3;
+}
+
+
+    .comunica-space .input {
+
+        background: rgba(255,255,255,.1);
+
+    }
+
+
+
+
+.comunica-box select option {
+    color: #251882;
+}
+
+    .comunica-box select option:hover {
+        background: #a07cec;
+    }
+
+/*table elements*/
+.dataTables_filter input, .dataTables_length select {
+    border: solid 1px #dbe3e6 !important;
+}
+
+.dataTables_filter input:focus, .dataTables_length select:focus {
+    border: 2px #71307a solid !important
+}
+
+.pagination .active a {
+    background-color: #747778 !important;
+}
+
+.pagination > li > a:hover,
+.pagination > li > span:hover,
+.pagination > li > a:focus,
+.pagination > li > span:focus {
+    color: #5d15eb;
+}
+
+.dataTables_filter input, .dataTables_length select {
+    border: 1px solid #8c72dd !important;
+}
+
+/*popup*/
+.news {
+    background: linear-gradient(to right, #fa7575, #efa8a5 ) !important;
+}
+
+.title {
+    background: linear-gradient(to right, #fa7575, #fc5353 ) !important;
+}
+
+.title:after {
+    border-left: 35px solid #fc5353 !important;
+}
+
+.card-animated:hover .backgroundEffect {
+
+    background: #fc5353;
+    border: 2px solid #fc5353 !important;
+} 
+
+
+/*Buzón*/
+.buzon-snip .sugerenciasBuzon:checked + .tab,
+.buzon-snip .quejasBuzon:checked + .tab {
+    border-color: #fc5353 !important;
+}
+
+
+.buzon-box {
+    background: url(https://images.unsplash.com/photo-1507208773393-40d9fc670acf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1268&q=80) center no-repeat !important;
+}
+
+.buzon-snip {
+    background: rgb(37, 24, 130,0.8) !important;
+}
+
+/*Comunica form*/
+
+.comunica-box {
+    background: url(https://img.freepik.com/foto-gratis/primer-plano-libreta-blanco_53876-14878.jpg?t=st=1658826264~exp=1658826864~hmac=e2c109f416e41e1fc4e23a2f5497f7d3067cff0621330a85e790ba6c855658c4&w=740) center no-repeat;
+    background-size: auto 100% !important;
+}
+
+.comunica-snip {
+    background: rgb(37, 24, 130,0.8);
+}
+
+
+/*Carga política create/Políticas*/
+.file-area {
+    background: linear-gradient(to right, #8E24AA, #b06ab3);
+    color: #D7D7EF;
+}
+
+/*Status*/
+
+h1 small,
+h2 small,
+h3 small,
+h4 small,
+h5 small,
+h6 small,
+.h1 small,
+.h2 small,
+.h3 small,
+.h4 small,
+.h5 small,
+.h6 small {
+    color: #e7e9ec;
+}
+
+
+h7,
+.h7 {
+    color: #BDBDBD;
+}
+
+
+.shapeContainer {
+    background: #911eb7; /* Old browsers */
+    background: -moz-linear-gradient(top, #911eb7 10%, #631ae0 80%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #911eb7 10%,#631ae0 80%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #911eb7 10%,#631ae0 80%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+
+.circle {
+    background: #df256d;
+
+}
+
+.graphTitle h6 {
+    color: #911eb7;
+}
+
+
+.graphTitle p {
+    color: #b1b3b5;
+
+}
+
+.text-muted {
+    color: #bdc3c7;
+}
+
+.text-inverse {
+    color: #ffffff;
+}
+
+.text-primary {
+    color: #1abc9c;
+}
+
+a.text-primary:hover {
+    color: #148f77;
+}
+
+.text-warning {
+    color: #f1c40f;
+}
+
+a.text-warning:hover {
+    color: #c29d0b;
+}
+
+.text-danger {
+    color: #e74c3c;
+}
+
+a.text-danger:hover {
+    color: #d62c1a;
+}
+
+.text-success {
+    color: #2ecc71;
+}
+
+a.text-success:hover {
+    color: #25a25a;
+}
+
+.text-info {
+    color: #3498db;
+}
+
+a.text-info:hover {
+    color: #217dbb;
+}
+
+.bg-primary {
+    color: #ffffff;
+    background-color: #34495e;
+}
+
+a.bg-primary:hover {
+    background-color: #222f3d;
+}
+
+.bg-success {
+    background-color: #dff0d8;
+}
+
+a.bg-success:hover {
+    background-color: #c1e2b3;
+}
+
+.bg-info {
+    background-color: #d9edf7;
+}
+
+a.bg-info:hover {
+    background-color: #afd9ee;
+}
+
+.bg-warning {
+    background-color: #fcf8e3;
+}
+
+a.bg-warning:hover {
+    background-color: #f7ecb5;
+}
+
+.bg-danger {
+    background-color: #f2dede;
+}
+
+a.bg-danger:hover {
+    background-color: #e4b9b9;
+}
+
+table.businesCase .total {
+    color: #631ae0;
+}
+
+table.businesCase th, table.businesCase th {
+    color: #911eb7;
+
+}
+            /*--------------
+                Colors
+                -----------------*/
+
+
+
+            .white {
+                color: #FFF;
+            }
+
+            .magenta {
+                color: #911eb7;
+            }
+
+            .magentaBG {
+                background-color: #911eb7;
+            }
+
+
+            .purple {
+                color: #631ae0;
+            }
+
+            .magentaDrk {
+                color: #aa2691;
+            }
+
+            .pink {
+                color: #df256d;
+            }

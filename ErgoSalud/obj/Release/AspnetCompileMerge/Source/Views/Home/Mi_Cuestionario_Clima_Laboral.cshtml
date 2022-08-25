@@ -1,0 +1,81 @@
+﻿@if (@ViewBag.id_encuesta == 5)
+{
+    @model IEnumerable<ErgoSalud.Models.ClimaLaboral_Cuestionario_Resultados_N01>
+
+}
+
+ 
+
+<div class="container-fluid">
+    <div class="container">
+        <div class="row">
+ <br>
+                <h2>Mi evaluación</h2>
+                <table class="table">
+                    <tr>
+                        <th>
+                            @Html.DisplayName("Folio")
+                        </th>
+                        <th>
+                            @Html.DisplayName("Colaborador")
+                        </th>
+                    
+                        <th>
+                            @Html.DisplayName("Empresa")
+                        </th>
+                        <th>
+                            @Html.DisplayName("Centro")
+                        </th>
+                        <th>
+                            @Html.DisplayName("Estatus")
+                        </th>
+                        <th>Evaluación</th>
+                    </tr>
+
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ERGOS_Cuestionarios_Trabajador_N01.id_trabajador)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ERGOS_Cuestionarios_Trabajador_N01.Nombre)
+                            </td>
+                      
+
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ERGOS_Cuestionarios_Trabajador_N01.ERGOS_Empresas_N01.Razon_Social)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ERGOS_Cuestionarios_Trabajador_N01.ERGOS_Centros_Trabajo_N01.Nombre_centro_trabajo)
+                            </td>
+                            <td>
+                                @if (item.Calificacion != null)
+                                {
+                                    <span style="color:green"><b>COMPLETADO</b></span>
+                                }
+                                else
+                                {
+                                    <span style="color:red"><b>PENDIENTE</b></span>
+                                }
+                            </td>
+                            <td>
+
+                                <a title="Editar" href="@Url.Action("Edit","MultiEvaluaClimaLaboral", new { id = item.id_cuestionario_resultado })">
+                                    <i class="fa fa-file-text" title="Clima Laboral" style="font-size:20px;" aria-hidden="true"></i>
+                                </a>
+
+
+                            </td>
+                        </tr>
+                    }
+
+                </table>
+     
+
+        </div>
+    </div>
+
+ 
+
+</div>

@@ -1,0 +1,111 @@
+﻿@model IEnumerable<ErgoSalud.Models.E360_Cuestionario_Resultado_N01>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="row" align="center">
+    <div class="btn btn-primary COL-XS-12" align="center">
+        <h2>Evaluaciones 360</h2>
+        <h4>
+            <i class="fa fa-file-pdf-o" title="Encuesta Digital" style="font-size:20px;color:red" aria-hidden="true"></i> Descarga de Encuesta Digital
+            &nbsp; <i class="fa fa-file-pdf-o" title="Resultados Individuales" style="font-size:20px;color:green" aria-hidden="true"></i>Descarga de Resultados por Encuesta
+            @*  &nbsp; <i class="fa fa-envelope" aria-hidden="true" title="Reenviar Encuesta Individual" style="font-size:20px;color:deepskyblue"></i> Envio de encuesta al Correo Asignado<br>*@
+            @*&nbsp;  <i class="fa fa-edit" title="Editar" style="font-size:23px;color:steelblue"></i> Modificación de la Información del Encuestado*@
+            &nbsp; <strong style="font-size:20px;">  <i class="fa fa-file-text" title="Encuesta" style="font-size:18px;color:steelblue" aria-hidden="true"></i> ENCUESTA</strong>
+            &nbsp; <i class="fa fa-trash-o" title="Eliminar" style="font-size:23px;color:red"></i> Eliminar Encuesta<br>
+            @*    &nbsp; <i class="fa fa-check-circle" aria-hidden="true" style="color:green;font-size:23px" title="Resultados"></i> Resultados en Tiempo Real<br>*@
+
+
+        </h4>
+    </div>
+</div>
+
+<h3>Evaluaciones Registradas</h3>
+@if (@ViewData["Mail"] != null)
+{
+    <br>
+    <br>
+    <div class="alert alert-success" role="alert">
+        @ViewData["Mail"]
+    </div>
+}
+<div class="row">
+
+
+    <a href="@Url.Action("Create", "Encuestas", new {id_survey = 5 })" class="btn btn-success" style="float:left">Nueva Evaluación</a>
+
+
+    <a href="/Home/multi_menu">
+        <input type="button" class="btn btn-primary" value="Regresar" style="margin-left:5px">
+    </a>
+
+    <br>
+
+</div>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayName("Folio")
+        </th>
+        <th>
+            @Html.DisplayName("Evaluador")
+        </th>
+        <th>
+            @Html.DisplayName("Evaluado")
+        </th>
+        <th>
+            @Html.DisplayName("Empresa")
+        </th>
+        <th>
+            @Html.DisplayName("Centro")
+        </th>
+        <th>Acción</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ERGOS_Cuestionarios_Trabajador_N01.id_trabajador)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ERGOS_Cuestionarios_Trabajador_N01.Nombre)
+            </td>
+            
+            <td>
+                @Html.DisplayFor(modelItem => item.Evaluado)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ERGOS_Cuestionarios_Trabajador_N01.ERGOS_Empresas_N01.Razon_Social)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ERGOS_Cuestionarios_Trabajador_N01.ERGOS_Centros_Trabajo_N01.Nombre_centro_trabajo)
+            </td>
+            <td>
+
+                <a title="Editar" href="@Url.Action("Edit", new { id = item.id_cuestionario_resultado })">
+                    <i class="fa fa-file-text" title="Encuesta" style="font-size:20px;" aria-hidden="true"></i>
+                </a>
+
+                <a href="@Url.Action("Delete", new { id=item.id_cuestionario_resultado })">
+                    <i class="fa fa-trash-o" title="Eliminar" style="font-size:23px;color:red"></i>
+                </a>
+                @*<a href="@Url.Action("Resultados", new { id=item.id_cuestionario_resultado })">
+
+                        <i class="fa fa-check-circle" aria-hidden="true" style="color:green;font-size:23px" title="Resultados"></i>
+                    </a>*@
+                <a href="@Url.Action("Reporte_PDF_E360", "Encuestas", new {id_CT = item.id_cuestionario_resultado })">
+                    <i class="fa fa-file-pdf-o" title="Encuesta Digital" style="font-size:20px;color:red" aria-hidden="true"></i>
+                </a>
+                <a href="@Url.Action("Reporte_Resultado_Individual_E360", "Encuestas", new {id_CT = item.id_cuestionario_resultado})">
+                    <i class="fa fa-file-pdf-o" title="Resultados Individuales" style="font-size:20px;color:green" aria-hidden="true"></i>
+                </a>
+                <a href="@Url.Action("Enviar_encuestas_Ind", new { @id_empresa = item.ERGOS_Cuestionarios_Trabajador_N01.id_empresa, @id_CT = item.id_cuestionario_trabajador })">
+                    <i class="fa fa-envelope" aria-hidden="true" title="Reenviar Encuesta Individual" style="font-size:20px;color:deepskyblue"></i>
+                </a>
+            </td>
+        </tr>
+    }
+
+</table>

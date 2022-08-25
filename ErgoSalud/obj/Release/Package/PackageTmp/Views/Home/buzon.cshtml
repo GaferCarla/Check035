@@ -1,0 +1,186 @@
+﻿
+@{
+    ViewBag.Title = "buzon";
+    @Styles.Render("~/Content/sizing.css");
+    @Styles.Render("~/Content/buzon.css");
+    @Styles.Render("~/Content/breadcrumb.css");
+    @Styles.Render("~/Content/button.css");
+    @Styles.Render("~/Content/branding.css");
+
+
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet'>
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/boxicons@2.0.0/css/boxicons.min.css'>
+
+    <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+}
+
+<style>
+    .container {
+        width: 100% !important;
+    }
+
+    .navbar, #footer {
+        z-index: 1000 !important;
+    }
+
+    .banner-section {
+        min-height: 350px;
+        align-self: baseline !important
+    }
+
+    .body-content, body, html {
+        width: 100% !important
+    }
+</style>
+
+<div class="row banner-section banner-buzon pb-5 mt-sm-4">
+    <div class="col-12 col-sm-6 mx-auto" id="image">
+        <img src="~/images/buzon/mailbox_header.svg" class="mockup text-center" />
+    </div>
+
+
+    <div class="col-6 col-12 col-sm-6 order-sm-first mx-auto text-md-start text-center p-sm-5 p-3 py-5">
+        <div class="row p-0 ps-sm-5 pt-5 pt-sm-0">
+            <h1 class="pt-0 pt-md-5">Encabezado</h1>
+            <h4 class="pb-4 font-18">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis, quae. Nisi praesentium minima aliquid quam odio aliquam impedit qui iste commodi, necessitatibus ducimus reiciendis distinctio. Vel voluptas blanditiis veniam vitae?
+            </h4>
+        </div>
+        <!-- cta btn -->
+        @*<div class="row p-0 ps-sm-5">
+                <div class="col-12 col-md-6 p-3 text-center">
+                    <a href="#" class="cta-btn"><i class="fa fa-play btn-icon-prepend me-2" aria-hidden="true"></i>Tutoriales</a>
+                </div>
+
+                <div class="col-12 col-md-6 p-3 text-center">
+                    <a href="#" class="cta-btn"><i class="fa fa-user-circle btn-icon-prepend me-2" aria-hidden="true"></i>Alta de usuario</a>
+                </div>
+            </div>*@
+
+
+    </div>
+
+
+
+
+</div>
+
+<div class="container-fluid row pt-5 px-sm-5 px-1">
+    <div class="template-demo">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb breadcrumb-custom ">
+                <li class="breadcrumb-item"><a href='@Url.Action("Index","Home")' data-abc="true" class="font-weight-bold text-uppercase">Dashboard</a></li>
+                <li class="breadcrumb-item active font-weight-bold " aria-current="page"><span>&nbsp&nbspIdentifica</span></li>
+                <li class="breadcrumb-item"><a href='@Url.Action("Index","Buzon")' data-abc="true" class="font-weight-bold text-uppercase">Buzón</a></li>
+
+                <li class="breadcrumb-item active font-weight-bold " aria-current="page"><span>&nbsp&nbspSugerencia / Denuncia</span></li>
+            </ol>
+        </nav>
+
+    </div>
+</div>
+
+
+<div class="row pt-5 buzonSection">
+    <div class="col-md-9 col-11 mx-auto p-0">
+        <div class="card rounded">
+            <div class="buzon-box rounded">
+
+                <div class="buzon-snip rounded  ">
+                    <input id="tab-1" type="radio" name="tab" class="sugerenciasBuzon text-white " checked><label for="tab-1" class="tab">Aclaraciones</label>
+                    <input id="tab-2" type="radio" name="tab" class="quejasBuzon text-white "><label for="tab-2" class="tab">Denuncias</label>
+
+                    <!-- Buzón de sugerencias -->
+                    <div class="buzon-space ">
+                        <div class="buzon pt-5">
+                            <div class="group">
+                                <label class="label"><p>¿Sobre qué categoría de factor psicosocial desea sugerir?</p></label>
+                                <select type="text" class="input">
+                                    <option disabled>Escoja una opcion</option>
+                                    <option>Opción 1</option>
+                                    <option>Opción 2</option>
+                                </select>
+                            </div>
+
+
+                            <div class="group">
+
+                                <textarea style="height:300px" class="input" placeholder="Escribe tu sugerencia"></textarea>
+                            </div>
+                            <div class="group py-3">
+                                <input type="submit" class="py-4 w-100 text-uppercase text-white btn btn-module2" value="Enviar">
+                            </div>
+
+                        </div>
+
+
+                        <!-- Buzón de quejas -->
+
+                        <div class="quejasBuzon-form pt-5">
+                            <div class="group">
+                                <label class="label">Tu queja o denuncia se encuentra relacionada a:</label>
+                                <select type="text" class="input">
+                                    <option disabled>Escoja una opcion</option>
+                                    <option>Opción 1</option>
+                                    <option>Opción 2</option>
+                                </select>
+                            </div>
+                            <div class="group">
+                                <label class="label">Involucrados:</label>
+                                <select type="text" class="input">
+                                    <option disabled>Escoja una opcion</option>
+                                    <option>Opción 1</option>
+                                    <option>Opción 2</option>
+                                </select>
+                            </div>
+                            <div class="group">
+                                <label class="label">Soy:</label>
+                                <select type="text" class="input">
+                                    <option disabled>Escoja una opcion</option>
+                                    <option>Opción 1</option>
+                                    <option>Opción 2</option>
+                                </select>
+                            </div>
+                            <div class="group">
+                                <textarea style="height:200px" class="input" placeholder="Nos puedes redactar los hechos"></textarea>
+
+                            </div>
+                            <div class="group">
+                                <label class="label">¿Con qué frecuencia?</label>
+                                <select type="text" class="input">
+                                    <option disabled>Escoja una opcion</option>
+                                    <option>Opción 1</option>
+                                    <option>Opción 2</option>
+                                </select>
+                            </div>
+                            <div class="group">
+                                <label class="label">¿Quien más ha estado involucrado?</label>
+                                <input type="text" class="input">
+                            </div>
+                            <div class="group">
+                                <label class="label">¿Quien más ha estado involucrado?</label>
+                                <input type="text" class="input">
+                            </div>
+
+                            <div class="group py-3">
+                                <input type="submit" class="py-4 w-100 text-uppercase text-white btn btn-module2" value="Enviar">
+                            </div>
+                            <div class="hr"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type='text/javascript' src='https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js'></script>
+<script type='text/javascript'>
+    var myLink = document.querySelector('a[href="#"]');
+    myLink.addEventListener('click', function (e) {
+        e.preventDefault();
+    });
+</script>
+
+
+

@@ -1,0 +1,510 @@
+﻿<script>
+    window.setTimeout(function () {
+        $(".alert-info").fadeTo(500, 0).slideUp(500, function () {
+            $(this).remove();
+        });
+    }, 3000);
+</script>
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    .columns {
+        float: left;
+        width: 33.33%;
+        padding: 3px;
+    }
+
+    .price {
+        list-style-type: none;
+        border: 1px solid #eee;
+        margin: 0;
+        padding: 0;
+        -webkit-transition: 0.3s;
+        transition: 0.3s;
+    }
+
+        .price:hover {
+            box-shadow: 0 8px 12px 0 rgba(0,0,0,0.2)
+        }
+
+        .price .header {
+            background-color: #111;
+            color: white;
+            font-size: 20px;
+        }
+
+        .price li {
+            border-bottom: 1px solid #eee;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .price .grey {
+            background-color: #eee;
+            font-size: 20px;
+        }
+
+    .button {
+        background-color: #4CAF50;
+        border: none;
+        color: white;
+        padding: 10px 25px;
+        text-align: center;
+        text-decoration: none;
+        font-size: 18px;
+    }
+</style>
+<script type="text/javascript">
+    $('.timer').countTo();
+</script>
+<script>
+    function calculo_muestra() {
+        var No_empleados = parseInt($("#No_empleados").val());
+        var Final_muestra = ((0.9604 * No_empleados) / (0.0025 * (No_empleados - 1) + 0.9604)).toFixed(2);
+        // var Final_muestra =  No_empleados + 1 ;
+
+        //alert("Muestra a Evaluar: " + Final_muestra.toFixed(2));
+        if (No_empleados > 0) {
+            swal.fire({
+                title: "Muestra a Evaluar: " + Final_muestra,
+                text: "Muestra Calculada en base a " + No_empleados + " Empleados",
+                type: "success"
+            });
+
+        } else {
+            swal.fire({
+                title: "Ingrese un número valido",
+                type: "error"
+            });
+        }
+    }
+</script>
+<div class="form-group row" align="center">
+    <br />
+    @if (@TempData["Success_save_m"] != null)
+    {
+        <div class="alert alert-info" role="alert">
+            <h4>   @TempData["Success_save_m"]</h4>
+        </div>
+    }
+
+    @if (User.IsInRole("Guest") || User.IsInRole("Final_Guest"))
+    {
+        <img class="img-responsive" src="~/images/Customer_Logo.jpg" style="padding:50px;width:300px">
+        <div class="alert alert-success col-xs-12" role="alert">
+            <h2><i class="fa fa-list" aria-hidden="true"></i> Instrucciones para comenzar la evaluación </h2><br>
+            <div align="left">
+                <h3><b> 1.- </b>Ingresa a <b style="color:black">Mi Cuestionario</b> en el menú superior.</h3>
+                <h3><b> 2.- </b>Da clic en <b style="color:black">Contestar Cuestionario.</b></h3>
+                <h3><b> 3.- </b>Ingresa la información para comenzar tu evaluación.</h3>
+            </div>
+        </div>
+        <br>
+    }
+    @if (User.IsInRole("Admin-Guest"))
+    {
+
+        <!-- Hover Zoom Effect -->
+        <h2>Módulos</h2>
+
+        <hr>
+        <div class="row clearfix">
+            <div class="row">
+                <div class="col-xs-12 col-sm-6">
+
+                    <img class="img-responsive" src="~/images/Customer_Logo.jpg" style="padding:0;width:70%">
+                </div>
+                <div class="col-xs-12 col-sm-6">
+
+                    <a href="@Url.Action("Encuestas_Admin", "Encuestas")">
+                        <div class="col-xs-12  ">
+                            <div class="info-box hover-zoom-effect">
+                                <div class="icon ">
+                                    <img class="img-responsive" src="~/images/content.png" width="100%">
+                                </div>
+                                <div class="content">
+                                    <div class="text">ENCUESTAS NOM035</div>
+                                    <div class="number"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="@Url.Action("General_Statistics_Admin_Guest", "Empresas")">
+                        <div class="col-xs-12  ">
+                            <div class="info-box hover-zoom-effect">
+                                <div class="icon ">
+                                    <img class="img-responsive" src="~/images/find.png" width="100%">
+                                </div>
+                                <div class="content">
+                                    <div class="text">RESULTADOS GENERALES</div>
+                                    <div class="number"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="@Url.Action("Index", "Centros_Trabajo")">
+                        <div class="  col-xs-12">
+                            <div class="info-box hover-zoom-effect">
+                                <div class="icon ">
+                                    <img class="img-responsive" src="~/images/internet.png" width="100%">
+                                </div>
+                                <div class="content">
+                                    <div class="text">CENTROS</div>
+                                    <div class="number">@ViewBag.Centros_Trabajo_ae</div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="@Url.Action("Index", "covid_cuestionario")">
+                        <div class="  col-xs-12">
+                            <div class="info-box hover-zoom-effect">
+                                <div class="icon ">
+                                    <img class="img-responsive" src="~/images/healthcare-and-medical.png" width="100%">
+                                </div>
+                                <div class="content">
+                                    <div class="text">ENCUESTAS COVID-19</div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="col-xs-12  " data-toggle="modal" data-target="#Muestra">
+                        <div class="info-box hover-zoom-effect">
+                            <div class="icon ">
+                                <img class="img-responsive" src="~/images/seo.png" width="100%">
+                            </div>
+                            <div class="content">
+                                <div class="text">SELECCION MUESTRA</div>
+                                <div class="number">NOM-035</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+    @if (User.IsInRole("Admin_Centro"))
+    {
+
+        <!-- Hover Zoom Effect -->
+        <h2>Módulos</h2>
+        <hr>
+        <div class="row clearfix">
+            <div class="row">
+                <div class="col-xs-12 col-sm-6">
+
+                    <img class="img-responsive" src="~/images/Customer_Logo.jpg" style="padding:0;width:70%">
+                </div>
+                <div class="col-xs-12 col-sm-6">
+
+                    <a href="@Url.Action("Encuestas_Centro", "Encuestas")">
+                        <div class="col-xs-12  ">
+                            <div class="info-box hover-zoom-effect">
+                                <div class="icon ">
+                                    <img class="img-responsive" src="~/images/content.png" width="100%">
+                                </div>
+                                <div class="content">
+                                    <div class="text">ENCUESTAS NOM035</div>
+                                    <div class="number"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="@Url.Action("General_Statistics", "Centros_Trabajo")">
+                        <div class="col-xs-12  ">
+                            <div class="info-box hover-zoom-effect">
+                                <div class="icon ">
+                                    <img class="img-responsive" src="~/images/internet.png" width="100%">
+                                </div>
+                                <div class="content">
+                                    <div class="text">RESULTADOS GENERALES</div>
+                                    <div class="number"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="@Url.Action("Index", "covid_cuestionario")">
+                        <div class="  col-xs-12">
+                            <div class="info-box hover-zoom-effect">
+                                <div class="icon ">
+                                    <img class="img-responsive" src="~/images/healthcare-and-medical.png" width="100%">
+                                </div>
+                                <div class="content">
+                                    <div class="text">ENCUESTAS COVID-19</div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="col-xs-12  " data-toggle="modal" data-target="#Muestra">
+                        <div class="info-box hover-zoom-effect">
+                            <div class="icon ">
+                                <img class="img-responsive" src="~/images/seo.png" width="100%">
+                            </div>
+                            <div class="content">
+                                <div class="text">SELECCION MUESTRA</div>
+                                <div class="number">NOM-035</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+    @if (User.IsInRole("Admin") || User.IsInRole("Admin_SyS"))
+    {
+        <!-- Hover Zoom Effect -->
+        <h2>Módulos</h2>
+        <hr>
+        <div class="row clearfix">
+            <div class="row">
+                <div class="col-xs-12 ">
+
+                    <br><br><br><br>
+                </div>
+                <div class="col-xs-12">
+
+
+                    <a href="@Url.Action("Index", "Encuestas")">
+                        <div class="  col-xs-12 col-sm-3 ">
+                            <div class="info-box hover-zoom-effect">
+                                <div class="icon ">
+                                    <img class="img-responsive" src="~/images/content.png" width="100%">
+                                </div>
+                                <div class="content">
+                                    <div class="text">ENCUESTAS NOM035</div>
+                                    <div class="number">@ViewBag.Surveys_No</div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="@Url.Action("Index", "covid_cuestionario")">
+                        <div class="  col-xs-12 col-sm-3 ">
+                            <div class="info-box hover-zoom-effect">
+                                <div class="icon ">
+                                    <img class="img-responsive" src="~/images/healthcare-and-medical.png" width="100%">
+                                </div>
+                                <div class="content">
+                                    <div class="text">ENCUESTAS COVID-19</div>
+                                    <div class="number">@ViewBag.Surveys_COVID_No</div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="@Url.Action("Index", "Usuarios")">
+                        <div class="  col-xs-12 col-sm-3 ">
+                            <div class="info-box hover-zoom-effect">
+                                <div class="icon ">
+                                    <img class="img-responsive" src="~/images/feedback.png" width="100%">
+                                </div>
+                                <div class="content">
+                                    <div class="text">EVALUACIONES FINALIZADAS</div>
+                                    <div class="number">@ViewBag.Users_No</div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <div class=" col-xs-12 col-sm-3" data-toggle="modal" data-target="#Muestra">
+                        <div class="info-box hover-zoom-effect">
+                            <div class="icon ">
+                                <img class="img-responsive" src="~/images/seo.png" width="100%">
+                            </div>
+                            <div class="content">
+                                <div class="text">SELECCION MUESTRA</div>
+                                <div class="number">NOM-035</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- #END# Hover Zoom Effect -->
+    } <br>
+
+    @*<h2>Información NOM035</h2>
+        <hr>
+
+        <div class="row clearfix">
+
+            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                <a href="~/Documentos/MANUAL NOM-035-STPS 2020.ppt" target="_blank" style="text-decoration:none;">
+                    <div class="info-box hover-zoom-effect">
+                        <div class="icon ">
+                            <img class="img-responsive" src="~/images/anadir.png" width="100%">
+                        </div>
+                        <div class="content">
+                            <div class="text">Más Información</div>
+                            <div class="number">Manual NOM 035</div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                <a href="~/Documentos/Presentacion_sistema_nom035.pptm" target="_blank" style="text-decoration:none;">
+                    <div class="info-box hover-zoom-effect">
+                        <div class="icon ">
+                            <img class="img-responsive" src="~/images/anadir.png" width="100%">
+                        </div>
+                        <div class="content">
+                            <div class="text">Presentación</div>
+                            <div class="number">Plataforma NOM 035</div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                <a href="~/Documentos/1. CRONOGRAMA DE ACTIVIDADES.xlsx" target="_blank" style="text-decoration:none;">
+                    <div class="info-box hover-zoom-effect">
+                        <div class="icon ">
+                            <img class="img-responsive" src="~/images/anadir.png" width="100%">
+                        </div>
+                        <div class="content">
+                            <div class="text">Cronograma</div>
+                            <div class="number">Actividades</div>
+                        </div>
+                    </div>
+                </a>
+            </div>        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                <a href="~/Documentos/2. IDENTIFICACIÓN, ANÁLISIS Y PREVENCIÓN DE LOS FACTORES DE RIESGO.docx" target="_blank" style="text-decoration:none;">
+                    <div class="info-box hover-zoom-effect">
+                        <div class="icon ">
+                            <img class="img-responsive" src="~/images/alerta.png" width="100%">
+                        </div>
+                        <div class="content">
+                            <div class="text">Factores de Riesgo Identificación</div>
+                            <div class="number"> Análisis y Prevención</div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                <a href="~/Documentos/3. NOTIFICACIÓN PARA LLENADO DE CUESTIONARIOS.docx" target="_blank" style="text-decoration:none;">
+                    <div class="info-box hover-zoom-effect">
+                        <div class="icon ">
+                            <img class="img-responsive" src="~/images/alerta.png" width="100%">
+                        </div>
+                        <div class="content">
+                            <div class="text">Notificación</div>
+                            <div class="number">Llenado Cuestionarios</div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                <a href="~/Documentos/4. FORMATO DE ASISTENCIA - Aplicación de Cuestionario.docx" target="_blank" style="text-decoration:none;">
+                    <div class="info-box hover-zoom-effect">
+                        <div class="icon ">
+                            <img class="img-responsive" src="~/images/apoyo-tecnico.png" width="100%">
+                        </div>
+                        <div class="content">
+                            <div class="text">Formato Asistencia</div>
+                            <div class="number">Aplicación</div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                <a href="~/Documentos/5. FORMATO DE ASISTENCIA - Capacitación - Divulgación de la política.docx" target="_blank" style="text-decoration:none;">
+                    <div class="info-box hover-zoom-effect">
+                        <div class="icon ">
+                            <img class="img-responsive" src="~/images/apoyo-tecnico.png" width="100%">
+                        </div>
+                        <div class="content">
+                            <div class="text">Formato Asistencia</div>
+                            <div class="number">Divulgación</div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                <a href="~/Documentos/6.FORMATO DE ASISTENCIA - Capacitación.docx" target="_blank" style="text-decoration:none;">
+                    <div class="info-box hover-zoom-effect">
+                        <div class="icon ">
+                            <img class="img-responsive" src="~/images/apoyo-tecnico.png" width="100%">
+                        </div>
+                        <div class="content">
+                            <div class="text">Formato Asistencia</div>
+                            <div class="number">Capacitación</div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                <a href="~/Documentos/7.PRINCIPIOS CORPORATIVOS EN LA PREVENCIÓN DE RIESGOS PSICOSOCIALES.docx" target="_blank" style="text-decoration:none;">
+                    <div class="info-box hover-zoom-effect">
+                        <div class="icon ">
+                            <img class="img-responsive" src="~/images/alerta.png" width="100%">
+                        </div>
+                        <div class="content">
+                            <div class="text">Principios Corporativos Prevención</div>
+                            <div class="number">Riesgos Psicosociales</div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                <a href="~/Documentos/8. POLÍTICAS DE PREVENCIÓN DE RIESGOS PSICOSOCIALES.docx" target="_blank" style="text-decoration:none;">
+                    <div class="info-box hover-zoom-effect">
+                        <div class="icon ">
+                            <img class="img-responsive" src="~/images/alerta.png" width="100%">
+                        </div>
+                        <div class="content">
+                            <div class="text">Poíiticas Prevención</div>
+                            <div class="number">Riesgos Psicosociales</div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>*@
+
+
+
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="Muestra" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title" id="exampleModalLabel">Selección de Muestra para las Evaluaciones</h2>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" style="font-size:20px">
+                La selección de muestra se basa en la siguiente ecuación
+
+                <div class="row" align="center">
+                    <br>
+                    <img class="img-responsive" src="~/images/Ecuacion_muestra.png" width="70%"><br>
+                </div>
+                <p class="">
+                    En donde:<br>
+                    <b>N</b> es el número total de trabajadores del centro de trabajo.<br>
+                    <b>n</b> es el número de trabajadores a los que se les deberán aplicarán los cuestionarios.<br>
+                    0.9604 y 0.0025 permanecen constantes.
+                </p>
+
+                <span>Ingrese el número total de empleados</span><br><br>
+                <div class="col-xs-12 col-sm-4">
+                    <input type="text" id="No_empleados" class="form-control ">
+                </div>
+                <div class=" col-xs-12 col-sm-8 ">
+                    <input type="button" value="Calcular" class="btn btn-success" onclick="calculo_muestra();">
+                </div>
+                <br>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>

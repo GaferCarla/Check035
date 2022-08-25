@@ -1,0 +1,134 @@
+﻿
+
+
+
+
+
+.card {
+    box-shadow:none !important;
+    transition: all 0.5s ease;
+    cursor: pointer;
+    user-select: none;
+    z-index: 10;
+    overflow: hidden;
+    margin-bottom:0 !important
+}
+
+.text {
+    text-align: center;
+    z-index: 30 !important;
+}
+
+.text .counter-count {
+    padding-top: 0.3em !important;
+    padding-bottom: 0.3em !important;
+    border-radius:50%;
+    color:white;
+
+}
+
+.card-animated {
+    min-width: 207px !important;
+    max-width: 215px !important;
+    min-height: 227px !important;
+    padding: 40px 25px 25px !important;
+    position: relative;
+    font-size: 100%;
+    text-decoration: none;
+    color: #999;
+    transition: all ease .5s;
+    border-radius: 1em !important;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.card-animated:hover .text {
+   color: white;
+}    
+
+.card-animated .backgroundEffect {
+    bottom: 0;
+    height: 0px;
+    left: 0px !important;
+    width: 100%;
+
+}
+
+.card-animated .backgroundColor {
+    position:absolute;
+    bottom: 0;
+    height: 100%;
+    left: 0px !important;
+    width: 100%;
+    border-radius: 1em !important;
+    z-index:-10 !important
+}
+
+.card-animated:hover {
+    color: #fff;
+    transform: scale(1.025);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 5px 10px;
+    
+}
+
+.card-animated:hover .fa-icon-image {
+    color: white;
+    transform: scale(1.5);
+    
+}
+
+
+.fa-icon-image {
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    line-height: 1;
+    font-size-adjust: none;
+    font-stretch: normal;
+    text-rendering: auto;
+    transition: all .65s linear 0s;
+    text-align: center;
+    transition: all 1s cubic-bezier(.99,.82,.11,1.41);
+}
+
+.bx-5x {
+    font-size: 5em;
+}
+
+
+.card-animated:hover .backgroundEffect {
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: -1;
+    animation: popBackground 0.3s ease-in;
+    border-radius: 1em !important;
+}        
+
+
+@keyframes popBackground {
+    0% {
+        height: 20px;
+        border-top-left-radius: 50%;
+        border-top-right-radius: 50%
+    }
+
+    50% {
+        height: 80px;
+        border-top-left-radius: 75%;
+        border-top-right-radius: 75%
+    }
+
+    75% {
+        height: 160px;
+        border-top-left-radius: 85%;
+        border-top-right-radius: 85%
+    }
+
+    100% {
+        height: 320px;
+        border-top-left-radius: 100%;
+        border-top-right-radius: 100%
+    }
+}

@@ -1,0 +1,1357 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{223B72A4-E097-4022-9CD7-2E9EDA2DE257}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ErgoSalud</RootNamespace>
+    <AssemblyName>ErgoSalud</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TypeScriptToolsVersion>3.1</TypeScriptToolsVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.9.0.0, Culture=neutral, PublicKeyToken=0e99375e54769942, processorArchitecture=MSIL">
+      <HintPath>..\packages\Portable.BouncyCastle.1.9.0\lib\net40\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetZip, Version=1.13.8.0, Culture=neutral, PublicKeyToken=6583c7c814667745, processorArchitecture=MSIL">
+      <HintPath>..\packages\DotNetZip.1.13.8\lib\net40\DotNetZip.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus, Version=4.5.3.2, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPPlus.4.5.3.2\lib\net40\EPPlus.dll</HintPath>
+    </Reference>
+    <Reference Include="Excel, Version=2.1.2.3, Culture=neutral, PublicKeyToken=93517dbe6a4012fa, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExcelDataReader.2.1.2.3\lib\net45\Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=1.3.2.10, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpZipLib.1.3.2\lib\net45\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="MailKit, Version=3.0.0.0, Culture=neutral, PublicKeyToken=4e064fe7c44a8f1b, processorArchitecture=MSIL">
+      <HintPath>..\packages\MailKit.3.0.0\lib\net46\MailKit.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Http, Version=2.2.2.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Http.2.2.2\lib\netstandard2.0\Microsoft.AspNetCore.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Http.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Http.Abstractions.2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Http.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Http.Features, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Http.Features.2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Http.Features.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.WebUtilities, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.WebUtilities.2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.WebUtilities.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.2.2.0\lib\netstandard2.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.ObjectPool, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.ObjectPool.2.2.0\lib\netstandard2.0\Microsoft.Extensions.ObjectPool.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Options, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Options.2.2.0\lib\netstandard2.0\Microsoft.Extensions.Options.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Primitives, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Primitives.2.2.0\lib\netstandard2.0\Microsoft.Extensions.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Net.Http.Headers, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Net.Http.Headers.2.2.0\lib\netstandard2.0\Microsoft.Net.Http.Headers.dll</HintPath>
+    </Reference>
+    <Reference Include="MimeKit, Version=3.0.0.0, Culture=neutral, PublicKeyToken=bede1c8a46c66814, processorArchitecture=MSIL">
+      <HintPath>..\packages\MimeKit.3.0.0\lib\net46\MimeKit.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI, Version=2.5.5.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.2.5.5\lib\net45\NPOI.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OOXML, Version=2.5.5.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.2.5.5\lib\net45\NPOI.OOXML.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXml4Net, Version=2.5.5.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.2.5.5\lib\net45\NPOI.OpenXml4Net.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXmlFormats, Version=2.5.5.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.2.5.5\lib\net45\NPOI.OpenXmlFormats.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="Select.HtmlToPdf, Version=20.1.0.0, Culture=neutral, PublicKeyToken=e0ae9f6e27a97018, processorArchitecture=MSIL">
+      <HintPath>..\packages\Select.HtmlToPdf.20.1.0\lib\net40\Select.HtmlToPdf.dll</HintPath>
+    </Reference>
+    <Reference Include="Stripe.net, Version=27.15.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Stripe.net.27.15.0\lib\net45\Stripe.net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Annotations, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ComponentModel.Annotations.4.5.0\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Compression, Version=4.2.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL" />
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.Memory, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.1\lib\netstandard2.0\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.4.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.1\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Text.Encodings.Web, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encodings.Web.4.5.0\lib\netstandard2.0\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.4\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.4\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.2\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.2\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.2\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.4.0.0\lib\net451\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.4.0.0\lib\net451\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.4.0.0\lib\net451\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.4.0.0\lib\net451\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.4.0.0\lib\net451\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.4.0.0\lib\net451\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.4.0.0\lib\net451\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.4.0.0\lib\net451\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.4.0.0\lib\net451\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\IdentityConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Controllers\AccionesController.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\Avisos_NotificacionesController.cs" />
+    <Compile Include="Controllers\BuzonController.cs" />
+    <Compile Include="Controllers\Centros_TrabajoController.cs" />
+    <Compile Include="Controllers\ChecklistController.cs" />
+    <Compile Include="Controllers\CRMController.cs" />
+    <Compile Include="Controllers\CuestionariosController.cs" />
+    <Compile Include="Controllers\EmpresasController.cs" />
+    <Compile Include="Controllers\EncuestasController.cs" />
+    <Compile Include="Controllers\grow_adminController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\medidas_estatusController.cs" />
+    <Compile Include="Controllers\MultiEvaluaClimaLaboralController.cs" />
+    <Compile Include="Controllers\MultiEvaluaE360Controller.cs" />
+    <Compile Include="Controllers\NOM035Controller.cs" />
+    <Compile Include="Controllers\PoliticasController.cs" />
+    <Compile Include="Controllers\PreguntasController.cs" />
+    <Compile Include="Controllers\ReportesController.cs" />
+    <Compile Include="Controllers\Reportes_CentroController.cs" />
+    <Compile Include="Controllers\RespuestasController.cs" />
+    <Compile Include="Controllers\Trabajador_ResultadosController.cs" />
+    <Compile Include="Controllers\UsuariosController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Helper\FileTypeAttribute.cs" />
+    <Compile Include="Helper\IO.cs" />
+    <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\admin_register.cs" />
+    <Compile Include="Models\checklist.cs" />
+    <Compile Include="Models\Check_checklist_medidas_acciones_N01.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Check_checklist_medidas_N01.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Check_checklist_N01.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ClimaLaboral_Cuestionario_Resultados_N01.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Comunica_Avisos_N01.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Comunica_Politicas_N01.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Corte_Departamento.cs" />
+    <Compile Include="Models\DATA_Departamentos_N01.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DATA_Edades_N01.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DATA_Estado_Civil_N01.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DATA_Experiencia_puesto_N01.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DATA_Nivel_Estudios_N01.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DATA_Rotacion_Turno_N01.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DATA_Sexo_N01.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DATA_Tipo_Contratacion_N01.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DATA_Tipo_Jornada_N01.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DATA_Tipo_Personal_N01.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DATA_Tipo_puesto_N01.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\E360_Cuestionario_Resultado_N01.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Encuesta_Admin_Progress.cs" />
+    <Compile Include="Models\ERGOS_Buzon_N01.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ERGOS_Centros_Trabajo_N01.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ERGOS_Cuestionarios_N01.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ERGOS_Cuestionarios_Resultados_N01.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ERGOS_Cuestionarios_Trabajador_N01.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ERGOS_Empresas_N01.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ERGOS_Preguntas_N01.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ERGOS_Preguntas_S2_N02.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ERGOS_Respuestas_N01.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ERGOS_Roles_N01.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ERGOS_Usuarios_N01.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ExcelViewModel.cs" />
+    <Compile Include="Models\fnCorte_Departamentos_Centros_Trabajo_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnCorte_Departamentos_Empresa_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnDemo_N035_Categorias_1_E2_Resultados_Pilot_CT_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnDemo_N035_Categorias_1_E2_Resultados_Pilot_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnDemo_N035_Categorias_1_Resultados_Pilot_CT_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnDemo_N035_Categorias_1_Resultados_Pilot_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnDemo_N035_Categorias_2_E2_Resultados_Pilot_CT_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnDemo_N035_Categorias_2_E2_Resultados_Pilot_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnDemo_N035_Categorias_2_Resultados_Pilot_CT_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnDemo_N035_Categorias_2_Resultados_Pilot_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnDemo_N035_Categorias_3_E2_Resultados_Pilot_CT_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnDemo_N035_Categorias_3_E2_Resultados_Pilot_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnDemo_N035_Categorias_3_Resultados_Pilot_CT_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnDemo_N035_Categorias_3_Resultados_Pilot_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnDemo_N035_Categorias_4_E2_Resultados_Pilot_CT_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnDemo_N035_Categorias_4_E2_Resultados_Pilot_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnDemo_N035_Categorias_4_Resultados_Pilot_CT_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnDemo_N035_Categorias_4_Resultados_Pilot_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnDemo_N035_Categorias_5_Resultados_Pilot_CT_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnDemo_N035_Categorias_5_Resultados_Pilot_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnDemo_N035_Categorias_Pilot_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnDemo_N035_Categorias_Resultados_Pilot_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnDemo_N035_Dimension_10_E2_Resultados_CT_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnDemo_N035_Dimension_10_E2_Resultados_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnDemo_N035_Dimension_10_Resultados_CT_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnDemo_N035_Dimension_10_Resultados_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnDemo_N035_Dimension_11_E2_Resultados_CT_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnDemo_N035_Dimension_11_E2_Resultados_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnDemo_N035_Dimension_11_Resultados_CT_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnDemo_N035_Dimension_11_Resultados_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnDemo_N035_Dimension_12_E2_Resultados_CT_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnDemo_N035_Dimension_12_E2_Resultados_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnDemo_N035_Dimension_12_Resultados_CT_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnDemo_N035_Dimension_12_Resultados_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnDemo_N035_Dimension_13_E2_Resultados_CT_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnDemo_N035_Dimension_13_E2_Resultados_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnDemo_N035_Dimension_13_Resultados_CT_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnDemo_N035_Dimension_13_Resultados_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnDemo_N035_Dimension_14_E2_Resultados_CT_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnDemo_N035_Dimension_14_E2_Resultados_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnDemo_N035_Dimension_14_Resultados_CT_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnDemo_N035_Dimension_14_Resultados_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnDemo_N035_Dimension_15_E2_Resultados_CT_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnDemo_N035_Dimension_15_E2_Resultados_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnDemo_N035_Dimension_15_Resultados_CT_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnDemo_N035_Dimension_15_Resultados_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnDemo_N035_Dimension_16_E2_Resultados_CT_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnDemo_N035_Dimension_16_E2_Resultados_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnDemo_N035_Dimension_16_Resultados_CT_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnDemo_N035_Dimension_16_Resultados_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnDemo_N035_Dimension_17_E2_Resultados_CT_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnDemo_N035_Dimension_17_E2_Resultados_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnDemo_N035_Dimension_17_Resultados_CT_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnDemo_N035_Dimension_17_Resultados_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnDemo_N035_Dimension_18_E2_Resultados_CT_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnDemo_N035_Dimension_18_E2_Resultados_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnDemo_N035_Dimension_18_Resultados_CT_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnDemo_N035_Dimension_18_Resultados_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnDemo_N035_Dimension_19_E2_Resultados_CT_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnDemo_N035_Dimension_19_E2_Resultados_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnDemo_N035_Dimension_19_Resultados_CT_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnDemo_N035_Dimension_19_Resultados_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnDemo_N035_Dimension_1_E2_Resultados_CT_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnDemo_N035_Dimension_1_E2_Resultados_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnDemo_N035_Dimension_1_Resultados_CT_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnDemo_N035_Dimension_1_Resultados_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnDemo_N035_Dimension_20_E2_Resultados_CT_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnDemo_N035_Dimension_20_E2_Resultados_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnDemo_N035_Dimension_20_Resultados_CT_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnDemo_N035_Dimension_20_Resultados_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnDemo_N035_Dimension_21_Resultados_CT_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnDemo_N035_Dimension_21_Resultados_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnDemo_N035_Dimension_22_Resultados_CT_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnDemo_N035_Dimension_22_Resultados_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnDemo_N035_Dimension_23_Resultados_CT_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnDemo_N035_Dimension_23_Resultados_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnDemo_N035_Dimension_24_Resultados_CT_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnDemo_N035_Dimension_24_Resultados_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnDemo_N035_Dimension_25_Resultados_CT_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnDemo_N035_Dimension_25_Resultados_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnDemo_N035_Dimension_2_E2_Resultados_CT_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnDemo_N035_Dimension_2_E2_Resultados_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnDemo_N035_Dimension_2_Resultados_CT_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnDemo_N035_Dimension_2_Resultados_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnDemo_N035_Dimension_3_E2_Resultados_CT_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnDemo_N035_Dimension_3_E2_Resultados_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnDemo_N035_Dimension_3_Resultados_CT_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnDemo_N035_Dimension_3_Resultados_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnDemo_N035_Dimension_4_E2_Resultados_CT_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnDemo_N035_Dimension_4_E2_Resultados_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnDemo_N035_Dimension_4_Resultados_CT_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnDemo_N035_Dimension_4_Resultados_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnDemo_N035_Dimension_5_E2_Resultados_CT_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnDemo_N035_Dimension_5_E2_Resultados_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnDemo_N035_Dimension_5_Resultados_CT_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnDemo_N035_Dimension_5_Resultados_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnDemo_N035_Dimension_6_E2_Resultados_CT_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnDemo_N035_Dimension_6_E2_Resultados_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnDemo_N035_Dimension_6_Resultados_CT_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnDemo_N035_Dimension_6_Resultados_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnDemo_N035_Dimension_7_E2_Resultados_CT_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnDemo_N035_Dimension_7_E2_Resultados_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnDemo_N035_Dimension_7_Resultados_CT_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnDemo_N035_Dimension_7_Resultados_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnDemo_N035_Dimension_8_E2_Resultados_CT_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnDemo_N035_Dimension_8_E2_Resultados_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnDemo_N035_Dimension_8_Resultados_CT_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnDemo_N035_Dimension_8_Resultados_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnDemo_N035_Dimension_9_E2_Resultados_CT_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnDemo_N035_Dimension_9_E2_Resultados_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnDemo_N035_Dimension_9_Resultados_CT_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnDemo_N035_Dimension_9_Resultados_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnDemo_N035_Dominios_10_Resultados_CT_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnDemo_N035_Dominios_10_Resultados_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnDemo_N035_Dominios_1_E2_Resultados_CT_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnDemo_N035_Dominios_1_E2_Resultados_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnDemo_N035_Dominios_1_Resultados_CT_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnDemo_N035_Dominios_1_Resultados_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnDemo_N035_Dominios_2_E2_Resultados_CT_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnDemo_N035_Dominios_2_E2_Resultados_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnDemo_N035_Dominios_2_Resultados_CT_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnDemo_N035_Dominios_2_Resultados_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnDemo_N035_Dominios_3_E2_Resultados_CT_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnDemo_N035_Dominios_3_E2_Resultados_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnDemo_N035_Dominios_3_Resultados_CT_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnDemo_N035_Dominios_3_Resultados_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnDemo_N035_Dominios_4_E2_Resultados_CT_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnDemo_N035_Dominios_4_E2_Resultados_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnDemo_N035_Dominios_4_Resultados_CT_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnDemo_N035_Dominios_4_Resultados_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnDemo_N035_Dominios_5_E2_Resultados_CT_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnDemo_N035_Dominios_5_E2_Resultados_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnDemo_N035_Dominios_5_Resultados_CT_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnDemo_N035_Dominios_5_Resultados_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnDemo_N035_Dominios_6_E2_Resultados_CT_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnDemo_N035_Dominios_6_E2_Resultados_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnDemo_N035_Dominios_6_Resultados_CT_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnDemo_N035_Dominios_6_Resultados_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnDemo_N035_Dominios_7_E2_Resultados_CT_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnDemo_N035_Dominios_7_E2_Resultados_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnDemo_N035_Dominios_7_Resultados_CT_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnDemo_N035_Dominios_7_Resultados_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnDemo_N035_Dominios_8_E2_Resultados_CT_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnDemo_N035_Dominios_8_E2_Resultados_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnDemo_N035_Dominios_8_Resultados_CT_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnDemo_N035_Dominios_8_Resultados_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnDemo_N035_Dominios_9_Resultados_CT_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnDemo_N035_Dominios_9_Resultados_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnDemo_N035_Grafica_Resultado_Preguntas_CT_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnDemo_N035_Grafica_Resultado_Preguntas_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnReporte_General_Sexo_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fn_Final_view_surveys_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fn_Final_view_surveys_S2_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fn_MultiEvalua_ClimaLaboral_Centro_Trabajo_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fn_MultiEvalua_ClimaLaboral_Empresa_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fn_MultiEvalua_Clima_Corte_Empresa_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fn_MultiEvalua_E360_Centro_Trabajo_Com_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fn_MultiEvalua_E360_Centro_Trabajo_Emp_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fn_MultiEvalua_E360_Centro_Trabajo_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fn_MultiEvalua_E360_Centro_Trabajo_Sub_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fn_MultiEvalua_E360_Centro_Trabajo_Sup_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fn_MultiEvalua_E360_Corte_Empresa_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fn_MultiEvalua_E360_Empresa_Com_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fn_MultiEvalua_E360_Empresa_Deptos_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fn_MultiEvalua_E360_Empresa_Emp_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fn_MultiEvalua_E360_Empresa_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fn_MultiEvalua_E360_Empresa_Sub_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fn_MultiEvalua_E360_Empresa_Sup_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fn_Total_Encuestas_Area_CT_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fn_Total_Encuestas_Area_Result.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Getting_canalizados.cs" />
+    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\LOG_Cuestionarios_Resultados_N01.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LOG_Cuestionarios_Trabajador_N01.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LOG_login_N01.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LOG_Mails_N01.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Medidas.cs" />
+    <Compile Include="Models\NOM035.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NOM035.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\NOM035.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\NOM035.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NOM035.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Reporte_Sexo.cs" />
+    <Compile Include="Models\Respuestas.cs" />
+    <Compile Include="Models\Surveys.cs" />
+    <Compile Include="Models\Upload_excel_records.cs" />
+    <Compile Include="Models\VW_Encuestas_E360_Deptos.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VW_ERGOS_Results_V01.cs">
+      <DependentUpon>NOM035.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MyRoleProvider\SiteRole.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Startup.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\banner.css" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\breadcrumb.css" />
+    <Content Include="Content\buzon.css" />
+    <Content Include="Content\comunica.css" />
+    <Content Include="Content\comunica_feed.css" />
+    <Content Include="Content\comunica_form.css" />
+    <Content Include="Content\indexStyle.css" />
+    <Content Include="Content\PagedList.css" />
+    <Content Include="Content\ChecklistStyle.css" />
+    <Content Include="Content\popup.css" />
+    <Content Include="Content\ReporteStyle.css" />
+    <Content Include="Content\sizing.css" />
+    <Content Include="Content\sizing_calendar.css" />
+    <Content Include="Content\styleMedidas.css" />
+    <Content Include="Content\styleMedidas37.css" />
+    <Content Include="Content\dashboardStyle.css" />
+    <Content Include="Content\branding.css" />
+    <Content Include="Content\button.css" />
+    <Content Include="Content\form.css" />
+    <Content Include="Content\nom035.css" />
+    <Content Include="Content\modal.css" />
+    <Content Include="Content\style_Medida.css" />
+    <Content Include="Content\tableElements.css" />
+    <Content Include="Content\tableGeneral.css" />
+    <Content Include="Content\webPixel.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="images\alerta.png" />
+    <Content Include="images\anadir.png" />
+    <Content Include="images\apoyo-tecnico.png" />
+    <Content Include="images\aula.png" />
+    <Content Include="images\Banners\grow-banners-encuestascheck_button.jpg" />
+    <Content Include="images\Banners\grow-banners-encuestascheck_header.jpg" />
+    <Content Include="images\buildings.png" />
+    <Content Include="images\check-circle-regular.svg" />
+    <Content Include="images\check-solid.svg" />
+    <Content Include="images\check_index.png" />
+    <Content Include="images\content.png" />
+    <Content Include="images\Customer_Logo.jpg" />
+    <Content Include="images\Customer_Logo.png" />
+    <Content Include="images\dashboard\buzon.png" />
+    <Content Include="images\dashboard\comunica.png" />
+    <Content Include="images\dashboard\educacion2.png" />
+    <Content Include="images\dashboard\planeacion.png" />
+    <Content Include="images\Ecuacion_muestra.png" />
+    <Content Include="images\education.png" />
+    <Content Include="images\Email_Checklist\check035_mail_1.jpg" />
+    <Content Include="images\Email_Checklist\check035_mail_2.jpg" />
+    <Content Include="images\Email_Checklist\check035_mail_3.jpg" />
+    <Content Include="images\Email_Checklist\check035_mail_Entorno.png" />
+    <Content Include="images\Email_Checklist\check035_mail_logo-web.png" />
+    <Content Include="images\Email_Checklist\check035_mail_Podcast.jpg" />
+    <Content Include="images\Email_Checklist\check035_mail_Prevencion.png" />
+    <Content Include="images\Email_Checklist\check035_mail_Productividad.png" />
+    <Content Include="images\favicon.png" />
+    <Content Include="images\feedback.png" />
+    <Content Include="images\find.png" />
+    <Content Include="images\healthcare-and-medical.png" />
+    <Content Include="images\index\clientes.png" />
+    <Content Include="images\index\compromiso - copia.png" />
+    <Content Include="images\index\cotizaciones.png" />
+    <Content Include="images\index\dinero - copia.png" />
+    <Content Include="images\index\estrategia - copia.png" />
+    <Content Include="images\index\estrategia.png" />
+    <Content Include="images\index\gente-de-la-comunidad - copia.png" />
+    <Content Include="images\index\gente-de-la-comunidad.png" />
+    <Content Include="images\index\investigar - copia.png" />
+    <Content Include="images\index\leads.png" />
+    <Content Include="images\index\rompecabezas - copia.png" />
+    <Content Include="images\index\rompecabezas.png" />
+    <Content Include="images\index\seguimiento.png" />
+    <Content Include="images\index\servicios.png" />
+    <Content Include="images\index\usuarios.png" />
+    <Content Include="images\internet.png" />
+    <Content Include="images\logo-web.png" />
+    <Content Include="images\seo.png" />
+    <Content Include="images\soporte.png" />
+    <Content Include="images\whastapp.png" />
+    <EntityDeploy Include="Models\NOM035.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>NOM035.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\NOM035.edmx.diagram">
+      <DependentUpon>NOM035.edmx</DependentUpon>
+    </Content>
+    <Content Include="Content\Formato_carga_masiva.xlsx" />
+    <Content Include="images\dashboard\bg-intro-desktop.svg" />
+    <Content Include="images\dashboard\bg-intro-mobile.svg" />
+    <Content Include="images\dashboard\undraw_completed_tasks_vs6q.svg" />
+    <Content Include="images\dashboard\undraw_confirmed_re_sef7.svg" />
+    <Content Include="images\Nom-035\wave.svg" />
+    <None Include="Properties\PublishProfiles\CHECK035.COM.pubxml" />
+    <Content Include="Models\NOM035.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>NOM035.edmx</DependentUpon>
+      <LastGenOutput>NOM035.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\NOM035.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>NOM035.edmx</DependentUpon>
+      <LastGenOutput>NOM035.cs</LastGenOutput>
+    </Content>
+    <Content Include="Scripts\addTags.js" />
+    <Content Include="Scripts\aos.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\Cortes_Charts.js" />
+    <Content Include="Scripts\counter.js" />
+    <Content Include="Scripts\esm\popper-utils.js" />
+    <Content Include="Scripts\esm\popper-utils.min.js" />
+    <Content Include="Scripts\esm\popper.js" />
+    <Content Include="Scripts\esm\popper.min.js" />
+    <Content Include="Scripts\esm\popper.min.js.map" />
+    <Content Include="Scripts\esm\popper.js.map" />
+    <Content Include="Scripts\esm\popper-utils.min.js.map" />
+    <Content Include="Scripts\esm\popper-utils.js.map" />
+    <None Include="Properties\PublishProfiles\Folder Check035.com.pubxml" />
+    <None Include="Properties\PublishProfiles\FTPProfile.pubxml" />
+    <None Include="Properties\PublishProfiles\Stage Castsoft.pubxml" />
+    <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Scripts\Hondumex_Index.js" />
+    <Content Include="Scripts\Checklist.js" />
+    <Content Include="Scripts\jquery-3.3.1.js" />
+    <Content Include="Scripts\jquery-3.3.1.min.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\popper-utils.js" />
+    <Content Include="Scripts\popper-utils.min.js" />
+    <Content Include="Scripts\popper.js" />
+    <Content Include="Scripts\popper.min.js" />
+    <Content Include="Scripts\scriptMedidas37.js" />
+    <Content Include="Scripts\script_Medidas.js" />
+    <Content Include="Scripts\spin.min.js" />
+    <Content Include="Scripts\umd\popper-utils.js" />
+    <Content Include="Scripts\umd\popper-utils.min.js" />
+    <Content Include="Scripts\umd\popper.js" />
+    <Content Include="Scripts\umd\popper.min.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
+    <Content Include="Views\Account\ConfirmEmail.cshtml" />
+    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
+    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
+    <Content Include="Views\Account\ForgotPassword.cshtml" />
+    <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\ResetPassword.cshtml" />
+    <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\SendCode.cshtml" />
+    <Content Include="Views\Account\VerifyCode.cshtml" />
+    <Content Include="Views\Manage\AddPhoneNumber.cshtml" />
+    <Content Include="Views\Manage\ChangePassword.cshtml" />
+    <Content Include="Views\Manage\Index.cshtml" />
+    <Content Include="Views\Manage\ManageLogins.cshtml" />
+    <Content Include="Views\Manage\SetPassword.cshtml" />
+    <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
+    <Content Include="Views\Shared\Lockout.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Shared\_Ordenes.cshtml" />
+    <Content Include="Views\Cuestionarios\Create.cshtml" />
+    <Content Include="Views\Cuestionarios\Delete.cshtml" />
+    <Content Include="Views\Cuestionarios\Details.cshtml" />
+    <Content Include="Views\Cuestionarios\Edit.cshtml" />
+    <Content Include="Views\Cuestionarios\Index.cshtml" />
+    <Content Include="Views\Empresas\Create.cshtml" />
+    <Content Include="Views\Empresas\Delete.cshtml" />
+    <Content Include="Views\Empresas\Details.cshtml" />
+    <Content Include="Views\Empresas\Edit.cshtml" />
+    <Content Include="Views\Empresas\Index.cshtml" />
+    <Content Include="Views\Respuestas\Create.cshtml" />
+    <Content Include="Views\Respuestas\Delete.cshtml" />
+    <Content Include="Views\Respuestas\Details.cshtml" />
+    <Content Include="Views\Respuestas\Edit.cshtml" />
+    <Content Include="Views\Respuestas\Index.cshtml" />
+    <Content Include="Views\Preguntas\Create.cshtml" />
+    <Content Include="Views\Preguntas\Delete.cshtml" />
+    <Content Include="Views\Preguntas\Details.cshtml" />
+    <Content Include="Views\Preguntas\Edit.cshtml" />
+    <Content Include="Views\Preguntas\Index.cshtml" />
+    <Content Include="Views\Trabajador_Resultados\Create.cshtml" />
+    <Content Include="Views\Trabajador_Resultados\Delete.cshtml" />
+    <Content Include="Views\Trabajador_Resultados\Details.cshtml" />
+    <Content Include="Views\Trabajador_Resultados\Edit.cshtml" />
+    <Content Include="Views\Trabajador_Resultados\Index.cshtml" />
+    <Content Include="Views\Encuestas\Create.cshtml" />
+    <Content Include="Views\Encuestas\Delete.cshtml" />
+    <Content Include="Views\Encuestas\Edit.cshtml" />
+    <Content Include="Views\Encuestas\Index.cshtml" />
+    <Content Include="Views\Trabajador_Resultados\Encuesta.cshtml" />
+    <Content Include="Views\Encuestas\Search_Folio.cshtml" />
+    <Content Include="Views\Encuestas\Resultados.cshtml" />
+    <Content Include="Views\Encuestas\Glabal_Results.cshtml" />
+    <Content Include="Views\Encuestas\Search_Empresas.cshtml" />
+    <Content Include="Views\Encuestas\Index2.cshtml" />
+    <Content Include="Views\Empresas\General_Statistics.cshtml" />
+    <Content Include="Views\Empresas\Missing_Info.cshtml" />
+    <Content Include="Scripts\umd\popper.min.js.map" />
+    <Content Include="Scripts\umd\popper.js.map" />
+    <Content Include="Scripts\umd\popper-utils.min.js.map" />
+    <Content Include="Scripts\umd\popper-utils.js.map" />
+    <Content Include="Scripts\README.md" />
+    <Content Include="Scripts\popper.min.js.map" />
+    <Content Include="Scripts\popper.js.map" />
+    <Content Include="Scripts\popper-utils.min.js.map" />
+    <Content Include="Scripts\popper-utils.js.map" />
+    <Content Include="Views\Home\login.cshtml" />
+    <Content Include="Views\Usuarios\Create.cshtml" />
+    <Content Include="Views\Usuarios\Delete.cshtml" />
+    <Content Include="Views\Usuarios\Details.cshtml" />
+    <Content Include="Views\Usuarios\Edit.cshtml" />
+    <Content Include="Views\Usuarios\Index.cshtml" />
+    <Content Include="Views\Home\Mi_Cuestionario.cshtml" />
+    <Content Include="Views\Encuestas\Encuestas_Admin.cshtml" />
+    <Content Include="Views\Encuestas\Resultados_Admin.cshtml" />
+    <Content Include="Views\Reportes\AOwYbqttJ6fobQAreA9mBUt4dmB5CBtuirmBaf4AhwNvjDfuIhma4ZpjMxmTosLw.cshtml" />
+    <Content Include="Views\Reportes\ReGOwYbqttJ6fobQArasdsdsdHIhihisdih876AhwNvjDfGFasauIhma4ZpjMxmTosLw.cshtml" />
+    <Content Include="Views\Reportes\RInduirmBaf4AhwsdsaJ6fobQAreA9mBUt4dmB5CBNvjDfuIhma4ZpjMxmTosLw.cshtml" />
+    <Content Include="Views\Usuarios\ChangePassword.cshtml" />
+    <Content Include="Views\Centros_Trabajo\Create.cshtml" />
+    <Content Include="Views\Centros_Trabajo\Delete.cshtml" />
+    <Content Include="Views\Centros_Trabajo\Details.cshtml" />
+    <Content Include="Views\Centros_Trabajo\Edit.cshtml" />
+    <Content Include="Views\Centros_Trabajo\Index.cshtml" />
+    <Content Include="Views\Reportes_Centro\ReGCTOwgfttJ6fobQArasdfg5dh7e3auhgfd656mxghhgf6hghIhma4Zpgf4osLw.cshtml" />
+    <Content Include="Views\Centros_Trabajo\General_Statistics_Admin.cshtml" />
+    <Content Include="Views\Centros_Trabajo\Index_CT_admin_sys.cshtml" />
+    <Content Include="Views\Centros_Trabajo\Missing_Info.cshtml" />
+    <Content Include="Views\Encuestas\Encuestas_Centro.cshtml" />
+    <Content Include="Views\MultiEvaluaE360\Create.cshtml" />
+    <Content Include="Views\MultiEvaluaE360\Delete.cshtml" />
+    <Content Include="Views\MultiEvaluaE360\Edit.cshtml" />
+    <Content Include="Views\MultiEvaluaE360\Index.cshtml" />
+    <Content Include="Views\MultiEvaluaClimaLaboral\Create.cshtml" />
+    <Content Include="Views\MultiEvaluaClimaLaboral\Delete.cshtml" />
+    <Content Include="Views\MultiEvaluaClimaLaboral\Edit.cshtml" />
+    <Content Include="Views\MultiEvaluaClimaLaboral\Index.cshtml" />
+    <Content Include="Views\MultiEvaluaClimaLaboral\General_Statistics_Centro.cshtml" />
+    <Content Include="Views\MultiEvaluaClimaLaboral\General_Statistics.cshtml" />
+    <Content Include="Views\MultiEvaluaE360\General_Statistics.cshtml" />
+    <Content Include="Views\MultiEvaluaE360\General_Statistics_Centro.cshtml" />
+    <Content Include="Views\MultiEvaluaClimaLaboral\Home.cshtml" />
+    <Content Include="Views\MultiEvaluaE360\Home.cshtml" />
+    <Content Include="Views\Reportes\RIndE360jsdhkdsgbf894378uyfsb9834t8hskdjgh3894ghoi987y4398duicfkgn509ufhhfg4Lw.cshtml" />
+    <Content Include="Views\Reportes\RIndCLMAuirmBaf4AhwsdsaJ6fobQAreA9mBUt4dmB5CBNvjDfuIhma4ZpjMxmTosLw.cshtml" />
+    <Content Include="Views\Reportes\AOwE360YbqttJ6foDFHDFHDFHf4AhwNvjDfuDFHDFHjMxmTo7UJYHTG45HBRF23SD4DGFFas.cshtml" />
+    <Content Include="Views\Reportes\AOwCLMAYbqttJ6fobQAreA9mBUt4dmB5CBtuirmBaf4AhwNvjDfuIhma4ZpjMxmTosLw.cshtml" />
+    <Content Include="Views\Home\multi_menu.cshtml" />
+    <Content Include="Views\Reportes\ReGE360ASDFD09876TRFGBNJKI49R8F7DYTGBDN4RVSDSDasjddsde3sdsw.cshtml" />
+    <Content Include="Views\Reportes\ReGE360_EMPfcdusyhegbvrfn8d73y45t9fd8s7y4h5jtfiduyhe4eudyhdhdh444d3sdsw.cshtml" />
+    <Content Include="Views\Reportes\ReGE360_COMPojhgf05FD09876TRSFSDFSDFFGBNJKI49R8F7DYTGBDN4RVSDSDasjddsde3sdsw.cshtml" />
+    <Content Include="Views\Reportes\ReGE360_SUBsuhfdifgdsg87654edcxystgw3b4h5jtigf8d7sywtg34brtjddsde3sdsw.cshtml" />
+    <Content Include="Views\Reportes\ReGE360_SUPsdiuhygbrvtgnvjciusyg4h5jtig9f8d76t4g5thjgifc8x7s6wtg4tgv654ee3sdsw.cshtml" />
+    <Content Include="Views\Reportes\ReGCLYbqtKJHGFDE87654asauIhmdsaJ6fobQAreA9mBUt4dmBa4Z7.cshtml" />
+    <Content Include="Views\Home\Mi_Cuestionario_Clima_Laboral.cshtml" />
+    <Content Include="Views\Home\Access_Denied.cshtml" />
+    <Content Include="Views\Home\completed.cshtml" />
+    <Content Include="Views\Shared\_Layout_Reportes.cshtml" />
+    <Content Include="Views\Home\E360_subordinados.cshtml" />
+    <Content Include="Views\Reportes\ReDeptos360ASsdafhafd9834bfjksdgF7DYTGBsdfghjygfDFGH78.cshtml" />
+    <Content Include="Views\Reportes_Centro\ReGCT_E360OwgfDFGHJKJHGFDgf6hgh76TFD44osLw.cshtml" />
+    <Content Include="Views\Reportes_Centro\ReGCT_CL098UHBVCFRYUasasOwgfttJ6fobQArasdfg5dh7e3fgdgfggh65gdgfpgf4osLw.cshtml" />
+    <Content Include="Views\Home\admin_register.cshtml" />
+    <Content Include="Views\Encuestas\carga_masiva.cshtml" />
+    <Content Include="Views\Home\checklist.cshtml" />
+    <Content Include="Views\Reportes_Centro\Missing_Info.cshtml" />
+    <Content Include="Views\grow_admin\Create.cshtml" />
+    <Content Include="Views\grow_admin\Delete.cshtml" />
+    <Content Include="Views\grow_admin\Details.cshtml" />
+    <Content Include="Views\grow_admin\Edit.cshtml" />
+    <Content Include="Views\grow_admin\Index.cshtml" />
+    <Content Include="Views\Checklist\Index.cshtml" />
+    <Content Include="Views\Checklist\Survery.cshtml" />
+    <Content Include="Views\Checklist\Medidas37.cshtml" />
+    <Content Include="Views\CRM\Index.cshtml" />
+    <Content Include="Views\CRM\Cotizador.cshtml" />
+    <Content Include="Views\Home\Checklist_Results.cshtml" />
+    <Content Include="Views\Checklist\evidencia.cshtml" />
+    <Content Include="Views\Centros_Trabajo\General_Statistics.cshtml" />
+    <Content Include="Views\Empresas\General_Statistics_Admin_Guest.cshtml" />
+    <Content Include="Views\Checklist\listado_Evidencia.cshtml" />
+    <Content Include="Views\Checklist\add_file.cshtml" />
+    <Content Include="Views\Home\Checklist_Results_37.cshtml" />
+    <Content Include="Views\Checklist\edit_file.cshtml" />
+    <Content Include="Views\medidas_estatus\calendario.cshtml" />
+    <Content Include="Views\Checklist\Create_medidas.cshtml" />
+    <Content Include="Views\Acciones\Create.cshtml" />
+    <Content Include="Views\Acciones\Delete.cshtml" />
+    <Content Include="Views\Acciones\Details.cshtml" />
+    <Content Include="Views\Acciones\Edit.cshtml" />
+    <Content Include="Views\Acciones\Index.cshtml" />
+    <Content Include="Views\Home\buzon.cshtml" />
+    <Content Include="Views\Home\dashboard.cshtml" />
+    <Content Include="Views\Shared\_adminDashboard.cshtml" />
+    <Content Include="Views\Shared\_userDashboard.cshtml" />
+    <Content Include="Views\NOM035\Index.cshtml" />
+    <Content Include="Views\Avisos_Notificaciones\Create.cshtml" />
+    <Content Include="Views\Avisos_Notificaciones\Delete.cshtml" />
+    <Content Include="Views\Avisos_Notificaciones\Details.cshtml" />
+    <Content Include="Views\Avisos_Notificaciones\Edit.cshtml" />
+    <Content Include="Views\Avisos_Notificaciones\Index2.cshtml" />
+    <Content Include="Views\Politicas\Create.cshtml" />
+    <Content Include="Views\Politicas\Delete.cshtml" />
+    <Content Include="Views\Politicas\Details.cshtml" />
+    <Content Include="Views\Politicas\Edit.cshtml" />
+    <Content Include="Views\Politicas\Index.cshtml" />
+    <Content Include="Views\Buzon\Create.cshtml" />
+    <Content Include="Views\Buzon\Delete.cshtml" />
+    <Content Include="Views\Buzon\Details.cshtml" />
+    <Content Include="Views\Buzon\Edit.cshtml" />
+    <Content Include="Views\Buzon\Index.cshtml" />
+    <Content Include="Views\Home\Comunica.cshtml" />
+    <Content Include="Views\Home\comunica_feed.cshtml" />
+    <Content Include="Views\Home\comunica_form.cshtml" />
+    <Content Include="Views\Home\planeacion.cshtml" />
+    <Content Include="Views\Avisos_Notificaciones\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Documents\Encuestas\" />
+    <Folder Include="images\Encuestas\" />
+    <Folder Include="_Check035\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="Scripts\index.d.ts" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>52643</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:52643/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Este proyecto hace referencia a los paquetes NuGet que faltan en este equipo. Use la restauración de paquetes NuGet para descargarlos. Para obtener más información, consulte http://go.microsoft.com/fwlink/?LinkID=322105. El archivo que falta es {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

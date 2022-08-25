@@ -1,0 +1,6 @@
+﻿/*Modales */
+.modal-header-pink, .modal-header-blue {
+    border-top-left-radius: 1em !important;
+    border-top-right-radius: 1em !important;
+}
+

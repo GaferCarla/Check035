@@ -1,0 +1,428 @@
+﻿@using PagedList;
+@using PagedList.Mvc;
+@model IPagedList<ErgoSalud.Models.ERGOS_Cuestionarios_Trabajador_N01>
+
+@*@model IEnumerable<ErgoSalud.Models.ERGOS_Cuestionarios_Trabajador_N01>*@
+
+@{
+    ViewBag.Title = "Index";
+    @Styles.Render("~/Content/sizing.css");
+    @Styles.Render("~/Content/tableElements.css");
+    @Styles.Render("~/Content/button.css");
+    @Styles.Render("~/Content/branding.css");
+
+
+
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet'>
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/boxicons@2.0.0/css/boxicons.min.css'>
+
+    <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+}
+
+@section dataTableStyle {
+
+    <link href="~/lib/datatables.net-bs/dataTables.bootstrap.min.css" rel="stylesheet" />
+    <link href="~/lib/datatables.net-select-bs/select.bootstrap.min.css" rel="stylesheet" />
+    <link rel='stylesheet' href='https://cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css'>
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/boxicons@2.0.0/css/boxicons.min.css'>
+}
+
+<style>
+    table.dataTable.dtr-inline.collapsed > tbody > tr[role="row"] > td:first-child:before, table.dataTable.dtr-inline.collapsed > tbody > tr[role="row"] > th:first-child:before {
+        top: 12px !important
+    }
+</style>
+<script>
+    window.setTimeout(function () {
+        $(".alert-success").fadeTo(500, 0).slideUp(500, function () {
+            $(this).remove();
+        });
+    }, 3000);
+</script>
+
+<hr>
+<br>
+
+<div class="container pb-3 justify-content-center text-center text-md-start">
+    <a title="Descarga de credenciales para ingresar al sistema" class="btn btn-module my-3 mx-2 text-uppercase px-5 py-3" href="@Url.Action("ExportToExcel_Users_Empresa","Reportes", new { id_empresa=  ViewBag.id_empresa })">
+        <i class="fas fa-user"></i>  Descarga de suarios y contraseñas
+    </a>
+
+    <a title="Solamente se envia a los correos que no han contestado su encuesta 100%" class="btn btn-module my-3 mx-2 text-uppercase px-5 py-3" href="@Url.Action("carga_masiva")">
+        <i class="fas fa-file-excel"></i>  Carga masiva
+    </a>
+
+    @Html.ActionLink("Nueva evaluación", "Create", null, new { @class = "btn btn-module my-3 mx-2 text-uppercase px-5 py-3" })
+
+    @if (User.IsInRole("Admin-Guest"))
+    {
+        <a class="btn btn-module2 my-3 mx-2 text-uppercase px-5 py-3" href="@Url.Action("Enviar_encuestas", new { @User_Name = @HttpContext.Current.User.Identity.Name})">
+            <i class="fa fa-envelope"></i> Enviar evaluaciones
+        </a>
+        <a title="Solamente se envia a los correos que no han contestado su encuesta 100%" class="btn btn-module3 rounded my-3 mx-2 text-uppercase px-5 py-3 font-bold" href="@Url.Action("ReEnviar_encuestas", new { @User_Name = @HttpContext.Current.User.Identity.Name})">
+            <i class="fa fa-envelope"></i> Re Enviar evaluaciones
+        </a>
+    }
+
+</div>
+
+<br>
+<br>
+<div class="pb-5" role="alert">
+
+    <h2 class="text-center title_blue">Total de Encuestas </h2>
+    <div class="row justify-content-center">
+        <div class="col-5 col-sm-4">
+            <h3 class="float-end title_blue font-semibold"> Contestadas: <span class="ms-2 counter-count font-bold">@ViewBag.Encuestas_Contestadas</span> </h3>
+
+        </div>
+        <div class="col-1">
+            <h3 class="text-center title_blue"> vs</h3>
+
+        </div>
+        <div class="col-5 col-sm-4">
+            <h3 class="float-start title_blue font-semibold"> Registradas: <span class="ms-2 counter-count font-bold"> @ViewBag.Encuestas_Totales</span> </h3>
+
+        </div>
+    </div>
+
+    <table id="contestado_registrado" class="table table-hover responsive nowrap" style="width:100%">
+        <thead>
+            <tr align="center">
+                <td align="center" scope="col"><b>Área</b></td>
+                <td align="center" scope="col"><b>Total Encuestas</b></td>
+                <td align="center" scope="col"><b>Total Encuestas Contestadas</b></td>
+                <td align="center" scope="col"><b>Procentaje Participación</b></td>
+            </tr>
+        </thead>
+        <tbody align="center">
+            @foreach (var Areas in ViewBag.Encuestas_Areas_Total)
+            {
+                <tr>
+                    <td align="center">
+                        @Areas.Departamento
+                    </td>
+                    <td align="center">
+                        @Areas.Encuestas_Totales
+                    </td>
+                    <td align="center">
+                        @Areas.Encuestas_Contestadas
+                    </td>
+                    <td align="center">
+                        @{
+                            if (Areas.Encuestas_Contestadas * 100 / Areas.Encuestas_Totales == 0 || Areas.Encuestas_Contestadas * 100 / Areas.Encuestas_Totales == null)
+                            {
+
+                                <b style="color:darkred"> @(Areas.Encuestas_Contestadas * 100 / Areas.Encuestas_Totales) 0 %</b>
+                            }
+                            else if (Areas.Encuestas_Contestadas * 100 / Areas.Encuestas_Totales >= 70 && Areas.Encuestas_Contestadas * 100 / Areas.Encuestas_Totales <= 99)
+                            {
+                                <b style="color:darkblue"> @(Areas.Encuestas_Contestadas * 100 / Areas.Encuestas_Totales) %</b>
+                            }
+                            else if (Areas.Encuestas_Contestadas * 100 / Areas.Encuestas_Totales == 100)
+                            {
+                                <b style="color:green"> @(Areas.Encuestas_Contestadas * 100 / Areas.Encuestas_Totales) %</b>
+                            }
+                            else if (Areas.Encuestas_Contestadas * 100 / Areas.Encuestas_Totales > 100)
+                            {
+                                <b style="color:green">100 %</b>
+                            }
+                            else
+                            {
+                                <b> @(Areas.Encuestas_Contestadas * 100 / Areas.Encuestas_Totales) %</b>
+                            }
+                        }
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+
+</div>
+@if (@ViewData["Mail"] != null)
+{
+    <br>
+    <br>
+    <div class="alert alert-success" role="alert">
+        @ViewData["Mail"]
+    </div>
+}
+
+
+
+
+<div class="row px-4 py-5 mb-4">
+    <h2 class="title_blue">Encuestas Registradas</h2>
+
+    <table id="encuesta_registradas" class="table table-hover responsive nowrap" style="width:100%">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayName("No. Empleado")
+                </th>
+                <th>
+                    @Html.DisplayName("Nombre")
+                </th>
+                <th>
+                    @Html.DisplayName("Centro")
+                </th>
+                <th>
+                    @Html.DisplayName("Email")
+                </th>
+                <th>
+                    @Html.DisplayName("Fecha")
+                </th>
+
+                @*<th>
+                        @Html.DisplayNameFor(model => model.Sexo)
+                    </th>*@
+                @*<th>
+                        @Html.DisplayNameFor(model => model.Edad)
+                    </th>
+                    <th>
+                        @Html.DisplayName("Estado Civil")
+                    </th>
+                    <th>
+                        @Html.DisplayName("Nivel Estudios")
+                    </th>*@
+                <th>
+                    @Html.DisplayName("Departamento")
+                </th>
+                <th>
+                    @Html.DisplayName("Area")
+                </th>
+                @*<th>
+                        @Html.DisplayNameFor(model => model.Tipo_puesto)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Tipo_Contratacion)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Tipo_Jornada)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Rotacion_Turno)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Experiencia_puesto_actual)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Experiencia_puesto_laboral)
+                    </th>*@
+                @*<th>
+                        @Html.DisplayName("Email")
+                    </th>*@
+                <th>
+                    @Html.DisplayName("Estatus Cuestionario")
+                </th>
+                <th>Acción</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (ErgoSalud.Models.ERGOS_Cuestionarios_Trabajador_N01 item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.id_trabajador)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Nombre)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ERGOS_Centros_Trabajo_N01.Nombre_centro_trabajo)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Email)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.fecha)
+                    </td>
+                    @*<td>
+                            @Html.DisplayFor(modelItem => item.Sexo)
+                        </td>*@
+                    @*<td>
+                            @Html.DisplayFor(modelItem => item.Edad)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Estado_Civil)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Nivel_Estudios)
+                        </td>*@
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Ocupacion)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Departamento)
+                    </td>
+                    @*<td>
+                            @Html.DisplayFor(modelItem => item.Tipo_puesto)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Tipo_Contratacion)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Tipo_Jornada)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Rotacion_Turno)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Experiencia_puesto_actual)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Experiencia_puesto_laboral)
+                        </td>*@
+                    @*<td>
+                            <b style="color:cornflowerblue">Enviado</b>
+
+                        </td>*@
+                    <td>
+                        @if (item.Survey_Status == 100)
+                        {
+                            <b style="color:green">Completado</b>
+
+                        }
+                        else
+                        {
+                            <b style="color:darkorange">No Completado</b>}
+
+                    </td>
+                    <td nowrap>
+                        @*<a title="Editar" href="@Url.Action("Edit", new { id = item.id_cuestionario_trabajador })">
+                                <i class="fa fa-edit" title="Editar" style="font-size:23px"></i>
+                            </a>*@
+                        @if (ViewBag.id_encuesta == 5)
+                        {
+
+
+                        }
+                        else if (ViewBag.id_encuesta == 4)
+                        {
+                            <a href="@Url.Action("Encuesta", "Trabajador_Resultados", new { id_CT = item.id_cuestionario_trabajador, id_C = item.ERGOS_Cuestionarios_N01.id_cuestionario })"><i class="fa fa-file-text" title="Encuesta" style="font-size:20px;color:rebeccapurple" aria-hidden="true"></i></a>
+
+                        }
+                        else
+                        {
+                            <a href="@Url.Action("Encuesta", "Trabajador_Resultados", new { id_CT = item.id_cuestionario_trabajador, id_C = item.ERGOS_Cuestionarios_N01.id_cuestionario })"><i class="fa fa-file-text" title="Encuesta" style="font-size:20px;color:rebeccapurple" aria-hidden="true"></i></a>
+
+                        }
+
+                        @if (User.IsInRole("Admin"))
+                        {
+                            <a href="@Url.Action("Resultados", new { id=item.id_cuestionario_trabajador })">
+                                <i class="fa fa-check-circle" aria-hidden="true" style="color:green;font-size:23px;color:rebeccapurple" title="Resultados"></i>
+                            </a>
+                        }
+                        else if (User.IsInRole("Admin-Guest"))
+                        {
+                            <a href="@Url.Action("Resultados_Admin", new { id=item.id_cuestionario_trabajador, User_Name=@HttpContext.Current.User.Identity.Name })">
+                                <i class="fa fa-check-circle" aria-hidden="true" style="color:green;font-size:23px;color:rebeccapurple" title="Resultados"></i>
+                            </a>
+                        }
+
+                        <a href="@Url.Action("Delete", new { id=item.id_cuestionario_trabajador })">
+                            <i class="fa fa-trash-o" title="Eliminar" style="font-size:23px;color:rebeccapurple"></i>
+                        </a>
+
+
+                        <a href="@Url.Action("Reporte_PDF", "Encuestas", new {id_CT = item.id_cuestionario_trabajador ,id_C=item.id_encuesta })"><i class="fa fa-file-pdf-o" title="Encuesta Digital" style="font-size:20px;color:red" aria-hidden="true"></i> </a>
+
+                        <a href="@Url.Action("Reporte_Resultado_Individual", "Encuestas", new {id_CT = item.id_cuestionario_trabajador})"><i class="fa fa-file-pdf-o" title="Resultados Individuales" style="font-size:20px;color:green" aria-hidden="true"></i> </a>
+                        @if (User.IsInRole("Admin-Guest"))
+                        {
+                            <a href="@Url.Action("Enviar_encuestas_Ind", new { @User_Name = @HttpContext.Current.User.Identity.Name, @id_CT = item.id_cuestionario_trabajador })">
+                                <i class="fa fa-envelope" aria-hidden="true" title="Reenviar Encuesta Individual" style="font-size:20px;color:deepskyblue"></i>
+                            </a>
+                        }
+                        <a href="@Url.Action("Edit","Usuarios", new { id=item.id_cuestionario_trabajador,Encuesta_Admin=1 })">
+                            <i class="fa fa-user" title="Cambiar contraseña" style="font-size:23px;color:rebeccapurple"></i>
+                        </a>
+                    </td>
+                </tr>
+            }
+
+        </tbody>
+    </table>
+</div>
+
+@Scripts.Render("~/Scripts/counter.js")
+
+@section dataTableScripts {
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js'></script>
+    <script src="~/lib/datatables.net/jquery.dataTables.min.js"></script>
+    <script src='https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js'></script>
+    <script src="~/lib/datatables.net-bs/dataTables.bootstrap.min.js"></script>
+    <script src="~/lib/datatables.net-select-bs/select.bootstrap.min.js"></script>
+    <script src="https://cdn.datatables.net/plug-ins/1.11.5/i18n/es-ES.json"></script>
+
+}
+
+<script>
+    $(document).ready(function () {
+        $("#encuesta_registradas").DataTable({
+            "language": {
+                "url": "//cdn.datatables.net/plug-ins/1.10.16/i18n/Spanish.json"
+            },
+
+            aaSorting: [],
+            responsive: true,
+
+            columnDefs: [
+                {
+                    responsivePriority: 1,
+                    targets: 0
+                },
+                {
+                    responsivePriority: 2,
+                    targets: -1
+                }
+            ]
+        });
+
+        $(".dataTables_filter input")
+            .attr("placeholder", "Search here...")
+            .css({
+                width: "300px",
+                display: "inline-block"
+            });
+
+        $('[data-toggle="tooltip"]').tooltip();
+    });
+</script>
+
+<script>
+    $(document).ready(function () {
+        $("#contestado_registrado").DataTable({
+            "language": {
+                "url": "//cdn.datatables.net/plug-ins/1.10.16/i18n/Spanish.json"
+            },
+
+            aaSorting: [],
+            responsive: true,
+
+            columnDefs: [
+                {
+                    responsivePriority: 1,
+                    targets: 0
+                },
+                {
+                    responsivePriority: 2,
+                    targets: -1
+                }
+            ]
+        });
+
+        $(".dataTables_filter input")
+            .attr("placeholder", "Search here...")
+            .css({
+                width: "300px",
+                display: "inline-block"
+            });
+
+        $('[data-toggle="tooltip"]').tooltip();
+    });
+</script>

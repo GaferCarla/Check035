@@ -1,0 +1,222 @@
+﻿.table {
+    border-spacing: 0 0.85rem !important;
+}
+
+    .table .dropdown {
+        display: inline;
+        
+    }
+
+    .table td,
+    .table th {
+        vertical-align: middle;
+        margin-bottom: 10px;
+        border: none;
+    }
+
+    .table thead tr,
+    .table thead th {
+        border: none;
+        font-size: 12px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        background: transparent;
+    }
+
+    .table td {
+        background: #fff;
+    }
+
+        .table td:first-child {
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
+        }
+
+        .table td:last-child {
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+
+        .table th, .table td:nth-child(3), .table td:nth-child(4), .table td:nth-child(5), .table td:last-child {
+            text-align: center !important
+        }
+
+.child .dtr-details .dtr-title {
+    float: left !important;
+    text-align:left !important;
+}
+
+.child .dtr-details .dtr-data p{
+    text-align: right !important;
+}
+
+
+.avatar {
+    padding: 7px 7px !important;
+    border-radius: 50%;
+    display: inline-block;
+    background: transparent;
+    position: relative;
+    text-align: center;
+    color: #868e96;
+    font-weight: 700;
+    vertical-align: bottom;
+    font-size: 1rem;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.avatar-sm {
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 0.83333rem;
+    line-height: 1.5;
+}
+
+.avatar-img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+}
+
+.avatar-blue {
+    background-color: #c8d9f1;
+    color: #467fcf;
+}
+
+table.dataTable.dtr-inline.collapsed > tbody > tr[role="row"] > td:first-child:before,
+table.dataTable.dtr-inline.collapsed > tbody > tr[role="row"] > th:first-child:before {
+    left: 14px;
+    border: none;
+    box-shadow: none;
+}
+
+table.dataTable.dtr-inline.collapsed > tbody > tr[role="row"] > td:first-child,
+table.dataTable.dtr-inline.collapsed > tbody > tr[role="row"] > th:first-child {
+    padding-left: 48px;
+}
+
+table.dataTable > tbody > tr.child ul.dtr-details {
+    width: 100%;
+}
+
+table.dataTable > tbody > tr.child span.dtr-title {
+    min-width: 50%;
+}
+
+table.dataTable.dtr-inline.collapsed > tbody > tr > td.child,
+table.dataTable.dtr-inline.collapsed > tbody > tr > th.child,
+table.dataTable.dtr-inline.collapsed > tbody > tr > td.dataTables_empty {
+    padding: 0.75rem 1rem 0.125rem;
+}
+
+div.dataTables_wrapper div.dataTables_length label,
+div.dataTables_wrapper div.dataTables_filter label {
+    margin-bottom: 0;
+}
+
+.modal-footer .btn {
+    padding:10px 20px !important;
+    font-weight:bold;
+}
+
+
+
+@media (max-width: 767px) {
+    div.dataTables_wrapper div.dataTables_paginate ul.pagination {
+        -ms-flex-pack: center !important;
+        justify-content: center !important;
+        margin-top: 1rem;
+    }
+}
+
+.btn-icon {
+    background: #fff;
+}
+
+    .btn-icon .bx {
+        font-size: 20px;
+    }
+
+.btn .bx {
+    vertical-align: middle;
+    font-size: 20px;
+}
+
+.dropdown-menu {
+    padding: 0.25rem 0;
+}
+
+.dropdown-item {
+    padding: 0.5rem 1rem;
+}
+
+.badge {
+    padding: 0.5em 0.75em;
+}
+
+.badge-success-alt {
+    background-color: #d7f2c2;
+    color: #7bd235;
+}
+
+.badge-default-alt {
+    background-color: #9b9e98;
+    color: #e2e6df;
+}
+
+.table a {
+    color: #212529;
+}
+
+    .table a:hover,
+    .table a:focus {
+        text-decoration: none;
+    }
+
+table.dataTable {
+    margin-top: 12px !important;
+}
+
+.icon > .bx {
+    display: block;
+    min-width: 1.5em;
+    min-height: 1.5em;
+    text-align: center;
+    font-size: 1.0625rem;
+}
+
+.btn {
+    font-size: 1.5rem;
+    font-weight: 500;
+    padding: 0.5rem 0.75rem;
+}
+
+
+.avatar i {
+    font-size:20px !important;
+}
+
+.avatar-yellow {
+    background-color: #e3e152;
+    color:rgb(0, 0, 0,0.3)
+}
+
+.avatar-blue {
+    background-color: #5252e3;
+    color: white
+}
+
+.avatar-gray {
+    background-color: #606075;
+    color: white
+}
+
+.avatar-red {
+    background-color: #782920;
+    color: white
+}
+

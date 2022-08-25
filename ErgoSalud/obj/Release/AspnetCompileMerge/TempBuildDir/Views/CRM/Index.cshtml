@@ -1,0 +1,101 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+    @Styles.Render("~/Content/indexStyle.css");
+
+}
+<br>
+<div class="row">
+    <div class="col-xs-12 mx-auto text-center">
+        <h1   class="display-4 text-white">CRM- Customer Relationship Management </h1>
+    </div>
+</div>
+<div class="row pt-5">
+    <div class="col-lg-10 mx-auto"> </div>
+</div>
+
+<div class="container-fluid mb-5">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="box">
+                <a href="#">
+                    <div class="our-services">
+                        <div class="icon">
+                            <img src="~/Images/index/leads.png" />
+                        </div>
+                        <p><small>Leads</small></p>
+                        <h4>Prospectos</h4>
+
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="box">
+                <a href="#">
+                    <div class="our-services">
+                        <div class="icon">
+                            <img src="~/Images/index/clientes.png" />
+                        </div>
+                        <p><small>Customers</small></p>
+                        <h4>Clientes</h4>
+
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <a href="@Url.Action("Cotizador")">
+                <div class="our-services">
+                    <div class="icon">
+                        <img src="~/Images/index/cotizaciones.png" />
+                    </div>
+                    <p><small>Quotes</small></p>
+                    <h4>Cotizaciones</h4>
+
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="box">
+                <a href="#">
+                    <div class="our-services">
+                        <div class="icon">
+                            <img src="~/Images/index/seguimiento.png" />
+                        </div>
+                        <p><small>Tracking</small></p>
+                        <h4>Seguimiento</h4>
+
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="box">
+                <a href="@Url.Action("Servicios","Home")">
+                    <div class="our-services">
+                        <div class="icon">
+                            <img src="~/Images/index/servicios.png" />
+                        </div>
+                        <p><small>Services</small></p>
+                        <h4>Servicios</h4>
+
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <a href="#">
+                <div class="our-services">
+                    <div class="icon">
+                        <img src="~/Images/index/usuarios.png" />
+                    </div>
+                    <p><small>CRM Users</small></p>
+                    <h4>Usuarios</h4>
+
+                </div>
+            </a>
+        </div>
+    </div>
+</div>

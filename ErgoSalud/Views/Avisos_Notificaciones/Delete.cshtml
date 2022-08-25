@@ -1,0 +1,35 @@
+﻿@model ErgoSalud.Models.Comunica_Avisos_N01
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<hr>
+<h2>Eliminación de registro permanente</h2>
+
+<h3 style="color:red">¿Realmente quiere eliminar este registro?</h3>
+<div> 
+    <hr />
+    <dl class="dl-horizontal">
+ 
+
+        <dt>
+            @Html.DisplayNameFor(model => model.aviso)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.aviso)
+        </dd>
+ 
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+<div class="form-actions no-color">
+    <input type="submit" value="Eliminar" class="btn btn-danger" />
+    @Html.ActionLink("Cancelar", "Index", null, new { @class = "btn btn-primary" })
+</div>
+    }
+</div>

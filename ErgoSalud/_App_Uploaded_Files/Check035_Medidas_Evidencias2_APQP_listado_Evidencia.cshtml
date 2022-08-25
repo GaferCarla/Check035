@@ -1,0 +1,3645 @@
+﻿@model ErgoSalud.Models.Check_checklist_medidas_N01
+@{
+    ViewBag.Title = "listado_Evidencia";
+
+    @Styles.Render("~/Content/ReporteStyle.css");
+    @Styles.Render("~/Content/sizing.css");
+    @Styles.Render("~/Content/breadcrumb.css");
+    @Styles.Render("~/Content/webPixel.css");
+    @Styles.Render("~/Content/tableGeneral.css");
+
+}
+
+
+<div class="card shadow border-0 bg-white p-4">
+
+
+    <!--<div class="row align-items-center p-4">
+        <div class="col-sm-6 col-12 mb-4 mb-sm-0">
+            <!-- Title -->
+            <!--<h1 style="color:black">Evidencias</h1>
+        </div>--> <!-- Actions -->-->
+        <!--@*<div class="col-sm-6 col-12 text-sm-end">
+                <div class="mx-n1">
+                    <a href='@Url.Action("Añadir_evidencia","Home")' class="btn d-inline-flex btn-sm btn-primary mx-1" style="color:white" id="buttonNew">
+
+                        <div class="rowB">
+                            <svg class="pe-2" xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
+                                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z" />
+                            </svg>
+
+                            Nuevo
+                        </div>
+                    </a>
+                </div>
+            </div>*@
+    </div>-->
+
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/boxicons@2.0.0/css/boxicons.min.css'>
+
+    <style>
+        .Rtable-cell ul li {
+            list-style: none;
+        }
+
+
+        .lead {
+            font-size: 21px;
+        }
+
+        .large {
+            font-size: 20px;
+        }
+
+        table td:last-child {
+            min-width: 100px !important;
+        }
+    </style>
+
+    <div class="container py-4">
+        <div class="row">
+            @*<div class="col-sm-12" style="margin: 2em 0em 0em 0em;" height="500px">
+                <canvas id="myChart2"></canvas>
+            </div>*@
+
+   
+
+
+            <div class="tableGraph">
+                <table class="businesCase flex" style="width: 95%; margin: 0em auto;">
+                    <thead>
+                        <tr>
+                            <th class="tableTitle col-5" colspan="5">Desglose de componentes indiviuales de evaluación</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class=""></td>
+                            <td class="rowTitle col-2">Ambiente de trabajo</td>
+                            <td class="numbers col-1"><span>@ViewBag.CT1</span> de 10</td>
+                            <td class="numbers col-2" colspan="2">
+                                <div class="containerDonut">
+                                    <canvas id="myChart3a"></canvas>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class=""></td>
+                            <td class="rowTitle col-2">Factores propios de la actividad</td>
+                            <td class="numbers col-1"><span>@ViewBag.CT2</span> de 10</td>
+                            <td class="numbers col-2" colspan="2">
+                                <div class="containerDonut">
+                                    <canvas id="myChart3b"></canvas>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class=""></td>
+                            <td class="rowTitle col-2">Organización del tiempo de trabajo</td>
+                            <td class="numbers col-1"><span>@ViewBag.CT3</span> de 4</td>
+                            <td class="numbers col-2" colspan="2">
+                                <div class="containerDonut">
+                                    <canvas id="myChart3c"></canvas>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class=""></td>
+                            <td class="rowTitle col-2">Liderazgo y relaciones de trabajo</td>
+                            <td class="numbers col-1"><span>@ViewBag.CT4</span> de 5</td>
+                            <td class="numbers col-2" colspan="2">
+                                <div class="containerDonut">
+                                    <canvas id="myChart3d"></canvas>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class=""></td>
+                            <td class="rowTitle col-2">Entorno organizacional</td>
+                            <td class="numbers col-1"><span>@ViewBag.CT5</span> de 8</td>
+                            <td class="numbers col-2" colspan="2">
+                                <div class="containerDonut">
+                                    <canvas id="myChart3e"></canvas>
+                                </div>
+                            </td>
+                        </tr>
+                        @*<tr>
+                            <td class=""></td>
+                            <td class="rowTitle col-2"></td>
+                            <td class="total col-1"><span>@ViewBag.contador</span>/37</td></td>
+                            <td class="numbers col-2" colspan="2"></td>
+                        </tr>*@
+                    </tbody>
+                </table>
+            </div>
+        </div><hr>
+        <h1 align="center" style="color:rebeccapurple;text-align:center">Evidencias</h1>
+
+        <div class="row">
+            <table class="Rtable js-RtableAccordions">
+                <thead class="thead-light">
+                    <tr>
+                        <th>Medida</th>
+                        <th>Cumplimiento</th>
+                        <th>No. Acciones</th>
+                        <th>Estatus</th>
+                        <th>Fecha</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody class="table-striped">
+                    <tr>
+                        <td>
+                            1. ¿Ya ha capacitado y sensibilizado a directivos, gerentes y supervisores para la prevención de los factores de riesgo psicosocial?
+                        </td>
+                        @if (Model.Q1 == 0)
+                        {
+                            <td class="Rtable-cell"><b>No</b></td>
+                            <td class="Rtable-cell" data-label="Variables:">N/A</td>
+                            <td class="Rtable-cell" data-label="Variables:">N/A</td>
+                            <td class="Rtable-cell" data-label="Variables:">N/A</td>
+                            <td class="Rtable-cell" data-label="Variables:"></td>
+                        }
+                        else
+                        {
+                            <td class="Rtable-cell"><b>Si</b></td>
+                            <td class="Rtable-cell" data-label="Variables:">
+                                @foreach (var item in ViewBag.Acciones)
+                                {
+                                    if (item.id_medida == 1)
+                                    {
+                                        <ul>
+                                            <li>
+                                                @item.accion
+                                            </li>
+                                        </ul>
+
+                                    }
+                                }
+                            </td>
+                            <td class="Rtable-cell">
+                                @foreach (var item in ViewBag.Acciones)
+                                {
+                                    if (item.id_medida == 1)
+                                    {
+                                        <ul>
+                                            <li>
+                                                @item.estatus
+                                            </li>
+                                        </ul>
+
+                                    }
+                                }
+                            </td>
+                            <td class="Rtable-cell">
+                                @foreach (var item in ViewBag.Acciones)
+                                {
+                                    if (item.id_medida == 1)
+                                    {
+                                        <ul>
+                                            <li>
+                                                @item.fecha_inicio
+                                            </li>
+                                        </ul>
+
+                                    }
+                                }
+                            </td>
+                            <td class="Rtable-cell">
+                                @foreach (var item in ViewBag.Acciones)
+                                {
+                                    if (item.id_medida == 1)
+                                    {
+                                        if (item.file_evidencia == "" || item.file_evidencia == null)
+                                        {
+                                            <div class="action row" align="center">
+                                                <div class="col py-2 ">
+                                                    <a href='@Url.Action("add_file","Checklist",new {item.id})' data-label="Subir">
+                                                        <i style="color:gray" class='bx bx-upload large'></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        }
+                                        else
+                                        {
+                                            <div class="action row" align="center">
+                                                <div class="col py-2 ">
+                                                    <a href='@item.file_evidencia' data-label="Subir">
+                                                        <i style="color:green" class='bx bx-upload large'></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        }
+
+                                    }
+                                }
+                            </td>
+
+                        }
+
+                    </tr>
+                    <tr>
+                        <td>
+                            2. ¿Ya ha capacitación y sensibilización en la promoción de entornos organizacionales favorables?
+                        </td>
+                        @if (Model.Q2 == 0)
+                        {
+                            <td class="Rtable-cell"><b>No</b></td>
+                            <td class="Rtable-cell" data-label="Variables:">N/A</td>
+                            <td class="Rtable-cell" data-label="Variables:">N/A</td>
+                            <td class="Rtable-cell" data-label="Variables:">N/A</td>
+                            <td class="Rtable-cell" data-label="Variables:"></td>
+                        }
+                        else
+                        {
+                            <td class="Rtable-cell"><b>Si</b></td>
+                            <td class="Rtable-cell" data-label="Variables:">
+                                @foreach (var item in ViewBag.Acciones)
+                                {
+                                    if (item.id_medida == 2)
+                                    {
+                                        <ul>
+                                            <li>
+                                                @item.accion
+                                            </li>
+                                        </ul>
+
+                                    }
+                                }
+                            </td>
+                            <td class="Rtable-cell">
+                                @foreach (var item in ViewBag.Acciones)
+                                {
+                                    if (item.id_medida == 2)
+                                    {
+                                        <ul>
+                                            <li>
+                                                @item.estatus
+                                            </li>
+                                        </ul>
+
+                                    }
+                                }
+                            </td>
+                            <td class="Rtable-cell">
+                                @foreach (var item in ViewBag.Acciones)
+                                {
+                                    if (item.id_medida == 2)
+                                    {
+                                        <ul>
+                                            <li>
+                                                @item.fecha_inicio
+                                            </li>
+                                        </ul>
+
+                                    }
+                                }
+                            </td>
+                            <td class="Rtable-cell">
+                                @foreach (var item in ViewBag.Acciones)
+                                {
+                                    if (item.id_medida == 2)
+                                    {
+                                        if (item.file_evidencia == "" || item.file_evidencia == null)
+                                        {
+                                            <div class="action row" align="center">
+                                                <div class="col py-2 ">
+                                                    <a href='@Url.Action("add_file","Checklist",new {item.id})' data-label="Subir">
+                                                        <i style="color:gray" class='bx bx-upload large'></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        }
+                                        else
+                                        {
+                                            <div class="action row" align="center">
+                                                <div class="col py-2 ">
+                                                    <a href='@item.file_evidencia' data-label="Subir">
+                                                        <i style="color:green" class='bx bx-upload large'></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        }
+
+                                    }
+                                }
+                            </td>
+
+                        }
+                    </tr>
+                    <tr>
+                        <td>
+                            3. ¿Crea reuniones para abordar las áreas de oportunidad de mejora, a efecto de atender los problemas en el lugar de su trabajo y determinar sus soluciones?
+                        </td>
+                        @if (Model.Q3 == 0)
+                        {
+                            <td class="Rtable-cell"><b>No</b></td>
+                            <td class="Rtable-cell" data-label="Variables:">N/A</td>
+                            <td class="Rtable-cell" data-label="Variables:">N/A</td>
+                            <td class="Rtable-cell" data-label="Variables:">N/A</td>
+                            <td class="Rtable-cell" data-label="Variables:"></td>
+                        }
+                        else
+                        {
+                            <td class="Rtable-cell"><b>Si</b></td>
+                            <td class="Rtable-cell" data-label="Variables:">
+                                @foreach (var item in ViewBag.Acciones)
+                                {
+                                    if (item.id_medida == 3)
+                                    {
+                                        <ul>
+                                            <li>
+                                                @item.accion
+                                            </li>
+                                        </ul>
+
+                                    }
+                                }
+                            </td>
+                            <td class="Rtable-cell">
+                                @foreach (var item in ViewBag.Acciones)
+                                {
+                                    if (item.id_medida == 3)
+                                    {
+                                        <ul>
+                                            <li>
+                                                @item.estatus
+                                            </li>
+                                        </ul>
+
+                                    }
+                                }
+                            </td>
+                            <td class="Rtable-cell">
+                                @foreach (var item in ViewBag.Acciones)
+                                {
+                                    if (item.id_medida == 3)
+                                    {
+                                        <ul>
+                                            <li>
+                                                @item.fecha_inicio
+                                            </li>
+                                        </ul>
+
+                                    }
+                                }
+                            </td>
+                            <td class="Rtable-cell">
+                                @foreach (var item in ViewBag.Acciones)
+                                {
+                                    if (item.id_medida == 3)
+                                    {
+                                        if (item.file_evidencia == "" || item.file_evidencia == null)
+                                        {
+                                            <div class="action row" align="center">
+                                                <div class="col py-2 ">
+                                                    <a href='@Url.Action("add_file","Checklist",new {item.id})' data-label="Subir">
+                                                        <i style="color:gray" class='bx bx-upload large'></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        }
+                                        else
+                                        {
+                                            <div class="action row" align="center">
+                                                <div class="col py-2 ">
+                                                    <a href='@item.file_evidencia' data-label="Subir">
+                                                        <i style="color:green" class='bx bx-upload large'></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        }
+
+                                    }
+                                }
+                            </td>
+
+                        }
+                    </tr>
+                    <tr>
+                        <td>
+                            4. ¿Realiza reuniones periódicas (semestrales o anuales) de seguimiento a las actividades establecidas para el apoyo social y, en su caso, extraordinarias si ocurren eventos que pongan en riesgo la salud del trabajador o al centro de trabajo?
+                        </td>
+                        @if (Model.Q4 == 0)
+                        {
+                            <td class="Rtable-cell"><b>No</b></td>
+                            <td class="Rtable-cell" data-label="Variables:">N/A</td>
+                            <td class="Rtable-cell" data-label="Variables:">N/A</td>
+                            <td class="Rtable-cell" data-label="Variables:">N/A</td>
+                            <td class="Rtable-cell" data-label="Variables:"></td>
+                        }
+                        else
+                        {
+                            <td class="Rtable-cell"><b>Si</b></td>
+                            <td class="Rtable-cell" data-label="Variables:">
+                                @foreach (var item in ViewBag.Acciones)
+                                {
+                                    if (item.id_medida == 4)
+                                    {
+                                        <ul>
+                                            <li>
+                                                @item.accion
+                                            </li>
+                                        </ul>
+
+                                    }
+                                }
+                            </td>
+                            <td class="Rtable-cell">
+                                @foreach (var item in ViewBag.Acciones)
+                                {
+                                    if (item.id_medida == 4)
+                                    {
+                                        <ul>
+                                            <li>
+                                                @item.estatus
+                                            </li>
+                                        </ul>
+
+                                    }
+                                }
+                            </td>
+                            <td class="Rtable-cell">
+                                @foreach (var item in ViewBag.Acciones)
+                                {
+                                    if (item.id_medida == 4)
+                                    {
+                                        <ul>
+                                            <li>
+                                                @item.fecha_inicio
+                                            </li>
+                                        </ul>
+
+                                    }
+                                }
+                            </td>
+                            <td class="Rtable-cell">
+                                @foreach (var item in ViewBag.Acciones)
+                                {
+                                    if (item.id_medida == 4)
+                                    {
+                                        if (item.file_evidencia == "" || item.file_evidencia == null)
+                                        {
+                                            <div class="action row" align="center">
+                                                <div class="col py-2 ">
+                                                    <a href='@Url.Action("add_file","Checklist",new {item.id})' data-label="Subir">
+                                                        <i style="color:gray" class='bx bx-upload large'></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        }
+                                        else
+                                        {
+                                            <div class="action row" align="center">
+                                                <div class="col py-2 ">
+                                                    <a href='@item.file_evidencia' data-label="Subir">
+                                                        <i style="color:green" class='bx bx-upload large'></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        }
+
+                                    }
+                                }
+                            </td>
+
+                        }
+                    </tr>
+                    <tr>
+                        <td>
+                            5. ¿Tiene  actividades culturales y del deporte entre sus trabajadores y proporcionarles los equipos y útiles indispensables?
+                        </td>
+                        @if (Model.Q5 == 0)
+                        {
+                            <td class="Rtable-cell"><b>No</b></td>
+                            <td class="Rtable-cell" data-label="Variables:">N/A</td>
+                            <td class="Rtable-cell" data-label="Variables:">N/A</td>
+                            <td class="Rtable-cell" data-label="Variables:">N/A</td>
+                            <td class="Rtable-cell" data-label="Variables:"></td>
+                        }
+                        else
+                        {
+                            <td class="Rtable-cell"><b>Si</b></td>
+                            <td class="Rtable-cell" data-label="Variables:">
+                                @foreach (var item in ViewBag.Acciones)
+                                {
+                                    if (item.id_medida == 5)
+                                    {
+                                        <ul>
+                                            <li>
+                                                @item.accion
+                                            </li>
+                                        </ul>
+
+                                    }
+                                }
+                            </td>
+                            <td class="Rtable-cell">
+                                @foreach (var item in ViewBag.Acciones)
+                                {
+                                    if (item.id_medida == 5)
+                                    {
+                                        <ul>
+                                            <li>
+                                                @item.estatus
+                                            </li>
+                                        </ul>
+
+                                    }
+                                }
+                            </td>
+                            <td class="Rtable-cell">
+                                @foreach (var item in ViewBag.Acciones)
+                                {
+                                    if (item.id_medida == 5)
+                                    {
+                                        <ul>
+                                            <li>
+                                                @item.fecha_inicio
+                                            </li>
+                                        </ul>
+
+                                    }
+                                }
+                            </td>
+                            <td class="Rtable-cell">
+                                @foreach (var item in ViewBag.Acciones)
+                                {
+                                    if (item.id_medida == 5)
+                                    {
+                                        if (item.file_evidencia == "" || item.file_evidencia == null)
+                                        {
+                                            <div class="action row" align="center">
+                                                <div class="col py-2 ">
+                                                    <a href='@Url.Action("add_file","Checklist",new {item.id})' data-label="Subir">
+                                                        <i style="color:gray" class='bx bx-upload large'></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        }
+                                        else
+                                        {
+                                            <div class="action row" align="center">
+                                                <div class="col py-2 ">
+                                                    <a href='@item.file_evidencia' data-label="Subir">
+                                                        <i style="color:green" class='bx bx-upload large'></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        }
+
+                                    }
+                                }
+                            </td>
+
+                        }
+                    </tr>
+                    <tr>
+                        <td>
+                            6. ¿Promociona de actividades de integración familiar en el trabajo, previo acuerdo con los trabajadores?
+                        </td>
+                        @if (Model.Q6 == 0)
+                        {
+                            <td class="Rtable-cell"><b>No</b></td>
+                            <td class="Rtable-cell" data-label="Variables:">N/A</td>
+                            <td class="Rtable-cell" data-label="Variables:">N/A</td>
+                            <td class="Rtable-cell" data-label="Variables:">N/A</td>
+                            <td class="Rtable-cell" data-label="Variables:"></td>
+                        }
+                        else
+                        {
+                            <td class="Rtable-cell"><b>Si</b></td>
+                            <td class="Rtable-cell" data-label="Variables:">
+                                @foreach (var item in ViewBag.Acciones)
+                                {
+                                    if (item.id_medida == 6)
+                                    {
+                                        <ul>
+                                            <li>
+                                                @item.accion
+                                            </li>
+                                        </ul>
+
+                                    }
+                                }
+                            </td>
+                            <td class="Rtable-cell">
+                                @foreach (var item in ViewBag.Acciones)
+                                {
+                                    if (item.id_medida == 6)
+                                    {
+                                        <ul>
+                                            <li>
+                                                @item.estatus
+                                            </li>
+                                        </ul>
+
+                                    }
+                                }
+                            </td>
+                            <td class="Rtable-cell">
+                                @foreach (var item in ViewBag.Acciones)
+                                {
+                                    if (item.id_medida == 6)
+                                    {
+                                        <ul>
+                                            <li>
+                                                @item.fecha_inicio
+                                            </li>
+                                        </ul>
+
+                                    }
+                                }
+                            </td>
+                            <td class="Rtable-cell">
+                                @foreach (var item in ViewBag.Acciones)
+                                {
+                                    if (item.id_medida == 6)
+                                    {
+                                        if (item.file_evidencia == "" || item.file_evidencia == null)
+                                        {
+                                            <div class="action row" align="center">
+                                                <div class="col py-2 ">
+                                                    <a href='@Url.Action("add_file","Checklist",new {item.id})' data-label="Subir">
+                                                        <i style="color:gray" class='bx bx-upload large'></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        }
+                                        else
+                                        {
+                                            <div class="action row" align="center">
+                                                <div class="col py-2 ">
+                                                    <a href='@item.file_evidencia' data-label="Subir">
+                                                        <i style="color:green" class='bx bx-upload large'></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        }
+
+                                    }
+                                }
+                            </td>
+
+                        }
+                    </tr>
+                    <tr>
+                        <td>
+                            7. ¿Tiene mecanismos para reconocer el desempeño sobresaliente (superior al esperado) de los trabajadores?
+                        </td>
+                        @if (Model.Q7 == 0)
+                        {
+                            <td class="Rtable-cell"><b>No</b></td>
+                            <td class="Rtable-cell" data-label="Variables:">N/A</td>
+                            <td class="Rtable-cell" data-label="Variables:">N/A</td>
+                            <td class="Rtable-cell" data-label="Variables:">N/A</td>
+                            <td class="Rtable-cell" data-label="Variables:"></td>
+                        }
+                        else
+                        {
+                            <td class="Rtable-cell"><b>Si</b></td>
+                            <td class="Rtable-cell" data-label="Variables:">
+                                @foreach (var item in ViewBag.Acciones)
+                                {
+                                    if (item.id_medida == 7)
+                                    {
+                                        <ul>
+                                            <li>
+                                                @item.accion
+                                            </li>
+                                        </ul>
+
+                                    }
+                                }
+                            </td>
+                            <td class="Rtable-cell">
+                                @foreach (var item in ViewBag.Acciones)
+                                {
+                                    if (item.id_medida == 7)
+                                    {
+                                        <ul>
+                                            <li>
+                                                @item.estatus
+                                            </li>
+                                        </ul>
+
+                                    }
+                                }
+                            </td>
+                            <td class="Rtable-cell">
+                                @foreach (var item in ViewBag.Acciones)
+                                {
+                                    if (item.id_medida == 7)
+                                    {
+                                        <ul>
+                                            <li>
+                                                @item.fecha_inicio
+                                            </li>
+                                        </ul>
+
+                                    }
+                                }
+                            </td>
+                            <td class="Rtable-cell">
+                                @foreach (var item in ViewBag.Acciones)
+                                {
+                                    if (item.id_medida == 7)
+                                    {
+                                        if (item.file_evidencia == "" || item.file_evidencia == null)
+                                        {
+                                            <div class="action row" align="center">
+                                                <div class="col py-2 ">
+                                                    <a href='@Url.Action("add_file","Checklist",new {item.id})' data-label="Subir">
+                                                        <i style="color:gray" class='bx bx-upload large'></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        }
+                                        else
+                                        {
+                                            <div class="action row" align="center">
+                                                <div class="col py-2 ">
+                                                    <a href='@item.file_evidencia' data-label="Subir">
+                                                        <i style="color:green" class='bx bx-upload large'></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        }
+
+                                    }
+                                }
+                            </td>
+
+                        }
+                    </tr>
+                    <tr>
+                        <td>
+                            8. ¿Tiene mecanismos para difundir los logros de los trabajadores sobresalientes?
+                        </td>
+                        @if (Model.Q8 == 0)
+                        {
+                            <td class="Rtable-cell"><b>No</b></td>
+                            <td class="Rtable-cell" data-label="Variables:">N/A</td>
+                            <td class="Rtable-cell" data-label="Variables:">N/A</td>
+                            <td class="Rtable-cell" data-label="Variables:">N/A</td>
+                            <td class="Rtable-cell" data-label="Variables:"></td>
+                        }
+                        else
+                        {
+                            <td class="Rtable-cell"><b>Si</b></td>
+                            <td class="Rtable-cell" data-label="Variables:">
+                                @foreach (var item in ViewBag.Acciones)
+                                {
+                                    if (item.id_medida == 8)
+                                    {
+                                        <ul>
+                                            <li>
+                                                @item.accion
+                                            </li>
+                                        </ul>
+
+                                    }
+                                }
+                            </td>
+                            <td class="Rtable-cell">
+                                @foreach (var item in ViewBag.Acciones)
+                                {
+                                    if (item.id_medida == 8)
+                                    {
+                                        <ul>
+                                            <li>
+                                                @item.estatus
+                                            </li>
+                                        </ul>
+
+                                    }
+                                }
+                            </td>
+                            <td class="Rtable-cell">
+                                @foreach (var item in ViewBag.Acciones)
+                                {
+                                    if (item.id_medida == 8)
+                                    {
+                                        <ul>
+                                            <li>
+                                                @item.fecha_inicio
+                                            </li>
+                                        </ul>
+
+                                    }
+                                }
+                            </td>
+                            <td class="Rtable-cell">
+                                @foreach (var item in ViewBag.Acciones)
+                                {
+                                    if (item.id_medida == 8)
+                                    {
+                                        if (item.file_evidencia == "" || item.file_evidencia == null)
+                                        {
+                                            <div class="action row" align="center">
+                                                <div class="col py-2 ">
+                                                    <a href='@Url.Action("add_file","Checklist",new {item.id})' data-label="Subir">
+                                                        <i style="color:gray" class='bx bx-upload large'></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        }
+                                        else
+                                        {
+                                            <div class="action row" align="center">
+                                                <div class="col py-2 ">
+                                                    <a href='@item.file_evidencia' data-label="Subir">
+                                                        <i style="color:green" class='bx bx-upload large'></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        }
+
+                                    }
+                                }
+                            </td>
+
+                        }
+                    </tr>
+                    <tr>
+                        <td>
+                            9. ¿Tiene mecanismos para expresar al trabajador sus posibilidades de desarrollos?
+                        </td>
+                        @if (Model.Q9 == 0)
+                        {
+                            <td class="Rtable-cell"><b>No</b></td>
+                            <td class="Rtable-cell" data-label="Variables:">N/A</td>
+                            <td class="Rtable-cell" data-label="Variables:">N/A</td>
+                            <td class="Rtable-cell" data-label="Variables:">N/A</td>
+                            <td class="Rtable-cell" data-label="Variables:"></td>
+                        }
+                        else
+                        {
+                            <td class="Rtable-cell"><b>Si</b></td>
+                            <td class="Rtable-cell" data-label="Variables:">
+                                @foreach (var item in ViewBag.Acciones)
+                                {
+                                    if (item.id_medida == 9)
+                                    {
+                                        <ul>
+                                            <li>
+                                                @item.accion
+                                            </li>
+                                        </ul>
+
+                                    }
+                                }
+                            </td>
+                            <td class="Rtable-cell">
+                                @foreach (var item in ViewBag.Acciones)
+                                {
+                                    if (item.id_medida == 9)
+                                    {
+                                        <ul>
+                                            <li>
+                                                @item.estatus
+                                            </li>
+                                        </ul>
+
+                                    }
+                                }
+                            </td>
+                            <td class="Rtable-cell">
+                                @foreach (var item in ViewBag.Acciones)
+                                {
+                                    if (item.id_medida == 9)
+                                    {
+                                        <ul>
+                                            <li>
+                                                @item.fecha_inicio
+                                            </li>
+                                        </ul>
+
+                                    }
+                                }
+                            </td>
+                            <td class="Rtable-cell">
+                                @foreach (var item in ViewBag.Acciones)
+                                {
+                                    if (item.id_medida == 9)
+                                    {
+                                        if (item.file_evidencia == "" || item.file_evidencia == null)
+                                        {
+                                            <div class="action row" align="center">
+                                                <div class="col py-2 ">
+                                                    <a href='@Url.Action("add_file","Checklist",new {item.id})' data-label="Subir">
+                                                        <i style="color:gray" class='bx bx-upload large'></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        }
+                                        else
+                                        {
+                                            <div class="action row" align="center">
+                                                <div class="col py-2 ">
+                                                    <a href='@item.file_evidencia' data-label="Subir">
+                                                        <i style="color:green" class='bx bx-upload large'></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        }
+
+                                    }
+                                }
+                            </td>
+
+                        }
+                    </tr>
+                    <tr>
+                        <td>
+                            10. ¿Tiene mecanismos para la participación proactiva y comunicación entre los colaboradores?
+                        </td>
+                        @if (Model.Q10 == 0)
+                        {
+                            <td class="Rtable-cell"><b>No</b></td>
+                            <td class="Rtable-cell" data-label="Variables:">N/A</td>
+                            <td class="Rtable-cell" data-label="Variables:">N/A</td>
+                            <td class="Rtable-cell" data-label="Variables:">N/A</td>
+                            <td class="Rtable-cell" data-label="Variables:"></td>
+                        }
+                        else
+                        {
+                            <td class="Rtable-cell"><b>Si</b></td>
+                            <td class="Rtable-cell" data-label="Variables:">
+                                @foreach (var item in ViewBag.Acciones)
+                                {
+                                    if (item.id_medida == 10)
+                                    {
+                                        <ul>
+                                            <li>
+                                                @item.accion
+                                            </li>
+                                        </ul>
+
+                                    }
+                                }
+                            </td>
+                            <td class="Rtable-cell">
+                                @foreach (var item in ViewBag.Acciones)
+                                {
+                                    if (item.id_medida == 10)
+                                    {
+                                        <ul>
+                                            <li>
+                                                @item.estatus
+                                            </li>
+                                        </ul>
+
+                                    }
+                                }
+                            </td>
+                            <td class="Rtable-cell">
+                                @foreach (var item in ViewBag.Acciones)
+                                {
+                                    if (item.id_medida == 10)
+                                    {
+                                        <ul>
+                                            <li>
+                                                @item.fecha_inicio
+                                            </li>
+                                        </ul>
+
+                                    }
+                                }
+                            </td>
+                            <td class="Rtable-cell">
+                                @foreach (var item in ViewBag.Acciones)
+                                {
+                                    if (item.id_medida == 10)
+                                    {
+                                        if (item.file_evidencia == "" || item.file_evidencia == null)
+                                        {
+                                            <div class="action row" align="center">
+                                                <div class="col py-2 ">
+                                                    <a href='@Url.Action("add_file","Checklist",new {item.id})' data-label="Subir">
+                                                        <i style="color:gray" class='bx bx-upload large'></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        }
+                                        else
+                                        {
+                                            <div class="action row" align="center">
+                                                <div class="col py-2 ">
+                                                    <a href='@item.file_evidencia' data-label="Subir">
+                                                        <i style="color:green" class='bx bx-upload large'></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        }
+
+                                    }
+                                }
+                            </td>
+
+                        }
+                    </tr>
+                    <tr>
+                        <td>
+                            11. ¿Cuenta con mecanismos que permiten identificar la distribución adecuada de los tiempos de trabajo?
+                        </td>
+                        @if (Model.Q11 == 0)
+                        {
+                            <td class="Rtable-cell"><b>No</b></td>
+                            <td class="Rtable-cell" data-label="Variables:">N/A</td>
+                            <td class="Rtable-cell" data-label="Variables:">N/A</td>
+                            <td class="Rtable-cell" data-label="Variables:">N/A</td>
+                            <td class="Rtable-cell" data-label="Variables:"></td>
+                        }
+                        else
+                        {
+                            <td class="Rtable-cell"><b>Si</b></td>
+                            <td class="Rtable-cell" data-label="Variables:">
+                                @foreach (var item in ViewBag.Acciones)
+                                {
+                                    if (item.id_medida == 11)
+                                    {
+                                        <ul>
+                                            <li>
+                                                @item.accion
+                                            </li>
+                                        </ul>
+
+                                    }
+                                }
+                            </td>
+                            <td class="Rtable-cell">
+                                @foreach (var item in ViewBag.Acciones)
+                                {
+                                    if (item.id_medida == 11)
+                                    {
+                                        <ul>
+                                            <li>
+                                                @item.estatus
+                                            </li>
+                                        </ul>
+
+                                    }
+                                }
+                            </td>
+                            <td class="Rtable-cell">
+                                @foreach (var item in ViewBag.Acciones)
+                                {
+                                    if (item.id_medida == 11)
+                                    {
+                                        <ul>
+                                            <li>
+                                                @item.fecha_inicio
+                                            </li>
+                                        </ul>
+
+                                    }
+                                }
+                            </td>
+                            <td class="Rtable-cell">
+                                @foreach (var item in ViewBag.Acciones)
+                                {
+                                    if (item.id_medida == 11)
+                                    {
+                                        if (item.file_evidencia == "" || item.file_evidencia == null)
+                                        {
+                                            <div class="action row" align="center">
+                                                <div class="col py-2 ">
+                                                    <a href='@Url.Action("add_file","Checklist",new {item.id})' data-label="Subir">
+                                                        <i style="color:gray" class='bx bx-upload large'></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        }
+                                        else
+                                        {
+                                            <div class="action row" align="center">
+                                                <div class="col py-2 ">
+                                                    <a href='@item.file_evidencia' data-label="Subir">
+                                                        <i style="color:green" class='bx bx-upload large'></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        }
+
+                                    }
+                                }
+                            </td>
+
+                        }
+                    </tr>
+                    <tr>
+                        <td>
+                            12. ¿Cuenta con mecanismos establecer y difundir instrucciones claras a los trabajadores para la atención de los problemas que impiden o limitan el desarrollo de su trabajo, cuando éstos se presenten?
+                        </td>
+                        @if (Model.Q12 == 0)
+                        {
+                            <td class="Rtable-cell"><b>No</b></td>
+                            <td class="Rtable-cell" data-label="Variables:">N/A</td>
+                            <td class="Rtable-cell" data-label="Variables:">N/A</td>
+                            <td class="Rtable-cell" data-label="Variables:">N/A</td>
+                            <td class="Rtable-cell" data-label="Variables:"></td>
+                        }
+                        else
+                        {
+                            <td class="Rtable-cell"><b>Si</b></td>
+                            <td class="Rtable-cell" data-label="Variables:">
+                                @foreach (var item in ViewBag.Acciones)
+                                {
+                                    if (item.id_medida == 12)
+                                    {
+                                        <ul>
+                                            <li>
+                                                @item.accion
+                                            </li>
+                                        </ul>
+
+                                    }
+                                }
+                            </td>
+                            <td class="Rtable-cell">
+                                @foreach (var item in ViewBag.Acciones)
+                                {
+                                    if (item.id_medida == 12)
+                                    {
+                                        <ul>
+                                            <li>
+                                                @item.estatus
+                                            </li>
+                                        </ul>
+
+                                    }
+                                }
+                            </td>
+                            <td class="Rtable-cell">
+                                @foreach (var item in ViewBag.Acciones)
+                                {
+                                    if (item.id_medida == 12)
+                                    {
+                                        <ul>
+                                            <li>
+                                                @item.fecha_inicio
+                                            </li>
+                                        </ul>
+
+                                    }
+                                }
+                            </td>
+                            <td class="Rtable-cell">
+                                @foreach (var item in ViewBag.Acciones)
+                                {
+                                    if (item.id_medida == 12)
+                                    {
+                                        if (item.file_evidencia == "" || item.file_evidencia == null)
+                                        {
+                                            <div class="action row" align="center">
+                                                <div class="col py-2 ">
+                                                    <a href='@Url.Action("add_file","Checklist",new {item.id})' data-label="Subir">
+                                                        <i style="color:gray" class='bx bx-upload large'></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        }
+                                        else
+                                        {
+                                            <div class="action row" align="center">
+                                                <div class="col py-2 ">
+                                                    <a href='@item.file_evidencia' data-label="Subir">
+                                                        <i style="color:green" class='bx bx-upload large'></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        }
+
+                                    }
+                                }
+                            </td>
+
+                        }
+                    </tr>
+                    <tr>
+                        <td>
+                            13. ¿Cuenta con mecanismos para la  revisión y supervisión que la distribución de la carga de trabajo se realice de forma equitativa y considerando el número de trabajadores, actividades a desarrollar, alcance de la actividad y su capacitación?
+                        </td>
+                        @if (Model.Q13 == 0)
+                        {
+                            <td class="Rtable-cell"><b>No</b></td>
+                            <td class="Rtable-cell" data-label="Variables:">N/A</td>
+                            <td class="Rtable-cell" data-label="Variables:">N/A</td>
+                            <td class="Rtable-cell" data-label="Variables:">N/A</td>
+                            <td class="Rtable-cell" data-label="Variables:"></td>
+                        }
+                        else
+                        {
+                            <td class="Rtable-cell"><b>Si</b></td>
+                            <td class="Rtable-cell" data-label="Variables:">
+                                @foreach (var item in ViewBag.Acciones)
+                                {
+                                    if (item.id_medida == 13)
+                                    {
+                                        <ul>
+                                            <li>
+                                                @item.accion
+                                            </li>
+                                        </ul>
+
+                                    }
+                                }
+                            </td>
+                            <td class="Rtable-cell">
+                                @foreach (var item in ViewBag.Acciones)
+                                {
+                                    if (item.id_medida == 13)
+                                    {
+                                        <ul>
+                                            <li>
+                                                @item.estatus
+                                            </li>
+                                        </ul>
+
+                                    }
+                                }
+                            </td>
+                            <td class="Rtable-cell">
+                                @foreach (var item in ViewBag.Acciones)
+                                {
+                                    if (item.id_medida == 13)
+                                    {
+                                        <ul>
+                                            <li>
+                                                @item.fecha_inicio
+                                            </li>
+                                        </ul>
+
+                                    }
+                                }
+                            </td>
+                            <td class="Rtable-cell">
+                                @foreach (var item in ViewBag.Acciones)
+                                {
+                                    if (item.id_medida == 13)
+                                    {
+                                        if (item.file_evidencia == "" || item.file_evidencia == null)
+                                        {
+                                            <div class="action row" align="center">
+                                                <div class="col py-2 ">
+                                                    <a href='@Url.Action("add_file","Checklist",new {item.id})' data-label="Subir">
+                                                        <i style="color:gray" class='bx bx-upload large'></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        }
+                                        else
+                                        {
+                                            <div class="action row" align="center">
+                                                <div class="col py-2 ">
+                                                    <a href='@item.file_evidencia' data-label="Subir">
+                                                        <i style="color:green" class='bx bx-upload large'></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        }
+
+                                    }
+                                }
+                            </td>
+
+                        }
+                    </tr>
+                    <tr>
+                        <td>
+                            14. ¿Cuenta con mecanismos o programas que faciliten la participación  en la mejora de las condiciones de trabajo y la productividad siempre que el proceso productivo lo permita y cuenten con la experiencia y capacitación para ello?
+                        </td>
+                        @if (Model.Q14 == 0)
+                        {
+                            <td class="Rtable-cell"><b>No</b></td>
+                            <td class="Rtable-cell" data-label="Variables:">N/A</td>
+                            <td class="Rtable-cell" data-label="Variables:">N/A</td>
+                            <td class="Rtable-cell" data-label="Variables:">N/A</td>
+                            <td class="Rtable-cell" data-label="Variables:"></td>
+                        }
+                        else
+                        {
+                            <td class="Rtable-cell"><b>Si</b></td>
+                            <td class="Rtable-cell" data-label="Variables:">
+                                @foreach (var item in ViewBag.Acciones)
+                                {
+                                    if (item.id_medida == 14)
+                                    {
+                                        <ul>
+                                            <li>
+                                                @item.accion
+                                            </li>
+                                        </ul>
+
+                                    }
+                                }
+                            </td>
+                            <td class="Rtable-cell">
+                                @foreach (var item in ViewBag.Acciones)
+                                {
+                                    if (item.id_medida == 14)
+                                    {
+                                        <ul>
+                                            <li>
+                                                @item.estatus
+                                            </li>
+                                        </ul>
+
+                                    }
+                                }
+                            </td>
+                            <td class="Rtable-cell">
+                                @foreach (var item in ViewBag.Acciones)
+                                {
+                                    if (item.id_medida == 14)
+                                    {
+                                        <ul>
+                                            <li>
+                                                @item.fecha_inicio
+                                            </li>
+                                        </ul>
+
+                                    }
+                                }
+                            </td>
+                            <td class="Rtable-cell">
+                                @foreach (var item in ViewBag.Acciones)
+                                {
+                                    if (item.id_medida == 14)
+                                    {
+                                        if (item.file_evidencia == "" || item.file_evidencia == null)
+                                        {
+                                            <div class="action row" align="center">
+                                                <div class="col py-2 ">
+                                                    <a href='@Url.Action("add_file","Checklist",new {item.id})' data-label="Subir">
+                                                        <i style="color:gray" class='bx bx-upload large'></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        }
+                                        else
+                                        {
+                                            <div class="action row" align="center">
+                                                <div class="col py-2 ">
+                                                    <a href='@item.file_evidencia' data-label="Subir">
+                                                        <i style="color:green" class='bx bx-upload large'></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        }
+
+                                    }
+                                }
+                            </td>
+
+                        }
+                    </tr>
+                    <tr>
+                        <td>
+                            15. ¿Cuenta con mecanismos o sistemas de trabajo que permitan  acordar ymejorar el margen de libertad y control sobre su trabajo por parte de los trabajadores y el patrón?
+                        </td>
+                        @if (Model.Q15 == 0)
+                        {
+                            <td class="Rtable-cell"><b>No</b></td>
+                            <td class="Rtable-cell" data-label="Variables:">N/A</td>
+                            <td class="Rtable-cell" data-label="Variables:">N/A</td>
+                            <td class="Rtable-cell" data-label="Variables:">N/A</td>
+                            <td class="Rtable-cell" data-label="Variables:"></td>
+                        }
+                        else
+                        {
+                            <td class="Rtable-cell"><b>Si</b></td>
+                            <td class="Rtable-cell" data-label="Variables:">
+                                @foreach (var item in ViewBag.Acciones)
+                                {
+                                    if (item.id_medida == 15)
+                                    {
+                                        <ul>
+                                            <li>
+                                                @item.accion
+                                            </li>
+                                        </ul>
+
+                                    }
+                                }
+                            </td>
+                            <td class="Rtable-cell">
+                                @foreach (var item in ViewBag.Acciones)
+                                {
+                                    if (item.id_medida == 15)
+                                    {
+                                        <ul>
+                                            <li>
+                                                @item.estatus
+                                            </li>
+                                        </ul>
+
+                                    }
+                                }
+                            </td>
+                            <td class="Rtable-cell">
+                                @foreach (var item in ViewBag.Acciones)
+                                {
+                                    if (item.id_medida == 15)
+                                    {
+                                        <ul>
+                                            <li>
+                                                @item.fecha_inicio
+                                            </li>
+                                        </ul>
+
+                                    }
+                                }
+                            </td>
+                            <td class="Rtable-cell">
+                                @foreach (var item in ViewBag.Acciones)
+                                {
+                                    if (item.id_medida == 15)
+                                    {
+                                        if (item.file_evidencia == "" || item.file_evidencia == null)
+                                        {
+                                            <div class="action row" align="center">
+                                                <div class="col py-2 ">
+                                                    <a href='@Url.Action("add_file","Checklist",new {item.id})' data-label="Subir">
+                                                        <i style="color:gray" class='bx bx-upload large'></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        }
+                                        else
+                                        {
+                                            <div class="action row" align="center">
+                                                <div class="col py-2 ">
+                                                    <a href='@item.file_evidencia' data-label="Subir">
+                                                        <i style="color:green" class='bx bx-upload large'></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        }
+
+                                    }
+                                }
+                            </td>
+
+                        }
+                    </tr>
+                    <tr>
+                        <td>
+                            16. ¿Cuenta con mecanismos o programas de desarrollo para impulsar que éstos desarrollen nuevas competencias o habilidades, considerando las limitaciones del proceso productivo?
+                        </td>
+                        @if (Model.Q16 == 0)
+                        {
+                            <td class="Rtable-cell"><b>No</b></td>
+                            <td class="Rtable-cell" data-label="Variables:">N/A</td>
+                            <td class="Rtable-cell" data-label="Variables:">N/A</td>
+                            <td class="Rtable-cell" data-label="Variables:">N/A</td>
+                            <td class="Rtable-cell" data-label="Variables:"></td>
+                        }
+                        else
+                        {
+                            <td class="Rtable-cell"><b>Si</b></td>
+                            <td class="Rtable-cell" data-label="Variables:">
+                                @foreach (var item in ViewBag.Acciones)
+                                {
+                                    if (item.id_medida == 16)
+                                    {
+                                        <ul>
+                                            <li>
+                                                @item.accion
+                                            </li>
+                                        </ul>
+
+                                    }
+                                }
+                            </td>
+                            <td class="Rtable-cell">
+                                @foreach (var item in ViewBag.Acciones)
+                                {
+                                    if (item.id_medida == 16)
+                                    {
+                                        <ul>
+                                            <li>
+                                                @item.estatus
+                                            </li>
+                                        </ul>
+
+                                    }
+                                }
+                            </td>
+                            <td class="Rtable-cell">
+                                @foreach (var item in ViewBag.Acciones)
+                                {
+                                    if (item.id_medida == 16)
+                                    {
+                                        <ul>
+                                            <li>
+                                                @item.fecha_inicio
+                                            </li>
+                                        </ul>
+
+                                    }
+                                }
+                            </td>
+                            <td class="Rtable-cell">
+                                @foreach (var item in ViewBag.Acciones)
+                                {
+                                    if (item.id_medida == 16)
+                                    {
+                                        if (item.file_evidencia == "" || item.file_evidencia == null)
+                                        {
+                                            <div class="action row" align="center">
+                                                <div class="col py-2 ">
+                                                    <a href='@Url.Action("add_file","Checklist",new {item.id})' data-label="Subir">
+                                                        <i style="color:gray" class='bx bx-upload large'></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        }
+                                        else
+                                        {
+                                            <div class="action row" align="center">
+                                                <div class="col py-2 ">
+                                                    <a href='@item.file_evidencia' data-label="Subir">
+                                                        <i style="color:green" class='bx bx-upload large'></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        }
+
+                                    }
+                                }
+                            </td>
+
+                        }
+                    </tr>
+                    <tr>
+                        <td>
+                            17. ¿Tiene mecanismos para definir los lineamientos para establecer medidas y límites que eviten las jornadas de trabajo superiores a las previstas en la Ley Federal del Trabajo?
+                        </td>
+                        @if (Model.Q17 == 0)
+                        {
+                            <td class="Rtable-cell"><b>No</b></td>
+                            <td class="Rtable-cell" data-label="Variables:">N/A</td>
+                            <td class="Rtable-cell" data-label="Variables:">N/A</td>
+                            <td class="Rtable-cell" data-label="Variables:">N/A</td>
+                            <td class="Rtable-cell" data-label="Variables:"></td>
+                        }
+                        else
+                        {
+                            <td class="Rtable-cell"><b>Si</b></td>
+                            <td class="Rtable-cell" data-label="Variables:">
+                                @foreach (var item in ViewBag.Acciones)
+                                {
+                                    if (item.id_medida == 17)
+                                    {
+                                        <ul>
+                                            <li>
+                                                @item.accion
+                                            </li>
+                                        </ul>
+
+                                    }
+                                }
+                            </td>
+                            <td class="Rtable-cell">
+                                @foreach (var item in ViewBag.Acciones)
+                                {
+                                    if (item.id_medida == 17)
+                                    {
+                                        <ul>
+                                            <li>
+                                                @item.estatus
+                                            </li>
+                                        </ul>
+
+                                    }
+                                }
+                            </td>
+                            <td class="Rtable-cell">
+                                @foreach (var item in ViewBag.Acciones)
+                                {
+                                    if (item.id_medida == 17)
+                                    {
+                                        <ul>
+                                            <li>
+                                                @item.fecha_inicio
+                                            </li>
+                                        </ul>
+
+                                    }
+                                }
+                            </td>
+                            <td class="Rtable-cell">
+                                @foreach (var item in ViewBag.Acciones)
+                                {
+                                    if (item.id_medida == 17)
+                                    {
+                                        if (item.file_evidencia == "" || item.file_evidencia == null)
+                                        {
+                                            <div class="action row" align="center">
+                                                <div class="col py-2 ">
+                                                    <a href='@Url.Action("add_file","Checklist",new {item.id})' data-label="Subir">
+                                                        <i style="color:gray" class='bx bx-upload large'></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        }
+                                        else
+                                        {
+                                            <div class="action row" align="center">
+                                                <div class="col py-2 ">
+                                                    <a href='@item.file_evidencia' data-label="Subir">
+                                                        <i style="color:green" class='bx bx-upload large'></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        }
+
+                                    }
+                                }
+                            </td>
+
+                        }
+                    </tr>
+                    <tr>
+                        <td>
+                            18. ¿Cuenta con una capacitación continua  para la adecuada realización de las tareas encomendadas?
+                        </td>
+                        @if (Model.Q18 == 0)
+                        {
+                            <td class="Rtable-cell"><b>No</b></td>
+                            <td class="Rtable-cell" data-label="Variables:">N/A</td>
+                            <td class="Rtable-cell" data-label="Variables:">N/A</td>
+                            <td class="Rtable-cell" data-label="Variables:">N/A</td>
+                            <td class="Rtable-cell" data-label="Variables:"></td>
+                        }
+                        else
+                        {
+                            <td class="Rtable-cell"><b>Si</b></td>
+                            <td class="Rtable-cell" data-label="Variables:">
+                                @foreach (var item in ViewBag.Acciones)
+                                {
+                                    if (item.id_medida == 18)
+                                    {
+                                        <ul>
+                                            <li>
+                                                @item.accion
+                                            </li>
+                                        </ul>
+
+                                    }
+                                }
+                            </td>
+                            <td class="Rtable-cell">
+                                @foreach (var item in ViewBag.Acciones)
+                                {
+                                    if (item.id_medida == 18)
+                                    {
+                                        <ul>
+                                            <li>
+                                                @item.estatus
+                                            </li>
+                                        </ul>
+
+                                    }
+                                }
+                            </td>
+                            <td class="Rtable-cell">
+                                @foreach (var item in ViewBag.Acciones)
+                                {
+                                    if (item.id_medida == 18)
+                                    {
+                                        <ul>
+                                            <li>
+                                                @item.fecha_inicio
+                                            </li>
+                                        </ul>
+
+                                    }
+                                }
+                            </td>
+                            <td class="Rtable-cell">
+                                @foreach (var item in ViewBag.Acciones)
+                                {
+                                    if (item.id_medida == 18)
+                                    {
+                                        if (item.file_evidencia == "" || item.file_evidencia == null)
+                                        {
+                                            <div class="action row" align="center">
+                                                <div class="col py-2 ">
+                                                    <a href='@Url.Action("add_file","Checklist",new {item.id})' data-label="Subir">
+                                                        <i style="color:gray" class='bx bx-upload large'></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        }
+                                        else
+                                        {
+                                            <div class="action row" align="center">
+                                                <div class="col py-2 ">
+                                                    <a href='@item.file_evidencia' data-label="Subir">
+                                                        <i style="color:green" class='bx bx-upload large'></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        }
+
+                                    }
+                                }
+                            </td>
+
+                        }
+                    </tr>
+                    <tr>
+                        <td>
+                            19. ¿Cuenta con mecanismos para  definición precisa de responsabilidades para los miembros de la organización?
+                        </td>
+                        @if (Model.Q19 == 0)
+                        {
+                            <td class="Rtable-cell"><b>No</b></td>
+                            <td class="Rtable-cell" data-label="Variables:">N/A</td>
+                            <td class="Rtable-cell" data-label="Variables:">N/A</td>
+                            <td class="Rtable-cell" data-label="Variables:">N/A</td>
+                            <td class="Rtable-cell" data-label="Variables:"></td>
+                        }
+                        else
+                        {
+                            <td class="Rtable-cell"><b>Si</b></td>
+                            <td class="Rtable-cell" data-label="Variables:">
+                                @foreach (var item in ViewBag.Acciones)
+                                {
+                                    if (item.id_medida == 19)
+                                    {
+                                        <ul>
+                                            <li>
+                                                @item.accion
+                                            </li>
+                                        </ul>
+
+                                    }
+                                }
+                            </td>
+                            <td class="Rtable-cell">
+                                @foreach (var item in ViewBag.Acciones)
+                                {
+                                    if (item.id_medida == 19)
+                                    {
+                                        <ul>
+                                            <li>
+                                                @item.estatus
+                                            </li>
+                                        </ul>
+
+                                    }
+                                }
+                            </td>
+                            <td class="Rtable-cell">
+                                @foreach (var item in ViewBag.Acciones)
+                                {
+                                    if (item.id_medida == 19)
+                                    {
+                                        <ul>
+                                            <li>
+                                                @item.fecha_inicio
+                                            </li>
+                                        </ul>
+
+                                    }
+                                }
+                            </td>
+                            <td class="Rtable-cell">
+                                @foreach (var item in ViewBag.Acciones)
+                                {
+                                    if (item.id_medida == 19)
+                                    {
+                                        if (item.file_evidencia == "" || item.file_evidencia == null)
+                                        {
+                                            <div class="action row" align="center">
+                                                <div class="col py-2 ">
+                                                    <a href='@Url.Action("add_file","Checklist",new {item.id})' data-label="Subir">
+                                                        <i style="color:gray" class='bx bx-upload large'></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        }
+                                        else
+                                        {
+                                            <div class="action row" align="center">
+                                                <div class="col py-2 ">
+                                                    <a href='@item.file_evidencia' data-label="Subir">
+                                                        <i style="color:green" class='bx bx-upload large'></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        }
+
+                                    }
+                                }
+                            </td>
+
+                        }
+                    </tr>
+                    <tr>
+                        <td>
+                            20. ¿Cuenta con la distribución adecuada de cargas de trabajo, con jornadas laborales regulares conforme a la Ley Federal del Trabajo?
+                        </td>
+                        @if (Model.Q20 == 0)
+                        {
+                            <td class="Rtable-cell"><b>No</b></td>
+                            <td class="Rtable-cell" data-label="Variables:">N/A</td>
+                            <td class="Rtable-cell" data-label="Variables:">N/A</td>
+                            <td class="Rtable-cell" data-label="Variables:">N/A</td>
+                            <td class="Rtable-cell" data-label="Variables:"></td>
+                        }
+                        else
+                        {
+                            <td class="Rtable-cell"><b>Si</b></td>
+                            <td class="Rtable-cell" data-label="Variables:">
+                                @foreach (var item in ViewBag.Acciones)
+                                {
+                                    if (item.id_medida == 20)
+                                    {
+                                        <ul>
+                                            <li>
+                                                @item.accion
+                                            </li>
+                                        </ul>
+
+                                    }
+                                }
+                            </td>
+                            <td class="Rtable-cell">
+                                @foreach (var item in ViewBag.Acciones)
+                                {
+                                    if (item.id_medida == 20)
+                                    {
+                                        <ul>
+                                            <li>
+                                                @item.estatus
+                                            </li>
+                                        </ul>
+
+                                    }
+                                }
+                            </td>
+                            <td class="Rtable-cell">
+                                @foreach (var item in ViewBag.Acciones)
+                                {
+                                    if (item.id_medida == 20)
+                                    {
+                                        <ul>
+                                            <li>
+                                                @item.fecha_inicio
+                                            </li>
+                                        </ul>
+
+                                    }
+                                }
+                            </td>
+                            <td class="Rtable-cell">
+                                @foreach (var item in ViewBag.Acciones)
+                                {
+                                    if (item.id_medida == 20)
+                                    {
+                                        if (item.file_evidencia == "" || item.file_evidencia == null)
+                                        {
+                                            <div class="action row" align="center">
+                                                <div class="col py-2 ">
+                                                    <a href='@Url.Action("add_file","Checklist",new {item.id})' data-label="Subir">
+                                                        <i style="color:gray" class='bx bx-upload large'></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        }
+                                        else
+                                        {
+                                            <div class="action row" align="center">
+                                                <div class="col py-2 ">
+                                                    <a href='@item.file_evidencia' data-label="Subir">
+                                                        <i style="color:green" class='bx bx-upload large'></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        }
+
+                                    }
+                                }
+                            </td>
+
+                        }
+                    </tr>
+                    <tr>
+                        <td>
+                            21. ¿Cuenta con mecanismos  para la  determinación de prioridades en el trabajo?
+                        </td>
+                        @if (Model.Q21 == 0)
+                        {
+                            <td class="Rtable-cell"><b>No</b></td>
+                            <td class="Rtable-cell" data-label="Variables:">N/A</td>
+                            <td class="Rtable-cell" data-label="Variables:">N/A</td>
+                            <td class="Rtable-cell" data-label="Variables:">N/A</td>
+                            <td class="Rtable-cell" data-label="Variables:"></td>
+                        }
+                        else
+                        {
+                            <td class="Rtable-cell"><b>Si</b></td>
+                            <td class="Rtable-cell" data-label="Variables:">
+                                @foreach (var item in ViewBag.Acciones)
+                                {
+                                    if (item.id_medida == 21)
+                                    {
+                                        <ul>
+                                            <li>
+                                                @item.accion
+                                            </li>
+                                        </ul>
+
+                                    }
+                                }
+                            </td>
+                            <td class="Rtable-cell">
+                                @foreach (var item in ViewBag.Acciones)
+                                {
+                                    if (item.id_medida == 21)
+                                    {
+                                        <ul>
+                                            <li>
+                                                @item.estatus
+                                            </li>
+                                        </ul>
+
+                                    }
+                                }
+                            </td>
+                            <td class="Rtable-cell">
+                                @foreach (var item in ViewBag.Acciones)
+                                {
+                                    if (item.id_medida == 21)
+                                    {
+                                        <ul>
+                                            <li>
+                                                @item.fecha_inicio
+                                            </li>
+                                        </ul>
+
+                                    }
+                                }
+                            </td>
+                            <td class="Rtable-cell">
+                                @foreach (var item in ViewBag.Acciones)
+                                {
+                                    if (item.id_medida == 21)
+                                    {
+                                        if (item.file_evidencia == "" || item.file_evidencia == null)
+                                        {
+                                            <div class="action row" align="center">
+                                                <div class="col py-2 ">
+                                                    <a href='@Url.Action("add_file","Checklist",new {item.id})' data-label="Subir">
+                                                        <i style="color:gray" class='bx bx-upload large'></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        }
+                                        else
+                                        {
+                                            <div class="action row" align="center">
+                                                <div class="col py-2 ">
+                                                    <a href='@item.file_evidencia' data-label="Subir">
+                                                        <i style="color:green" class='bx bx-upload large'></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        }
+
+                                    }
+                                }
+                            </td>
+
+                        }
+                    </tr>
+                    <tr>
+                        <td>
+                            22. ¿Cuenta con mecanismos para planificar el trabajo, considerando el proceso productivo, de manera que se tengan las pausas o periodos necesarios de descanso, rotación de tareas y otras medidas necesarias para evitar ritmos de trabajo acelerados?
+                        </td>
+                        @if (Model.Q22 == 0)
+                        {
+                            <td class="Rtable-cell"><b>No</b></td>
+                            <td class="Rtable-cell" data-label="Variables:">N/A</td>
+                            <td class="Rtable-cell" data-label="Variables:">N/A</td>
+                            <td class="Rtable-cell" data-label="Variables:">N/A</td>
+                            <td class="Rtable-cell" data-label="Variables:"></td>
+                        }
+                        else
+                        {
+                            <td class="Rtable-cell"><b>Si</b></td>
+                            <td class="Rtable-cell" data-label="Variables:">
+                                @foreach (var item in ViewBag.Acciones)
+                                {
+                                    if (item.id_medida == 22)
+                                    {
+                                        <ul>
+                                            <li>
+                                                @item.accion
+                                            </li>
+                                        </ul>
+
+                                    }
+                                }
+                            </td>
+                            <td class="Rtable-cell">
+                                @foreach (var item in ViewBag.Acciones)
+                                {
+                                    if (item.id_medida == 22)
+                                    {
+                                        <ul>
+                                            <li>
+                                                @item.estatus
+                                            </li>
+                                        </ul>
+
+                                    }
+                                }
+                            </td>
+                            <td class="Rtable-cell">
+                                @foreach (var item in ViewBag.Acciones)
+                                {
+                                    if (item.id_medida == 22)
+                                    {
+                                        <ul>
+                                            <li>
+                                                @item.fecha_inicio
+                                            </li>
+                                        </ul>
+
+                                    }
+                                }
+                            </td>
+                            <td class="Rtable-cell">
+                                @foreach (var item in ViewBag.Acciones)
+                                {
+                                    if (item.id_medida == 22)
+                                    {
+                                        if (item.file_evidencia == "" || item.file_evidencia == null)
+                                        {
+                                            <div class="action row" align="center">
+                                                <div class="col py-2 ">
+                                                    <a href='@Url.Action("add_file","Checklist",new {item.id})' data-label="Subir">
+                                                        <i style="color:gray" class='bx bx-upload large'></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        }
+                                        else
+                                        {
+                                            <div class="action row" align="center">
+                                                <div class="col py-2 ">
+                                                    <a href='@item.file_evidencia' data-label="Subir">
+                                                        <i style="color:green" class='bx bx-upload large'></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        }
+
+                                    }
+                                }
+                            </td>
+
+                        }
+                    </tr>
+                    <tr>
+                        <td>
+                            23. ¿Cuenta con Instructivos o procedimientos que definan claramente las tareas y responsabilidades?
+                        </td>
+                        @if (Model.Q23 == 0)
+                        {
+                            <td class="Rtable-cell"><b>No</b></td>
+                            <td class="Rtable-cell" data-label="Variables:">N/A</td>
+                            <td class="Rtable-cell" data-label="Variables:">N/A</td>
+                            <td class="Rtable-cell" data-label="Variables:">N/A</td>
+                            <td class="Rtable-cell" data-label="Variables:"></td>
+                        }
+                        else
+                        {
+                            <td class="Rtable-cell"><b>Si</b></td>
+                            <td class="Rtable-cell" data-label="Variables:">
+                                @foreach (var item in ViewBag.Acciones)
+                                {
+                                    if (item.id_medida == 23)
+                                    {
+                                        <ul>
+                                            <li>
+                                                @item.accion
+                                            </li>
+                                        </ul>
+
+                                    }
+                                }
+                            </td>
+                            <td class="Rtable-cell">
+                                @foreach (var item in ViewBag.Acciones)
+                                {
+                                    if (item.id_medida == 23)
+                                    {
+                                        <ul>
+                                            <li>
+                                                @item.estatus
+                                            </li>
+                                        </ul>
+
+                                    }
+                                }
+                            </td>
+                            <td class="Rtable-cell">
+                                @foreach (var item in ViewBag.Acciones)
+                                {
+                                    if (item.id_medida == 23)
+                                    {
+                                        <ul>
+                                            <li>
+                                                @item.fecha_inicio
+                                            </li>
+                                        </ul>
+
+                                    }
+                                }
+                            </td>
+                            <td class="Rtable-cell">
+                                @foreach (var item in ViewBag.Acciones)
+                                {
+                                    if (item.id_medida == 23)
+                                    {
+                                        if (item.file_evidencia == "" || item.file_evidencia == null)
+                                        {
+                                            <div class="action row" align="center">
+                                                <div class="col py-2 ">
+                                                    <a href='@Url.Action("add_file","Checklist",new {item.id})' data-label="Subir">
+                                                        <i style="color:gray" class='bx bx-upload large'></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        }
+                                        else
+                                        {
+                                            <div class="action row" align="center">
+                                                <div class="col py-2 ">
+                                                    <a href='@item.file_evidencia' data-label="Subir">
+                                                        <i style="color:green" class='bx bx-upload large'></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        }
+
+                                    }
+                                }
+                            </td>
+
+                        }
+                    </tr>
+                    <tr>
+                        <td>
+                            24. ¿Cuenta con mecanismos  para involucrar a los trabajadores en la definición de los horarios de trabajo cuando las condiciones del trabajo lo permitan?
+                        </td>
+                        @if (Model.Q24 == 0)
+                        {
+                            <td class="Rtable-cell"><b>No</b></td>
+                            <td class="Rtable-cell" data-label="Variables:">N/A</td>
+                            <td class="Rtable-cell" data-label="Variables:">N/A</td>
+                            <td class="Rtable-cell" data-label="Variables:">N/A</td>
+                            <td class="Rtable-cell" data-label="Variables:"></td>
+                        }
+                        else
+                        {
+                            <td class="Rtable-cell"><b>Si</b></td>
+                            <td class="Rtable-cell" data-label="Variables:">
+                                @foreach (var item in ViewBag.Acciones)
+                                {
+                                    if (item.id_medida == 24)
+                                    {
+                                        <ul>
+                                            <li>
+                                                @item.accion
+                                            </li>
+                                        </ul>
+
+                                    }
+                                }
+                            </td>
+                            <td class="Rtable-cell">
+                                @foreach (var item in ViewBag.Acciones)
+                                {
+                                    if (item.id_medida == 24)
+                                    {
+                                        <ul>
+                                            <li>
+                                                @item.estatus
+                                            </li>
+                                        </ul>
+
+                                    }
+                                }
+                            </td>
+                            <td class="Rtable-cell">
+                                @foreach (var item in ViewBag.Acciones)
+                                {
+                                    if (item.id_medida == 24)
+                                    {
+                                        <ul>
+                                            <li>
+                                                @item.fecha_inicio
+                                            </li>
+                                        </ul>
+
+                                    }
+                                }
+                            </td>
+                            <td class="Rtable-cell">
+                                @foreach (var item in ViewBag.Acciones)
+                                {
+                                    if (item.id_medida == 24)
+                                    {
+                                        if (item.file_evidencia == "" || item.file_evidencia == null)
+                                        {
+                                            <div class="action row" align="center">
+                                                <div class="col py-2 ">
+                                                    <a href='@Url.Action("add_file","Checklist",new {item.id})' data-label="Subir">
+                                                        <i style="color:gray" class='bx bx-upload large'></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        }
+                                        else
+                                        {
+                                            <div class="action row" align="center">
+                                                <div class="col py-2 ">
+                                                    <a href='@item.file_evidencia' data-label="Subir">
+                                                        <i style="color:green" class='bx bx-upload large'></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        }
+
+                                    }
+                                }
+                            </td>
+
+                        }
+                    </tr>
+                    <tr>
+                        <td>
+                            25. ¿Cuenta con mecanismos  para la  determinación de prioridades en el trabajo?
+                        </td>
+                        @if (Model.Q25 == 0)
+                        {
+                            <td class="Rtable-cell"><b>No</b></td>
+                            <td class="Rtable-cell" data-label="Variables:">N/A</td>
+                            <td class="Rtable-cell" data-label="Variables:">N/A</td>
+                            <td class="Rtable-cell" data-label="Variables:">N/A</td>
+                            <td class="Rtable-cell" data-label="Variables:"></td>
+                        }
+                        else
+                        {
+                            <td class="Rtable-cell"><b>Si</b></td>
+                            <td class="Rtable-cell" data-label="Variables:">
+                                @foreach (var item in ViewBag.Acciones)
+                                {
+                                    if (item.id_medida == 25)
+                                    {
+                                        <ul>
+                                            <li>
+                                                @item.accion
+                                            </li>
+                                        </ul>
+
+                                    }
+                                }
+                            </td>
+                            <td class="Rtable-cell">
+                                @foreach (var item in ViewBag.Acciones)
+                                {
+                                    if (item.id_medida == 25)
+                                    {
+                                        <ul>
+                                            <li>
+                                                @item.estatus
+                                            </li>
+                                        </ul>
+
+                                    }
+                                }
+                            </td>
+                            <td class="Rtable-cell">
+                                @foreach (var item in ViewBag.Acciones)
+                                {
+                                    if (item.id_medida == 25)
+                                    {
+                                        <ul>
+                                            <li>
+                                                @item.fecha_inicio
+                                            </li>
+                                        </ul>
+
+                                    }
+                                }
+                            </td>
+                            <td class="Rtable-cell">
+                                @foreach (var item in ViewBag.Acciones)
+                                {
+                                    if (item.id_medida == 25)
+                                    {
+                                        if (item.file_evidencia == "" || item.file_evidencia == null)
+                                        {
+                                            <div class="action row" align="center">
+                                                <div class="col py-2 ">
+                                                    <a href='@Url.Action("add_file","Checklist",new {item.id})' data-label="Subir">
+                                                        <i style="color:gray" class='bx bx-upload large'></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        }
+                                        else
+                                        {
+                                            <div class="action row" align="center">
+                                                <div class="col py-2 ">
+                                                    <a href='@item.file_evidencia' data-label="Subir">
+                                                        <i style="color:green" class='bx bx-upload large'></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        }
+
+                                    }
+                                }
+                            </td>
+
+                        }
+                    </tr>
+                    <tr>
+                        <td>
+                            26. ¿Cuenta con mecanismos para fomentar la comunicación entre supervisores o gerentes y trabajadores, así como entre los trabajadores?
+                        </td>
+                        @if (Model.Q26 == 0)
+                        {
+                            <td class="Rtable-cell"><b>No</b></td>
+                            <td class="Rtable-cell" data-label="Variables:">N/A</td>
+                            <td class="Rtable-cell" data-label="Variables:">N/A</td>
+                            <td class="Rtable-cell" data-label="Variables:">N/A</td>
+                            <td class="Rtable-cell" data-label="Variables:"></td>
+                        }
+                        else
+                        {
+                            <td class="Rtable-cell"><b>Si</b></td>
+                            <td class="Rtable-cell" data-label="Variables:">
+                                @foreach (var item in ViewBag.Acciones)
+                                {
+                                    if (item.id_medida == 26)
+                                    {
+                                        <ul>
+                                            <li>
+                                                @item.accion
+                                            </li>
+                                        </ul>
+
+                                    }
+                                }
+                            </td>
+                            <td class="Rtable-cell">
+                                @foreach (var item in ViewBag.Acciones)
+                                {
+                                    if (item.id_medida == 26)
+                                    {
+                                        <ul>
+                                            <li>
+                                                @item.estatus
+                                            </li>
+                                        </ul>
+
+                                    }
+                                }
+                            </td>
+                            <td class="Rtable-cell">
+                                @foreach (var item in ViewBag.Acciones)
+                                {
+                                    if (item.id_medida == 26)
+                                    {
+                                        <ul>
+                                            <li>
+                                                @item.fecha_inicio
+                                            </li>
+                                        </ul>
+
+                                    }
+                                }
+                            </td>
+                            <td class="Rtable-cell">
+                                @foreach (var item in ViewBag.Acciones)
+                                {
+                                    if (item.id_medida == 26)
+                                    {
+                                        if (item.file_evidencia == "" || item.file_evidencia == null)
+                                        {
+                                            <div class="action row" align="center">
+                                                <div class="col py-2 ">
+                                                    <a href='@Url.Action("add_file","Checklist",new {item.id})' data-label="Subir">
+                                                        <i style="color:gray" class='bx bx-upload large'></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        }
+                                        else
+                                        {
+                                            <div class="action row" align="center">
+                                                <div class="col py-2 ">
+                                                    <a href='@item.file_evidencia' data-label="Subir">
+                                                        <i style="color:green" class='bx bx-upload large'></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        }
+
+                                    }
+                                }
+                            </td>
+
+                        }
+                    </tr>
+                    <tr>
+                        <td>
+                            27. ¿Cuenta con mecanismos o programas  para involucrar a los trabajadores en la toma de decisiones sobre la organización de su trabajo?
+                        </td>
+                        @if (Model.Q27 == 0)
+                        {
+                            <td class="Rtable-cell"><b>No</b></td>
+                            <td class="Rtable-cell" data-label="Variables:">N/A</td>
+                            <td class="Rtable-cell" data-label="Variables:">N/A</td>
+                            <td class="Rtable-cell" data-label="Variables:">N/A</td>
+                            <td class="Rtable-cell" data-label="Variables:"></td>
+                        }
+                        else
+                        {
+                            <td class="Rtable-cell"><b>Si</b></td>
+                            <td class="Rtable-cell" data-label="Variables:">
+                                @foreach (var item in ViewBag.Acciones)
+                                {
+                                    if (item.id_medida == 27)
+                                    {
+                                        <ul>
+                                            <li>
+                                                @item.accion
+                                            </li>
+                                        </ul>
+
+                                    }
+                                }
+                            </td>
+                            <td class="Rtable-cell">
+                                @foreach (var item in ViewBag.Acciones)
+                                {
+                                    if (item.id_medida == 27)
+                                    {
+                                        <ul>
+                                            <li>
+                                                @item.estatus
+                                            </li>
+                                        </ul>
+
+                                    }
+                                }
+                            </td>
+                            <td class="Rtable-cell">
+                                @foreach (var item in ViewBag.Acciones)
+                                {
+                                    if (item.id_medida == 27)
+                                    {
+                                        <ul>
+                                            <li>
+                                                @item.fecha_inicio
+                                            </li>
+                                        </ul>
+
+                                    }
+                                }
+                            </td>
+                            <td class="Rtable-cell">
+                                @foreach (var item in ViewBag.Acciones)
+                                {
+                                    if (item.id_medida == 27)
+                                    {
+                                        if (item.file_evidencia == "" || item.file_evidencia == null)
+                                        {
+                                            <div class="action row" align="center">
+                                                <div class="col py-2 ">
+                                                    <a href='@Url.Action("add_file","Checklist",new {item.id})' data-label="Subir">
+                                                        <i style="color:gray" class='bx bx-upload large'></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        }
+                                        else
+                                        {
+                                            <div class="action row" align="center">
+                                                <div class="col py-2 ">
+                                                    <a href='@item.file_evidencia' data-label="Subir">
+                                                        <i style="color:green" class='bx bx-upload large'></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        }
+
+                                    }
+                                }
+                            </td>
+
+                        }
+                    </tr>
+                    <tr>
+                        @if (Model.Q28 == 0)
+                        {
+                            <td class="Rtable-cell"><b>No</b></td>
+                            <td class="Rtable-cell" data-label="Variables:">N/A</td>
+                            <td class="Rtable-cell" data-label="Variables:">N/A</td>
+                            <td class="Rtable-cell" data-label="Variables:">N/A</td>
+                            <td class="Rtable-cell" data-label="Variables:"></td>
+                        }
+                        else
+                        {
+                            <td class="Rtable-cell"><b>Si</b></td>
+                            <td class="Rtable-cell" data-label="Variables:">
+                                @foreach (var item in ViewBag.Acciones)
+                                {
+                                    if (item.id_medida == 28)
+                                    {
+                                        <ul>
+                                            <li>
+                                                @item.accion
+                                            </li>
+                                        </ul>
+
+                                    }
+                                }
+                            </td>
+                            <td class="Rtable-cell">
+                                @foreach (var item in ViewBag.Acciones)
+                                {
+                                    if (item.id_medida == 28)
+                                    {
+                                        <ul>
+                                            <li>
+                                                @item.estatus
+                                            </li>
+                                        </ul>
+
+                                    }
+                                }
+                            </td>
+                            <td class="Rtable-cell">
+                                @foreach (var item in ViewBag.Acciones)
+                                {
+                                    if (item.id_medida == 28)
+                                    {
+                                        <ul>
+                                            <li>
+                                                @item.fecha_inicio
+                                            </li>
+                                        </ul>
+
+                                    }
+                                }
+                            </td>
+                            <td class="Rtable-cell">
+                                @foreach (var item in ViewBag.Acciones)
+                                {
+                                    if (item.id_medida == 28)
+                                    {
+                                        if (item.file_evidencia == "" || item.file_evidencia == null)
+                                        {
+                                            <div class="action row" align="center">
+                                                <div class="col py-2 ">
+                                                    <a href='@Url.Action("add_file","Checklist",new {item.id})' data-label="Subir">
+                                                        <i style="color:gray" class='bx bx-upload large'></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        }
+                                        else
+                                        {
+                                            <div class="action row" align="center">
+                                                <div class="col py-2 ">
+                                                    <a href='@item.file_evidencia' data-label="Subir">
+                                                        <i style="color:green" class='bx bx-upload large'></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        }
+
+                                    }
+                                }
+                            </td>
+
+                        }
+                    </tr>
+                    <tr>
+                        <td>
+                            29. ¿Cuenta con mecanismos para establecer procedimientos de actuación y seguimiento para tratar problemas relacionados con la violencia laboral, y capacitar al responsable de su implementación?
+                        </td>
+                        @if (Model.Q29 == 0)
+                        {
+                            <td class="Rtable-cell"><b>No</b></td>
+                            <td class="Rtable-cell" data-label="Variables:">N/A</td>
+                            <td class="Rtable-cell" data-label="Variables:">N/A</td>
+                            <td class="Rtable-cell" data-label="Variables:">N/A</td>
+                            <td class="Rtable-cell" data-label="Variables:"></td>
+                        }
+                        else
+                        {
+                            <td class="Rtable-cell"><b>Si</b></td>
+                            <td class="Rtable-cell" data-label="Variables:">
+                                @foreach (var item in ViewBag.Acciones)
+                                {
+                                    if (item.id_medida == 29)
+                                    {
+                                        <ul>
+                                            <li>
+                                                @item.accion
+                                            </li>
+                                        </ul>
+
+                                    }
+                                }
+                            </td>
+                            <td class="Rtable-cell">
+                                @foreach (var item in ViewBag.Acciones)
+                                {
+                                    if (item.id_medida == 29)
+                                    {
+                                        <ul>
+                                            <li>
+                                                @item.estatus
+                                            </li>
+                                        </ul>
+
+                                    }
+                                }
+                            </td>
+                            <td class="Rtable-cell">
+                                @foreach (var item in ViewBag.Acciones)
+                                {
+                                    if (item.id_medida == 29)
+                                    {
+                                        <ul>
+                                            <li>
+                                                @item.fecha_inicio
+                                            </li>
+                                        </ul>
+
+                                    }
+                                }
+                            </td>
+                            <td class="Rtable-cell">
+                                @foreach (var item in ViewBag.Acciones)
+                                {
+                                    if (item.id_medida == 29)
+                                    {
+                                        if (item.file_evidencia == "" || item.file_evidencia == null)
+                                        {
+                                            <div class="action row" align="center">
+                                                <div class="col py-2 ">
+                                                    <a href='@Url.Action("add_file","Checklist",new {item.id})' data-label="Subir">
+                                                        <i style="color:gray" class='bx bx-upload large'></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        }
+                                        else
+                                        {
+                                            <div class="action row" align="center">
+                                                <div class="col py-2 ">
+                                                    <a href='@item.file_evidencia' data-label="Subir">
+                                                        <i style="color:green" class='bx bx-upload large'></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        }
+
+                                    }
+                                }
+                            </td>
+
+                        }
+                    </tr>
+                    <tr>
+                        <td>
+                            30. ¿Cuenta con mecanismos o programas  para definir lineamientos para prohibir la discriminación y fomentar la equidad y el respeto?
+                        </td>
+                        @if (Model.Q30 == 0)
+                        {
+                            <td class="Rtable-cell"><b>No</b></td>
+                            <td class="Rtable-cell" data-label="Variables:">N/A</td>
+                            <td class="Rtable-cell" data-label="Variables:">N/A</td>
+                            <td class="Rtable-cell" data-label="Variables:">N/A</td>
+                            <td class="Rtable-cell" data-label="Variables:"></td>
+                        }
+                        else
+                        {
+                            <td class="Rtable-cell"><b>Si</b></td>
+                            <td class="Rtable-cell" data-label="Variables:">
+                                @foreach (var item in ViewBag.Acciones)
+                                {
+                                    if (item.id_medida == 30)
+                                    {
+                                        <ul>
+                                            <li>
+                                                @item.accion
+                                            </li>
+                                        </ul>
+
+                                    }
+                                }
+                            </td>
+                            <td class="Rtable-cell">
+                                @foreach (var item in ViewBag.Acciones)
+                                {
+                                    if (item.id_medida == 30)
+                                    {
+                                        <ul>
+                                            <li>
+                                                @item.estatus
+                                            </li>
+                                        </ul>
+
+                                    }
+                                }
+                            </td>
+                            <td class="Rtable-cell">
+                                @foreach (var item in ViewBag.Acciones)
+                                {
+                                    if (item.id_medida == 30)
+                                    {
+                                        <ul>
+                                            <li>
+                                                @item.fecha_inicio
+                                            </li>
+                                        </ul>
+
+                                    }
+                                }
+                            </td>
+                            <td class="Rtable-cell">
+                                @foreach (var item in ViewBag.Acciones)
+                                {
+                                    if (item.id_medida == 30)
+                                    {
+                                        if (item.file_evidencia == "" || item.file_evidencia == null)
+                                        {
+                                            <div class="action row" align="center">
+                                                <div class="col py-2 ">
+                                                    <a href='@Url.Action("add_file","Checklist",new {item.id})' data-label="Subir">
+                                                        <i style="color:gray" class='bx bx-upload large'></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        }
+                                        else
+                                        {
+                                            <div class="action row" align="center">
+                                                <div class="col py-2 ">
+                                                    <a href='@item.file_evidencia' data-label="Subir">
+                                                        <i style="color:green" class='bx bx-upload large'></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        }
+
+                                    }
+                                }
+                            </td>
+
+                        }
+                    </tr>
+                    <tr>
+                        <td>
+                            31. ¿Ya ha proporcionado la capacitación y sensibilización en la promoción de entornos organizacionales favorables?
+                        </td>
+                        @if (Model.Q31 == 0)
+                        {
+                            <td class="Rtable-cell"><b>No</b></td>
+                            <td class="Rtable-cell" data-label="Variables:">N/A</td>
+                            <td class="Rtable-cell" data-label="Variables:">N/A</td>
+                            <td class="Rtable-cell" data-label="Variables:">N/A</td>
+                            <td class="Rtable-cell" data-label="Variables:"></td>
+                        }
+                        else
+                        {
+                            <td class="Rtable-cell"><b>Si</b></td>
+                            <td class="Rtable-cell" data-label="Variables:">
+                                @foreach (var item in ViewBag.Acciones)
+                                {
+                                    if (item.id_medida == 31)
+                                    {
+                                        <ul>
+                                            <li>
+                                                @item.accion
+                                            </li>
+                                        </ul>
+
+                                    }
+                                }
+                            </td>
+                            <td class="Rtable-cell">
+                                @foreach (var item in ViewBag.Acciones)
+                                {
+                                    if (item.id_medida == 31)
+                                    {
+                                        <ul>
+                                            <li>
+                                                @item.estatus
+                                            </li>
+                                        </ul>
+
+                                    }
+                                }
+                            </td>
+                            <td class="Rtable-cell">
+                                @foreach (var item in ViewBag.Acciones)
+                                {
+                                    if (item.id_medida == 31)
+                                    {
+                                        <ul>
+                                            <li>
+                                                @item.fecha_inicio
+                                            </li>
+                                        </ul>
+
+                                    }
+                                }
+                            </td>
+                            <td class="Rtable-cell">
+                                @foreach (var item in ViewBag.Acciones)
+                                {
+                                    if (item.id_medida == 31)
+                                    {
+                                        if (item.file_evidencia == "" || item.file_evidencia == null)
+                                        {
+                                            <div class="action row" align="center">
+                                                <div class="col py-2 ">
+                                                    <a href='@Url.Action("add_file","Checklist",new {item.id})' data-label="Subir">
+                                                        <i style="color:gray" class='bx bx-upload large'></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        }
+                                        else
+                                        {
+                                            <div class="action row" align="center">
+                                                <div class="col py-2 ">
+                                                    <a href='@item.file_evidencia' data-label="Subir">
+                                                        <i style="color:green" class='bx bx-upload large'></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        }
+
+                                    }
+                                }
+                            </td>
+
+                        }
+                    </tr>
+                    <tr>
+                        <td>
+                            32. ¿Cuenta con mecanismos o programas para promover la ayuda mutua y el intercambio de conocimientos y experiencias entre los trabajadores?
+                        </td>
+                        @if (Model.Q32 == 0)
+                        {
+                            <td class="Rtable-cell"><b>No</b></td>
+                            <td class="Rtable-cell" data-label="Variables:">N/A</td>
+                            <td class="Rtable-cell" data-label="Variables:">N/A</td>
+                            <td class="Rtable-cell" data-label="Variables:">N/A</td>
+                            <td class="Rtable-cell" data-label="Variables:"></td>
+                        }
+                        else
+                        {
+                            <td class="Rtable-cell"><b>Si</b></td>
+                            <td class="Rtable-cell" data-label="Variables:">
+                                @foreach (var item in ViewBag.Acciones)
+                                {
+                                    if (item.id_medida == 32)
+                                    {
+                                        <ul>
+                                            <li>
+                                                @item.accion
+                                            </li>
+                                        </ul>
+
+                                    }
+                                }
+                            </td>
+                            <td class="Rtable-cell">
+                                @foreach (var item in ViewBag.Acciones)
+                                {
+                                    if (item.id_medida == 32)
+                                    {
+                                        <ul>
+                                            <li>
+                                                @item.estatus
+                                            </li>
+                                        </ul>
+
+                                    }
+                                }
+                            </td>
+                            <td class="Rtable-cell">
+                                @foreach (var item in ViewBag.Acciones)
+                                {
+                                    if (item.id_medida == 32)
+                                    {
+                                        <ul>
+                                            <li>
+                                                @item.fecha_inicio
+                                            </li>
+                                        </ul>
+
+                                    }
+                                }
+                            </td>
+                            <td class="Rtable-cell">
+                                @foreach (var item in ViewBag.Acciones)
+                                {
+                                    if (item.id_medida == 32)
+                                    {
+                                        if (item.file_evidencia == "" || item.file_evidencia == null)
+                                        {
+                                            <div class="action row" align="center">
+                                                <div class="col py-2 ">
+                                                    <a href='@Url.Action("add_file","Checklist",new {item.id})' data-label="Subir">
+                                                        <i style="color:gray" class='bx bx-upload large'></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        }
+                                        else
+                                        {
+                                            <div class="action row" align="center">
+                                                <div class="col py-2 ">
+                                                    <a href='@item.file_evidencia' data-label="Subir">
+                                                        <i style="color:green" class='bx bx-upload large'></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        }
+
+                                    }
+                                }
+                            </td>
+
+                        }
+                    </tr>
+                    <tr>
+                        <td>
+                            33. ¿Cuenta con mecansimos o programas  de apoyos a los trabajadores, de manera que puedan atender emergencias familiares, mismas que el trabajador tendrá que comprobar?
+                        </td>
+                        @if (Model.Q33 == 0)
+                        {
+                            <td class="Rtable-cell"><b>No</b></td>
+                            <td class="Rtable-cell" data-label="Variables:">N/A</td>
+                            <td class="Rtable-cell" data-label="Variables:">N/A</td>
+                            <td class="Rtable-cell" data-label="Variables:">N/A</td>
+                            <td class="Rtable-cell" data-label="Variables:"></td>
+                        }
+                        else
+                        {
+                            <td class="Rtable-cell"><b>Si</b></td>
+                            <td class="Rtable-cell" data-label="Variables:">
+                                @foreach (var item in ViewBag.Acciones)
+                                {
+                                    if (item.id_medida == 33)
+                                    {
+                                        <ul>
+                                            <li>
+                                                @item.accion
+                                            </li>
+                                        </ul>
+
+                                    }
+                                }
+                            </td>
+                            <td class="Rtable-cell">
+                                @foreach (var item in ViewBag.Acciones)
+                                {
+                                    if (item.id_medida == 33)
+                                    {
+                                        <ul>
+                                            <li>
+                                                @item.estatus
+                                            </li>
+                                        </ul>
+
+                                    }
+                                }
+                            </td>
+                            <td class="Rtable-cell">
+                                @foreach (var item in ViewBag.Acciones)
+                                {
+                                    if (item.id_medida == 33)
+                                    {
+                                        <ul>
+                                            <li>
+                                                @item.fecha_inicio
+                                            </li>
+                                        </ul>
+
+                                    }
+                                }
+                            </td>
+                            <td class="Rtable-cell">
+                                @foreach (var item in ViewBag.Acciones)
+                                {
+                                    if (item.id_medida == 33)
+                                    {
+                                        if (item.file_evidencia == "" || item.file_evidencia == null)
+                                        {
+                                            <div class="action row" align="center">
+                                                <div class="col py-2 ">
+                                                    <a href='@Url.Action("add_file","Checklist",new {item.id})' data-label="Subir">
+                                                        <i style="color:gray" class='bx bx-upload large'></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        }
+                                        else
+                                        {
+                                            <div class="action row" align="center">
+                                                <div class="col py-2 ">
+                                                    <a href='@item.file_evidencia' data-label="Subir">
+                                                        <i style="color:green" class='bx bx-upload large'></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        }
+
+                                    }
+                                }
+                            </td>
+
+                        }
+                    </tr>
+                    <tr>
+                        <td>
+                            34. ¿Cuenta con mecanismos, capacitación o programas para  difundir información para sensibilizar sobre la violencia laboral, tanto a trabajadores como a directivos, gerentes y supervisores?
+                        </td>
+                        @if (Model.Q34 == 0)
+                        {
+                            <td class="Rtable-cell"><b>No</b></td>
+                            <td class="Rtable-cell" data-label="Variables:">N/A</td>
+                            <td class="Rtable-cell" data-label="Variables:">N/A</td>
+                            <td class="Rtable-cell" data-label="Variables:">N/A</td>
+                            <td class="Rtable-cell" data-label="Variables:"></td>
+                        }
+                        else
+                        {
+                            <td class="Rtable-cell"><b>Si</b></td>
+                            <td class="Rtable-cell" data-label="Variables:">
+                                @foreach (var item in ViewBag.Acciones)
+                                {
+                                    if (item.id_medida == 34)
+                                    {
+                                        <ul>
+                                            <li>
+                                                @item.accion
+                                            </li>
+                                        </ul>
+
+                                    }
+                                }
+                            </td>
+                            <td class="Rtable-cell">
+                                @foreach (var item in ViewBag.Acciones)
+                                {
+                                    if (item.id_medida == 34)
+                                    {
+                                        <ul>
+                                            <li>
+                                                @item.estatus
+                                            </li>
+                                        </ul>
+
+                                    }
+                                }
+                            </td>
+                            <td class="Rtable-cell">
+                                @foreach (var item in ViewBag.Acciones)
+                                {
+                                    if (item.id_medida == 34)
+                                    {
+                                        <ul>
+                                            <li>
+                                                @item.fecha_inicio
+                                            </li>
+                                        </ul>
+
+                                    }
+                                }
+                            </td>
+                            <td class="Rtable-cell">
+                                @foreach (var item in ViewBag.Acciones)
+                                {
+                                    if (item.id_medida == 34)
+                                    {
+                                        if (item.file_evidencia == "" || item.file_evidencia == null)
+                                        {
+                                            <div class="action row" align="center">
+                                                <div class="col py-2 ">
+                                                    <a href='@Url.Action("add_file","Checklist",new {item.id})' data-label="Subir">
+                                                        <i style="color:gray" class='bx bx-upload large'></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        }
+                                        else
+                                        {
+                                            <div class="action row" align="center">
+                                                <div class="col py-2 ">
+                                                    <a href='@item.file_evidencia' data-label="Subir">
+                                                        <i style="color:green" class='bx bx-upload large'></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        }
+
+                                    }
+                                }
+                            </td>
+
+                        }
+                    </tr>
+                    <tr>
+                        <td>
+                            35. ¿Cuenta con mecanismos para  Informar sobre la forma en que se deben denunciar actos de violencia laboral?
+                        </td>
+                        @if (Model.Q35 == 0)
+                        {
+                            <td class="Rtable-cell"><b>No</b></td>
+                            <td class="Rtable-cell" data-label="Variables:">N/A</td>
+                            <td class="Rtable-cell" data-label="Variables:">N/A</td>
+                            <td class="Rtable-cell" data-label="Variables:">N/A</td>
+                            <td class="Rtable-cell" data-label="Variables:"></td>
+                        }
+                        else
+                        {
+                            <td class="Rtable-cell"><b>Si</b></td>
+                            <td class="Rtable-cell" data-label="Variables:">
+                                @foreach (var item in ViewBag.Acciones)
+                                {
+                                    if (item.id_medida == 35)
+                                    {
+                                        <ul>
+                                            <li>
+                                                @item.accion
+                                            </li>
+                                        </ul>
+
+                                    }
+                                }
+                            </td>
+                            <td class="Rtable-cell">
+                                @foreach (var item in ViewBag.Acciones)
+                                {
+                                    if (item.id_medida == 35)
+                                    {
+                                        <ul>
+                                            <li>
+                                                @item.estatus
+                                            </li>
+                                        </ul>
+
+                                    }
+                                }
+                            </td>
+                            <td class="Rtable-cell">
+                                @foreach (var item in ViewBag.Acciones)
+                                {
+                                    if (item.id_medida == 35)
+                                    {
+                                        <ul>
+                                            <li>
+                                                @item.fecha_inicio
+                                            </li>
+                                        </ul>
+
+                                    }
+                                }
+                            </td>
+                            <td class="Rtable-cell">
+                                @foreach (var item in ViewBag.Acciones)
+                                {
+                                    if (item.id_medida == 35)
+                                    {
+                                        if (item.file_evidencia == "" || item.file_evidencia == null)
+                                        {
+                                            <div class="action row" align="center">
+                                                <div class="col py-2 ">
+                                                    <a href='@Url.Action("add_file","Checklist",new {item.id})' data-label="Subir">
+                                                        <i style="color:gray" class='bx bx-upload large'></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        }
+                                        else
+                                        {
+                                            <div class="action row" align="center">
+                                                <div class="col py-2 ">
+                                                    <a href='@item.file_evidencia' data-label="Subir">
+                                                        <i style="color:green" class='bx bx-upload large'></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        }
+
+                                    }
+                                }
+                            </td>
+
+                        }
+                    </tr>
+                    <tr>
+                        <td>
+                            36. ¿Cuenta con mecanismos  seguros y confidenciales para la recepción de quejas por prácticas opuestas al entorno organizacional favorable y para denunciar actos de violencia laboral?
+                        </td>
+                        @if (Model.Q36 == 0)
+                        {
+                            <td class="Rtable-cell"><b>No</b></td>
+                            <td class="Rtable-cell" data-label="Variables:">N/A</td>
+                            <td class="Rtable-cell" data-label="Variables:">N/A</td>
+                            <td class="Rtable-cell" data-label="Variables:">N/A</td>
+                            <td class="Rtable-cell" data-label="Variables:"></td>
+                        }
+                        else
+                        {
+                            <td class="Rtable-cell"><b>Si</b></td>
+                            <td class="Rtable-cell" data-label="Variables:">
+                                @foreach (var item in ViewBag.Acciones)
+                                {
+                                    if (item.id_medida == 36)
+                                    {
+                                        <ul>
+                                            <li>
+                                                @item.accion
+                                            </li>
+                                        </ul>
+
+                                    }
+                                }
+                            </td>
+                            <td class="Rtable-cell">
+                                @foreach (var item in ViewBag.Acciones)
+                                {
+                                    if (item.id_medida == 36)
+                                    {
+                                        <ul>
+                                            <li>
+                                                @item.estatus
+                                            </li>
+                                        </ul>
+
+                                    }
+                                }
+                            </td>
+                            <td class="Rtable-cell">
+                                @foreach (var item in ViewBag.Acciones)
+                                {
+                                    if (item.id_medida == 36)
+                                    {
+                                        <ul>
+                                            <li>
+                                                @item.fecha_inicio
+                                            </li>
+                                        </ul>
+
+                                    }
+                                }
+                            </td>
+                            <td class="Rtable-cell">
+                                @foreach (var item in ViewBag.Acciones)
+                                {
+                                    if (item.id_medida == 36)
+                                    {
+                                        if (item.file_evidencia == "" || item.file_evidencia == null)
+                                        {
+                                            <div class="action row" align="center">
+                                                <div class="col py-2 ">
+                                                    <a href='@Url.Action("add_file","Checklist",new {item.id})' data-label="Subir">
+                                                        <i style="color:gray" class='bx bx-upload large'></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        }
+                                        else
+                                        {
+                                            <div class="action row" align="center">
+                                                <div class="col py-2 ">
+                                                    <a href='@item.file_evidencia' data-label="Subir">
+                                                        <i style="color:green" class='bx bx-upload large'></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        }
+
+                                    }
+                                }
+                            </td>
+
+                        }
+                    </tr>
+                    <tr>
+                        <td>
+                            37. ¿Cuenta con programas que promuevan el sentido de pertenencia de los trabajadores a la organización?
+                        </td>
+                        @if (Model.Q37 == 0)
+                        {
+                            <td class="Rtable-cell"><b>No</b></td>
+                            <td class="Rtable-cell" data-label="Variables:">N/A</td>
+                            <td class="Rtable-cell" data-label="Variables:">N/A</td>
+                            <td class="Rtable-cell" data-label="Variables:">N/A</td>
+                            <td class="Rtable-cell" data-label="Variables:"></td>
+                        }
+                        else
+                        {
+                            <td class="Rtable-cell"><b>Si</b></td>
+                            <td class="Rtable-cell" data-label="Variables:">
+                                @foreach (var item in ViewBag.Acciones)
+                                {
+                                    if (item.id_medida == 37)
+                                    {
+                                        <ul>
+                                            <li>
+                                                @item.accion
+                                            </li>
+                                        </ul>
+
+                                    }
+                                }
+                            </td>
+                            <td class="Rtable-cell">
+                                @foreach (var item in ViewBag.Acciones)
+                                {
+                                    if (item.id_medida == 37)
+                                    {
+                                        <ul>
+                                            <li>
+                                                @item.estatus
+                                            </li>
+                                        </ul>
+
+                                    }
+                                }
+                            </td>
+                            <td class="Rtable-cell">
+                                @foreach (var item in ViewBag.Acciones)
+                                {
+                                    if (item.id_medida == 37)
+                                    {
+                                        <ul>
+                                            <li>
+                                                @item.fecha_inicio
+                                            </li>
+                                        </ul>
+
+                                    }
+                                }
+                            </td>
+                            <td class="Rtable-cell">
+                                @foreach (var item in ViewBag.Acciones)
+                                {
+                                    if (item.id_medida == 37)
+                                    {
+                                        if (item.file_evidencia == "" || item.file_evidencia == null)
+                                        {
+                                            <div class="action row" align="center">
+                                                <div class="col py-2 ">
+                                                    <a href='@Url.Action("add_file","Checklist",new {item.id})' data-label="Subir">
+                                                        <i style="color:gray" class='bx bx-upload large'></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        }
+                                        else
+                                        {
+                                            <div class="action row" align="center">
+                                                <div class="col py-2 ">
+                                                    <a href='@item.file_evidencia' data-label="Subir">
+                                                        <i style="color:green" class='bx bx-upload large'></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        }
+
+                                    }
+                                }
+                            </td>
+
+                        }
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+
+
+
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function () {
+
+
+
+            $.fn.responsiveTable = function () {
+                var toggleColumns = function ($table) {
+                    var selectedControls = [];
+                    $table.find(".Accordion").each(function () {
+                        selectedControls.push($(this).attr("aria-selected"));
+                    });
+                    var cellCount = 0, colCount = 0;
+                    var setNum = $table.find(".Rtable-cell").length / Math.max($table.find(".Accordion").length);
+                    $table.find(".Rtable-cell").each(function () {
+                        $(this).addClass("u-hiddenSmall");
+                        if (selectedControls[colCount] === "false") $(this).removeClass("u-hiddenSmall");
+                        cellCount++;
+                        if (cellCount % setNum === 0) colCount++;
+                    });
+                };
+                $(this).each(function () { toggleColumns($(this)); });
+
+
+
+
+
+                $(this).find(".Accordion").click(function () {
+                    $(this).attr("aria-selected", $(this).attr("aria-selected") !== "true");
+                    toggleColumns($(this).parents(".Rtable"));
+                });
+
+
+
+
+
+            };
+            $(".js-RtableAccordions").responsiveTable();
+        });
+    </script>
+
+
+
+
+
+</div>
+
+<script>
+  const ctx = document.getElementById('myChart').getContext('2d');
+  const myChart = new Chart(ctx, {
+      type: 'polarArea',
+      data: {
+          labels: ['% Ambiente de trabajo', '% Factores propios de la actividad', '% Organización del tiempo de trabajo', '% Liderazgo y relaciones de trabajo', '% Entorno organizacional'],
+          datasets: [{
+              label: 'Porcentaje de cumplimiento',
+              data: [('@ViewBag.CT1'/ 10)*100, ('@ViewBag.CT2' / 10)*100, ('@ViewBag.CT3' / 4)*100,( '@ViewBag.CT4' / 5)*100, ('@ViewBag.CT5' / 8)*100],
+              backgroundColor: [
+                  'rgb(204, 84, 156,0.5)',
+                  'rgb(109, 27, 220,0.5)',
+                  'rgb(157, 29, 174,0.5)',
+                  'rgb(141, 45, 187,0.5)',
+                  'rgb(94, 39, 154,0.5)'
+              ],
+              borderColor: [
+                  'rgb(204, 84, 156,0.8)',
+                  'rgb(109, 27, 220,0.8)',
+                  'rgb(157, 29, 174,0.8)',
+                  'rgb(141, 45, 187,0.8)',
+                  'rgb(94, 39, 154,0.8)'
+              ],
+              borderWidth: 1
+          }]
+      },
+      options: {
+
+      }
+  });
+</script>
+<script>
+ const ctx2 = document.getElementById('myChart2').getContext('2d');
+        const myChart2 = new Chart(ctx2, {
+            type: 'bar',
+            data: {
+                labels: ['Ambiente de trabajo', 'Factores propios de la actividad', 'Organización del tiempo de trabajo', 'Liderazgo y relaciones de trabajo', 'Entorno organizacional'],
+                datasets: [{
+                    label: 'Porcentaje de cumplimiento',
+                    data: [('@ViewBag.CT1'/ 10)*100, ('@ViewBag.CT2' / 10)*100, ('@ViewBag.CT3' / 4)*100,( '@ViewBag.CT4' / 5)*100, ('@ViewBag.CT5' / 8)*100],
+                    backgroundColor: [
+                    'rgb(204, 84, 156,0.5)',
+                    'rgb(109, 27, 220,0.5)',
+                    'rgb(157, 29, 174,0.5)',
+                    'rgb(141, 45, 187,0.5)',
+                    'rgb(94, 39, 154,0.5)'
+                    ],
+                    borderColor: [
+                    'rgb(204, 84, 156,0.8)',
+                    'rgb(109, 27, 220,0.8)',
+                    'rgb(157, 29, 174,0.8)',
+                    'rgb(141, 45, 187,0.8)',
+                    'rgb(94, 39, 154,0.8)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+</script>
+
+<script>
+    var ctx3a = document.getElementById("myChart3a").getContext('2d');
+        var myChart3a = new Chart(ctx3a, {
+        type: 'doughnut',
+        data: {
+            datasets: [{
+            backgroundColor: [
+                "#794475",
+                "rgb(76, 76, 78)"
+            ],
+            data: ['@ViewBag.CT1',10-'@ViewBag.CT1']
+            }]
+        }
+        });
+</script>
+
+<script>
+    var ctx3b = document.getElementById("myChart3b").getContext('2d');
+    var myChart3b = new Chart(ctx3b, {
+    type: 'doughnut',
+    data: {
+        datasets: [{
+        backgroundColor: [
+            "#794475",
+            "rgb(76, 76, 78)"
+        ],
+        data: ['@ViewBag.CT2',10-'@ViewBag.CT2']
+        }]
+    }
+    });
+</script>
+
+<script>
+    var ctx3c = document.getElementById("myChart3c").getContext('2d');
+    var myChart3c = new Chart(ctx3c, {
+    type: 'doughnut',
+    data: {
+        datasets: [{
+        backgroundColor: [
+            "#794475",
+            "rgb(76, 76, 78)"
+        ],
+        data: ['@ViewBag.CT3',4-'@ViewBag.CT3']
+        }]
+    }
+    });
+</script>
+
+<script>
+    var ctx3d = document.getElementById("myChart3d").getContext('2d');
+    var myChart3d = new Chart(ctx3d, {
+    type: 'doughnut',
+    data: {
+        datasets: [{
+        backgroundColor: [
+            "#794475",
+            "rgb(76, 76, 78)"
+        ],
+        data: ['@ViewBag.CT4',5-'@ViewBag.CT4']
+
+        }]
+    }
+    });
+</script>
+
+<script>
+var ctx3e = document.getElementById("myChart3e").getContext('2d');
+    var myChart3e = new Chart(ctx3e, {
+    type: 'doughnut',
+    data: {
+        datasets: [{
+        backgroundColor: [
+            "#794475",
+            "rgb(76, 76, 78)"
+        ],
+        data: ['@ViewBag.CT5',8-'@ViewBag.CT5']
+        }]
+    }
+    });
+</script>

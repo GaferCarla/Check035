@@ -1,0 +1,25 @@
+﻿@model ErgoSalud.Models.E360_Cuestionario_Resultado_N01
+ 
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<hr />
+<h2>Confirmación de Eliminación</h2>
+<h4 style="color:red">¿Realmente quiere Eliminar la Encuesta No. <span style="color:black">@Html.DisplayFor(model => model.ERGOS_Cuestionarios_Trabajador_N01.id_trabajador)</span>?</h4>
+<div>
+
+    <hr />
+
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-success" />
+            @Html.ActionLink("Regresar", "Index", null, new { @class = "btn btn-primary" })
+        </div>
+    }
+</div>

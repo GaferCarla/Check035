@@ -1,0 +1,182 @@
+﻿
+@{
+    ViewBag.Title = "Cotizador";
+}
+<br>
+<h2 style="text-align:center">Cotizador</h2>
+<hr>
+<a class="btn btn-success" href="@Url.Action("Index","CRM")">Regresar</a>
+<div>
+    <div style="width: 90%; float: left;">
+        <table class="table table-dark">
+            <thead>
+                <tr>
+                    <th scope="col">Rango de empleados</th>
+                    <th scope="col">Máximo en precio indicidual</th>
+                    <th scope="col">Máximo en costo anual</th>
+                    <th scope="col">Porcentajes para anticipos</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1 a 15</td>
+                    <td>164.66</td>
+                    <td>1974.92</td>
+                    <td>6 y 30%</td>
+                </tr>
+                <tr>
+                    <td>1 a 30</td>
+                    <td>126.66</td>
+                    <td>1519.92</td>
+                    <td>6 y 30%</td>
+                </tr>
+                <tr>
+                    <td>1 a 100</td>
+                    <td>94</td>
+                    <td>1128</td>
+                    <td>6 y 30%</td>
+                </tr>
+                <tr>
+                    <td>1 a 500</td>
+                    <td>94</td>
+                    <td>1128</td>
+                    <td>10 y 20%</td>
+                </tr>
+                <tr>
+                    <td>1 a 1000</td>
+                    <td>57.83</td>
+                    <td>693.96</td>
+                    <td>10 y 20%</td>
+                </tr>
+                <tr>
+                    <td>Mas de 1000</td>
+                    <td>46</td>
+                    <td>552</td>
+                    <td>12 mensualidades</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>
+<div style="width: 70%; height: 300px; float: left; background-color: #AC1C1E;">
+
+    <div style="margin-left: 3.9%; margin-top:3%; width: 22%; height: 250px;  float: left; ">
+        <div>
+            <center>
+                <h3 style="color:white">Número de empleados</h3>
+            </center>
+        </div>
+        <div style="margin-top: 80%;">
+            <center>
+                <input type="text" size="9" id="Numero_de_empleados" name="name" onchange="costos()" class="form-control">
+            </center>
+        </div>
+    </div>
+    <div style="margin-left: 1%; margin-top: 3%; width: 22%; height: 250px;  float: left; ">
+        <div>
+            <center>
+                <h3 style="color:white">Precio individual</h3>
+            </center>
+        </div>
+        <div style="margin-top: 80%;">
+            <center>
+                <input type="text" size="9" id="Precio_individual" name="name" class="form-control">
+            </center>
+        </div>
+    </div>
+    <div style="margin-left: 1%;   width: 22%; height: 250px;  float: left; ">
+        <div>
+            <center>
+                <h3 style="color:white">Precio anual </h3>
+            </center>
+        </div>
+        <div style="margin-top: 108%;">
+            <center>
+                <input type="text" size="9" id="Precio_anual" name="name" class="form-control">
+            </center>
+        </div>
+    </div>
+    <div style="margin-left: 1%; margin-top: 3%; width: 22%; height: 250px; float: left; ">
+        <div>
+            <center>
+                <h2 style="color:white">Total</h2>
+                <h6 style="color:white">( Total del #  empleados por el monto anual )</h6>
+            </center>
+        </div>
+        <div style="margin-top: 75%;">
+            <center>
+                <input type="text" size="9" id="Total" name="name" class="form-control">
+            </center>
+        </div>
+    </div>
+
+
+</div>
+<div style="width: 3%; float: left; ">
+    <h1></h1>
+</div>
+<div style="width: 27%; height: 300px; float: left; background-color: #459A1E; ">
+    <div style="width:100%">
+        <center>
+            <h3 style="color:white">
+                Anticipo 30%
+            </h3>
+        </center>
+    </div>
+    <div style="width:100%">
+        <center>
+            <input type="text" size="10" id="Anticipo30" name="name" class="form-control">
+        </center>
+    </div>
+    <div style="width:100%">
+        <center>
+            <h3 style="color:white">
+                10 mensualidades
+            </h3>
+        </center>
+    </div>
+    <div style="width:100%">
+        <center>
+            <input type="text" size="10" id="10mensuales" name="name" class="form-control">
+        </center>
+    </div>
+    <div style="width:100%">
+        <center>
+            <h3 style="color:white">
+                6 mensualidades
+            </h3>
+        </center>
+    </div>
+    <div style="width:100%">
+        <center>
+            <input type="text" size="10" id="6meses" name="name" class="form-control">
+        </center>
+    </div>
+</div>
+<script>
+    function costos() {
+        var numero_emplados = document.getElementById('Numero_de_empleados').value;
+        var costante = 0;
+        if (numero_emplados <= 15) {
+            costante = 164.66;
+        } else if (numero_emplados <= 30) {
+            costante = 126.66;
+        } else if (numero_emplados <= 100) {
+            costante = 94;
+        } else if (numero_emplados <= 500) {
+            costante = 94;
+        } else if (numero_emplados <= 1000) {
+            costante = 57.83;
+        } else if (numero_emplados > 1000) {
+            costante = 46;
+        }
+        document.getElementById('Precio_individual').value = costante;
+        document.getElementById('Precio_anual').value = costante * 12;
+        document.getElementById('Total').value = numero_emplados * document.getElementById('Precio_anual').value;
+        document.getElementById('Anticipo30').value = document.getElementById('Total').value * 0.3;
+        document.getElementById('10mensuales').value = (document.getElementById('Total').value - document.getElementById('Anticipo30').value) / 10;
+        document.getElementById('6meses').value = (document.getElementById('Total').value - document.getElementById('Anticipo30').value) / 6;
+
+    }
+</script>

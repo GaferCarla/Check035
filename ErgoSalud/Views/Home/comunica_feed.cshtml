@@ -1,0 +1,181 @@
+﻿
+@{
+    ViewBag.Title = "comunica_feed";
+    @Styles.Render("~/Content/sizing.css");
+    @Styles.Render("~/Content/banner.css");
+    @Styles.Render("~/Content/breadcrumb.css");
+    @Styles.Render("~/Content/comunica_feed.css");
+    @Styles.Render("~/Content/comunica.css");
+    @Styles.Render("~/Content/button.css");
+    @Styles.Render("~/Content/branding.css");
+
+
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet'>
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/boxicons@2.0.0/css/boxicons.min.css'>
+
+    <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+}
+
+
+
+<div class="container-fluid row mt-5 pt-5 px-sm-5 px-1">
+    <div class="template-demo">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb breadcrumb-custom ">
+                <li class="breadcrumb-item"><a href='@Url.Action("Index","Home")' data-abc="true" class="font-weight-bold text-uppercase">Dashboard</a></li>
+                <li class="breadcrumb-item active font-weight-bold " aria-current="page"><span>&nbsp&nbspComunica</span></li>
+            </ol>
+        </nav>
+    </div>
+</div>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6 col-12 pt-5 d-flex justify-content-center">
+            <a href='@Url.Action("Index","Avisos_Notificaciones")' class="btn-module btn px-5 py-4 btn-lg rounded font-bold text-uppercase">Ir a panel de control</a>
+
+        </div>
+        <div class="col-sm-6 col-12 pt-5 d-flex justify-content-center">
+            <a href='@Url.Action("comunica_form","Home")' class="btn-module2 btn px-5 py-4 btn-lg rounded font-bold text-uppercase">Crear notificación</a>
+
+        </div>
+    </div>
+
+</div>
+
+<div class="container d-flex justify-content-center mt-50 mb-50">
+
+    <div class="row">
+        <div class="col-md-12">
+
+            <div class="card blog-horizontal px-5 pt-3 rounded">
+                <div class="card-body p-4">
+
+                    <div class="mb-3">
+
+                        <ul class="list-inline list-inline-dotted text-muted mb-0">
+                            <li class="list-inline-item px-0">
+                                <div class="avatar avatar-red me-3"><i class="fa fa-warning btn-icon-prepend"></i></div>
+
+                            </li>
+                            <li class="list-inline-item px-0">
+                                <h5 class="text-uppercase font-weight-semibold ">Título 1</h5>
+                            </li>
+                        </ul>
+
+
+
+                        <ul class="list-inline list-inline-dotted text-muted mb-0">
+                            <li class="list-inline-item">Por <span class="text-muted">Autor</span></li>
+                            <li class="list-inline-item"> Enero 22, 2022</li>
+                            <li class="list-inline-item"> / </li>
+                            <li class="list-inline-item"> Agosto 20, 2022</li>
+                        </ul>
+                    </div>
+
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>
+
+                    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim  <a href="#" data-abc="true">[...]</a>
+                </div>
+
+                <div class="card-footer d-sm-flex justify-content-sm-between align-items-sm-center py-3 border-top">
+                    <ul class="list-inline list-inline-dotted mb-0">
+                        <li class="list-inline-item"><i class="fa fa-user me-2"></i> <span>Alumnos</span></li>
+                        <li class="list-inline-item">
+                            <i class="fa fa-calendar-check-o mr-1"></i>
+                            <div class="badge badge-success badge-success-alt">Activo</div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card blog-horizontal px-5 pt-3 rounded">
+                <div class="card-body p-4">
+
+                    <div class="mb-3">
+
+                        <ul class="list-inline list-inline-dotted text-muted mb-0">
+                            <li class="list-inline-item px-0">
+                                <div class="avatar avatar-yellow me-3"><i class="fa fa-bullhorn btn-icon-prepend"></i></div>
+
+                            </li>
+                            <li class="list-inline-item px-0">
+                                <h5 class="text-uppercase font-weight-semibold ">Título </h5>
+                            </li>
+                        </ul>
+
+
+
+                        <ul class="list-inline list-inline-dotted text-muted mb-0">
+                            <li class="list-inline-item">Por <span class="text-muted">Autor</span></li>
+                            <li class="list-inline-item"> Enero 22, 2022</li>
+                            <li class="list-inline-item"> / </li>
+                            <li class="list-inline-item"> Julio 20, 2022</li>
+                        </ul>
+                    </div>
+
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>
+
+                    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim  <a href="#" data-abc="true">[...]</a>
+                </div>
+
+                <div class="card-footer d-sm-flex justify-content-sm-between align-items-sm-center py-3 border-top">
+                    <ul class="list-inline list-inline-dotted mb-0">
+                        <li class="list-inline-item"><i class="fa fa-user me-2"></i> <span>Profesores</span></li>
+                        <li class="list-inline-item">
+                            <i class="fa fa-calendar-check-o mr-1"></i>
+                            <div class="badge badge-secondary badge-default-alt">Inactivo</div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card blog-horizontal px-5 pt-3 rounded">
+                <div class="card-body p-4">
+
+                    <div class="mb-3">
+
+                        <ul class="list-inline list-inline-dotted text-muted mb-0">
+                            <li class="list-inline-item px-0">
+                                <div class="avatar avatar-gray me-3"><i class='bx bxs-envelope'></i></div>
+                            </li>
+                            <li class="list-inline-item px-0">
+                                <h5 class="text-uppercase font-weight-semibold ">Título 3</h5>
+                            </li>
+                        </ul>
+
+
+
+                        <ul class="list-inline list-inline-dotted text-muted mb-0">
+                            <li class="list-inline-item">Por <span class="text-muted">Autor</span></li>
+                            <li class="list-inline-item"> Enero 22, 2022</li>
+                            <li class="list-inline-item"> / </li>
+                            <li class="list-inline-item"> Mayo 20, 2022</li>
+                        </ul>
+                    </div>
+
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>
+
+                    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim  <a href="#" data-abc="true">[...]</a>
+                </div>
+
+                <div class="card-footer d-sm-flex justify-content-sm-between align-items-sm-center py-3 border-top">
+                    <ul class="list-inline list-inline-dotted mb-0">
+                        <li class="list-inline-item"><i class="fa fa-user me-2"></i> <span>Todos</span></li>
+                        <li class="list-inline-item">
+                            <i class="fa fa-calendar-check-o mr-1"></i>
+                            <div class="badge badge-secondary badge-default-alt">Inactivo</div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+

@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Este archivo se usa en el proceso de publicación y empaquetado del proyecto web. Para personalizar el comportamiento de este proceso,
+edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 para obtener más información. 
+-->
+<Project>
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAojDxyAUE7EqJlAXcjSU2SQAAAAACAAAAAAAQZgAAAAEAACAAAACBsb01VxciXy3Ts8GiyjoI4GHoDQKOXm/pYKCkuS47rQAAAAAOgAAAAAIAACAAAACU5Spwc2/VxXXt2Xh0HkZq9jRDsFkX3REtgWintIqxOSAAAABgeG0A6XgeaWE5OP4ewKiq5BrjwuF6TKdwFXhpkMSDA0AAAABvUtXPIyClX62+kIRcP9y2A/VEj8RxxMz8FLeZo1eiV+2CnG8QRK59WJsAka0Dbmo8jPYsy/dR1uC0p8BqfXdB</EncryptedPassword>
+    <_PublishTargetUrl>ftp://198.37.116.29/www.check035.somee.com</_PublishTargetUrl>
+    <History>False|2022-08-25T20:22:39.1539717Z;False|2022-08-25T15:17:27.8971309-05:00;</History>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="bin/Antlr3.Runtime.dll">
+      <publishTime>09/10/2013 16:29:20</publishTime>
+    </File>
+    <File Include="bin/Antlr3.Runtime.pdb">
+      <publishTime>09/10/2013 16:29:20</publishTime>
+    </File>
+    <File Include="bin/App_global.asax.compiled">
+      <publishTime>08/25/2022 15:18:06</publishTime>
+    </File>
+    <File Include="bin/App_global.asax.dll">
+      <publishTime>08/25/2022 15:18:06</publishTime>
+    </File>
+    <File Include="bin/BouncyCastle.Crypto.dll">
+      <publishTime>10/19/2021 10:53:32</publishTime>
+    </File>
+    <File Include="bin/DotNetZip.dll">
+      <publishTime>05/21/2020 15:36:14</publishTime>
+    </File>
+    <File Include="bin/DotNetZip.pdb">
+      <publishTime>05/21/2020 15:36:14</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.dll">
+      <publishTime>03/02/2015 10:32:26</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.SqlServer.dll">
+      <publishTime>03/02/2015 10:32:26</publishTime>
+    </File>
+    <File Include="bin/EPPlus.dll">
+      <publishTime>06/16/2019 09:54:30</publishTime>
+    </File>
+    <File Include="bin/ErgoSalud.dll">
+      <publishTime>08/25/2022 15:11:52</publishTime>
+    </File>
+    <File Include="bin/ErgoSalud.pdb">
+      <publishTime>08/25/2022 15:11:52</publishTime>
+    </File>
+    <File Include="bin/Excel.dll">
+      <publishTime>05/07/2014 08:57:36</publishTime>
+    </File>
+    <File Include="bin/Excel.pdb">
+      <publishTime>05/07/2014 08:57:36</publishTime>
+    </File>
+    <File Include="bin/ICSharpCode.SharpZipLib.dll">
+      <publishTime>05/08/2021 16:08:30</publishTime>
+    </File>
+    <File Include="bin/ICSharpCode.SharpZipLib.pdb">
+      <publishTime>05/08/2021 16:08:30</publishTime>
+    </File>
+    <File Include="bin/MailKit.dll">
+      <publishTime>12/11/2021 18:59:54</publishTime>
+    </File>
+    <File Include="bin/MailKit.pdb">
+      <publishTime>12/11/2021 18:59:54</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AspNet.Identity.Core.dll">
+      <publishTime>04/24/2018 12:47:38</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AspNet.Identity.EntityFramework.dll">
+      <publishTime>04/24/2018 12:47:40</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AspNet.Identity.Owin.dll">
+      <publishTime>04/24/2018 12:47:40</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AspNetCore.Http.Abstractions.dll">
+      <publishTime>11/12/2018 20:29:00</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AspNetCore.Http.dll">
+      <publishTime>01/25/2019 02:18:54</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AspNetCore.Http.Features.dll">
+      <publishTime>11/12/2018 20:28:58</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AspNetCore.WebUtilities.dll">
+      <publishTime>11/12/2018 20:29:00</publishTime>
+    </File>
+    <File Include="bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll">
+      <publishTime>05/24/2018 13:38:22</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Extensions.DependencyInjection.Abstractions.dll">
+      <publishTime>11/11/2018 03:26:36</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Extensions.ObjectPool.dll">
+      <publishTime>11/11/2018 03:26:48</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Extensions.Options.dll">
+      <publishTime>11/11/2018 03:26:38</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Extensions.Primitives.dll">
+      <publishTime>11/11/2018 03:26:36</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Net.Http.Headers.dll">
+      <publishTime>11/12/2018 20:28:58</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.dll">
+      <publishTime>02/13/2018 19:28:04</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Host.SystemWeb.dll">
+      <publishTime>02/13/2018 19:28:12</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Security.Cookies.dll">
+      <publishTime>02/13/2018 19:28:20</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Security.dll">
+      <publishTime>02/13/2018 19:28:16</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Security.Facebook.dll">
+      <publishTime>02/13/2018 19:28:22</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Security.Google.dll">
+      <publishTime>02/13/2018 19:28:22</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Security.MicrosoftAccount.dll">
+      <publishTime>02/13/2018 19:28:26</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Security.OAuth.dll">
+      <publishTime>02/13/2018 19:28:28</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Security.Twitter.dll">
+      <publishTime>02/13/2018 19:28:30</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Web.Infrastructure.dll">
+      <publishTime>07/25/2012 11:48:56</publishTime>
+    </File>
+    <File Include="bin/MimeKit.dll">
+      <publishTime>12/11/2021 17:19:48</publishTime>
+    </File>
+    <File Include="bin/MimeKit.pdb">
+      <publishTime>12/11/2021 17:19:48</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>11/27/2018 21:07:34</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.pdb">
+      <publishTime>11/27/2018 20:59:08</publishTime>
+    </File>
+    <File Include="bin/NPOI.dll">
+      <publishTime>10/23/2021 00:07:54</publishTime>
+    </File>
+    <File Include="bin/NPOI.OOXML.dll">
+      <publishTime>10/23/2021 00:07:56</publishTime>
+    </File>
+    <File Include="bin/NPOI.OOXML.pdb">
+      <publishTime>10/23/2021 08:07:56</publishTime>
+    </File>
+    <File Include="bin/NPOI.OpenXml4Net.dll">
+      <publishTime>10/23/2021 00:07:54</publishTime>
+    </File>
+    <File Include="bin/NPOI.OpenXml4Net.pdb">
+      <publishTime>10/23/2021 08:07:54</publishTime>
+    </File>
+    <File Include="bin/NPOI.OpenXmlFormats.dll">
+      <publishTime>10/23/2021 00:07:54</publishTime>
+    </File>
+    <File Include="bin/NPOI.OpenXmlFormats.pdb">
+      <publishTime>10/23/2021 08:07:54</publishTime>
+    </File>
+    <File Include="bin/NPOI.pdb">
+      <publishTime>10/23/2021 08:07:54</publishTime>
+    </File>
+    <File Include="bin/Owin.dll">
+      <publishTime>11/27/2012 16:00:52</publishTime>
+    </File>
+    <File Include="bin/PagedList.dll">
+      <publishTime>09/30/2013 16:36:38</publishTime>
+    </File>
+    <File Include="bin/PagedList.Mvc.dll">
+      <publishTime>09/30/2013 17:15:20</publishTime>
+    </File>
+    <File Include="bin/roslyn/csc.rsp">
+      <publishTime>05/24/2018 13:38:22</publishTime>
+    </File>
+    <File Include="bin/roslyn/csi.rsp">
+      <publishTime>05/24/2018 13:38:22</publishTime>
+    </File>
+    <File Include="bin/Select.Html.dep">
+      <publishTime>04/24/2020 07:40:16</publishTime>
+    </File>
+    <File Include="bin/System.Buffers.dll">
+      <publishTime>02/19/2020 13:05:18</publishTime>
+    </File>
+    <File Include="bin/System.ComponentModel.Annotations.dll">
+      <publishTime>05/15/2018 12:29:36</publishTime>
+    </File>
+    <File Include="Content/comunica_feed.css">
+      <publishTime>07/26/2022 15:33:05</publishTime>
+    </File>
+    <File Include="Content/form.css">
+      <publishTime>07/29/2022 08:58:20</publishTime>
+    </File>
+    <File Include="Content/modal.css">
+      <publishTime>07/29/2022 09:02:47</publishTime>
+    </File>
+    <File Include="favicon.ico">
+      <publishTime>05/04/2019 13:21:02</publishTime>
+    </File>
+    <File Include="PrecompiledApp.config">
+      <publishTime>08/25/2022 15:18:04</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>08/25/2022 15:11:55</publishTime>
+    </File>
+  </ItemGroup>
+</Project>
